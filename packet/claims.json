@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
-  "version": "1.6.0",
+  "version": "1.7.0",
   "paper": {
-    "path": "paper-lines-v5.0-en.tex",
-    "sha256": "8ebf2cf6a442097affe5a3407ba9058e08aafd44e170ef676cc4516f4e5cc465",
-    "bytes": 79424
+    "path": "paper-lines-v6.0-en.tex",
+    "sha256": "32fd9c64a92d49686f22897ced0a68521ff0e3a31138a63897b7d0233cac8e53",
+    "bytes": 61599
   },
   "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "status_semantics": "The status lean-result-received means exact source and a fixed reported kernel acceptance were received, not newly elaborated. Arithmetic predicates, graph sufficiency, conditional kernels and general prose theorems have distinct scopes. depends_on is expository, not a Lean proof-term dependency graph.",

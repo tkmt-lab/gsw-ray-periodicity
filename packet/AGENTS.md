@@ -1,6 +1,8 @@
+Local candidate 1.7.0 / article 6.0: publication is performed separately by the coordinator under the author's decision. The authorization records below are inherited historical records; no upload is performed by this preparation.
+
 # Read this packet first
 
-This is the release edition; the owner has authorized release (packet 1.6.0, English paper v5.0). Read [README.md](README.md), [SCOPE.md](SCOPE.md), [FORMALIZATION.md](FORMALIZATION.md) and [P006-corrections.md](P006-corrections.md) before using [claims.json](claims.json).
+This is the release edition; the owner has authorized release (packet 1.7.0, English paper v6.0). Read [README.md](README.md), [SCOPE.md](SCOPE.md), [FORMALIZATION.md](FORMALIZATION.md) and [P006-corrections.md](P006-corrections.md) before using [claims.json](claims.json).
 
 Author: Tatsuhiko Takimoto; affiliation: Independent researcher. Authorship, licenses and AI disclosure are approved. See [LICENSING.md](LICENSING.md) and [CITING.md](CITING.md). Contact is GitHub Issues, with its URL centralized in [REPOSITORY-URL.txt](REPOSITORY-URL.txt).
 
@@ -30,3 +32,5 @@ The preceding C1 edition received Lean actual-path classification for r,s>=1 iff
 The preceding O2 edition received graph absence for t,d>=2 and positive-natural-ray periodicity on o2Graph without the general prose bridge. The R004 prose proof is retained. O2(1,1), O2(1,2), O2(2,1) existence and O2 IPR are outside Lean. Explicit paths are proved for (1,d), d>=3 and (t,1), t>=3; constant rays do not require an existence decision. Both entry declarations have a received coordinator six-kernel record for the same supplied proofs, without OS process isolation. No current Lean/kernel run, independent Lean derivation, owner-confirmation procedure, human proof review or novelty promotion. The general theorem's prose correspondence remains. The O2 checkpoint total was 266 Lean files, 263 proof sources and three inert challenges (one K3, two C1 and two O2 placeholders). See O2-STATEMENT-CHECK.md and o2-manifest.json.
 
 This edition receives D14 actual-path periodicity on all positive-natural rays without the general prose bridge. ClaudeChallengeD14.main is its ONLY Comparator target. The auxiliary d14_no_path proves absence r,s>=2, and pe_R1/pe_S1 prove boundary paths from 2 upwards; these are build/axiom-report records, not separate six-kernel targets. Existence at D14(1,1) is outside Lean. No new standalone iff, owner-confirmation procedure, human review or novelty promotion. R004 prose proof remains; the general prose bridge is unchanged. Current total 300 Lean files: 296 proof sources and four inert challenges (K3 one, C1 two, O2 two, D14 one placeholders). No current Lean, external-kernel or scientific execution. Read D14-STATEMENT-CHECK.md and d14-manifest.json.
+
+Article 6.0 presents mathematics and current proof scope. Read [VERIFICATION-RECORD.md](VERIFICATION-RECORD.md) for roles, independent-derivation limits, Comparator scope, correction history and the full list of moved passages. All 300 Lean sources and the thirty claim status values are inherited unchanged.

@@ -1503,8 +1503,8 @@
       "bytes": 7614
     }
   ],
-  "parent_packet_version": "1.5.0",
-  "parent_inventory_sha256": "127a1c3ada8b1e561cc9b3f9afb205ac4226a8f1c45bd233e19bc6c113ae64ad",
+  "parent_packet_version": "1.6.0",
+  "parent_inventory_sha256": "90043b443cb3be28c145356e52add8b1050e0da30102a486b708a54b3af68694",
   "inherited_receipts": [
     {
       "path": "evidence/theorem1a/Challenge2.lean.original.log",
@@ -1625,9 +1625,9 @@
   "new_lean_runs": 0,
   "external_kernels_rerun": false,
   "stale_module_note": "The module header in ClaudeChallengeSpec.lean is stale: its `sorry`/`main` target is in ComparatorChallengeMain.lean, while ClaudeChallengeSpec.lean contains definitions only; all Lean bytes are preserved and the previous packet build receipts are inherited without running Lean in this packaging phase.",
-  "scope": "All inherited 266 Lean files and historical receipts retain exact bytes. Add 32 D14 proof files, one specification, and one inert one-placeholder challenge. No current Lean execution; D14 kernel receipt separately recorded.",
+  "scope": "Editorial article/supplement separation only. All 300 inherited Lean sources and historical evidence bytes unchanged; no new Lean or scientific execution.",
   "inherited_lean_source_bytes_unchanged": true,
-  "inherited_source_count": 266,
-  "added_proof_sources": 33,
-  "added_benchmark_sources": 1
+  "inherited_source_count": 300,
+  "added_proof_sources": 0,
+  "added_benchmark_sources": 0
 }

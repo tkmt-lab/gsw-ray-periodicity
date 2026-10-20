@@ -1,6 +1,6 @@
 # Public-record redaction policy
 
-Only private execution locations and internal tool/environment names are replaced. Mathematical statements, assumptions, proof source bytes, recorded axioms, outcomes, timing and memory measurements are retained. The current article in this packet is version 5.0. The inherited redactions themselves do not alter article or proof bytes; separate owner-confirmation prose edits are described in CHANGELOG.md.
+Only private execution locations and internal tool/environment names are replaced. Mathematical statements, assumptions, proof source bytes, recorded axioms, outcomes, timing and memory measurements are retained. The current article in this packet is version 6.0. The inherited redactions themselves do not alter article or proof bytes; separate owner-confirmation prose edits are described in CHANGELOG.md.
 
 | Rule | Transformation |
 |---|---|
@@ -24,4 +24,6 @@ C1 sources and records are exact pinned copies, with no new privacy substitution
 
 O2 sources and records are exact pinned copies, with no new privacy substitutions. Identities are in o2-manifest.json. Current proof-scope/article edits are distinct from historical redaction-only changes.
 
-Packet1.6.0 adds exact D14 proof/receipt copies and article5.0, without new privacy substitutions. Historical derivatives are preserved; D14 scope edits and new PDF are distinct from redaction-only byte identity.
+Packet1.7.0 adds exact D14 proof/receipt copies and article5.0, without new privacy substitutions. Historical derivatives are preserved; D14 scope edits and new PDF are distinct from redaction-only byte identity.
+
+Packet1.7.0 adds article6.0 and VERIFICATION-RECORD.md by editorial separation, without new privacy substitutions. The earlier article5.0 and all inherited proof/evidence payloads retain exact bytes. The inherited paper_bytes_changed=false field refers to privacy transformations, not to the addition of the new article version.

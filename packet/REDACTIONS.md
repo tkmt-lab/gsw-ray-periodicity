@@ -17,4 +17,6 @@ This edition also removes the old individual-identifier scanner vocabulary. Priv
 
 Packet 1.5.0 adds exact O2 proof-source and receipt copies and article 4.9, with no new privacy substitutions. Historical public derivatives retain their original transformation contracts. O2 proof-scope edits and the new PDF are not described as redaction-only byte preservation. Public generic scans and nonpublic internal checks are kept separate.
 
-Packet1.6.0 adds exact D14 proof/receipt copies and article5.0, without new privacy substitutions. Historical derivatives are preserved; D14 scope edits and new PDF are distinct from redaction-only byte identity.
+Packet1.6.0 adds exact D14 proof/receipt copies and article 5.0, without new privacy substitutions. Historical derivatives are preserved; D14 scope edits and new PDF are distinct from redaction-only byte identity.
+
+Packet 1.7.0 adds article 6.0 and VERIFICATION-RECORD.md by editorial separation, without new privacy substitutions. The earlier article 5.0 and all inherited proof/evidence payloads retain exact bytes. The inherited paper_bytes_changed=false field refers to privacy transformations, not to the addition of the new article version.

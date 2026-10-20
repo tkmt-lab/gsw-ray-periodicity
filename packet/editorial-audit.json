@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "word_count_method": "English alphabetic tokens with internal hyphens/apostrophes; TeX prose estimate removes comments, dollar/display math and labels/citations/record identifiers before stripping commands. Bibliography included; formula words are not linguistic words.",
+  "tex_prose_words": {
+    "v5_0": 9602,
+    "v6_0": 7317
+  },
+  "pdf_token_method": "Poppler pdftotext then the same alphabetic-token regex; includes headings, running headers, bibliography and single-letter math tokens.",
+  "pdf_words": {
+    "v5_0": 11015,
+    "v6_0": 8394
+  },
+  "internal_name_scan": {
+    "internal_team": 0,
+    "coordinator": 0,
+    "delivery_terms": 0,
+    "owner_history": 0,
+    "trial_id": 0,
+    "commit_id": 0,
+    "worker_name": 0,
+    "internal_stage": 0
+  },
+  "scan_scope": "Complete TeX except the single AI-use paragraph; current version/date and bibliographic version designations are allowed, not workflow history.",
+  "exceptions": [
+    {
+      "location": "single AI-use paragraph",
+      "text": "Codex and Claude Code",
+      "reason": "Explicitly requested public AI-tool disclosure, one occurrence each."
+    }
+  ],
+  "mathematical_symbol_exceptions": [],
+  "displayed_math_blocks_byte_identical": true,
+  "numbered_statement_blocks_byte_identical": 3,
+  "claim_ids_unchanged": 30,
+  "changed_passages": 100,
+  "new_lean_runs": 0,
+  "publication_operations": 0
+}

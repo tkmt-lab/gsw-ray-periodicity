@@ -10,7 +10,7 @@ def check_publication_audit(root):
         raw=(root/relative).read_bytes();assert len(raw)==r['bytes'] and hashlib.sha256(raw).hexdigest()==r['sha256'],('audit fingerprint',str(relative));return raw
     from publication_privacy import check_scanner_source
     check_scanner_source(root)
-    metadata=load('release-metadata.json');a3=metadata['paper_version']=='8.1';version='1.0.4' if a3 else '1.6.0'
+    metadata=load('release-metadata.json');a3=metadata['paper_version']=='8.1';version='1.0.4' if a3 else '1.7.0'
     assert metadata['packet_version']==version
     provenance=load('PROVENANCE.json');authorization=load('publication-authorization.json')
     assert provenance['publication_on_hold'] is False,'publication hold restored'
@@ -22,7 +22,7 @@ def check_publication_audit(root):
     assert not authorization['publication_performed_by_research_team'] and not authorization['proof_peer_review'] and not authorization['novelty_review']
     assert authorization['publication_operation_role']=='coordinator'
     current=[root/n for n in ['AGENTS.md','README.md','CITING.md','FORMALIZATION.md']]
-    tex=root/('paper-A3-v8.1-en.tex' if a3 else 'paper-lines-v5.0-en.tex');current.append(tex)
+    tex=root/('paper-A3-v8.1-en.tex' if a3 else 'paper-lines-v6.0-en.tex');current.append(tex)
     for p in current:
         assert not re.search(r'publication\s+(?:(?:is|remains)\s+)?on\s+hold',p.read_text(),re.I),'publication hold restored in '+p.name
     citing=(root/'CITING.md').read_text()
@@ -41,9 +41,10 @@ def check_publication_audit(root):
         assert 'Where to read the challenge and the proof' in formal, 'challenge navigation missing'
         assert 'evidence/theorem1a/ComparatorChallenge.lean.original.log' in formal
         assert 'statement/Challenge2.lean' in formal and 'statement/ChallengeK3.lean' in formal
-        article=(root/'paper-lines-v5.0-en.tex').read_text()
+        article=(root/'paper-lines-v6.0-en.tex').read_text()
         assert 'contact details are supplied separately' not in article, 'separate artifact claim restored'
-        assert 'intentionally omitted' in article and 'lake exe cache get' in article
+        record=(root/'VERIFICATION-RECORD.md').read_text()
+        assert 'intentionally omitted' in record and 'lake exe cache get' in record
         claims=load('claims.json');scope=claims['scope'];contract=load('scope-contract.json')
         assert 'general_geometric_lean_proof' not in scope and 'general_geometric_lean_proof' not in contract,'ambiguous geometric Lean flag restored'
         assert scope['general_specification_lean_proof'] is True and contract==scope

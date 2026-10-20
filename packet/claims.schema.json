@@ -15,7 +15,7 @@
       "const": 3
     },
     "version": {
-      "const": "1.6.0"
+      "const": "1.7.0"
     },
     "paper": {
       "$ref": "#/$defs/evidence"

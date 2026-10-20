@@ -1,3 +1,7 @@
+# 1.7.0 / article 6.0
+
+Focus the article on mathematics and current proof scope, moving verification process/history to VERIFICATION-RECORD.md.
+
 # 1.6.0 / article 5.0
 
 Receive D14 main as the sole six-kernel Comparator target, plus separately scoped auxiliary absence/boundary lemmas. Pin37 closure files (32 new proof files, one spec, four inherited); add one inert one-placeholder challenge. Preserve prior266 Lean files and payload bytes. D14(1,1) existence remains outside Lean and no standalone iff is added. R004 prose proof retained. No current Lean/kernel execution, owner procedure, human review, novelty promotion, D12 integration or publication. Three numbered statements and30 IDs preserved. Public generic/private internal checks remain separate.

@@ -1,0 +1,709 @@
+{
+  "predecessor": "paper-lines-v5.0-en.tex",
+  "target": "paper-lines-v6.0-en.tex",
+  "predecessor_sha256": "8ebf2cf6a442097affe5a3407ba9058e08aafd44e170ef676cc4516f4e5cc465",
+  "numbered_blocks_byte_identical": 3,
+  "claim_ids_unchanged": 30,
+  "edits": [
+    {
+      "number": 1,
+      "before": "Version 5.0, 20 October 2026",
+      "after": "Version 6.0, 21 October 2026",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 23
+    },
+    {
+      "number": 2,
+      "before": "We study literal linear generalized Stone--Wales paths in fullerene\nduals. Our main result concerns an integer affine family admitting a\nfixed decomposition into embedded convex lattice polygons with sides\nin the six triangular-lattice directions. With fixed gluing and affine\ncorner coordinates, we give a uniform reduction of literal-path\nexistence to a fixed monadic second-order sentence over unary finite\nwords, using maximal face passages, their two-row outputs and all\nvertex collisions. Eventual periodicity on every eventually valid\ninteger affine ray then follows from the known equivalence between\nMSO and regular languages. This is a geometric definability reduction,\nnot a new general periodicity principle. We record\nthe resulting ray statements for eleven specified catalogue families,\nalongside closed conditions on their stated domains. Existing Lean\nresults establish arithmetic periodicity of several family predicates\nand determine two example rays for every ray parameter. For K3, C1 and O2, stated-domain graph classifications are Lean-proved;\nthese families and D14 also have Lean actual-path periodicity on positive\ninteger affine rays, on explicit quotient specifications without the\ngeneral prose bridge. Parameter-one\nrays are included; the O2 absence domain is $t,d\\ge2$. The separate\nC1 and O2 IPR conditions are outside Lean. The general\neventual-periodicity statement is now proved\nin Lean against a specification written by the coordinator before the\nproof. Its correspondence to the geometric hypotheses is an explicit\nprose lemma, not a Lean theorem. The proof was supplied by Claude\nworkers; no independent Lean proof by the research team is claimed.\nThe separate R004 prose derivation is retained. Prior owner confirmation of the general specification is retained as a\nhistorical record, not a new verification procedure. Human proof peer review\nand novelty remain open;\nno executable geometric-to-MSO compiler or period algorithm is supplied.\n",
+      "after": "We study literal linear generalized Stone--Wales paths in fullerene\nduals. For an integer affine family with a fixed decomposition into\nembedded convex lattice polygons in the six triangular-lattice\ndirections, we give a uniform reduction of literal-path existence to a\nfixed monadic second-order sentence over unary finite words. The\nconstruction uses maximal face passages, their two-row outputs and all\nvertex collisions. Eventual periodicity follows from the known equivalence\nbetween MSO and regular languages. The result is a geometric definability\nreduction. We apply it, together with separate arithmetic arguments,\nto eleven specified catalogue families. The specification-level\nperiodicity theorem is Lean-proved, with a prose correspondence lemma\nconnecting its assumptions to the geometric hypotheses. Family-specific\nLean proofs establish K3 and C1 path classifications, O2 absence on\nits stated domain, and positive-ray actual-path periodicity for K3,\nC1, O2 and D14. We also describe closed conditions, exact decisions on\ntwo example rays for every ray parameter, finite checks, and a\nfixed-oblique-direction extension as a separate proof sketch.\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 26
+    },
+    {
+      "number": 3,
+      "before": "\\noindent\\textbf{Editorial and evidence status.}\nThis English edition continues Japanese v3, with convex-face Theorem 1a\nand catalogue Corollary 1b as its main results. The fixed-oblique-direction\nextension remains a proof sketch outside the abstract's claims.\nSection~\\ref{sec:novelty} separates the geometric reduction from known\nMSO, parametric Presburger and fixed-boundary periodicity results.\nR004 derived the convex-face proof without reading the research team's\nproof, construction or code; the statement was known. The O2 mapping\nmetadata and D12 single-point disclosures remain: strict blindness is\nnot claimed. One AI coordinator reviewed the route. Translation and\npackaging supply neither a third derivation nor human peer review.\nThe coordinator-written Theorem 1a specification has a Lean proof and\nsaved six-kernel acceptance. On 20 October 2026, the owner read version 2\nwith the Japanese guide and addendum and confirmed its statement meaning,\nnot its proof or prose correspondence. Earlier authorship, affiliation,\nlicensing and statement records remain factual; owner statement-meaning\nchecks ended as a procedure that day. K3, C1, O2 and D14 correspondence instead\nuses prior specifications, independent AI statement readers and finite\ncomparisons. No new owner-confirmation procedure is added. A3's\nclassification and 816-class census belong to the separate first paper.\nA new D12 classification is not incorporated.\n\n\\clearpage\n",
+      "after": "\\section{Introduction}\nA literal linear generalized Stone--Wales path is a simple alternating\ntriangle strip between degree-five vertices of a fullerene dual\n\\cite{BBS}. In an affine family, both the graph size and the number of\nface passages can grow with the parameter. The question is whether\npath existence nevertheless becomes periodic on an integer ray.\n\nOur main construction represents passages and every possible\nsurface-vertex collision in one fixed finite-word MSO sentence.\nTheorem~\\ref{thm:aligned} treats embedded convex lattice faces with\nfixed affine gluing. Corollary~\\ref{cor:catalog} applies to eleven\nspecified families from Graver's catalogue \\cite{Graver}; A3 uses its\nseparate classification and arithmetic argument \\cite{A3}.\nSection~\\ref{sec:novelty} places this geometric reduction beside the\nexisting logical and fixed-boundary periodicity theorems.\n\n\\section{What is proved, and how}\\label{sec:guarantees}\n\\begin{center}\\small\n\\begin{tabular}{p{.23\\textwidth}p{.27\\textwidth}p{.38\\textwidth}}\n\\toprule Claim & Present proof basis & Scope\\\\\\midrule\nTheorem~\\ref{thm:aligned} & Lean specification theorem; prose geometric correspondence & Convex six-direction disk decompositions, with fixed affine gluing and eventual validity; fixed-residue variants.\\\\\nLogical periodicity step & External MSO/regular-language theorem & One fixed sentence over unary finite words.\\\\\nCorollary~\\ref{cor:catalog} & Geometric decompositions and arithmetic; direct Lean family proofs & Eleven specified valid positive-parameter families.\\\\\nK3, C1, O2, D14 & Lean quotient-graph proofs & K3 iff for $r,s\\ge2$; C1 iff for $a,b\\ge1$; O2 absence for $t,d\\ge2$; all four positive-natural ray results.\\\\\nFamily boundaries & Lean explicit paths and finite checks & O2 paths on $(1,d)$, $d\\ge3$, and $(t,1)$, $t\\ge3$; D14 paths on $(1,s)$, $s\\ge2$, and $(r,1)$, $r\\ge2$. Small remaining boundary decisions are finite evidence.\\\\\nOther closed conditions and examples & Prose geometry, Lean predicate arithmetic, explicit witnesses and checkers & The domains and finite ranges specified in Sections~\\ref{sec:conditions}, \\ref{sec:arithmetic} and \\ref{sec:finite}; C1/O2 IPR is prose.\\\\\nFixed-oblique extension & Proof sketch & The four transfer obligations in Section~\\ref{sec:extension}.\\\\\n\\bottomrule\n\\end{tabular}\n\\end{center}\nThe formal family claims concern the explicit quotient models; their\ncatalogue identification uses the stated coordinate conventions.\nThe convex-face result has two separately developed derivations on\nthe common six-direction domain. Human proof peer review and the\npriority comparison remain open. The supplementary\n\\record{VERIFICATION-RECORD.md} records provenance, implementation\nidentifiers, independence qualifications and validation history.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 58
+    },
+    {
+      "number": 4,
+      "before": "The conditional finite-graph statement is formalized as\n\\record{R002.finite_literal_path_decision}. Its hypotheses and fixed\nstart must be supplied by geometry. The noncomputable construction\nis not a certified executable Python or C classifier. For fullerene\nduals, the nonfacial-three-cycle exclusion in the received prose route\nuses the established cyclic edge-connectivity result cited in\n\\cite{Connectivity}; the original proof of that external result was\nnot rechecked by the editor.\n\n",
+      "after": "For fullerene duals, cyclic edge-connectivity\n\\cite{Connectivity} excludes nonfacial three-cycles and supplies the\ntwo-common-neighbour property. The finite-graph decision argument\napplies once this local geometric hypothesis and the start are fixed.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 105
+    },
+    {
+      "number": 5,
+      "before": "for all $t\\ge t_0$. The received theorem proves existence. No practical\nthreshold, least period or implemented geometric-to-MSO/DFA compiler\nis supplied. The specification-level existence theorem is now\nLean-proved; the prose correspondence lemma below transfers it to\nthese geometric hypotheses. Section~\\ref{sec:proof} retains the\nindependent prose route; its original proof, corrections and\ncoordinator review are fixed in the packet. The hypotheses describe the objects\nto which it applies, not a generic validity-testing algorithm.\n\n\n",
+      "after": "for all $t\\ge t_0$. This is an existence theorem for a threshold and\npositive period. The following correspondence lemma connects the\ngeometric hypotheses to the specification-level theorem, while\nSection~\\ref{sec:proof} gives the passage-to-word proof.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 151
+    },
+    {
+      "number": 6,
+      "before": "\\paragraph{Prose correspondence lemma (not formalized in Lean).}",
+      "after": "\\paragraph{Prose correspondence lemma.}",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 161
+    },
+    {
+      "number": 7,
+      "before": "\\record{ClaudeChallenge2.Sig}",
+      "after": "\\record{Sig}",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 163
+    },
+    {
+      "number": 8,
+      "before": "prose, not a theorem certified by the Lean kernel. Thus sites",
+      "after": "a prose geometric argument. Thus sites",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 198
+    },
+    {
+      "number": 9,
+      "before": "These geometric identifications and the\nexternal fullerene fact are part of this prose bridge, not additional\nLean-proved declarations or a fresh audit of the cited proof.",
+      "after": "These geometric identifications and the external fullerene fact\nsupply the geometric correspondence.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 213
+    },
+    {
+      "number": 10,
+      "before": "Apply \\record{ClaudeChallenge2.main} on the resulting tail.",
+      "after": "Apply the specification-level periodicity theorem on the resulting tail.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 217
+    },
+    {
+      "number": 11,
+      "before": "branch. The received Lean declaration \\record{ClaudeChallenge2.main_residue}\nthen combines the branches in the original parameter, assuming eventual",
+      "after": "branch. The residue-class theorem combines the branches in the\noriginal parameter, assuming eventual",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 219
+    },
+    {
+      "number": 12,
+      "before": "The owner confirmed the version-2 specification's meaning on\n20 October 2026; the check is recorded in \\record{OWNER-STATEMENT-CHECK.md}.\nIt is not proof peer review or review of this prose correspondence lemma.\n\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 224
+    },
+    {
+      "number": 13,
+      "before": "This section presents R004's second derivation on the common\nsix-direction domain. It does not use the uncompleted oblique-direction\ntransfer conditions. Its arithmetic-to-word reduction is specific;\narbitrary Presburger relations are not claimed to be finite-word MSO.",
+      "after": "The proof uses the common six-direction domain and its restricted\narithmetic-to-word reduction. The fixed-oblique-direction sketch is\ntreated separately in Section~\\ref{sec:extension}.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 253
+    },
+    {
+      "number": 14,
+      "before": "The last constant was corrected by hand in the received proof, followed\nby a new finite check; the check did not originally discover that error.\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 302
+    },
+    {
+      "number": 15,
+      "before": "Theorem~\\ref{thm:aligned}. The geometric reduction belongs to the\nreceived R004 proof, not to the cited automata theorem. Neither the\nfull proof of that external theorem nor an MSO compiler was newly\nverified by this manuscript's editor.",
+      "after": "Theorem~\\ref{thm:aligned}. The geometric passage construction supplies\nthe fixed sentence to which the external automata theorem applies.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 438
+    },
+    {
+      "number": 16,
+      "before": "The applicability evidence is R004's fixed family-decomposition report\nand its coordinator review. D12 uses two subdivided hexagons and D14",
+      "after": "D12 uses two subdivided hexagons and D14",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 445
+    },
+    {
+      "number": 17,
+      "before": "Family and domain & Received reason for all valid affine rays",
+      "after": "Family and domain & Reason for all valid affine rays",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 475
+    },
+    {
+      "number": 18,
+      "before": "This proves Corollary~\\ref{cor:catalog} using the stated geometric\nreceipts and the separate arithmetic results. It does not cover all\n112 catalogue entries or every zero-boundary degeneration.",
+      "after": "These decompositions and the separate arithmetic results prove\nCorollary~\\ref{cor:catalog} on its stated domains.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 488
+    },
+    {
+      "number": 19,
+      "before": "The following are received classifications of valid catalogue graphs.\nThe R004 prose arguments are retained; K3, C1 and O2 now additionally\nhave Lean graph classifications on their respective stated domains. Independent derivation of the same conclusion is distinct\nfrom checking every coordinate convention in the research team's\ntables. Lean arithmetic for a predicate does not by itself prove its\nequivalence to a graph property.\n\n",
+      "after": "The following closed conditions concern valid catalogue graphs on\nthe displayed domains.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 493
+    },
+    {
+      "number": 20,
+      "before": "Received scope",
+      "after": "Proof and domain",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 504
+    },
+    {
+      "number": 21,
+      "before": "Integer GC for $r\\ge2$; at 1 no degree-six vertex. R004 report 4 and GC proof.",
+      "after": "Integer GC for $r\\ge2$; at 1 no degree-six vertex.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 505
+    },
+    {
+      "number": 22,
+      "before": "Existing $C_{60}$ witness and integer GC. R004 report 14 does not supply a new $p=1$ witness.",
+      "after": "$C_{60}$ witness and integer GC.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 506
+    },
+    {
+      "number": 23,
+      "before": "R004 prose proof retained; Lean graph iff received for paths only. The IPR condition is outside Lean.",
+      "after": "Graph iff in Lean; IPR equivalence by prose geometry.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 507
+    },
+    {
+      "number": 24,
+      "before": "R004 report 4 and B2 proof, whole positive domain.",
+      "after": "Prose proof on the whole positive domain.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 508
+    },
+    {
+      "number": 25,
+      "before": "R004 positive and necessary prose proofs retained; full Lean graph iff now received, without a prose bridge.",
+      "after": "Graph iff in Lean on the displayed domain.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 509
+    },
+    {
+      "number": 26,
+      "before": "R004 prose absence retained; Lean graph absence received, without a prose bridge. IPR remains outside Lean.",
+      "after": "Graph absence in Lean; IPR by prose geometry.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 510
+    },
+    {
+      "number": 27,
+      "before": "R004 reports 5--6 and both prose directions. Predicate-ray arithmetic formalized; full graph iff not formalized.",
+      "after": "Prose graph iff and Lean predicate-ray arithmetic.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 511
+    },
+    {
+      "number": 28,
+      "before": "The research\nteam's full table of eighteen E10 regions, walls and witnesses is not\nall independently reviewed.",
+      "after": "The E10 argument uses eighteen parameter regions, their walls and\nexplicit witnesses.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 519
+    },
+    {
+      "number": 29,
+      "before": "For O2, absence on $t,d\\ge2$ now also has a Lean graph proof, while\nIPR on that domain remains a received prose result. The mapping-metadata\ndisclosure is retained. Boundary paths for O2$(1,d)$ with $d\\ge3$ and\nO2$(t,1)$ with $t\\ge3$ are Lean-proved; existence at O2$(1,1)$,\nO2$(1,2)$ and O2$(2,1)$ is outside the received Lean results. The ray\ntheorem nevertheless covers these constant rays without deciding their\npath existence. For D14, the auxiliary Lean lemma\n\\record{Claude5D14.d14_no_path} now proves absence for $r,s\\ge2$.\nIt is not a Comparator target: the six-kernel D14 receipt covers only\n\\record{ClaudeChallengeD14.main}. Boundary paths at $(1,s)$, $s\\ge2$,\nand $(r,1)$, $r\\ge2$, are also received Lean lemmas. Existence at\nD14$(1,1)$ remains outside Lean. No new standalone D14 iff is asserted\nhere. R004's separate D14 prose ray proof is retained.\nFor D1 with both parameters at least two, the research team retains\na belt-based absence draft; R004's all-ray\nperiodicity receipt is not a new independent proof of that closed\nabsence claim. Common integer scaling by at least two gives absence\nin the specified leapfrog domains, but does not classify their\nprimitive points.\n\n",
+      "after": "For O2, absence holds on $t,d\\ge2$, with IPR on that domain supplied\nby prose geometry. Boundary paths exist at O2$(1,d)$ for $d\\ge3$ and\nO2$(t,1)$ for $t\\ge3$. At O2$(1,1)$, O2$(1,2)$ and O2$(2,1)$,\nthe path decisions have finite computational evidence. Every constant\ngraph has a constant ray decision, independently of computing it.\nFor D14, absence holds for $r,s\\ge2$, and explicit paths exist at\n$(1,s)$ for $s\\ge2$ and $(r,1)$ for $r\\ge2$. These are Lean graph\nlemmas; the D14 ray theorem includes all positive boundary rays.\nD14$(1,1)$ has a finite path witness. For D1 with both parameters at\nleast two, a belt-based absence argument is a proof sketch. Common\ninteger scaling by at least two gives absence in the specified\nleapfrog domains, without classifying their primitive points.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 525
+    },
+    {
+      "number": 30,
+      "before": "For E10$(p,1,s)$, $m=s+2$, the research team's witnesses give",
+      "after": "For E10$(p,1,s)$, $m=s+2$, explicit witnesses give",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 545
+    },
+    {
+      "number": 31,
+      "before": "These three examples are non-IPR. R004's report 4 independently\nconstructed and checked them. This is minimality only inside the\n$r=1$ E10 family, not a general iff.",
+      "after": "These three examples are non-IPR. Exhaustive construction and\nindependent checks establish the stated minimality inside the $r=1$\nE10 family.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 552
+    },
+    {
+      "number": 32,
+      "before": "The pre-existing D12 branches are retained as historical scope:",
+      "after": "For D12, the following partial branches apply:",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 556
+    },
+    {
+      "number": 33,
+      "before": "research team's $|r-3s|=1$ and $r\\ge4s$ branches have their earlier\nreview limitations. A full D12 classification, including newer work,\nis outside this paper and this packet.",
+      "after": "additional $|r-3s|=1$ and $r\\ge4s$ branches are construction and\nabsence arguments with their stated geometric conditions. A full D12\nclassification is the subject of a separate article.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 559
+    },
+    {
+      "number": 34,
+      "before": "theory. The received Lean files establish the exact predicates below.",
+      "after": "theory. The following exact predicates have Lean arithmetic proofs.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 579
+    },
+    {
+      "number": 35,
+      "before": "\\record{Claude2.k3_ray_all} proves eventual periodicity of",
+      "after": "For K3, eventual periodicity holds for",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 587
+    },
+    {
+      "number": 36,
+      "before": "\\record{k3_ray_const} gives eventual constancy.",
+      "after": "the predicate is eventually constant.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 591
+    },
+    {
+      "number": 37,
+      "before": "constant, \\record{k3_ray_period} gives period $b$ from any specified",
+      "after": "constant, period $b$ is valid from any specified",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 592
+    },
+    {
+      "number": 38,
+      "before": "\\record{Claude2.e10_ray_all} proves the corresponding all-ray statement",
+      "after": "For E10, the corresponding all-ray statement holds",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 595
+    },
+    {
+      "number": 39,
+      "before": "constant; when it is constant, \\record{e10_ray_period} gives that",
+      "after": "constant; when it is constant, that",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 598
+    },
+    {
+      "number": 40,
+      "before": "positive modulus as a period on the given domain tail.",
+      "after": "positive modulus is a period on the given domain tail.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 599
+    },
+    {
+      "number": 41,
+      "before": "\\record{b2_ray_all}, \\record{c1_ray_all}, \\record{a1_ray_all} and\n\\record{a2_ray_all} give eventual constancy of their domain-qualified",
+      "after": "For B2, C1, A1 and A2, eventual constancy holds for the domain-qualified",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 601
+    },
+    {
+      "number": 42,
+      "before": "The first paper proves the full graph classification. Its\n\\record{ClaudeCor.criterion_ray}, restated as \\record{Claude2.a3_ray},\nformalizes the arithmetic existence of a threshold and positive\nperiod. A separate release bridge gives graph-path periodicity.\nNeither result certifies an executable threshold/period algorithm.\nR004's separate arithmetic argument permits period $|\\Delta|$ for\nnonconstant $\\Delta\\ne0$ rays and period 1 otherwise. This is not a\nleast-period statement or formalization of the general geometric\ntheorem. After classification, eventual periodicity is also a\nconsequence of \\cite[Theorem 1.15]{BGW} and is not a separate novelty claim.\n\n",
+      "after": "The first paper proves the full graph classification and a graph-path\nray theorem. Its arithmetic proof establishes a threshold and positive\nperiod; an independent arithmetic derivation permits period $|\\Delta|$\nfor nonconstant $\\Delta\\ne0$ rays and period 1 otherwise. These are\nvalid periods, with no claim of leastness. After classification,\neventual periodicity is also a consequence of\n\\cite[Theorem 1.15]{BGW}.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 620
+    },
+    {
+      "number": 43,
+      "before": "The original compressed-word calculations did not use the known\nfamily congruences. Later independent prose arguments recover all\n$t$ from independently derived family conditions, or from explicit\nD12 blocks. The expected statements were known, not blind predictions.\n",
+      "after": "Compressed-word calculations and independent family-condition\narguments give these exact all-parameter decisions.\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 642
+    },
+    {
+      "number": 44,
+      "before": "\\record{Claude2.k3_example} now proves for every $t\\in\\N$",
+      "after": "For every $t\\in\\N$, the K3 arithmetic theorem gives",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 647
+    },
+    {
+      "number": 45,
+      "before": "\\record{Claude2.e10_example} proves the corresponding E10 predicate",
+      "after": "The E10 arithmetic theorem gives the corresponding predicate",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 650
+    },
+    {
+      "number": 46,
+      "before": "The earlier D12 two-ray receipt covers every $s\\ge41$:\nD12$(3s+2,s)$ is negative and D12$(3s+1,s)$ has a path with\n$56s+12$ distinct vertices. Its reported computer-assisted proof checks\n2,058 nonnegativity conditions and 756 no-integer-solution conditions,\n2,814 in total. A separately coded reread by the same verifier is not\na further reviewer. The coordinator's independent construction at\n$s=58$ agrees, with a 3,260-vertex positive witness; it does not audit\nall 2,814 conditions. These records are neither Lean proofs nor a\nfull D12 classification.\n\n",
+      "after": "For every $s\\ge41$, D12$(3s+2,s)$ is negative and\nD12$(3s+1,s)$ has a path with $56s+12$ distinct vertices. The\ncomputer-assisted proof checks 2,058 nonnegativity conditions and\n756 no-integer-solution conditions, 2,814 in total. A separate\nconstruction at $s=58$ gives a 3,260-vertex positive witness.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 656
+    },
+    {
+      "number": 47,
+      "before": "\\section{Received formalization and what it does not cover}\\label{sec:formal}\n\\subsection{Theorem 1a on the coordinator's specification}\nThe current entry points are \\record{ClaudeChallenge2.main} in\n\\record{Formal/Claude3ComparatorSolution.lean} and\n\\record{ClaudeChallenge2.State.main_statement} of type\n\\record{ClaudeChallenge2.MainStatement} in \\record{Formal/Claude3Thm1a.lean}.\nFor every fixed signature $S$ and $t_1$, they prove that if\n\\record{Valid} $S\\,t$ and \\record{TrianglesInCharts} $S\\,t$ hold for all\n$t\\ge t_1$, then some $t_0$ and positive $P$ satisfy\n\\record{PathExists} $S\\,t\\leftrightarrow$ \\record{PathExists} $S\\,(t+P)$\nfor every $t\\ge t_0$. The independent challenge was written by the\ncoordinator before the proof and amended to version 2 to include\n\\record{TrianglesInCharts}. The paper-to-specification passage is the\nprose lemma following Theorem~\\ref{thm:aligned}; it is not formalized.\nThe Lean assumptions are weaker than the paper's geometric hypotheses:\nthey do not require a sphere, exactly twelve cones, or nondegenerate\npolygon disks. With the same conclusion, the exact formal result is\ntherefore a stronger sufficient theorem, not a literal restatement\nof the paper's geometric objects.\n\\record{ClaudeChallenge2.main_residue} in \\record{Formal/Claude3Residue.lean}\nproves the fixed-residue variant after the decision-to-branch agreements\nare supplied.\n\nThe proof was supplied by Claude workers, through finite-word MSO,\nheight folding, chart geometry, quotient identifications, state\nreduction and sentence assembly. It is not an independent Lean\nproof by the research team. The research team's serial build and\nfresh axiom queries for all three declarations found only\n\\record{propext}, \\record{Classical.choice} and \\record{Quot.sound}.\nThe saved coordinator Comparator receipt reports six kernels\naccepting the proof of \\record{ClaudeChallenge2.main} in paranoid mode;\nthat receipt is not a separate six-kernel check of the residue declaration.\nThis edit does not rerun external kernels or provide OS process isolation.\nThe owner's version-2 statement-meaning confirmation is recorded\nseparately. Human proof peer review remains unrecorded. Neither this formalization nor\nR004's separate prose proof establishes novelty or an executable\ngeometric compiler, practical threshold, or least period.\n\n",
+      "after": "\\section{Specification and family-specific graph proofs}\\label{sec:formal}\nFor every fixed signature $S$ and $t_1$, the specification-level\ntheorem states that if \\record{Valid} $S\\,t$ and\n\\record{TrianglesInCharts} $S\\,t$ hold for every $t\\ge t_1$, then\nsome $t_0$ and positive $P$ satisfy\n\\record{PathExists} $S\\,t\\leftrightarrow$\n\\record{PathExists} $S\\,(t+P)$ for all $t\\ge t_0$.\nThese assumptions require the local validity and triangle-lifting\nproperties; the geometric correspondence lemma supplies them from\nthe convex disk decomposition. The residue-class variant combines\nfixed branches after their decisions agree with the original family.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 666
+    },
+    {
+      "number": 48,
+      "before": "The new entry declarations are\n\\begin{quote}\\small\\noindent\n\\record{Claude4K3.k3_statement} : \\record{Claude2Aligned.K3Statement};\\\\\n\\record{Claude4K3.noThree};\\\\\n\\record{ClaudeChallengeK3.main}.\n\\end{quote}\nFor natural $r,s\\ge2$, the first proves the full iff between an actual\nliteral path in \\record{Claude2Aligned.k3Graph}$(r,s)$ and\n$s\\equiv\\pm1\\pmod r$. The second proves that no edge has three common\nneighbours, using a classification of graph triangles in the cap or tube.\nTogether with the earlier necessity machinery, this supplies the missing\nnecessity direction. R004's positive and necessary prose proofs remain\nseparate evidence.\n\nThe third proves eventual periodicity of literal-path existence on every\nray $(r,s)=(r_0+at,s_0+bt)$ with $r_0,s_0\\ge1$ and $a,b\\ge0$.\nThere are no \\record{Valid} or \\record{TrianglesInCharts} hypotheses.\nThe K3 gap previously filled by the general prose correspondence lemma is\ntherefore closed in Lean on this explicit quotient specification. The\nproof constructs the needed common-neighbour property directly and does\nnot construct a signature isomorphism into Theorem 1a.\nNonconstant parameter-one boundary rays use explicit eventual paths;\nconstant rays are periodic because their decision never changes. The\nmodular iff itself is still restricted to $r,s\\ge2$.\n\n",
+      "after": "For natural $r,s\\ge2$, K3 has a literal path if and only if\n$s\\equiv\\pm1\\pmod r$. A classification of graph triangles in the\ncap or tube proves that no edge has three common neighbours and\nsupplies the forced-continuation argument for necessity.\n\nLiteral-path existence is eventually periodic on every ray\n$(r,s)=(r_0+at,s_0+bt)$ with $r_0,s_0\\ge1$ and $a,b\\ge0$.\nThe proof constructs the common-neighbour property directly.\nNonconstant parameter-one boundary rays use explicit eventual paths;\nconstant rays have constant decisions. The modular iff has domain\n$r,s\\ge2$.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 706
+    },
+    {
+      "number": 49,
+      "before": " definitions are those of the first paper's specification.\nThe earlier sufficient declaration \\record{Claude2K3.k3_sufficient}\nof type \\record{Claude2Aligned.K3Sufficient} is retained.",
+      "after": " definitions are those of the first paper's specification.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 734
+    },
+    {
+      "number": 50,
+      "before": "The proof follows R004's tube construction.",
+      "after": "The proof uses a tube construction.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 738
+    },
+    {
+      "number": 51,
+      "before": "\\record{Claude2K3.deg_corner} proves degree five for all twelve labelled",
+      "after": "All twelve labelled corner representatives have degree five. These",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 754
+    },
+    {
+      "number": 52,
+      "before": "corner representatives. It does not by itself prove they exhaust all\ndegree-five vertices or all global vertex types.",
+      "after": "representatives supply the endpoint degree-five witnesses.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 755
+    },
+    {
+      "number": 53,
+      "before": "\\record{deg_hex_interior} proves degree six in hexagon interiors.",
+      "after": "Hexagon interiors have degree six.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 758
+    },
+    {
+      "number": 54,
+      "before": "\\record{deg_tri_interior} proves degree six in the six noncentral cap-triangle interiors.",
+      "after": "The six noncentral cap-triangle interiors have degree six.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 760
+    },
+    {
+      "number": 55,
+      "before": "General seam interiors and the central cap triangles are not covered\nby those older partial degree lemmas alone. The new necessity proof\nuses the cap/tube triangle classification and common-neighbour bound;\nthe K3 iff in Section~\\ref{sec:conditions} is now formalized. This does\nnot relabel the partial degree lemmas as a global degree classification.\n\nThe older graph definitions were written by a Claude worker. Before\nthe new proof, the coordinator copied them into a separate K3 challenge.\nStatic comparison confirms the copied definitions and the version-2\nchallenge/solution statement agree. An independent AI reader of version 1\nfound the missing parameter-one boundaries; version 2 corrected them\nbefore the proof. The reader's finite checks and a separate Python mirror\nsupport the catalogue correspondence, without constituting a universal\ncatalogue-isomorphism proof or human proof review. No owner-confirmation\nfield or procedure is used for K3. Shared specification files contain\nunused D12 definitions, but no new D12 classification is a root or\nclaimed result of this package.\n\n",
+      "after": "The necessity argument uses the cap/tube triangle classification\nand common-neighbour bound together with these local degree facts.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 761
+    },
+    {
+      "number": 56,
+      "before": "The two received entry declarations are\n\\begin{quote}\\small\\noindent\n\\record{ClaudeChallengeC1.classification};\\\\\n\\record{ClaudeChallengeC1.main}.\n\\end{quote}\nOn \\record{Claude2Aligned.c1Graph}$(r,s)$, natural $r,s\\ge1$ admit a\nliteral path if and only if $s=1$. Lean's $r,s$ are the paper's $a,b$;\nthis is the path condition $b=1$ in Section~\\ref{sec:conditions},\nincluding $a=1$. The separate IPR equivalence $a,b\\ge2$ is not stated\nor proved by these declarations. R004's C1 prose proof remains separate\nevidence. The second declaration proves actual-path eventual periodicity\non every ray $(r_0+ut,s_0+vt)$ with $r_0,s_0\\ge1$ and $u,v\\ge0$,\nincluding constant rays. Eventually positive integer rays are covered\nafter shifting their starting index; this reindexing is explanatory\narithmetic, not a separately received all-integer Lean declaration.\n\n",
+      "after": "For C1, natural $r,s\\ge1$ admit a literal path if and only if $s=1$.\nHere $r,s$ correspond to the paper's $a,b$. Actual-path existence is\neventually periodic on every ray $(r_0+ut,s_0+vt)$ with\n$r_0,s_0\\ge1$ and $u,v\\ge0$, including constant rays.\nEventually positive integer rays are covered by shifting their\nstarting index to the positive natural domain.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 780
+    },
+    {
+      "number": 57,
+      "before": "The vertex bijection\n\\record{Claude4C1.vEquiv} and adjacency theorem \\record{adj_iff} identify",
+      "after": "A vertex bijection preserving adjacency identifies",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 797
+    },
+    {
+      "number": 58,
+      "before": "The transfer \\record{Claude4C1.c1_iff_g4} preserves literal-path\nexistence.",
+      "after": "The bijection preserves literal-path existence.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 801
+    },
+    {
+      "number": 59,
+      "before": "and an explicit path for $s=1$. It does not use the external cyclic\nedge-connectivity theorem of the R004 prose argument. C1 thus needs\nno general prose geometric-to-specification bridge for these path claims.",
+      "after": "and an explicit path for $s=1$.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 804
+    },
+    {
+      "number": 60,
+      "before": "The coordinator fixed the specification and challenge before the proof.\nOne independent AI statement reader returned ``faithful with caveats'',\nchecking the parameter correspondence by the area formula\n$8r^2+16rs+4s^2$ and identifying IPR as outside the challenge.\nThe saved mirror agrees with the R004 construction on counts, degree\nsequence and the path decision for 36 pairs $1\\le r,s\\le6$; the reader's\n25 finite pairs lie within that range and are not a second disjoint census.\nThese finite checks are not a universal catalogue-isomorphism certificate\nor human proof review. No owner-confirmation field or procedure is added.\nThe challenge has two intentional placeholders and is excluded from proof\ndependencies; the solution proves both statements. Exact sources and\nreceipt hashes are supplied in the machine packet.\n\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 808
+    },
+    {
+      "number": 61,
+      "before": "The received declarations are\n\\begin{quote}\\small\\noindent\n\\record{ClaudeChallengeO2.classification};\\\\\n\\record{ClaudeChallengeO2.main}.\n\\end{quote}\nThe first proves that \\record{Claude2Aligned.o2Graph}$(t,d)$ has no literal\npath for natural $t,d\\ge2$. The second proves actual-path eventual\nperiodicity on every ray $(t_0+an,d_0+bn)$ with $t_0,d_0\\ge1$ and\n$a,b\\ge0$, including parameter-one and constant rays. The parameter\nnames agree with the paper. Reindexing an eventually positive integer\nray to its positive tail remains explanatory arithmetic. R004's prose\nabsence proof is retained; these O2 path claims now need no general\nprose geometric-to-specification bridge. IPR is not formalized.\n\n",
+      "after": "For natural $t,d\\ge2$, O2 has no literal path. Actual-path existence\nis eventually periodic on every ray $(t_0+an,d_0+bn)$ with\n$t_0,d_0\\ge1$ and $a,b\\ge0$, including parameter-one and constant\nrays. Eventually positive integer rays are reindexed to their\npositive tail.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 822
+    },
+    {
+      "number": 62,
+      "before": "of side $t$. The equivalence \\record{Claude5O2.o2_iff_gm} identifies it",
+      "after": "of side $t$. A graph equivalence identifies it",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 838
+    },
+    {
+      "number": 63,
+      "before": "strips. It does not use the external cyclic edge-connectivity theorem\nof the R004 prose argument.",
+      "after": "strips.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 843
+    },
+    {
+      "number": 64,
+      "before": "Path existence at $(1,1),(1,2),(2,1)$ is not\nproved in Lean by this receipt.",
+      "after": "Path existence at $(1,1),(1,2),(2,1)$ is supported by finite checks.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 847
+    },
+    {
+      "number": 65,
+      "before": "The saved finite mirror finds paths there,\nwhich is finite evidence outside Lean.",
+      "after": "Explicit finite witnesses give paths there.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 850
+    },
+    {
+      "number": 66,
+      "before": "The specification and challenge were fixed before the proof by a\nseparate statement writer. One independent AI statement reader returned\n``faithful with caveats'', confirming the path domains and the carbon\norder $14t^2+16td+2d^2$, while retaining a caveat about identification\nwith the named catalogue family. Its 36 known pairs lie within the\nsaved mirror's 80 pairs $1\\le t\\le8$, $1\\le d\\le10$; they are not\na second disjoint census or a universal catalogue-isomorphism theorem.\nThe received mirror agrees with the verifier's construction on the\nrecorded graphs and decisions. No new owner-confirmation field,\nhuman proof review or independent Lean derivation is added. The inert\nchallenge has two intentional placeholders and is excluded from proof\ndependencies. Source and record hashes are supplied in the machine layer.\n\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 853
+    },
+    {
+      "number": 67,
+      "before": "The received entry \\record{ClaudeChallengeD14.main} proves actual-path\neventual periodicity on \\record{Claude2Aligned.d14Graph}$(r,s)$ for all\nnatural starts $r_0,s_0\\ge1$ and nonnegative slopes, including\nparameter-one and constant rays. It is the only D14 Comparator target;\nthere is no challenge classification theorem. The general prose\ngeometric-to-specification bridge is not used for this family result.\nR004's separate prose route remains evidence for the catalogue-ray claim.\n\n",
+      "after": "For D14, actual-path existence is eventually periodic on all natural\nrays $(r_0+an,s_0+bn)$ with $r_0,s_0\\ge1$ and nonnegative slopes,\nincluding parameter-one and constant rays. Eventually positive\ninteger rays are reindexed to a positive natural tail.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 867
+    },
+    {
+      "number": 68,
+      "before": "$s,2r+s$, subdividing each long side as $r,s,r$. The equivalence\n\\record{Claude5D14.d14_iff_gm} maps the quotient to two lattice hexagons",
+      "after": "$s,2r+s$, subdividing each long side as $r,s,r$. A graph\nequivalence maps the quotient to two lattice hexagons",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 876
+    },
+    {
+      "number": 69,
+      "before": "Twelve closed strips cover all 120 starts. No external cyclic\nedge-connectivity theorem is used.",
+      "after": "Twelve closed strips cover all 120 starts.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 882
+    },
+    {
+      "number": 70,
+      "before": "The auxiliary \\record{Claude5D14.d14_no_path} proves absence for\n$r,s\\ge2$. The lemmas \\record{Claude5D14.pe_R1} and\n\\record{Claude5D14.pe_S1} give explicit paths at $(1,s)$ for $s\\ge2$\nand $(r,1)$ for $r\\ge2$. They are received build/axiom-report results,\nnot separate targets of the six-kernel Comparator run. Existence at\n$(1,1)$ is not Lean-proved here; the constant-ray result does not need\nthat decision. We do not add a new standalone iff theorem.\n\nA separate writer fixed the specification and main statement before the\nproof. One independent AI reader returned ``faithful with caveats'',\nconfirming the parameter order and carbon order $8r^2+24rs+12s^2$,\nwhile retaining the named-catalogue correspondence caveat. Its 25 known\npairs are contained in the saved mirror's 81 pairs $1\\le r,s\\le9$;\nthese are overlapping finite checks, not a universal catalogue-isomorphism\nproof or human review. Exact definition/type/source comparisons and\noriginal-record hashes are supplied in the machine layer. No new\nowner-confirmation procedure is used. Eventually positive integer rays\nare reindexed to a positive natural tail in exposition, rather than\nclaimed as a separately received all-integer declaration.\n\n",
+      "after": "Absence holds for $r,s\\ge2$. Explicit paths exist at $(1,s)$ for\n$s\\ge2$ and $(r,1)$ for $r\\ge2$. At $(1,1)$, a finite path witness\nsupplies the decision; the constant-ray statement follows directly\nfrom constancy of the graph.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 885
+    },
+    {
+      "number": 71,
+      "before": "\\subsection{Historical conditional kernels}",
+      "after": "\\subsection{Conditional auxiliary lemmas}",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 905
+    },
+    {
+      "number": 72,
+      "before": "The earlier research layer supplies conditional pieces:",
+      "after": "The auxiliary lemmas have the following hypotheses:",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 907
+    },
+    {
+      "number": 73,
+      "before": "The geometric hypotheses, all-start coverage, full compressed action\nand a certified program are not supplied by those conditional types.\nThere were historically 57 such research declarations; the former\ntotal 98 also counted 41 A3 arithmetic entries. Neither count is a\nformalization percentage or the current library size.\n\n\\subsection{Pins, receipt scope and proof dependencies}\\label{sec:formal-records}\nThe received toolchain is Lean 4.35.0 with the fixed mathlib manifest.\nThe earlier arithmetic and K3 sufficiency reports record only\n\\record{propext}, \\record{Classical.choice}, \\record{Quot.sound} as\ntransitive axioms. Their receipt bytes and scopes are retained.\nFor Theorem 1a, its separate source closure and the earlier research-team\nbuild/axiom output remain fixed. For the new K3 results, the coordinator\nrecords a successful build and standard-three-axiom queries for all three\nentry declarations. The research team receives and hash-checks these\nrecords without running Lean.\n\nThe saved six-kernel K3 Comparator receipt checks\n\\record{ClaudeChallengeK3.main} in paranoid mode only; it is not a separate\nsix-kernel check of \\record{k3_statement} or \\record{noThree}.\nIt is also distinct from the earlier Theorem 1a and A3 receipts.\nAll six kernels check the same proof, not six independent derivations.\nThe K3 execution lacked OS process isolation on macOS. For C1, a separate\nparanoid Comparator receipt covers both\n\\record{ClaudeChallengeC1.classification} and \\record{ClaudeChallengeC1.main}:\nall six kernels accepted the same two supplied proofs. The coordinator\nalso records a successful build and standard-three-axiom queries for\nboth declarations. The worker report predates that Comparator run;\nits not-run note is retained as historical. C1 likewise lacked OS process\nisolation on macOS. A separate O2 paranoid Comparator receipt likewise\ncovers both \\record{ClaudeChallengeO2.classification} and\n\\record{ClaudeChallengeO2.main}, with all six kernels accepting the same\nsupplied proofs. The coordinator reports successful builds and\nstandard-three-axiom queries for both. The worker report precedes the\nComparator run and its not-run note is historical. O2 also lacked OS\nprocess isolation on macOS. For D14, the separate six-kernel receipt\nchecks only \\record{ClaudeChallengeD14.main}. The auxiliary absence and\nboundary lemmas are not Comparator targets. The coordinator separately\nreports successful builds and standard-three-axiom queries for main and\n\\record{d14_no_path}; the worker also reports the boundary-lemma queries.\nThe worker's pre-Comparator not-run note is historical. D14 likewise\nlacked OS process isolation. No external kernel or Lean command is rerun\nfor this edition.\nThe claims' expository dependencies and Lean's imported proof-term\ndependencies are different. A prose statement can remain open for\nits coordinate or human-semantic bridge while a separate exact\nformal declaration is proved. Conversely the proved arithmetic\npredicates do not supply their graph iff interpretation. No human\npeer review of the proofs is recorded and novelty is not established.\n\n",
+      "after": "The finite decision, scaled-lattice transport and rank statements\nare used with their displayed hypotheses.\n\n\\label{sec:formal-records}\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 916
+    },
+    {
+      "number": 74,
+      "before": "\\textbf{Status.} The coordinator has reviewed the skeleton of AN\nSections 2--6 as a plausible proof sketch. Explicit Section 5 transfer\nconditions and numerical validation remain incomplete; no independent\nsecond proof covers this wider domain. Four obligations below remain.\nThis section is not part of the main theorem or the abstract's result.\n\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 968
+    },
+    {
+      "number": 75,
+      "before": "The AL/AM/AH proposal",
+      "after": "The return-tower construction",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 987
+    },
+    {
+      "number": 76,
+      "before": "verify the AH/AM affine tower coefficients",
+      "after": "verify the affine tower coefficients",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1032
+    },
+    {
+      "number": 77,
+      "before": "For the fixed-cylinder argument AD let",
+      "after": "For the fixed-cylinder argument let",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1064
+    },
+    {
+      "number": 78,
+      "before": "The old D12$(3,3t+4)$ example",
+      "after": "The D12$(3,3t+4)$ example",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1082
+    },
+    {
+      "number": 79,
+      "before": "The former general bounded-passage forecast was withdrawn.\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1084
+    },
+    {
+      "number": 80,
+      "before": "\\subsection{Dated finite evidence}",
+      "after": "\\subsection{Finite checks and their domains}",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1086
+    },
+    {
+      "number": 81,
+      "before": "The packet retains, rather than reruns, the relevant evidence.\nT0770 compares 1,809 arithmetic values on nine known A3 rays;\nT0771 adds fourteen graph decisions on an independent constructor.\nThose fourteen are not unseen tests and the 1,809 values are not counted\ntwice. T0887 checks fixed tail coefficients beyond 64 on those rays.\nT0888 audits E10's fixed descriptor: eight charts, 36 inverse gluings,\n108 intervals, 156 connections, 120 descriptors and twelve labels.\nT0889 audits 71 charts, 342 edges and 21 single-zero boundaries.\nThese are finite checks of supplied data, not the general ownership\ntheorem. The recorded AM audit has 6,564 inputs and 67,312 states;\nthe AN phase audit has 48 directions, 14,904 entrances, 4,005 intervals\n(1,013 empty), 5,496 lifts and 40,380 conjugacy cells.\n\nR004's report-14 finite arithmetic check has 378 coefficient\nrepresentations and 13,430 pairs, maximum recorded period 44 and\nthreshold 69. The report-15 checks include 7,056 strips, 2,255 nonempty\nrow outputs, 16,212 subintervals, 99,225 ordered row pairs and 509,160\nfolded-point comparisons. Their hand-found row correction and earlier\ntype/key failures are kept with their chronology. Numerical agreement\ndoes not replace either general proof or repair its hypotheses.\nNo graph construction, R004 checker, or historical scientific audit\nwas rerun for this translation.\n\nThe K3 worker's earlier finite mirror agreed with its specification\nand the verifier's construction on the stated known samples. The two\nconstructions and generated Lean text are separate from the kernel\nproof. Generated degree formulas were fitted from sample data, but the\nreceived Lean theorem checks their universal statements; samples alone\nwould not justify sufficiency. The worker's mirror is not a new\nindependent reviewer of its own specification.\n\n",
+      "after": "An arithmetic comparison evaluates 1,809 values on nine known A3\nrays, and fourteen full graph decisions use an independent constructor.\nThe fourteen graph inputs are known examples and the arithmetic\nvalues form one sample set. Fixed tail coefficients beyond 64 are\nchecked on those rays. The E10 descriptor audit checks eight charts,\n36 inverse gluings, 108 intervals, 156 connections, 120 descriptors\nand twelve labels. A local polygon audit covers 71 charts, 342 edges\nand 21 single-zero boundaries. The return-tower audit has 6,564\ninputs and 67,312 states. The phase audit covers 48 directions,\n14,904 entrances, 4,005 intervals (1,013 empty), 5,496 lifts and\n40,380 conjugacy cells.\n\nAn independent arithmetic implementation checks 378 coefficient\nrepresentations and 13,430 pairs, with maximum period 44 and\nthreshold 69 in those finite records. Passage-output tests cover\n7,056 strips, 2,255 nonempty row outputs, 16,212 subintervals,\n99,225 ordered row pairs and 509,160 folded-point comparisons.\nThese finite ranges check the specified algebra and constructors.\n\nQuotient-model mirror tests compare vertex and edge counts, degree\nsequences, seams and path decisions. C1 uses 36 pairs $1\\le r,s\\le6$;\nO2 uses 80 pairs $1\\le t\\le8$, $1\\le d\\le10$; D14 uses 81 pairs\n$1\\le r,s\\le9$. Statement-reader samples of 25, 36 and 25 pairs,\nrespectively, are contained in those ranges. Generated degree and\nstrip formulas are verified universally by their Lean proofs.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1088
+    },
+    {
+      "number": 82,
+      "before": "The HTML numbering is Theorem 3.2; the same v1 PDF calls it Theorem 14.\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1125
+    },
+    {
+      "number": 83,
+      "before": "For these two sources (S2191, S2192), only the official abstracts and\nbibliographic records were obtained. We do not infer their full\nhypotheses or claim an application from an unread theorem.",
+      "after": "The available abstracts and bibliographic records describe these\nwalk and algorithm problems.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1181
+    },
+    {
+      "number": 84,
+      "before": "The received R005 comparison read the theorem statements and specified\nsections listed in the packet's source records, not all proofs. Within\nthat reading, no prior result giving the full claim from the same\ngeometric hypotheses was located. Novelty is not established.",
+      "after": "Within the literature comparison of the cited theorem statements\nand sections, no prior result giving the full claim from the same\ngeometric hypotheses has been located. The priority comparison remains\nopen.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1196
+    },
+    {
+      "number": 85,
+      "before": "The general convex-face proof is received research work, not an\nalready published theorem cited as external authority. Human proof\npeer review and full comparison with catalogue/zigzag theory remain\nnecessary. The extension's unfinished geometric details do not\ndisappear on receipt of the convex-face proof.",
+      "after": "The convex-face reduction is the result proved here. The full\ncomparison with catalogue and zigzag theory and the extension's\ngeometric transfer obligations remain separate questions.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1206
+    },
+    {
+      "number": 86,
+      "before": "The stronger M4/M4-prime\nquestions remain separate.",
+      "after": "These stronger global-definability questions remain separate.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1221
+    },
+    {
+      "number": 87,
+      "before": "\\section{Representative formal statements and source correspondence}\\label{app:correspondence}\nThe accompanying \\record{v3-correspondence.md} maps every numbered v3\nsection to this reorganization, including the moved oblique-direction\nsketch. It distinguishes translation, condensation and formal-status\nupdates; no prose-equivalence theorem is claimed.\n\nThe primary received declarations now include\n\\record{ClaudeChallenge2.main} and\n\\record{ClaudeChallenge2.State.main_statement} and\n\\record{ClaudeChallenge2.main_residue}, followed by\n\\record{Claude2.k3_ray_all}, \\record{Claude2.e10_ray_all},\n\\record{Claude2.k3_example}, \\record{Claude2.e10_example}, and\n\\record{Claude2K3.k3_sufficient}. The new K3 entries are\n\\record{ClaudeChallengeK3.main}, \\record{Claude4K3.k3_statement} and\n\\record{Claude4K3.noThree}. The new C1 entries are\n\\record{ClaudeChallengeC1.classification} and \\record{ClaudeChallengeC1.main}.\nThe O2 entries are \\record{ClaudeChallengeO2.classification} and\n\\record{ClaudeChallengeO2.main}. The D14 entry is\n\\record{ClaudeChallengeD14.main}; its auxiliary absence lemma\n\\record{Claude5D14.d14_no_path} has a separate build/axiom-report scope.\nThe machine layer supplies their exact\ntypes, source commit and the kind of proof receipt. The historical\nrepresentative kernel types remain:\n\\begin{quote}\\small\n\\record{finite_literal_path_decision}: finite type, two-common-neighbour\nhypothesis, cone predicate and fixed oriented triangle imply a first\nrepeat at most the number of vertices, and path existence iff a legal\nendpoint occurs before it.\\par\n\\record{cylinder_portal_shift}: a B\\'ezout witness for primitive $u$\nand $g\\mid Q/\\mathrm{cylHeight}(u,v)$ imply that the stated shifted\ndisplacement is a multiple of $gu$. The integer-division and\ndivisibility hypotheses are retained.\\par\n\\record{induction_uniform_depth}: a finite-list child relation with a\nstrictly decreasing lexicographic natural rank has a finite uniform\ndepth from each starting state.\\par\n\\record{iet_component_uniform_depth}: the concrete equal-final-label\nremoval component has such a depth; the omitted IET branches are not\nthereby formalized.\n\\end{quote}\nThe supplied exact sources, not these paraphrases, determine the Lean\ntypes. Dependency revisions are pinned in \\texttt{lake-manifest.json}\nand the toolchain in \\texttt{lean-toolchain}. Caches, compiled binaries\nand raw graph streams are intentionally omitted; no separate artifact\ncollection is supplied. For optional local reproduction, obtain the pinned\ndependencies through Lake and use \\texttt{lake exe cache get} for mathlib\nbuild artifacts. Contact is through GitHub Issues at the repository\nspecified in \\texttt{REPOSITORY-URL.txt}.\n\n",
+      "after": "\\section{Auxiliary formal statements}\\label{app:correspondence}\nThe auxiliary results retain the following mathematical hypotheses.\n\\begin{quote}\\small\nA finite graph with two common neighbours per edge, a cone predicate\nand a fixed oriented triangle has a first repeat at most the number\nof vertices; a literal path exists exactly when a legal endpoint\noccurs before that repeat.\\par\nA B\\'ezout witness for primitive $u$ and\n$g\\mid Q/\\mathrm{cylHeight}(u,v)$ imply that the stated shifted\ndisplacement is a multiple of $gu$, with integer-division and\ndivisibility hypotheses.\\par\nA finite-list child relation with a strictly decreasing lexicographic\nnatural rank has a finite uniform depth from each starting state.\\par\nThe concrete equal-final-label removal component has such a depth.\n\\end{quote}\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1257
+    },
+    {
+      "number": 88,
+      "before": "The author used Codex and Claude Code\nto assist with literature organization, mathematical exploration,\nproof drafting, implementation, finite verification, formalization of\nthe explicitly identified arithmetic and graph statements and the\nspecification-level Theorem 1a, and English exposition. Claude workers\nsupplied the general theorem's, K3's, C1's, O2's and D14's Lean proofs against the\ncoordinator's prior specifications. The research team checked the\nreceived sources and records; it did not supply an independent Lean\nderivation or rerun Lean for this D14 edition. The author is responsible\nfor the published account, its provenance, and the stated limits of\nverification. AI systems are not listed as authors. AI prose reviews\nare identified separately from human review. Only the explicitly\nlisted Lean propositions are described as formally proved; finite\nchecks and independently constructed tests have their stated domains.\nNo claim of complete human checking of every argument is made.\n\n",
+      "after": "The author used Codex and Claude Code to assist with literature\norganization, mathematical exploration, proof drafting, implementation,\nfinite verification, formalization and English exposition. The author\nis responsible for the mathematical account and its stated proof\nscope. AI systems are not listed as authors.\n\n",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1306
+    },
+    {
+      "number": 89,
+      "before": "2007. The received use is the cited established cyclic-connectivity\nstatement, not a new reading of its original proof.",
+      "after": "2007. The cyclic 5-edge-connectivity statement is cited there as known.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1344
+    },
+    {
+      "number": 90,
+      "before": "The stored reading covers the stated main theorems, not the full proof.\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1357
+    },
+    {
+      "number": 91,
+      "before": "The stored R005 reading distinguishes its nonzero-denominator hypothesis\nfrom eventual positivity and from the several-interval setting.\n",
+      "after": "",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1361
+    },
+    {
+      "number": 92,
+      "before": "2007, p.~1 only in the stored reading.",
+      "after": "2007, p.~1.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1376
+    },
+    {
+      "number": 93,
+      "before": "doi:10.1007/s11047-015-9527-0. Official abstract only.",
+      "after": "doi:10.1007/s11047-015-9527-0.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1383
+    },
+    {
+      "number": 94,
+      "before": "doi:10.1007/3-540-57182-5\\_66. Official abstract only.",
+      "after": "doi:10.1007/3-540-57182-5\\_66.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1386
+    },
+    {
+      "number": 95,
+      "before": "The K3, C1, O2 and D14 parts now have direct Lean ray proofs on their",
+      "after": "The K3, C1, O2 and D14 parts have direct family-specific ray proofs on their",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 240
+    },
+    {
+      "number": 96,
+      "before": "dependent on the effective elimination result \\cite{QE}, whose full\nproof was not reaudited;",
+      "after": "dependent on the effective elimination result \\cite{QE};",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1034
+    },
+    {
+      "number": 97,
+      "before": "None is newly resolved here.",
+      "after": "These four conditions delimit the proof sketch.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1036
+    },
+    {
+      "number": 98,
+      "before": "the stored survey did\nnot locate an identical general theorem; this is not a novelty proof.",
+      "after": "the literature comparison has not located an identical general theorem;\nthe comparison remains open.",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1215
+    },
+    {
+      "number": 99,
+      "before": "The stored local coefficient audit gives",
+      "after": "The local coefficient audit gives",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1232
+    },
+    {
+      "number": 100,
+      "before": "containment and order inequalities of the Section 5 transfer",
+      "after": "containment and order inequalities of the local geometric transfer",
+      "reason": "Move verification history; retain current mathematics and scope.",
+      "source_line": 1031
+    }
+  ]
+}
