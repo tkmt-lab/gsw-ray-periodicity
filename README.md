@@ -56,4 +56,4 @@ Text, figures and data: CC BY 4.0. Code and Lean sources: Apache-2.0. See [`pack
 
 ## Contact
 
-Please open an issue in this repository.
+Please open an issue in this repository, or write to research@tatsuhikotakimoto.com.
