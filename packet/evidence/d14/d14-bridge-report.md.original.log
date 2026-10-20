@@ -1,0 +1,137 @@
+# D14 橋渡し 報告 2026-10-20
+
+作業：Claude（claude-lean worktree、branch `claude-lean`）。対象は
+`formal/Formal/Claude5D14ComparatorChallenge.lean` の主張文 `ClaudeChallengeD14.main`。
+作業時間は約1時間10分（20:05 ごろ〜21:15、計画 20:18 commit）。
+
+## 結論
+
+`ClaudeChallengeD14.main`（r₀, s₀ ≥ 1・a, b ≥ 0 の直線 (r₀ + a n, s₀ + b n) 上で、文字どおりの
+道の存在は最終的に周期的）を、`sorry`・`native_decide`・新しい `axiom` なしで証明した。
+解答ファイルは `formal/Formal/Claude5D14ComparatorSolution.lean`。条件付きの部分は残っていない。
+
+途中で示したことから、r, s ≥ 1 で (1, 1) を除けば「道がある ⇔ r = 1 または s = 1」も Lean で
+成り立つ（r, s ≥ 2 で道なし `d14_no_path`、D14(1, s) (s ≥ 2) と D14(r, 1) (r ≥ 2) に道あり）。
+主張文はこの分類を述べていないので、解答には入れていない。主張文が偽・意図と違うという兆候は
+なかった。
+
+R004 の外部定理（サイクリック辺連結性など）は使っていない。「三つの共通隣接点はない」は
+Lean で直接（r, s ≥ 1 で）示した。
+
+## 経路：継ぎ目の円のモデル
+
+D14 の2つのセルはどちらも辺 s, 2r + s の六角形 H0, H1 で、12 本のラベルの辺すべてで H0 の
+境界と H1 の境界が貼り合わされる（H0 の角は H1 の直線上の点、逆も）。つまり球面は「二枚の
+六角形の境界の円を、角をずらして貼り合わせたもの」。O2 の枕と袋より単純で、地図はセルの
+座標そのままの2枚で足りる。
+
+- 頂点：(0, z) は H0 の内部、(1, z) は H1 の内部、(2, (l, 0)) は継ぎ目の円の点
+  （弧長 0 ≤ l < 6r + 6s）。境界の点 z は (2, (a_c z, 0))。a0 は H0 を反時計回り、a1 は H1 を
+  時計回りに、ラベル 0 の角から測る弧長（各辺で一次式）。貼り合わされた点の弧長は等しく、
+  ラベル j の角は l = ⌊j/2⌋(r + s) + (j mod 2)s（`Claude5D14Model`）。
+- 隣接：一枚の地図の中で単位ベクトルだけ離れた2点（相異なる頂点）。
+
+証明の段：
+
+1. **同型**（`Claude5D14.d14_iff_gm`）：Phi = ch（地図 = セル）。24 本の貼り合わせで不変
+   （`samePoint_phi`、表は生成）、同じ像の2つの site は SamePoint 1 歩（弧長でラベルの区間を
+   選び、その辺の貼り合わせを明示、`same01`）、全射（弧長 l の継ぎ目の点は H0 の点 `P0 l`）、
+   隣接の対応。C1 の `exists_literal_iff` を再利用した。
+2. **地図の局所構造**（`Claude5D14Chart`）：弧長は各境界で単射（したがって各地図は単射）、
+   二枚に共通な頂点は継ぎ目の点、境界の2点が単位の差 ⇔ 弧長が円の上で隣
+   （境界を弧長で表す `P0`, `P1` を通して一変数の問題にした）。
+3. **三つの共通隣接点はない**（`Claude5D14.no_three`、r, s ≥ 1）：地図が2枚なので三角形は
+   一枚の地図に入り、継ぎ目の辺では各地図で apex は高々1つが領域に入る。
+4. **次数**（`Claude5D14.deg_five`、r, s ≥ 2）：内部の点は 6 個の相異なる隣接点、継ぎ目の
+   点は角でなければ 12 本の開区間のどれかにあり、H0 で 4 個・H1 の内部に 2 個（生成）。
+   したがって次数 5 なら 12 個のラベルの角。
+5. **帯**（`Claude5D14Strip`, `Kill`, `StripHelp`、O2 の一般論を移した）と **12 本の閉じた帯**
+   （`Claude5D14S00`〜`S08`、生成）：r, s ≥ 2 の閉じた帯は向きを除いて 12 本、ブロックは計 60
+   個（区切りはすべて角、各ブロックは一枚の地図の中）。帯の長さは 4r + 6s（6 本）、
+   6r + 12s（2 本）、18r + 18s（4 本）。表は Python のモデルの強制歩行から作り r, s の一次式に
+   当てはめ（`fit.py`、9 組の別のパラメータで検算）、Lean は各ブロックの領域・単位の一歩・奇数
+   番目が角でないこと・各継ぎ目を、すべての r, s ≥ 2 について検査する。
+6. **始めの網羅**（`Claude5D14StartA`〜`D`、生成）：最初の三角形は一枚の地図に入り、最初の点は
+   その地図の角の位置 12 個のどれか（`corner_pos`）。地図 2 × 位置 12 からの一歩と apex で始めは
+   ちょうど 120 通り、どれも 60 個の継ぎ目の前向き・後ろ向きの始め。これで `no_path_gm`、
+   D14 に移して `d14_no_path`（`Claude5D14Nec`）。
+7. **境界の道**（`Claude5D14SuffBase`, `SuffR1`, `SuffS1`、生成）：
+   - D14(1, s), s ≥ 2：ラベル 0 からラベル 3 までの 4s + 2 点（ブロック2個：H0 の辺 y = 0 に
+     沿って s、H1 で s + 1）。
+   - D14(r, 1), r ≥ 2：ラベル 0 からラベル 7 までの 4r + 4 点（ブロック2個：H1 で r + 1、
+     H0 の辺 y = 2r + 2 に沿って r + 1）。
+   点が相異なること、端の次数 5（継ぎ目の点の隣接点を2枚の地図から列挙して数える
+   `deg_seam_eq`）、隣の次数 6（内部の点、`deg_int0`/`deg_int1`）を自由なパラメータのすべての
+   値で検査する。
+8. **直線**（`Claude5D14.d14_rays`）：n ≥ 2 で、r ≡ 1（a = 0, r₀ = 1）なら常に真（b > 0）か一定、
+   s ≡ 1 も同様、それ以外は r, s ≥ 2 で常に偽。周期 1。
+
+## 証明したもの（宣言名）
+
+- `ClaudeChallengeD14.main`（`Claude5D14ComparatorSolution`）
+- `Claude5D14.d14_rays`, `Claude5D14.pe_R1`, `Claude5D14.pe_S1`（`Claude5D14Main`）
+- `Claude5D14.d14_no_path`（r, s ≥ 2 で道なし、`Claude5D14Nec`）
+- `Claude5D14.d14_iff_gm`（`Claude5D14Iso`）、`Claude5D14.no_three`（`Claude5D14Three`）、
+  `Claude5D14.deg_five`（`Claude5D14Deg`）
+
+## 行数
+
+新しい Lean ファイル 32 個、計 7461 行（主張文ファイルと `Claude5D14Spec.lean` を除く）。
+計画の見積もり（約 7200 行）とほぼ同じ。生成した部分は帯 3153 行・始め 1040 行・次数 492 行・
+境界の道 468 行・貼り合わせ 353 行（Phi, Eqv）、手で書いた（または O2 から移した）部分は
+約 1950 行。
+
+| ファイル | 行 | 内容 |
+|---|---|---|
+| Model / Chart | 196 / 186 | モデル、弧長、地図の単射、継ぎ目、単位の差 ⇔ 弧長の隣 |
+| Phi / Eqv / Iso | 201 / 152 / 128 | セル = 地図、貼り合わせ表と不変性、同一視1歩、同型（Phi・Eqv は生成） |
+| Three | 197 | 三つの共通隣接点はない |
+| DegBase / DegGenA / DegGenB / Deg | 126 / 246 / 246 / 70 | 次数 5 なら角（継ぎ目の 12 区間は生成） |
+| Strip / Kill / StripHelp | 227 / 374 / 94 | 帯の一般論（O2 から移植）、角の位置、閉じた帯 |
+| S00〜S08 | 186〜382 | 12 本の閉じた帯（生成） |
+| StartA〜D | 256〜264 | 120 通りの始め（生成） |
+| Nec | 67 | 必要性の組み立て |
+| SuffBase / SuffR1 / SuffS1 | 186 / 234 / 234 | 境界の道（R1, S1 は生成） |
+| Main / ComparatorSolution | 64 / 40 | 直線、解答 |
+
+生成スクリプトと Python の検査は `studies/R002/claude-lean/d14-scripts/` に置いた
+（`model.py`：モデルと spec の文字どおりの面の同型を r, s ≤ 6 の 36 例で確認；`strips.py`,
+`sym.py`, `fit.py`, `strips.json`：閉じた帯；`paths.py`, `sympaths.py`：境界の道；`glues.py`；
+`gen_phi.py`, `gen_iso.py`, `gen_deg.py`, `gen_degmain.py`, `gen_strips.py`, `gen_starts.py`,
+`gen_suff.py`；`rebuild.log`：作り直しの記録）。正本は Lean のファイルで、Lean の証明は Python の
+結果に依存しない（表が間違っていれば Lean が通らない）。
+
+## 検査
+
+- `diff`：主張文ファイルと解答ファイルの `namespace ClaudeChallengeD14` 以降は、`sorry` の行と
+  証明の6行だけが違う（`PathExists` の定義と主張文は一字一句同じ）。解答ファイルは
+  `Formal.ClaudeChallengeSpec`, `Formal.Claude2AlignedSpec`, `Formal.Claude5D14Spec` と
+  `Formal.Claude5D14Main` を import し、challenge は import しない。
+- `#print axioms ClaudeChallengeD14.main`：`propext, Classical.choice, Quot.sound` のみ。
+  `d14_rays`, `d14_no_path`, `no_three`, `deg_five`, `d14_iff_gm`, `pe_R1`, `pe_S1` も同じ。
+- `grep`：新しいファイルに `sorry`, `native_decide`, `axiom` なし（主張文ファイルの `sorry` のみ）。
+- D14 の全モジュールの olean を消し、依存の順に一つずつ `lake build` し直して成功（記録は
+  `d14-scripts/rebuild.log`）。最後に `nice -n 10 lake build Formal.Claude5D14ComparatorSolution`：
+  Build completed successfully。
+- 主張文・spec・`Formal.lean`・comparator*.json・既存のファイルは編集していない。
+  `formal/gen_*.py`（追跡されていない他人のファイル）には触れていない。
+- comparator（`lake comparator`）は走らせていない。
+
+## メモリ
+
+すべて RSS 3 GB で止める監視つき（1 秒ごと）、Lean は常に1本、`nice -n 10`。作り直しの各
+モジュールの lean の常駐メモリの最大は Phi 2.47 GB、Chart 2.03 GB、他は 1.1〜1.85 GB。開発中に
+一度だけ、最初の版の Chart（境界の2点の単位の差を、辺の場合分けと if の分岐を全部 omega に
+渡していた）が 3 GB の監視で止まった。境界を弧長で表す `P0`, `P1` を通して一変数の問題にし、
+2.0 GB 以下になった。
+
+## 残り・疑問
+
+- 残りはない（主張文は無条件に証明した）。
+- 境界の道は D14(1, s) で s ≥ 2、D14(r, 1) で r ≥ 2 だけを証明した（直線にはこれで足りる）。
+  D14(1, 1) の道は Python の写しでは存在するが、Lean では示していない。
+- `deg_five`（したがって必要性）は r, s ≥ 2 で示した。`no_three` は r, s ≥ 1 で成り立つ。
+- 主張文の D14 のラベルと座標（`d14Lab`, `d14Poly`）が Graver の D14 であることは spec 作成時の
+  照合（R004 `d14.py` との同型、面積の式）に依る。Lean では、その spec の面が上の継ぎ目の円の
+  モデルと同型であることを示した。
+- 警告：未使用変数・長い行などの lint 警告が残る（証明には影響しない）。

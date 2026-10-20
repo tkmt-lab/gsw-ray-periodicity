@@ -1,0 +1,45 @@
+# D14 statement review
+
+**Verdict: FAITHFUL WITH CAVEATS.** No mathematical mismatch was found against the D14 information actually stated in `paper.tex`. The parameter domain, literal-path predicate, and eventual-periodicity conclusion agree. The caveat concerns identification with the catalogue: the supplied paper describes the polygon shapes but does not print their complete labelled seam diagram. Consequently, matching these files does not independently certify every catalogue identification.
+
+## 1. Geometry and parameter mapping
+
+The paper describes two convex hexagons with each long side subdivided into lengths `r,s,r`, retaining parameter-1 boundaries (`paper.tex:450–457`). Lean's two twelve-corner walks (`ChallengeD14.lean:140–146`) have exactly this form: consecutive collinear pieces merge into long sides of length `2r+s`, alternating with short sides of length `s`. The extra listed corners are straight angles, not extra geometric hexagon corners.
+
+The label cycles are opposite (`ChallengeD14.lean:133–135`). Corresponding segments have equal lengths: the segment between labels `j,j+1` has length `s` for even `j`, and `r` for odd `j`. The straight-corner label sets in the two cells are complementary. Nothing in the data suggests a parameter exchange or shift.
+
+I transcribed the **literal** definitions into Python: half-plane membership, every endpoint-compatible rotation/translation, unrestricted `SamePoint`, equivalence closure, and quotient adjacency. All 25 pairs `1 ≤ r,s ≤ 5` passed these checks:
+
+- Exactly 24 directed seam records, with no identified pairs outside the specified segments; segment-restricted gluing gives the same quotient.
+- Each chart injects into the quotient. The twelve labels give twelve distinct vertices, all degree 5; all remaining vertices have degree 6.
+- Quotient unit triangles have three distinct vertices, each edge belongs to two triangles, and each vertex link is one cycle.
+- With carbon order `C = 8r² + 24rs + 12s²`, the counts are `V = C/2 + 2`, `E = 3C/2`, and `F = C`, as required for the dual triangulation. **Carbon order is not dual vertex count.**
+
+| `(r,s)` | Carbon order / triangles | Dual vertices | Degree-5 vertices |
+|---|---:|---:|---:|
+| (1,1) | 44 | 24 | 12 |
+| (1,2) | 104 | 54 | 12 |
+| (2,1) | 92 | 48 | 12 |
+| (2,2) | 176 | 90 | 12 |
+
+The unequal cases distinguish the parameter order. Polygon shoelace areas and a separate elementary-triangle enumeration also agree with the paper's carbon formula (`paper.tex:1127–1134`). These computations support the proposed identification; counts alone cannot identify a catalogue isomer.
+
+## 2. Exact theorem scope
+
+`LiteralPath` (`ChallengeD14.lean:56–62`) matches the paper's definition (`paper.tex:90–100`): even vertex count at least four, distinct vertices, adjacency at index differences one and two, degree-5 endpoints, and degree-6 vertices immediately inside the endpoints. Internal degree-5 vertices remain allowed. The unrestricted values of `p` beyond the chosen length impose no extra requirement.
+
+`main` (`ChallengeD14.lean:164–168`) asserts eventual periodicity with a strictly positive period. It includes constant rays, either parameter fixed at 1, and both parameters initially 1. Zero parameters are excluded by the start hypotheses, consistently with `paper.tex:243–246,1147–1149`.
+
+Its natural starts and slopes have **equal eventual ray scope**, rather than weaker scope, than Corollary 1b (`paper.tex:235–251`). Any integer affine ray eventually positive has nonnegative slopes; shifting to its positive tail yields the form quantified here. Conversely, every Lean ray stays positive. This comparison assumes that the concrete quotient really is the valid D14 family, as its name claims.
+
+There is **no `classification` theorem**, correctly. D14 is absent from the received closed-condition table (`paper.tex:508–516`). The partial-results section records only research-team absence drafts for `r,s ≥ 2`, explicitly distinguishing them from the received all-ray result (`paper.tex:528–535`). Omitting a classification neither loses a received theorem nor upgrades a draft. Finite literal-path searches found witnesses on all sampled parameter-1 cases and no paths on the sampled `r,s ≥ 2` cases; this is evidence only, not a classification claim.
+
+## 3. Loopholes and ranked concerns
+
+1. **Moderate assurance gap: catalogue correspondence is not independently pinned down by the supplied paper.** Lean fixes a complete labelled gluing (`ChallengeD14.lean:133–148`); the paper supplies only the two-hexagon description and local polynomial (`paper.tex:453–457,1134`). A labelled catalogue diagram or an independently specified D14 graph would permit a stronger identification check. No contrary evidence was found.
+
+2. **Low, construction-dependent risk: gluing is not syntactically restricted to boundary segments.** `SamePoint` (`ChallengeD14.lean:104–106`) applies each seam isometry wherever both sites exist. For arbitrary signatures this can over-identify vertices. The paper explicitly discusses this unrestricted-record issue (`paper.tex:185–207`). Here the finite comparisons found no extra identifications, including at parameter 1. `Sig` and `d14Graph` contain no validity certificate (`ChallengeD14.lean:70–74,148–151`), so universal correspondence remains an external mathematical obligation, not a checked Lean invariant.
+
+**No high-severity concrete defect was found.** Positive lengths avoid zero-side degeneracy; unique reversed labels prevent unintended seam choices in the tested construction. The theorem has no validity hypothesis that could make it vacuous, and tested graphs have actual endpoints of the required degrees. A graph accidentally losing all degree-5 vertices could make path absence trivial, but the checks found no such collapse.
+
+This was a single-reviewer statement audit with finite computations, not a proof attempt, Lean kernel validation, or review by another agent.

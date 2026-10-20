@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 4.9, 20 October 2026}
+\date{Version 5.0, 20 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -37,9 +37,10 @@ not a new general periodicity principle. We record
 the resulting ray statements for eleven specified catalogue families,
 alongside closed conditions on their stated domains. Existing Lean
 results establish arithmetic periodicity of several family predicates
-and determine two example rays for every ray parameter. For K3, C1 and O2, stated-domain graph classifications and actual-path
-periodicity on positive integer affine rays are Lean-proved on explicit
-quotient specifications, without the general prose bridge. Parameter-one
+and determine two example rays for every ray parameter. For K3, C1 and O2, stated-domain graph classifications are Lean-proved;
+these families and D14 also have Lean actual-path periodicity on positive
+integer affine rays, on explicit quotient specifications without the
+general prose bridge. Parameter-one
 rays are included; the O2 absence domain is $t,d\ge2$. The separate
 C1 and O2 IPR conditions are outside Lean. The general
 eventual-periodicity statement is now proved
@@ -70,7 +71,7 @@ saved six-kernel acceptance. On 20 October 2026, the owner read version 2
 with the Japanese guide and addendum and confirmed its statement meaning,
 not its proof or prose correspondence. Earlier authorship, affiliation,
 licensing and statement records remain factual; owner statement-meaning
-checks ended as a procedure that day. K3, C1 and O2 correspondence instead
+checks ended as a procedure that day. K3, C1, O2 and D14 correspondence instead
 uses prior specifications, independent AI statement readers and finite
 comparisons. No new owner-confirmation procedure is added. A3's
 classification and 816-class census belong to the separate first paper.
@@ -236,7 +237,7 @@ There are eleven families in this statement. Positive boundaries with
 a parameter fixed at 1 are included, notably K3 and O2 and E10 with
 $r=1$. Collapsed zero boundaries are not. The corollary gives no
 two-variable closed classification merely from ray periodicity.
-The K3, C1 and O2 parts now also have direct Lean ray proofs on their
+The K3, C1, O2 and D14 parts now have direct Lean ray proofs on their
 quotient graphs, including positive boundary parameters, without invoking the
 general prose correspondence lemma. Their ray declarations start with
 positive natural coordinates and nonnegative slopes; an eventually positive
@@ -479,7 +480,8 @@ C1, $a,b\ge1$ & Lean graph iff $b=1$ and actual-path ray periodicity; no general
 A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:arithmetic}.\\
 K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
 E10, $p,r,s\ge1$ & Arithmetic for $r\ge2$; the five-piece decomposition includes $r=1$.\\
-D12, D14, D1 & The convex decompositions on valid positive integer parameters.\\
+D12, D1 & The convex decompositions on valid positive integer parameters.\\
+D14, $r,s\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\
 O2, $t,d\ge1$ & Lean actual-path ray periodicity, including parameter 1; Lean absence for $t,d\ge2$. No general prose bridge.\\\bottomrule
 \end{tabular}
 \end{center}
@@ -526,8 +528,15 @@ disclosure is retained. Boundary paths for O2$(1,d)$ with $d\ge3$ and
 O2$(t,1)$ with $t\ge3$ are Lean-proved; existence at O2$(1,1)$,
 O2$(1,2)$ and O2$(2,1)$ is outside the received Lean results. The ray
 theorem nevertheless covers these constant rays without deciding their
-path existence. For D14 and D1 with both parameters at least two,
-the research team has belt-based absence drafts; R004's all-ray
+path existence. For D14, the auxiliary Lean lemma
+\record{Claude5D14.d14_no_path} now proves absence for $r,s\ge2$.
+It is not a Comparator target: the six-kernel D14 receipt covers only
+\record{ClaudeChallengeD14.main}. Boundary paths at $(1,s)$, $s\ge2$,
+and $(r,1)$, $r\ge2$, are also received Lean lemmas. Existence at
+D14$(1,1)$ remains outside Lean. No new standalone D14 iff is asserted
+here. R004's separate D14 prose ray proof is retained.
+For D1 with both parameters at least two, the research team retains
+a belt-based absence draft; R004's all-ray
 periodicity receipt is not a new independent proof of that closed
 absence claim. Common integer scaling by at least two gives absence
 in the specified leapfrog domains, but does not classify their
@@ -854,6 +863,45 @@ human proof review or independent Lean derivation is added. The inert
 challenge has two intentional placeholders and is excluded from proof
 dependencies. Source and record hashes are supplied in the machine layer.
 
+\subsection{D14 ray periodicity and auxiliary boundary lemmas}\label{sec:d14-formal}
+The received entry \record{ClaudeChallengeD14.main} proves actual-path
+eventual periodicity on \record{Claude2Aligned.d14Graph}$(r,s)$ for all
+natural starts $r_0,s_0\ge1$ and nonnegative slopes, including
+parameter-one and constant rays. It is the only D14 Comparator target;
+there is no challenge classification theorem. The general prose
+geometric-to-specification bridge is not used for this family result.
+R004's separate prose route remains evidence for the catalogue-ray claim.
+
+The specification consists of two hexagons with alternating side lengths
+$s,2r+s$, subdividing each long side as $r,s,r$. The equivalence
+\record{Claude5D14.d14_iff_gm} maps the quotient to two lattice hexagons
+whose boundary circles are identified with an offset between their
+corners. A seam vertex is recorded by its arclength modulo $6r+6s$.
+The proof directly excludes three common neighbours on an edge and,
+for $r,s\ge2$, locates degree-five vertices at the twelve corners.
+Twelve closed strips cover all 120 starts. No external cyclic
+edge-connectivity theorem is used.
+
+The auxiliary \record{Claude5D14.d14_no_path} proves absence for
+$r,s\ge2$. The lemmas \record{Claude5D14.pe_R1} and
+\record{Claude5D14.pe_S1} give explicit paths at $(1,s)$ for $s\ge2$
+and $(r,1)$ for $r\ge2$. They are received build/axiom-report results,
+not separate targets of the six-kernel Comparator run. Existence at
+$(1,1)$ is not Lean-proved here; the constant-ray result does not need
+that decision. We do not add a new standalone iff theorem.
+
+A separate writer fixed the specification and main statement before the
+proof. One independent AI reader returned ``faithful with caveats'',
+confirming the parameter order and carbon order $8r^2+24rs+12s^2$,
+while retaining the named-catalogue correspondence caveat. Its 25 known
+pairs are contained in the saved mirror's 81 pairs $1\le r,s\le9$;
+these are overlapping finite checks, not a universal catalogue-isomorphism
+proof or human review. Exact definition/type/source comparisons and
+original-record hashes are supplied in the machine layer. No new
+owner-confirmation procedure is used. Eventually positive integer rays
+are reindexed to a positive natural tail in exposition, rather than
+claimed as a separately received all-integer declaration.
+
 \subsection{Historical conditional kernels}\label{sec:historical-formal}
 \label{lem:historical-kernels}\claimid{lem:historical-kernels}
 The earlier research layer supplies conditional pieces:
@@ -900,7 +948,13 @@ covers both \record{ClaudeChallengeO2.classification} and
 supplied proofs. The coordinator reports successful builds and
 standard-three-axiom queries for both. The worker report precedes the
 Comparator run and its not-run note is historical. O2 also lacked OS
-process isolation on macOS. No external kernel or Lean command is rerun
+process isolation on macOS. For D14, the separate six-kernel receipt
+checks only \record{ClaudeChallengeD14.main}. The auxiliary absence and
+boundary lemmas are not Comparator targets. The coordinator separately
+reports successful builds and standard-three-axiom queries for main and
+\record{d14_no_path}; the worker also reports the boundary-lemma queries.
+The worker's pre-Comparator not-run note is historical. D14 likewise
+lacked OS process isolation. No external kernel or Lean command is rerun
 for this edition.
 The claims' expository dependencies and Lean's imported proof-term
 dependencies are different. A prose statement can remain open for
@@ -1217,7 +1271,10 @@ The primary received declarations now include
 \record{Claude4K3.noThree}. The new C1 entries are
 \record{ClaudeChallengeC1.classification} and \record{ClaudeChallengeC1.main}.
 The O2 entries are \record{ClaudeChallengeO2.classification} and
-\record{ClaudeChallengeO2.main}. The machine layer supplies their exact
+\record{ClaudeChallengeO2.main}. The D14 entry is
+\record{ClaudeChallengeD14.main}; its auxiliary absence lemma
+\record{Claude5D14.d14_no_path} has a separate build/axiom-report scope.
+The machine layer supplies their exact
 types, source commit and the kind of proof receipt. The historical
 representative kernel types remain:
 \begin{quote}\small
@@ -1251,10 +1308,10 @@ to assist with literature organization, mathematical exploration,
 proof drafting, implementation, finite verification, formalization of
 the explicitly identified arithmetic and graph statements and the
 specification-level Theorem 1a, and English exposition. Claude workers
-supplied the general theorem's, K3's, C1's and O2's Lean proofs against the
+supplied the general theorem's, K3's, C1's, O2's and D14's Lean proofs against the
 coordinator's prior specifications. The research team checked the
 received sources and records; it did not supply an independent Lean
-derivation or rerun Lean for this O2 edition. The author is responsible
+derivation or rerun Lean for this D14 edition. The author is responsible
 for the published account, its provenance, and the stated limits of
 verification. AI systems are not listed as authors. AI prose reviews
 are identified separately from human review. Only the explicitly

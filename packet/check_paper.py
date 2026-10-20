@@ -3,7 +3,7 @@ import re
 from packet_common import load,local,fingerprint,result,sha
 
 def main():
- tex=local('paper-lines-v4.9-en.tex').read_text();stack=[]
+ tex=local('paper-lines-v5.0-en.tex').read_text();stack=[]
  for m in re.finditer(r'\\(begin|end)\{([^}]+)\}',tex):
   if m[1]=='begin':stack.append(m[2])
   else:assert stack and stack.pop()==m[2],m[2]
@@ -40,5 +40,7 @@ def main():
  assert 'The IPR condition is outside Lean.' in tex
  assert 'ClaudeChallengeO2.classification' in tex and 'ClaudeChallengeO2.main' in tex
  assert 'IPR remains outside Lean.' in tex
+ assert 'ClaudeChallengeD14.main' in tex and 'Claude5D14.d14_no_path' in tex
+ assert 'It is not a Comparator target' in tex
  result(pages=receipt['pages'],claims=len(ids),correspondence_rows=28,scope='structure, correspondence and recorded visual receipt only')
 if __name__=='__main__':main()

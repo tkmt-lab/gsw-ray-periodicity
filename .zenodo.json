@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "Eventual periodicity of linear generalized Stone–Wales paths in affine fullerene families with convex lattice-face decompositions: paper and verification packet",
-  "description": "<p>Paper (v4.9) and verification packet (lines 1.5.0). For fullerene families built from a fixed number of convex lattice faces with affine coordinates, existence of a literal linear generalized Stone–Wales path is eventually periodic along every integer affine ray (Theorem 1a, Corollary 1b). A formal version of Theorem 1a is proved in Lean 4 (standard axioms only, checked with Comparator); a prose lemma in the paper connects the paper's geometric hypotheses to it. For Graver's families K3 and C1 the ray results and their closed classifications are Lean-proved with no prose step; for O2 the ray result and the absence of paths for t, d ≥ 2 are Lean-proved with no prose step. No human peer review; novelty is not settled.</p><p>The research was carried out with AI systems (OpenAI Codex and Anthropic Claude Code); the author directed the work and is responsible for it.</p><p>Licences: the paper text, figures and data are under CC BY 4.0; code and Lean sources are under Apache-2.0 (see LICENSING.md). The licence field of this record refers to the code.</p>",
+  "description": "<p>Paper (v5.0) and verification packet (lines 1.6.0). For fullerene families built from a fixed number of convex lattice faces with affine coordinates, existence of a literal linear generalized Stone–Wales path is eventually periodic along every integer affine ray (Theorem 1a, Corollary 1b). A formal version of Theorem 1a is proved in Lean 4 (standard axioms only, checked with Comparator); a prose lemma in the paper connects the paper's geometric hypotheses to it. For Graver's families K3 and C1 the ray results and their closed classifications are Lean-proved with no prose step; for O2 the ray result and the absence of paths for t, d ≥ 2 are Lean-proved with no prose step, and for D14 the ray result is Lean-proved with no prose step. No human peer review; novelty is not settled.</p><p>The research was carried out with AI systems (OpenAI Codex and Anthropic Claude Code); the author directed the work and is responsible for it.</p><p>Licences: the paper text, figures and data are under CC BY 4.0; code and Lean sources are under Apache-2.0 (see LICENSING.md). The licence field of this record refers to the code.</p>",
   "creators": [
     {
       "name": "Takimoto, Tatsuhiko",
@@ -9,7 +9,7 @@
     }
   ],
   "license": "Apache-2.0",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "keywords": [
     "fullerenes",
     "Stone–Wales",

@@ -5,9 +5,9 @@
     "bytes": 62159
   },
   "target": {
-    "path": "paper-lines-v4.9-en.tex",
-    "sha256": "4bef5f759eaa7e956ed082d831b9ec4707b5943822c5a16c4a7f134ce7aa152d",
-    "bytes": 75912
+    "path": "paper-lines-v5.0-en.tex",
+    "sha256": "8ebf2cf6a442097affe5a3407ba9058e08aafd44e170ef676cc4516f4e5cc465",
+    "bytes": 79424
   },
   "kind": "Section coverage and declared editorial changes, not a proof of semantic equivalence",
   "all_numbered_v3_subsections_covered": true,

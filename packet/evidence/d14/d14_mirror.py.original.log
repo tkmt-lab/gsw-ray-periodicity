@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+"""D14 (Graver) as Claude2Aligned-style labelled polygons; mirror checks of Claude5D14Spec.lean.
+
+Parameters: Lean = paper = R004 d14.py (r, s).  Check: twice the total area is
+2(4r^2 + 6s^2 + 12rs) = 8r^2 + 24rs + 12s^2, the paper's D14 carbon order (appendix table).
+
+Cells (re-derived from R004's independent d14.py, read-only): two 12-gons with labels
+0..11 and 0, 11, 10, ..., 1 (as D12); the side between labels j and j+1 has length s for even j
+and r for odd j. Corners 2,3,6,7,10,11 are straight in cell 0 and corners 0,1,4,5,8,9 straight in
+cell 1, so each cell is a hexagon with sides s, 2r+s (the long sides cut r, s, r):
+  cell 0: walk [(s,0),(r,1),(s,1),(r,1),(s,2),(r,3),(s,3),(r,3),(s,4),(r,5),(s,5),(r,5)]
+  cell 1: walk [(r,0),(s,1),(r,2),(s,2),(r,2),(s,3),(r,4),(s,4),(r,4),(s,5),(r,0),(s,0)]
+Checks as in the O2 mirror (counts, degrees, isomorphism with R004 d14.construct via
+canonical_fast, twelve degree-5 vertices, no off-seam identification, literal paths).
+Usage: d14_mirror.py MIRROR_DIR R004_SRC OUT.json
+"""
+
+import json
+import sys
+from itertools import product
+
+HERE, R004 = sys.argv[1], sys.argv[2]
+sys.path.insert(0, HERE)
+sys.path.insert(1, R004)
+from claude2_aligned_mirror import (Surface, walk, literal_path_exists,  # noqa: E402
+                                    check_literal, r004_compare)
+from graphs import from_oriented_triangles  # noqa: E402
+from canonical_fast import canonical_fast  # noqa: E402
+import d14 as r004_d14  # noqa: E402
+
+# ---------------------------------------------------------------- Lean data (Claude5D14Spec)
+D14_LAB = [list(range(12)), [0] + list(range(11, 0, -1))]
+
+
+def d14_poly(r, s, f):
+    if f == 0:
+        return walk((0, 0), [(s, 0), (r, 1), (s, 1), (r, 1), (s, 2), (r, 3),
+                             (s, 3), (r, 3), (s, 4), (r, 5), (s, 5), (r, 5)])
+    return walk((0, 0), [(r, 0), (s, 1), (r, 2), (s, 2), (r, 2), (s, 3),
+                         (r, 4), (s, 4), (r, 4), (s, 5), (r, 0), (s, 0)])
+
+
+def d14_sig(r, s):
+    return D14_LAB, [d14_poly(r, s, f) for f in range(2)]
+
+
+# ---------------------------------------------------------------- generic checks
+
+
+def rotation_system(S):
+    """Oriented unit triangles of every cell (whole bounding box), as vertex classes, turned
+    into an R004 rotation system (this also asserts every dart lies in exactly one triangle)."""
+    tri = []
+    for f in range(S.N):
+        P = S.poly[f]
+        for x, y in product(range(min(a for a, _ in P), max(a for a, _ in P) + 1),
+                            range(min(b for _, b in P), max(b for _, b in P) + 1)):
+            for trip in (((x, y), (x + 1, y), (x, y + 1)), ((x + 1, y), (x + 1, y + 1), (x, y + 1))):
+                if all((f, q) in S.index for q in trip):
+                    tri.append(tuple(S.cls[S.index[f, q]] for q in trip))
+    return from_oriented_triangles(tri), len(tri)
+
+
+def charts_injective(S):
+    seen = {}
+    for k, (f, z) in enumerate(S.sites):
+        if seen.setdefault((f, S.cls[k]), z) != z:
+            return False
+    return True
+
+
+def check_case(lab, poly, construct_graph, area2):
+    S = Surface(lab, poly)
+    E = sum(S.deg) // 2
+    G = construct_graph
+    rot, ntri = rotation_system(S)
+    rec = {"V": S.V, "E": E, "V_r004": len(G), "E_r004": sum(len(x) for x in G) // 2,
+           "deg5": S.deg.count(5), "other_deg": sorted(set(S.deg) - {5, 6}),
+           "deg_seq_eq": sorted(S.deg) == sorted(len(x) for x in G),
+           "triangles": ntri, "area2": area2,
+           "tri_edges_eq_adj": all(set(rot[v]) == S.adj[v] for v in range(S.V)),
+           "boundary_only": S.boundary_only(), "charts_injective": charts_injective(S),
+           "same_as_aligned_surface": r004_compare(S, lab, poly, R004)[0]}
+    rec["iso_r004"] = canonical_fast(rot) == canonical_fast(G)
+    w = literal_path_exists(S, want_witness=True)
+    rec["path"] = w is not None
+    if w is not None:
+        assert check_literal(S, w)
+    rec["ok"] = (rec["V"] == rec["V_r004"] and rec["E"] == rec["E_r004"] and rec["deg_seq_eq"]
+                 and rec["deg5"] == 12 and not rec["other_deg"] and ntri == area2
+                 and rec["tri_edges_eq_adj"] and rec["boundary_only"] and rec["charts_injective"]
+                 and rec["same_as_aligned_surface"] and rec["iso_r004"])
+    return rec
+
+
+def main():
+    from math import gcd
+    rows = []
+    for r in range(1, 10):
+        for s in range(1, 10):
+            lab, poly = d14_sig(r, s)
+            rec = {"r": r, "s": s}
+            rec.update(check_case(lab, poly, r004_d14.construct(r, s), 8 * r * r + 24 * r * s + 12 * s * s))
+            rec["gcd"] = gcd(r, s)
+            rows.append(rec)
+    bad = [x for x in rows if not x["ok"]]
+    both2 = [x for x in rows if x["r"] >= 2 and x["s"] >= 2]
+    summary = {"cases": len(rows), "bad": len(bad),
+               "both_ge_2": len(both2), "both_ge_2_all_absent": all(not x["path"] for x in both2),
+               "positives": sorted((x["r"], x["s"]) for x in rows if x["path"]),
+               "negatives_with_param_1": sorted((x["r"], x["s"]) for x in rows
+                                                if not x["path"] and min(x["r"], x["s"]) == 1)}
+    print(json.dumps(summary))
+    json.dump({"summary": summary, "rows": rows}, open(sys.argv[3], "w"), indent=0)
+
+
+if __name__ == "__main__":
+    main()

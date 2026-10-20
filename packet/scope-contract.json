@@ -45,5 +45,11 @@
   "o2_literal_ray_without_prose_bridge_received": true,
   "o2_ipr_formalized": false,
   "o2_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison",
-  "o2_small_boundary_existence_formalized": false
+  "o2_small_boundary_existence_formalized": false,
+  "d14_literal_ray_without_prose_bridge_received": true,
+  "d14_absence_lemma_received": true,
+  "d14_boundary_path_lemmas_received": true,
+  "d14_small_boundary_existence_formalized": false,
+  "d14_comparator_targets_main_only": true,
+  "d14_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
 }

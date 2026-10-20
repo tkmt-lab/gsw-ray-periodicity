@@ -1,0 +1,9 @@
+# D14 statement and single-target reception
+
+The separate writer fixed Claude5D14Spec and Challenge before proof at 5b29fee0. Twenty-two definitions, PathExists and the main signature match after static comparison. Only main is the challenge/Comparator target. The inert challenge has one placeholder and is outside proof dependencies. The independent AI reader returned FAITHFUL WITH CAVEATS; no owner-confirmation procedure is added.
+
+The saved mirror has 81 known pairs 1<=r,s<=9; the reader's25 pairs are contained in that range, not disjoint. Counts, degree/chart/seam and path records agree with R004. These are static readbacks without Python graph regeneration, not a universal catalogue-isomorphism theorem. Lean r,s equal paper r,s; carbon order 8r^2+24rs+12s^2. Named catalogue correspondence retains its stated construction/reader caveat.
+
+The six-kernel paranoid acceptance is for ClaudeChallengeD14.main ONLY. The coordinator separately reports build and standard-three-axiom queries for main and d14_no_path; the worker also reports the boundary lemmas pe_R1 and pe_S1. Auxiliary types and sources are pinned, but must not be relabelled as Comparator targets. The worker's pre-Comparator not-run note remains historical. All kernels check the same supplied main, not independent derivations; macOS lacked OS process isolation. No current Lean/kernel run is performed.
+
+Absence is proved for r,s>=2, boundary existence for (1,s),s>=2 and (r,1),r>=2. Existence at (1,1) is outside Lean. No standalone iff is added; constant rays require no existence decision. All natural positive starts and nonnegative slopes are covered by main, with eventual positive integer rays reindexed in prose. R004 prose proof remains separate evidence, and the general theorem's prose bridge, human review and novelty statuses remain unchanged.

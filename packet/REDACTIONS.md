@@ -16,3 +16,5 @@ Packet 1.2.0 inherits these same six public derivatives and original-hash bindin
 This edition also removes the old individual-identifier scanner vocabulary. Private-name checks were performed internally; the public scanner contains generic patterns only. Existing historical record transformations in the table above are unchanged.
 
 Packet 1.5.0 adds exact O2 proof-source and receipt copies and article 4.9, with no new privacy substitutions. Historical public derivatives retain their original transformation contracts. O2 proof-scope edits and the new PDF are not described as redaction-only byte preservation. Public generic scans and nonpublic internal checks are kept separate.
+
+Packet1.6.0 adds exact D14 proof/receipt copies and article5.0, without new privacy substitutions. Historical derivatives are preserved; D14 scope edits and new PDF are distinct from redaction-only byte identity.

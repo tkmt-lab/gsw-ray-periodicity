@@ -1,5 +1,5 @@
 {
-  "packet_version": "1.5.0",
+  "packet_version": "1.6.0",
   "status": "REDACTED_PUBLIC_DERIVATIVES",
   "originals_included": false,
   "proof_sources_changed": false,
@@ -73,5 +73,5 @@
       ]
     }
   ],
-  "change_scope": "Historical privacy derivatives unchanged. O2 sources and receipt copies byte-identical; O2 article/proof-scope edits separate. Public generic scanner and nonpublic individual-name check remain separated."
+  "change_scope": "Historical privacy derivatives unchanged; new D14 sources/receipts byte-identical. D14 scope/article edits separately disclosed. Public generic/private internal scanner separation retained."
 }
