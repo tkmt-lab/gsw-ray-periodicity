@@ -1,0 +1,138 @@
+# O2 橋渡し 報告 2026-10-20
+
+作業：Claude（claude-lean worktree、branch `claude-lean`）。対象は
+`formal/Formal/Claude5O2ComparatorChallenge.lean` の2つの主張文。作業時間は約2時間
+（18:05 ごろ〜20:05、計画 18:33 commit）。
+
+## 結論
+
+`ClaudeChallengeO2.classification`（t, d ≥ 2 で文字どおりの道がない）と
+`ClaudeChallengeO2.main`（自然数の始点 ≥ 1・自然数の傾きの直線上で最終的に周期的）を、
+`sorry`・`native_decide`・新しい `axiom` なしで証明した。解答ファイルは
+`formal/Formal/Claude5O2ComparatorSolution.lean`。条件付きの部分は残っていない。
+
+検証チームの文章の証明（R004 `o2-proof.md`）が外部定理として使っていた「フラーレンの巡回
+5辺連結性（S1504）」は使っていない。「どの辺にも共通隣接点は3個ない」を Lean で直接証明した。
+
+## 経路：枕と袋のモデル
+
+O2 の2つの六角形のセルは同じ六角形である。セル1の座標を鏡映 ψ(x,y) = (y − d, x + d) で
+セル0の座標に移すと、Aᵢ, Cᵢ は同じ位置に、Dᵢ は Bᵢ の位置（2t 辺の中点）に来る。つまり O2 は
+「六角形を2枚重ねた枕」を3本の d 辺だけで縫い、3本の 2t 辺の裂け目それぞれに菱形（辺 t の
+三角形2枚、A=(0,0), D=(t,0), C=(t,t), B=(0,t)）の袋を差し込んだものである。これを具体的な
+グラフ `GM t d` にした（`Claude5O2Model`）。
+
+- 頂点 (k, z)：k = 0 は六角形の格子点すべて、k = 1 は d 辺に乗らない点（裏の面）、
+  k = 2 + i は菱形 i の内部の点。
+- 地図（chart）5枚：0, 1 が六角形、2, 3, 4 が菱形。`ch c ρ` が地図の点の頂点。菱形の境界は
+  2t 辺 i に行く（A–B–C は表、A–D–C は裏）。辺 i は 0 番目の辺 y = 0 を六角形の 120° 回転で
+  移したもの（`sp i l`）。
+- 隣接：ある地図の中で単位ベクトルだけ離れた2点（相異なる頂点）。
+
+証明は次の段からなる。
+
+1. **同型**（`Claude5O2.o2_iff_gm`）：セルの点 → 地図の点 → 頂点の写像 `Phi`。貼り合わせ
+   36 本で不変（`samePoint_phi`、貼り合わせ表は生成）、同じ像の2つの site は SamePoint 1歩で
+   結ばれる（`eqv_of_phi`、セルの組 64 通り。O2 の同一視はすべて1歩）、全射、隣接の対応
+   （菱形の地図の単位の一歩は2つの三角形のどちらかに入る）。C1 の `deg_of_equiv`,
+   `exists_literal_iff` を再利用した。
+2. **地図の局所構造**（t, d ≥ 1、`Claude5O2Chart`）：各地図は単射（`ch_inj`）。2つの地図に
+   共通な頂点は継ぎ目に乗り、位置の関係は明示的（`Tr`, `ch_eq`：d 辺なら同じ点、2t 辺 j なら
+   パラメータ l で六角形の点 `sp j l` と菱形の点）。
+3. **三つの共通隣接点はない**（t, d ≥ 2、`Claude5O2Three.no_three`）：
+   (a) 単位の差は、両端を含むどの地図でも単位の差（`cd`）；
+   (b) 互いに隣接する3頂点は1枚の地図に入る（`tri`。3枚の地図が全部違うのは角 Aⱼ の近くの
+   菱形の三角形だけで、そのときは角がその菱形の地図にも入る）；
+   (c) 2枚の地図に共通な辺では、各地図の中で頂点（apex）は高々1つが領域に入る（`seam_apex`）；
+   (d) 3枚の地図に共通な辺はない（`three_charts`）。
+4. **次数**（`Claude5O2Deg.deg_five`）：角の位置でない頂点は 6 個の相異なる隣接点をもつ
+   （内部の点はその地図で6個、継ぎ目の点は2枚の地図から 4 + 2 個、15 種類の継ぎ目は生成）。
+   したがって次数 5 なら 12 個の角のどれか。
+5. **帯**（`Claude5O2Strip`, `Claude5O2Kill`）：C1 の帯の一般論をこのモデルに移した。閉じた帯
+   （周期 N、角は偶数番目だけ）に沿って文字どおりの道が偶数番目から始まると、(3) から道は帯を
+   なぞり（前向き・後ろ向きとも）、最後の点（奇数番目）が角になれず矛盾する（`kill_fwd`,
+   `kill_bwd`）。t, d ≥ 2 の閉じた帯は向きを除いて 10 本、ブロックは計 60 個（区切りはすべて
+   角）。ブロックの表は Python のモデルの強制歩行から作り、t, d の一次式に当てはめた
+   （`fit.py`、別のパラメータで検算）。Lean は各ブロックの領域・単位の一歩・奇数番目が角でない
+   こと、各継ぎ目（隣接と相異）を、すべての t, d ≥ 2 について一次式として検査する
+   （`Claude5O2S0`〜`S9`, `S0K`〜`S9K`、生成）。
+6. **始めの網羅**（`Claude5O2StartA`〜`D`、生成）：道の最初の三角形は1枚の地図に入り（3b）、
+   最初の点はその地図の角の位置にある（`corner_pos`）。地図と角の位置の組 30 通り、そこからの
+   一歩と apex の組を数えると始めはちょうど 120 通りで、どれも 60 個の継ぎ目の前向き・後ろ向きの
+   始め（60 × 2 = 120）に一致する。これで `no_path_gm`、O2 に移して `o2_no_path`。
+7. **境界の道**（`Claude5O2SuffT1`, `SuffD1` とその続き、生成）：
+   - O2(1, d), d ≥ 3：A0 から C1 までの 4d + 4 点（ブロック3個：六角形 d 辺に沿って d、
+     菱形2の角を回って 1、裏の面を d + 1）。
+   - O2(t, 1), t ≥ 3：B0 から D1 までの 4t + 2 点（ブロック2個：y = 0 に沿って t、裏の面を
+     t + 1）。
+   点が相異なること、端と隣の次数（5, 6, 6, 5。隣接点の集合を地図の繊維から列挙して数える、
+   `deg_eq_of`）を、自由なパラメータのすべての値で Lean が検査する。
+8. **直線**（`Claude5O2Main.o2_rays`）：n ≥ 3 で、t ≡ 1（a = 0, t₀ = 1）なら常に真（b > 0）か
+   一定、d ≡ 1 も同様、それ以外は t, d ≥ 2 で常に偽。周期 1。
+
+## 証明したもの（宣言名）
+
+- `ClaudeChallengeO2.classification`, `ClaudeChallengeO2.main`（`Claude5O2ComparatorSolution`）
+- `Claude5O2.o2_no_path`（t, d ≥ 2 で道なし、`Claude5O2Nec`）
+- `Claude5O2.pe_T1`, `Claude5O2.pe_D1`, `Claude5O2.o2_rays`（`Claude5O2Main`）
+- `Claude5O2.o2_iff_gm`（`Claude5O2Iso`）、`Claude5O2.no_three`（`Claude5O2Three`）、
+  `Claude5O2.deg_five`（`Claude5O2Deg`）
+
+## 行数
+
+新しい Lean ファイル 49 個、計 9913 行（主張文ファイルと `Claude5O2Spec.lean` を除く）。
+計画の見積もり（約 5000 行）より多いのは、生成した帯（約 3400 行）・始め（約 1240 行）・
+境界の道（約 950 行）が冗長な書き方のため。手で書いた部分は約 2300 行。
+
+| ファイル | 行 | 内容 |
+|---|---|---|
+| Model / Chart | 178 / 227 | モデル、地図の単射、継ぎ目の関係 |
+| Phi / PhiB | 346 / 239 | セル → 地図、貼り合わせ表、`samePoint_phi`（生成） |
+| Eqv1 / Eqv1b / Eqv2 / Eqv2b | 410 / 254 / 259 / 325 | `eqv_of_phi`（生成） |
+| Iso | 214 | 全単射、隣接の対応、`o2_iff_gm` |
+| Three | 412 | 三つの共通隣接点はない |
+| DegBase / DegGen / DegGenB / Deg | 146 / 358 / 245 / 140 | 次数 5 なら角（継ぎ目の型は生成） |
+| Strip / Kill / StripHelp | 227 / 303 / 148 | 帯の一般論、閉じた帯、前後の強制 |
+| S0〜S9, S0K〜S9K | 47〜422 | 10 本の閉じた帯（生成） |
+| StartA〜D | 382 / 382 / 316 / 156 | 120 通りの始め（生成） |
+| Nec | 78 | 必要性の組み立て |
+| SuffBase / SuffT1 / SuffT1D / SuffD1 / SuffD1D | 65 / 127 / 345 / 87 / 327 | 境界の道（生成） |
+| Main / ComparatorSolution | 64 / 43 | 直線、解答 |
+
+生成スクリプトと Python の検査は `studies/R002/claude-lean/o2-scripts/` に置いた
+（`model.py`：モデルと spec の文字どおりの面の同型を t, d ≤ 5 の 25 例で確認；`sym.py`,
+`fit.py`, `strips.json`：閉じた帯；`gen_phi.py`, `gen_deg.py`, `gen_strips.py`,
+`gen_starts.py`, `gen_suff.py`；`split.py`：生成ファイルを定理の境目で分割）。正本は Lean の
+ファイルで、Lean の証明は Python の結果に依存しない（表が間違っていれば Lean が通らない）。
+
+## 検査
+
+- `diff`：主張文ファイルと解答ファイルの `namespace ClaudeChallengeO2` 以降は、`sorry` の行と
+  証明の行だけが違う（`PathExists` の定義と2つの主張文は一字一句同じ）。
+- `#print axioms ClaudeChallengeO2.classification` / `main`：`propext, Classical.choice,
+  Quot.sound` のみ。`no_three`, `deg_five`, `o2_iff_gm`, `pe_T1`, `pe_D1`, `o2_rays` も同じ。
+- `grep`：新しいファイルに `sorry`, `native_decide`, `axiom` なし（主張文ファイルの `sorry` を除く）。
+- O2 の全モジュールの olean を消し、依存の順に一つずつ `lake build` し直して成功（並列に
+  ならないように1モジュールずつ、記録は `o2-scripts/rebuild.log`）。最後に
+  `nice -n 10 lake build Formal.Claude5O2ComparatorSolution`：Build completed successfully。
+- comparator（`lake comparator`）は走らせていない。
+
+## メモリ
+
+すべて RSS 3 GB で止める監視つき、Lean は常に1本、`nice -n 10`。作り直しの各モジュールの
+lean の常駐メモリの最大は Three 2.02 GB、他は 1.3〜1.85 GB。途中で一度だけ、最初の版の始めの
+ファイル（1本の omega に 12 通りの選言を4成分ずつ渡していた）が 3 GB の監視で止まった。
+単位の一歩と apex を先に場合分けしてから一次式を解く形に直し、1.7 GB 以下になった。
+
+## 残り・疑問
+
+- 残りはない（分類・直線とも無条件）。
+- 境界の道は O2(1, d) で d ≥ 3、O2(t, 1) で t ≥ 3 だけを証明した（直線にはこれで足りる）。
+  O2(1,1), O2(1,2), O2(2,1) の道は Python の写しでは存在するが、Lean では示していない。
+  主張文はこれを要求しない。
+- 主張文の O2 のラベルと座標（`o2Lab`, `o2Poly`）が Graver の O2 であることは spec 作成時の
+  照合に依る。Lean では、その spec の面が上の枕と袋のモデルと同型であることを示した。
+- ファイルの行数：Eqv1 410、Three 412、S1・S4 422 行は目安の 400 行を少し超える
+  （メモリは 2 GB 以下）。
+- 警告：未使用変数・未使用の simp 引数などの lint 警告が残る（証明には影響しない）。
+- `formal/` 直下の追跡されていない `gen_*.py` は以前の作業のもので、触っていない。

@@ -1,0 +1,19 @@
+# Comparator照合：O2 の分類と直線上の最終周期性（2026-10-20）
+
+統括（Claude Code）。O2 の証明が、証明より先に別の者（主張文担当の Claude サブエージェント）が書いた主張文（`formal/Formal/Claude5O2ComparatorChallenge.lean`）の二つの定理と同じ文の証明であることを、`lake comparator --paranoid` で照合した。
+
+- 主張：`ClaudeChallengeO2.classification`（t, d ≥ 2 で経路はない）と `ClaudeChallengeO2.main`（始点 ≥ 1 のどの直線でも最終周期的）。定義は `ClaudeChallengeSpec.lean`・`Claude2AlignedSpec.lean`・`Claude5O2Spec.lean` からの一字一句の写し（機械で確認）。
+- 主張文と論文の対応：独立な読み手（`studies/R002/analysis/2026-10-20-claude-aligned-challenge/statement-review-1/`、FAITHFUL WITH CAVEATS）と Python の写し（`studies/R002/analysis/2026-10-20-claude-o2-bridge/`）。人間の確認はない。
+- 証明：`Claude5O2ComparatorSolution.lean`（Claude サブエージェント、49ファイル 9,913 行、うち約 7,600 行は生成）。道筋：二つの六角形を同じ六角形の二枚重ね（d 辺で縫い、2t 辺の裂け目に菱形の袋）とみる具体的なモデルとの同型 `Claude5O2.o2_iff_gm`、共通の隣が3つの辺がないこと（外部のサイクリック辺連結性の定理を使わない）、次数5なら12の角、10本の閉じた帯（60ブロック）と120通りの始めの網羅、境界 O2(1,d)（d ≥ 3）・O2(t,1)（t ≥ 3）の明示的な道。報告：`o2-bridge-report-2026-10-20.md`。
+- 設定：`formal/comparator-o2.json`。
+
+## 結果
+**Lean paranoid・lean4lean・nanoda・con-leche（13,413宣言）・con-ron（13,413宣言）・Lean標準の6つのkernelが全て受理。Your solution is okay!** 122.9秒、最大2.06GB。生の出力：`comparator-o2-paranoid-2026-10-20.txt`（lint の警告を含む。証明には影響しない）。
+
+統括の別の確認：`#print axioms` は二つの定理とも標準の3つ。新しいファイルに sorry・native_decide・axiom はない。`namespace ClaudeChallengeO2` 以降の challenge との差は証明の行だけ。spec・challenge・Formal.lean・既存の comparator 設定は変更なし。`lake build Formal.Claude5O2ComparatorSolution` 成功。
+
+## 留保
+- macOS に bwrap がないため隔離なしで実行。
+- 証明はすべて Claude サブエージェントによる。
+- O2(1,1)・O2(1,2)・O2(2,1) の道は Lean で示していない（主張文は要求しない。Python の写しでは存在）。
+- spec の辺の名前と座標が Graver の O2 であることは、主張文担当の確認と独立な読み手による。

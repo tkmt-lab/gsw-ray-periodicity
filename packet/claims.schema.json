@@ -15,7 +15,7 @@
       "const": 3
     },
     "version": {
-      "const": "1.4.0"
+      "const": "1.5.0"
     },
     "paper": {
       "$ref": "#/$defs/evidence"
@@ -59,7 +59,12 @@
         "c1_graph_classification_received",
         "c1_literal_ray_without_prose_bridge_received",
         "c1_ipr_formalized",
-        "c1_statement_correspondence"
+        "c1_statement_correspondence",
+        "o2_graph_classification_received",
+        "o2_literal_ray_without_prose_bridge_received",
+        "o2_ipr_formalized",
+        "o2_statement_correspondence",
+        "o2_small_boundary_existence_formalized"
       ],
       "properties": {
         "main_result": {
@@ -163,6 +168,21 @@
         },
         "c1_statement_correspondence": {
           "const": "prior-specification-independent-AI-reader-finite-comparison"
+        },
+        "o2_graph_classification_received": {
+          "const": true
+        },
+        "o2_literal_ray_without_prose_bridge_received": {
+          "const": true
+        },
+        "o2_ipr_formalized": {
+          "const": false
+        },
+        "o2_statement_correspondence": {
+          "const": "prior-specification-independent-AI-reader-finite-comparison"
+        },
+        "o2_small_boundary_existence_formalized": {
+          "const": false
         }
       },
       "additionalProperties": false

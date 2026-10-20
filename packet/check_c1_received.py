@@ -12,7 +12,7 @@ def check_c1(root):
   raw=(root/p).read_bytes();assert len(raw)==r['bytes'] and hashlib.sha256(raw).hexdigest()==r['sha256'],('C1 fingerprint',r['path']);return raw
  m=load('c1-manifest.json');a=load('claims.json');by={c['id']:c for c in a['claims']}
  assert m['status']=='RECEIVED_REPORTED_PASS' and re.fullmatch('[0-9a-f]{40}',m['source_commit'])
- expected=[by['prop:closed']['lean'],[r for r in by['cor:catalog']['lean'] if r['declaration'].startswith('ClaudeChallengeC1.')]]
+ expected=[[r for r in by['prop:closed']['lean'] if r['declaration'].startswith('ClaudeChallengeC1.')],[r for r in by['cor:catalog']['lean'] if r['declaration'].startswith('ClaudeChallengeC1.')]]
  assert [[r['declaration'] for r in rows] for rows in expected]==[[DECLS[0]],[DECLS[1]]],'missing C1 Lean declarations'
  assert by['prop:closed']['status']=='mixed-prose-and-formal-results'
  assert a['scope']['c1_graph_classification_received'] and a['scope']['c1_literal_ray_without_prose_bridge_received']

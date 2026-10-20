@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "source_path": "paper-lines-v4.9-en.tex",
+  "source_sha256": "4bef5f759eaa7e956ed082d831b9ec4707b5943822c5a16c4a7f134ce7aa152d",
+  "pdf_path": "paper-lines-v4.9-en.pdf",
+  "pdf_sha256": "bff4d9395943be8b7b9ab4fa458c4bc129902518894d6e79a49631297683a647",
+  "pdf_bytes": 186644,
+  "pages": 19,
+  "typeset_trial": "T1464",
+  "render_trial": "T1466",
+  "tex_engine": "Tectonic 0.17.0 cached only",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "9a512e3a8a075e9b26582b043ff14cafd7ad4362dbb3b8146165a078ae24109f"
+    },
+    {
+      "page": 2,
+      "sha256": "2c1def726b63886e81fd34fee1a9d015e964d2030b3d04cfce7cd364bf057e29"
+    },
+    {
+      "page": 3,
+      "sha256": "1f30d97d47a3ed309f567c2b0a296dce456435e33a3d39cd488436a1ade5247d"
+    },
+    {
+      "page": 4,
+      "sha256": "864032647b5506b58aa27aead2f2d6d26953a181bba94651fa9b357dc37a1990"
+    },
+    {
+      "page": 5,
+      "sha256": "c7d1f63cb0c93359f1f61fc7c878d6e890c6e7fa25ed2f59576143c0f6dc9fbf"
+    },
+    {
+      "page": 6,
+      "sha256": "3297529a00a12313a6c4ede3f02b11794c098c498b3189e738b48ff200f87920"
+    },
+    {
+      "page": 7,
+      "sha256": "477368196e8988e29f337419401e6da663a92e0d0a12340513619164f202a45e"
+    },
+    {
+      "page": 8,
+      "sha256": "9c918969c9e2d5da1ecd7678f284de65a5ac4d2974adac902bf0c89d9df4519b"
+    },
+    {
+      "page": 9,
+      "sha256": "ad9770d430fb38fde7b3ef38b03d2f5410a4c8c7111bccc912299b2fcd928016"
+    },
+    {
+      "page": 10,
+      "sha256": "a860dd855654b7ff6e24e2d2df5f59676604b2d00458c8ed4fee93aca60a05ae"
+    },
+    {
+      "page": 11,
+      "sha256": "8dab30ff87326d0546ed1702ede62aaeef3ed654154d1310ee1470f689a3fdb2"
+    },
+    {
+      "page": 12,
+      "sha256": "edff71d17df5045f8f5e6704d10c5fea6509bbf611466c267f6a02599b47c8d5"
+    },
+    {
+      "page": 13,
+      "sha256": "2473ee30577089244dacce4dddb9189b3856bbf976c7793833b3d3ef2f1de71e"
+    },
+    {
+      "page": 14,
+      "sha256": "7fd9b858d2fe0c59fadeeba44360b4e35c758ccc637524e4dfa246637ed8a920"
+    },
+    {
+      "page": 15,
+      "sha256": "2570bee0c055b688e4dc2eac99d4a94c857b17b0ff2919c3aba2257e67233f89"
+    },
+    {
+      "page": 16,
+      "sha256": "61c38b3668111bbcd7b7404cf50887e32fdf75283b53e8325cfde572ea120655"
+    },
+    {
+      "page": 17,
+      "sha256": "686d555c7f960d31a6edf3faae9c6e41afd37bbed1e7294b5ff86bd2a5764df3"
+    },
+    {
+      "page": 18,
+      "sha256": "2ed58e09efd64ca9558b9cd11b862347cd857508c7d8ba0695c126fb9d18b52d"
+    },
+    {
+      "page": 19,
+      "sha256": "4d414bb94b12922dd240df4d6884301d5b96a8381b7868b0d8e1b8099441b8ef"
+    }
+  ],
+  "mathematical_comparison": {
+    "numbered_statement_blocks": 3,
+    "byte_identical": true,
+    "claim_ids_unchanged": 30,
+    "source_predecessor": "paper-lines-v4.8-en.tex",
+    "scope": "O2 received absence/ray proof scope; IPR and three small boundary existence cases outside Lean. Exact edit map retained; three numbered mathematical blocks and all 30 IDs unchanged."
+  },
+  "visual_review": {
+    "reviewer": "Codex main agent",
+    "all_pages_viewed": true,
+    "independent_review": false,
+    "method": "All 19 final pages viewed individually at 1100px after front-matter correction; the seven-row closed-condition table is kept intact on one page. Initial 20-page layout retained in a separate cache archive; no initial-layout image is counted as final review.",
+    "observed": "No clipping, overlaps, missing glyphs, broken tables or unresolved references. Long machine identifiers wrap at line boundaries but remain readable."
+  },
+  "uploaded": false,
+  "publication_on_hold": false
+}

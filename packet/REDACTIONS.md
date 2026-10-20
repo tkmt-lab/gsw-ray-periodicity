@@ -14,3 +14,5 @@ See [REDACTION-POLICY.md](REDACTION-POLICY.md) for the fixed rules and original/
 Packet 1.2.0 inherits these same six public derivatives and original-hash bindings. The new owner-confirmation records have no private-name/path replacements; the separate article v4.4 prose change is not a redaction.
 
 This edition also removes the old individual-identifier scanner vocabulary. Private-name checks were performed internally; the public scanner contains generic patterns only. Existing historical record transformations in the table above are unchanged.
+
+Packet 1.5.0 adds exact O2 proof-source and receipt copies and article 4.9, with no new privacy substitutions. Historical public derivatives retain their original transformation contracts. O2 proof-scope edits and the new PDF are not described as redaction-only byte preservation. Public generic scans and nonpublic internal checks are kept separate.

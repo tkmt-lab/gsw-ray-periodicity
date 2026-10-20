@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 4.8, 20 October 2026}
+\date{Version 4.9, 20 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -37,11 +37,11 @@ not a new general periodicity principle. We record
 the resulting ray statements for eleven specified catalogue families,
 alongside closed conditions on their stated domains. Existing Lean
 results establish arithmetic periodicity of several family predicates
-and determine two example rays for every ray parameter. For K3 and C1,
-graph classifications and actual-path periodicity on positive integer
-affine rays are Lean-proved on explicit quotient specifications, without
-the general prose bridge. K3 ray boundaries at one are included;
-C1 admits all positive parameters. The C1 IPR condition is outside Lean. The general
+and determine two example rays for every ray parameter. For K3, C1 and O2, stated-domain graph classifications and actual-path
+periodicity on positive integer affine rays are Lean-proved on explicit
+quotient specifications, without the general prose bridge. Parameter-one
+rays are included; the O2 absence domain is $t,d\ge2$. The separate
+C1 and O2 IPR conditions are outside Lean. The general
 eventual-periodicity statement is now proved
 in Lean against a specification written by the coordinator before the
 proof. Its correspondence to the geometric hypotheses is an explicit
@@ -55,34 +55,26 @@ no executable geometric-to-MSO compiler or period algorithm is supplied.
 \maketitle
 
 \noindent\textbf{Editorial and evidence status.}
-This English edition continues Japanese v3. The
-main result is its convex-face Theorem 1a and catalogue Corollary 1b.
-The wider fixed-oblique-direction argument is retained only as a proof
-sketch in Section~\ref{sec:extension}, outside the abstract's claims.
-The contribution is the uniform geometric reduction to a fixed MSO
-sentence on unary words; the final periodicity implication is known.
-Section~\ref{sec:novelty} separates that reduction from standard
-MSO, parametric Presburger and fixed-boundary iteration results.
-The independent verifier R004 derived the convex-face proof without
-reading the research team's proof, construction or code. The statement
-was known. Disclosures about O2 mapping metadata and D12 single-point
-information are retained; strict blindness is not claimed. One AI
-coordinator reviewed the route. Translation and packaging are not a
-third mathematical derivation or human peer review. The exact
-coordinator-written Theorem 1a specification now has a Lean proof
-and a saved six-kernel Comparator acceptance. On 20 October 2026,
-the owner reported reading version 2 with the Japanese guide and its
-addendum and confirming that it expresses Theorem 1a. This checks
-statement meaning, not the proof or prose correspondence lemma. Previous
-authorship, affiliation and licensing decisions are retained; the
-statement-meaning check is separate from publication decisions. On
-20 October 2026 the owner discontinued owner statement-meaning checks as a
-verification procedure; the earlier record remains factual. The K3 and C1
-correspondence evidence instead comprises a specification written before
-the proof, an independent AI statement reader and finite computational
-comparisons. The first paper's
-A3 classification is a separate work; its 816-class census is not
-reproduced here. A new D12 classification is not incorporated.
+This English edition continues Japanese v3, with convex-face Theorem 1a
+and catalogue Corollary 1b as its main results. The fixed-oblique-direction
+extension remains a proof sketch outside the abstract's claims.
+Section~\ref{sec:novelty} separates the geometric reduction from known
+MSO, parametric Presburger and fixed-boundary periodicity results.
+R004 derived the convex-face proof without reading the research team's
+proof, construction or code; the statement was known. The O2 mapping
+metadata and D12 single-point disclosures remain: strict blindness is
+not claimed. One AI coordinator reviewed the route. Translation and
+packaging supply neither a third derivation nor human peer review.
+The coordinator-written Theorem 1a specification has a Lean proof and
+saved six-kernel acceptance. On 20 October 2026, the owner read version 2
+with the Japanese guide and addendum and confirmed its statement meaning,
+not its proof or prose correspondence. Earlier authorship, affiliation,
+licensing and statement records remain factual; owner statement-meaning
+checks ended as a procedure that day. K3, C1 and O2 correspondence instead
+uses prior specifications, independent AI statement readers and finite
+comparisons. No new owner-confirmation procedure is added. A3's
+classification and 816-class census belong to the separate first paper.
+A new D12 classification is not incorporated.
 
 \clearpage
 \section{Definitions, signatures and valid rays}\label{sec:definitions}
@@ -244,8 +236,8 @@ There are eleven families in this statement. Positive boundaries with
 a parameter fixed at 1 are included, notably K3 and O2 and E10 with
 $r=1$. Collapsed zero boundaries are not. The corollary gives no
 two-variable closed classification merely from ray periodicity.
-The K3 and C1 parts now also have direct Lean proofs on their quotient
-graphs, including positive boundary parameters, without invoking the
+The K3, C1 and O2 parts now also have direct Lean ray proofs on their
+quotient graphs, including positive boundary parameters, without invoking the
 general prose correspondence lemma. Their ray declarations start with
 positive natural coordinates and nonnegative slopes; an eventually positive
 integer ray is covered by reindexing its positive tail. The other family
@@ -488,7 +480,7 @@ A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:
 K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
 E10, $p,r,s\ge1$ & Arithmetic for $r\ge2$; the five-piece decomposition includes $r=1$.\\
 D12, D14, D1 & The convex decompositions on valid positive integer parameters.\\
-O2, $t,d\ge1$ & Convex decomposition, including parameter 1; absence is received only for $t,d\ge2$.\\\bottomrule
+O2, $t,d\ge1$ & Lean actual-path ray periodicity, including parameter 1; Lean absence for $t,d\ge2$. No general prose bridge.\\\bottomrule
 \end{tabular}
 \end{center}
 This proves Corollary~\ref{cor:catalog} using the stated geometric
@@ -497,8 +489,8 @@ receipts and the separate arithmetic results. It does not cover all
 
 \section{Closed conditions and the scope of partial results}\label{sec:conditions}
 The following are received classifications of valid catalogue graphs.
-The R004 prose arguments are retained; K3 and C1 now additionally have
-Lean graph classifications on their respective stated domains. Independent derivation of the same conclusion is distinct
+The R004 prose arguments are retained; K3, C1 and O2 now additionally
+have Lean graph classifications on their respective stated domains. Independent derivation of the same conclusion is distinct
 from checking every coordinate convention in the research team's
 tables. Lean arithmetic for a predicate does not by itself prove its
 equivalence to a graph property.
@@ -513,6 +505,7 @@ A2, $p\ge1$ & $p=1$ & Existing $C_{60}$ witness and integer GC. R004 report 14 d
 C1, $a,b\ge1$ & $b=1$; IPR iff $a,b\ge2$ & R004 prose proof retained; Lean graph iff received for paths only. The IPR condition is outside Lean.\\
 B2, $p,r\ge1$ & $p=1$ or $|p-r|=1$ & R004 report 4 and B2 proof, whole positive domain.\\
 K3, $r,s\ge2$ & $s\equiv\pm1\pmod r$ & R004 positive and necessary prose proofs retained; full Lean graph iff now received, without a prose bridge.\\
+O2, $t,d\ge2$ & Never positive & R004 prose absence retained; Lean graph absence received, without a prose bridge. IPR remains outside Lean.\\
 E10, $p,s\ge1,r\ge2$ & $m=2r+s$ and $p\equiv d\pm1\pmod m$ for some $d\in\{0,r,r+s\}$ & R004 reports 5--6 and both prose directions. Predicate-ray arithmetic formalized; full graph iff not formalized.\\\bottomrule
 \end{tabular}
 \end{center}
@@ -527,8 +520,13 @@ all independently reviewed.
 
 \subsection{Partial branches and boundary examples}\label{prop:partial}
 \claimid{prop:partial}
-O2 is received as absent and IPR for $t,d\ge2$, with the mapping-metadata
-disclosure retained. For D14 and D1 with both parameters at least two,
+For O2, absence on $t,d\ge2$ now also has a Lean graph proof, while
+IPR on that domain remains a received prose result. The mapping-metadata
+disclosure is retained. Boundary paths for O2$(1,d)$ with $d\ge3$ and
+O2$(t,1)$ with $t\ge3$ are Lean-proved; existence at O2$(1,1)$,
+O2$(1,2)$ and O2$(2,1)$ is outside the received Lean results. The ray
+theorem nevertheless covers these constant rays without deciding their
+path existence. For D14 and D1 with both parameters at least two,
 the research team has belt-based absence drafts; R004's all-ray
 periodicity receipt is not a new independent proof of that closed
 absence claim. Common integer scaling by at least two gives absence
@@ -811,6 +809,51 @@ The challenge has two intentional placeholders and is excluded from proof
 dependencies; the solution proves both statements. Exact sources and
 receipt hashes are supplied in the machine packet.
 
+\subsection{O2 absence and ray periodicity}\label{sec:o2-formal}
+The received declarations are
+\begin{quote}\small\noindent
+\record{ClaudeChallengeO2.classification};\\
+\record{ClaudeChallengeO2.main}.
+\end{quote}
+The first proves that \record{Claude2Aligned.o2Graph}$(t,d)$ has no literal
+path for natural $t,d\ge2$. The second proves actual-path eventual
+periodicity on every ray $(t_0+an,d_0+bn)$ with $t_0,d_0\ge1$ and
+$a,b\ge0$, including parameter-one and constant rays. The parameter
+names agree with the paper. Reindexing an eventually positive integer
+ray to its positive tail remains explanatory arithmetic. R004's prose
+absence proof is retained; these O2 path claims now need no general
+prose geometric-to-specification bridge. IPR is not formalized.
+
+The eight-cell specification uses two hexagons with alternating sides
+$2t,d,2t,d,2t,d$, each long side split at its midpoint, and six triangles
+of side $t$. The equivalence \record{Claude5O2.o2_iff_gm} identifies it
+with two overlaid hexagons sewn along the three $d$-sides, with a rhombic
+pocket inserted into each $2t$-side slit. The proof directly rules out
+three common neighbours on an edge, locates degree-five vertices at the
+twelve corners, and covers the 120 starting triangles by ten closed
+strips. It does not use the external cyclic edge-connectivity theorem
+of the R004 prose argument.
+
+Explicit boundary paths are proved for $(1,d)$ with $d\ge3$ and
+$(t,1)$ with $t\ge3$. Path existence at $(1,1),(1,2),(2,1)$ is not
+proved in Lean by this receipt. These three constant graphs do not
+require their existence decision for the ray theorem: any fixed graph
+has a constant decision. The saved finite mirror finds paths there,
+which is finite evidence outside Lean.
+
+The specification and challenge were fixed before the proof by a
+separate statement writer. One independent AI statement reader returned
+``faithful with caveats'', confirming the path domains and the carbon
+order $14t^2+16td+2d^2$, while retaining a caveat about identification
+with the named catalogue family. Its 36 known pairs lie within the
+saved mirror's 80 pairs $1\le t\le8$, $1\le d\le10$; they are not
+a second disjoint census or a universal catalogue-isomorphism theorem.
+The received mirror agrees with the verifier's construction on the
+recorded graphs and decisions. No new owner-confirmation field,
+human proof review or independent Lean derivation is added. The inert
+challenge has two intentional placeholders and is excluded from proof
+dependencies. Source and record hashes are supplied in the machine layer.
+
 \subsection{Historical conditional kernels}\label{sec:historical-formal}
 \label{lem:historical-kernels}\claimid{lem:historical-kernels}
 The earlier research layer supplies conditional pieces:
@@ -851,7 +894,14 @@ all six kernels accepted the same two supplied proofs. The coordinator
 also records a successful build and standard-three-axiom queries for
 both declarations. The worker report predates that Comparator run;
 its not-run note is retained as historical. C1 likewise lacked OS process
-isolation on macOS. No external kernel or Lean command is rerun for this edition.
+isolation on macOS. A separate O2 paranoid Comparator receipt likewise
+covers both \record{ClaudeChallengeO2.classification} and
+\record{ClaudeChallengeO2.main}, with all six kernels accepting the same
+supplied proofs. The coordinator reports successful builds and
+standard-three-axiom queries for both. The worker report precedes the
+Comparator run and its not-run note is historical. O2 also lacked OS
+process isolation on macOS. No external kernel or Lean command is rerun
+for this edition.
 The claims' expository dependencies and Lean's imported proof-term
 dependencies are different. A prose statement can remain open for
 its coordinate or human-semantic bridge while a separate exact
@@ -1166,7 +1216,8 @@ The primary received declarations now include
 \record{ClaudeChallengeK3.main}, \record{Claude4K3.k3_statement} and
 \record{Claude4K3.noThree}. The new C1 entries are
 \record{ClaudeChallengeC1.classification} and \record{ClaudeChallengeC1.main}.
-The machine layer supplies their exact
+The O2 entries are \record{ClaudeChallengeO2.classification} and
+\record{ClaudeChallengeO2.main}. The machine layer supplies their exact
 types, source commit and the kind of proof receipt. The historical
 representative kernel types remain:
 \begin{quote}\small
@@ -1200,10 +1251,10 @@ to assist with literature organization, mathematical exploration,
 proof drafting, implementation, finite verification, formalization of
 the explicitly identified arithmetic and graph statements and the
 specification-level Theorem 1a, and English exposition. Claude workers
-supplied the general theorem's, K3's and C1's Lean proofs against the
+supplied the general theorem's, K3's, C1's and O2's Lean proofs against the
 coordinator's prior specifications. The research team checked the
 received sources and records; it did not supply an independent Lean
-derivation or rerun Lean for this C1 edition. The author is responsible
+derivation or rerun Lean for this O2 edition. The author is responsible
 for the published account, its provenance, and the stated limits of
 verification. AI systems are not listed as authors. AI prose reviews
 are identified separately from human review. Only the explicitly
