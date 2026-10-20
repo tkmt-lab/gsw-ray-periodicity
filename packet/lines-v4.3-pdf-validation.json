@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "pdf_path": "paper-lines-v4.3-en.pdf",
+  "source_path": "paper-lines-v4.3-en.tex",
+  "pdf_sha256": "93970a4e405d25c9166682c55067fc51b2d3e0acf8a92d575dab76d4a21aba3f",
+  "source_sha256": "dad23afeae49ddc7db0abf2a871eb7326a634432d3f511c27e5ba197141882d5",
+  "pdf_bytes": 170629,
+  "pages": 17,
+  "typeset_trial": "T1331",
+  "render_trial": "T1332",
+  "tex_engine": "Tectonic 0.17.0, cached only",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "721f53e4863db50d4f55f4730a4bfd6e70f90c5e47c182472cc022407a9e8135"
+    },
+    {
+      "page": 2,
+      "sha256": "2c1def726b63886e81fd34fee1a9d015e964d2030b3d04cfce7cd364bf057e29"
+    },
+    {
+      "page": 3,
+      "sha256": "1005a63e47fc60cc272cb00b4b5286baad2575dcaa7bcb8b3e0cf51e9ea54e0b"
+    },
+    {
+      "page": 4,
+      "sha256": "fc4d57dbeb3f5619761dae0230bb1f1f2b92e088d70f0867dbb5a9ed16bcf0f6"
+    },
+    {
+      "page": 5,
+      "sha256": "5251fc96dc20a61b2fc3753a0af37c79e0e81c2db340dffb64c58384adc1b067"
+    },
+    {
+      "page": 6,
+      "sha256": "5054492ea09632b8dcba1677f727a520caa8cf61c1c9c1444e57df617d8be48b"
+    },
+    {
+      "page": 7,
+      "sha256": "6469ebec9974a89fe49c798cdec0a4bb950a01f36464294bb27e66940bf71600"
+    },
+    {
+      "page": 8,
+      "sha256": "aa8324fc2919261ab2c51c7a3324d60cacdd7e17a66a7a8fc057c4e7cb3e0197"
+    },
+    {
+      "page": 9,
+      "sha256": "a07ad3396f8cc3c4d758408917377772419e315b40f6e2c1636608cddd84dc3b"
+    },
+    {
+      "page": 10,
+      "sha256": "72a776796ddbf74677890976910f9cab7e256a9ae1cefedb53c699cd33caf89a"
+    },
+    {
+      "page": 11,
+      "sha256": "012e7aa5d49e5efda9058ae143791612e7edba8765c61d8ef27ff13fb1562ebe"
+    },
+    {
+      "page": 12,
+      "sha256": "75dfd177893949444e4b9bf895dc286f6aadd4f771d0520432963d58dc4e693d"
+    },
+    {
+      "page": 13,
+      "sha256": "41adfb0fc1a0dc74af7cf6219b31cc548202db49a3cb6a7dd0e16ac32317fc1a"
+    },
+    {
+      "page": 14,
+      "sha256": "38d3199d87827789757b8966f0b87b67c508a45884d10b557256f457230d2560"
+    },
+    {
+      "page": 15,
+      "sha256": "215c07e39a0fa0d4abd8eb1ac8d32e3b798f64a0c00dc70e31814b6bd6bc53f4"
+    },
+    {
+      "page": 16,
+      "sha256": "c270948f6ee4398b4af6c0a4400b8074f03ac9667eccaa91f5bd773e38b267c0"
+    },
+    {
+      "page": 17,
+      "sha256": "411a21afd48fbcc767bb84382140ec0b04eb2c11d7a683ec7fc10ac734bbbe94"
+    }
+  ],
+  "mathematical_comparison": {
+    "numbered_statement_blocks": 3,
+    "byte_identical": true,
+    "claim_ids_unchanged": 30,
+    "source_predecessor": "paper-lines-v4.2-en.tex",
+    "added_bridge": "Prose, explicitly not a Lean theorem; no-extra-identifications argument; residue combination cites main_residue"
+  },
+  "visual_review": {
+    "reviewer": "Codex main agent",
+    "all_pages_viewed": true,
+    "independent_review": false,
+    "method": "All final pages rendered at 1100px and viewed individually.",
+    "observed": "No clipping, overlaps, missing glyphs, broken tables or unresolved references; mild underfull lines remain readable."
+  },
+  "uploaded": false,
+  "publication_on_hold": true
+}

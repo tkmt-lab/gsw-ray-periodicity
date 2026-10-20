@@ -1,0 +1,23 @@
+{
+  "source_id": "S2184",
+  "title": "Geometric Structure of Chemistry-Relevant Graphs — chapters 2/7 public access pages",
+  "authors_or_provider": "Michel-Marie Deza; Mathieu Dutour Sikirić; Mikhail Ivanovitch Shtogrin; Springer",
+  "url_or_path": "https://link.springer.com/chapter/10.1007/978-81-322-2449-5_7",
+  "version": "Springer 2015, chapters 2 (25–56), 7 (151–190), public abstracts/access pages checked 2026-10-19; HTTP200は本文取得ではない。",
+  "published_at": "2015",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "章2と7の題・要旨・参考文献とアクセス条件/価格欄。章2本文、7.1–7.6本文は未取得。既存S2025の無料前付・目次も参照。",
+  "read_scope": "章2と7の題・要旨・参考文献とアクセス条件/価格欄。章2本文、7.1–7.6本文は未取得。既存S2025の無料前付・目次も参照。",
+  "claim_supported": "重要な書籍章の本文は今回無料で得られず、必要十分条件の既出性に留保がある。",
+  "license_or_terms": "無料の公式公開資料・既存の正規経路で取得した控え。本文はGit非追跡cache、再配布なし。",
+  "local_snapshot": "data/cache/R005/next27/book-access-bundle.txt",
+  "sha256": "b3e7a639a20b776b14ecdb03240b5defa6804507042418b58b7b1f1af9bfcb3b",
+  "limitations": "章2/7各JPY3498、ebook JPY5719という取得時表示。購入・institution loginなし。本文の命題は推測しない。",
+  "fetched_at": "2026-10-19T11:21:02.348402+00:00",
+  "quotes": [
+    {
+      "text": "This is a preview of subscription content",
+      "supports": "重要な書籍章の本文は今回無料で得られず、必要十分条件の既出性に留保がある。"
+    }
+  ]
+}

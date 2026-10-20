@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "comparison": "exact non-comment definition tokens, excluding imports and MainStatement/main bodies",
+  "challenge_sha256": "d2800a5c4560ce94b5f94faada54003063bcb3e38b599d32e035d23ab264a66d",
+  "spec_sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+  "comparator_challenge_sha256": "cecc4c3026271e570a154e287da26ee56eacaeb13e6621599be598131a578440",
+  "owner_statement_confirmed": false
+}

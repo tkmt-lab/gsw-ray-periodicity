@@ -1,0 +1,165 @@
+# K3のグラフ水準のLean形式化：十分性の証明（2026-10-19）
+
+Claude worker（claude-lean worktree、branch `claude-lean`）。作業時間は21:25–22:15 JST。Leanは1プロセスずつ、`nice -n 10 lake env lean -j1 -M4096`で実行した（開始時の空きメモリ52%）。
+
+## 0. 結論
+
+**`K3Sufficient`（`Claude2AlignedSpec.lean`の文）をLeanで証明した。**
+
+```lean
+theorem Claude2K3.k3_sufficient : Claude2Aligned.K3Sufficient
+-- K3Sufficient :=
+--   ∀ r s : ℕ, 2 ≤ r → 2 ≤ s → ((s : ℤ) ≡ 1 [ZMOD r] ∨ (s : ℤ) ≡ -1 [ZMOD r]) →
+--     ∃ n p, LiteralPath (k3Graph r s) n p
+```
+
+`#print axioms`は標準3公理 `[propext, Classical.choice, Quot.sound]` だけである。sorry・native_decide・新しい公理は使っていない。対象は下記の主要宣言すべてである。
+
+追加したのは新規のLeanファイル7本で、計2,382行である。既存ファイルと`Formal.lean`は変更していない。生成スクリプト4本も追加した（計263行）。
+
+次数については、次の二つを示した。
+
+- **12個の角はすべて次数5**（`deg_corner`）。
+- 次数6を示した頂点は三種類ある。
+  - 経路の端で使う頂点。角に隣接する、継ぎ目上の点と、capの境界上の点である。
+  - 六角形の内部点のすべて。
+  - 角三角形（cap中央の三角形を除く6枚）の内部点のすべて。
+
+一般の辺上の点と、cap中央の三角形（cell 3・7）の内部点は対象外とした。「次数5はちょうど12個」という全分類も示していない（§4）。必要性は今回の範囲外である。
+
+## 1. ファイルと内容
+
+| ファイル | 行 | 内容 | 検査時間 |
+|---|---|---|---|
+| `Claude2K3Inv.lean` | 163 | `inCell_iff`：cellへの所属を一次不等式（`TriIn`・`HexIn`）で表す。頂点不変量`inv = (hgt, nrm ang)`を定義し、`samePoint_inv`で、42個の貼り合わせ×回転m mod 6の全場合について`inv`が保たれることを示す | 約2分 |
+| `Claude2K3Vertex.lean` | 271 | `vtx_inv`（同じ頂点の二つのsiteは`inv`が等しい）。`V f z`（cell fの格子点zの頂点）、`V_glue`、`V_adj`、`nodup_V`。42個の貼り合わせを平行移動つきで明示した`gl_g_i`。次数の数え上げ補題`deg_eq` | 20秒 |
+| `Claude2K3Degree.lean` | 831 | 経路の端点と第2点の次数（12補題、生成） | 70秒 |
+| `Claude2K3Tube.lean` | 171 | 筒の展開`tv`。`hex_same`（どのjで読んでも同じ頂点）、`inv_tube`、`tube_eq`、`literal_of_tube` | 10秒 |
+| `Claude2K3Sufficient.lean` | 145 | `path_plus`、`path_minus`、**`k3_sufficient`** | 10秒 |
+| `Claude2K3Corners.lean` | 639 | **`deg_corner`**：12ラベルすべての角が次数5（8補題を生成し、4補題は再利用） | 45秒 |
+| `Claude2K3Interior.lean` | 162 | `deg_hex_interior`、`deg_tri_interior` | 60秒 |
+
+`lake build Formal.Claude2K3Interior`で全体が通る（1126 jobs）。依存は`Claude2AlignedK3Glue`（その先は`Claude2AlignedSpec`、`ClaudeChallengeSpec`、Mathlib）だけで、本隊の`GC*`ライブラリは使っていない。
+
+## 2. 証明の設計
+
+### 2.1 頂点不変量（段階A：頂点の標準形の代わり）
+
+完全な標準形（角ラベル／辺の位置／内部点）の代わりに、二つの整数値関数を使った。
+
+- **hgt**：筒（六角形 cell 8,9,10）では`y − x`である。上のcapの角三角形では`−(x+y)`、中央三角形では`−r`とする。下のcapでは`2s + r − y`、中央三角形では`2s + r`とする。
+- **ang**：筒では`x + y + 2rj`（cell 10・9・8がj=0・1・2）。これはR004の筒座標の`u`にあたる。capの角三角形では一次式で延長した。中央三角形（cell 3・7）では辺ごとの区分一次式とした。値は6rを法として読み、`nrm`で[0,6r)に正規化する。
+
+`samePoint_inv`は、`SamePoint`で結ばれた二つのsiteで`(hgt, nrm ang)`が一致することを示す。示し方は次の通りである。
+
+1. ラベルの対から貼り合わせ表の42場合に分ける（前回の`k3_pairs`を使う）。
+2. 各場合でm mod 6の6通りに分ける。
+3. 誤ったmは`Glue`の等式が矛盾する。正しいmでは、両cellの一次不等式から点が辺上にあることが従い、`omega`で閉じる。
+
+Python鏡像（`claude2_k3_inv_check.py`）で、1≤r,s≤6の全貼り合わせ点対について一致を確認してから証明した。
+
+`inv`は単射ではない（cell 3・7の内部で点を区別しない）。しかし筒の上では、`inv_tube : inv = (y − x, (x+y) mod 6r)`となる。そこから`tube_eq`が従う：x座標の差が1以下の二つの筒の点が同じ頂点なら、二点は等しい。
+
+R004の単射性の議論（「x座標差≤1なので(3r,3r)の非零倍では一致しない」）を、商の上で示したことになる。
+
+### 2.2 次数（段階B）
+
+`deg_eq`は次の4つを仮定し、`deg v = L.length`を結論する。
+
+- (i) vの全site（`inv`が一致するsite）がリストCに入っている。
+- (ii) Cの各siteから単位ベクトル1歩で行ける点は、v自身かLの元である。
+- (iii) Lの各元はvに隣接する。
+- (iv) Lは重複しない。
+
+個々の次数補題は、Python生成器（`claude2_k3_gen_degree.py`）が鏡像グラフから作る。生成器が出すのは、siteのリスト、近傍の類、同一視に使う貼り合わせ、`inv`の値である。
+
+生成器は記号的なr,sの一次式を、3点(7,11),(8,11),(7,12)で当てはめて求める。その式は、(2,2),(2,3),(3,2),(5,2),…の9点で、構造（site集合、近傍、同一視）が一致することを確かめてある。
+
+生成器はLeanの証明テキストを作るだけで、正しさの根拠はLeanの検査にある。全補題はr,s≥2の全体で証明されている。
+
+### 2.3 筒と経路（段階C）
+
+- 筒の点zの頂点は`tv z`である。zを含む六角形`H + j(r,r)`のどれで読んでも、同じ頂点になる（`hex_same`）。隣の六角形とは、継ぎ目の貼り合わせ`gl_10_2`・`gl_9_2`・`gl_8_2`でつながる。
+- `literal_of_tube`は、筒の点の列Pから`LiteralPath`を作る。仮定は次の通りである。
+  - 添字差≤2の二点が共通の六角形に入る。
+  - その二点の差が単位ベクトルである。
+  - |x差|≤1である。
+  - Pは単射である。
+  - 端の4頂点の次数が正しい。
+- 経路は、R004 `k3-positive-proof.md`の式をそのまま使った。
+  - `s = qr+1`の場合：`pathPlus n = (−(n mod 2), ⌊(n+1)/2⌋)`で、`(0,t),(−1,t+1)`、`4s−2`頂点。
+  - `s = qr−1`の場合：`pathMinus n = (n mod 2, ⌊n/2⌋)`で、`(0,t),(1,t)`、`4s+4`頂点。
+- 共通の六角形には`j = ⌊u/2r⌋`をとる（u = x+y の小さい方）。所属の不等式は、`j·r`を原子として`omega`で示した。合同条件は所属には使っていない。端点が角になるためにだけ使う。
+- 端の次数は次の通りに割り当てた。
+  - 始点：`deg_top_corner`
+  - 第2点：`deg_top_seam`または`deg_top_cap`
+  - 最後から2番目：`deg_bot_seam`または`deg_bot_cap`（六角形q、またはq−1）
+  - 終点：`deg_bot_corner`（六角形q）
+
+  qはmod 3で3通りあるので、下側の補題はcell 8・9・10ごとに用意した。
+
+### 2.4 主な定理の文
+
+```lean
+theorem Claude2K3.path_plus (hr : 2 ≤ r) (q : ℤ) (hq : 1 ≤ q) (hsq : s = q * r + 1) :
+    LiteralPath (k3Graph r s) (4 * s - 2).toNat (fun n => tv r s (pathPlus n))
+theorem Claude2K3.path_minus (hr : 2 ≤ r) (q : ℤ) (hsq : s = q * r - 1) (hs : 2 ≤ s) :
+    LiteralPath (k3Graph r s) (4 * s + 4).toNat (fun n => tv r s (pathMinus n))
+theorem Claude2K3.deg_corner (hr : 2 ≤ r) (hs : 2 ≤ s) (a : Fin 12) :
+    deg (k3Graph r s) (V r s (cornerRep a).1 ((k3Sig r s).pt (cornerRep a).1 (cornerRep a).2)) = 5
+theorem Claude2K3.cornerRep_label (a : Fin 12) : k3lb (cornerRep a).1 (cornerRep a).2 = a
+theorem Claude2K3.deg_hex_interior (hr : 2 ≤ r) (hs : 2 ≤ s) (c : Fin 11) (hc : c = 8 ∨ c = 9 ∨ c = 10)
+    (z : ℤ × ℤ) (hz : HexInt r s z) : deg (k3Graph r s) (V r s c z) = 6
+theorem Claude2K3.deg_tri_interior (hr : 2 ≤ r) (hs : 2 ≤ s) (c : Fin 11)
+    (hc : c = 0 ∨ c = 1 ∨ c = 2 ∨ c = 4 ∨ c = 5 ∨ c = 6) (z : ℤ × ℤ) (hz : TriInt r z) :
+    deg (k3Graph r s) (V r s c z) = 6
+theorem Claude2K3.samePoint_inv (hr : 0 < r) (hs : 0 < s) (a b : (k3Sig r s).Site)
+    (h : (k3Sig r s).SamePoint a b) : inv r s a.1 = inv r s b.1
+theorem Claude2K3.tube_eq ... -- 同じ頂点の筒の2点で |x−x'| ≤ 1 なら等しい
+```
+
+`#print axioms`の結果は、上の全宣言と`literal_of_tube`・`vtx_inv`・`inCell_iff`・`deg_top_cap`・`deg_bot_cap`・`deg_bot_seam`のすべてについて`[propext, Classical.choice, Quot.sound]`だった。
+
+## 3. 前回の見積もりとの比較
+
+前回の見積もりは、A（標準形）＋B（次数）＋C（十分性）で2,200–4,000行だった。今回は約1,600行（Inv・Vertex・Degree・Tube・Sufficient）で十分性まで閉じた。
+
+短く済んだ理由は二つある。
+
+- 完全な標準形の代わりに、貼り合わせで保たれる二つの不変量（hgt, ang）を使った。
+- 次数の証明を、鏡像からの生成に任せた。
+
+全12角の次数5（Corners）と内部点の次数6（Interior）は、その後に追加した。
+
+## 4. 残る隙間
+
+1. **次数の全分類は未完である。** 示していないのは次の三つである。
+   - 一般の辺上の点（21本の辺の内点のうち、経路が使う角の隣以外）が次数6であること。
+   - cell 3・7（cap中央三角形）の内部点が次数6であること。
+   - 次数5がちょうど12個であること（全頂点が角／辺／内部のどれかであることと、その組み立て）。
+
+   cell 3・7の内部とcap内部の辺では、`inv`が点を区別しない。そこで第3の不変量（例：中央三角形の内部点でだけx座標を返し、他では0を返す`aux`）を追加する必要がある。辺の内点は、位置tを記号のまま扱う生成器の拡張で書ける見込みである（1辺あたり約40–75行）。予算行数の都合で着手しなかった。
+2. **完全な頂点の標準形はない。** `inv`は頂点の不変量であり、筒の上では単射である（`tube_eq`）。ただし全面での単射性は示していない（cell 3・7では成り立たない）。仕様の注記「貼り合わせは境界点だけを同一視する」も、一般形では示していない。
+3. 必要性（前回の段階D・E）は範囲外とし、着手していない。
+4. 仕様`Claude2AlignedSpec`はworker自身が書いたものである。人間による読み合わせが引き続き必要である。今回の証明で、仕様から次が導けることは確かめられた。
+   - `LiteralPath`の次数条件（5,6,6,5）が実際に満たされること。
+   - 角が次数5であること。
+
+## 5. 再現
+
+```bash
+cd formal && nice -n 10 lake build Formal.Claude2K3Interior     # 全7ファイル（Sufficient・Cornersを含む）
+python3 studies/R002/claude-lean/claude2_k3_inv_check.py      # 不変量の鏡像検査（bad 0）
+# 生成器（作業ディレクトリに degs.lean / corners.lean / glues.lean を書く）
+python3 studies/R002/claude-lean/claude2_k3_gen_degree.py
+python3 studies/R002/claude-lean/claude2_k3_gen_corners.py
+python3 studies/R002/claude-lean/claude2_k3_gen_glue.py
+```
+
+`claude2_k3_gen_degree.py`の出力は`Claude2K3Degree.lean`の本体と一致する（末尾の空行を除く）。
+
+## 6. commit
+
+- `8e2685e6` Inv・Vertex・Degree・Tube・Sufficient と生成器
+- `3a282384` Corners・Interior
+- 本報告：最終commit

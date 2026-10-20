@@ -1,0 +1,34 @@
+{
+  "source_id": "S2191",
+  "title": "Counter machines and crystallographic structures",
+  "authors_or_provider": "N. Jonoska; M. Krajcevski; G. McColm",
+  "url_or_path": "https://digitalcommons.usf.edu/mth_facpub/9/",
+  "version": "Natural Computing15(2016)97–113,online30Oct2015;doi10.1007/s11047-015-9527-0",
+  "checked_at": "2026-10-19",
+  "read_scope": "USF公式repositoryとSpringerの要旨・書誌のみ。PMC取得はreCAPTCHA、USF本文PDFは403で、本文の定理・全証明は読了扱いにしない。",
+  "section_or_pages": "USF公式repositoryとSpringerの要旨・書誌のみ。PMC取得はreCAPTCHA、USF本文PDFは403で、本文の定理・全証明は読了扱いにしない。",
+  "claim_supported": "周期digraphの同じunit cellに戻るwalk語をcounter言語で記述する先行例。有限曲面パラメータ上のliteral gSW存在の最終周期性とは対象が異なる。",
+  "local_snapshot": "data/cache/R005/next28-stage2/counter-usf-landing.txt",
+  "sha256": "9b5e31ab09f3fc153829d0cf43665b5c3a42f1ab4e182897cdd8dcace17f59f1",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "要旨に限定。simple pathの条件や族パラメータ周期性の定理を含むとはしない。",
+  "quotes": [
+    {
+      "text": "We introduce a class of counter machines",
+      "supports": "周期digraphの同じunit cellに戻るwalk語をcounter言語で記述する先行例。有限曲面パラメータ上のliteral gSW存在の最終周期性とは対象が異なる。"
+    }
+  ],
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/counter-usf-landing.raw",
+      "bytes": 36536,
+      "sha256": "7bd1b3b5d3f3ca6846fa3b59b8652b32c51256a0bdae972a22cbcd669f2f863f"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/counter-springer.raw",
+      "bytes": 336080,
+      "sha256": "eef82d9b178147a6ded401c336ac819f704ca9aceec70bad01c9569225a1d8a0"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:45:37.470011+00:00"
+}

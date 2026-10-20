@@ -1,0 +1,191 @@
+# 定理1a G6/A：文の構成と組み立て（作業報告）
+
+- 作成：Claude（G6/A担当worker）。作業 2026-10-20 03:00–04:45 JST（`date` で確認）
+- worktree：`.worktrees/claude-lean`、branch `claude-lean`（push・mergeなし）
+- 触ったもの：新しい `formal/Formal/Claude3Sent*.lean`（16ファイル）、`formal/Formal/Claude3Thm1a.lean`、
+  `formal/Formal/Claude3ComparatorSolution.lean`、本報告のみ。仕様、`Claude3State*`、`Claude3Ident*`、`Claude3Fold*`、
+  `Claude3Mso*`、`Claude3Geo*`、`Formal.lean`、`comparator*.json`、`.worktrees/verify`、`studies/R004` は触っていない。
+- 名前空間：`ClaudeChallenge2.State`（解答モジュールの `main` は `ClaudeChallenge2`）
+
+## 1. 要約
+
+- **`ClaudeChallenge2.MainStatement`（仕様第2版の定理1a）を `sorry` なしで証明した**：
+
+  ```lean
+  theorem ClaudeChallenge2.State.main_statement : ClaudeChallenge2.MainStatement
+  ```
+
+  `sorry`・`native_decide`・新しい `axiom` は0件。`#print axioms main_statement` は
+  `[propext, Classical.choice, Quot.sound]`。
+- **Comparator 用の解答モジュール** `Formal/Claude3ComparatorSolution.lean` を作った。
+  `theorem ClaudeChallenge2.main` の主張文は `Formal/Claude3ComparatorChallenge.lean` と一字一句同じ（`diff` で確認、
+  差は証明の行だけ）。`#print axioms ClaudeChallenge2.main` も同じ3つ。Comparator の実行はしていない（§7）。
+- G6（文の構成）：16個の原子述語（条件3 (a)(b)(c)、根の次数、根の通過の性質6個、遷移に沿う性質6個）をすべて
+  HF の式で定義し `Sat ↔` を証明、それらから `∃ X ⊆ St, CondCore t X` の文を組み立てた（`GeoSentenceStatement`）。
+  連結性 `CondConn` は G5 の `reduction_core` により不要。
+- **統括の「既知の難所」（`TransAt` の3つの同一視が後者の入口の添字を共有する）は「ずらし」で解決した**（§4.1）。
+  平行・非平行の場合分けは遷移そのものには要らず、条件3 (b) にだけ要った（§4.5）。
+
+## 2. ファイル（計 3,187 行、すべて 400 行未満）
+
+| ファイル | 行数 | 内容 |
+|---|---:|---|
+| `Claude3SentDef.lean` | 171 | `GeoSentenceStatement`、改名 `HFR.ren`/`sat_ren`、`typeHF`、`Def1`/`Def2`、`at1`/`at2` |
+| `Claude3SentPred.lean` | 202 | 原子 `DaR DbR DcR E1P`、`QIdx`、`PR q`、`PT q`、`AtomsStatement`、条件の原子への書き直し |
+| `Claude3SentSkel.lean` | 214 | 原子の式から文 `pathSentence`、`holds_pathSentence`、`geoSentence_of_atoms` |
+| `Claude3SentRow.lean` | 200 | 出口の点、通過の範囲、ずらし `rp_shift`、角の固定 `cornerY` |
+| `Claude3SentTrans.lean` | 158 | `entRow`、`TransChar`、`trans_iff_char`（遷移の分離） |
+| `Claude3SentTransHF.lean` | 231 | `transHF`、`def2_pt_q0` |
+| `Claude3SentPin.lean` | 129 | `PinOK`、`pinHF`、自分の高さの境界の式 |
+| `Claude3SentDeg.lean` | 252 | `Def1/Def2` の閉包、`pinned_deg_iff`、`def1_E1P`、`T1`、`def2_pt_qT`、`def1_pr_qT` |
+| `Claude3SentRoot.lean` | 207 | `QPar`、`forall_exit_iff`、`def1_pr_all` |
+| `Claude3SentPar.lean` | 225 | `TransCharE`、`transAtE_iff`、`def2_pt_par` |
+| `Claude3SentTail.lean` | 373 | 全尾部の行 `tailRow`、`def2_DaR`、`def2_DcR` |
+| `Claude3SentEntry.lean` | 97 | 入口の点の後者座標 `entry_coords`（単位ベクトル `entV`）、`entry_of_witness` |
+| `Claude3SentDbW.lean` | 136 | 証人による書き直し `dbR_iff_witness`、`pb_iff_meetY` |
+| `Claude3SentDbNP.lean` | 89 | 条件3 (b) 非平行の場合 `meetY_np` |
+| `Claude3SentDbP.lean` | 126 | 条件3 (b) 平行の場合 `meetY_p`（補助の状態） |
+| `Claude3SentDb.lean` | 287 | 条件3 (b) の式と `def2_DbR` |
+| `Claude3Thm1a.lean` | 76 | 組み立て：`main_statement_of_geo`、`atomsStatement_of_DbR`、`geoSentenceStatement`、**`main_statement`** |
+| `Claude3ComparatorSolution.lean` | 14 | `ClaudeChallenge2.main` |
+
+依存：`SentDef ← SentPred ← SentSkel`；`SentPred ← SentRow ← SentTrans ← SentTransHF ← SentPin ← SentDeg ← SentRoot ← SentPar ← SentTail ← SentEntry ← SentDbW ← SentDbNP ← SentDbP ← SentDb`；
+`Thm1a` は `SentSkel`、`SentTail`、`SentDb` を import；`ComparatorSolution ← Thm1a`。
+
+## 3. 主張文（正確な形）
+
+```lean
+-- 目標（仕様 Claude3ChallengeSpec、第2版）
+def MainStatement : Prop :=
+  ∀ (S : Sig) (t₁ : ℕ), (∀ t, t₁ ≤ t → Valid S t ∧ TrianglesInCharts S t) →
+    ∃ t₀ P : ℕ, 0 < P ∧ ∀ t, t₀ ≤ t → (PathExists S t ↔ PathExists S (t + P))
+theorem main_statement : ClaudeChallenge2.MainStatement
+
+-- 解答モジュール（Challenge と同じ主張）
+theorem ClaudeChallenge2.main (S : Sig) (t₁ : ℕ)
+    (hval : ∀ t, t₁ ≤ t → Valid S t ∧ TrianglesInCharts S t) :
+    ∃ t₀ P : ℕ, 0 < P ∧ ∀ t, t₀ ≤ t → (PathExists S t ↔ PathExists S (t + P))
+
+-- G6（CondCore 版。reduction_core で PathExists と同値）
+def GeoSentenceStatement : Prop :=
+  ∀ S : Sig, ∃ φ : HSentence (PType S), ∃ t₂ : ℕ, ∀ t, t₂ ≤ t → Valid S t →
+    ClaudeChallenge2.TrianglesInCharts S t →
+      ((∃ X ⊆ St (stLo (S := S)) stHi t, CondCore t X) ↔ Holds stLo stHi t φ)
+theorem geoSentenceStatement : GeoSentenceStatement
+theorem main_statement_of_geo (hG : GeoSentenceStatement) : ClaudeChallenge2.MainStatement
+
+-- 原子の定義可能性（状態の上で、十分大きな有効な t で）
+def Def1 (S : Sig) (P : ℕ → PState S → Prop) : Prop :=
+  ∃ φ : HF (PType S) 1 0, ∃ t₂ : ℕ, ∀ t, t₂ ≤ t → Valid S t →
+    ClaudeChallenge2.TrianglesInCharts S t → ∀ x ∈ St (stLo (S := S)) stHi t,
+      (HF.Sat stLo stHi t φ ![x] Fin.elim0 ↔ P t x)
+def Def2 ...   -- 同様に2変数（![x, y]）
+def AtomsStatement (S : Sig) : Prop :=
+  Def2 S DaR ∧ Def2 S DbR ∧ Def2 S DcR ∧ Def1 S E1P ∧ ∀ q : QIdx, Def1 S (PR q) ∧ Def2 S (PT q)
+theorem geoSentence_of_atoms (hAt : ∀ S : Sig, AtomsStatement S) : GeoSentenceStatement
+theorem atomsStatement_of_DbR {S : Sig} (hb : Def2 S DbR) : AtomsStatement S
+theorem def2_DbR : Def2 S DbR
+```
+
+原子（`Claude3SentPred`）：`PR q t y := ∀ i e, RootAt t y i → PassOK t y i e → q.Q t y i e`、
+`PT q t x y := ∀ i e, TransAt t x y i → PassOK t y i e → q.Q t y i e`（`q ∈ {q0, qT, qP b, qE, qL}`）、
+`DaR`/`DbR`/`DcR` は `CondDisj` の3節を2状態ごとに、`E1P` は根の次数。`Trans t x y ↔ ¬ PT .q0 t x y`。
+
+## 4. 方法
+
+### 4.0 骨組み（`SentPred`、`SentSkel`、`Thm1a`）
+
+`CondCore` の添字・頂点の量化を原子の中に押し込む（`condPass_iff`、`condDisj_iff`、`condEnds_iff`、`passIn_iff`）。
+状態の量化は `X` に制限（`allX`/`exX`）、原子の式は改名 `HFR.ren` で置く。`holds_pathSentence`：原子の式が正しい
+`t` で `Holds ↔ ∃ X ⊆ St, CondCore t X`。`reduction_core`（G5）と `eventuallyPeriodic_of_holds`（F）で
+`MainStatement` の形にする。
+
+### 4.1 遷移（ずらし；`SentTrans`、`SentTransHF`）
+
+出口の添字 `u = hiS` は2つの枝（`h ≤ U_s − U_x − 1` なら `2(U_x−1)+1`、そうでなければ `2(U_s−h−1)`）、
+出口の点 `q_{u+k}` は単一点の行。最初の同一視 `rp y i ∼ q_{u+1}` の語 `w` で `rp y i = Φ_w(q_{u+1})` とすれば
+`rp y (i+n) = Φ_w(q_{u+1}) + rotN k_y (dS η n)`（`η = i mod 2`）なので、2番目・3番目の同一視は前者の高さだけの
+単一点 `entRow` どうしの `Meet`。後者の高さが入るのは「入口の位置が後者の行（範囲つき）にある」1つの `Meet` だけ。
+終端の後者は終端の角を語と偶奇で固定（`TermPart`）。
+
+### 4.2 角の固定（`SentPin`、`SentDeg`、`SentRoot`）
+
+根・終端の添字と高さは角の語と偶奇で決まる（`PinOK`）。根の通過の原子 `PR q` は自分の高さの1変数原子と文の原子、
+次数は角からのずらしの点の `degAllHFo`（`pinned_deg_iff`）。`PR qT`/`PT qT` は出口の一意性で `q0` と `T1` に帰着。
+
+### 4.3 偶奇（`SentPar`）
+
+`qP b`、`qE` は添字の偶奇だけによる（`q_par_iff`）。入口の偶奇つきの遷移 `transAtE_iff`。
+
+### 4.4 全尾部（`SentTail`）
+
+全尾部は偶奇ごとに自分の高さの境界の行 `tailRow`（始点 `lo` か根の角、出口 `hi` か終端の角）。
+条件3 (a)：2つの全尾部の行が交わらない、(c)：根の2点（高さ0の単一点）と全尾部の行が交わらない。
+
+### 4.5 条件3 (b)（`SentEntry`、`SentDbW`、`SentDbNP`、`SentDbP`、`SentDb`）
+
+`y` の出力の下端は入口、すなわち前者の高さで決まる。遷移の証人 `(b, w, η)` ごとに（`dbR_iff_witness`、入口は証人で
+決まる `entry_of_witness`）、入口の点の後者座標は `(X, h_y + η) = h_x · v + G(t)`、`v = entV` は単位ベクトル（`entry_coords`）。
+
+- **非平行**（`v.2 = ±1`）：`X = σ h_y + C(t)`、`σ = v.1 v.2 ∈ {0, −1}`（`np_entry`）。出力は後者の高さの行 `npRow`
+  （境界は整った形）、`x` の全尾部の行との `Meet`（2変数、`meetY_np`）。
+- **平行**（`v.2 = 0`）：`h_y = G.2 − η` に固定、出力の下端だけが `v.1 h_x` で動く。出力の点を**補助の状態** `z`
+  （型 `τz`：`y` のチャート、方向 `k_y + 5`）の高さで表す：`rotN k_y (X', H) = rotN k_z (−H, X' + H)`（`rp_rot5`）なので
+  `h_z = X' + H` なら点は `h_z` の単一点（`affA`）、上端 `X' + H = U` では `h_z = X' + H − 1`（`affB`）、
+  その方向にチャートが1行しかないときは定数の点（`cstC`）。下端・上端は `(h_z, h_x)`、`(h_z, h_y)` の係数 ±1 の原子
+  （`PA.toHF`）、交わりは `Meet(点(h_z), 全尾部(h_x))`（`meetY_p`）。式では `HF.exF` で `z` を量化。
+
+すべての原子は係数 `{−1, 0, 1}`・高さ2つまで（G3b の `meetHF`/`meetHFo`/`PA.toHF`/`degAllHFo` と `le`/`nle`/`tNonneg`）。
+
+## 5. 公理・確認・資源
+
+```bash
+cd formal
+memory_pressure -Q                                    # 開始時 50%、作業中 45–57%
+nice -n 10 lake build Formal.Claude3ComparatorSolution  # 新しい18ファイルすべて
+nice -n 10 lake env lean -M4096 Formal/Claude3Sent<名前>.lean
+nice -n 10 lake env lean -M4096 <scratchpad>/axfinal.lean
+```
+
+公理の確認ファイル：`<TMPDIR>/axfinal.lean`。
+次の19個すべて `[propext, Classical.choice, Quot.sound]`：
+`ClaudeChallenge2.main`、`main_statement`、`geoSentenceStatement`、`main_statement_of_geo`、`geoSentence_of_atoms`、
+`holds_pathSentence`、`trans_iff_char`、`def2_pt_q0`、`def2_pt_qT`、`def2_pt_par`、`def2_pt_qL`、`def1_pr_all`、
+`def1_E1P`、`def2_DaR`、`def2_DbR`、`def2_DcR`、`dbR_iff_witness`、`meetY_np`、`meetY_p`。
+
+資源：各ファイルの単独確認 4–26 秒（`/usr/bin/time -l`）、最大常駐メモリ 2.99–3.08 GB（最大 `SentTail` 3.077 GB）。
+Lean の処理は常に1つずつ、`nice -n 10`、`-M4096`。
+
+## 6. 残りの穴
+
+**なし**（`main_statement` と `ClaudeChallenge2.main` は無条件）。途中の段階の条件つきの形
+（`main_statement_of_geo`、`main_statement_of_atoms`、`main_statement_of_gap`、`main_statement_of_DbR`）も残してある。
+
+## 7. Comparator について
+
+- 解答モジュールは第1論文の `Formal/ComparatorSolutionMain.lean` と同じ形（定義は `Formal.Claude3ChallengeSpec` から。
+  Challenge と仕様の定義は同じ名前・同じ本体で、差は `MainStatement`/`main` の行だけ）。
+- Comparator の設定ファイル（第1論文の `formal/comparator-main.json` に当たるもの）は依頼のファイル名に入っていないので
+  作っていない。次の内容で照合できるはず：
+
+  ```json
+  { "challenge_module": "Formal.Claude3ComparatorChallenge",
+    "solution_module": "Formal.Claude3ComparatorSolution",
+    "theorem_names": ["ClaudeChallenge2.main"], "definition_names": [],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"] }
+  ```
+
+## 8. 注意
+
+- `Def1`/`Def2` は「十分大きな t」の形にしたが、証明した原子はすべて `t₂ = 0`（`Valid` の各 `t` で成り立つ）。
+- 平行の場合（`v.2 = 0`）が `Valid` のもとで起きるかどうかは調べていない（起きても起きなくても証明は通る）。
+- 証明は `Valid` のうち `Embedded`（チャートの埋め込み）と、出口の一意性（G5 の `ExitAt.unique`）だけを直接使う。
+
+## 9. commit（`claude-lean`）
+
+- `f0b334f0` 組み立てと道具　`0b8042bc` 原子への書き直しと文の構成　`5e533815` `AtomsGap`
+- `2959a9ca` 遷移の分離　`b6f50038` `def2_pt_q0`　`0bc0eff4` 角の固定・`E1P`・`T1`・`PT qT`
+- `9dbc2557` `PR q`　`c6c6dad9` `PT (qP b)`・`PT qE`　`ddb660a7` `DaR`・`DcR`　`b552ff8a` 穴を `DbR` に縮小
+- `12b6f2f7`・`713a2198` 報告の初版と更新（当時は `DbR` が穴）
+- 入口の座標、証人による書き直し、非平行・平行の場合、`def2_DbR`・**`main_statement`**（`b8c2cdb4`）、
+  解答モジュール（`a3da173d`）、本報告（最後の commit）

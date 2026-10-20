@@ -1,0 +1,1098 @@
+{
+  "status": "PASS",
+  "source_count": 193,
+  "sources": [
+    {
+      "path": "formal/Formal/A3Arithmetic.lean",
+      "sha256": "25a2259a80471a4000f5777a3cf5ef71c569d4ad00f8985f14ebe54ebbe41e57",
+      "bytes": 6084
+    },
+    {
+      "path": "formal/Formal/AffineInduction.lean",
+      "sha256": "78a40b4576f1917d7221309d02a115a78468f5cb9ce99c86df0dbec7ae01439f",
+      "bytes": 5477
+    },
+    {
+      "path": "formal/Formal/Claude2AlignedK3Glue.lean",
+      "sha256": "82ab305246905060caa79be5f7b850987f3c7e0fee703d127521d289e53662c3",
+      "bytes": 4661
+    },
+    {
+      "path": "formal/Formal/Claude2AlignedSpec.lean",
+      "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+      "bytes": 7508
+    },
+    {
+      "path": "formal/Formal/Claude2FamilyExamples.lean",
+      "sha256": "146311872825c787077d6608f7e7620488887d0d3fccbb64d76a19b086c71d58",
+      "bytes": 3091
+    },
+    {
+      "path": "formal/Formal/Claude2FamilyPeriods.lean",
+      "sha256": "f1d10ca9fc13e73f3bf7fd72b79eb87e5010771d2dea961421f4bf440f852feb",
+      "bytes": 4181
+    },
+    {
+      "path": "formal/Formal/Claude2FamilyRays.lean",
+      "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+      "bytes": 19219
+    },
+    {
+      "path": "formal/Formal/Claude2K3Apex.lean",
+      "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+      "bytes": 32579
+    },
+    {
+      "path": "formal/Formal/Claude2K3Classify.lean",
+      "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+      "bytes": 62695
+    },
+    {
+      "path": "formal/Formal/Claude2K3Corners.lean",
+      "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+      "bytes": 50025
+    },
+    {
+      "path": "formal/Formal/Claude2K3Degree.lean",
+      "sha256": "9ef84e62f8cd65c52560d423a7a3b47ffa8a7d4e00924b0a464275f6b20e6aad",
+      "bytes": 68750
+    },
+    {
+      "path": "formal/Formal/Claude2K3Interior.lean",
+      "sha256": "8bbe59ffd15fc32e94d1defe5ed3b2aeff172432b42c1a69c461bbd8be724e1f",
+      "bytes": 9231
+    },
+    {
+      "path": "formal/Formal/Claude2K3Inv.lean",
+      "sha256": "1d77466488394b8395c3f68471ace6cd24e0387b1cb3a704bbcf1bcb54fc48b9",
+      "bytes": 7896
+    },
+    {
+      "path": "formal/Formal/Claude2K3Inv3.lean",
+      "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+      "bytes": 9367
+    },
+    {
+      "path": "formal/Formal/Claude2K3Local.lean",
+      "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+      "bytes": 8401
+    },
+    {
+      "path": "formal/Formal/Claude2K3NecGcd.lean",
+      "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+      "bytes": 20407
+    },
+    {
+      "path": "formal/Formal/Claude2K3Necessity.lean",
+      "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+      "bytes": 16192
+    },
+    {
+      "path": "formal/Formal/Claude2K3Sufficient.lean",
+      "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+      "bytes": 6078
+    },
+    {
+      "path": "formal/Formal/Claude2K3Tube.lean",
+      "sha256": "8abe1dc3caf2ffaf8d9e9bb7e488b535fcd6f1cafc98269c7faa0031598cf3d5",
+      "bytes": 8382
+    },
+    {
+      "path": "formal/Formal/Claude2K3TwoCommon.lean",
+      "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+      "bytes": 4235
+    },
+    {
+      "path": "formal/Formal/Claude2K3Vertex.lean",
+      "sha256": "7a7e21d6b8d7072766f3e4d36249473700795e91f94bc7dcfb580dc4961c4995",
+      "bytes": 10698
+    },
+    {
+      "path": "formal/Formal/Claude3ChallengeSpec.lean",
+      "sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+      "bytes": 8473
+    },
+    {
+      "path": "formal/Formal/Claude3ComparatorSolution.lean",
+      "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+      "bytes": 606
+    },
+    {
+      "path": "formal/Formal/Claude3FoldDef.lean",
+      "sha256": "b0402752b0ad4a708893d53b2c89c95be623b2cb4a42f2baf9060cbb53462356",
+      "bytes": 12785
+    },
+    {
+      "path": "formal/Formal/Claude3FoldLin.lean",
+      "sha256": "bdbe0b99ada347741ba563db3d077a451e7321f1c21c53022984a0804b2adcf1",
+      "bytes": 9636
+    },
+    {
+      "path": "formal/Formal/Claude3FoldMain.lean",
+      "sha256": "751c652048979265884602c2108e8c3eff3cdce24fc127f78a59bfc40d132fb1",
+      "bytes": 10113
+    },
+    {
+      "path": "formal/Formal/Claude3FoldSyntax.lean",
+      "sha256": "7174553c96131c0be247de19344587b9d439cc763be58d2b46dc1864467ef049",
+      "bytes": 5102
+    },
+    {
+      "path": "formal/Formal/Claude3FoldTheorem.lean",
+      "sha256": "59b3ea8aa1567fd956543e9ce14cdcb8fa0bfe3f9c492109a63a45f5c5d2b5d6",
+      "bytes": 7813
+    },
+    {
+      "path": "formal/Formal/Claude3GeoBasic.lean",
+      "sha256": "d3bb4edd93e4a7090ee964138243c217d513fed9628a6ff6a028801e7c235ff1",
+      "bytes": 10109
+    },
+    {
+      "path": "formal/Formal/Claude3GeoChain.lean",
+      "sha256": "a363b046c517268ea7446a0f5640fc89589953d3ab7919c590699d4ec659ed5c",
+      "bytes": 10896
+    },
+    {
+      "path": "formal/Formal/Claude3GeoDeg.lean",
+      "sha256": "e4487ef1529e2d58a5a688597f0d3d11cc0f1e801e8cf23ca42e28a3f766550c",
+      "bytes": 7043
+    },
+    {
+      "path": "formal/Formal/Claude3GeoPassage.lean",
+      "sha256": "040b1afd088ecb5b62fafcf201c757c326fee5e88d175665f7abf81524181321",
+      "bytes": 5415
+    },
+    {
+      "path": "formal/Formal/Claude3GeoQuot.lean",
+      "sha256": "bb6318e4d7d3d953dcef993f02985ea27aa73168f2779d357fcdbb1d0a7c28d2",
+      "bytes": 5948
+    },
+    {
+      "path": "formal/Formal/Claude3GeoRot.lean",
+      "sha256": "48afd2b30a25250d1300761ed77a095a02e52dfbbd2e9c1428d3afc5128563ad",
+      "bytes": 8665
+    },
+    {
+      "path": "formal/Formal/Claude3GeoRows.lean",
+      "sha256": "e15c438bef36b63f192651e7b91369ddef6f163a606e479b88e8a9de049fc327",
+      "bytes": 16387
+    },
+    {
+      "path": "formal/Formal/Claude3GeoSeam.lean",
+      "sha256": "33f644825b630853cf59b2d25a8eb48e25f4e407aaf55d45d6ccdbcdcc0a496e",
+      "bytes": 10584
+    },
+    {
+      "path": "formal/Formal/Claude3IdentAdj.lean",
+      "sha256": "7940e4b6c1950d3903194a9704a028e4f726e7c744e1c9c3722f3e918cdb98ee",
+      "bytes": 12202
+    },
+    {
+      "path": "formal/Formal/Claude3IdentDeg.lean",
+      "sha256": "5bfd1fc2bf49a13101b35118b4bb7df06db3107cd70dab2d868471c4218350be",
+      "bytes": 15059
+    },
+    {
+      "path": "formal/Formal/Claude3IdentHF.lean",
+      "sha256": "82fd665fb1a92e94789de8242b587bfac55f715ced43de7c90a0a18f070edb55",
+      "bytes": 6679
+    },
+    {
+      "path": "formal/Formal/Claude3IdentMeet.lean",
+      "sha256": "940c8437ec8fcc6a88f1f8b4f46613c314e4f8381b5cbdbb9b01c52f7613f916",
+      "bytes": 15457
+    },
+    {
+      "path": "formal/Formal/Claude3IdentNrm.lean",
+      "sha256": "92c64c1eb25069f94d450771d3fb187528f7a3234e328ab821a3114037dd990e",
+      "bytes": 18032
+    },
+    {
+      "path": "formal/Formal/Claude3IdentRow.lean",
+      "sha256": "d819f33de01d9e56394b1e483ba91df551c85e422752eba0d9c1686b22b2bce0",
+      "bytes": 6802
+    },
+    {
+      "path": "formal/Formal/Claude3MsoAutomata.lean",
+      "sha256": "93c8fff2c159e1ff0bf4f5b3eeca01c339203edc3be923707cfc96edc1d7e71a",
+      "bytes": 10986
+    },
+    {
+      "path": "formal/Formal/Claude3MsoDerived.lean",
+      "sha256": "dfd07fa9bc27efbe1df4ce350f8ca118830cb732a619e71926f3420e266ce860",
+      "bytes": 12173
+    },
+    {
+      "path": "formal/Formal/Claude3MsoLenMod.lean",
+      "sha256": "ed8afb0eed122a738c2d857bd87cf044e80b64778d755c45874e24517f8f9b18",
+      "bytes": 6193
+    },
+    {
+      "path": "formal/Formal/Claude3MsoRegular.lean",
+      "sha256": "88fc1f76bba0f6c749d65d770677812006f5be1d1f8523d745595992b66e66e1",
+      "bytes": 12082
+    },
+    {
+      "path": "formal/Formal/Claude3MsoSyntax.lean",
+      "sha256": "c94f7c2069740e64472d79d16c034ba111c85371086bb0719c4f7f605314435b",
+      "bytes": 4445
+    },
+    {
+      "path": "formal/Formal/Claude3MsoUnary.lean",
+      "sha256": "836436741d1e340ee4a9b4b8d4a33940e567729fcb8478fb63f2b919795c68d7",
+      "bytes": 7166
+    },
+    {
+      "path": "formal/Formal/Claude3Residue.lean",
+      "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+      "bytes": 2503
+    },
+    {
+      "path": "formal/Formal/Claude3SentDb.lean",
+      "sha256": "2cf7296a7e153c3dba80e81f64158c6059076d68cf7844873cd6646580b0a4ff",
+      "bytes": 14631
+    },
+    {
+      "path": "formal/Formal/Claude3SentDbNP.lean",
+      "sha256": "04b4b5644f15f831b8199dabeec778176d3a53dfd01437af661b2d72136e78aa",
+      "bytes": 4025
+    },
+    {
+      "path": "formal/Formal/Claude3SentDbP.lean",
+      "sha256": "cde325ec231aa7a7849b8feac369624b528066cf99f6303a62f0cd11d84bc5c7",
+      "bytes": 6839
+    },
+    {
+      "path": "formal/Formal/Claude3SentDbW.lean",
+      "sha256": "3325b103551126ba23be94fec98698be8b8a1a1092d2dbcad6b8eacac0fd5405",
+      "bytes": 7444
+    },
+    {
+      "path": "formal/Formal/Claude3SentDef.lean",
+      "sha256": "ce23cc447362b0b0ae6bf665bf6f37cbe34298855de363178e3770796dae9f5d",
+      "bytes": 7424
+    },
+    {
+      "path": "formal/Formal/Claude3SentDeg.lean",
+      "sha256": "4d74d6b14eac846ea67d5ea6e866be421876b6584531bcb54df3402201c56ea4",
+      "bytes": 10727
+    },
+    {
+      "path": "formal/Formal/Claude3SentEntry.lean",
+      "sha256": "93cd154627d798a70b190864ded4347adaf25c4cb01788acb4a4015dc7e4b078",
+      "bytes": 4880
+    },
+    {
+      "path": "formal/Formal/Claude3SentPar.lean",
+      "sha256": "fe062c7d9ad419a961fc88d9d3477c2403bee876356993c99c4095faabd958b8",
+      "bytes": 11564
+    },
+    {
+      "path": "formal/Formal/Claude3SentPin.lean",
+      "sha256": "2d6c476a13876194acfdba0386d97b3bf3ec24e2d457f6ff89d6059977796fea",
+      "bytes": 6644
+    },
+    {
+      "path": "formal/Formal/Claude3SentPred.lean",
+      "sha256": "dc97f4c89ca31696b2734a8a800729ae518f83efdbaa44f40972e8dd9f10f88f",
+      "bytes": 8796
+    },
+    {
+      "path": "formal/Formal/Claude3SentRoot.lean",
+      "sha256": "c6be6a3c3c71a7a5c51fa66a625350eb59f6136e279cd6e70d60c4246a32f36c",
+      "bytes": 10156
+    },
+    {
+      "path": "formal/Formal/Claude3SentRow.lean",
+      "sha256": "7fd36eb356e706d4a8403bba065e31dd9f3714da5fd5a13b644b04e23fe481a0",
+      "bytes": 9436
+    },
+    {
+      "path": "formal/Formal/Claude3SentSkel.lean",
+      "sha256": "a20e767d754809f603087805dc4b12064e0e392ab27816cbdfd264000eb5a36b",
+      "bytes": 10419
+    },
+    {
+      "path": "formal/Formal/Claude3SentTail.lean",
+      "sha256": "8b13d8dce2b8cdcea0deb08dadaca421f018c062edfb8f0ac642f8da3c080f05",
+      "bytes": 17866
+    },
+    {
+      "path": "formal/Formal/Claude3SentTrans.lean",
+      "sha256": "e0e7f91fd4e90dcd516dd3909fb4ffceccf99eef99ff9e8f153d2c85d40e33a3",
+      "bytes": 8667
+    },
+    {
+      "path": "formal/Formal/Claude3SentTransHF.lean",
+      "sha256": "0e3679ee4f634b0da9e11932fea8d8d8343d9b8342b234843ef2a4ec31c67f32",
+      "bytes": 11692
+    },
+    {
+      "path": "formal/Formal/Claude3StateBack.lean",
+      "sha256": "1b16bb8d24efe1c721dae9efdc38c0eeaac1b3d7b9dc949551b60ba0a7182e39",
+      "bytes": 10764
+    },
+    {
+      "path": "formal/Formal/Claude3StateCond.lean",
+      "sha256": "f7b7dc9663cee4c66ab918258b39ef32fcceb41ab085862759c51c76009231ad",
+      "bytes": 18355
+    },
+    {
+      "path": "formal/Formal/Claude3StateDef.lean",
+      "sha256": "d633b97421c841e4771b43cff5cdf35e65e05cd6e76d6b872595034e211a52aa",
+      "bytes": 13837
+    },
+    {
+      "path": "formal/Formal/Claude3StateExtract.lean",
+      "sha256": "ab57ea3dfc6f131a618a23cf050b652107203cf85590d9795fe58c820de13e0d",
+      "bytes": 9255
+    },
+    {
+      "path": "formal/Formal/Claude3StateFwd.lean",
+      "sha256": "01f73729c2cf7ec1a396270b5bac0d18b9088b86505a8906645fbfb27e6cab48",
+      "bytes": 10257
+    },
+    {
+      "path": "formal/Formal/Claude3StateHit.lean",
+      "sha256": "4e14c8801b587689a3f2d00ee55518b19da111a2c7202244a0cb7457fe83d46e",
+      "bytes": 7463
+    },
+    {
+      "path": "formal/Formal/Claude3StateLemmas.lean",
+      "sha256": "485e3d42c2c1f77241b416d57461aeab6bfcf42dc0c60f93397a1e0448b7cddd",
+      "bytes": 8693
+    },
+    {
+      "path": "formal/Formal/Claude3StateMain.lean",
+      "sha256": "d6a85422c5bd39af9ed9f9e698b4ca92ded6e601e05db7ecf3a47786f939ce22",
+      "bytes": 1831
+    },
+    {
+      "path": "formal/Formal/Claude3Thm1a.lean",
+      "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+      "bytes": 3517
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndPath.lean",
+      "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+      "bytes": 4792
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1a.lean",
+      "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+      "bytes": 22808
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1b.lean",
+      "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+      "bytes": 23198
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndS1.lean",
+      "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+      "bytes": 21780
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapInj.lean",
+      "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+      "bytes": 6761
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWd.lean",
+      "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+      "bytes": 8555
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWdB.lean",
+      "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+      "bytes": 9148
+    },
+    {
+      "path": "formal/Formal/Claude4K3Chord.lean",
+      "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+      "bytes": 4722
+    },
+    {
+      "path": "formal/Formal/Claude4K3ComparatorChallenge.lean",
+      "sha256": "80fcf97e49d64935643d9d6a70b1d82b7eed9668559eed0ad9b0b529eb8055d8",
+      "bytes": 7951
+    },
+    {
+      "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+      "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+      "bytes": 1604
+    },
+    {
+      "path": "formal/Formal/Claude4K3NoThree.lean",
+      "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+      "bytes": 16161
+    },
+    {
+      "path": "formal/Formal/Claude4K3PieceArith.lean",
+      "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+      "bytes": 7208
+    },
+    {
+      "path": "formal/Formal/Claude4K3Ray.lean",
+      "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+      "bytes": 7713
+    },
+    {
+      "path": "formal/Formal/Claude4K3Seam.lean",
+      "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+      "bytes": 4497
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamAlong.lean",
+      "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+      "bytes": 9449
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamEdge.lean",
+      "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+      "bytes": 5225
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamSite.lean",
+      "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+      "bytes": 15158
+    },
+    {
+      "path": "formal/Formal/Claude4K3TubeInj.lean",
+      "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+      "bytes": 5643
+    },
+    {
+      "path": "formal/Formal/Claude4K3Vtx.lean",
+      "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+      "bytes": 13363
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltGlue.lean",
+      "sha256": "1043fec9a9caf7c7ec1f44fec10f54ccaf0ffe29acdb44e4da5c26c00732a55e",
+      "bytes": 11674
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltMain.lean",
+      "sha256": "b2ef25b075bda78f597d115b076b57e37c2df88545d797c319ac84d8cdcb9f03",
+      "bytes": 2939
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltMinus.lean",
+      "sha256": "f26168625af51da652842817ff750965b4bce562c1d0ebe567e0b1f068ece1e1",
+      "bytes": 7717
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltPath.lean",
+      "sha256": "57dfb679dc933839d6425272d104327ca5aded8a73f25635a876dd7fffce594a",
+      "bytes": 6791
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltPlus.lean",
+      "sha256": "2e86f94f5a70535d79ca051bb248edaafd4ac1a79f63fc5a37c2bc3878b7c921",
+      "bytes": 5343
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltRegions.lean",
+      "sha256": "a6abecf04b71b436be900d6c45e438fbeb49f57cf3f228f9ffec00fa233a222e",
+      "bytes": 13250
+    },
+    {
+      "path": "formal/Formal/ClaudeBeltVertex.lean",
+      "sha256": "145d03a65e369b68b80ffdf8c5d070030e458fdaaa0f86562174c4007b15747e",
+      "bytes": 4836
+    },
+    {
+      "path": "formal/Formal/ClaudeChallengeSpec.lean",
+      "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+      "bytes": 6130
+    },
+    {
+      "path": "formal/Formal/ClaudeCorRays.lean",
+      "sha256": "643deb8d2e539fa95d174710bc2ae1237cac1c855735c69e864407921e82a43e",
+      "bytes": 23420
+    },
+    {
+      "path": "formal/Formal/ClaudeMainPrimitive.lean",
+      "sha256": "ba3ca9591d161f15d47e3d6c55e749a2575d34e560f96bbf4b51c6bae45b3e89",
+      "bytes": 766
+    },
+    {
+      "path": "formal/Formal/ClaudePosBand.lean",
+      "sha256": "3937ea1513e49e5f66b4ae9008c39588c40fac0c63e5254b381450ca316ecd85",
+      "bytes": 10589
+    },
+    {
+      "path": "formal/Formal/ClaudePosChart.lean",
+      "sha256": "2e91e2a0589047b66f768fc0347e3b4d0ebf275efd67a99121781c66d1c8347b",
+      "bytes": 8475
+    },
+    {
+      "path": "formal/Formal/ClaudePosCover.lean",
+      "sha256": "a1215a110a92a9fed0168b95a2c5d927a5e53e8fda1278105ea90c3566478d09",
+      "bytes": 5521
+    },
+    {
+      "path": "formal/Formal/ClaudePosCover2.lean",
+      "sha256": "299bd163636e0fa65f01ba2a981ef70ff85624d9d019a599daee6bc25426d795",
+      "bytes": 12403
+    },
+    {
+      "path": "formal/Formal/ClaudePosFrame.lean",
+      "sha256": "fdc83b03a189c7a6ac65efc7c7bb2d5f513f415593d7056919dffdf449bd82ca",
+      "bytes": 8916
+    },
+    {
+      "path": "formal/Formal/ClaudePosMain.lean",
+      "sha256": "33eea0c04785f4e6a4e2507251d7f4701d7f18c900bdad15415b4d33bed6970a",
+      "bytes": 5124
+    },
+    {
+      "path": "formal/Formal/ClaudePosMiddle.lean",
+      "sha256": "b83d34baae8a4a072ff91102ad7c42e6ae0fac21fc38bcd6538076ea6edeafc2",
+      "bytes": 9168
+    },
+    {
+      "path": "formal/Formal/ClaudePosOuter.lean",
+      "sha256": "1952c3ed292b28ad64d3a05fa0faaf585e042e753e8f9eee6c336d1b54145e1b",
+      "bytes": 4947
+    },
+    {
+      "path": "formal/Formal/ClaudePosPath.lean",
+      "sha256": "459f28ad6b78b9f01d93368f8b90bee77e6ef8dfa9d539e3f159033959a37e31",
+      "bytes": 8319
+    },
+    {
+      "path": "formal/Formal/ClaudePosStrip.lean",
+      "sha256": "903c16aff13f9cd6557299af59173f40728ce9e69d0c3f30cf6ecba8681a88a1",
+      "bytes": 6662
+    },
+    {
+      "path": "formal/Formal/ClaudePosTables.lean",
+      "sha256": "017372a4c18750278a2b92b50c129c68dab79122b341b5d5ae6903607a0b8e7e",
+      "bytes": 2736
+    },
+    {
+      "path": "formal/Formal/CylinderArithmetic.lean",
+      "sha256": "774a5d584fd04b002922c3a95068721ca902de8d9434c513cd79194c333c0fd5",
+      "bytes": 2324
+    },
+    {
+      "path": "formal/Formal/FiniteLiteralPath.lean",
+      "sha256": "7b4297d56a66f2fcc2b4565a88924f8a8695adc6cf8600b0db6a0052aa7cfd9a",
+      "bytes": 5489
+    },
+    {
+      "path": "formal/Formal/ForcedContinuation.lean",
+      "sha256": "b30f97c2da9be368cea5c84904382843c4cfbc5c803148d86a3b88c5c6a00cdb",
+      "bytes": 6242
+    },
+    {
+      "path": "formal/Formal/GCArithmetic.lean",
+      "sha256": "35c1f55d24fcd652be649f5d8daa2120511d9429f57475a3e55d7aca65fa90ef",
+      "bytes": 3955
+    },
+    {
+      "path": "formal/Formal/GCChallengeEdges.lean",
+      "sha256": "36b0e65832b165ac2d06159d2dd259635727f7d4901c2bd0b16aece0a6e74fce",
+      "bytes": 4975
+    },
+    {
+      "path": "formal/Formal/GCChallengeGlueNormal.lean",
+      "sha256": "a72a50bc2860b5d4718ee22931e492ebdaa72cb978198d3b95610caf2b14da0f",
+      "bytes": 3209
+    },
+    {
+      "path": "formal/Formal/GCChallengeGraphIso.lean",
+      "sha256": "7cc28674dbcdd1e9a184099a14151f21e23d1c47772cd2da661bd508fd703e24",
+      "bytes": 2232
+    },
+    {
+      "path": "formal/Formal/GCChallengeIsometries.lean",
+      "sha256": "c9b54e8eeec07090a2d4a59990f58fb3871638baa64bf9ba769639def82ab6fb",
+      "bytes": 2467
+    },
+    {
+      "path": "formal/Formal/GCChallengePaths.lean",
+      "sha256": "cb0c3a1bf1aedf0939f6aadaefb0328e80ba26dce03b8f47dbf82cd182d43398",
+      "bytes": 3152
+    },
+    {
+      "path": "formal/Formal/GCChallengeQuotient.lean",
+      "sha256": "d1d9a304e6056b101a3b92a1e821db6d592d3064b048857f5bbdcc3efc07b8c6",
+      "bytes": 4742
+    },
+    {
+      "path": "formal/Formal/GCChallengeSites.lean",
+      "sha256": "d8856a60159dec1bb36392783f7738546bc695a3166bd63b84dbe9009de00dbe",
+      "bytes": 5795
+    },
+    {
+      "path": "formal/Formal/GCChallengeTransport.lean",
+      "sha256": "0749a4174aaba196f90048726aa0e6ecc56fef6a27dce010e555dab34e058219",
+      "bytes": 5758
+    },
+    {
+      "path": "formal/Formal/GCChallengeVertexEquiv.lean",
+      "sha256": "8794ca87ad3bfff0c4b92b223527d8e6aa67d1222fc4dc688039bb20b95f31e4",
+      "bytes": 4115
+    },
+    {
+      "path": "formal/Formal/GCNegAtlas.lean",
+      "sha256": "5e73048d46e98d71098cabd266d75ad834456cc2269b5f8ff27d2109245c264b",
+      "bytes": 6997
+    },
+    {
+      "path": "formal/Formal/GCNegCoarse.lean",
+      "sha256": "2c115ecc3d2bc8dfc7c364a5339cda6dc8d06bba424c2379edbf4c4818c02736",
+      "bytes": 2443
+    },
+    {
+      "path": "formal/Formal/GCNegCompFinal.lean",
+      "sha256": "cc7aee1e0b948de75bfb1de43c67b44176959117d02c0fa5ab07935063451e7d",
+      "bytes": 4347
+    },
+    {
+      "path": "formal/Formal/GCNegCompLabels.lean",
+      "sha256": "6a82623aaaf37f6155824c310cdc5d26bf00a81dab6ab56dbb5b90b8a345e562",
+      "bytes": 3639
+    },
+    {
+      "path": "formal/Formal/GCNegCompSeams.lean",
+      "sha256": "f080dc9bc33cf3320cc8ff0f18edc9243c78e7fe57acf7a8fadf22321c3ecb36",
+      "bytes": 5162
+    },
+    {
+      "path": "formal/Formal/GCNegCriterion.lean",
+      "sha256": "11be2fe56d0d24428a5c79f15006883a88ce7ea0b975b434a61aaf7d3ceb68b5",
+      "bytes": 5362
+    },
+    {
+      "path": "formal/Formal/GCNegGeometry.lean",
+      "sha256": "cfedef522dadb4b32043a37c2dd0f6d3b7831e16724461b37189b09c8b9282a2",
+      "bytes": 1734
+    },
+    {
+      "path": "formal/Formal/GCNegMinusActive.lean",
+      "sha256": "36ae05625d9627bf866b28bd998b230c7f87eb525312f92a4c50fca1cdea0985",
+      "bytes": 4837
+    },
+    {
+      "path": "formal/Formal/GCNegMinusSeams.lean",
+      "sha256": "628b44f5fd5506461b2ffd79a3907ab7ad50bd81f557d9e2a35249e9d0e53fd4",
+      "bytes": 6212
+    },
+    {
+      "path": "formal/Formal/GCNegNearAtlas.lean",
+      "sha256": "975f72e3cb969b428a1deb5294c4b3feec725ed8e91c52b1ebd3dca6d36d9003",
+      "bytes": 2518
+    },
+    {
+      "path": "formal/Formal/GCNegNearCover.lean",
+      "sha256": "6f8c634ca230d858b5946028d8f60b4c772fdea24c23729dd7e7cb5e9f6c8314",
+      "bytes": 3104
+    },
+    {
+      "path": "formal/Formal/GCNegNearDarts.lean",
+      "sha256": "631097e1e9c3521c12d1b9d5d59e849c27b8ee1cb80fb1fc32b9eb153256386a",
+      "bytes": 2574
+    },
+    {
+      "path": "formal/Formal/GCNegNearFinal.lean",
+      "sha256": "85d2bc9ad16835367cd5efe573b8e2e15268abe1e0f37325d7e1fc8d2cc76c46",
+      "bytes": 3468
+    },
+    {
+      "path": "formal/Formal/GCNegNearLabels.lean",
+      "sha256": "ab613a92a35358aaeba827143f335c3d785ea3a7356bf0f06d6072f35dfc157a",
+      "bytes": 5002
+    },
+    {
+      "path": "formal/Formal/GCNegPlusActive.lean",
+      "sha256": "bdf2b8d362a133765fdbf9f6d34ec9cf5093412c20de804aa252be934ac07790",
+      "bytes": 3713
+    },
+    {
+      "path": "formal/Formal/GCNegPlusSeams.lean",
+      "sha256": "5a54f8d9b2c73bf6e4e43e7d3eac9ce97a86fcaf3c33ca1bef6315878a7d8f94",
+      "bytes": 4951
+    },
+    {
+      "path": "formal/Formal/GCNegReturn.lean",
+      "sha256": "fec7e59259202d9b8e23f265989c41c36d33d668ea95e3066536d0287939b23a",
+      "bytes": 4811
+    },
+    {
+      "path": "formal/Formal/GCNegSources.lean",
+      "sha256": "899fd8d291c9d62f0dad2ef92aacf79ecc211afdf74a8213e7d379cf3265de5d",
+      "bytes": 4293
+    },
+    {
+      "path": "formal/Formal/GCNegTrace.lean",
+      "sha256": "82bf59a2e2132d9a8e615e87d61e25c0ceecd270930bda95fc7be2a2fc2eebcd",
+      "bytes": 6962
+    },
+    {
+      "path": "formal/Formal/GCParentRotations.lean",
+      "sha256": "d272bf64d1adeb1901de7975bbfcae44f448d18e694cfc66b3560c7ce8941ac7",
+      "bytes": 6634
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveBoundary.lean",
+      "sha256": "fc22e5c334511cb8144d85dd137c0e1c4f61b73e3c7cc5eb2ce9236886fdd68c",
+      "bytes": 3875
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveCanonical.lean",
+      "sha256": "58fe7373262d3fa396bcaf3833699f8666ea63b045dec416fc19fddd1aea4fbd",
+      "bytes": 4683
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveChartEdges.lean",
+      "sha256": "369bdd36bfdf9168cf5dc0070b96631d8701c88231b46f82d04281cea0858425",
+      "bytes": 4890
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveCharts.lean",
+      "sha256": "1953e6678723b6a7640c395d69cced44c84d7e72b6eaf8e89ff10945213995d6",
+      "bytes": 4989
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveCoverage.lean",
+      "sha256": "5119b2edc2c5b192f6db7b9f66bdb21d1878f10d646512fa250c43be50b719c3",
+      "bytes": 5954
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveCuts.lean",
+      "sha256": "71eca483612384ff61bb8eb33def0a445805440ea7bae42576f91d515bd08c93",
+      "bytes": 5257
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveDecision.lean",
+      "sha256": "d975660dc5110253304d8259791fdd94805f7a32aac589e8f86c215804d7f249",
+      "bytes": 2224
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveDegree.lean",
+      "sha256": "ffce8d6194fdf66ff4d82be8730114a2739ff4cedc2ad3665c6b2f684891b6a0",
+      "bytes": 6315
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveFanCommon.lean",
+      "sha256": "b99c6b6f0e8aa90776ac2ce5ea9e9bd3f7b23717035cd9df77cfb3243a2e7001",
+      "bytes": 539
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveFanDirect.lean",
+      "sha256": "4fd744ed16b6a4dd9da03a2288b7d344e71a2af1220f692d576454486a756add",
+      "bytes": 461
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveInterior.lean",
+      "sha256": "3e4a10e82b5fb829e3eea7737f64b7ac68ca4f01757fea9f528e6d9714869daf",
+      "bytes": 2205
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveIntersection.lean",
+      "sha256": "a88b3bc8c2c4ec6920a2b0099e700c069a61a08d3f0150d847a374bbb5986db3",
+      "bytes": 2895
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveLanding.lean",
+      "sha256": "503578f256177b824564dcdc7bc98c937a5e0622af053feb0584ac4032ab00d3",
+      "bytes": 3377
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveLink.lean",
+      "sha256": "b5b5b84053af24bfb907d435147f748b04fb9b0d1a060e6ebf0d78c3f1135175",
+      "bytes": 8632
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSeamEdges.lean",
+      "sha256": "2dbefe0dc691d831975c0b1cab7bb92c4dc8d07f7dd7e0a33edf7aef47eab293",
+      "bytes": 5834
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSeparatedCharts.lean",
+      "sha256": "0056a27dd9b5f079ea942eb091aeababf1de3de9a14550c3533e9ba07d1e588a",
+      "bytes": 2960
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSpec.lean",
+      "sha256": "819cd6db9421e57e1f8b9441115b9add566141a80da960d78232dad26a0ab79d",
+      "bytes": 1710
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveStarts.lean",
+      "sha256": "86dab549d0c088a2f9c7775df5434242fbaa9ac0b79eaefd308873fc14ee79cb",
+      "bytes": 7548
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSurfaceCorners.lean",
+      "sha256": "1c692ac0e654bddb42e617436c2192ab0a9c10510d2eed511be4b37debf7f55b",
+      "bytes": 3939
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSurfaceEdges.lean",
+      "sha256": "3b312ab872397eea4be65f2a6b1fdcc7c2fe6360800fee837ef5b69982f90424",
+      "bytes": 5106
+    },
+    {
+      "path": "formal/Formal/GCPrimitiveSurfaceSpec.lean",
+      "sha256": "9fde5e0e51b42ac0ffc966b3c7c8e2fcc2bdd0ad288e96216290eeda9af58bda",
+      "bytes": 2079
+    },
+    {
+      "path": "formal/Formal/GCSectorActive.lean",
+      "sha256": "f1b71a8aa62966726bf1e57c79132ace3309ac185a8e3d90f8fba6e64b80f156",
+      "bytes": 4809
+    },
+    {
+      "path": "formal/Formal/GCSectorArithmetic.lean",
+      "sha256": "a6ea9530dcaf643d3a2f07b02ef2063cfd146f8398b0d5d0410809804eeee5df",
+      "bytes": 4741
+    },
+    {
+      "path": "formal/Formal/GCSectorBlocks.lean",
+      "sha256": "d4d4b4e779b12b26834e297bfcc5d94f2bfd7b309e135d5c0f67ca35f0defa3e",
+      "bytes": 4862
+    },
+    {
+      "path": "formal/Formal/GCSectorCaps.lean",
+      "sha256": "7b057cc1fd8c11c593be89f53d097891224e534335fb4075c7469617ebec920b",
+      "bytes": 3435
+    },
+    {
+      "path": "formal/Formal/GCSectorCompActive.lean",
+      "sha256": "98aaa5ecd12121b7fe97d1371dc619da3db656623ab8d80f325cb0c3bb491095",
+      "bytes": 5069
+    },
+    {
+      "path": "formal/Formal/GCSectorCompCover.lean",
+      "sha256": "23100e88bcc7b4e8c98618c623bfa356a22769575f78bf3eacdf96a1d084410e",
+      "bytes": 4526
+    },
+    {
+      "path": "formal/Formal/GCSectorComplement.lean",
+      "sha256": "43cef0354c82f678ff06f31d813cbcc122d68ee54e192db21c2097be1459d1e7",
+      "bytes": 3229
+    },
+    {
+      "path": "formal/Formal/GCSectorCriterion.lean",
+      "sha256": "3d68f634c504c72792561535f55dbd7f41a80c77b16511fa9893144e2e021a07",
+      "bytes": 1863
+    },
+    {
+      "path": "formal/Formal/GCSectorLabels.lean",
+      "sha256": "50b5a70c02ae0d92d66e20b4e43396da9e9fd4e74aa00349cf446a1a8f9ad9a3",
+      "bytes": 5917
+    },
+    {
+      "path": "formal/Formal/GCSectorNearDouble.lean",
+      "sha256": "2a7907a4942d03db5791842cce6c526e0b16a18d6de8e6afb694d2ee56941368",
+      "bytes": 4057
+    },
+    {
+      "path": "formal/Formal/GCSectorNegative.lean",
+      "sha256": "d8523ec155ac0c15b1297b66d961f938be1789385af0371683d490bb7735b839",
+      "bytes": 5178
+    },
+    {
+      "path": "formal/Formal/GCSectorNoVertices.lean",
+      "sha256": "76aeb024c0cdfd2dc99671d8134f80e150ce5f64c80bc222fab6f32df87c0ca2",
+      "bytes": 2667
+    },
+    {
+      "path": "formal/Formal/GCSectorObstruction.lean",
+      "sha256": "42bfb404ea3c582c424e851afb4d778322dd848ed7e5f41606b05690728e2c15",
+      "bytes": 2848
+    },
+    {
+      "path": "formal/Formal/GCSectorReturn.lean",
+      "sha256": "81a74d00d76ae5881e9b67382ff265d8c7d43531f782f089ab2d536918f8a238",
+      "bytes": 4115
+    },
+    {
+      "path": "formal/Formal/GCSectorSurfaceMap.lean",
+      "sha256": "ce3b218dfa20af8237153a6d1d1bde62686f5090af8d70466ff064395d6bf019",
+      "bytes": 6803
+    },
+    {
+      "path": "formal/Formal/GCSectorTileCover.lean",
+      "sha256": "feaa9b58344b1ec402099b1b3ae6712a9c944a56b0b1fa5d918dff27bba24d01",
+      "bytes": 3423
+    },
+    {
+      "path": "formal/Formal/GCSectorTiling.lean",
+      "sha256": "6710e0c669ac441fd81048bc2a4a3d17f9832bfcf3e5f27405d16823cd73b957",
+      "bytes": 5486
+    },
+    {
+      "path": "formal/Formal/GCSectorTrace.lean",
+      "sha256": "dac293ced5f406afab9f42181a340c76633548bcbaf42c9528830649890b54c7",
+      "bytes": 4407
+    },
+    {
+      "path": "formal/Formal/GCSectorZigzag.lean",
+      "sha256": "fc3d989d619e27d8dab140d6b7b3d96fb588ab1090ad1d6879cd3dd46e6ca3ba",
+      "bytes": 4952
+    },
+    {
+      "path": "formal/Formal/GCTwoStartOrbits.lean",
+      "sha256": "c5e0a470bf41f68aa54f514cf8c04cb9659f3f4a3d01db14934ebdc395a3a2fd",
+      "bytes": 6937
+    },
+    {
+      "path": "formal/Formal/IETComponent.lean",
+      "sha256": "ea46bf81ce0cd3a898c3ec85f5c7b88ae511f7646992036bf49e4ee663981d67",
+      "bytes": 2970
+    },
+    {
+      "path": "formal/Formal/IcosahedronGluing.lean",
+      "sha256": "80777f94af1f407857bcc07a42c739561d248dbebba54ea4bf9df6d3258c7285",
+      "bytes": 3340
+    },
+    {
+      "path": "formal/Formal/IcosahedronRotations.lean",
+      "sha256": "9503939f8b00576374742e97b848a177fd61cb4d4d804d7758cf8c0358729480",
+      "bytes": 13643
+    },
+    {
+      "path": "formal/Formal/LatticeTransport.lean",
+      "sha256": "7e6b5eb73a6a919b04ea7f8e593038aac5e671328f95cd9eb369b44a924020ef",
+      "bytes": 3870
+    },
+    {
+      "path": "formal/Formal/SequenceDecision.lean",
+      "sha256": "f20863d8ca9c5a4a03ee98ca890b236d6d3efab211105ebd14629340a56a622e",
+      "bytes": 4963
+    }
+  ],
+  "parent_packet_version": "1.2.0",
+  "parent_inventory_sha256": "72317c0a58a1350a8afba06a7fe5c712ee010a204ba59a203dfc100f532cca56",
+  "inherited_receipts": [
+    {
+      "path": "evidence/theorem1a/Challenge2.lean.original.log",
+      "sha256": "d2800a5c4560ce94b5f94faada54003063bcb3e38b599d32e035d23ab264a66d",
+      "bytes": 8364
+    },
+    {
+      "path": "evidence/theorem1a/ComparatorChallenge.lean.original.log",
+      "sha256": "cecc4c3026271e570a154e287da26ee56eacaeb13e6621599be598131a578440",
+      "bytes": 8490
+    },
+    {
+      "path": "evidence/theorem1a/challenge2-reading-guide-ja.md.original.log",
+      "sha256": "da5e185c56a54253c3ea9f59c4ee724f2070141ce442f992adad635a4f49a48f",
+      "bytes": 7401
+    },
+    {
+      "path": "evidence/theorem1a/comparator-thm1a-2026-10-20.md.original.log",
+      "sha256": "2d6d7c0286598ccad1e8ed854daaea65676ede570f5351a61855fd787df6016a",
+      "bytes": 2156
+    },
+    {
+      "path": "evidence/theorem1a/comparator-thm1a-paranoid-2026-10-20.txt.original.log",
+      "sha256": "1fb3c665aad01102474551bd7e4fc7f9209907c6d6ca033ad3a2335286d20556",
+      "bytes": 10628
+    },
+    {
+      "path": "evidence/theorem1a/comparator-thm1a.json.original.log",
+      "sha256": "cd6806bec207973e9bc739fd8e931cf3c8309237aa59413c9d82b7b88e394eab",
+      "bytes": 284
+    },
+    {
+      "path": "evidence/theorem1a/fold-report-2026-10-20.md.original.log",
+      "sha256": "3ffc2e6d3eb77138f702084d78f15c8ed83def56c617b1765cc008aa37b7c7fc",
+      "bytes": 10048
+    },
+    {
+      "path": "evidence/theorem1a/initial-lean-execution.failed.original.log",
+      "sha256": "566f18e9570f99e615142038c4cf003c19ca9af99a150c53c72f441c4a6c9d9b",
+      "bytes": 5946
+    },
+    {
+      "path": "evidence/theorem1a/initial-proof-source-inventory.original.log",
+      "sha256": "c47e91b1c3a7d8e09aaa7921bb44c78d69222c1d3d4eb2058cd530a1ef130dbe",
+      "bytes": 11699
+    },
+    {
+      "path": "evidence/theorem1a/lean-execution.json",
+      "sha256": "df2b54fb61c506259c738ac24343e1bdaed38014861a8caa0f982f080cc0871e",
+      "bytes": 18847
+    },
+    {
+      "path": "evidence/theorem1a/main-axioms.original.log",
+      "sha256": "8f827f608e3aebf00747e4faff5d4b8fbaa35ffb914910ad2c51200bd196425b",
+      "bytes": 649
+    },
+    {
+      "path": "evidence/theorem1a/mso-report-2026-10-20.md.original.log",
+      "sha256": "9c2dbdb8b2360aae7fb0e4ecd022759e14feb856f5f76a712180870aa6de9a98",
+      "bytes": 13503
+    },
+    {
+      "path": "evidence/theorem1a/next85.original.log",
+      "sha256": "29c7df66d63259dfdcdc5bd801a91d4a62edcba1e8b09d6c32380b7503ae1148",
+      "bytes": 3814
+    },
+    {
+      "path": "evidence/theorem1a/next85a.original.log",
+      "sha256": "84f7d3574355427af04352d40188bb093bb105740c044d279f6299ac691d2718",
+      "bytes": 1916
+    },
+    {
+      "path": "evidence/theorem1a/proof-source-inventory.json",
+      "sha256": "4050f11da8d1945870aaae8b0a2ff61412c522dc928bdbf2a81d2923a051b656",
+      "bytes": 11922
+    },
+    {
+      "path": "evidence/theorem1a/response-ja.md.original.log",
+      "sha256": "3f134754f3e8141625e0e4b7086b4794060742dd31eb66c51e6dfb326c47c576",
+      "bytes": 3739
+    },
+    {
+      "path": "evidence/theorem1a/review.md.original.log",
+      "sha256": "98563833f8ba0c6f8963ec192ce99b7888f22e77b9e02e5f1e51e611629d6bec",
+      "bytes": 8812
+    },
+    {
+      "path": "evidence/theorem1a/serial-build-output.original.log",
+      "sha256": "2fda6e38b31e01befb5537d70dc6a9b0c3338e7e57405f0117e02022c4362af2",
+      "bytes": 216950
+    },
+    {
+      "path": "evidence/theorem1a/spec-comparison.json",
+      "sha256": "7693a927585ecc5b8e777204d71d18017b7c5ab00803ad77257f91a7154d24a8",
+      "bytes": 441
+    },
+    {
+      "path": "evidence/theorem1a/thm1a-final-report-2026-10-20.md.original.log",
+      "sha256": "3d7e536205cc255505f2d609d1a4774487bb35eaf603fd323606cc6d67b81bdd",
+      "bytes": 13318
+    },
+    {
+      "path": "evidence/theorem1a/thm1a-geo-report-2026-10-20.md.original.log",
+      "sha256": "4f83f11f5b7875c793591f2fa60d094d4912345a3dddab6431974aeddf7b1b8f",
+      "bytes": 9951
+    },
+    {
+      "path": "evidence/theorem1a/thm1a-ident-report-2026-10-20.md.original.log",
+      "sha256": "9f3e93cd880c063c520b0f8d5d647c4419b5af3d2ddc73ab1d2d8bb8b17e9aab",
+      "bytes": 17587
+    },
+    {
+      "path": "evidence/theorem1a/thm1a-state-report-2026-10-20.md.original.log",
+      "sha256": "b4938bdb6a6651dc10877079b9a3f0761386480f36907993869f18aa0a947539",
+      "bytes": 18262
+    }
+  ],
+  "new_lean_runs": 0,
+  "external_kernels_rerun": false,
+  "stale_module_note": "The module header in ClaudeChallengeSpec.lean is stale: its `sorry`/`main` target is in ComparatorChallengeMain.lean, while ClaudeChallengeSpec.lean contains definitions only; all Lean bytes are preserved and the previous packet build receipts are inherited without running Lean in this packaging phase.",
+  "scope": "All 167 inherited sources/receipts retain exact bytes; 25 received proof-dependency sources and one inert benchmark are added from a fixed commit. Current checks do not run Lean. New K3 recorded kernel results are separately identified in k3-manifest.json.",
+  "inherited_lean_source_bytes_unchanged": true,
+  "inherited_source_count": 167,
+  "added_proof_sources": 25,
+  "added_benchmark_sources": 1
+}

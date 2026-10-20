@@ -1,0 +1,29 @@
+{
+  "source_id": "S2192",
+  "title": "Paths and cycles in finite periodic graphs",
+  "authors_or_provider": "Egon Wanke",
+  "url_or_path": "https://link.springer.com/chapter/10.1007/3-540-57182-5_66",
+  "version": "MFCS1993,LNCS711,pp751–760;DOI10.1007/3-540-57182-5_66;platform firstonline2005 is digitization date",
+  "checked_at": "2026-10-19",
+  "read_scope": "公式publisher要旨・graph G_mの記述・計算量の結論・参考文献。本文はsubscription previewで未取得。",
+  "section_or_pages": "公式publisher要旨・graph G_mの記述・計算量の結論・参考文献。本文はsubscription previewで未取得。",
+  "claim_supported": "有限商と整数vector変位による有限周期graphの経路・閉路アルゴリズムは既知。計算量・可判定性からパラメータの最終周期性は直ちには従わない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/wanke-chapter.txt",
+  "sha256": "56715f78c0b676d8f73c4ecc1a78c6fcc6255ab35853faa42f870c420ed4b812",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "本文の全仮定を読んだとはしない。PSPACEという結論を固定した一族の非周期性の反例とはしない。",
+  "quotes": [
+    {
+      "text": "We analyze the complexity and present algorithms for finding paths and cycles in finite periodic graphs.",
+      "supports": "有限商と整数vector変位による有限周期graphの経路・閉路アルゴリズムは既知。計算量・可判定性からパラメータの最終周期性は直ちには従わない。"
+    }
+  ],
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/wanke-chapter.raw",
+      "bytes": 242456,
+      "sha256": "6929c10276eed1d3316cb4ec171ac52af74fa45edf50c211a83389d2fa05b7b7"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:44:39.564035+00:00"
+}

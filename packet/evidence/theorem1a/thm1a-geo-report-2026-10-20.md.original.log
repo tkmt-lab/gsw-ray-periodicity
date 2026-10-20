@@ -1,0 +1,151 @@
+# 定理1a 幾何の土台：作業報告
+
+- 作成：Claude（幾何担当worker）、2026-10-20 01:20–02:00 JST（`date` で確認）
+- worktree：`.worktrees/claude-lean`、branch `claude-lean`（push・mergeなし）
+- 対象の仕様：`formal/Formal/Claude3ChallengeSpec.lean`（`ClaudeChallenge2`、改変なし）
+- 設計メモ：`studies/R002/claude-lean/thm1a-plan-2026-10-20.md`
+- 触っていないもの：`Claude3Mso*.lean`（別worker）、`Formal.lean`、仕様、`.worktrees/verify`、`studies/R004`
+
+## 1. 結果の要約
+
+新しい8ファイル（名前空間 `ClaudeChallenge2.Geo`、計1,604行）。`sorry`・`native_decide`・新しい `axiom` は0件。
+主な宣言27個の `#print axioms` は `[propext, Classical.choice, Quot.sound]` か、その部分集合
+（`IsForced.unique` は `[propext, Quot.sound]`、`exists_unique_next` は公理なし）。
+
+依頼の1–3はすべて済み。4（設計メモ）も済み。そのほかに、同一視の扱い（難所の一つ）の土台として
+「同一視は長さ `C` 未満の記録の鎖で尽きる」とその `t` によらない標準形を証明した。
+
+**統括の判断が要る点**：仕様の `Valid` は「グラフの三角形はどれかのチャートの単位三角形」を含まない
+（正二十面体を19面のチャートに分けた例で `Valid` が成り立ち、穴が残る。設計メモ §5.1）。
+`TrianglesInCharts` を定義し、それを仮定とする補題（`passage_cover`）を分けて置いた。
+
+## 2. 証明した主張（正確な形）
+
+記法：`pt S t f z h := vtx ⟨(f, z), h⟩`（`h : (S.chart f).Mem t z`）。
+
+### 2.1 `Claude3GeoBasic.lean`（244行）
+
+- `instance instFiniteSite : Finite (Site S t)`、`instance instFiniteVertex : Finite (Vertex S t)`。
+- `rotN_add`、`rotN_sub`、`rotN_injective`、`rotN_six : rotN 6 z = z`、`rotN_mem_unitVec`、
+  `neg_mem_unitVec`、`unitVec_ne_zero`。
+- `adj_of_unit`：同じチャートの `z, z'` で `z' - z ∈ unitVec`、頂点が異なれば `(graph S t).Adj`。
+- `valid_adj_of_unit (hV : Valid S t) … (hu : z' - z ∈ unitVec) : (graph S t).Adj (pt … z) (pt … z')`
+  （相異は埋め込みから自動）。`valid_pt_inj`、`valid_pt_ne`、`exists_unit_of_adj`。
+- `Next G a b c d := d ≠ a ∧ G.Adj b d ∧ G.Adj c d`。
+- `exists_unique_next (hT : TwoCommonNeighbors G) (hab hac hbc) : ∃! d, Next G a b c d`。
+- `IsForced G p N := ∀ k, k + 3 < N → Next G (p k) (p (k+1)) (p (k+2)) (p (k+3))`。
+- `LiteralPath.isForced : LiteralPath G n p → IsForced G p n`。
+- `IsForced.adj`、`IsForced.unique`（`TwoCommonNeighbors` のもとで、最初の三角形が同じ強制歩行は一致）。
+
+### 2.2 `Claude3GeoRows.lean`（329行）
+
+- `valid_unitTri_adj`：`Valid` のもとで、一つのチャートの単位三角形はグラフの三角形。
+- `valid_common_iff`（要の補題）：`Valid`、同じチャートの `P Q A B`、`Q-P, P-A, Q-A, B-P, B-Q ∈ unitVec`、
+  `A ≠ B` なら `∀ v, (Adj (pt P) v ∧ Adj (pt Q) v) ↔ (v = pt A ∨ v = pt B)`。
+- `valid_next_iff`：同じ仮定で `Next (graph S t) (pt A) (pt P) (pt Q) e ↔ e = pt B`。
+- `valid_edge_common_iff`：辺 `z, z+u`（`u ∈ unitVec`）の両側の頂点 `z + rot u`、`z + rotN 5 u` が
+  チャートにあれば、それがちょうど共通隣接。
+- `Pattern W`（`W(m+1)-W m`、`W(m+2)-W m` が単位、`W(m+3) ≠ W m`）、`pattern_isForced`、
+  `forced_eq_pattern`：強制歩行はチャートの中にある間 `W` に従う。
+- `rowPt h i := (i / 2, h + i % 2)`（式 (rows)）、`rowPt_injective`、`rowPt_pattern`。
+- `Ae Be Ao Bo delta eps lo hi`（式 (triangle-bounds)、`lo = 2Aₑ−δ`、`hi = 2Bₑ+ε`）、`delta_mem`・`eps_mem`（∈{0,1}）。
+- `rowTri_even_iff`、`rowTri_odd_iff`、`rowTri_iff (hh : L_y ≤ h ∧ h+1 ≤ U_y) (i : ℤ) :
+  TriIn c t (rowPt h) i ↔ lo c t h ≤ i ∧ i ≤ hi c t h`（式 (passage)。一つの奇三角形の場合も含む）。
+- `rowWalk_mem_iff (hN : 3 ≤ N) : (∀ m < N, c.Mem t (rowPt h (i₀+m))) ↔
+  (L_y ≤ h ∧ h+1 ≤ U_y) ∧ lo ≤ i₀ ∧ i₀ + N - 3 ≤ hi`。
+- `rowOutput_iff`（式 (output)）：`∃ i ∈ [lo+2, hi+2], rowPt h i = z` ⇔
+  `(z.2 = h ∧ Aₑ+1 ≤ z.1 ≤ Bₑ+1) ∨ (z.2 = h+1 ∧ Aₑ+1−δ ≤ z.1 ≤ Bₑ+ε)`。
+- `row_lemma`（方向 (1,0)）：`Valid`、`3 ≤ N`、`hh`、`lo ≤ i₀`、`i₀+N−3 ≤ hi`、`IsForced p N`、
+  最初の3点が `rowPt h (i₀+m)` なら `∀ m < N, ∃ hz, p m = pt f (rowPt h (i₀+m)) hz`。
+- `row_isForced`：逆に行の歩行そのものは強制歩行。
+
+### 2.3 `Claude3GeoRot.lean`（181行）
+
+- `rotPre`、`rotPreN k c`、`mem_rotN_iff : c.Mem t (rotN k z) ↔ (rotPreN k c).Mem t z`
+  （3つの法線が符号付きで置換されたチャート）。
+- `row_lemma_rot`：方向 `rotN k (1,0)` の行補題。添字範囲は `rotPreN k (S.chart f)` の `lo`, `hi`。
+- `dir_cover`、`unitTri_cover`：どの向き付き単位三角形も、ある `k < 6, h, i₀` で
+  `(rotN k (rowPt h i₀), rotN k (rowPt h (i₀+1)), rotN k (rowPt h (i₀+2)))`。
+- `forced_walk_in_chart`：`Valid`、`3 ≤ N`、強制歩行の最初の3点がチャート `f` の単位三角形なら、
+  ある `k < 6, h, i₀` があって、回転した行の歩行が `m` まで `f` にある限り `p m` はその点。
+
+### 2.4 `Claude3GeoQuot.lean`（139行）
+
+- `Embedded S t`（`Valid` の第2項）、`valid_embedded`。
+- `site_eq_of_vtx_eq`：一つの頂点類は各チャートに高々1点。
+- `Step`（記録を前向きか後ろ向きに1回）、`StepN n`。
+- `vtx_eq_iff_stepN (hE : Embedded S t) (s s') : vtx s = vtx s' ↔ ∃ n, n < S.C ∧ StepN S t n s s'`。
+- `graph_adj_iff`：`Adj v w ↔ v ≠ w ∧ ∃ s s', vtx s = v ∧ vtx s' = w ∧ 同じチャート ∧ s'.z − s.z ∈ unitVec`。
+
+### 2.5 `Claude3GeoDeg.lean`（137行）
+
+- `common_iff_of_two`：`TwoCommonNeighbors` のもとで、異なる二つの共通隣接が分かればそれがすべて。
+- `valid_interior_adj_iff`、`valid_interior_deg`：6つの格子近傍がすべて同じチャートにある点は、
+  ちょうどその6点と隣接し、次数6。
+- `valid_deg_six_of_not_marked`、`valid_literalPath_ends_marked`。
+- `valid_seam_next_iff`：辺 `P Q`（チャート `f`、頂点 `A` は `f`）と同じ2頂点の辺 `P' Q'`（チャート `f'`、
+  頂点 `B'` は `f'`）で、`pt A ≠ pt B'`（**仮定**）なら強制継続は `B'`。
+
+### 2.6 `Claude3GeoPassage.lean`（106行）
+
+- `literalPath_iff_forced`（`G` に仮定なし）：文字通りの道 ⇔ 大きさ・偶数・相異・最初の三角形・
+  `IsForced`・次数の条件。`LiteralPath.eq_of_start`、`IsForced.shift`。
+- `TrianglesInCharts S t`（**仕様にない追加の性質**）。
+- `passage_cover`：`Valid` と `TrianglesInCharts` のもとで、強制歩行のどの三角形も面通過の始まり。
+
+### 2.7 `Claude3GeoSeam.lean`（207行）
+
+- `recMap`、`pt_recMap`、`rotN_mod`、`rotN_rotN_inv'`、`rotN_aff`、`rowPt_add`。
+- `recMap_rowPt`：記録の像 `recMap r (rotN k (rowPt h i)) = rotN (j_r+k) (rowPt (h+δ₂) (i+2δ₁))`、
+  `δ = rotN (6 − (j_r+k) % 6) (d_r(t))`（向きをそろえた座標で線形部分は恒等）。
+- `seam_passage`：記録1本で `f → f'`。像が `[M−1, M']` で `f'` にあり、`pt (W(M−2)) ≠ pt (Φ(W(M+1)))`
+  （**仮定**）なら、歩行は `[M−1, M']` で `Φ ∘ W`。
+- `seam_passage_overlap`：像が `[M−2, M']` で `f'` にあれば仮定なしで同じ結論。
+- `passage_injective`：一つの面通過の頂点は互いに異なる。
+
+### 2.8 `Claude3GeoChain.lean`（261行）
+
+- `AffMap`（`z ↦ rotN J z + (A t, B t)`）、`AffMap.apply_comp`、`pullChart`、`mem_pullChart`。
+- `letterAff`（記録の前向き・後ろ向き）、`step_iff_letter`、`ChainOK`、`WordOK`、`wordAff`、`wordCharts`、
+  `chainOK_iff`、`stepN_iff_chain`。
+- `vtx_eq_iff_word (hE : Embedded S t) h h' : pt f z h = pt f' z' h' ↔ ∃ w : List (Letter S),
+  w.length < S.C ∧ WordOK S w f f' ∧ (∀ c ∈ wordCharts S w f, c.Mem t z) ∧ z' = (wordAff S w).apply t z`
+  （`wordCharts`・`wordAff` は `t` によらない）。
+
+## 3. 公理の出力
+
+`<TMPDIR>/ax.lean`
+（`import Formal.Claude3GeoChain`）で主な宣言27個を確認した。
+`exists_unique_next` は公理なし、`IsForced.unique` は `[propext, Quot.sound]`、ほか25個は
+`[propext, Classical.choice, Quot.sound]`。
+
+## 4. 確認の手順と資源
+
+```bash
+cd formal
+nice -n 10 lake build Formal.Claude3GeoChain     # 8ファイルすべてを含む
+nice -n 10 lake env lean -M4096 Formal/Claude3Geo<名前>.lean
+```
+
+- 各ファイルの単独の確認：4–25秒。最大常駐メモリは約3.09 GB（`Rows`、`/usr/bin/time -l`）。
+- 開始時の空きメモリは48–54%、最後の確認時は42%。Lean の処理は常に1つずつ。
+
+## 5. commit（`claude-lean`）
+
+- `3db5ce1d` 土台(1)(2) Basic・Rows
+- `1f7ead7a` 土台(3) Rot
+- `f3284849` 土台(4)(5) Quot・Deg
+- `16574ddd` 土台(6) Passage
+- `8de0d9fe` 土台(7) Seam
+- `dba10789` 土台(7)追補
+- `82839362` 設計メモ
+- `6d5c3a01` 土台(8) Chain
+- 本報告と設計メモの更新は最後の commit。
+
+## 6. 残りの穴
+
+1. `TrianglesInCharts` が仕様の `Valid` から出ない（設計メモ §5.1）。統括の決定待ち。
+2. `seam_passage` の頂点の相異の仮定 `hne`（重なりのない継ぎ目）。総称的な遷移の定義なら不要（§5.3）。
+3. 同一視・隣接を行の点に代入したとき、対ごとの原子式（`±h ± h' ≤ at+b`）だけになること（G3b-3、未着手）。
+4. 状態・遷移・縮約定理（G4–G5）、RSA の構文と折り畳み（F）、最後の組み立て（A）は未着手。
+5. 正二十面体の反例は手での構成で、Lean でも計算でも確かめていない。

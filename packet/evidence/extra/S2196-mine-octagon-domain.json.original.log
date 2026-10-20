@@ -1,0 +1,27 @@
+{
+  "source_id": "S2196",
+  "title": "The Octagon Abstract Domain",
+  "authors_or_provider": "Antoine Miné",
+  "url_or_path": "https://arxiv.org/pdf/cs/0703084v1",
+  "version": "arXivcs/0703084v1,15Mar2007; short conference-style version, not the70pageHOSC2006 version",
+  "checked_at": "2026-10-19",
+  "read_scope": "表題・要旨・§I導入(PDFp.1)を対象。数値領域の制約syntaxの先例だけを確認。残りの算法・全証明は未読/未監査。",
+  "section_or_pages": "表題・要旨・§I導入(PDFp.1)を対象。数値領域の制約syntaxの先例だけを確認。残りの算法・全証明は未読/未監査。",
+  "claim_supported": "±x±y≤cという形自体は既知のoctagon domainであり、制限算術のsyntaxの発明を差分としない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/octagon-domain.txt",
+  "sha256": "2da1721eec9f4ee87975b37e2f11ff397d98a1532c40fc437a0fc1f18e20de09",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "tの整数一次境界をもつ有限構造のMSOへの一様解釈、literal gSWの周期性がこの論文にあるとはしない。",
+  "quotes": [
+    {
+      "text": "The Octagon Abstract Domain",
+      "supports": "±x±y≤cという形自体は既知のoctagon domainであり、制限算術のsyntaxの発明を差分としない。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/octagon-domain.raw",
+    "bytes": 221575,
+    "sha256": "d706767890c98b002cf400408ecd1477cda90009055b143152f38ba80090cee4"
+  },
+  "fetched_at": "2026-10-19T13:46:35.228620+00:00"
+}

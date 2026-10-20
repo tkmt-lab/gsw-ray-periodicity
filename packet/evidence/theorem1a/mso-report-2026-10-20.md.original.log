@@ -1,0 +1,227 @@
+# MSO ⇒ 正則（Büchi–Elgot–Trakhtenbrot の必要な向き）Lean 形式化 報告 2026-10-20
+
+作業者: Claude（branch `claude-lean`、worktree `.worktrees/claude-lean`）
+Lean 4.35.0 / mathlib v4.35.0。新規ファイルのみ、既存ファイルと `Formal.lean` は変更していない。
+
+## 結論
+
+課題の 1（主定理）、2（一文字の系、剰余類の合成）、3（派生式とその意味論の補題）はすべて
+`sorry`・`native_decide`・新しい `axiom` なしで証明した。主定理の公理は
+`propext, Classical.choice, Quot.sound` のみ。
+
+## ファイルと行数
+
+| ファイル | 行数 | 内容 |
+|---|---:|---|
+| `formal/Formal/Claude3MsoSyntax.lean` | 107 | 構文 `MSO α m k`、意味論 `MSO.Sat`、派生結合子、`Sentence`、`Models` |
+| `formal/Formal/Claude3MsoAutomata.lean` | 264 | snoc 要約による正則性、射影（NFA＋部分集合構成）、逆像、`Fin m` 添字の共通部分、走査言語 3 種 |
+| `formal/Formal/Claude3MsoRegular.lean` | 302 | 拡張アルファベットへの符号化、式についての帰納法、主定理 |
+| `formal/Formal/Claude3MsoUnary.lean` | 145 | 最終的周期性、剰余類の合成、一文字アルファベット |
+| `formal/Formal/Claude3MsoDerived.lean` | 294 | 変数の付け替え、単集合、最初/最後の位置、定数オフセット、集合パターン、連結性 |
+| `formal/Formal/Claude3MsoLenMod.lean` | 160 | 語の長さ ≡ r (mod q) を表す MSO 文 |
+| 合計 | 1272 | |
+
+## 定義（意味論）
+
+```lean
+inductive MSO (α : Type u) : ℕ → ℕ → Type u
+  | lt {m k} : Fin m → Fin m → MSO α m k          -- x < y
+  | eq {m k} : Fin m → Fin m → MSO α m k          -- x = y
+  | succ {m k} : Fin m → Fin m → MSO α m k        -- succ x y : y = x + 1
+  | mem {m k} : Fin m → Fin k → MSO α m k         -- x ∈ X
+  | lab {m k} : α → Fin m → MSO α m k             -- P_a x
+  | neg | and
+  | exF {m k} : MSO α (m + 1) k → MSO α m k       -- ∃x（一階変数 0 を束縛）
+  | exS {m k} : MSO α m (k + 1) → MSO α m k       -- ∃X（集合変数 0 を束縛）
+
+def Sat (w : List α) : {m k : ℕ} → MSO α m k → (Fin m → ℕ) → (Fin k → Set ℕ) → Prop
+  | _, _, .lt x y, ν, _ => ν x < ν y
+  | _, _, .eq x y, ν, _ => ν x = ν y
+  | _, _, .succ x y, ν, _ => ν y = ν x + 1
+  | _, _, .mem x X, ν, V => ν x ∈ V X
+  | _, _, .lab a x, ν, _ => w[ν x]? = some a
+  | _, _, .neg φ, ν, V => ¬ Sat w φ ν V
+  | _, _, .and φ ψ, ν, V => Sat w φ ν V ∧ Sat w ψ ν V
+  | _, _, .exF φ, ν, V => ∃ x, x < w.length ∧ Sat w φ (Fin.cons x ν) V
+  | _, _, .exS φ, ν, V => ∃ X : Set ℕ, X ⊆ {i | i < w.length} ∧ Sat w φ ν (Fin.cons X V)
+
+abbrev Sentence (α : Type u) := MSO α 0 0
+def Models (w : List α) (φ : Sentence α) : Prop :=
+  MSO.Sat w φ (fun i => i.elim0) (fun i => i.elim0)
+def modelsLang (φ : Sentence α) : Language α := {w | Models w φ}
+def EventuallyPeriodic (S : Set ℕ) : Prop :=
+  ∃ t₀ P : ℕ, 0 < P ∧ ∀ t ≥ t₀, (t ∈ S ↔ t + P ∈ S)
+```
+
+変数は de Bruijn 添字（0 が最も内側）。一階変数と集合変数は別の文脈 `m`, `k` を持ち、
+一方の束縛は他方の添字をずらさない。位置は「長さ未満の自然数」（課題で許された形）。
+派生結合子 `or, imp, iff, allF, allS, le, tt, ff` とそれぞれの `sat_*` 補題あり。
+
+## 証明した主な宣言（Lean の文そのまま、名前空間 `R002.Claude3Mso`）
+
+### 1. 主定理
+
+```lean
+theorem isRegular_modelsLang (φ : Sentence α) : (modelsLang φ).IsRegular
+
+theorem exists_dfa_models (φ : Sentence α) :
+    ∃ (σ : Type) (_ : Fintype σ) (M : DFA α σ), ∀ w, w ∈ M.accepts ↔ Models w φ
+
+-- 自由変数つき：符号化言語の正則性（帰納法の本体）
+theorem isRegular_langOf : ∀ {m k : ℕ} (φ : MSO α m k), (langOf φ).IsRegular
+```
+
+`α` に `[Fintype α] [DecidableEq α]` は不要だった（DFA の状態が有限であればよく、
+文字の比較は証明内で古典論理を使う）。したがって主定理は課題の仮定より一般の形。
+
+証明の構成: 拡張アルファベット `Sym α m k = α × (Fin m → Bool) × (Fin k → Bool)`。
+`langOf φ = {u | ∃ ν, Valid u ν ∧ Sat (word u) φ ν (sets u)}`（`Valid` は各一階トラックが
+`ν j` のちょうど一点で真）。原子式は `validL ⊓ 走査言語`、`¬` は `validL ⊓ (langOf φ)ᶜ`、
+`∧` は共通部分、`∃x`/`∃X` は文字ごとの射影 `imageMap dropF`/`imageMap dropS`。
+文は `embed : α → Sym α 0 0` による逆像。
+
+補助の閉包補題（`Claude3MsoAutomata.lean`）:
+
+```lean
+theorem isRegular_of_snoc {σ : Type} [Finite σ] (L : Language β) (f : List β → σ)
+    (step : σ → β → σ) (A : Set σ) (hstep : ∀ u b, f (u ++ [b]) = step (f u) b)
+    (hacc : ∀ u, u ∈ L ↔ f u ∈ A) : L.IsRegular
+theorem isRegular_imageMap {L : Language β} (h : L.IsRegular) (f : β → γ) :
+    (imageMap f L).IsRegular            -- imageMap f L = {v | ∃ u ∈ L, u.map f = v}
+theorem isRegular_preimageMap {L : Language β} (h : L.IsRegular) (f : γ → β) :
+    (preimageMap f L).IsRegular
+theorem isRegular_forallFin {m : ℕ} (L : Fin m → Language β) (h : ∀ j, (L j).IsRegular) :
+    (forallFin L).IsRegular
+theorem isRegular_exSat (p : β → Bool) : (exSat p).IsRegular
+theorem isRegular_exLt (p q : β → Bool) : (exLt p q).IsRegular
+theorem isRegular_exAdj (p q : β → Bool) : (exAdj p q).IsRegular
+```
+
+### 2. 一文字の系
+
+```lean
+theorem _root_.Language.IsRegular.eventuallyPeriodic_replicate {α : Type u} {L : Language α}
+    (h : L.IsRegular) (a : α) : EventuallyPeriodic {n | List.replicate n a ∈ L}
+
+theorem eventuallyPeriodic_models_replicate {α : Type u} (φ : Sentence α) (a : α) :
+    EventuallyPeriodic {n | Models (List.replicate n a) φ}
+
+theorem eventuallyPeriodic_models_unique {α : Type u} [Unique α] (φ : Sentence α) :
+    EventuallyPeriodic {n | ∃ w : List α, w.length = n ∧ Models w φ}
+
+theorem eventuallyPeriodic_interleave {q : ℕ} (hq : 0 < q) (S : ℕ → Set ℕ)
+    (h : ∀ η < q, EventuallyPeriodic (S η)) :
+    EventuallyPeriodic {t | t / q ∈ S (t % q)}
+
+theorem eventuallyPeriodic_models_residues {α : Type u} {q : ℕ} (hq : 0 < q)
+    (φ : ℕ → Sentence α) (a : α) :
+    EventuallyPeriodic {t | Models (List.replicate (t / q) a) (φ (t % q))}
+
+theorem eventuallyPeriodic_models_parity {α : Type u} (φ₀ φ₁ : Sentence α) (a : α) :
+    EventuallyPeriodic {t | ∃ n, (t = 2 * n ∧ Models (List.replicate n a) φ₀) ∨
+      (t = 2 * n + 1 ∧ Models (List.replicate n a) φ₁)}
+```
+
+周期の取り方: 各類の周期の積 `Q` と開始点の和 `T` を使い、合成後は開始点 `q * T`、周期 `q * Q`。
+
+### 3. 派生式（`Claude3MsoDerived.lean`, `Claude3MsoLenMod.lean`、名前空間 `MSO` 内のものあり）
+
+```lean
+theorem sat_rename {w : List α} : ∀ {m k m' k' : ℕ} (f : Fin m → Fin m') (g : Fin k → Fin k')
+    (φ : MSO α m k) (ν : Fin m' → ℕ) (V : Fin k' → Set ℕ),
+    Sat w (rename f g φ) ν V ↔ Sat w φ (ν ∘ f) (V ∘ g)
+theorem sat_wkF ... : Sat w (wkF φ) (Fin.cons x ν) V ↔ Sat w φ ν V
+theorem sat_wkS ... : Sat w (wkS φ) ν (Fin.cons X V) ↔ Sat w φ ν V
+
+theorem sat_sing (X : Fin k) : Sat w (sing X : MSO α m k) ν V ↔
+    ∃ x, x < w.length ∧ ∀ y, y < w.length → (y ∈ V X ↔ y = x)
+theorem sat_sing_of_subset (X : Fin k) (hV : V X ⊆ {i | i < w.length}) :
+    Sat w (sing X : MSO α m k) ν V ↔ ∃ x, V X = {x}
+theorem sat_isFirst_of_lt (x : Fin m) (hx : ν x < w.length) :
+    Sat w (isFirst x : MSO α m k) ν V ↔ ν x = 0
+theorem sat_isLast_of_lt (x : Fin m) (hx : ν x < w.length) :
+    Sat w (isLast x : MSO α m k) ν V ↔ ν x + 1 = w.length
+theorem sat_addEq : ∀ (c : ℕ) {m : ℕ} (x y : Fin m) (ν : Fin m → ℕ), ν y < w.length →
+    (Sat w (addEq c x y : MSO α m k) ν V ↔ ν y = ν x + c)
+theorem sat_leAdd : ∀ (c : ℕ) {m : ℕ} (x y : Fin m) (ν : Fin m → ℕ), ν x < w.length →
+    (Sat w (leAdd c x y : MSO α m k) ν V ↔ ν x ≤ ν y + c)
+theorem sat_subset, sat_isEmpty, sat_between, sat_convex, sat_conn   -- 集合パターンの意味論
+theorem sat_conn_iff_convex (X : Fin k) (hV : V X ⊆ {i | i < w.length}) :
+    Sat w (conn X : MSO α m k) ν V ↔ Sat w (convex X : MSO α m k) ν V
+
+theorem sat_lenMod {q r : ℕ} (hq : 0 < q) (hr : r < q) :
+    Sat w (lenMod q r : MSO α m k) ν V ↔ w.length % q = r
+theorem models_lenMod {q r : ℕ} (hq : 0 < q) (hr : r < q) :
+    Models w (lenMod q r) ↔ w.length % q = r
+theorem isRegular_length_mod {q r : ℕ} (hq : 0 < q) (hr : r < q) :
+    (modelsLang (lenMod q r : Sentence α)).IsRegular ∧
+      ∀ w : List α, w ∈ modelsLang (lenMod q r : Sentence α) ↔ w.length % q = r
+```
+
+`conn X` は MSO の標準的な連結性パターン（X に含まれる空でない Y が X 内の後者関係について
+閉じていれば X ⊆ Y）で、語の上では凸（区間）と同値であることを証明した。
+`lenMod q r` は巡回彩色の代わりに集合変数 1 個で「X = q の倍数の位置全体」
+（`∀y (y ∈ X ↔ first y ∨ ∃x (x ∈ X ∧ y = x + q))`）を表し、
+最後の位置 ℓ と `x ∈ X` で `ℓ = x + (r' - 1)`（`r' = if r = 0 then q else r`）を要求する。
+空語は別の選言で扱う。
+
+## `#print axioms` の出力
+
+```
+'R002.Claude3Mso.isRegular_langOf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.isRegular_modelsLang' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.exists_dfa_models' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.isRegular_imageMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.eventuallyPeriodic_models_replicate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.eventuallyPeriodic_models_residues' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.eventuallyPeriodic_models_parity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.eventuallyPeriodic_interleave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.MSO.sat_rename' depends on axioms: [propext, Quot.sound]
+'R002.Claude3Mso.MSO.sat_sing_of_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.MSO.sat_isFirst_of_lt' depends on axioms: [propext, Quot.sound]
+'R002.Claude3Mso.MSO.sat_isLast_of_lt' depends on axioms: [propext, Quot.sound]
+'R002.Claude3Mso.MSO.sat_addEq' depends on axioms: [propext, Quot.sound]
+'R002.Claude3Mso.MSO.sat_leAdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.MSO.sat_conn_iff_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.sat_lenMod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.isRegular_length_mod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.eventuallyPeriodic_models_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+`grep -n "sorry\|native_decide\|^axiom" formal/Formal/Claude3Mso*.lean` は該当なし。
+
+## ビルド
+
+```bash
+cd formal
+nice -n 10 lake build Formal.Claude3MsoSyntax Formal.Claude3MsoAutomata Formal.Claude3MsoRegular \
+  Formal.Claude3MsoUnary Formal.Claude3MsoDerived Formal.Claude3MsoLenMod
+```
+
+`Build completed successfully`。自分のファイルからの警告は、mathlib の import について
+`module` を勧める一般的な警告だけ。Lean のプロセスは常に 1 つずつ、`-M4096`（lakefile の
+`moreLeanArgs`、および `lake env lean -M4096`）で実行した。
+
+観測したピークメモリ（`/usr/bin/time -l` の maximum resident set size）: ファイル 1 つにつき
+約 1.36〜1.59 GB、`lake build` 全体で 1.59 GB。`memory_pressure -Q` の空きは作業中 46〜51%。
+各ファイルの elaboration は数秒。
+
+## コミット（`claude-lean`、push・merge はしていない）
+
+- `566c7dc0` Claude3Mso: MSO over finite words is regular (Büchi–Elgot–Trakhtenbrot, MSO ⇒ regular)
+- `5fd59a73` Claude3Mso: unary corollary (eventual periodicity, residue-class interleaving)
+- `348d6d12` Claude3Mso: derived formulas (rename, singleton, first/last, offsets, set patterns, connectivity) and length mod q
+- この報告書のコミット（下記）
+
+## 残っていること・注意
+
+- 課題として残っているものはない。
+- 逆向き（正則 ⇒ MSO 定義可能）は対象外で、証明していない。
+- 位置は `Fin w.length` ではなく「`w.length` 未満の自然数」で表した（課題で許された形）。
+  集合量化子は位置の集合 `X ⊆ {i | i < w.length}` だけを動く。自由変数が範囲外の値を
+  取る場合の `Sat` は形式的には定義されているが、文（`Models`）では起こらない。
+- 「巡回彩色」は、集合変数 1 個と距離 q の式による同値な表現で代えた（`lenMod`）。
+  q 個の集合変数による彩色そのものは書いていない。
+- 後の幾何の定理で使うときは、`rename`/`wkF`/`wkS` で式を文脈に持ち上げ、
+  `isRegular_modelsLang` → `eventuallyPeriodic_models_replicate` / `_residues` / `_parity`
+  の順につなぐことを想定している。

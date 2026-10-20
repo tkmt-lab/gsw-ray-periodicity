@@ -1,0 +1,23 @@
+{
+  "source_id": "S2183",
+  "title": "Zigzag structure of complexes",
+  "authors_or_provider": "Michel Deza; Mathieu Dutour",
+  "url_or_path": "https://arxiv.org/pdf/math/0405279v1",
+  "version": "arXiv:math/0405279v1, 2004-05-14, 19頁。PDF内部の組版日は2018-10-10。Southeast Asian Bull. Math.29(2005)301–320の著者書誌も確認、公刊本文との全文比較なし。",
+  "published_at": "2004-05-14",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "本文§2 pp.2–5：flag、Theorem2.2、Definition2.3/2.5、Proposition2.4、Theorem2.6とその証明・直後の双対交差型の説明。pp.3–5を描画して目視。§3–6の全表・高次元分類は読了に数えない。",
+  "read_scope": "本文§2 pp.2–5：flag、Theorem2.2、Definition2.3/2.5、Proposition2.4、Theorem2.6とその証明・直後の双対交差型の説明。pp.3–5を描画して目視。§3–6の全表・高次元分類は読了に数えない。",
+  "claim_supported": "flagを巡回させる定義と双対zigzagの対応は既知。面IDを持つ列に戻してgSWの条件を検査する一般手順自体を新原理にしない。",
+  "license_or_terms": "無料の公式公開資料・既存の正規経路で取得した控え。本文はGit非追跡cache、再配布なし。",
+  "local_snapshot": "data/cache/R005/next27/complexes.txt",
+  "sha256": "8f326d56804b1910c6185f5630b5e8149e9bf0e5a6074d7d9d567df1fc4c0a8a",
+  "limitations": "双対化は交差のI/IIを交換する。gSW端点条件やA3二段算術分類を主張する論文ではない。",
+  "fetched_at": "2026-10-19T11:21:02.348167+00:00",
+  "quotes": [
+    {
+      "text": "Every zigzag Z in K corresponds",
+      "supports": "flagを巡回させる定義と双対zigzagの対応は既知。面IDを持つ列に戻してgSWの条件を検査する一般手順自体を新原理にしない。"
+    }
+  ]
+}

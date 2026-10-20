@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "paper_version": "3",
+  "paper": {
+    "path": "studies/R002/paper-lines-v3.md",
+    "sha256": "cc21549dc43635fb98e31912542327a2a5499edefb3a4da9d4c4836d45841674",
+    "bytes": 62159
+  },
+  "status_semantics": "Recorded receipt and review scope, not a machine proof of prose mathematics.",
+  "theorem_1": {
+    "domain": "arbitrary-fixed-primitive-directions-valid-signatures",
+    "status": "proof-draft",
+    "r004_second_proof_received_for_whole_domain": false,
+    "an_5_6_fully_reviewed": false,
+    "effective_threshold_period": "claimed-in-first-proof-draft-not-implemented"
+  },
+  "theorem_1a": {
+    "domain": "fixed-convex-embedded-disks-six-lattice-directions-affine-coordinates-fixed-gluing",
+    "status": "independent-prose-proof-received",
+    "r004_second_derivation": true,
+    "finite_fixed_residue_branches_allowed": true,
+    "all_actual_path_conditions": true,
+    "internal_degree_five_allowed": true,
+    "passes_uniformly_bounded": false,
+    "state_types_fixed": true,
+    "ai_coordinator_reviewers": 1,
+    "human_peer_review": false,
+    "lean_formalization": false,
+    "effective_dfa_implementation": false,
+    "concrete_period_threshold_computed": false,
+    "novelty_established": false,
+    "external_dependencies": [
+      "R004:S1504",
+      "R004:S1513"
+    ]
+  },
+  "corollary_1b": {
+    "families": [
+      "A1",
+      "A2",
+      "B2",
+      "C1",
+      "A3",
+      "K3",
+      "E10",
+      "D12",
+      "D14",
+      "D1",
+      "O2"
+    ],
+    "domain": "eventually-valid-positive-integer-parameters; A3 k>l>0",
+    "all_integer_affine_rays": true,
+    "arithmetic_report": "R004-report-014.md.txt",
+    "geometric_report": "R004-report-015.md.txt",
+    "a3_route": "classification-and-arithmetic-not-fixed-direction-geometry",
+    "parameter_one_boundaries_included": [
+      "K3:r=1-or-s=1",
+      "E10:r=1",
+      "O2:t=1-or-d=1"
+    ],
+    "new_zero_boundaries": false,
+    "additional_leapfrog_families_received": false,
+    "catalog_112_families_covered": false
+  },
+  "closed_condition_scope": {
+    "unchanged_from_v2": [
+      "A1",
+      "A2",
+      "C1",
+      "B2",
+      "K3:r,s>=2",
+      "E10:p,s>=1,r>=2"
+    ],
+    "e10_r1_general_iff": false,
+    "d12_general_iff": false,
+    "d14_general_absence_independently_received": false,
+    "d1_general_absence_independently_received": false,
+    "o2_absence_domain": "t,d>=2-only"
+  },
+  "independence": {
+    "kind": "separately-derived-proof-with-disclosures",
+    "r004_reports_no_main_proof_construction_or_code_read": true,
+    "strict_blind": false,
+    "disclosures": [
+      {
+        "path": "studies/R002/lines-v3-received/R004-independence-007.md.txt",
+        "sha256": "3f8ff4658bfd2fb3385d9cf84fb26c64c8e565efed94277fc92bbdffeb5c3e2b",
+        "bytes": 1040
+      },
+      {
+        "path": "studies/R002/lines-v3-received/R004-independence-014.md.txt",
+        "sha256": "a0216b0940905b3f7ca9a25271f79425c8c0a256ee1d7177eba0636113a58df0",
+        "bytes": 1459
+      }
+    ],
+    "first_derivation_not_fully_reviewed": true,
+    "editor_is_not_a_third_independent_proof": true
+  },
+  "verification": {
+    "new_graph_runs": 0,
+    "new_lean_runs": 0,
+    "r004_checkers_rerun": false,
+    "cache_theorem_3_2_read": true,
+    "external_theorem_full_proof_rechecked": false,
+    "network": false,
+    "paid_compute": false,
+    "r004_material_sent": false
+  },
+  "receipt_manifest": {
+    "path": "studies/R002/lines-v3-received/manifest.json",
+    "sha256": "0c6ce4398e12bb33538640081f2508500e17ca395696b3e19744614e6dcb3fa9",
+    "bytes": 13113
+  }
+}

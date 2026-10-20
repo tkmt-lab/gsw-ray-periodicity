@@ -1,0 +1,23 @@
+{
+  "source_id": "S2182",
+  "title": "Zigzag Structures of Simple Two-faced Polyhedra — next-27再読",
+  "authors_or_provider": "Michel Deza; Mathieu Dutour",
+  "url_or_path": "https://arxiv.org/pdf/math/0212352v2",
+  "version": "arXiv:math/0212352v2 (2003-08-01); S2003と同じ保存本文。公刊CPC14(2005)31–57との逐語比較なし。",
+  "published_at": "2003-08-01",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "本文pp.2–3定義、§2 pp.7–10のEuler/patch、§3 pp.10–15のrailroad/pseudo-road/命題3.2、§7 pp.29–31を読む。p.10,14を今回描画。§4–6の他グラフ全分類や表の全件再現はしない。",
+  "read_scope": "本文pp.2–3定義、§2 pp.7–10のEuler/patch、§3 pp.10–15のrailroad/pseudo-road/命題3.2、§7 pp.29–31を読む。p.10,14を今回描画。§4–6の他グラフ全分類や表の全件再現はしない。",
+  "claim_supported": "railroadは双対の次数6のみを通るcentral circuit。tightnessの両側非六角面接触と、gSWの相異面・偶奇・初回再訪を区別する。",
+  "license_or_terms": "無料の公式公開資料・既存の正規経路で取得した控え。本文はGit非追跡cache、再配布なし。",
+  "local_snapshot": "data/cache/R005/zigzag.txt",
+  "sha256": "7122117c50229bccd4f4e9295abf8a2372c0694c85be8d78d7b15aaf1bdfed08",
+  "limitations": "CPC公刊版との全面照合は未実施。railroad構造やpatch恒等式からA3の二段条件を導いたと主張しない。",
+  "fetched_at": "2026-10-19T11:21:02.347406+00:00",
+  "quotes": [
+    {
+      "text": "only through 6-valent vertices.",
+      "supports": "railroadは双対の次数6のみを通るcentral circuit。tightnessの両側非六角面接触と、gSWの相異面・偶奇・初回再訪を区別する。"
+    }
+  ]
+}

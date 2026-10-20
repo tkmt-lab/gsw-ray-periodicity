@@ -1,0 +1,16 @@
+{
+  "packet_version": "1.3.1",
+  "paper_version": "4.7",
+  "author": "Tatsuhiko Takimoto",
+  "affiliation": "Independent researcher",
+  "contact": "GitHub Issues",
+  "contact_url_file": "REPOSITORY-URL.txt",
+  "organization": null,
+  "email": null,
+  "text_figures_data_license": "CC-BY-4.0",
+  "code_lean_license": "Apache-2.0",
+  "AI_statement_owner_approved": true,
+  "uploaded": false,
+  "doi": null,
+  "pdf_validation_file": "lines-v4.7-pdf-validation.json"
+}

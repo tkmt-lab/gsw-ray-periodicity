@@ -1,0 +1,59 @@
+{
+  "source_id": "S2187",
+  "title": "Geometric Structure of Chemistry-Relevant Graphs — official access attempts",
+  "authors_or_provider": "Springer Nature; Google Books; author bibliography",
+  "url_or_path": "https://link.springer.com/chapter/10.1007/978-81-322-2449-5_7",
+  "version": "Published2015; access checked2026-10-19",
+  "checked_at": "2026-10-19",
+  "read_scope": "公式章2/7の要旨・アクセス表示、公開Google Books指定頁のHTML、目次・著者リンクの範囲のみ。指定節の本文未読。",
+  "section_or_pages": "公式章2/7の要旨・アクセス表示、公開Google Books指定頁のHTML、目次・著者リンクの範囲のみ。指定節の本文未読。",
+  "claim_supported": "今回の無料・未認証経路では指定章本文を取得できず。未読の留保は解消していない。",
+  "local_snapshot": "data/cache/R005/next28/book-access-next28.txt",
+  "sha256": "ec1bf03bbf492e4c5f07df4c455a35701fc94fba51cb1f1b5421b6f5970fcd36",
+  "quotes": [],
+  "license_or_terms": "無料の著者公開版・公式資料・その公開保存版を個人研究で照合。原文全文・図はGit非追跡cacheに保存し再配布しない。購入・login・TLS検証無効化なし。",
+  "limitations": "無料合法版が世界中どこにも存在しないとは主張しない。HTML200/書誌/索引を本文読解と扱わない。",
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28/book-chapter2.raw",
+      "bytes": 306870,
+      "sha256": "b502c20d1e5a1989c4e4ac992b475beb7732e24938087432e2e6f48ced44030f"
+    },
+    {
+      "path": "data/cache/R005/next28/book-chapter7.raw",
+      "bytes": 296315,
+      "sha256": "d9c9c12121684fe8197f69e05ecd3b7ab24d24d5c15240c83fca74acb113d74c"
+    },
+    {
+      "path": "data/cache/R005/next28/book-google.raw",
+      "bytes": 98407,
+      "sha256": "ec4f8acf16c5bab0c0767df508ceb8eada4f1703e4b3832bc442bc26af9eb733"
+    },
+    {
+      "path": "data/cache/R005/next28/book-pa38.raw",
+      "bytes": 98372,
+      "sha256": "5eb79c853bcddea324726c30284efbbd905662e178ec695f423726717c2d858b"
+    },
+    {
+      "path": "data/cache/R005/next28/book-pa40.raw",
+      "bytes": 98372,
+      "sha256": "584884e160be8d4c91823e0a3e00a250a2e9e68b8c413a3c5c3a6bbf0455abe0"
+    },
+    {
+      "path": "data/cache/R005/next28/book-pa153.raw",
+      "bytes": 98367,
+      "sha256": "3c00bbea8966455191237f9aa311f986cfa5db18817cac8b48df4205c5365b68"
+    },
+    {
+      "path": "data/cache/R005/next28/book-pa160.raw",
+      "bytes": 98397,
+      "sha256": "9380ef0aef97eff31090c8dd3cb3dc54bc5116993f9f2226a2eebba725d6b769"
+    },
+    {
+      "path": "data/cache/R005/next28/book-russian-publisher.raw",
+      "bytes": 28869,
+      "sha256": "582632d316cc9e35ec2476c94a49ae7052f7a72edf78dfae47bec3b53b5d248c"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:36:17.449940+00:00"
+}

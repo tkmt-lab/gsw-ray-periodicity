@@ -1,0 +1,37 @@
+{
+  "scope": "Fixed completed reports only; no R004 source code, live census, or new independent check inspected.",
+  "sources": [
+    {
+      "path": "studies/R002/lines-v2-received/R004-affine-rays-proof.txt",
+      "source": "studies/R004/affine-rays-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "fa21a4cf356d42ed8a07f710f169db40a43f4e2a",
+      "sha256": "7ef75b273f983173502dd7a4b1d33e97c32513b40f368bbd33a9434c222656ab",
+      "bytes": 4431
+    },
+    {
+      "path": "studies/R002/lines-v2-received/R004-affine-rays-report.txt",
+      "source": "studies/R004/affine-rays-report.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "fa21a4cf356d42ed8a07f710f169db40a43f4e2a",
+      "sha256": "601c3fb51932cf09380e80c25a430264a70c20cefe144f5c1c7e8447446dab92",
+      "bytes": 5699
+    },
+    {
+      "path": "studies/R002/lines-v2-received/R004-d12-rays-proof.txt",
+      "source": "studies/R004/d12-rays-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "fa21a4cf356d42ed8a07f710f169db40a43f4e2a",
+      "sha256": "32f64ec7fd89da2b678dbcfa1336ac6fb7b4663968996a3055bf3876f1c49ec8",
+      "bytes": 8917
+    },
+    {
+      "path": "studies/R002/lines-v2-received/coordinator-D12-s58.txt",
+      "source": "studies/R002/analysis/2026-10-18-claude-independent-gsw/2026-10-19-D12-rays-s58.md",
+      "source_worktree": ".",
+      "commit": "5d144e9f0bca02fe583744356f22277d52b889c7",
+      "sha256": "28f3def97b1cc7dba1ed984c1d3216cb61a6ffc6e74e8b7e580ce323d18b9f75",
+      "bytes": 1526
+    }
+  ]
+}

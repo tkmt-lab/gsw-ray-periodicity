@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Formal.Claude4K3ComparatorChallenge",
+  "solution_module": "Formal.Claude4K3ComparatorSolution",
+  "theorem_names": [
+    "ClaudeChallengeK3.main"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

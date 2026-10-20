@@ -1,0 +1,22 @@
+# Comparator照合：K3 の直線上の最終周期性 `ClaudeChallengeK3.main`（2026-10-20）
+
+統括（Claude Code）。K3 の証明が、統括が証明より先に書いた主張文（版2、`formal/Formal/Claude4K3ComparatorChallenge.lean`、下限 r₀, s₀ ≥ 1）の `theorem main` と同じ文の証明であることを、`lake comparator --paranoid` で照合した。
+
+- 主張（challenge）：`Claude4K3ComparatorChallenge.lean`。定義は `ClaudeChallengeSpec.lean` と `Claude2AlignedSpec.lean` からの一字一句の写し（統括が機械で確認）。
+- 証明（solution）：`Claude4K3ComparatorSolution.lean`（Claude サブエージェント、18ファイル 3,390 行）。道筋：`NoThreeCommon`（K3 のグラフの三角形はすべて面）を証明し、既存の `k3_statement_of_no_three` で K3 の分類 `K3Statement`（r, s ≥ 2 で、経路がある ⇔ s ≡ ±1 mod r）を得て、直線上の算術で最終周期性を出す。境界（r = 1 または s = 1）は「十分先ではつねに経路がある」で扱う。
+- 設定：`formal/comparator-k3.json`（許す公理は propext・Quot.sound・Classical.choice）。
+
+## 結果
+`lake comparator --config comparator-k3.json --inadvisably-no-sandbox --paranoid`：**Lean paranoid・lean4lean・nanoda・con-leche（24,995宣言）・con-ron（24,995宣言）・Lean標準の6つのkernelが全て受理。Your solution is okay!** 596.3秒、最大2.49GB。生の出力：`comparator-k3-paranoid-2026-10-20.txt`。
+
+統括の別の確認：`#print axioms` は `ClaudeChallengeK3.main`、`Claude4K3.k3_statement : Claude2Aligned.K3Statement`、`Claude4K3.noThree` とも標準の3つ。新しいファイルに sorry・native_decide・axiom はない。`lake build Formal.Claude4K3ComparatorSolution` 成功。
+
+## 意味
+- K3 については、第2弾の散文の対応補題を使わずに、系1bの K3 の部分（r, s ≥ 1 のどの直線の上でも最終周期的）が Lean で証明された。
+- 副産物として、K3 の分類そのもの（§5.1）も Lean で証明された（以前は十分性だけ）。
+
+## 留保
+- macOS に bwrap がないため隔離なしで実行。
+- 主張文と論文の対応は、独立な読み手1人（`studies/R002/analysis/2026-10-20-claude-k3-bridge/statement-review-1/`、版1への指摘で版2に）と Python の写しによる。人間の確認はない（2026-10-20 の決定で、本人確認は検証の手続きにしない）。
+- `K3Statement` は 2026-10-19 に Claude の作業者が書いた仕様の文で、Comparator の照合の対象は `main` だけ。
+- 証明はすべて Claude サブエージェントによる。

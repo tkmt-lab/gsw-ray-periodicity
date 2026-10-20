@@ -1,0 +1,558 @@
+{
+  "status": "RECEIVED_REPORTED_PASS",
+  "source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
+  "sources": [
+    {
+      "path": "formal/Formal/Claude2AlignedK3Glue.lean",
+      "sha256": "82ab305246905060caa79be5f7b850987f3c7e0fee703d127521d289e53662c3",
+      "bytes": 4661
+    },
+    {
+      "path": "formal/Formal/Claude2AlignedSpec.lean",
+      "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+      "bytes": 7508
+    },
+    {
+      "path": "formal/Formal/Claude2K3Apex.lean",
+      "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+      "bytes": 32579
+    },
+    {
+      "path": "formal/Formal/Claude2K3Classify.lean",
+      "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+      "bytes": 62695
+    },
+    {
+      "path": "formal/Formal/Claude2K3Corners.lean",
+      "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+      "bytes": 50025
+    },
+    {
+      "path": "formal/Formal/Claude2K3Degree.lean",
+      "sha256": "9ef84e62f8cd65c52560d423a7a3b47ffa8a7d4e00924b0a464275f6b20e6aad",
+      "bytes": 68750
+    },
+    {
+      "path": "formal/Formal/Claude2K3Inv.lean",
+      "sha256": "1d77466488394b8395c3f68471ace6cd24e0387b1cb3a704bbcf1bcb54fc48b9",
+      "bytes": 7896
+    },
+    {
+      "path": "formal/Formal/Claude2K3Inv3.lean",
+      "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+      "bytes": 9367
+    },
+    {
+      "path": "formal/Formal/Claude2K3Local.lean",
+      "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+      "bytes": 8401
+    },
+    {
+      "path": "formal/Formal/Claude2K3NecGcd.lean",
+      "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+      "bytes": 20407
+    },
+    {
+      "path": "formal/Formal/Claude2K3Necessity.lean",
+      "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+      "bytes": 16192
+    },
+    {
+      "path": "formal/Formal/Claude2K3Sufficient.lean",
+      "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+      "bytes": 6078
+    },
+    {
+      "path": "formal/Formal/Claude2K3Tube.lean",
+      "sha256": "8abe1dc3caf2ffaf8d9e9bb7e488b535fcd6f1cafc98269c7faa0031598cf3d5",
+      "bytes": 8382
+    },
+    {
+      "path": "formal/Formal/Claude2K3TwoCommon.lean",
+      "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+      "bytes": 4235
+    },
+    {
+      "path": "formal/Formal/Claude2K3Vertex.lean",
+      "sha256": "7a7e21d6b8d7072766f3e4d36249473700795e91f94bc7dcfb580dc4961c4995",
+      "bytes": 10698
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndPath.lean",
+      "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+      "bytes": 4792
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1a.lean",
+      "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+      "bytes": 22808
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1b.lean",
+      "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+      "bytes": 23198
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndS1.lean",
+      "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+      "bytes": 21780
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapInj.lean",
+      "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+      "bytes": 6761
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWd.lean",
+      "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+      "bytes": 8555
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWdB.lean",
+      "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+      "bytes": 9148
+    },
+    {
+      "path": "formal/Formal/Claude4K3Chord.lean",
+      "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+      "bytes": 4722
+    },
+    {
+      "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+      "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+      "bytes": 1604
+    },
+    {
+      "path": "formal/Formal/Claude4K3NoThree.lean",
+      "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+      "bytes": 16161
+    },
+    {
+      "path": "formal/Formal/Claude4K3PieceArith.lean",
+      "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+      "bytes": 7208
+    },
+    {
+      "path": "formal/Formal/Claude4K3Ray.lean",
+      "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+      "bytes": 7713
+    },
+    {
+      "path": "formal/Formal/Claude4K3Seam.lean",
+      "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+      "bytes": 4497
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamAlong.lean",
+      "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+      "bytes": 9449
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamEdge.lean",
+      "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+      "bytes": 5225
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamSite.lean",
+      "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+      "bytes": 15158
+    },
+    {
+      "path": "formal/Formal/Claude4K3TubeInj.lean",
+      "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+      "bytes": 5643
+    },
+    {
+      "path": "formal/Formal/Claude4K3Vtx.lean",
+      "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+      "bytes": 13363
+    },
+    {
+      "path": "formal/Formal/ClaudeChallengeSpec.lean",
+      "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+      "bytes": 6130
+    },
+    {
+      "path": "formal/Formal/ForcedContinuation.lean",
+      "sha256": "b30f97c2da9be368cea5c84904382843c4cfbc5c803148d86a3b88c5c6a00cdb",
+      "bytes": 6242
+    },
+    {
+      "path": "formal/Formal/SequenceDecision.lean",
+      "sha256": "f20863d8ca9c5a4a03ee98ca890b236d6d3efab211105ebd14629340a56a622e",
+      "bytes": 4963
+    }
+  ],
+  "added_sources": [
+    {
+      "path": "formal/Formal/Claude2K3Apex.lean",
+      "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+      "bytes": 32579
+    },
+    {
+      "path": "formal/Formal/Claude2K3Classify.lean",
+      "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+      "bytes": 62695
+    },
+    {
+      "path": "formal/Formal/Claude2K3Inv3.lean",
+      "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+      "bytes": 9367
+    },
+    {
+      "path": "formal/Formal/Claude2K3Local.lean",
+      "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+      "bytes": 8401
+    },
+    {
+      "path": "formal/Formal/Claude2K3NecGcd.lean",
+      "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+      "bytes": 20407
+    },
+    {
+      "path": "formal/Formal/Claude2K3Necessity.lean",
+      "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+      "bytes": 16192
+    },
+    {
+      "path": "formal/Formal/Claude2K3TwoCommon.lean",
+      "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+      "bytes": 4235
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndPath.lean",
+      "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+      "bytes": 4792
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1a.lean",
+      "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+      "bytes": 22808
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndR1b.lean",
+      "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+      "bytes": 23198
+    },
+    {
+      "path": "formal/Formal/Claude4K3BndS1.lean",
+      "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+      "bytes": 21780
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapInj.lean",
+      "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+      "bytes": 6761
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWd.lean",
+      "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+      "bytes": 8555
+    },
+    {
+      "path": "formal/Formal/Claude4K3CapWdB.lean",
+      "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+      "bytes": 9148
+    },
+    {
+      "path": "formal/Formal/Claude4K3Chord.lean",
+      "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+      "bytes": 4722
+    },
+    {
+      "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+      "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+      "bytes": 1604
+    },
+    {
+      "path": "formal/Formal/Claude4K3NoThree.lean",
+      "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+      "bytes": 16161
+    },
+    {
+      "path": "formal/Formal/Claude4K3PieceArith.lean",
+      "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+      "bytes": 7208
+    },
+    {
+      "path": "formal/Formal/Claude4K3Ray.lean",
+      "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+      "bytes": 7713
+    },
+    {
+      "path": "formal/Formal/Claude4K3Seam.lean",
+      "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+      "bytes": 4497
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamAlong.lean",
+      "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+      "bytes": 9449
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamEdge.lean",
+      "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+      "bytes": 5225
+    },
+    {
+      "path": "formal/Formal/Claude4K3SeamSite.lean",
+      "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+      "bytes": 15158
+    },
+    {
+      "path": "formal/Formal/Claude4K3TubeInj.lean",
+      "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+      "bytes": 5643
+    },
+    {
+      "path": "formal/Formal/Claude4K3Vtx.lean",
+      "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+      "bytes": 13363
+    }
+  ],
+  "proof_source_count": 36,
+  "added_proof_source_count": 25,
+  "proof_generation_files": 18,
+  "additional_previously_unbundled_dependencies": 7,
+  "challenge": {
+    "path": "formal/Formal/Claude4K3ComparatorChallenge.lean",
+    "sha256": "80fcf97e49d64935643d9d6a70b1d82b7eed9668559eed0ad9b0b529eb8055d8",
+    "bytes": 7951
+  },
+  "benchmark_sources": [
+    {
+      "path": "formal/Formal/Claude4K3ComparatorChallenge.lean",
+      "sha256": "80fcf97e49d64935643d9d6a70b1d82b7eed9668559eed0ad9b0b529eb8055d8",
+      "bytes": 7951
+    }
+  ],
+  "configuration": {
+    "path": "formal/comparator-k3.json",
+    "sha256": "1a8e1caca5730410572730b3ad6eb57ebe8911243031c3148d57b12999a92f60",
+    "bytes": 289
+  },
+  "records": [
+    {
+      "path": "evidence/k3/comparator-paranoid.txt.original.log",
+      "sha256": "77793667536125aed0b778485244d850b844f5bc17fa7df2de334f55b4063913",
+      "bytes": 1442461,
+      "original_source_identifier": "studies/R002/claude-lean/comparator-k3-paranoid-2026-10-20.txt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/comparator-k3.md.original.log",
+      "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+      "bytes": 2695,
+      "original_source_identifier": "studies/R002/claude-lean/comparator-k3-2026-10-20.md",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/k3-bridge-report.md.original.log",
+      "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+      "bytes": 8689,
+      "original_source_identifier": "studies/R002/claude-lean/k3-bridge-report-2026-10-20.md",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/statement-review-v1.md.original.log",
+      "sha256": "597ee8944a1f0f16fd9492119a8a2081f5fc0cb46432089ed639773954214a0e",
+      "bytes": 6668,
+      "original_source_identifier": "studies/R002/analysis/2026-10-20-claude-k3-bridge/statement-review-1/review.md",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/statement-reading-guide-ja.md.original.log",
+      "sha256": "a4a33b0a3581e7bed49f03ade651618911cd592cb20594b0c332fbfbd4b0d2da",
+      "bytes": 4185,
+      "original_source_identifier": "studies/R002/challengeK3-reading-guide-ja.md",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/spec2_mirror.py.original.log",
+      "sha256": "4ce19d239f06b14acd69154a95723400ec49a196cbb7a8b6fb6f89c0d993a52e",
+      "bytes": 7799,
+      "original_source_identifier": "studies/R002/analysis/2026-10-20-claude-aligned-challenge/spec2_mirror.py",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/spec2-mirror-result.json.original.log",
+      "sha256": "2270f61e0387199b038f1db1aa1622c8821fc9fc93509cdd2fd2c3d6eec17836",
+      "bytes": 19916,
+      "original_source_identifier": "studies/R002/analysis/2026-10-20-claude-aligned-challenge/spec2-mirror-result.json",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/claude2_aligned_mirror.py.original.log",
+      "sha256": "57857f23abc0a45982b344a5000503ab077fd94a151681e046ba19397818f860",
+      "bytes": 14170,
+      "original_source_identifier": "studies/R002/claude-lean/claude2_aligned_mirror.py",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/k3/claude2-aligned-mirror.json.original.log",
+      "sha256": "81117b30cb15de6814db824bda17388e596cf5fa75b370355f3f5de9358779e3",
+      "bytes": 19975,
+      "original_source_identifier": "studies/R002/claude-lean/claude2-aligned-mirror-2026-10-19.json",
+      "transformation": "byte-identical"
+    }
+  ],
+  "raw_comparator": {
+    "path": "evidence/k3/comparator-paranoid.txt.original.log",
+    "sha256": "77793667536125aed0b778485244d850b844f5bc17fa7df2de334f55b4063913",
+    "bytes": 1442461
+  },
+  "coordinator_build_and_axiom_report": {
+    "path": "evidence/k3/comparator-k3.md.original.log",
+    "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+    "bytes": 2695
+  },
+  "coordinator_comparator_report": {
+    "path": "evidence/k3/comparator-k3.md.original.log",
+    "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+    "bytes": 2695
+  },
+  "comparator_target": "ClaudeChallengeK3.main only",
+  "classification_or_noThree_separate_comparator_targets": false,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "definition_comparisons": [
+    {
+      "definition": "rot",
+      "source": "ClaudeChallengeSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "rotN",
+      "source": "ClaudeChallengeSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "unitVec",
+      "source": "ClaudeChallengeSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "deg",
+      "source": "ClaudeChallengeSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "LiteralPath",
+      "source": "ClaudeChallengeSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "Sig",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "cross",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "pt",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "lb",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "InCell",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "Glue",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "Site",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "SamePoint",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "Vertex",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "vtx",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "StepTo",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "graph",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "walk",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "k3Lab",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "k3Poly",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "k3Sig",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    },
+    {
+      "definition": "k3Graph",
+      "source": "Claude2AlignedSpec",
+      "normalized_code_identical": true
+    }
+  ],
+  "challenge_solution_statement_identical": true,
+  "positive_boundary_included": true,
+  "correspondence_method": [
+    "prior-specification",
+    "independent-ai-reader-of-v1-with-boundary-fix-before-proof",
+    "finite-computational-comparison"
+  ],
+  "independent_statement_readers": 1,
+  "independent_reader_scope": "One AI reader of version 1; found missing boundary rays, fixed in version 2 before proof; not a universal catalogue-isomorphism proof or human review.",
+  "mirror_cases_K3": 66,
+  "mirror_positive_boundary_scope": "Interior r,s>=2 only; parameter-one finite checks are reported separately by the independent reader (68 total known instances).",
+  "owner_confirmation_procedure_used": false,
+  "new_lean_runs": 0,
+  "external_kernels_rerun": false,
+  "OS_isolation": false,
+  "prose_bridge_for_K3": false,
+  "general_bridge": "prose-not-formalized",
+  "main_axiom_query_basis": "coordinator summary; comparator allows only the listed axioms",
+  "other_two_axiom_query_basis": "raw saved output",
+  "worker_pre_comparator_build_report": {
+    "path": "evidence/k3/k3-bridge-report.md.original.log",
+    "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+    "bytes": 8689
+  },
+  "report_chronology": "The worker report predates the coordinator Comparator run and says it did not perform Comparator. The later coordinator summary and raw acceptance record supersede that not-run note; both originals remain byte-identical."
+}

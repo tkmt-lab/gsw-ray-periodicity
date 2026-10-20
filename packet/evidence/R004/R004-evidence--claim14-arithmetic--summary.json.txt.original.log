@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "finite implementation check; the general proof is claim14-arithmetic-proof.md",
+  "line_displays": 378,
+  "point_pairs": 13430,
+  "branches": {
+    "constant": 6,
+    "m_one": 32,
+    "q_ge_3": 225,
+    "q_two": 100,
+    "proportional_nonprimitive": 9,
+    "r_one": 6
+  },
+  "max_period": 44,
+  "max_threshold": 69,
+  "certificates_sha256": "2212f7aba41acf39050699d6d1e0cbf49f44e08c28c1e887dd6521ad821334dc",
+  "elapsed_seconds": 0.8292643330059946,
+  "peak_rss_bytes": 23166976
+}

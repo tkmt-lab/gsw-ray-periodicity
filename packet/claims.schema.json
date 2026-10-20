@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "version",
+    "paper",
+    "source_commit",
+    "status_semantics",
+    "scope",
+    "claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "version": {
+      "const": "1.3.1"
+    },
+    "paper": {
+      "$ref": "#/$defs/evidence"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "status_semantics": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "main_result",
+        "catalogue_families",
+        "catalogue_leapfrog_families_included",
+        "oblique_extension",
+        "oblique_explicit_transfers_completed",
+        "oblique_numerical_validation",
+        "oblique_second_proof",
+        "arithmetic_domain_qualification_required",
+        "k3_graph_sufficiency_received",
+        "k3_graph_necessity_received",
+        "k3_global_degree_classification",
+        "new_D12_classification_included",
+        "human_peer_review",
+        "novelty_established",
+        "independent_derivation_strict_blind",
+        "ai_coordinator_reviewers",
+        "fresh_lean_run",
+        "external_kernels_rerun",
+        "scientific_runs",
+        "paper_to_specification_bridge",
+        "owner_statement_confirmation",
+        "independent_research_team_lean_derivation",
+        "general_specification_lean_proof",
+        "k3_literal_ray_without_prose_bridge_received",
+        "k3_statement_correspondence",
+        "historical_theorem1a_fresh_execution_receipt"
+      ],
+      "properties": {
+        "main_result": {
+          "const": "thm:aligned"
+        },
+        "catalogue_families": {
+          "const": [
+            "A1",
+            "A2",
+            "B2",
+            "C1",
+            "K3",
+            "E10",
+            "D12",
+            "D14",
+            "D1",
+            "O2",
+            "A3"
+          ]
+        },
+        "catalogue_leapfrog_families_included": {
+          "const": false
+        },
+        "oblique_extension": {
+          "const": "proof-sketch-ai-skeleton-reviewed"
+        },
+        "oblique_explicit_transfers_completed": {
+          "const": false
+        },
+        "oblique_numerical_validation": {
+          "const": false
+        },
+        "oblique_second_proof": {
+          "const": false
+        },
+        "arithmetic_domain_qualification_required": {
+          "const": true
+        },
+        "k3_graph_sufficiency_received": {
+          "const": true
+        },
+        "k3_graph_necessity_received": {
+          "const": true
+        },
+        "k3_global_degree_classification": {
+          "const": false
+        },
+        "new_D12_classification_included": {
+          "const": false
+        },
+        "human_peer_review": {
+          "const": false
+        },
+        "novelty_established": {
+          "const": false
+        },
+        "independent_derivation_strict_blind": {
+          "const": false
+        },
+        "ai_coordinator_reviewers": {
+          "const": 1
+        },
+        "fresh_lean_run": {
+          "const": false
+        },
+        "external_kernels_rerun": {
+          "const": false
+        },
+        "scientific_runs": {
+          "const": 0
+        },
+        "paper_to_specification_bridge": {
+          "const": "prose-not-formalized"
+        },
+        "owner_statement_confirmation": {
+          "const": true
+        },
+        "independent_research_team_lean_derivation": {
+          "const": false
+        },
+        "general_specification_lean_proof": {
+          "const": true
+        },
+        "k3_literal_ray_without_prose_bridge_received": {
+          "const": true
+        },
+        "k3_statement_correspondence": {
+          "const": "prior-specification-independent-AI-reader-finite-comparison"
+        },
+        "historical_theorem1a_fresh_execution_receipt": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "paper_label",
+          "kind",
+          "statement_plain",
+          "status",
+          "status_scope",
+          "depends_on",
+          "remaining_obligations",
+          "lean",
+          "evidence",
+          "review_history",
+          "human_review"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "paper_label": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "statement_plain": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ai-reviewed-prose-argument",
+              "finite-evidence-only",
+              "independent-prose-proof-ai-reviewed",
+              "independent-prose-proof-received",
+              "lean-result-received",
+              "mixed-prose-and-finite-evidence",
+              "mixed-prose-and-formal-results",
+              "partial-formal-correspondence",
+              "proof-sketch-ai-skeleton-reviewed",
+              "prose-proof-received",
+              "scope-definition",
+              "source-definition",
+              "unresolved"
+            ]
+          },
+          "status_scope": {
+            "type": "string"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "remaining_obligations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lean": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence"
+            }
+          },
+          "review_history": {
+            "type": "object"
+          },
+          "human_review": {
+            "const": false
+          },
+          "statement_human_check": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "bytes"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

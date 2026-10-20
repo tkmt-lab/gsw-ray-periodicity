@@ -1,0 +1,62 @@
+# Independent statement review
+
+## 1. Verdict: NOT FAITHFUL
+
+The graph definition is consistent with the supplied paper’s K3 descriptions, and I found no gluing defect. However, `main` covers only rays eventually having **both parameters at least 2**. Corollary 1b explicitly includes the positive boundaries with a parameter fixed at **1**. Thus the statement is strictly narrower than the requested K3 corollary.
+
+This is a review of definitions and statement meaning, not an attempted proof. I did not compile Lean or establish a universal catalogue-isomorphism theorem.
+
+## 2. Does `k3Sig` describe K3?
+
+**It matches the geometric and numerical descriptions available in this paper.** The paper does not supply a complete independent corner-label table, so these checks cannot alone certify identification with Graver’s original catalogue.
+
+`k3Poly` (`ChallengeK3.lean:143–145`) gives eight counterclockwise equilateral lattice triangles of side r and three counterclockwise convex hexagons with side lengths r,r,s,r,r,s. The hexagon coordinates are exactly those in the comment at line 142. `k3Lab` (lines 137–140) joins four triangles into each cap and places three hexagons between the caps. This agrees with `paper.tex:440–442` and its eleven-polygon quotient description at lines 688–695. The reversed bottom-cap labels are compatible with oriented side gluing; identical coordinate orientation for all charts is appropriate.
+
+**Counts:** the supplied paper’s K3 carbon order is **14r²+12rs** (`paper.tex:1033–1042`), not a formula beginning with 10. Carbon vertices correspond to triangular faces of the dual, not its vertices. The polygon shoelace calculation gives twice total area 8r²+3(2r²+4rs)=14r²+12rs. The expected dual vertex count is consequently **7r²+6rs+2**.
+
+I ran a Python transcription of `walk`, `InCell`, `Glue`, `SamePoint`, equivalence closure, and unit-step adjacency for all 64 pairs 1≤r,s≤8, plus (2,15), (15,2), (3,17), (17,3). It enumerated all rotations modulo six and applied each gluing to **every source site**, without adding a side-membership restriction absent from Lean.
+
+| (r,s) | Dual vertices | Edges | Triangular faces / carbon order | Degree 5 | Degree 6 |
+|---|---:|---:|---:|---:|---:|
+| (1,1) | 15 | 39 | 26 | 12 | 3 |
+| (1,2) | 21 | 57 | 38 | 12 | 9 |
+| (2,1) | 42 | 120 | 80 | 12 | 30 |
+| (2,2) | 54 | 156 | 104 | 12 | 42 |
+| (2,3) | 66 | 192 | 128 | 12 | 54 |
+| (3,3) | 119 | 351 | 234 | 12 | 107 |
+
+All 68 instances had:
+
+- Exactly 42 directed side-gluing records modulo six, with one reverse partner per side, matching `paper.tex:697–700`.
+- No overlap away from the designated side under any gluing; injectivity of every chart in the quotient.
+- Twelve distinct corner-label classes, precisely the degree-5 vertices; all others degree 6, matching `paper.tex:92–94,713–720`.
+- Connectedness, Euler characteristic 2, two unit triangular faces per edge, and no graph triangles beyond those chart faces.
+
+These are finite checks, not universal proofs. They support the positive parameter-1 boundaries described in `paper.tex:442,473`. Zero parameters are excluded by `main`, consistently with the collapses/zero sides at `paper.tex:1051–1055`.
+
+## 3. What does `main` express?
+
+`LiteralPath` (`ChallengeK3.lean:57–63`) matches Definition 1 (`paper.tex:81–90`): even vertex count n≥4 is equivalent to odd edge count e≥3; distinctness, consecutive/skip adjacency, and the four degree conditions agree. It correctly permits internal degree-5 vertices. Values of the function p beyond its first n entries are immaterial.
+
+`main` (lines 163–167) correctly states eventual periodicity: there exist a threshold and a positive period, and the decision agrees at t and t+P thereafter. No computable or least period is claimed, consistently with `paper.tex:148–151`.
+
+Natural-number slopes cause no loss for eventually positive integer affine rays: negative slopes cannot remain positive indefinitely. Arbitrary integer intercepts can be shifted into the specified domain, and eventual periodicity is insensitive to a finite prefix. Constant rays are also included.
+
+The loss is the **lower bound 2**. The paper’s corollary (`paper.tex:226–237`) and domain table (line 473) use r,s≥1. In particular, the nonconstant rays (1,2+t) and (2+t,1) never enter the Lean theorem’s domain. Tail shifting cannot recover them. The stronger lower bounds belong to the separate closed classification (`paper.tex:499–506`) and arithmetic receipt (lines 564–566), not to Corollary 1b.
+
+Accordingly, `main` is equal in meaning to the **restricted interior-ray periodicity claim**, assuming graph correspondence, and weaker in scope than the complete K3 corollary. It adds no graph-validity hypothesis.
+
+## 4. Loopholes
+
+`SamePoint` (lines 105–107) does not explicitly restrict either point to its named side. This warrants scrutiny, but is not an observed defect here: opposite oriented convex charts overlapped only on the intended seam in every computed instance. `Glue` requires reversed endpoint labels and matching endpoint geometry (lines 97–100); labels alone do not merge arbitrary sites. Unbounded rotation exponents introduce no extra rotations beyond the six lattice rotations.
+
+The quotient’s equivalence closure includes intended corner identifications. The computations found neither merged distinct labels nor identified distinct sites within one chart. `graph` explicitly suppresses loops (lines 119–122), which could conceal collapsed edges in a faulty signature, but no such collapse occurred here.
+
+`deg` uses `Set.ncard` (line 52), whose infinite-set behavior would matter for an unbounded malformed chart. The positive polygons here are bounded; no infinite-degree shortcut was found. Constant rays are tautologically periodic as intended; this does not make the whole theorem trivial. The `sorry` is an unproved placeholder, not evidence of geometric correspondence or periodicity.
+
+## 5. Ranked concrete problems
+
+1. **High — Missing positive-boundary rays.** `ChallengeK3.lean:163` requires r₀,s₀≥2, omitting part of `paper.tex:226–237,473`. Use lower bounds 1 to state the full K3 corollary; graph correspondence must then cover that domain.
+2. **Low — Incorrect domain documentation.** `ChallengeK3.lean:32–33` calls r,s≥2 “the valid domain.” The supplied paper includes r=1 and s=1. Correct this description even if the narrower theorem is retained.
+
+No concrete label, orientation, or excessive-identification error was found. Universal catalogue correspondence remains an evidence limitation, not a demonstrated counterexample.

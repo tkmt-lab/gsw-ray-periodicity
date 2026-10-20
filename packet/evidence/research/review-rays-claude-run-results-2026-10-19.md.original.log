@@ -1,0 +1,12 @@
+# review-rays：統括（Claude）の実行結果（2026-10-19 03:12）
+
+R002 next-48作業3のパッケージ（未実行で受領、期待値はREADMEで先に固定）を統括が実行した。入力はA由来の保存データで、検査コードの作成者は証明案を知るCodex。独立な曲面構成でもR004の盲検でもない。
+
+| 検査 | trial | 結果 | READMEの期待値 |
+|---|---|---|---|
+| check_ray_tails.py | T0887 | PASS：rays=9、tail_from=64 | 同じ |
+| check_AL_connections.py | T0888 | PASS：charts=8、directed_glues=36、pieces=108、seam_identities=156、seed_records=120、labels=12 | 同じ |
+| check_domains.py | T0889 | PASS：families=10、charts=71、edges=342、zero_boundaries=21、局所非退化の零境界はE10 s・D12 rのみ | 同じ |
+
+3試行、各0.1秒未満・最大24.1MB、課金0。出力：`studies/R002/rays-claude-{tails,AL-connections,domains}.json`。
+点検票の文章部分（一般の所有・全開始・商の有効性）は未点検。

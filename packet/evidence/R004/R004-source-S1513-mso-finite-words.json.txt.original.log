@@ -1,0 +1,15 @@
+{
+  "source_id": "S1513",
+  "title": "Lecture Notes on Monadic First- and Second-Order Logic on Strings",
+  "authors_or_provider": "Dino Mandrioli; Davide Martinenghi; Angelo Morzenti; Matteo Pradella; Matteo Rossi",
+  "url_or_path": "https://arxiv.org/html/2301.10519v1",
+  "version": "arXiv:2301.10519v1, 2023-01-25",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "Section 3.1, Theorem 3.2 and MSO-to-FSA construction",
+  "read_scope": "Finite-word MSO/regular-language equivalence and closure by projection/complement",
+  "claim_supported": "Logical final step only; fullerene geometry and reduction are B arguments",
+  "local_snapshot": "data/cache/R004-sources/S1513-mso-finite-words.html",
+  "sha256": "82764028f874c0c9b9e1b46c3dcb108a836898c577b07d49e91471e68edc493d",
+  "license_or_terms": "CC BY-NC-SA 4.0 as stated by arXiv HTML; cached for research, not redistributed in Git",
+  "quotes": []
+}

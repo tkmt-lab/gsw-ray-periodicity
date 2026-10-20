@@ -1,0 +1,2352 @@
+{
+"rows": [
+{
+"fam": "K3",
+"r": 2,
+"s": 2,
+"V": 54,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 3,
+"V": 66,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 4,
+"V": 78,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 5,
+"V": 90,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 6,
+"V": 102,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 7,
+"V": 114,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 8,
+"V": 126,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 9,
+"V": 138,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 10,
+"V": 150,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 11,
+"V": 162,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 2,
+"s": 12,
+"V": 174,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 2,
+"V": 101,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 3,
+"V": 119,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 4,
+"V": 137,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 5,
+"V": 155,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 6,
+"V": 173,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 7,
+"V": 191,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 8,
+"V": 209,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 9,
+"V": 227,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 10,
+"V": 245,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 11,
+"V": 263,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 3,
+"s": 12,
+"V": 281,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 2,
+"V": 162,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 3,
+"V": 186,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 4,
+"V": 210,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 5,
+"V": 234,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 6,
+"V": 258,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 7,
+"V": 282,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 8,
+"V": 306,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 9,
+"V": 330,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 10,
+"V": 354,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 11,
+"V": 378,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 4,
+"s": 12,
+"V": 402,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 2,
+"V": 237,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 3,
+"V": 267,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 4,
+"V": 297,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 5,
+"V": 327,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 6,
+"V": 357,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 7,
+"V": 387,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 8,
+"V": 417,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 9,
+"V": 447,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 10,
+"V": 477,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 11,
+"V": 507,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 5,
+"s": 12,
+"V": 537,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 2,
+"V": 326,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 3,
+"V": 362,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 4,
+"V": 398,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 5,
+"V": 434,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 6,
+"V": 470,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 7,
+"V": 506,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 8,
+"V": 542,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 9,
+"V": 578,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 10,
+"V": 614,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 11,
+"V": 650,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 6,
+"s": 12,
+"V": 686,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 2,
+"V": 429,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 3,
+"V": 471,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 4,
+"V": 513,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 5,
+"V": 555,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 6,
+"V": 597,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 7,
+"V": 639,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 8,
+"V": 681,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 9,
+"V": 723,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 10,
+"V": 765,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 11,
+"V": 807,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "K3",
+"r": 7,
+"s": 12,
+"V": 849,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 42
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 1,
+"V": 56,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 2,
+"V": 152,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 3,
+"V": 296,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 4,
+"V": 488,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 5,
+"V": 728,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 6,
+"V": 1016,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 7,
+"V": 1352,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 1,
+"s": 8,
+"V": 1736,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 1,
+"V": 98,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 2,
+"V": 218,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 3,
+"V": 386,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 4,
+"V": 602,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 5,
+"V": 866,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 6,
+"V": 1178,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 7,
+"V": 1538,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 2,
+"s": 8,
+"V": 1946,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 1,
+"V": 152,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 2,
+"V": 296,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 3,
+"V": 488,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 4,
+"V": 728,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 5,
+"V": 1016,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 6,
+"V": 1352,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 7,
+"V": 1736,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 3,
+"s": 8,
+"V": 2168,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 1,
+"V": 218,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 2,
+"V": 386,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 3,
+"V": 602,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 4,
+"V": 866,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 5,
+"V": 1178,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 6,
+"V": 1538,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 7,
+"V": 1946,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 4,
+"s": 8,
+"V": 2402,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 1,
+"V": 296,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 2,
+"V": 488,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 3,
+"V": 728,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 4,
+"V": 1016,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 5,
+"V": 1352,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 6,
+"V": 1736,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 7,
+"V": 2168,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 5,
+"s": 8,
+"V": 2648,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 1,
+"V": 386,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 2,
+"V": 602,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 3,
+"V": 866,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 4,
+"V": 1178,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 5,
+"V": 1538,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 6,
+"V": 1946,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 7,
+"V": 2402,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 6,
+"s": 8,
+"V": 2906,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 1,
+"V": 488,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 2,
+"V": 728,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 3,
+"V": 1016,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 4,
+"V": 1352,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 5,
+"V": 1736,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 6,
+"V": 2168,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 7,
+"V": 2648,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 7,
+"s": 8,
+"V": 3176,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 1,
+"V": 602,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 2,
+"V": 866,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 3,
+"V": 1178,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 4,
+"V": 1538,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 5,
+"V": 1946,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 6,
+"V": 2402,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 7,
+"V": 2906,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 8,
+"s": 8,
+"V": 3458,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 1,
+"V": 728,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 2,
+"V": 1016,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 3,
+"V": 1352,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 4,
+"V": 1736,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 5,
+"V": 2168,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 6,
+"V": 2648,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 7,
+"V": 3176,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": false,
+"known": false,
+"records": 24
+},
+{
+"fam": "D12",
+"r": 9,
+"s": 8,
+"V": 3752,
+"deg5": 12,
+"valid": [
+true,
+true,
+true,
+true,
+true
+],
+"path": true,
+"known": true,
+"records": 24
+}
+],
+"mismatch": [],
+"invalid": []
+}

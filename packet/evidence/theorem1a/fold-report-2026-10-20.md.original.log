@@ -1,0 +1,140 @@
+# 定理1a：高さの制限算術の折り畳み（§3.2–3.3）形式化報告
+
+- 日付：2026-10-20（作成 01:53 JST 頃）
+- worktree / branch：`.worktrees/claude-lean` / `claude-lean`
+- Lean 4.35.0、mathlib v4.35.0
+- 状態：**完成**。一般版（状態変数と状態集合変数の両方、課題文に挙げた原子すべて）を証明。`sorry`・`native_decide`・新規 `axiom` なし。
+
+## 1. ファイルと行数
+
+| ファイル | 行数 | 内容 |
+|---|---:|---|
+| `formal/Formal/Claude3FoldDef.lean` | 314 | 単項語での「十分大きい n で MSO 定義可能」`EvDef` と閉包則、位置の基本式 |
+| `formal/Formal/Claude3FoldLin.lean` | 215 | 制限付き線形原子 `σ₁v+σ₂w ≤ Cn+D`（C 偶数条件）と合同式 |
+| `formal/Formal/Claude3FoldSyntax.lean` | 125 | 高さの制限算術の構文 `HF` と意味論 `HF.Sat`, `Holds` |
+| `formal/Formal/Claude3FoldMain.lean` | 254 | 折り畳み `dec`（L/R/M のコピー）、原子の翻訳、全射性 |
+| `formal/Formal/Claude3FoldTheorem.lean` | 175 | 翻訳定理 `evDef_tr`、主定理、幾何側向けの系 |
+| 合計 | 1083 | |
+
+既存の `Claude3Mso*.lean` と `Claude3Geo*.lean` は変更していない。`Formal.lean` も変更していない。
+
+## 2. 論理（`Claude3FoldSyntax.lean`, namespace `R002.Claude3Fold`）
+
+```lean
+structure Aff where
+  a : ℤ
+  b : ℤ
+def Aff.eval (f : Aff) (t : ℕ) : ℤ := f.a * (t : ℤ) + f.b
+
+def St (lo hi : T → Aff) (t : ℕ) : Set (T × ℤ) :=
+  {s | (lo s.1).eval t ≤ s.2 ∧ s.2 ≤ (hi s.1).eval t}
+```
+
+`HF T m k`：自由な状態変数 `m` 個、自由な状態集合変数 `k` 個（de Bruijn、index 0 が最内、2種類の変数は独立。`MSO` と同じ規約）。
+
+原子と意味（パラメータ `t`、状態 `= T × ℤ`、`.2` が高さ h）：
+
+| 構成子 | 意味 |
+|---|---|
+| `typ x τ` | `(ν x).1 = τ` |
+| `eq x y` | `ν x = ν y`（状態の等号） |
+| `le x f` | `(ν x).2 ≤ f.eval t` |
+| `nle x f` | `-(ν x).2 ≤ f.eval t` |
+| `addLe x y f` | `(ν x).2 + (ν y).2 ≤ f.eval t` |
+| `subLe x y f` | `(ν x).2 - (ν y).2 ≤ f.eval t` |
+| `negAddLe x y f` | `-(ν x).2 - (ν y).2 ≤ f.eval t` |
+| `modEq x q r` | `(ν x).2 ≡ r [ZMOD q]`（`q : ℕ` は任意、`q = 0` も可） |
+| `tModEq q r` | `t ≡ r [MOD q]`（`q` は任意） |
+| `tNonneg f` | `0 ≤ f.eval t`（論文 (eq:restricted) の `at+b ≥ 0`） |
+| `mem x X` | `ν x ∈ V X` |
+| `neg`, `and` | `¬`, `∧` |
+| `exF φ` | `∃ s, s ∈ St lo hi t ∧ φ(s :: ν)` |
+| `exS φ` | `∃ X, X ⊆ St lo hi t ∧ φ(ν, X :: V)` |
+
+派生：`HF.or`, `HF.imp`, `HF.allF`, `HF.allS`（simp 補題付き）。`x = y` と `x ≠ y` の両方を同じ変数で使ってよい（`x = y` の添字が同じ場合も含め、すべての原子の翻訳が正しい）。
+
+```lean
+abbrev HSentence (T : Type u) := HF T 0 0
+def Holds (lo hi : T → Aff) (t : ℕ) (φ : HSentence T) : Prop :=
+  HF.Sat lo hi t φ (fun i => i.elim0) (fun i => i.elim0)
+```
+
+## 3. 主定理（`Claude3FoldTheorem.lean`）
+
+```lean
+theorem eventuallyPeriodic_holds {T : Type u} [Finite T] (lo hi : T → Aff) (φ : HSentence T) :
+    EventuallyPeriodic {t | Holds lo hi t φ}
+
+theorem eventuallyPeriodic_of_holds {T : Type u} [Finite T] (lo hi : T → Aff)
+    (P : ℕ → Prop) (φ : HSentence T) (t₀ : ℕ)
+    (h : ∀ t, t₀ ≤ t → (P t ↔ Holds lo hi t φ)) : EventuallyPeriodic {t | P t}
+```
+
+`EventuallyPeriodic` は `Claude3MsoUnary` の定義（`∃ t₀ P, 0 < P ∧ ∀ t ≥ t₀, (t ∈ S ↔ t + P ∈ S)`）そのもの。
+
+翻訳定理（中間結果、外からも使える）：
+
+```lean
+theorem evDef_tr (hη : η < 2) (hJ : Bounded lo hi J) :
+    ∀ {m k : ℕ} (φ : HF T m k) (K : ℕ) (g : Fin k → Cp T J → Fin K) (σ : Fin m → Cp T J),
+      EvDef (fun n ν V => HF.Sat lo hi (2 * n + η) φ (fun i => dec η J n (σ i) (ν i))
+        (fun i => decSet lo hi η J n (fun c => V (g i c))))
+```
+
+## 4. 証明の構成（論文 §3.3 との対応）
+
+1. **`EvDef`**（`Claude3FoldDef`）：`EvDef P :⇔ ∃ ψ : MSO Unit m k, ∃ N, ∀ n ≥ N, ∀ ν (全位置 < n), ∀ V, (uw n ⊨ ψ[ν,V] ↔ P n ν V)`。`uw n = List.replicate n ()`。閉包：`neg`, `and`, `or`, `exF`, `exS`, `exSN`（コピー数ぶんの集合量化子の塊、`ext`/`idxW`/`idxV` で添字配置）、`exists_fintype`（有限選言）、`congr`、`of_eventually_iff`（最終的に定数）。
+2. **基本式**（いずれも全 n で厳密）：`posLe d x`（`x ≤ d`）、`posLeR d x`（`n ≤ x+d+1`、右端から距離 d 以内）、`sumLe d x y`（`x+y ≤ d`）、`sumLeR d x y`（`2n ≤ x+y+d+2`、両方が右端近く）、`posMod q ρ x`（`x % q = ρ`、`multOf` を使用）、既存の `lenMod`。
+3. **制限付き原子**（`Claude3FoldLin`）：
+   `EvDef.lin2 : IsSgn σ₁ → IsSgn σ₂ → (σ₁ ≠ 0 → σ₂ ≠ 0 → Even C) → EvDef (σ₁ v + σ₂ w ≤ C n + D)`。
+   場合分けは論文どおり：`v−w`：C≤−2 偽、C=0 は順序＋固定オフセット（`leAdd`）、C≥2 真。`v+w`：C≤−2 偽、C=0 は左端近く（`sumLe`）、C=2 は右端近くの有限個の除外（`sumLeR`）、C≥4 真。`−v−w` は補集合。1変数：C=0 左端、C=1 右端、他は定数。C 偶数条件が本質（`v+w ≤ n` は MSO 定義不能）であることは docstring に明記。
+   合同：`EvDef.modEq`（`A n + B + s v ≡ r [ZMOD q]`、`q=0` は等式に帰着）、`EvDef.tmodEq`（`2n+η ≡ r [MOD q]`）。
+4. **折り畳み**（`Claude3FoldMain`）：コピー `Cp T J = T × Fin (2J+1) × Side`、`Side = L | R | M`、`j = i − J`。
+   `dec η J n c v = (τ, j·t + y)`、`y = v`（L）、`t−1−v`（R）、`n`（M、v に依存しない）、`t = 2n+η`。
+   `dec_snd : h = cA·n + cB + sg·v`、`sg ∈ {1,−1,0}`、`sg ≠ 0 → Even cA`（`even_cA`）。これで全原子が 3. に帰着（`evDef_decLin`, `evDef_decEq`, `evDef_valid`）。
+   M のコピーは η=0 のとき R の v=n−1 と重なり、また v に依らないので単射でないが、**単射性は使わない**：`x ∈ X` は「同じ状態に復号される (c', v') が X の c' 成分に入っている」と翻訳し、その等号は原子の翻訳で表す。
+   全射性 `exists_dec`：`Bounded lo hi J`（全係数の `natAbs < J`）かつ `n ≥ J+1`、`η < 2` なら、`St lo hi (2n+η)` の任意の状態はある `(c, v)`, `v < n` の復号。`decSet_eq` で状態集合も復号できる。
+5. **量化子**：状態の `∃` はコピー上の有限選言＋位置の `∃`（妥当性 `dec ∈ St` を連言）；集合の `∃` はコピーごとの集合変数の塊（`exSN`）。
+6. **最後**：η = 0, 1 それぞれで文 `ψ_η` を得て `eventuallyPeriodic_models_parity` を適用、有限個の t の違いは `eventuallyPeriodic_of_eventually_iff` で吸収。`J` は `exists_bounded`（有限性）で取る。
+
+## 5. 公理
+
+```
+'R002.Claude3Fold.eventuallyPeriodic_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Fold.eventuallyPeriodic_of_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Fold.evDef_tr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Mso.EvDef.lin2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.Claude3Fold.exists_dec' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+`grep -n "sorry\|native_decide\|^axiom" formal/Formal/Claude3Fold*.lean` は該当なし。
+
+## 6. ビルド
+
+```bash
+cd formal
+nice -n 10 lake build Formal.Claude3FoldTheorem
+```
+
+（`lakefile.toml` の `moreLeanArgs = ["-j1", "-M4096"]` が適用される。`Formal.lean` には未登録なので、モジュールを名指ししてビルドする。）
+
+- クリーン再ビルド（`Claude3Fold*` の 5 ファイル）：実時間 約 13 秒、各ファイル 2–4 秒。
+- ピークメモリ（`/usr/bin/time -l`、maximum resident set size）：約 1.67 GB。
+- 警告は mathlib の module system に関する import 警告のみ（既存ファイルと同じ種類）。
+
+## 7. 幾何側が満たすべきインタフェース
+
+`eventuallyPeriodic_of_holds` を使うには、幾何側は次を与えればよい。
+
+1. 有限型 `T`（`[Finite T]`）：面・方向・max/min 分岐・パリティ・入口/出口側・root/terminal などの有限情報。
+2. `lo hi : T → Aff`：型ごとの高さの整数アフィン範囲 `lo τ (t) ≤ h ≤ hi τ (t)`。状態は `(τ, h) : T × ℤ`。
+3. 文 `φ : HSentence T`：許される原子は第2節の表のものだけ。遷移関係・出力の衝突・次数条件などは、2つの自由状態変数を持つ `HF T (m+2) k` の式（原子の Boolean 結合）として書き、`exF`/`exS`/`allF`/`allS`/`mem` で論文 §3.4 の経路文（S, a, b、次数 (0,1),(1,0),(1,1)、単項集合の連結性、出力の互いに素、パリティ）に組み立てる。2変数原子は係数 ±1 の `x.h ± y.h` だけ（`2h + h'` などは不可。必要なら型にパリティを持たせて丸めで消す、という論文の注意どおり）。同じ変数の `x.h + x.h`（= 2h）は許される。
+4. 正しさの補題：ある `t₀` 以上のすべての `t` で `P t ↔ Holds lo hi t φ`（`P t` は「t で文字通りの経路が存在する」等の幾何的命題）。
+
+これで `EventuallyPeriodic {t | P t}` が得られる。
+
+## 8. 残り・注意
+
+- 本層（§3.2 の言語の折り畳みと §3.3）は完成。残りはすべて幾何側：論文 §3.2 の「遷移・衝突条件がこの言語で書けること」と §3.4 の「経路文が文字通りの経路と同値であること」の形式化（`Claude3Geo*` 側の担当）。
+- 集合変数は状態の**単項**集合のみ（論文 §3.4 も「二項関係の量化は使わない」）。
+- `t` 自身の 1 変数条件は `tModEq` と `tNonneg` のみ。`t` を含む原子は係数 `a`（`f.a`）経由でどの原子にも入る。

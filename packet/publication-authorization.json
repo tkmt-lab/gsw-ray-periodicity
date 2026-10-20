@@ -1,0 +1,16 @@
+{
+  "status": "owner-authorized-release",
+  "authorized": true,
+  "authorized_on": "2026-10-20",
+  "recorded_by": "coordinator",
+  "decision_source_commit": "38c95fa05863df44ee1e048344ae9944684fa76d",
+  "decision_source_identifier": "docs/DECISIONS.md",
+  "decision_full_file_sha256": "dd9b8d5b5c75ab30ab9e910b0b5e26a76bfea56c6e22d228a7bfd8ce05cc7bf7",
+  "source_row_sha256": "7821a223b0621bd1eb6fe8789d79e6f69eb40a322a7477ed02fe0d1cf4330c1a",
+  "source_row_distributed": false,
+  "summary": "Owner authorized the coordinator to publish both public repositories and the homepage after preparation and final checks. This packet records that authorization, not an executed publication.",
+  "publication_operation_role": "coordinator",
+  "publication_performed_by_research_team": false,
+  "proof_peer_review": false,
+  "novelty_review": false
+}

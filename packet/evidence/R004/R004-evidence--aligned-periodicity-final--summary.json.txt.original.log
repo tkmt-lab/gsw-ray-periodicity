@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "pilot": {
+    "strips": 6,
+    "empty": 5,
+    "even_only": 1,
+    "normal_row_rewrites": 1,
+    "clipped_intervals": 1
+  },
+  "intervals": {
+    "strips": 7056,
+    "empty": 4801,
+    "even_only": 264,
+    "normal_row_rewrites": 2255,
+    "clipped_intervals": 16212,
+    "multiple": 1690,
+    "odd_only": 301
+  },
+  "collisions": {
+    "rows": 315,
+    "pairs": 99225,
+    "collisions": 24579
+  },
+  "folding": {
+    "atoms": 16380,
+    "point_comparisons": 509160,
+    "categories": {
+      "not": 2520,
+      "constant": 6958,
+      "order": 952,
+      "left_pairs": 434,
+      "right_exclude": 476,
+      "single": 5040
+    },
+    "threshold": "n >= abs(d)+2, for the reduced atom before sign complementation"
+  },
+  "finite_paths": {
+    "graphs": 4165,
+    "rooted_checks": 66129,
+    "accepted": 33
+  },
+  "artifacts": [
+    {
+      "path": "studies/R004/evidence/aligned-periodicity-final/normal-coefficients.json",
+      "bytes": 1318,
+      "sha256": "31b2237ee0a3d70feb1ae39862c9072689f2ff020a69eb35bc5df515a6eab22a"
+    },
+    {
+      "path": "studies/R004/evidence/aligned-periodicity-final/d1-coefficients.json",
+      "bytes": 514,
+      "sha256": "86fc8309ab2b3963a29ec355ef4a386b70b302dd80d57ce90af3e696b37ba05e"
+    },
+    {
+      "path": "studies/R004/evidence/aligned-periodicity-final/memory.json",
+      "bytes": 3687,
+      "sha256": "8c52c3eada3c73f9870ff33585807de6dc65b9ba9a77260c10517df451b5340e"
+    }
+  ],
+  "elapsed_seconds": 0.7840345411095768,
+  "peak_rss_bytes": 27246592,
+  "scope": "finite local-lemma checks and exact D1 polynomial coefficients; not a DFA or formal proof"
+}

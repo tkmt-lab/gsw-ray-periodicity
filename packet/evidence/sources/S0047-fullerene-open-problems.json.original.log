@@ -1,0 +1,29 @@
+{
+  "source_id": "S0047",
+  "title": "Some open mathematical problems on fullerenes",
+  "authors_or_provider": "Bille, Buchstaber, Spodarev",
+  "url_or_path": "https://arxiv.org/html/2410.19322",
+  "version": "取得時HTML（版はSHAで固定）。対応刊行版 DOI 10.1021/acs.jcim.4c01997 (2025)",
+  "published_at": null,
+  "checked_at": "2026-10-18",
+  "section_or_pages": null,
+  "read_scope": "§4 Definition 1、Construction 1–2、Conjectures 1–2、§5 Definition 5、Conjecture 3、Summary。図の詳細・証明・著者コードは未精査。刊行版の該当未解決記載もWeb照合",
+  "claim_supported": "gSW分類、cut-partition、characterの明示的未解決問題",
+  "license_or_terms": "刊行版CC-BY-4.0。arXiv控えは個人照合用",
+  "local_snapshot": "data/cache/sources/S0047.html",
+  "sha256": "680477510824d1cd66095a16f38eb2ccdcb785cf8ee729bbee31472ce8482300",
+  "fetched_at": "2026-10-17T15:05:06+00:00",
+  "quotes": [
+    {
+      "text": "Identify all fullerenes that do not permit a gSW operation.",
+      "supports": "gSW分類、cut-partition、characterの明示的未解決問題"
+    }
+  ],
+  "limitations": "新規性の網羅的調査や第三者レビューを意味しない。",
+  "additional_reading": [
+    {
+      "date": "2026-10-18",
+      "scope": "R002でDefinition 1とTheorem 1の証明の内部次数5/6の2場合を追加照合。証明の全面的な独立検証ではない。"
+    }
+  ]
+}

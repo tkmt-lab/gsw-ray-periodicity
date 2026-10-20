@@ -1,0 +1,25 @@
+# R002 次の作業（その85、2026-10-20 早朝、統括から）：第2弾の定理1aを「Leanで証明済み」にする（lines v4.3、一式 1.1.0）
+
+第2弾の主定理（定理1a、本文の `thm:aligned`）が Lean で証明された。main に統合済み（92f9638c）で、research worktree は main まで fast-forward してある。これを本文と一式に反映する。公開はしない（本人の決定。一式は repo 内の release candidate として作る）。
+
+## 受け取るもの（読むだけ、書き換えない）
+- 主張文：`studies/R002/analysis/2026-10-20-claude-aligned-challenge/Challenge2.lean`（版2、統括が証明より先に書いた）と、本人向けの読み方 `studies/R002/challenge2-reading-guide-ja.md`。
+- 証明：`formal/Formal/Claude3*.lean`（Claudeサブエージェント、約10,500行）。入口は `ClaudeChallenge2.main`（`Claude3ComparatorSolution.lean`）と `ClaudeChallenge2.State.main_statement : ClaudeChallenge2.MainStatement`（`Claude3Thm1a.lean`）。
+- 照合：`studies/R002/claude-lean/comparator-thm1a-2026-10-20.md`（paranoid、6 kernel 受理、公理は標準3つ）と、各層の報告 `studies/R002/claude-lean/{mso,fold,thm1a-geo,thm1a-ident,thm1a-state,thm1a-final}-report-2026-10-20.md`。
+
+## 作業
+1. **自分で確かめる。** `cd formal && nice -n 10 lake build Formal.Claude3ComparatorSolution` と、`#print axioms ClaudeChallenge2.main`。Lean は一度に一つ、`-M4096`。結果を記録する。
+2. **橋渡しの補題（本文）。** 本文の定理1aの仮定（有効な単純フラーレンの双対、埋め込まれた凸な六方向の分解、t の一次式のデータ、次数5は印の付いた角）から、Lean の `Valid S t ∧ TrianglesInCharts S t` が出ることを、短い散文の補題として本文に書く。特に：
+   - 各辺の共通の隣がちょうど二つ（全ての3閉路が面であること）
+   - `TrianglesInCharts`（面が覆うことと、3閉路が面であること）
+   - 分解が `Sig`（六つの帯の一次式の境界、回転と一次式の平行移動の貼り合わせ、印の付いた角）で書けること
+   - 有限個の剰余類ごとの変種は、各剰余類に当てはめて出ること
+   この補題自体は散文で、Lean ではないと明記する。
+3. **本文の状態を直す。** `thm:aligned` を「Lean で証明済み（主張文は統括が書いたもので、論文の主張との対応は散文の補題と本人の確認による）」に変える。§`sec:formal`、表、序論、要約、AI利用の記述にある「定理1aは形式化されていない」という趣旨の記述を全文で探して直す。証明はClaudeサブエージェントによるもので、研究チームによる独立なLeanの証明はないことを書く。数学の内容は変えない。
+4. **一式 1.1.0。** `data/releases/lines-v1.1.0-release-candidate`（本文 v4.3）。`claims.json` の `thm:aligned` を `lean-result-received` にし、`lean` 欄に二つの宣言と、使う全ファイルの path・sha256 を記録する。FORMALIZATION.md、CHANGELOG、SHA256SUMS、PROVENANCE を更新する。CITATION の版も上げる。
+5. **確認。** repo 外の写しで四つの確認と拒否対照を通す。拒否対照に「`thm:aligned` の lean 欄を空に戻す」と「Lean ファイルの sha256 を一つ変える」を加える。PDF を作り直して検査する。
+
+## 上限など
+- 作業の実時間2時間。Mac のメモリ：Lean は一度に一つ、空きが20%を切ったら止める。
+- Lean ファイルは書き換えない。直すべき点があれば報告に書く。
+- 送ったartifactは書き換えない。終わったらmailboxで一度報告する。

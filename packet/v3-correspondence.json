@@ -1,0 +1,249 @@
+{
+  "source": {
+    "path": "evidence/baseline/paper-lines-v3.md.original.log",
+    "sha256": "cc21549dc43635fb98e31912542327a2a5499edefb3a4da9d4c4836d45841674",
+    "bytes": 62159
+  },
+  "target": {
+    "path": "paper-lines-v4.7-en.tex",
+    "sha256": "0691a04e67c2ea757a0bd78b612b529534e8321d4b3415d9f26d1f94663fa1be",
+    "bytes": 69387
+  },
+  "kind": "Section coverage and declared editorial changes, not a proof of semantic equivalence",
+  "all_numbered_v3_subsections_covered": true,
+  "rows": [
+    {
+      "v3_section": "1.1",
+      "v4_label": "sec:definitions",
+      "claim_ids": [
+        "def:literal",
+        "prop:forced"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "1.2",
+      "v4_label": "sec:definitions",
+      "claim_ids": [
+        "def:signature"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "1.3",
+      "v4_label": "sec:main",
+      "claim_ids": [
+        "cor:catalog"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; C2/K4/O1 prospects moved exclusively to extension; no new D12 classification; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "2.1",
+      "v4_label": "sec:extension",
+      "claim_ids": [
+        "claim:oblique"
+      ],
+      "change": "Moved to extension; skeleton review updated by next-80b, four obligations remain"
+    },
+    {
+      "v3_section": "2.2",
+      "v4_label": "sec:main",
+      "claim_ids": [
+        "thm:aligned",
+        "cor:catalog"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "3.1",
+      "v4_label": "sec:evidence",
+      "claim_ids": [
+        "prop:cylinder"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "3.2",
+      "v4_label": "sec:evidence",
+      "claim_ids": [
+        "prop:cylinder"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "3.3",
+      "v4_label": "sec:evidence",
+      "claim_ids": [
+        "prop:cylinder"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "4.1",
+      "v4_label": "sec:extension",
+      "claim_ids": [
+        "claim:oblique"
+      ],
+      "change": "Moved to extension; skeleton review updated by next-80b, four obligations remain"
+    },
+    {
+      "v3_section": "4.2",
+      "v4_label": "sec:extension",
+      "claim_ids": [
+        "claim:oblique"
+      ],
+      "change": "Moved to extension; skeleton review updated by next-80b, four obligations remain"
+    },
+    {
+      "v3_section": "4.3",
+      "v4_label": "sec:extension",
+      "claim_ids": [
+        "claim:oblique"
+      ],
+      "change": "Moved to extension; skeleton review updated by next-80b, four obligations remain"
+    },
+    {
+      "v3_section": "4.4",
+      "v4_label": "sec:extension",
+      "claim_ids": [
+        "claim:oblique"
+      ],
+      "change": "Moved to extension; skeleton review updated by next-80b, four obligations remain"
+    },
+    {
+      "v3_section": "4.5",
+      "v4_label": "sec:proof",
+      "claim_ids": [
+        "lem:rows",
+        "lem:restricted",
+        "lem:folding",
+        "lem:mso-path"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "4.6",
+      "v4_label": "sec:families",
+      "claim_ids": [
+        "prop:family-decompositions"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "5.1",
+      "v4_label": "sec:conditions",
+      "claim_ids": [
+        "prop:closed"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately"
+    },
+    {
+      "v3_section": "5.2",
+      "v4_label": "sec:conditions",
+      "claim_ids": [
+        "prop:partial"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; C2/K4/O1 prospects moved exclusively to extension; no new D12 classification"
+    },
+    {
+      "v3_section": "5.3",
+      "v4_label": "sec:arithmetic",
+      "claim_ids": [
+        "ex:exact-rays"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "5.4",
+      "v4_label": "sec:families",
+      "claim_ids": [
+        "cor:catalog"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "6.1",
+      "v4_label": "sec:arithmetic",
+      "claim_ids": [
+        "lem:divisibility"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately"
+    },
+    {
+      "v3_section": "6.2",
+      "v4_label": "sec:arithmetic",
+      "claim_ids": [
+        "thm:a3-arithmetic"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately"
+    },
+    {
+      "v3_section": "6.3",
+      "v4_label": "sec:arithmetic",
+      "claim_ids": [
+        "ex:exact-rays",
+        "ex:k3-formal",
+        "ex:e10-formal"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately"
+    },
+    {
+      "v3_section": "7.1",
+      "v4_label": "sec:formal",
+      "claim_ids": [
+        "lem:historical-kernels"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "7.2",
+      "v4_label": "sec:formal-records",
+      "claim_ids": [
+        "lem:historical-kernels"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "8.1",
+      "v4_label": "sec:finite",
+      "claim_ids": [
+        "sec:finite"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    },
+    {
+      "v3_section": "8.2",
+      "v4_label": "sec:formal",
+      "claim_ids": [
+        "thm:k3-sufficient",
+        "claim:oblique"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; completed arithmetic/K3 sufficiency formal results received separately; v4.3 receives exact Theorem 1a Lean proof; geometry bridge remains prose; owner statement meaning confirmed in v4.4; proof/bridge review still open"
+    },
+    {
+      "v3_section": "9",
+      "v4_label": "sec:novelty",
+      "claim_ids": [
+        "sec:novelty"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; next-80c literature boundary: geometric-to-unary-MSO reduction versus known periodicity consequences"
+    },
+    {
+      "v3_section": "A",
+      "v4_label": "app:domains",
+      "claim_ids": [
+        "app:domains"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained; C2/K4/O1 prospects moved exclusively to extension; no new D12 classification"
+    },
+    {
+      "v3_section": "B",
+      "v4_label": "app:correspondence",
+      "claim_ids": [
+        "lem:historical-kernels"
+      ],
+      "change": "English presentation/condensation; original receipt scope retained"
+    }
+  ],
+  "publication_update": "v4.1 changes only approved metadata and the two requested wording corrections; geometric claims and Lean receipts unchanged."
+}

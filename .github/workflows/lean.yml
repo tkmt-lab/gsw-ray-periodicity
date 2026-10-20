@@ -1,0 +1,37 @@
+name: Lean and packet checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Poppler (PDF text for the privacy scan)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Packet record checks (before the build adds .lake)
+        working-directory: packet
+        run: |
+          for c in check_closure.py check_claims.py check_paper.py check_sources.py; do
+            python3 -B "$c"
+          done
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Download prebuilt mathlib
+        working-directory: packet/formal
+        run: lake exe cache get
+      - name: Build the main modules
+        working-directory: packet/formal
+        run: lake build Formal.Claude2FamilyRays Formal.Claude2FamilyExamples Formal.Claude2K3Sufficient Formal.ClaudeCorRays Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution
+      - name: Axiom gate (standard axioms only)
+        working-directory: packet/formal
+        run: |
+          lake env lean ../../ci/Axioms.lean | tee axioms.txt
+          test "$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" axioms.txt)" -eq 17
+          test "$(wc -l < axioms.txt)" -eq 17

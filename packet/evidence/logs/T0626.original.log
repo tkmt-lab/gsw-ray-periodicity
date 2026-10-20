@@ -1,0 +1,3 @@
+'R002.iet_component_perm' depends on axioms: [propext]
+'R002.iet_component_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.iet_component_uniform_depth' depends on axioms: [propext, Classical.choice, Quot.sound]

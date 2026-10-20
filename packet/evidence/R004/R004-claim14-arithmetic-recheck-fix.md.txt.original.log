@@ -1,0 +1,9 @@
+# 算術確認の保存後検査の修正
+
+T0226は全直線の算術assertionを通過した後、JSONを読み戻してPythonの内部記録と
+等値比較する箇所で停止した。内部の係数対がtuple、JSONの係数対がlistであるためで、
+周期・閾値・判定の不一致ではない。ただし試行全体はerrorのまま残す。
+
+出力certificates.jsonはevidence/claim14-arithmetic-T0226/へ保全した。
+元コードはresults/T0226/code/に残る。係数対を初めからJSON互換のlistとして保存するよう修正し、
+条件・閾値・周期・直接評価の式を変えずに、同じ計画073を再実行する。

@@ -1,0 +1,39 @@
+{
+  "source_id": "S2186",
+  "title": "Geometric Structure of Chemistry-relevant Graphs — archived author excerpt and corrections",
+  "authors_or_provider": "M. Deza; M. Dutour Sikirić; M. Shtogrin",
+  "url_or_path": "https://web.archive.org/web/20241010131919id_/http://micheldeza.altervista.org/1-26.pdf",
+  "version": "Author draft 5 February2015; PDF metadata28 May2015;26pages; draft page numbers differ from published book",
+  "checked_at": "2026-10-19",
+  "read_scope": "表紙と目次PDFpp.1–4、§2.5–2.6/§7.1–7.6の節名と開始頁、著者訂正HTMLを確認。必要な章本文は含まれず未読。第1章本文を今回通読したとはしない。",
+  "section_or_pages": "表紙と目次PDFpp.1–4、§2.5–2.6/§7.1–7.6の節名と開始頁、著者訂正HTMLを確認。必要な章本文は含まれず未読。第1章本文を今回通読したとはしない。",
+  "claim_supported": "無料著者版は目次と第1章であり指定節の本文は含まない。訂正ページにも指定節本文はない。",
+  "local_snapshot": "data/cache/R005/next28/wayback-current-excerpt.txt",
+  "sha256": "c64b0f1dceebb90c0200190aeb362f1f405928bdb4022a3304c1c98ceb055408",
+  "quotes": [],
+  "license_or_terms": "無料の著者公開版・公式資料・その公開保存版を個人研究で照合。原文全文・図はGit非追跡cacheに保存し再配布しない。購入・login・TLS検証無効化なし。",
+  "limitations": "書籍の本体§2.5–2.6、§7.1–7.6は未読のまま。草稿目次の頁を2015刊行版の頁と同一視しない。",
+  "original_document": {
+    "path": "data/cache/R005/next28/wayback-current-excerpt.raw",
+    "bytes": 516307,
+    "sha256": "04cf81c0ed7ff23ebd84fd74d57f8ef4d63c6968c8ea5c53a57ce0d1b8337d4c"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28/wayback-current-corrections.raw",
+      "bytes": 1343,
+      "sha256": "3a30ad4085493ee0c586bce92f9ba71db7ea8324316f932c7ed6e94cba17711d"
+    },
+    {
+      "path": "data/cache/R005/next28/wayback-current-corrections.txt",
+      "bytes": 702,
+      "sha256": "36af7253808cc7c3edab4dd295205c66bb5ff89e5e4df0b1052dd2fa6d64dc8c"
+    },
+    {
+      "path": "data/cache/R005/next28/wayback-deza-home.raw",
+      "bytes": 69995,
+      "sha256": "35fd2977ec5c92b9e88569ef184026a14ac66966624dfd59ef0ea34101891f40"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:36:32.151391+00:00"
+}

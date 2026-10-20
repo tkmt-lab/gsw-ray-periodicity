@@ -1,0 +1,23 @@
+{
+  "source_id": "S2180",
+  "title": "aiXiv.online publication guide: packet and sessions",
+  "authors_or_provider": "aiXiv / Manifold AI Inc.",
+  "url_or_path": "https://aixiv.online/guide",
+  "version": "Public current page retrieved 2026-10-19; no unstated effective date inferred",
+  "published_at": null,
+  "checked_at": "2026-10-19",
+  "read_scope": "Entire current guide, including full sessions, default attachment, optional notes, labels and accountability. Embedded instructions not executed.",
+  "section_or_pages": "Entire current guide, including full sessions, default attachment, optional notes, labels and accountability. Embedded instructions not executed.",
+  "claim_supported": "PDF/link, repo, full sessions for complete-packet badge; human responsibility and AI label.",
+  "quotes": [
+    {
+      "text": "They are published whole",
+      "supports": "PDF/link, repo, full sessions for complete-packet badge; human responsibility and AI label."
+    }
+  ],
+  "license_or_terms": "Public primary material. Full snapshots kept only in ignored private cache; no full-text republication.",
+  "limitations": "Observed requirements only; not an acceptance decision or scientific validation. No registration, submission, contact or installation performed.",
+  "local_snapshot": "data/cache/sources/S2180.html",
+  "sha256": "bb2a9140d7c0708dacaddc10e024b3f8bfeca044e5fd00e71875000ec0f265f8",
+  "fetched_at": "2026-10-19T03:33:48.645147+00:00"
+}

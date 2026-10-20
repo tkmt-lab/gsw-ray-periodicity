@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""Literal Python mirror of Challenge2.lean (Theorem 1a statement), checked on K3 and D12.
+
+Builds `Sig` data (six-strip charts, gluing records, marked corners) from the cell polygons and
+labels used in Formal/Claude2AlignedSpec.lean, then follows Challenge2 literally:
+Site -> SamePoint (record applied to every site whose image is a site) -> Vertex (union-find)
+-> graph (unit step inside one chart) -> Valid, TrianglesInCharts -> PathExists (exhaustive forced walk).
+Path decisions are compared with the known closed conditions:
+  K3 (r,s >= 2):  s = +-1 mod r
+  D12 (r,s >= 1): r = 1, or r = 2 and s odd, or (r >= 3 and (s = +-1 mod r or |r - 3s| = 1))
+"""
+import json
+import sys
+
+
+def rot(z):
+    return (-z[1], z[0] + z[1])
+
+
+def rotN(n, z):
+    for _ in range(n):
+        z = rot(z)
+    return z
+
+
+UNIT = [(1, 0), (0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1)]
+
+
+def walk(p, moves):
+    out = []
+    for ln, k in moves:
+        out.append(p)
+        d = rotN(k, (1, 0))
+        p = (p[0] + ln * d[0], p[1] + ln * d[1])
+    return out
+
+
+def k3_cells(r, s):
+    lab = [[0, 1, 5], [2, 3, 1], [4, 5, 3], [1, 3, 5],
+           [11, 7, 6], [7, 9, 8], [9, 11, 10], [11, 9, 7],
+           [2, 1, 0, 6, 7, 8], [4, 3, 2, 8, 9, 10], [0, 5, 4, 10, 11, 6]]
+    poly = []
+    for f in range(11):
+        if f < 8:
+            poly.append(walk((0, 0), [(r, 0), (r, 2), (r, 4)]))
+        else:
+            poly.append(walk((0, 0), [(r, 0), (r, 1), (s, 2), (r, 3), (r, 4), (s, 5)]))
+    return lab, poly
+
+
+def d12_cells(r, s):
+    lab = [list(range(12)), [0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]
+    p0 = walk((0, 0), [(s, 0), (r + s, 1), (s, 1), (r + s, 2), (s, 2), (r + s, 3),
+                       (s, 3), (r + s, 4), (s, 4), (r + s, 5), (s, 5), (r + s, 0)])
+    p1 = walk((0, 0), [(r + s, 0), (s, 0), (r + s, 1), (s, 1), (r + s, 2), (s, 2),
+                       (r + s, 3), (s, 3), (r + s, 4), (s, 4), (r + s, 5), (s, 5)])
+    return lab, [p0, p1]
+
+
+def to_sig(lab, poly):
+    """Six-strip charts from corners; records from label-matched edge pairs; marked = all corners."""
+    charts = []
+    for P in poly:
+        xs = [p[0] for p in P]; ys = [p[1] for p in P]; ss = [p[0] + p[1] for p in P]
+        charts.append((min(xs), max(xs), min(ys), max(ys), min(ss), max(ss)))
+    recs = []
+    N = len(poly)
+    for g in range(N):
+        for i in range(len(poly[g])):
+            a, b = lab[g][i], lab[g][(i + 1) % len(lab[g])]
+            pa, pb = poly[g][i], poly[g][(i + 1) % len(poly[g])]
+            for f in range(N):
+                for j in range(len(poly[f])):
+                    if lab[f][(j + 1) % len(lab[f])] == a and lab[f][j] == b:
+                        qa, qb = poly[f][(j + 1) % len(poly[f])], poly[f][j]
+                        for m in range(6):
+                            ra, rb = rotN(m, pa), rotN(m, pb)
+                            tau = (qa[0] - ra[0], qa[1] - ra[1])
+                            if (rb[0] + tau[0], rb[1] + tau[1]) == qb:
+                                recs.append((g, f, m, tau))
+    marked = [(f, P[i]) for f, P in enumerate(poly) for i in range(len(P))]
+    return charts, sorted(set(recs)), marked
+
+
+def mem(c, z):
+    lx, ux, ly, uy, ls, us = c
+    return lx <= z[0] <= ux and ly <= z[1] <= uy and ls <= z[0] + z[1] <= us
+
+
+def build(charts, recs, marked):
+    sites = []
+    for f, c in enumerate(charts):
+        lx, ux, ly, uy, ls, us = c
+        for x in range(lx, ux + 1):
+            for y in range(ly, uy + 1):
+                if mem(c, (x, y)):
+                    sites.append((f, (x, y)))
+    idx = {s: i for i, s in enumerate(sites)}
+    par = list(range(len(sites)))
+
+    def find(i):
+        while par[i] != i:
+            par[i] = par[par[i]]
+            i = par[i]
+        return i
+    for (g, f, m, tau) in recs:                       # SamePoint: any site whose image is a site
+        for (h, z) in sites:
+            if h != g:
+                continue
+            w = rotN(m, z); w = (w[0] + tau[0], w[1] + tau[1])
+            if mem(charts[f], w):
+                a, b = find(idx[(h, z)]), find(idx[(f, w)])
+                if a != b:
+                    par[a] = b
+    root = [find(i) for i in range(len(sites))]
+    vid = {}
+    vert = [vid.setdefault(rt, len(vid)) for rt in root]
+    nv = len(vid)
+    adj = [set() for _ in range(nv)]
+    for (f, z), i in idx.items():
+        for u in UNIT:
+            w = (z[0] + u[0], z[1] + u[1])
+            if (f, w) in idx:
+                a, b = vert[i], vert[idx[(f, w)]]
+                if a != b:
+                    adj[a].add(b); adj[b].add(a)
+    # Valid
+    two = all(len(adj[b] & adj[c]) == 2 for b in range(nv) for c in adj[b])
+    emb = True
+    for f in range(len(charts)):
+        seen = {}
+        for (h, z), i in idx.items():
+            if h == f:
+                v = vert[i]
+                if v in seen and seen[v] != z:
+                    emb = False
+                seen[v] = z
+    degs = [len(a) for a in adj]
+    deg56 = all(d in (5, 6) for d in degs)
+    mset = {vert[idx[(f, p)]] for (f, p) in marked if (f, p) in idx}
+    d5m = all(v in mset for v in range(nv) if degs[v] == 5)
+    # TrianglesInCharts (version 2): every 3-clique is a unit triangle of one chart
+    tri = set()
+    for (f, z), i in idx.items():
+        for k in range(6):
+            u, w = UNIT[k], UNIT[(k + 1) % 6]
+            a, b = (f, (z[0] + u[0], z[1] + u[1])), (f, (z[0] + w[0], z[1] + w[1]))
+            if a in idx and b in idx:
+                tri.add(frozenset((vert[i], vert[idx[a]], vert[idx[b]])))
+    tic = all(frozenset((a, b, c)) in tri
+              for a in range(nv) for b in adj[a] if b > a for c in adj[a] & adj[b] if c > b)
+    return nv, adj, degs, (two, emb, deg56, d5m, tic)
+
+
+def path_exists(nv, adj, degs):
+    for p0 in range(nv):
+        if degs[p0] != 5:
+            continue
+        for p1 in adj[p0]:
+            for p2 in adj[p0] & adj[p1]:
+                seq = [p0, p1, p2]; seen = {p0, p1, p2}
+                while True:
+                    a, b, c = seq[-3], seq[-2], seq[-1]
+                    n = len(seq)
+                    if n >= 4 and n % 2 == 0 and degs[c] == 5 and degs[b] == 6 and degs[p1] == 6:
+                        return True
+                    nxt = (adj[b] & adj[c]) - {a}
+                    if len(nxt) != 1:
+                        break
+                    x = nxt.pop()
+                    if x in seen:
+                        break
+                    seq.append(x); seen.add(x)
+    return False
+
+
+def known(fam, r, s):
+    if fam == 'K3':
+        return s % r in (1, r - 1)
+    if r == 1:
+        return True
+    if r == 2:
+        return s % 2 == 1
+    return s % r in (1, r - 1) or abs(r - 3 * s) == 1
+
+
+def main():
+    out = {"rows": [], "mismatch": [], "invalid": []}
+    cases = [('K3', r, s) for r in range(2, 8) for s in range(2, 13)]
+    cases += [('D12', r, s) for r in range(1, 10) for s in range(1, 9)]
+    for fam, r, s in cases:
+        lab, poly = (k3_cells if fam == 'K3' else d12_cells)(r, s)
+        charts, recs, marked = to_sig(lab, poly)
+        nv, adj, degs, valid = build(charts, recs, marked)
+        dec = path_exists(nv, adj, degs)
+        row = {"fam": fam, "r": r, "s": s, "V": nv, "deg5": degs.count(5),
+               "valid": valid, "path": dec, "known": known(fam, r, s), "records": len(recs)}
+        out["rows"].append(row)
+        if not all(valid):
+            out["invalid"].append(row)
+        if dec != row["known"]:
+            out["mismatch"].append(row)
+    print(json.dumps({"cases": len(cases), "invalid": len(out["invalid"]),
+                      "mismatch": len(out["mismatch"]),
+                      "deg5_always_12": all(r["deg5"] == 12 for r in out["rows"])}))
+    json.dump(out, open(sys.argv[1], "w"), indent=0)
+
+
+if __name__ == "__main__":
+    main()

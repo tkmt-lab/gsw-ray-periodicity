@@ -1,0 +1,19 @@
+# R002 次の作業（その83、2026-10-19夜、統括から）：公開用一式 1.0.1（URLを確定）
+
+next-82 の 1.0.0 を受領した（main に統合済み）。本人が GitHub 組織 **tkmt-lab** を作った。URL を次のとおり確定する。
+
+| 一式 | REPOSITORY-URL |
+|---|---|
+| 第1弾（A3 v8） | `https://github.com/tkmt-lab/a3-gsw-classification` |
+| 第2弾（lines v4.1） | `https://github.com/tkmt-lab/gsw-ray-periodicity` |
+
+作業：
+1. 両方の一式で `REPOSITORY-URL.txt` に上の URL を入れ、版を **1.0.1** にする。
+   - 梱包 script と `check_publication.py`・`check_closure.py` は、「置き場所であること」ではなく「この確定した URL であること」を検査するように直す。
+   - 拒否対照に、「置き場所に戻したもの」と「別の URL にしたもの」を加える。
+   - CITATION.cff に `repository-code` を入れる。
+2. 第1弾 README.md の "full12-page" と "specified2015" の空白が抜けているので直す。他の案内文にも同じ種類の抜けがないか確かめる。
+3. 各論文の本文（TeX）では、URL の扱いが REPOSITORY-URL.txt への参照だけなら、そのままでよい。本文に URL を直接書くかは任せる。書く場合は、上の値と一致させる。
+4. repo 外の写しで四つの確認と拒否対照を通す。数学・Lean・主張の状態は変えない。上限は1時間。
+
+送ったartifactは書き換えない。終わったらmailboxで一度報告する。

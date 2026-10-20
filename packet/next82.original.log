@@ -1,0 +1,25 @@
+# R002 次の作業（その82、2026-10-19夜、統括から）：第1弾・第2弾の公開版
+
+## 本人の決定（2026-10-19）
+
+- 著者：**Tatsuhiko Takimoto**。所属：**Independent researcher**。研究室名・組織名は未定なので、入れない。
+- 連絡先：メールは載せない。公開リポジトリの GitHub Issues とする。URL は未定なので、`<REPOSITORY-URL>` という置き場所を一か所にまとめておく（統括が後で置き換える）。
+- ライセンス：文章・図・データは CC BY 4.0、コード・Lean は Apache-2.0。
+- AIの使い方の文：第1弾v7.2の "Acknowledgements and AI-use statement (draft)" の案文を、本人が承認した。第2弾にも同じ趣旨の文を入れる。"(draft)" と「承認前の案」という注記は外す。
+- 公開の順：GitHub で公開→Zenodo の DOI。arXiv・論文誌は後。
+
+## 作業
+
+1. **第1弾 公開版**（英語 v8、一式 1.0.0）：
+   - `\author` に著者名と所属を入れる。AIの使い方の文を確定する。
+   - "unpublished"・"internal draft"・「本人が公開・著者・AIの文を承認していない」の類の文を、事実に合わせて直す。
+   - DDF2004 は R005 next-28（S2185）で本文12頁を読んだ。§11.2 の「未読」を、「読んだ範囲では同じ分類は見つからない」に更新する。2015年の本は未読のまま。
+   - CITATION.cff の著者・ライセンス・版を埋める。
+   - P006 に行を足す。
+2. **第2弾 公開版**（英語 v4.1、一式 lines 1.0.0）：上と同じ著者・所属・ライセンス・AIの文に加え、次の直しを入れる。
+   - (a) §1.1 の "operation permitting pentagons" を "heptagons" に直す（第1弾と同じ）。
+   - (b) 要旨の "determine two examples for every parameter value" を、意味が通る形に直す（例："determine the decisions on two example rays for every value of the ray parameter"）。
+3. 両方の一式で、閉包検査と確認コマンドを repo 外の写しで通す。数学の主張・Leanのソース・証明は変えない。
+4. 上限：作業の実時間3時間。
+
+送ったartifactは書き換えない。終わったらmailboxで一度報告する。

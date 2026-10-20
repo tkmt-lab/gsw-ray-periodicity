@@ -1,0 +1,54 @@
+{
+  "source_id": "S2189",
+  "title": "On spectra of sentences of Monadic Second Order Logic with counting",
+  "authors_or_provider": "E. Fischer; J. A. Makowsky",
+  "url_or_path": "https://www.cs.tau.ac.il/~rabinoa/SEMCOMP/fisher-makowsky.pdf",
+  "version": "Author draft22May2003,27PDFpages; published JSL69(2004)617–640",
+  "checked_at": "2026-10-19",
+  "read_scope": "PDFpp.1–5を描画し本文・主定理を目視。Thms1.4(p3),1.7(p4),1.10(p5)。Type3fontのため抽出txtは文字化けしており根拠に使わず、reader-created notesに範囲を記録。",
+  "section_or_pages": "PDFpp.1–5を描画し本文・主定理を目視。Thms1.4(p3),1.7(p4),1.10(p5)。Type3fontのため抽出txtは文字化けしており根拠に使わず、reader-created notesに範囲を記録。",
+  "claim_supported": "有界tree/clique/patch-widthかつCMSOLで定義されたクラスのモデルサイズspectrumの周期性/半線形性は既知。任意の添字付き族の判定列ではない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/fischer-reading-notes.txt",
+  "sha256": "6102555f210d269c230931446a9079befebd43cd4ac9061f53d4339a72690394",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "§§4–7の全証明未監査。モデルサイズspectrumを指定族のパラメータ集合と同一視しない。",
+  "quotes": [
+    {
+      "text": "Then spec(φ) is ultimately periodic.",
+      "supports": "有界tree/clique/patch-widthかつCMSOLで定義されたクラスのモデルサイズspectrumの周期性/半線形性は既知。任意の添字付き族の判定列ではない。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/fischer-makowsky.raw",
+    "bytes": 368340,
+    "sha256": "612cf9b983fc8d3a13050faf0205fb36100bb351c2aa36293cfc20886775889f"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/fm-01.png",
+      "bytes": 116335,
+      "sha256": "f6cad9d064458f829435acc253cc5b77ad664942737a7d11fe7af4da52f66b2b"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/fm-02.png",
+      "bytes": 195286,
+      "sha256": "c98bfad44797c1ed2bd9ae6ac9f8963603116807342b30b7f97e5f370c3c66f1"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/fm-03.png",
+      "bytes": 183478,
+      "sha256": "f896e3a5f0298f6c9bf61fc35d72c60365e417b082b8d052c968327ee50d2a2b"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/fm-04.png",
+      "bytes": 188858,
+      "sha256": "ec10f277741ca4bad1bb9805404c06b99e28001f4dc46cac236d7c9481761c0d"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/fm-05.png",
+      "bytes": 192622,
+      "sha256": "2f4a1d6157e1d714a5a142739f577cf937b14e904a8c30cc3b3f5aeb043b06f6"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:42:42.957224+00:00"
+}

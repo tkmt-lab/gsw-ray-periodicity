@@ -1,0 +1,124 @@
+# K3 橋渡し 報告 2026-10-20
+
+作業：Claude（claude-lean worktree、branch `claude-lean`）。対象は主張文 版2（commit 46b9c63d、
+`1 ≤ r₀, 1 ≤ s₀`）。
+
+## 結論
+
+`ClaudeChallengeK3.main`（版2）を `sorry`・`native_decide`・新しい `axiom` なしで証明した。
+解答ファイルは `formal/Formal/Claude4K3ComparatorSolution.lean`。
+
+あわせて、おまけの目標だった **K3 の分類 `Claude2Aligned.K3Statement`**（r, s ≥ 2 で
+「文字どおりの道がある ⇔ s ≡ ±1 (mod r)」）も Lean で証明した（`Claude4K3.k3_statement`）。
+これまで外部の事実として仮定していた「各辺の共通隣接点はちょうど2個」
+（`R002.TwoCommonNeighbors (k3Graph r s)`、r, s ≥ 2）が、K3 については定理になった。
+
+## 経路（提案から変えた点）
+
+提案は定理1a（`ClaudeChallenge2.main`）に K3 の Sig を載せて同型で移す経路だった。
+しかし `Valid` の中の「共通隣接点がちょうど2個」は K3 では `NoThreeCommon` そのもので、
+これが証明できれば既存の `k3_statement_of_no_three` で分類全体が出る。直線上で
+「s ≡ ±1 (mod r)」が最終周期的なのは算術だけで示せる。そこで Sig・同型・
+`TrianglesInCharts` は作らず、次の三つで組み立てた。
+
+1. `NoThreeCommon r s`（r, s ≥ 2）→ `K3Statement`。
+2. 境界の族：K3(1, s)（s ≥ 3）と K3(r, 1)（r ≥ 3）に明示的な道がある。
+3. 直線の算術：上の二つから主張文。
+
+## 証明したもの（宣言名とファイル）
+
+- `Claude4K3.main_of_K3Statement`, `Claude4K3.main_of_noThree`（`Claude4K3Ray.lean`）
+  直線の算術。a > 0 なら `a·s − b·r` が t によらない定数なので、`r ∣ s ∓ 1` は最終的に一定。
+  a = 0 なら周期 r₀。境界の直線（r ≡ 1 または s ≡ 1）は「十分大きいところで道がある」から一定。
+- `Claude4K3.noThree : NoThreeCommon r s`（r, s ≥ 2）と `Claude4K3.k3_statement : K3Statement`
+  （`Claude4K3NoThree.lean`）。
+- `Claude4K3.pe_R1`, `Claude4K3.pe_S1`（`Claude4K3BndPath.lean`）境界の族の道。
+- `ClaudeChallengeK3.main`（`Claude4K3ComparatorSolution.lean`）。
+
+### NoThreeCommon の証明の筋
+
+球面 K3(r,s) を三つの片に切る：上の帽子（セル0–3）、筒（セル8–10）、下の帽子（セル4–7）。
+
+- 帽子は一辺 2r の三角形 Δ に平らに置ける（`dC`）。位置は頂点の上で一意（`dC_wd`、inv3 から
+  omega）で、単射（`dC_inj`、貼り合わせ表から）。
+- 筒は既存の不変量 `inv = (hgt, ang mod 6r)` がそのまま平らな座標になる（`tube_inj`）。
+  筒の中の辺は座標で `TA`（6方向、6r を法として）。
+- どの辺もどれか一つの片のセルの中にある。三角形（互いに隣り合う3頂点）は、座標で見て
+  どれか一つの片の中の単位三角形になる（`classify`）。継ぎ目では次を使う：
+  筒の辺で結ばれた継ぎ目の2点は帽子でも隣り合う（`tube_seam_top/bot`）；
+  帽子の辺で結ばれた継ぎ目の2点は、外側の辺に沿うか、角をまたぐ「弦」（`seam_cases_*`）；
+  弦の両端に筒で隣り合う点は、筒の領域の中では角そのものだけ（`chordT_apex`）。
+- 数え上げ：同じ片の中の共通隣接点は平面で2個まで（`planar_three`, `tube_three`）。
+  帽子と筒にまたがるときは、その辺は継ぎ目に沿う辺で、Δ 側にも筒の側にも単位三角形が
+  1個ずつしかない（`along_uniq_*`, `tube_seam_*`, `top_tube_apex`, `bot_tube_apex`）。
+  上下の帽子は交わらない（`not_TB`）。
+- 下の継ぎ目の算術は、鏡映 `(h, a) ↦ (2s − h, a)` で上の継ぎ目に帰着（`Claude4K3Chord.lean`）。
+
+### 境界の族
+
+- K3(1, s)：既存の `pathPlus`（`(0,t), (−1,t+1)`、4s−2 頂点、六角形 s−1 の下の角まで）。
+- K3(r, 1)：新しい道 `pathS`（`(r,t), (r−1,t+1)`、4r+2 頂点、角 (r,0) から六角形1の角 (−1,r+1)
+  まで）。Python で筒のジグザグ道を探して見つけた。
+- 端の次数（端で5、隣で6）は r = 1 または s = 1 で計算し直した。既存の生成スクリプト
+  `claude2_k3_gen_degree.py` を自由な媒介変数1個用に直したもの（作業用、scratchpad）で生成し、
+  Lean で媒介変数のすべての値について検査した（`Claude4K3BndR1a/b.lean`, `Claude4K3BndS1.lean`）。
+  道の部分は既存の `literal_of_tube` をそのまま使った（r, s > 0 で成り立つ）。
+
+## 行数
+
+新しいファイル 18 個、計 3390 行（主張文ファイルは除く）。各ファイル 340 行以下。
+
+| ファイル | 行 | 内容 |
+|---|---|---|
+| Claude4K3Ray | 167 | 直線の算術、条件付き定理 |
+| Claude4K3PieceArith | 138 | 平面と筒の頂点の数え上げ |
+| Claude4K3Seam | 87 | 継ぎ目の外側の頂点（筒） |
+| Claude4K3Chord | 105 | 角をまたぐ弦、鏡映 |
+| Claude4K3CapWd / CapWdB | 170 / 184 | 帽子の位置が頂点の上で一意 |
+| Claude4K3CapInj | 152 | 帽子の位置の単射性 |
+| Claude4K3TubeInj | 115 | 筒の座標の単射性、値の範囲、辺 |
+| Claude4K3SeamSite | 321 | 帽子と筒の貼り合わせ（セルの組ごと） |
+| Claude4K3SeamEdge | 110 | 継ぎ目の点と外側の辺 |
+| Claude4K3SeamAlong | 182 | 継ぎ目に沿う辺、弦 |
+| Claude4K3Vtx | 276 | 頂点の水準の事実 |
+| Claude4K3NoThree | 339 | 分類、数え上げ、NoThreeCommon、K3Statement |
+| Claude4K3BndR1a / R1b / S1 | 297 / 296 / 294 | 境界の族の次数（生成） |
+| Claude4K3BndPath | 122 | 境界の族の道 |
+| Claude4K3ComparatorSolution | 35 | 解答 |
+
+## 検査
+
+- `diff`：主張文ファイルと解答ファイルの `namespace ClaudeChallengeK3` から `:= by` までが一致
+  （`PathExists` の定義と `main` の主張文）。
+- `#print axioms`：`ClaudeChallengeK3.main`, `Claude4K3.noThree`, `Claude4K3.k3_statement`,
+  `Claude4K3.pe_R1`, `Claude4K3.pe_S1`, `Claude4K3.main_of_K3Statement`,
+  `Claude4K3.main_of_noThree`, `Claude4K3.classify` はいずれも `propext, Classical.choice,
+  Quot.sound` のみ。
+- `grep`：新しいファイルに `sorry`, `native_decide`, `axiom` なし（主張文ファイルの `sorry` を除く）。
+- `nice -n 10 lake build Formal.Claude4K3ComparatorSolution`：成功。モジュールは依存の順に一つずつ
+  `lake build` した（並列にならないように）。
+- comparator（`lake comparator`）は走らせていない。
+
+## メモリ
+
+- 最終版：各モジュールの lean の常駐メモリの最大は約 1.4〜2.0 GB（lake build 時、監視つき）。
+  単独検査（`lean -M3072`）でも 2.1 GB 以下。
+- 途中で一度、Mac を固まらせた（統括が PID 66545 を止めた、25 GB）。原因は最初の版の
+  `Claude4K3PieceArith.lean` に入れていた継ぎ目の補題（`top_unit_of_TA`, `top_TA_or_chord`,
+  `top_chord_apex`, `top_cap_apex`）の `omega`。結論が 18 通りの `TA` の選言（あるいは 6 通りの
+  `Unit` の選言）で、仮定にも 6 通りの選言が複数あり、omega の場合分けが爆発した。
+  4つのうちどれが主因かは切り分けていない（まとめて止められたため）。
+  これらは削除し、セルごとの小さな補題（継ぎ目の点を外側の辺・弦に分類してから計算）に置き換えた。
+  以後は RSS 3 GB で止める監視つきでだけ Lean を走らせた。その監視で `Seam`・`Chord`・`CapWd` が
+  lake build 中に 3.0 GB を少し超えて一度止まったので、選言のゴールを `norm_num` で先に評価して
+  から `omega` にする形に直し、`CapWd` を2つに分けた（いずれも 2 GB 以下になった）。
+
+## 残り・疑問
+
+- 提案経路（定理1a の Sig に載せて同型で移す）は使っていない。主張文は満たされているので
+  不要と判断した。必要なら `noThree` から `Valid`・`TrianglesInCharts` を出すこともできる
+  （`classify` が「三角形は一つの片の中の単位三角形」を与える）が、Sig との同型は作っていない。
+- 境界の族の次数補題は Python のデータから生成したが、Lean が媒介変数のすべての値で検査している
+  ので、生成の正しさには依存しない。
+- 主張文ファイルの定義が spec と一字一句同じであることは統括の作成時の保証に依っている
+  （comparator での確認は未実施）。

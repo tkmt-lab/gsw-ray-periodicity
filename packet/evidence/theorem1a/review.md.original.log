@@ -1,0 +1,53 @@
+# Statement review
+
+**Verdict: NOT FAITHFUL as a literal statement of Theorem 1a.** `main` states a broader graph-quotient conjecture, with the correct path predicate and single-branch periodicity conclusion. Its hypotheses do not specify the paper's geometric objects. It could nevertheless serve as a stronger sufficient theorem, once the representation and residue-class bridges are supplied. This review concerns statements, not proofs or Lean elaboration.
+
+## Definition correspondence
+
+References below use `L` for `Challenge2.lean` and `T` for `paper.tex`.
+
+| Definition | Paper correspondence and mismatch |
+|---|---|
+| `Aff` (L56–61) | Integer affine coordinates/translations along a natural-number ray (T106–108,128–129). Correct; slopes and intercepts may be negative. Eventual geometric validity must constrain their values. |
+| `Chart` (L64–76) | The three-strip description explicitly used at T176–182. Correct for a genuine six-direction convex polygon, eventually after bound orders stabilize. The type also admits empty sets, points and segments; it asserts neither a polygon disk nor positive sides/area. Straight-angle subdivision data are absent. |
+| `Sig` (L79–96) | Fixed charts, rotations, affine translations and labels correspond to T104–113,128–131. Missing paired **segments**, their domains, explicit corner classes, and geometric consistency. All counts may be zero. Mark coordinates need not be corners or even sites. |
+| `Site` (L99–100) | A chart's lattice vertices before identification. Correct for valid charts; not the continuous closed disk itself. |
+| `SamePoint` (L104–106) | Intended seam identification (T105–112). It applies a record to **every** source site whose image is a target site, not just its paired boundary segment. Interior overlaps and unrelated boundary overlaps are not excluded by this definition. |
+| `Vertex` (L109) | Equivalence closure correctly makes seam records symmetric/transitive and includes corner chains. There is no separate assertion that the resulting equivalence is exactly the paper's prescribed corner/seam equivalence. |
+| `graph` (L115–123) | Common-chart unit-step adjacency matches the intended lattice triangulation when the quotient is correct. It discards loops and merges repeated edges automatically; being a `SimpleGraph` does not certify geometric quotient simplicity, planarity or a fullerene dual. |
+| `deg` (L126) | Actual number of distinct graph neighbours, as required by T73–74. Although `ncard` has an infinite-set convention, each instantiated chart is bounded and finite at fixed `t`, so the quotient is finite. No infinite-degree loophole here. |
+| `TwoCommonNeighbors` (L129–130) | Exactly two distinct common neighbours for every adjacent pair (T85–99). Correct graph property; it does not itself assert a spherical embedding or faciality. |
+| `IsMarked` (L133–135) | Membership in the fixed affine label list. Correctly requires that a representative lies in its chart. Unlike T130–131, it does not require an actual corner; duplicate labels, degree-six labels and labels absent at some `t` are allowed. |
+| `Valid` (L138–143) | Encodes two common neighbours, injectivity on each chart's lattice sites, degrees five/six, and coverage of degree-five vertices by marks. Missing connected spherical triangulation, twelve degree-five vertices, disk nondegeneracy, positive sides, and specified noncrossing seam geometry (T81–83,109–113,123–131). Lattice-site injectivity alone is not continuous embeddedness. |
+| `TrianglesInCharts` (L146–151) | Every graph triangle has a simultaneous unit-triangle lift in one chart. Appropriate for the paper's decomposition plus its nonfacial-three-cycle exclusion. It supplies no global surface topology or face-incidence structure. |
+| `LiteralPath` (L156–162) | Exactly T71–79 with `n=e+1`: even `n≥4`, distinct prefix, consecutive and distance-two adjacency, degree-five endpoints and degree-six adjacent path vertices. Internal degree-five vertices and extra chords remain allowed. Correct. |
+| `PathExists` (L165) | Correct existential decision. The total function `p : ℕ → V` imposes nothing on the unused tail; every nonempty finite path can be extended. |
+| `main` (L169–170) | Correct eventual-validity quantifier and exact periodicity formula for one `Sig`. Its premises are weaker geometric specifications than Theorem 1a's, and its syntax omits the finite-residue version (T133–134). |
+
+## Strength and transfer
+
+**On a correctly represented single branch, this is a stronger proposed theorem, not an equal restatement:** it assumes fewer geometric restrictions while asserting the same periodicity decision. The examples below show that its admissible objects extend beyond fullerene duals. This is a scope comparison, not a claim that `main` is false.
+
+The paper's hypotheses **jointly imply** the intended `Valid ∧ TrianglesInCharts` for its actual dual graph: embedded disks give chart injectivity; fullerene degrees give five/six; the marked-corner assumption covers degree-five vertices. The paper invokes nonfacial-three-cycle exclusion at T95–99, supplying the common-neighbour condition. Since macro sides follow lattice lines, facial elementary triangles are covered by charts; mere coverage of arbitrary graph vertices would not suffice.
+
+However, transferring these facts to this particular quotient also requires showing that its unrestricted `SamePoint` generates exactly the intended identifications. Genuine convex adjacent disks have opposite supporting halfplanes, which can restrict overlaps to seams, but the code does not record or certify this geometry. The comment at L35–39 is not a supplied representation bridge. The missing guard alone does not demonstrate a counterexample among genuine paper decompositions.
+
+The finite-residue extension needs a separate reindexing/combination statement, potentially with different signatures on different classes. One global affine `Sig` does not directly express that input. The extension is a standard consequence of branchwise eventual periodicity, rather than a different meaning of periodicity.
+
+Nothing is lost in “eventually periodic”: positive `P` and the equivalence for every sufficiently large natural `t` agree exactly with T137–139. Neither source requires a least period, effective algorithm or growing family. `t₀≥t₁` is unnecessary because the threshold can be enlarged.
+
+## Vacuity and concrete models
+
+* **Empty signature:** `C=R=M=0` gives no sites or vertices. Both hypotheses hold for every `t`; `PathExists` is always false, so period one works. There is no fullerene.
+* **Empty chart:** `C=1`, `R=M=0`, constant `lx=1, ux=0` also gives the empty model. Thus even requiring `C>0` would not fix this.
+* **Nonempty nonspherical model:** take the triangular lattice modulo `5ℤ×5ℤ`, using its 50 elementary triangles as constant charts and their torus seam pairings, with `M=0`. The 25-vertex graph has degree six, two common neighbours per edge, embedded individual charts and every triangle covered. Both predicates hold; no degree-five endpoint exists, so the decision is constantly false. This violates the paper's sphere/twelve-cone requirements.
+* **Genuine spherical constant model:** the icosahedral graph, represented by 20 unit-triangle charts with its 12 vertices marked, satisfies the graph/chart conditions. All degrees are five, so no literal path exists. Thus the hypotheses are not satisfiable only by empty objects; constant negative decisions are also legitimate in the paper.
+
+`t₁` cannot hide failures on an infinite tail: its premise quantifies over every `t≥t₁`. `P=0` is expressly excluded. Degenerate examples do not make the universally quantified theorem automatically true for other signatures.
+
+## Problems ranked by severity
+
+1. **High — geometric domain replaced by weaker graph tests.** L138–151,169 versus T81–83,109–113,123–131. Sphere/fullereneness, nondegenerate disks and geometric gluing validity are absent. The empty and torus examples satisfy the replacement assumptions.
+2. **High — seam domains and quotient correspondence unspecified.** L79–96,104–109 versus T104–112,128–129. Records lack paired-segment restrictions; explicit corner identifications are only implicit in generated chains. A representation bridge is necessary before claiming coverage of the paper's families.
+3. **Medium — residue-class formulation omitted.** L169–170 versus T133–134. Add a branchwise corollary with an explicit connection to the original parameter's decision.
+4. **Medium — “marked corners” are arbitrary affine site labels.** L93–96,133–143 versus T130–131. Corner status and fixed geometric corner classes are not expressed.

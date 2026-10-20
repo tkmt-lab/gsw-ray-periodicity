@@ -1,0 +1,30 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "check_closure.py"
+    ]
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "check_claims.py"
+    ]
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "check_paper.py"
+    ]
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "check_sources.py"
+    ]
+  }
+]

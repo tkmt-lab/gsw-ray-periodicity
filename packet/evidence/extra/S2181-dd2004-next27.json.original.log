@@ -1,0 +1,23 @@
+{
+  "source_id": "S2181",
+  "title": "Goldberg-Coxeter Construction for 3- and 4-valent Plane Graphs — next-27本文再読",
+  "authors_or_provider": "Mathieu Dutour; Michel Deza",
+  "url_or_path": "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r20/pdf",
+  "version": "EJC 11 (2004) R20, DOI 10.37236/1773; S2001と同じ保存本文を、新しい読解記録として登録。",
+  "published_at": "2004-03-05",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "本文§1 pp.2–4、§2–4.1 pp.8–25、§6 pp.28–31、§7 pp.35–42を対象として定義・命題・証明を読む。他の親グラフを扱う§5/§6残部は構造確認に留める。主な図/式/表のp.15–17,38,40,42を今回描画して目視。全49頁の証明監査ではない。",
+  "read_scope": "本文§1 pp.2–4、§2–4.1 pp.8–25、§6 pp.28–31、§7 pp.35–42を対象として定義・命題・証明を読む。他の親グラフを扱う§5/§6残部は構造確認に留める。主な図/式/表のp.15–17,38,40,42を今回描画して目視。全49頁の証明監査ではない。",
+  "claim_supported": "partition vectorは自己交差型を落とす。位置写像は閉軌道を与えるが、引用した定理はgSWの面ID初回再訪と合法端点の先後の二段条件を述べない。",
+  "license_or_terms": "無料の公式公開資料・既存の正規経路で取得した控え。本文はGit非追跡cache、再配布なし。",
+  "local_snapshot": "data/cache/R005/gc2004.txt",
+  "sha256": "6bfe167a0bc10516e6f5374da4d14c25a1d1abfc9c8582c5ad18cfc1103b9e1b",
+  "limitations": "2004年の本文の範囲。将来の研究・2015書籍・DDF2004本文の既知性を排除しない。全証明の独立監査ではない。",
+  "fetched_at": "2026-10-19T11:20:48.458060+00:00",
+  "quotes": [
+    {
+      "text": "we remove the subscripts specifying self-intersections",
+      "supports": "partition vectorは自己交差型を落とす。位置写像は閉軌道を与えるが、引用した定理はgSWの面ID初回再訪と合法端点の先後の二段条件を述べない。"
+    }
+  ]
+}

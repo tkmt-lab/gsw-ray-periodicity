@@ -1,0 +1,1323 @@
+{
+ "K3": [
+  {
+   "r": 1,
+   "s": 1,
+   "V": 15,
+   "E": 39,
+   "V_expected": 15,
+   "deg5": 12,
+   "deg6": 3,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 2,
+   "V": 21,
+   "E": 57,
+   "V_expected": 21,
+   "deg5": 12,
+   "deg6": 9,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 3,
+   "V": 27,
+   "E": 75,
+   "V_expected": 27,
+   "deg5": 12,
+   "deg6": 15,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 4,
+   "V": 33,
+   "E": 93,
+   "V_expected": 33,
+   "deg5": 12,
+   "deg6": 21,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 5,
+   "V": 39,
+   "E": 111,
+   "V_expected": 39,
+   "deg5": 12,
+   "deg6": 27,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 6,
+   "V": 45,
+   "E": 129,
+   "V_expected": 45,
+   "deg5": 12,
+   "deg6": 33,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 1,
+   "s": 7,
+   "V": 51,
+   "E": 147,
+   "V_expected": 51,
+   "deg5": 12,
+   "deg6": 39,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 2,
+   "s": 1,
+   "V": 42,
+   "E": 120,
+   "V_expected": 42,
+   "deg5": 12,
+   "deg6": 30,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 2,
+   "s": 2,
+   "V": 54,
+   "E": 156,
+   "V_expected": 54,
+   "deg5": 12,
+   "deg6": 42,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 3,
+   "V": 66,
+   "E": 192,
+   "V_expected": 66,
+   "deg5": 12,
+   "deg6": 54,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 4,
+   "V": 78,
+   "E": 228,
+   "V_expected": 78,
+   "deg5": 12,
+   "deg6": 66,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 5,
+   "V": 90,
+   "E": 264,
+   "V_expected": 90,
+   "deg5": 12,
+   "deg6": 78,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 6,
+   "V": 102,
+   "E": 300,
+   "V_expected": 102,
+   "deg5": 12,
+   "deg6": 90,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 7,
+   "V": 114,
+   "E": 336,
+   "V_expected": 114,
+   "deg5": 12,
+   "deg6": 102,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 1,
+   "V": 83,
+   "E": 243,
+   "V_expected": 83,
+   "deg5": 12,
+   "deg6": 71,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 3,
+   "s": 2,
+   "V": 101,
+   "E": 297,
+   "V_expected": 101,
+   "deg5": 12,
+   "deg6": 89,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 3,
+   "V": 119,
+   "E": 351,
+   "V_expected": 119,
+   "deg5": 12,
+   "deg6": 107,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 4,
+   "V": 137,
+   "E": 405,
+   "V_expected": 137,
+   "deg5": 12,
+   "deg6": 125,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 5,
+   "V": 155,
+   "E": 459,
+   "V_expected": 155,
+   "deg5": 12,
+   "deg6": 143,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 6,
+   "V": 173,
+   "E": 513,
+   "V_expected": 173,
+   "deg5": 12,
+   "deg6": 161,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 7,
+   "V": 191,
+   "E": 567,
+   "V_expected": 191,
+   "deg5": 12,
+   "deg6": 179,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 1,
+   "V": 138,
+   "E": 408,
+   "V_expected": 138,
+   "deg5": 12,
+   "deg6": 126,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 4,
+   "s": 2,
+   "V": 162,
+   "E": 480,
+   "V_expected": 162,
+   "deg5": 12,
+   "deg6": 150,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 3,
+   "V": 186,
+   "E": 552,
+   "V_expected": 186,
+   "deg5": 12,
+   "deg6": 174,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 4,
+   "V": 210,
+   "E": 624,
+   "V_expected": 210,
+   "deg5": 12,
+   "deg6": 198,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 5,
+   "V": 234,
+   "E": 696,
+   "V_expected": 234,
+   "deg5": 12,
+   "deg6": 222,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 6,
+   "V": 258,
+   "E": 768,
+   "V_expected": 258,
+   "deg5": 12,
+   "deg6": 246,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 7,
+   "V": 282,
+   "E": 840,
+   "V_expected": 282,
+   "deg5": 12,
+   "deg6": 270,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 1,
+   "V": 207,
+   "E": 615,
+   "V_expected": 207,
+   "deg5": 12,
+   "deg6": 195,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 5,
+   "s": 2,
+   "V": 237,
+   "E": 705,
+   "V_expected": 237,
+   "deg5": 12,
+   "deg6": 225,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 3,
+   "V": 267,
+   "E": 795,
+   "V_expected": 267,
+   "deg5": 12,
+   "deg6": 255,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 4,
+   "V": 297,
+   "E": 885,
+   "V_expected": 297,
+   "deg5": 12,
+   "deg6": 285,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 5,
+   "V": 327,
+   "E": 975,
+   "V_expected": 327,
+   "deg5": 12,
+   "deg6": 315,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 6,
+   "V": 357,
+   "E": 1065,
+   "V_expected": 357,
+   "deg5": 12,
+   "deg6": 345,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 7,
+   "V": 387,
+   "E": 1155,
+   "V_expected": 387,
+   "deg5": 12,
+   "deg6": 375,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 1,
+   "V": 290,
+   "E": 864,
+   "V_expected": 290,
+   "deg5": 12,
+   "deg6": 278,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 6,
+   "s": 2,
+   "V": 326,
+   "E": 972,
+   "V_expected": 326,
+   "deg5": 12,
+   "deg6": 314,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 3,
+   "V": 362,
+   "E": 1080,
+   "V_expected": 362,
+   "deg5": 12,
+   "deg6": 350,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 4,
+   "V": 398,
+   "E": 1188,
+   "V_expected": 398,
+   "deg5": 12,
+   "deg6": 386,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 5,
+   "V": 434,
+   "E": 1296,
+   "V_expected": 434,
+   "deg5": 12,
+   "deg6": 422,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 6,
+   "V": 470,
+   "E": 1404,
+   "V_expected": 470,
+   "deg5": 12,
+   "deg6": 458,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "K3Pos": false,
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 7,
+   "V": 506,
+   "E": 1512,
+   "V_expected": 506,
+   "deg5": 12,
+   "deg6": 494,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "K3Pos": true,
+   "agree": true
+  },
+  {
+   "r": 7,
+   "s": 1,
+   "V": 387,
+   "E": 1155,
+   "V_expected": 387,
+   "deg5": 12,
+   "deg6": 375,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 2,
+   "V": 429,
+   "E": 1281,
+   "V_expected": 429,
+   "deg5": 12,
+   "deg6": 417,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 3,
+   "V": 471,
+   "E": 1407,
+   "V_expected": 471,
+   "deg5": 12,
+   "deg6": 459,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 4,
+   "V": 513,
+   "E": 1533,
+   "V_expected": 513,
+   "deg5": 12,
+   "deg6": 501,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 5,
+   "V": 555,
+   "E": 1659,
+   "V_expected": 555,
+   "deg5": 12,
+   "deg6": 543,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 6,
+   "V": 597,
+   "E": 1785,
+   "V_expected": 597,
+   "deg5": 12,
+   "deg6": 585,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 7,
+   "s": 7,
+   "V": 639,
+   "E": 1911,
+   "V_expected": 639,
+   "deg5": 12,
+   "deg6": 627,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  }
+ ],
+ "D12": [
+  {
+   "r": 1,
+   "s": 1,
+   "V": 56,
+   "E": 162,
+   "V_expected": 56,
+   "deg5": 12,
+   "deg6": 44,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 1,
+   "s": 2,
+   "V": 152,
+   "E": 450,
+   "V_expected": 152,
+   "deg5": 12,
+   "deg6": 140,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 1,
+   "s": 3,
+   "V": 296,
+   "E": 882,
+   "V_expected": 296,
+   "deg5": 12,
+   "deg6": 284,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 1,
+   "s": 4,
+   "V": 488,
+   "E": 1458,
+   "V_expected": 488,
+   "deg5": 12,
+   "deg6": 476,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 2,
+   "s": 1,
+   "V": 98,
+   "E": 288,
+   "V_expected": 98,
+   "deg5": 12,
+   "deg6": 86,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 2,
+   "s": 2,
+   "V": 218,
+   "E": 648,
+   "V_expected": 218,
+   "deg5": 12,
+   "deg6": 206,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 2,
+   "s": 3,
+   "V": 386,
+   "E": 1152,
+   "V_expected": 386,
+   "deg5": 12,
+   "deg6": 374,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 2,
+   "s": 4,
+   "V": 602,
+   "E": 1800,
+   "V_expected": 602,
+   "deg5": 12,
+   "deg6": 590,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 1,
+   "V": 152,
+   "E": 450,
+   "V_expected": 152,
+   "deg5": 12,
+   "deg6": 140,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 3,
+   "s": 2,
+   "V": 296,
+   "E": 882,
+   "V_expected": 296,
+   "deg5": 12,
+   "deg6": 284,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": "pos",
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 3,
+   "V": 488,
+   "E": 1458,
+   "V_expected": 488,
+   "deg5": 12,
+   "deg6": 476,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 3,
+   "s": 4,
+   "V": 728,
+   "E": 2178,
+   "V_expected": 728,
+   "deg5": 12,
+   "deg6": 716,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": "pos",
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 1,
+   "V": 218,
+   "E": 648,
+   "V_expected": 218,
+   "deg5": 12,
+   "deg6": 206,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 4,
+   "s": 2,
+   "V": 386,
+   "E": 1152,
+   "V_expected": 386,
+   "deg5": 12,
+   "deg6": 374,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 3,
+   "V": 602,
+   "E": 1800,
+   "V_expected": 602,
+   "deg5": 12,
+   "deg6": 590,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": "pos",
+   "agree": true
+  },
+  {
+   "r": 4,
+   "s": 4,
+   "V": 866,
+   "E": 2592,
+   "V_expected": 866,
+   "deg5": 12,
+   "deg6": 854,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 5,
+   "s": 1,
+   "V": 296,
+   "E": 882,
+   "V_expected": 296,
+   "deg5": 12,
+   "deg6": 284,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 5,
+   "s": 2,
+   "V": 488,
+   "E": 1458,
+   "V_expected": 488,
+   "deg5": 12,
+   "deg6": 476,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 5,
+   "s": 3,
+   "V": 728,
+   "E": 2178,
+   "V_expected": 728,
+   "deg5": 12,
+   "deg6": 716,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": null
+  },
+  {
+   "r": 5,
+   "s": 4,
+   "V": 1016,
+   "E": 3042,
+   "V_expected": 1016,
+   "deg5": 12,
+   "deg6": 1004,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  },
+  {
+   "r": 6,
+   "s": 1,
+   "V": 386,
+   "E": 1152,
+   "V_expected": 386,
+   "deg5": 12,
+   "deg6": 374,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": true,
+   "known": null
+  },
+  {
+   "r": 6,
+   "s": 2,
+   "V": 602,
+   "E": 1800,
+   "V_expected": 602,
+   "deg5": 12,
+   "deg6": 590,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 3,
+   "V": 866,
+   "E": 2592,
+   "V_expected": 866,
+   "deg5": 12,
+   "deg6": 854,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ],
+   "path": false,
+   "known": "neg",
+   "agree": true
+  },
+  {
+   "r": 6,
+   "s": 4,
+   "V": 1178,
+   "E": 3528,
+   "V_expected": 1178,
+   "deg5": 12,
+   "deg6": 1166,
+   "other_deg": [],
+   "boundary_only": true,
+   "ok_counts": true,
+   "r004": [
+    true,
+    "same partition and edges"
+   ]
+  }
+ ],
+ "K3_tube_witnesses": {
+  "checked": 41,
+  "bad": []
+ },
+ "all_ok": true
+}

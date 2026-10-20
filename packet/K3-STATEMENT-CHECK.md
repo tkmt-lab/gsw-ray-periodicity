@@ -1,0 +1,11 @@
+# K3 statement correspondence and proof-receipt scope
+
+The coordinator wrote the separate K3 challenge before the new proof. Its copied 22 definitions match the fixed graph/path specifications after comment/whitespace normalization; PathExists and the challenge/solution main header also match. The challenge requires r0,s0>=1 with nonnegative natural slopes and includes parameter-one boundaries, without Valid or TrianglesInCharts assumptions. It is an inert one-sorry benchmark, never a proof dependency.
+
+One independent AI reader reviewed version 1 and found the omitted parameter-one boundary rays. Version 2 corrected the lower bounds before the proof. The saved review remains a NOT FAITHFUL verdict on version 1, not a claimed second positive review of version 2. Its 68 known finite instances included positive boundaries and found no graph/gluing defect. The other saved Python mirror contains 66 K3 interior cases (r,s>=2) and 72 D12 cases: only the K3 rows support this correspondence, and no new D12 classification is inferred. Overlapping sample sets are not counted as independent universal proofs. No universal isomorphism to the printed catalogue or human proof review is claimed.
+
+On 20 October 2026 owner statement-meaning checks ceased to be a verification procedure. Earlier A3/Theorem 1a confirmations remain historical facts. No K3 owner-confirmation field is created. The K3 basis is the prior specification, the independent AI statement reader with the pre-proof correction, and finite computational correspondence.
+
+The coordinator's six-kernel receipt checks the same ClaudeChallengeK3.main proof only. k3_statement and noThree have saved standard-three-axiom output, not separate Comparator targets. The research team receives byte-identical records and sources; it does not execute Lean or external kernels. The general Theorem 1a paper-to-specification bridge remains prose. See k3-manifest.json for all fixed file identities.
+
+Receipt chronology: the worker build report was written before the coordinator Comparator run and accurately says Comparator was not run by that worker. The later coordinator summary and raw six-kernel acceptance record supersede this checkpoint, without changing either original. The new claim records cite the later coordinator summary; the worker build/axiom report remains separate historical evidence.

@@ -1,0 +1,20 @@
+{
+  "source_id": "S1512",
+  "title": "Catalog of All Fullerenes with Ten or More Symmetries",
+  "authors_or_provider": "Jack E. Graver",
+  "url_or_path": "https://jegraver.expressions.syr.edu/wp-content/uploads/2013/07/28-Catalog-of-Fullerenes.pdf",
+  "version": "2005 author PDF with appended corrections",
+  "checked_at": "2026-10-19",
+  "section_or_pages": "p.4 A1/A2 text; p.8 D1 and p.20 D14 diagrams visually inspected",
+  "read_scope": "Original coordinate symbols, angle units, atom counts and seven examples for D1 and D14; no A metadata",
+  "claim_supported": "Catalog geometry only; no gSW classification",
+  "local_snapshot": "data/cache/R004-sources/S1503-graver-catalog.pdf",
+  "sha256": "39a4cef761a1318616b25cdf47ba3f33fed26e412e1a1278c1cdc473c67db018",
+  "rendered_pages": [
+    "data/cache/R004-sources/graver-page8.png",
+    "data/cache/R004-sources/graver-page20.png",
+    "data/cache/R004-sources/graver-d14-detail.png"
+  ],
+  "license_or_terms": "Author public PDF; original retained in ignored cache only",
+  "quotes": []
+}

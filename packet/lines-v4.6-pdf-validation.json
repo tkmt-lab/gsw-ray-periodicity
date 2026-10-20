@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "source_path": "paper-lines-v4.6-en.tex",
+  "source_sha256": "ffe166e4803802f66adfe13e0072636f619ef80645688a04c3aacd7ab7f8195d",
+  "pdf_path": "paper-lines-v4.6-en.pdf",
+  "pdf_sha256": "fe84d9d3a71c84de23e3cf2825e3fcebf58a18077b091afe454c7d70834e0432",
+  "pdf_bytes": 174179,
+  "pages": 17,
+  "typeset_trial": "T1399",
+  "render_trial": "T1400",
+  "tex_engine": "Tectonic 0.17.0 cached only",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "b492e589139202e71dd94047ea5b5b2b6726fee6a55fb10883dd6edc60eb8044"
+    },
+    {
+      "page": 2,
+      "sha256": "2c1def726b63886e81fd34fee1a9d015e964d2030b3d04cfce7cd364bf057e29"
+    },
+    {
+      "page": 3,
+      "sha256": "1f30d97d47a3ed309f567c2b0a296dce456435e33a3d39cd488436a1ade5247d"
+    },
+    {
+      "page": 4,
+      "sha256": "ef551e29e3337a288a0e6f6f36159b712e80b630d4cd84a5d17ab4c5ccdae27d"
+    },
+    {
+      "page": 5,
+      "sha256": "cfc464d7b35638fe2dd31867c2e1c6e88cf5a10bf71e6cfef5bda4a08a37b293"
+    },
+    {
+      "page": 6,
+      "sha256": "e1c9674ad6baae1b0dd224d13dd208e8b2eecb187039ef28729b2c9fefc242cd"
+    },
+    {
+      "page": 7,
+      "sha256": "7520ea013f434e417bdf939905edaca746008744e7a65ff4e3ba7b007e9d0ba9"
+    },
+    {
+      "page": 8,
+      "sha256": "ea33b876e61197222923556328aa0be8f8da17ba90fcc68198671f243084e7d8"
+    },
+    {
+      "page": 9,
+      "sha256": "c6a0f020fd13e4376afd95c2b4542a2726074815a12c21d112c1cf9c3566ffb6"
+    },
+    {
+      "page": 10,
+      "sha256": "93cea45965fb8102fd56019d124ec42728df5859889dbcca9c500d81589d2d11"
+    },
+    {
+      "page": 11,
+      "sha256": "ab5717e5ee77bb3b7e73d0d74a1c6afd118832d0ffc449cd3e1ce8f2869f4f73"
+    },
+    {
+      "page": 12,
+      "sha256": "4d427dc5d21e8f53ec61d447ab3e58415aac95cac7a0c301a74559b0434afce0"
+    },
+    {
+      "page": 13,
+      "sha256": "8518767724e9cd2ac1166c22592dee9d1f241e491c7b1d6700f8e954856adb17"
+    },
+    {
+      "page": 14,
+      "sha256": "b7cf264a281985913ab63b3e48ac0202b8a4dd3cd40fb40744ddfec3db9b2b47"
+    },
+    {
+      "page": 15,
+      "sha256": "44579164e6010d69ec2e57c6e633744b7a894cda12cbb6c09d63a058491da00f"
+    },
+    {
+      "page": 16,
+      "sha256": "60d277407dca2acf9b03fa9443e4a0a5adc1ea91a0d23dc40548c8395506636b"
+    },
+    {
+      "page": 17,
+      "sha256": "411a21afd48fbcc767bb84382140ec0b04eb2c11d7a683ec7fc10ac734bbbe94"
+    }
+  ],
+  "mathematical_comparison": {
+    "numbered_statement_blocks": 3,
+    "byte_identical": true,
+    "claim_ids_unchanged": 30,
+    "source_predecessor": "paper-lines-v4.5-en.tex",
+    "scope": "Explicit K3 formal-proof and evidence-scope edits; exact replacement map saved; the general theorem prose bridge remains."
+  },
+  "visual_review": {
+    "reviewer": "Codex main agent",
+    "all_pages_viewed": true,
+    "independent_review": false,
+    "method": "Initial 17 pages viewed individually at 1100px. After the constant-ray clarification, 10 final renders were pixel-identical and all 7 changed final pages were viewed again.",
+    "observed": "No clipping, overlaps, missing glyphs, broken tables or unresolved references. Long machine identifiers wrap at line boundaries but remain readable."
+  },
+  "uploaded": false,
+  "publication_on_hold": false
+}

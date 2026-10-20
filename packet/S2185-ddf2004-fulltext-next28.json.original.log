@@ -1,0 +1,49 @@
+{
+  "source_id": "S2185",
+  "title": "Zigzags, Railroads, and Knots in Fullerenes — author-hosted reprint, archived ENS copy",
+  "authors_or_provider": "M. Deza; M. Dutour; P. W. Fowler",
+  "url_or_path": "https://web.archive.org/web/20120322083854id_/http://www.liga.ens.fr/~deza/withFowler/Zig1.pdf",
+  "version": "J. Chem. Inf. Comput. Sci.44(2004)1282–1293; DOI10.1021/ci049955h; 12 PDF pages; original author-hosted reprint",
+  "checked_at": "2026-10-19",
+  "read_scope": "§§1–9、pp.1282–1293の本文・図説明・参考文献を読解。数表を網羅的に再計算したものではない。重点§2(pp.1283–1284),§3(pp.1285–1286),§4(p.1286),§8(pp.1290–1292)。紙面pp.1283,1286,1290,1291を描画し目視。",
+  "section_or_pages": "§§1–9、pp.1282–1293の本文・図説明・参考文献を読解。数表を網羅的に再計算したものではない。重点§2(pp.1283–1284),§3(pp.1285–1286),§4(p.1286),§8(pp.1290–1292)。紙面pp.1283,1286,1290,1291を描画し目視。",
+  "claim_supported": "GC整数族のgcd分解・zigzag個数/長さ/自己交差署名・railroad/tightnessは既知。読んだ本文にliteral gSWの最初の合法端点と最初の元の面再訪を比べる二段剰余条件は見つからない。",
+  "local_snapshot": "data/cache/R005/next28/wayback-zig1.txt",
+  "sha256": "893a553562011f24be1ff46847b16a4b9b3dcf35729fcff4c9100cec923a336e",
+  "quotes": [
+    {
+      "text": "The mathematically simplest fullerenes are the icosahedral",
+      "supports": "§4はicosahedral GC族を明示的に対象とする。"
+    }
+  ],
+  "license_or_terms": "無料の著者公開版・公式資料・その公開保存版を個人研究で照合。原文全文・図はGit非追跡cacheに保存し再配布しない。購入・login・TLS検証無効化なし。",
+  "limitations": "本文読解による限定判定。数学的に短い系が絶対に存在しないことや世界的優先権は証明していない。Fig.7aには著者訂正あり（S2100）。",
+  "original_document": {
+    "path": "data/cache/R005/next28/wayback-zig1.raw",
+    "bytes": 240264,
+    "sha256": "97dae7eaa99eaa3553a870ba9c763cead3789fad12007edda925565c93d0b643"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28/ddf-p1283.png",
+      "bytes": 695113,
+      "sha256": "5220efcd76854469ae913ace879ba58db2822da0c9f7d75fee3abda6d4699ee6"
+    },
+    {
+      "path": "data/cache/R005/next28/ddf-p1286.png",
+      "bytes": 712141,
+      "sha256": "8e067d49989e589a31804be75e2a62122fe4ff60994832ec35fc20f9e54749ba"
+    },
+    {
+      "path": "data/cache/R005/next28/ddf-p1290.png",
+      "bytes": 687337,
+      "sha256": "cc21b52429ba2d51a97c9ce9ef7243b252fa53a608f2ef1ebed196a83cf6a906"
+    },
+    {
+      "path": "data/cache/R005/next28/ddf-10.png",
+      "bytes": 591226,
+      "sha256": "74934f61f1cb75d5b8ee2a025fbee6e292ae0c9b2a6ae27d201a606310f265c2"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:35:36.704728+00:00"
+}

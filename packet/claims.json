@@ -1,0 +1,4448 @@
+{
+  "schema_version": 3,
+  "version": "1.3.1",
+  "paper": {
+    "path": "paper-lines-v4.7-en.tex",
+    "sha256": "0691a04e67c2ea757a0bd78b612b529534e8321d4b3415d9f26d1f94663fa1be",
+    "bytes": 69387
+  },
+  "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+  "status_semantics": "The status lean-result-received means exact source and a fixed reported kernel acceptance were received, not newly elaborated. Arithmetic predicates, graph sufficiency, conditional kernels and general prose theorems have distinct scopes. depends_on is expository, not a Lean proof-term dependency graph.",
+  "scope": {
+    "main_result": "thm:aligned",
+    "catalogue_families": [
+      "A1",
+      "A2",
+      "B2",
+      "C1",
+      "K3",
+      "E10",
+      "D12",
+      "D14",
+      "D1",
+      "O2",
+      "A3"
+    ],
+    "catalogue_leapfrog_families_included": false,
+    "oblique_extension": "proof-sketch-ai-skeleton-reviewed",
+    "oblique_explicit_transfers_completed": false,
+    "oblique_numerical_validation": false,
+    "oblique_second_proof": false,
+    "arithmetic_domain_qualification_required": true,
+    "k3_graph_sufficiency_received": true,
+    "k3_graph_necessity_received": true,
+    "k3_global_degree_classification": false,
+    "new_D12_classification_included": false,
+    "human_peer_review": false,
+    "novelty_established": false,
+    "independent_derivation_strict_blind": false,
+    "ai_coordinator_reviewers": 1,
+    "fresh_lean_run": false,
+    "external_kernels_rerun": false,
+    "scientific_runs": 0,
+    "paper_to_specification_bridge": "prose-not-formalized",
+    "owner_statement_confirmation": true,
+    "independent_research_team_lean_derivation": false,
+    "general_specification_lean_proof": true,
+    "k3_literal_ray_without_prose_bridge_received": true,
+    "k3_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison",
+    "historical_theorem1a_fresh_execution_receipt": true
+  },
+  "claims": [
+    {
+      "id": "def:literal",
+      "paper_label": "def:literal",
+      "kind": "definition",
+      "statement_plain": "Odd e>=3; distinct dual vertices; consecutive/skip adjacency; endpoint degrees 5 and adjacent degrees 6. Internal degree-five vertices allowed.",
+      "status": "source-definition",
+      "status_scope": "Odd e>=3; distinct dual vertices; consecutive/skip adjacency; endpoint degrees 5 and adjacent degrees 6. Internal degree-five vertices allowed.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/sources/S0047-fullerene-open-problems.json.original.log",
+          "sha256": "02cb025a8faca3e30d0c04c02bba9f1b55bf740f1ce0cccbe6ef4b32690e2137",
+          "bytes": 1462
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "prop:forced",
+      "paper_label": "prop:forced",
+      "kind": "conditional-lemma",
+      "statement_plain": "Under a finite type, two-common-neighbour hypothesis and legal fixed start, literal-prefix existence is equivalent to a legal endpoint strictly before first repetition.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "R002.finite_literal_path_decision",
+          "source": {
+            "path": "formal/Formal/FiniteLiteralPath.lean",
+            "sha256": "7b4297d56a66f2fcc2b4565a88924f8a8695adc6cf8600b0db6a0052aa7cfd9a",
+            "bytes": 5489
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem finite_literal_path_decision [Fintype V] (G : SimpleGraph V)\n    (hG : TwoCommonNeighbors G) (cone : V → Prop) (t : OrderedTriangle G)\n    (hc : cone t.a) (hb : ¬ cone t.b) :\n    ∃ r ≤ Fintype.card V, FirstRepeat (forcedWalk G hG t) r ∧\n      ((∃ n p, LiteralPathFrom G cone t p n) ↔\n        ∃ e < r, LegalConeEndpoint cone (forcedWalk G hG t) e)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "historical-kernel-output",
+          "receipt": {
+            "path": "evidence/logs/T0519.original.log",
+            "sha256": "f70a755654b162471060ac648d35e6ed05094b69285df3b3c3f05d94f03899a1",
+            "bytes": 387
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/logs/T0519.original.log",
+          "sha256": "f70a755654b162471060ac648d35e6ed05094b69285df3b3c3f05d94f03899a1",
+          "bytes": 387
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "def:signature",
+      "paper_label": "def:signature",
+      "kind": "definition",
+      "statement_plain": "Fixed affine charts/gluing with eventual embeddedness and valid fullerene quotient; positive parameters/area alone do not certify validity.",
+      "status": "scope-definition",
+      "status_scope": "Fixed affine charts/gluing with eventual embeddedness and valid fullerene quotient; positive parameters/area alone do not certify validity.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:aligned",
+      "paper_label": "thm:aligned",
+      "kind": "theorem",
+      "statement_plain": "With a fixed decomposition into embedded convex disks whose sides are in the six lattice directions, affine coordinates and fixed gluing, literal-path existence is eventually periodic. Fixed residue branches are allowed.",
+      "status": "lean-result-received",
+      "status_scope": "Lean-proved on the coordinator-written version-2 Sig/Valid/TrianglesInCharts specification; Theorem 1a geometric correspondence is an explicit prose lemma, not Lean; main_residue proves the fixed-residue combination given branch agreements. Research-team build and axiom probes confirmed the received Claude-worker proof; no independent research-team Lean derivation. Owner statement meaning confirmed on 20 October 2026; human proof review, prose bridge review and novelty unresolved.",
+      "depends_on": [
+        "def:literal",
+        "def:signature",
+        "lem:rows",
+        "lem:restricted",
+        "lem:folding",
+        "lem:mso-path"
+      ],
+      "remaining_obligations": [
+        "human review of the prose paper-to-specification bridge; human proof peer review and novelty comparison. No executable geometric-to-MSO compiler or practical/least-period algorithm is supplied."
+      ],
+      "lean": [
+        {
+          "declaration": "ClaudeChallenge2.main",
+          "source": {
+            "path": "formal/Formal/Claude3ComparatorSolution.lean",
+            "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+            "bytes": 606
+          },
+          "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8",
+          "type_signature": "theorem main (S : Sig) (t₁ : ℕ) (hval : ∀ t, t₁ ≤ t → Valid S t ∧ TrianglesInCharts S t) :\n    ∃ t₀ P : ℕ, 0 < P ∧ ∀ t, t₀ ≤ t → (PathExists S t ↔ PathExists S (t + P))",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "fresh-kernel-output",
+          "receipt": {
+            "path": "evidence/theorem1a/main-axioms.original.log",
+            "sha256": "8f827f608e3aebf00747e4faff5d4b8fbaa35ffb914910ad2c51200bd196425b",
+            "bytes": 649
+          },
+          "fresh_lean_run": true,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude3ChallengeSpec.lean",
+              "sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+              "bytes": 8473
+            },
+            {
+              "path": "formal/Formal/Claude3GeoBasic.lean",
+              "sha256": "d3bb4edd93e4a7090ee964138243c217d513fed9628a6ff6a028801e7c235ff1",
+              "bytes": 10109
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRows.lean",
+              "sha256": "e15c438bef36b63f192651e7b91369ddef6f163a606e479b88e8a9de049fc327",
+              "bytes": 16387
+            },
+            {
+              "path": "formal/Formal/Claude3GeoDeg.lean",
+              "sha256": "e4487ef1529e2d58a5a688597f0d3d11cc0f1e801e8cf23ca42e28a3f766550c",
+              "bytes": 7043
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRot.lean",
+              "sha256": "48afd2b30a25250d1300761ed77a095a02e52dfbbd2e9c1428d3afc5128563ad",
+              "bytes": 8665
+            },
+            {
+              "path": "formal/Formal/Claude3GeoPassage.lean",
+              "sha256": "040b1afd088ecb5b62fafcf201c757c326fee5e88d175665f7abf81524181321",
+              "bytes": 5415
+            },
+            {
+              "path": "formal/Formal/Claude3GeoSeam.lean",
+              "sha256": "33f644825b630853cf59b2d25a8eb48e25f4e407aaf55d45d6ccdbcdcc0a496e",
+              "bytes": 10584
+            },
+            {
+              "path": "formal/Formal/Claude3MsoSyntax.lean",
+              "sha256": "c94f7c2069740e64472d79d16c034ba111c85371086bb0719c4f7f605314435b",
+              "bytes": 4445
+            },
+            {
+              "path": "formal/Formal/Claude3MsoDerived.lean",
+              "sha256": "dfd07fa9bc27efbe1df4ce350f8ca118830cb732a619e71926f3420e266ce860",
+              "bytes": 12173
+            },
+            {
+              "path": "formal/Formal/Claude3MsoAutomata.lean",
+              "sha256": "93c8fff2c159e1ff0bf4f5b3eeca01c339203edc3be923707cfc96edc1d7e71a",
+              "bytes": 10986
+            },
+            {
+              "path": "formal/Formal/Claude3MsoRegular.lean",
+              "sha256": "88fc1f76bba0f6c749d65d770677812006f5be1d1f8523d745595992b66e66e1",
+              "bytes": 12082
+            },
+            {
+              "path": "formal/Formal/Claude3MsoUnary.lean",
+              "sha256": "836436741d1e340ee4a9b4b8d4a33940e567729fcb8478fb63f2b919795c68d7",
+              "bytes": 7166
+            },
+            {
+              "path": "formal/Formal/Claude3MsoLenMod.lean",
+              "sha256": "ed8afb0eed122a738c2d857bd87cf044e80b64778d755c45874e24517f8f9b18",
+              "bytes": 6193
+            },
+            {
+              "path": "formal/Formal/Claude3FoldDef.lean",
+              "sha256": "b0402752b0ad4a708893d53b2c89c95be623b2cb4a42f2baf9060cbb53462356",
+              "bytes": 12785
+            },
+            {
+              "path": "formal/Formal/Claude3FoldLin.lean",
+              "sha256": "bdbe0b99ada347741ba563db3d077a451e7321f1c21c53022984a0804b2adcf1",
+              "bytes": 9636
+            },
+            {
+              "path": "formal/Formal/Claude3FoldSyntax.lean",
+              "sha256": "7174553c96131c0be247de19344587b9d439cc763be58d2b46dc1864467ef049",
+              "bytes": 5102
+            },
+            {
+              "path": "formal/Formal/Claude3StateDef.lean",
+              "sha256": "d633b97421c841e4771b43cff5cdf35e65e05cd6e76d6b872595034e211a52aa",
+              "bytes": 13837
+            },
+            {
+              "path": "formal/Formal/Claude3StateLemmas.lean",
+              "sha256": "485e3d42c2c1f77241b416d57461aeab6bfcf42dc0c60f93397a1e0448b7cddd",
+              "bytes": 8693
+            },
+            {
+              "path": "formal/Formal/Claude3StateFwd.lean",
+              "sha256": "01f73729c2cf7ec1a396270b5bac0d18b9088b86505a8906645fbfb27e6cab48",
+              "bytes": 10257
+            },
+            {
+              "path": "formal/Formal/Claude3StateHit.lean",
+              "sha256": "4e14c8801b587689a3f2d00ee55518b19da111a2c7202244a0cb7457fe83d46e",
+              "bytes": 7463
+            },
+            {
+              "path": "formal/Formal/Claude3StateCond.lean",
+              "sha256": "f7b7dc9663cee4c66ab918258b39ef32fcceb41ab085862759c51c76009231ad",
+              "bytes": 18355
+            },
+            {
+              "path": "formal/Formal/Claude3StateBack.lean",
+              "sha256": "1b16bb8d24efe1c721dae9efdc38c0eeaac1b3d7b9dc949551b60ba0a7182e39",
+              "bytes": 10764
+            },
+            {
+              "path": "formal/Formal/Claude3StateExtract.lean",
+              "sha256": "ab57ea3dfc6f131a618a23cf050b652107203cf85590d9795fe58c820de13e0d",
+              "bytes": 9255
+            },
+            {
+              "path": "formal/Formal/Claude3StateMain.lean",
+              "sha256": "d6a85422c5bd39af9ed9f9e698b4ca92ded6e601e05db7ecf3a47786f939ce22",
+              "bytes": 1831
+            },
+            {
+              "path": "formal/Formal/Claude3FoldMain.lean",
+              "sha256": "751c652048979265884602c2108e8c3eff3cdce24fc127f78a59bfc40d132fb1",
+              "bytes": 10113
+            },
+            {
+              "path": "formal/Formal/Claude3FoldTheorem.lean",
+              "sha256": "59b3ea8aa1567fd956543e9ce14cdcb8fa0bfe3f9c492109a63a45f5c5d2b5d6",
+              "bytes": 7813
+            },
+            {
+              "path": "formal/Formal/Claude3GeoQuot.lean",
+              "sha256": "bb6318e4d7d3d953dcef993f02985ea27aa73168f2779d357fcdbb1d0a7c28d2",
+              "bytes": 5948
+            },
+            {
+              "path": "formal/Formal/Claude3GeoChain.lean",
+              "sha256": "a363b046c517268ea7446a0f5640fc89589953d3ab7919c590699d4ec659ed5c",
+              "bytes": 10896
+            },
+            {
+              "path": "formal/Formal/Claude3IdentNrm.lean",
+              "sha256": "92c64c1eb25069f94d450771d3fb187528f7a3234e328ab821a3114037dd990e",
+              "bytes": 18032
+            },
+            {
+              "path": "formal/Formal/Claude3IdentMeet.lean",
+              "sha256": "940c8437ec8fcc6a88f1f8b4f46613c314e4f8381b5cbdbb9b01c52f7613f916",
+              "bytes": 15457
+            },
+            {
+              "path": "formal/Formal/Claude3IdentHF.lean",
+              "sha256": "82fd665fb1a92e94789de8242b587bfac55f715ced43de7c90a0a18f070edb55",
+              "bytes": 6679
+            },
+            {
+              "path": "formal/Formal/Claude3SentDef.lean",
+              "sha256": "ce23cc447362b0b0ae6bf665bf6f37cbe34298855de363178e3770796dae9f5d",
+              "bytes": 7424
+            },
+            {
+              "path": "formal/Formal/Claude3SentPred.lean",
+              "sha256": "dc97f4c89ca31696b2734a8a800729ae518f83efdbaa44f40972e8dd9f10f88f",
+              "bytes": 8796
+            },
+            {
+              "path": "formal/Formal/Claude3SentSkel.lean",
+              "sha256": "a20e767d754809f603087805dc4b12064e0e392ab27816cbdfd264000eb5a36b",
+              "bytes": 10419
+            },
+            {
+              "path": "formal/Formal/Claude3IdentAdj.lean",
+              "sha256": "7940e4b6c1950d3903194a9704a028e4f726e7c744e1c9c3722f3e918cdb98ee",
+              "bytes": 12202
+            },
+            {
+              "path": "formal/Formal/Claude3IdentDeg.lean",
+              "sha256": "5bfd1fc2bf49a13101b35118b4bb7df06db3107cd70dab2d868471c4218350be",
+              "bytes": 15059
+            },
+            {
+              "path": "formal/Formal/Claude3IdentRow.lean",
+              "sha256": "d819f33de01d9e56394b1e483ba91df551c85e422752eba0d9c1686b22b2bce0",
+              "bytes": 6802
+            },
+            {
+              "path": "formal/Formal/Claude3SentRow.lean",
+              "sha256": "7fd36eb356e706d4a8403bba065e31dd9f3714da5fd5a13b644b04e23fe481a0",
+              "bytes": 9436
+            },
+            {
+              "path": "formal/Formal/Claude3SentTrans.lean",
+              "sha256": "e0e7f91fd4e90dcd516dd3909fb4ffceccf99eef99ff9e8f153d2c85d40e33a3",
+              "bytes": 8667
+            },
+            {
+              "path": "formal/Formal/Claude3SentTransHF.lean",
+              "sha256": "0e3679ee4f634b0da9e11932fea8d8d8343d9b8342b234843ef2a4ec31c67f32",
+              "bytes": 11692
+            },
+            {
+              "path": "formal/Formal/Claude3SentPin.lean",
+              "sha256": "2d6c476a13876194acfdba0386d97b3bf3ec24e2d457f6ff89d6059977796fea",
+              "bytes": 6644
+            },
+            {
+              "path": "formal/Formal/Claude3SentDeg.lean",
+              "sha256": "4d74d6b14eac846ea67d5ea6e866be421876b6584531bcb54df3402201c56ea4",
+              "bytes": 10727
+            },
+            {
+              "path": "formal/Formal/Claude3SentRoot.lean",
+              "sha256": "c6be6a3c3c71a7a5c51fa66a625350eb59f6136e279cd6e70d60c4246a32f36c",
+              "bytes": 10156
+            },
+            {
+              "path": "formal/Formal/Claude3SentPar.lean",
+              "sha256": "fe062c7d9ad419a961fc88d9d3477c2403bee876356993c99c4095faabd958b8",
+              "bytes": 11564
+            },
+            {
+              "path": "formal/Formal/Claude3SentTail.lean",
+              "sha256": "8b13d8dce2b8cdcea0deb08dadaca421f018c062edfb8f0ac642f8da3c080f05",
+              "bytes": 17866
+            },
+            {
+              "path": "formal/Formal/Claude3SentEntry.lean",
+              "sha256": "93cd154627d798a70b190864ded4347adaf25c4cb01788acb4a4015dc7e4b078",
+              "bytes": 4880
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbW.lean",
+              "sha256": "3325b103551126ba23be94fec98698be8b8a1a1092d2dbcad6b8eacac0fd5405",
+              "bytes": 7444
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbNP.lean",
+              "sha256": "04b4b5644f15f831b8199dabeec778176d3a53dfd01437af661b2d72136e78aa",
+              "bytes": 4025
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbP.lean",
+              "sha256": "cde325ec231aa7a7849b8feac369624b528066cf99f6303a62f0cd11d84bc5c7",
+              "bytes": 6839
+            },
+            {
+              "path": "formal/Formal/Claude3SentDb.lean",
+              "sha256": "2cf7296a7e153c3dba80e81f64158c6059076d68cf7844873cd6646580b0a4ff",
+              "bytes": 14631
+            },
+            {
+              "path": "formal/Formal/Claude3Thm1a.lean",
+              "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+              "bytes": 3517
+            },
+            {
+              "path": "formal/Formal/Claude3ComparatorSolution.lean",
+              "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+              "bytes": 606
+            },
+            {
+              "path": "formal/Formal/Claude3Residue.lean",
+              "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+              "bytes": 2503
+            }
+          ]
+        },
+        {
+          "declaration": "ClaudeChallenge2.State.main_statement",
+          "source": {
+            "path": "formal/Formal/Claude3Thm1a.lean",
+            "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+            "bytes": 3517
+          },
+          "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8",
+          "type_signature": "theorem main_statement : ClaudeChallenge2.MainStatement",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "fresh-kernel-output",
+          "receipt": {
+            "path": "evidence/theorem1a/main-axioms.original.log",
+            "sha256": "8f827f608e3aebf00747e4faff5d4b8fbaa35ffb914910ad2c51200bd196425b",
+            "bytes": 649
+          },
+          "fresh_lean_run": true,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude3ChallengeSpec.lean",
+              "sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+              "bytes": 8473
+            },
+            {
+              "path": "formal/Formal/Claude3GeoBasic.lean",
+              "sha256": "d3bb4edd93e4a7090ee964138243c217d513fed9628a6ff6a028801e7c235ff1",
+              "bytes": 10109
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRows.lean",
+              "sha256": "e15c438bef36b63f192651e7b91369ddef6f163a606e479b88e8a9de049fc327",
+              "bytes": 16387
+            },
+            {
+              "path": "formal/Formal/Claude3GeoDeg.lean",
+              "sha256": "e4487ef1529e2d58a5a688597f0d3d11cc0f1e801e8cf23ca42e28a3f766550c",
+              "bytes": 7043
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRot.lean",
+              "sha256": "48afd2b30a25250d1300761ed77a095a02e52dfbbd2e9c1428d3afc5128563ad",
+              "bytes": 8665
+            },
+            {
+              "path": "formal/Formal/Claude3GeoPassage.lean",
+              "sha256": "040b1afd088ecb5b62fafcf201c757c326fee5e88d175665f7abf81524181321",
+              "bytes": 5415
+            },
+            {
+              "path": "formal/Formal/Claude3GeoSeam.lean",
+              "sha256": "33f644825b630853cf59b2d25a8eb48e25f4e407aaf55d45d6ccdbcdcc0a496e",
+              "bytes": 10584
+            },
+            {
+              "path": "formal/Formal/Claude3MsoSyntax.lean",
+              "sha256": "c94f7c2069740e64472d79d16c034ba111c85371086bb0719c4f7f605314435b",
+              "bytes": 4445
+            },
+            {
+              "path": "formal/Formal/Claude3MsoDerived.lean",
+              "sha256": "dfd07fa9bc27efbe1df4ce350f8ca118830cb732a619e71926f3420e266ce860",
+              "bytes": 12173
+            },
+            {
+              "path": "formal/Formal/Claude3MsoAutomata.lean",
+              "sha256": "93c8fff2c159e1ff0bf4f5b3eeca01c339203edc3be923707cfc96edc1d7e71a",
+              "bytes": 10986
+            },
+            {
+              "path": "formal/Formal/Claude3MsoRegular.lean",
+              "sha256": "88fc1f76bba0f6c749d65d770677812006f5be1d1f8523d745595992b66e66e1",
+              "bytes": 12082
+            },
+            {
+              "path": "formal/Formal/Claude3MsoUnary.lean",
+              "sha256": "836436741d1e340ee4a9b4b8d4a33940e567729fcb8478fb63f2b919795c68d7",
+              "bytes": 7166
+            },
+            {
+              "path": "formal/Formal/Claude3MsoLenMod.lean",
+              "sha256": "ed8afb0eed122a738c2d857bd87cf044e80b64778d755c45874e24517f8f9b18",
+              "bytes": 6193
+            },
+            {
+              "path": "formal/Formal/Claude3FoldDef.lean",
+              "sha256": "b0402752b0ad4a708893d53b2c89c95be623b2cb4a42f2baf9060cbb53462356",
+              "bytes": 12785
+            },
+            {
+              "path": "formal/Formal/Claude3FoldLin.lean",
+              "sha256": "bdbe0b99ada347741ba563db3d077a451e7321f1c21c53022984a0804b2adcf1",
+              "bytes": 9636
+            },
+            {
+              "path": "formal/Formal/Claude3FoldSyntax.lean",
+              "sha256": "7174553c96131c0be247de19344587b9d439cc763be58d2b46dc1864467ef049",
+              "bytes": 5102
+            },
+            {
+              "path": "formal/Formal/Claude3StateDef.lean",
+              "sha256": "d633b97421c841e4771b43cff5cdf35e65e05cd6e76d6b872595034e211a52aa",
+              "bytes": 13837
+            },
+            {
+              "path": "formal/Formal/Claude3StateLemmas.lean",
+              "sha256": "485e3d42c2c1f77241b416d57461aeab6bfcf42dc0c60f93397a1e0448b7cddd",
+              "bytes": 8693
+            },
+            {
+              "path": "formal/Formal/Claude3StateFwd.lean",
+              "sha256": "01f73729c2cf7ec1a396270b5bac0d18b9088b86505a8906645fbfb27e6cab48",
+              "bytes": 10257
+            },
+            {
+              "path": "formal/Formal/Claude3StateHit.lean",
+              "sha256": "4e14c8801b587689a3f2d00ee55518b19da111a2c7202244a0cb7457fe83d46e",
+              "bytes": 7463
+            },
+            {
+              "path": "formal/Formal/Claude3StateCond.lean",
+              "sha256": "f7b7dc9663cee4c66ab918258b39ef32fcceb41ab085862759c51c76009231ad",
+              "bytes": 18355
+            },
+            {
+              "path": "formal/Formal/Claude3StateBack.lean",
+              "sha256": "1b16bb8d24efe1c721dae9efdc38c0eeaac1b3d7b9dc949551b60ba0a7182e39",
+              "bytes": 10764
+            },
+            {
+              "path": "formal/Formal/Claude3StateExtract.lean",
+              "sha256": "ab57ea3dfc6f131a618a23cf050b652107203cf85590d9795fe58c820de13e0d",
+              "bytes": 9255
+            },
+            {
+              "path": "formal/Formal/Claude3StateMain.lean",
+              "sha256": "d6a85422c5bd39af9ed9f9e698b4ca92ded6e601e05db7ecf3a47786f939ce22",
+              "bytes": 1831
+            },
+            {
+              "path": "formal/Formal/Claude3FoldMain.lean",
+              "sha256": "751c652048979265884602c2108e8c3eff3cdce24fc127f78a59bfc40d132fb1",
+              "bytes": 10113
+            },
+            {
+              "path": "formal/Formal/Claude3FoldTheorem.lean",
+              "sha256": "59b3ea8aa1567fd956543e9ce14cdcb8fa0bfe3f9c492109a63a45f5c5d2b5d6",
+              "bytes": 7813
+            },
+            {
+              "path": "formal/Formal/Claude3GeoQuot.lean",
+              "sha256": "bb6318e4d7d3d953dcef993f02985ea27aa73168f2779d357fcdbb1d0a7c28d2",
+              "bytes": 5948
+            },
+            {
+              "path": "formal/Formal/Claude3GeoChain.lean",
+              "sha256": "a363b046c517268ea7446a0f5640fc89589953d3ab7919c590699d4ec659ed5c",
+              "bytes": 10896
+            },
+            {
+              "path": "formal/Formal/Claude3IdentNrm.lean",
+              "sha256": "92c64c1eb25069f94d450771d3fb187528f7a3234e328ab821a3114037dd990e",
+              "bytes": 18032
+            },
+            {
+              "path": "formal/Formal/Claude3IdentMeet.lean",
+              "sha256": "940c8437ec8fcc6a88f1f8b4f46613c314e4f8381b5cbdbb9b01c52f7613f916",
+              "bytes": 15457
+            },
+            {
+              "path": "formal/Formal/Claude3IdentHF.lean",
+              "sha256": "82fd665fb1a92e94789de8242b587bfac55f715ced43de7c90a0a18f070edb55",
+              "bytes": 6679
+            },
+            {
+              "path": "formal/Formal/Claude3SentDef.lean",
+              "sha256": "ce23cc447362b0b0ae6bf665bf6f37cbe34298855de363178e3770796dae9f5d",
+              "bytes": 7424
+            },
+            {
+              "path": "formal/Formal/Claude3SentPred.lean",
+              "sha256": "dc97f4c89ca31696b2734a8a800729ae518f83efdbaa44f40972e8dd9f10f88f",
+              "bytes": 8796
+            },
+            {
+              "path": "formal/Formal/Claude3SentSkel.lean",
+              "sha256": "a20e767d754809f603087805dc4b12064e0e392ab27816cbdfd264000eb5a36b",
+              "bytes": 10419
+            },
+            {
+              "path": "formal/Formal/Claude3IdentAdj.lean",
+              "sha256": "7940e4b6c1950d3903194a9704a028e4f726e7c744e1c9c3722f3e918cdb98ee",
+              "bytes": 12202
+            },
+            {
+              "path": "formal/Formal/Claude3IdentDeg.lean",
+              "sha256": "5bfd1fc2bf49a13101b35118b4bb7df06db3107cd70dab2d868471c4218350be",
+              "bytes": 15059
+            },
+            {
+              "path": "formal/Formal/Claude3IdentRow.lean",
+              "sha256": "d819f33de01d9e56394b1e483ba91df551c85e422752eba0d9c1686b22b2bce0",
+              "bytes": 6802
+            },
+            {
+              "path": "formal/Formal/Claude3SentRow.lean",
+              "sha256": "7fd36eb356e706d4a8403bba065e31dd9f3714da5fd5a13b644b04e23fe481a0",
+              "bytes": 9436
+            },
+            {
+              "path": "formal/Formal/Claude3SentTrans.lean",
+              "sha256": "e0e7f91fd4e90dcd516dd3909fb4ffceccf99eef99ff9e8f153d2c85d40e33a3",
+              "bytes": 8667
+            },
+            {
+              "path": "formal/Formal/Claude3SentTransHF.lean",
+              "sha256": "0e3679ee4f634b0da9e11932fea8d8d8343d9b8342b234843ef2a4ec31c67f32",
+              "bytes": 11692
+            },
+            {
+              "path": "formal/Formal/Claude3SentPin.lean",
+              "sha256": "2d6c476a13876194acfdba0386d97b3bf3ec24e2d457f6ff89d6059977796fea",
+              "bytes": 6644
+            },
+            {
+              "path": "formal/Formal/Claude3SentDeg.lean",
+              "sha256": "4d74d6b14eac846ea67d5ea6e866be421876b6584531bcb54df3402201c56ea4",
+              "bytes": 10727
+            },
+            {
+              "path": "formal/Formal/Claude3SentRoot.lean",
+              "sha256": "c6be6a3c3c71a7a5c51fa66a625350eb59f6136e279cd6e70d60c4246a32f36c",
+              "bytes": 10156
+            },
+            {
+              "path": "formal/Formal/Claude3SentPar.lean",
+              "sha256": "fe062c7d9ad419a961fc88d9d3477c2403bee876356993c99c4095faabd958b8",
+              "bytes": 11564
+            },
+            {
+              "path": "formal/Formal/Claude3SentTail.lean",
+              "sha256": "8b13d8dce2b8cdcea0deb08dadaca421f018c062edfb8f0ac642f8da3c080f05",
+              "bytes": 17866
+            },
+            {
+              "path": "formal/Formal/Claude3SentEntry.lean",
+              "sha256": "93cd154627d798a70b190864ded4347adaf25c4cb01788acb4a4015dc7e4b078",
+              "bytes": 4880
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbW.lean",
+              "sha256": "3325b103551126ba23be94fec98698be8b8a1a1092d2dbcad6b8eacac0fd5405",
+              "bytes": 7444
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbNP.lean",
+              "sha256": "04b4b5644f15f831b8199dabeec778176d3a53dfd01437af661b2d72136e78aa",
+              "bytes": 4025
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbP.lean",
+              "sha256": "cde325ec231aa7a7849b8feac369624b528066cf99f6303a62f0cd11d84bc5c7",
+              "bytes": 6839
+            },
+            {
+              "path": "formal/Formal/Claude3SentDb.lean",
+              "sha256": "2cf7296a7e153c3dba80e81f64158c6059076d68cf7844873cd6646580b0a4ff",
+              "bytes": 14631
+            },
+            {
+              "path": "formal/Formal/Claude3Thm1a.lean",
+              "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+              "bytes": 3517
+            },
+            {
+              "path": "formal/Formal/Claude3ComparatorSolution.lean",
+              "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+              "bytes": 606
+            },
+            {
+              "path": "formal/Formal/Claude3Residue.lean",
+              "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+              "bytes": 2503
+            }
+          ]
+        },
+        {
+          "declaration": "ClaudeChallenge2.main_residue",
+          "source": {
+            "path": "formal/Formal/Claude3Residue.lean",
+            "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+            "bytes": 2503
+          },
+          "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8",
+          "type_signature": "theorem main_residue (D : ℕ → Prop) (m : ℕ) (hm : 0 < m) (S : Fin m → Sig) (t₁ : ℕ)\n    (hval : ∀ c t, t₁ ≤ t → Valid (S c) t ∧ TrianglesInCharts (S c) t)\n    (hD : ∀ c : Fin m, ∀ t, t₁ ≤ t → (D (m * t + c) ↔ PathExists (S c) t)) :\n    ∃ n₀ Q : ℕ, 0 < Q ∧ ∀ n, n₀ ≤ n → (D n ↔ D (n + Q))",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "fresh-kernel-output",
+          "receipt": {
+            "path": "evidence/theorem1a/main-axioms.original.log",
+            "sha256": "8f827f608e3aebf00747e4faff5d4b8fbaa35ffb914910ad2c51200bd196425b",
+            "bytes": 649
+          },
+          "fresh_lean_run": true,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude3ChallengeSpec.lean",
+              "sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+              "bytes": 8473
+            },
+            {
+              "path": "formal/Formal/Claude3GeoBasic.lean",
+              "sha256": "d3bb4edd93e4a7090ee964138243c217d513fed9628a6ff6a028801e7c235ff1",
+              "bytes": 10109
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRows.lean",
+              "sha256": "e15c438bef36b63f192651e7b91369ddef6f163a606e479b88e8a9de049fc327",
+              "bytes": 16387
+            },
+            {
+              "path": "formal/Formal/Claude3GeoDeg.lean",
+              "sha256": "e4487ef1529e2d58a5a688597f0d3d11cc0f1e801e8cf23ca42e28a3f766550c",
+              "bytes": 7043
+            },
+            {
+              "path": "formal/Formal/Claude3GeoRot.lean",
+              "sha256": "48afd2b30a25250d1300761ed77a095a02e52dfbbd2e9c1428d3afc5128563ad",
+              "bytes": 8665
+            },
+            {
+              "path": "formal/Formal/Claude3GeoPassage.lean",
+              "sha256": "040b1afd088ecb5b62fafcf201c757c326fee5e88d175665f7abf81524181321",
+              "bytes": 5415
+            },
+            {
+              "path": "formal/Formal/Claude3GeoSeam.lean",
+              "sha256": "33f644825b630853cf59b2d25a8eb48e25f4e407aaf55d45d6ccdbcdcc0a496e",
+              "bytes": 10584
+            },
+            {
+              "path": "formal/Formal/Claude3MsoSyntax.lean",
+              "sha256": "c94f7c2069740e64472d79d16c034ba111c85371086bb0719c4f7f605314435b",
+              "bytes": 4445
+            },
+            {
+              "path": "formal/Formal/Claude3MsoDerived.lean",
+              "sha256": "dfd07fa9bc27efbe1df4ce350f8ca118830cb732a619e71926f3420e266ce860",
+              "bytes": 12173
+            },
+            {
+              "path": "formal/Formal/Claude3MsoAutomata.lean",
+              "sha256": "93c8fff2c159e1ff0bf4f5b3eeca01c339203edc3be923707cfc96edc1d7e71a",
+              "bytes": 10986
+            },
+            {
+              "path": "formal/Formal/Claude3MsoRegular.lean",
+              "sha256": "88fc1f76bba0f6c749d65d770677812006f5be1d1f8523d745595992b66e66e1",
+              "bytes": 12082
+            },
+            {
+              "path": "formal/Formal/Claude3MsoUnary.lean",
+              "sha256": "836436741d1e340ee4a9b4b8d4a33940e567729fcb8478fb63f2b919795c68d7",
+              "bytes": 7166
+            },
+            {
+              "path": "formal/Formal/Claude3MsoLenMod.lean",
+              "sha256": "ed8afb0eed122a738c2d857bd87cf044e80b64778d755c45874e24517f8f9b18",
+              "bytes": 6193
+            },
+            {
+              "path": "formal/Formal/Claude3FoldDef.lean",
+              "sha256": "b0402752b0ad4a708893d53b2c89c95be623b2cb4a42f2baf9060cbb53462356",
+              "bytes": 12785
+            },
+            {
+              "path": "formal/Formal/Claude3FoldLin.lean",
+              "sha256": "bdbe0b99ada347741ba563db3d077a451e7321f1c21c53022984a0804b2adcf1",
+              "bytes": 9636
+            },
+            {
+              "path": "formal/Formal/Claude3FoldSyntax.lean",
+              "sha256": "7174553c96131c0be247de19344587b9d439cc763be58d2b46dc1864467ef049",
+              "bytes": 5102
+            },
+            {
+              "path": "formal/Formal/Claude3StateDef.lean",
+              "sha256": "d633b97421c841e4771b43cff5cdf35e65e05cd6e76d6b872595034e211a52aa",
+              "bytes": 13837
+            },
+            {
+              "path": "formal/Formal/Claude3StateLemmas.lean",
+              "sha256": "485e3d42c2c1f77241b416d57461aeab6bfcf42dc0c60f93397a1e0448b7cddd",
+              "bytes": 8693
+            },
+            {
+              "path": "formal/Formal/Claude3StateFwd.lean",
+              "sha256": "01f73729c2cf7ec1a396270b5bac0d18b9088b86505a8906645fbfb27e6cab48",
+              "bytes": 10257
+            },
+            {
+              "path": "formal/Formal/Claude3StateHit.lean",
+              "sha256": "4e14c8801b587689a3f2d00ee55518b19da111a2c7202244a0cb7457fe83d46e",
+              "bytes": 7463
+            },
+            {
+              "path": "formal/Formal/Claude3StateCond.lean",
+              "sha256": "f7b7dc9663cee4c66ab918258b39ef32fcceb41ab085862759c51c76009231ad",
+              "bytes": 18355
+            },
+            {
+              "path": "formal/Formal/Claude3StateBack.lean",
+              "sha256": "1b16bb8d24efe1c721dae9efdc38c0eeaac1b3d7b9dc949551b60ba0a7182e39",
+              "bytes": 10764
+            },
+            {
+              "path": "formal/Formal/Claude3StateExtract.lean",
+              "sha256": "ab57ea3dfc6f131a618a23cf050b652107203cf85590d9795fe58c820de13e0d",
+              "bytes": 9255
+            },
+            {
+              "path": "formal/Formal/Claude3StateMain.lean",
+              "sha256": "d6a85422c5bd39af9ed9f9e698b4ca92ded6e601e05db7ecf3a47786f939ce22",
+              "bytes": 1831
+            },
+            {
+              "path": "formal/Formal/Claude3FoldMain.lean",
+              "sha256": "751c652048979265884602c2108e8c3eff3cdce24fc127f78a59bfc40d132fb1",
+              "bytes": 10113
+            },
+            {
+              "path": "formal/Formal/Claude3FoldTheorem.lean",
+              "sha256": "59b3ea8aa1567fd956543e9ce14cdcb8fa0bfe3f9c492109a63a45f5c5d2b5d6",
+              "bytes": 7813
+            },
+            {
+              "path": "formal/Formal/Claude3GeoQuot.lean",
+              "sha256": "bb6318e4d7d3d953dcef993f02985ea27aa73168f2779d357fcdbb1d0a7c28d2",
+              "bytes": 5948
+            },
+            {
+              "path": "formal/Formal/Claude3GeoChain.lean",
+              "sha256": "a363b046c517268ea7446a0f5640fc89589953d3ab7919c590699d4ec659ed5c",
+              "bytes": 10896
+            },
+            {
+              "path": "formal/Formal/Claude3IdentNrm.lean",
+              "sha256": "92c64c1eb25069f94d450771d3fb187528f7a3234e328ab821a3114037dd990e",
+              "bytes": 18032
+            },
+            {
+              "path": "formal/Formal/Claude3IdentMeet.lean",
+              "sha256": "940c8437ec8fcc6a88f1f8b4f46613c314e4f8381b5cbdbb9b01c52f7613f916",
+              "bytes": 15457
+            },
+            {
+              "path": "formal/Formal/Claude3IdentHF.lean",
+              "sha256": "82fd665fb1a92e94789de8242b587bfac55f715ced43de7c90a0a18f070edb55",
+              "bytes": 6679
+            },
+            {
+              "path": "formal/Formal/Claude3SentDef.lean",
+              "sha256": "ce23cc447362b0b0ae6bf665bf6f37cbe34298855de363178e3770796dae9f5d",
+              "bytes": 7424
+            },
+            {
+              "path": "formal/Formal/Claude3SentPred.lean",
+              "sha256": "dc97f4c89ca31696b2734a8a800729ae518f83efdbaa44f40972e8dd9f10f88f",
+              "bytes": 8796
+            },
+            {
+              "path": "formal/Formal/Claude3SentSkel.lean",
+              "sha256": "a20e767d754809f603087805dc4b12064e0e392ab27816cbdfd264000eb5a36b",
+              "bytes": 10419
+            },
+            {
+              "path": "formal/Formal/Claude3IdentAdj.lean",
+              "sha256": "7940e4b6c1950d3903194a9704a028e4f726e7c744e1c9c3722f3e918cdb98ee",
+              "bytes": 12202
+            },
+            {
+              "path": "formal/Formal/Claude3IdentDeg.lean",
+              "sha256": "5bfd1fc2bf49a13101b35118b4bb7df06db3107cd70dab2d868471c4218350be",
+              "bytes": 15059
+            },
+            {
+              "path": "formal/Formal/Claude3IdentRow.lean",
+              "sha256": "d819f33de01d9e56394b1e483ba91df551c85e422752eba0d9c1686b22b2bce0",
+              "bytes": 6802
+            },
+            {
+              "path": "formal/Formal/Claude3SentRow.lean",
+              "sha256": "7fd36eb356e706d4a8403bba065e31dd9f3714da5fd5a13b644b04e23fe481a0",
+              "bytes": 9436
+            },
+            {
+              "path": "formal/Formal/Claude3SentTrans.lean",
+              "sha256": "e0e7f91fd4e90dcd516dd3909fb4ffceccf99eef99ff9e8f153d2c85d40e33a3",
+              "bytes": 8667
+            },
+            {
+              "path": "formal/Formal/Claude3SentTransHF.lean",
+              "sha256": "0e3679ee4f634b0da9e11932fea8d8d8343d9b8342b234843ef2a4ec31c67f32",
+              "bytes": 11692
+            },
+            {
+              "path": "formal/Formal/Claude3SentPin.lean",
+              "sha256": "2d6c476a13876194acfdba0386d97b3bf3ec24e2d457f6ff89d6059977796fea",
+              "bytes": 6644
+            },
+            {
+              "path": "formal/Formal/Claude3SentDeg.lean",
+              "sha256": "4d74d6b14eac846ea67d5ea6e866be421876b6584531bcb54df3402201c56ea4",
+              "bytes": 10727
+            },
+            {
+              "path": "formal/Formal/Claude3SentRoot.lean",
+              "sha256": "c6be6a3c3c71a7a5c51fa66a625350eb59f6136e279cd6e70d60c4246a32f36c",
+              "bytes": 10156
+            },
+            {
+              "path": "formal/Formal/Claude3SentPar.lean",
+              "sha256": "fe062c7d9ad419a961fc88d9d3477c2403bee876356993c99c4095faabd958b8",
+              "bytes": 11564
+            },
+            {
+              "path": "formal/Formal/Claude3SentTail.lean",
+              "sha256": "8b13d8dce2b8cdcea0deb08dadaca421f018c062edfb8f0ac642f8da3c080f05",
+              "bytes": 17866
+            },
+            {
+              "path": "formal/Formal/Claude3SentEntry.lean",
+              "sha256": "93cd154627d798a70b190864ded4347adaf25c4cb01788acb4a4015dc7e4b078",
+              "bytes": 4880
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbW.lean",
+              "sha256": "3325b103551126ba23be94fec98698be8b8a1a1092d2dbcad6b8eacac0fd5405",
+              "bytes": 7444
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbNP.lean",
+              "sha256": "04b4b5644f15f831b8199dabeec778176d3a53dfd01437af661b2d72136e78aa",
+              "bytes": 4025
+            },
+            {
+              "path": "formal/Formal/Claude3SentDbP.lean",
+              "sha256": "cde325ec231aa7a7849b8feac369624b528066cf99f6303a62f0cd11d84bc5c7",
+              "bytes": 6839
+            },
+            {
+              "path": "formal/Formal/Claude3SentDb.lean",
+              "sha256": "2cf7296a7e153c3dba80e81f64158c6059076d68cf7844873cd6646580b0a4ff",
+              "bytes": 14631
+            },
+            {
+              "path": "formal/Formal/Claude3Thm1a.lean",
+              "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+              "bytes": 3517
+            },
+            {
+              "path": "formal/Formal/Claude3ComparatorSolution.lean",
+              "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+              "bytes": 606
+            },
+            {
+              "path": "formal/Formal/Claude3Residue.lean",
+              "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+              "bytes": 2503
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/extra/AH-literature-comparison.md.original.log",
+          "sha256": "728f6871ab5aaf66c8c1296f6a183ddab88e5212a365a52d9ec43962f7950741",
+          "bytes": 9679
+        },
+        {
+          "path": "evidence/extra/S2047-behmaram-boutillier.json.original.log",
+          "sha256": "eb2e8d6d6e7bf2f7daa5f73660c4354cc4128e31e5ccab5d159004c539080499",
+          "bytes": 1168
+        },
+        {
+          "path": "evidence/extra/S2073-li-chen-quasipolynomial.json.original.log",
+          "sha256": "4fb36be6fe3538d8270d8445358c87045a3c47e60f940f10801636ebc98168f3",
+          "bytes": 1695
+        },
+        {
+          "path": "evidence/extra/S2180-aixiv-guide.json.original.log",
+          "sha256": "d52f28e6f39f2e4be919aa659983ef38ab433ee1f565b45957ed4e63b2589439",
+          "bytes": 1457
+        },
+        {
+          "path": "evidence/extra/S2181-dd2004-next27.json.original.log",
+          "sha256": "e957643bb09af3d42e91490b17365e9bd21d73bb3b221d93b9b5241674fb59cd",
+          "bytes": 2153
+        },
+        {
+          "path": "evidence/extra/S2182-dd-zigzag-next27.json.original.log",
+          "sha256": "5bba0f90c7435c1f49262d195b3c3c4fa0d4e1463f3989782834c967547612eb",
+          "bytes": 1829
+        },
+        {
+          "path": "evidence/extra/S2183-zigzag-complexes.json.original.log",
+          "sha256": "930915ee021c6195d0394292ea02664d418d6fac7556ea5419d1217616929778",
+          "bytes": 1902
+        },
+        {
+          "path": "evidence/extra/S2184-book-next27-access.json.original.log",
+          "sha256": "3a877d55c66f44338927f21bc008fbca2ed8825338b58d9f8a936c08ec77f35d",
+          "bytes": 1759
+        },
+        {
+          "path": "evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log",
+          "sha256": "c5fd2e827144bbc416966f9fdcdc58af04b355d5ebe1aa7618042298334caa89",
+          "bytes": 3003
+        },
+        {
+          "path": "evidence/extra/S2186-book-archive-access-next28.json.original.log",
+          "sha256": "4e966d1f763bab138d13e0bc72c61a0a0f1191a8b11218ee317f5573e0937a0c",
+          "bytes": 2438
+        },
+        {
+          "path": "evidence/extra/S2187-book-official-access-next28.json.original.log",
+          "sha256": "2d361d95ea2457ac6d05cbd6ab67c25cd9800a99446e5220908ff88bd7659bb2",
+          "bytes": 2886
+        },
+        {
+          "path": "evidence/extra/S2188-mso-strings-next28.json.original.log",
+          "sha256": "b72d8dc681218a0209a0ddfbaa64abadf672572f271ccea6a25226964eeacf56",
+          "bytes": 2788
+        },
+        {
+          "path": "evidence/extra/S2189-fischer-makowsky-spectra.json.original.log",
+          "sha256": "b061ab8038bb71453befe164ac15654f7a6ea8aaa1f81d8009a856faf07a3991",
+          "bytes": 2919
+        },
+        {
+          "path": "evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log",
+          "sha256": "3fb37b932a0de909a74dbc8e259acd5fe4c3b86db1bf877dfc5a4e3a4edad1fb",
+          "bytes": 2285
+        },
+        {
+          "path": "evidence/extra/S2191-periodic-counter-graphs.json.original.log",
+          "sha256": "58d22575460d16af2a8c154c1ac3ebbf283d078476b24ea8c942307df786a7a0",
+          "bytes": 2117
+        },
+        {
+          "path": "evidence/extra/S2192-wanke-periodic-graphs.json.original.log",
+          "sha256": "c0cc81863b9395d765e1f33fe2633a66046b14197a8a152b1abc2dbd5000f4d2",
+          "bytes": 1967
+        },
+        {
+          "path": "evidence/extra/S2193-courcelle-finite-contexts.json.original.log",
+          "sha256": "62fb6f557b746637530b7dd7f8cd8da886cab95651835ddfac5074c0b842baca",
+          "bytes": 1620
+        },
+        {
+          "path": "evidence/extra/S2194-thomas-unary-binary.json.original.log",
+          "sha256": "eeeec10a523c6c77bd057067ec2585f483c973d3d1611ff3206fbec3cd0bc54f",
+          "bytes": 2127
+        },
+        {
+          "path": "evidence/extra/S2195-octagonal-acceleration.json.original.log",
+          "sha256": "b85a9a2746b0b40da120fd0c1df6bd1e7c382ba5d24ff3137542a7fa2d932e34",
+          "bytes": 2723
+        },
+        {
+          "path": "evidence/extra/S2196-mine-octagon-domain.json.original.log",
+          "sha256": "753c2ee7b7296cda4450505509ede8d20ac0106128baa28782ccf214e3ad4bb9",
+          "bytes": 1728
+        },
+        {
+          "path": "evidence/extra/next80c.original.log",
+          "sha256": "39f838a4f15d761fa854bf56fae2df3bfe990bb28641fa8fc513be7ea59f055a",
+          "bytes": 1648
+        },
+        {
+          "path": "evidence/extra/report-next28-2026-10-19.md.original.log",
+          "sha256": "5a5647be3f845575ddb3f0ee976a79a6b92b6361003edfefd168bcd189d7fdda",
+          "bytes": 17166
+        },
+        {
+          "path": "evidence/theorem1a/Challenge2.lean.original.log",
+          "sha256": "d2800a5c4560ce94b5f94faada54003063bcb3e38b599d32e035d23ab264a66d",
+          "bytes": 8364
+        },
+        {
+          "path": "evidence/theorem1a/ComparatorChallenge.lean.original.log",
+          "sha256": "cecc4c3026271e570a154e287da26ee56eacaeb13e6621599be598131a578440",
+          "bytes": 8490
+        },
+        {
+          "path": "evidence/theorem1a/challenge2-reading-guide-ja.md.original.log",
+          "sha256": "da5e185c56a54253c3ea9f59c4ee724f2070141ce442f992adad635a4f49a48f",
+          "bytes": 7401
+        },
+        {
+          "path": "evidence/theorem1a/comparator-thm1a-2026-10-20.md.original.log",
+          "sha256": "2d6d7c0286598ccad1e8ed854daaea65676ede570f5351a61855fd787df6016a",
+          "bytes": 2156
+        },
+        {
+          "path": "evidence/theorem1a/comparator-thm1a-paranoid-2026-10-20.txt.original.log",
+          "sha256": "1fb3c665aad01102474551bd7e4fc7f9209907c6d6ca033ad3a2335286d20556",
+          "bytes": 10628
+        },
+        {
+          "path": "evidence/theorem1a/comparator-thm1a.json.original.log",
+          "sha256": "cd6806bec207973e9bc739fd8e931cf3c8309237aa59413c9d82b7b88e394eab",
+          "bytes": 284
+        },
+        {
+          "path": "evidence/theorem1a/fold-report-2026-10-20.md.original.log",
+          "sha256": "3ffc2e6d3eb77138f702084d78f15c8ed83def56c617b1765cc008aa37b7c7fc",
+          "bytes": 10048
+        },
+        {
+          "path": "evidence/theorem1a/initial-lean-execution.failed.original.log",
+          "sha256": "566f18e9570f99e615142038c4cf003c19ca9af99a150c53c72f441c4a6c9d9b",
+          "bytes": 5946
+        },
+        {
+          "path": "evidence/theorem1a/initial-proof-source-inventory.original.log",
+          "sha256": "c47e91b1c3a7d8e09aaa7921bb44c78d69222c1d3d4eb2058cd530a1ef130dbe",
+          "bytes": 11699
+        },
+        {
+          "path": "evidence/theorem1a/lean-execution.json",
+          "sha256": "df2b54fb61c506259c738ac24343e1bdaed38014861a8caa0f982f080cc0871e",
+          "bytes": 18847
+        },
+        {
+          "path": "evidence/theorem1a/main-axioms.original.log",
+          "sha256": "8f827f608e3aebf00747e4faff5d4b8fbaa35ffb914910ad2c51200bd196425b",
+          "bytes": 649
+        },
+        {
+          "path": "evidence/theorem1a/mso-report-2026-10-20.md.original.log",
+          "sha256": "9c2dbdb8b2360aae7fb0e4ecd022759e14feb856f5f76a712180870aa6de9a98",
+          "bytes": 13503
+        },
+        {
+          "path": "evidence/theorem1a/next85.original.log",
+          "sha256": "29c7df66d63259dfdcdc5bd801a91d4a62edcba1e8b09d6c32380b7503ae1148",
+          "bytes": 3814
+        },
+        {
+          "path": "evidence/theorem1a/next85a.original.log",
+          "sha256": "84f7d3574355427af04352d40188bb093bb105740c044d279f6299ac691d2718",
+          "bytes": 1916
+        },
+        {
+          "path": "evidence/theorem1a/proof-source-inventory.json",
+          "sha256": "4050f11da8d1945870aaae8b0a2ff61412c522dc928bdbf2a81d2923a051b656",
+          "bytes": 11922
+        },
+        {
+          "path": "evidence/theorem1a/response-ja.md.original.log",
+          "sha256": "3f134754f3e8141625e0e4b7086b4794060742dd31eb66c51e6dfb326c47c576",
+          "bytes": 3739
+        },
+        {
+          "path": "evidence/theorem1a/review.md.original.log",
+          "sha256": "98563833f8ba0c6f8963ec192ce99b7888f22e77b9e02e5f1e51e611629d6bec",
+          "bytes": 8812
+        },
+        {
+          "path": "evidence/theorem1a/serial-build-output.original.log",
+          "sha256": "2fda6e38b31e01befb5537d70dc6a9b0c3338e7e57405f0117e02022c4362af2",
+          "bytes": 216950
+        },
+        {
+          "path": "evidence/theorem1a/spec-comparison.json",
+          "sha256": "7693a927585ecc5b8e777204d71d18017b7c5ab00803ad77257f91a7154d24a8",
+          "bytes": 441
+        },
+        {
+          "path": "evidence/theorem1a/thm1a-final-report-2026-10-20.md.original.log",
+          "sha256": "3d7e536205cc255505f2d609d1a4774487bb35eaf603fd323606cc6d67b81bdd",
+          "bytes": 13318
+        },
+        {
+          "path": "evidence/theorem1a/thm1a-geo-report-2026-10-20.md.original.log",
+          "sha256": "4f83f11f5b7875c793591f2fa60d094d4912345a3dddab6431974aeddf7b1b8f",
+          "bytes": 9951
+        },
+        {
+          "path": "evidence/theorem1a/thm1a-ident-report-2026-10-20.md.original.log",
+          "sha256": "9f3e93cd880c063c520b0f8d5d647c4419b5af3d2ddc73ab1d2d8bb8b17e9aab",
+          "bytes": 17587
+        },
+        {
+          "path": "evidence/theorem1a/thm1a-state-report-2026-10-20.md.original.log",
+          "sha256": "b4938bdb6a6651dc10877079b9a3f0761386480f36907993869f18aa0a947539",
+          "bytes": 18262
+        },
+        {
+          "path": "owner-statement-confirmation.json",
+          "sha256": "9f186f7f3b240d03028b42e7a7706547b793bbb19830197fb28dd3afdef169b8",
+          "bytes": 1824
+        },
+        {
+          "path": "owner-copy-comparison.json",
+          "sha256": "9baf39fe8a2037be45b01b1c1e4c5c54b96abc3bf715a1aad2768d76bd3f5793",
+          "bytes": 906
+        },
+        {
+          "path": "owner-copy-diff.txt",
+          "sha256": "d68f175bd018d33c3b493deb6e068e0bfa171959ddcaedaa2aff3afdf5c3065d",
+          "bytes": 387
+        },
+        {
+          "path": "owner-decision-extract.original.txt",
+          "sha256": "e2101edeb355fdcac07bb9170c81f9722c5d244ae8896de9bfd47f02e68ca914",
+          "bytes": 314
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false,
+      "statement_human_check": {
+        "status": "confirmed",
+        "checked_on": "2026-10-20",
+        "reported_time": "about 09:44 JST",
+        "reviewer": "owner",
+        "basis": "owner-self-report-recorded-by-coordinator",
+        "scope": "challenge-statement-meaning-only",
+        "declaration": "ClaudeChallenge2.main",
+        "proof_peer_review": false,
+        "prose_bridge_review": false,
+        "novelty_review": false,
+        "challenge": {
+          "path": "evidence/theorem1a/Challenge2.lean.original.log",
+          "sha256": "d2800a5c4560ce94b5f94faada54003063bcb3e38b599d32e035d23ab264a66d",
+          "bytes": 8364
+        },
+        "guide": {
+          "path": "evidence/theorem1a/challenge2-reading-guide-ja.md.original.log",
+          "sha256": "da5e185c56a54253c3ea9f59c4ee724f2070141ce442f992adad635a4f49a48f",
+          "bytes": 7401
+        },
+        "decision_extract": {
+          "path": "owner-decision-extract.original.txt",
+          "sha256": "e2101edeb355fdcac07bb9170c81f9722c5d244ae8896de9bfd47f02e68ca914",
+          "bytes": 314
+        },
+        "comparison": {
+          "path": "owner-copy-comparison.json",
+          "sha256": "9baf39fe8a2037be45b01b1c1e4c5c54b96abc3bf715a1aad2768d76bd3f5793",
+          "bytes": 906
+        },
+        "receipt": {
+          "path": "owner-statement-confirmation.json",
+          "sha256": "9f186f7f3b240d03028b42e7a7706547b793bbb19830197fb28dd3afdef169b8",
+          "bytes": 1824
+        }
+      }
+    },
+    {
+      "id": "cor:catalog",
+      "paper_label": "cor:catalog",
+      "kind": "corollary",
+      "statement_plain": "All eventually valid positive integer affine rays in exactly A1,A2,B2,C1,K3,E10,D12,D14,D1,O2 and separately A3 are eventually periodic; no additional leapfrog family or collapsed zero boundary is included.",
+      "status": "mixed-prose-and-formal-results",
+      "status_scope": "Exactly the stated eleven-family corollary. Its K3 component is now Lean-proved without a prose bridge, including positive parameter-one boundaries; other families retain their prior routes. No whole-catalogue classification is claimed.",
+      "depends_on": [
+        "thm:aligned",
+        "prop:family-decompositions",
+        "thm:a3-arithmetic"
+      ],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "ClaudeChallengeK3.main",
+          "source": {
+            "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+            "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+            "bytes": 1604
+          },
+          "source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
+          "type_signature": "theorem main (r₀ s₀ a b : ℕ) (hr : 1 ≤ r₀) (hs : 1 ≤ s₀) :\n    ∃ t₀ P : ℕ, 0 < P ∧ ∀ t : ℕ, t₀ ≤ t →\n      (PathExists (r₀ + a * t) (s₀ + b * t) ↔\n        PathExists (r₀ + a * (t + P)) (s₀ + b * (t + P)))",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3/comparator-k3.md.original.log",
+            "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+            "bytes": 2695
+          },
+          "fresh_lean_run": false,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude2AlignedK3Glue.lean",
+              "sha256": "82ab305246905060caa79be5f7b850987f3c7e0fee703d127521d289e53662c3",
+              "bytes": 4661
+            },
+            {
+              "path": "formal/Formal/Claude2AlignedSpec.lean",
+              "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+              "bytes": 7508
+            },
+            {
+              "path": "formal/Formal/Claude2K3Apex.lean",
+              "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+              "bytes": 32579
+            },
+            {
+              "path": "formal/Formal/Claude2K3Classify.lean",
+              "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+              "bytes": 62695
+            },
+            {
+              "path": "formal/Formal/Claude2K3Corners.lean",
+              "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+              "bytes": 50025
+            },
+            {
+              "path": "formal/Formal/Claude2K3Degree.lean",
+              "sha256": "9ef84e62f8cd65c52560d423a7a3b47ffa8a7d4e00924b0a464275f6b20e6aad",
+              "bytes": 68750
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv.lean",
+              "sha256": "1d77466488394b8395c3f68471ace6cd24e0387b1cb3a704bbcf1bcb54fc48b9",
+              "bytes": 7896
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv3.lean",
+              "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+              "bytes": 9367
+            },
+            {
+              "path": "formal/Formal/Claude2K3Local.lean",
+              "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+              "bytes": 8401
+            },
+            {
+              "path": "formal/Formal/Claude2K3NecGcd.lean",
+              "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+              "bytes": 20407
+            },
+            {
+              "path": "formal/Formal/Claude2K3Necessity.lean",
+              "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+              "bytes": 16192
+            },
+            {
+              "path": "formal/Formal/Claude2K3Sufficient.lean",
+              "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+              "bytes": 6078
+            },
+            {
+              "path": "formal/Formal/Claude2K3Tube.lean",
+              "sha256": "8abe1dc3caf2ffaf8d9e9bb7e488b535fcd6f1cafc98269c7faa0031598cf3d5",
+              "bytes": 8382
+            },
+            {
+              "path": "formal/Formal/Claude2K3TwoCommon.lean",
+              "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+              "bytes": 4235
+            },
+            {
+              "path": "formal/Formal/Claude2K3Vertex.lean",
+              "sha256": "7a7e21d6b8d7072766f3e4d36249473700795e91f94bc7dcfb580dc4961c4995",
+              "bytes": 10698
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndPath.lean",
+              "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+              "bytes": 4792
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1a.lean",
+              "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+              "bytes": 22808
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1b.lean",
+              "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+              "bytes": 23198
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndS1.lean",
+              "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+              "bytes": 21780
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapInj.lean",
+              "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+              "bytes": 6761
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWd.lean",
+              "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+              "bytes": 8555
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWdB.lean",
+              "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+              "bytes": 9148
+            },
+            {
+              "path": "formal/Formal/Claude4K3Chord.lean",
+              "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+              "bytes": 4722
+            },
+            {
+              "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+              "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+              "bytes": 1604
+            },
+            {
+              "path": "formal/Formal/Claude4K3NoThree.lean",
+              "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+              "bytes": 16161
+            },
+            {
+              "path": "formal/Formal/Claude4K3PieceArith.lean",
+              "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+              "bytes": 7208
+            },
+            {
+              "path": "formal/Formal/Claude4K3Ray.lean",
+              "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+              "bytes": 7713
+            },
+            {
+              "path": "formal/Formal/Claude4K3Seam.lean",
+              "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+              "bytes": 4497
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamAlong.lean",
+              "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+              "bytes": 9449
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamEdge.lean",
+              "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+              "bytes": 5225
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamSite.lean",
+              "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+              "bytes": 15158
+            },
+            {
+              "path": "formal/Formal/Claude4K3TubeInj.lean",
+              "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+              "bytes": 5643
+            },
+            {
+              "path": "formal/Formal/Claude4K3Vtx.lean",
+              "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+              "bytes": 13363
+            },
+            {
+              "path": "formal/Formal/ClaudeChallengeSpec.lean",
+              "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+              "bytes": 6130
+            },
+            {
+              "path": "formal/Formal/ForcedContinuation.lean",
+              "sha256": "b30f97c2da9be368cea5c84904382843c4cfbc5c803148d86a3b88c5c6a00cdb",
+              "bytes": 6242
+            },
+            {
+              "path": "formal/Formal/SequenceDecision.lean",
+              "sha256": "f20863d8ca9c5a4a03ee98ca890b236d6d3efab211105ebd14629340a56a622e",
+              "bytes": 4963
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:rows",
+      "paper_label": "lem:rows",
+      "kind": "proof-lemma",
+      "statement_plain": "Maximal face passages and truncated root/end passages have the two-row outputs of equations (2)-(4), excluding already emitted entrance vertices.",
+      "status": "independent-prose-proof-ai-reviewed",
+      "status_scope": "Maximal face passages and truncated root/end passages have the two-row outputs of equations (2)-(4), excluding already emitted entrance vertices.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:restricted",
+      "paper_label": "lem:restricted",
+      "kind": "proof-lemma",
+      "statement_plain": "Passage states, transitions and all quotient collisions use only the stated restricted affine inequalities with free-variable coefficients at most one in absolute value and fixed congruences.",
+      "status": "independent-prose-proof-ai-reviewed",
+      "status_scope": "Passage states, transitions and all quotient collisions use only the stated restricted affine inequalities with free-variable coefficients at most one in absolute value and fixed congruences.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:folding",
+      "paper_label": "lem:folding",
+      "kind": "proof-lemma",
+      "statement_plain": "The restricted arithmetic is interpreted on finite unary words by t=2n+eta, bounded quotient copies and left/right folding; arbitrary Presburger relations are not asserted.",
+      "status": "independent-prose-proof-ai-reviewed",
+      "status_scope": "The restricted arithmetic is interpreted on finite unary words by t=2n+eta, bounded quotient copies and left/right folding; arbitrary Presburger relations are not asserted.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:mso-path",
+      "paper_label": "lem:mso-path",
+      "kind": "proof-lemma",
+      "statement_plain": "The connected noncolliding state-path sentence is equivalent in both directions to the exact literal path; finite-word MSO and unary regularity then give eventual periodicity.",
+      "status": "independent-prose-proof-ai-reviewed",
+      "status_scope": "The connected noncolliding state-path sentence is equivalent in both directions to the exact literal path; finite-word MSO and unary regularity then give eventual periodicity.",
+      "depends_on": [
+        "lem:rows",
+        "lem:restricted",
+        "lem:folding"
+      ],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/extra/AH-literature-comparison.md.original.log",
+          "sha256": "728f6871ab5aaf66c8c1296f6a183ddab88e5212a365a52d9ec43962f7950741",
+          "bytes": 9679
+        },
+        {
+          "path": "evidence/extra/S2047-behmaram-boutillier.json.original.log",
+          "sha256": "eb2e8d6d6e7bf2f7daa5f73660c4354cc4128e31e5ccab5d159004c539080499",
+          "bytes": 1168
+        },
+        {
+          "path": "evidence/extra/S2073-li-chen-quasipolynomial.json.original.log",
+          "sha256": "4fb36be6fe3538d8270d8445358c87045a3c47e60f940f10801636ebc98168f3",
+          "bytes": 1695
+        },
+        {
+          "path": "evidence/extra/S2180-aixiv-guide.json.original.log",
+          "sha256": "d52f28e6f39f2e4be919aa659983ef38ab433ee1f565b45957ed4e63b2589439",
+          "bytes": 1457
+        },
+        {
+          "path": "evidence/extra/S2181-dd2004-next27.json.original.log",
+          "sha256": "e957643bb09af3d42e91490b17365e9bd21d73bb3b221d93b9b5241674fb59cd",
+          "bytes": 2153
+        },
+        {
+          "path": "evidence/extra/S2182-dd-zigzag-next27.json.original.log",
+          "sha256": "5bba0f90c7435c1f49262d195b3c3c4fa0d4e1463f3989782834c967547612eb",
+          "bytes": 1829
+        },
+        {
+          "path": "evidence/extra/S2183-zigzag-complexes.json.original.log",
+          "sha256": "930915ee021c6195d0394292ea02664d418d6fac7556ea5419d1217616929778",
+          "bytes": 1902
+        },
+        {
+          "path": "evidence/extra/S2184-book-next27-access.json.original.log",
+          "sha256": "3a877d55c66f44338927f21bc008fbca2ed8825338b58d9f8a936c08ec77f35d",
+          "bytes": 1759
+        },
+        {
+          "path": "evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log",
+          "sha256": "c5fd2e827144bbc416966f9fdcdc58af04b355d5ebe1aa7618042298334caa89",
+          "bytes": 3003
+        },
+        {
+          "path": "evidence/extra/S2186-book-archive-access-next28.json.original.log",
+          "sha256": "4e966d1f763bab138d13e0bc72c61a0a0f1191a8b11218ee317f5573e0937a0c",
+          "bytes": 2438
+        },
+        {
+          "path": "evidence/extra/S2187-book-official-access-next28.json.original.log",
+          "sha256": "2d361d95ea2457ac6d05cbd6ab67c25cd9800a99446e5220908ff88bd7659bb2",
+          "bytes": 2886
+        },
+        {
+          "path": "evidence/extra/S2188-mso-strings-next28.json.original.log",
+          "sha256": "b72d8dc681218a0209a0ddfbaa64abadf672572f271ccea6a25226964eeacf56",
+          "bytes": 2788
+        },
+        {
+          "path": "evidence/extra/S2189-fischer-makowsky-spectra.json.original.log",
+          "sha256": "b061ab8038bb71453befe164ac15654f7a6ea8aaa1f81d8009a856faf07a3991",
+          "bytes": 2919
+        },
+        {
+          "path": "evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log",
+          "sha256": "3fb37b932a0de909a74dbc8e259acd5fe4c3b86db1bf877dfc5a4e3a4edad1fb",
+          "bytes": 2285
+        },
+        {
+          "path": "evidence/extra/S2191-periodic-counter-graphs.json.original.log",
+          "sha256": "58d22575460d16af2a8c154c1ac3ebbf283d078476b24ea8c942307df786a7a0",
+          "bytes": 2117
+        },
+        {
+          "path": "evidence/extra/S2192-wanke-periodic-graphs.json.original.log",
+          "sha256": "c0cc81863b9395d765e1f33fe2633a66046b14197a8a152b1abc2dbd5000f4d2",
+          "bytes": 1967
+        },
+        {
+          "path": "evidence/extra/S2193-courcelle-finite-contexts.json.original.log",
+          "sha256": "62fb6f557b746637530b7dd7f8cd8da886cab95651835ddfac5074c0b842baca",
+          "bytes": 1620
+        },
+        {
+          "path": "evidence/extra/S2194-thomas-unary-binary.json.original.log",
+          "sha256": "eeeec10a523c6c77bd057067ec2585f483c973d3d1611ff3206fbec3cd0bc54f",
+          "bytes": 2127
+        },
+        {
+          "path": "evidence/extra/S2195-octagonal-acceleration.json.original.log",
+          "sha256": "b85a9a2746b0b40da120fd0c1df6bd1e7c382ba5d24ff3137542a7fa2d932e34",
+          "bytes": 2723
+        },
+        {
+          "path": "evidence/extra/S2196-mine-octagon-domain.json.original.log",
+          "sha256": "753c2ee7b7296cda4450505509ede8d20ac0106128baa28782ccf214e3ad4bb9",
+          "bytes": 1728
+        },
+        {
+          "path": "evidence/extra/next80c.original.log",
+          "sha256": "39f838a4f15d761fa854bf56fae2df3bfe990bb28641fa8fc513be7ea59f055a",
+          "bytes": 1648
+        },
+        {
+          "path": "evidence/extra/report-next28-2026-10-19.md.original.log",
+          "sha256": "5a5647be3f845575ddb3f0ee976a79a6b92b6361003edfefd168bcd189d7fdda",
+          "bytes": 17166
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "prop:family-decompositions",
+      "paper_label": "prop:family-decompositions",
+      "kind": "application",
+      "statement_plain": "The specified family decompositions, including D1 eight pieces and E10 five pieces, supply the convex-face hypotheses on their valid positive domains.",
+      "status": "independent-prose-proof-ai-reviewed",
+      "status_scope": "The specified family decompositions, including D1 eight pieces and E10 five pieces, supply the convex-face hypotheses on their valid positive domains.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "prop:closed",
+      "paper_label": "prop:closed",
+      "kind": "classification-table",
+      "statement_plain": "The received prose iff conditions apply only on the stated domains: A1 all absent, A2 p=1, C1 b=1, B2 p=1 or abs(p-r)=1, K3 r,s>=2 and s=+-1 mod r, E10 p,s>=1,r>=2 with the six stated residues.",
+      "status": "independent-prose-proof-received",
+      "status_scope": "The R004 prose classifications are retained. The K3 subcase r,s>=2 additionally has a received Lean graph iff (thm:k3-sufficient); other listed family statuses are unchanged.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/R004/R004-c1-proof.md.txt.original.log",
+          "sha256": "715a2db7b9b8b51ea5e42571c78b40ab6896e5a2d24d1e327b91859132812278",
+          "bytes": 9804
+        },
+        {
+          "path": "evidence/R004/R004-b2-proof.md.txt.original.log",
+          "sha256": "2aadfc1e9a6d5b4613e09cf6d8ddabce31361e8dec326ad2193868026ae9f0c7",
+          "bytes": 11031
+        },
+        {
+          "path": "evidence/R004/R004-gc-proof.md.txt.original.log",
+          "sha256": "c0430d4029754d4ab75baa44abe25ff24ffc0af082fdf76c6dcecdd34fd07e8c",
+          "bytes": 3322
+        },
+        {
+          "path": "evidence/R004/R004-k3-positive-proof.md.txt.original.log",
+          "sha256": "36b1704a91e4e5baa2979b2a907c9b9085b9cc013d1f845c41febc9593dd9d8f",
+          "bytes": 4115
+        },
+        {
+          "path": "evidence/R004/R004-k3-necessity-proof.md.txt.original.log",
+          "sha256": "41a450ac2c32c3f9d80aa30c5c32217e539060947ebc17d2ae85e61841dc87b0",
+          "bytes": 8185
+        },
+        {
+          "path": "evidence/R004/R004-e10-positive-proof.md.txt.original.log",
+          "sha256": "4c84034516d1268eabe11a961d85b686b219c9b40b5815b49eafd577da839db2",
+          "bytes": 3378
+        },
+        {
+          "path": "evidence/R004/R004-e10-necessity-proof.md.txt.original.log",
+          "sha256": "e9c1756df0a9373634e86daa038c2a76f1473784f1826c6bf17f5536f274e596",
+          "bytes": 8984
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "prop:partial",
+      "paper_label": "prop:partial",
+      "kind": "partial-results",
+      "statement_plain": "O2 absence only t,d>=2; D1/D14 absence drafts retain their own limits; E10 r=1 sufficient branches and finite minimality are not a general iff; no new D12 classification is included.",
+      "status": "mixed-prose-and-finite-evidence",
+      "status_scope": "O2 absence only t,d>=2; D1/D14 absence drafts retain their own limits; E10 r=1 sufficient branches and finite minimality are not a general iff; no new D12 classification is included.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/R004/R004-report-004.md.txt.original.log",
+          "sha256": "856b6dd9a828c065e7bcb9ccac3766daaa91c7301334cc568d99b74d6f005b33",
+          "bytes": 10644
+        },
+        {
+          "path": "evidence/R004/R004-o2-proof.md.txt.original.log",
+          "sha256": "80d6867e18ed51831378cb25332b8b53910277e87b1b2027ba12a02f64b8e0d7",
+          "bytes": 7327
+        },
+        {
+          "path": "evidence/R004/R004-d12-positive-proof.md.txt.original.log",
+          "sha256": "c0d2e989c9385586b9d753500af770832e5bc9f2d6b628f47c033f21da011099",
+          "bytes": 8654
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:divisibility",
+      "paper_label": "lem:divisibility",
+      "kind": "arithmetic-lemma",
+      "statement_plain": "For eventually positive affine A and affine B, A divides B is eventually periodic; growing-modulus branches are eventually constant by the determinant reduction.",
+      "status": "prose-proof-received",
+      "status_scope": "For eventually positive affine A and affine B, A divides B is eventually periodic; growing-modulus branches are eventually constant by the determinant reduction.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:k3-arithmetic",
+      "paper_label": "thm:k3-arithmetic",
+      "kind": "arithmetic-theorem",
+      "statement_plain": "For all integer affine coefficients, K3Dom and K3Pos on toNat parameters is eventually periodic. Nonconstant modulus gives eventual constancy on a valid tail; constant modulus gives the stated period.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.k3_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem k3_ray_all (a b c d : ℤ) :\n    EvPer (fun t : ℕ => K3Dom (a * t + b).toNat (c * t + d).toNat ∧\n      K3Pos (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.k3_ray_const",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem k3_ray_const (a b c d : ℤ) (ha : a ≠ 0)\n    (h : Ev (fun t : ℕ => 2 ≤ a * t + b ∧ 2 ≤ c * t + d)) :\n    EvConst (fun t : ℕ => K3Pos (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.k3_ray_period",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyPeriods.lean",
+            "sha256": "f1d10ca9fc13e73f3bf7fd72b79eb87e5010771d2dea961421f4bf440f852feb",
+            "bytes": 4181
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem k3_ray_period (b c d : ℤ) (hb : 2 ≤ b) (T : ℕ)\n    (h : ∀ t : ℕ, T ≤ t → 2 ≤ c * t + d) :\n    ∀ t : ℕ, T ≤ t → (K3Pos b.toNat (c * t + d).toNat ↔\n      K3Pos b.toNat (c * (t + b.toNat : ℕ) + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:e10-arithmetic",
+      "paper_label": "thm:e10-arithmetic",
+      "kind": "arithmetic-theorem",
+      "statement_plain": "For all integer affine coefficients, E10Dom and E10Pos on toNat parameters is eventually periodic; growing/constant modulus results have exactly the recorded hypotheses.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.e10_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem e10_ray_all (a₁ b₁ a₂ b₂ a₃ b₃ : ℤ) :\n    EvPer (fun t : ℕ =>\n      E10Dom (a₁ * t + b₁).toNat (a₂ * t + b₂).toNat (a₃ * t + b₃).toNat ∧\n      E10Pos (a₁ * t + b₁).toNat (a₂ * t + b₂).toNat (a₃ * t + b₃).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.e10_ray_const",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem e10_ray_const (a₁ b₁ a₂ b₂ a₃ b₃ : ℤ) (hm : 2 * a₂ + a₃ ≠ 0)\n    (h : Ev (fun t : ℕ => 1 ≤ a₁ * t + b₁ ∧ 2 ≤ a₂ * t + b₂ ∧ 1 ≤ a₃ * t + b₃)) :\n    EvConst (fun t : ℕ =>\n      E10Pos (a₁ * t + b₁).toNat (a₂ * t + b₂).toNat (a₃ * t + b₃).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.e10_ray_period",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyPeriods.lean",
+            "sha256": "f1d10ca9fc13e73f3bf7fd72b79eb87e5010771d2dea961421f4bf440f852feb",
+            "bytes": 4181
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem e10_ray_period (a₁ b₁ a₂ b₂ a₃ b₃ : ℤ) (hm : 2 * a₂ + a₃ = 0) (T : ℕ)\n    (h : ∀ t : ℕ, T ≤ t → 1 ≤ a₁ * t + b₁ ∧ 2 ≤ a₂ * t + b₂ ∧ 1 ≤ a₃ * t + b₃) :\n    ∀ t : ℕ, T ≤ t →\n      (E10Pos (a₁ * t + b₁).toNat (a₂ * t + b₂).toNat (a₃ * t + b₃).toNat ↔\n        E10Pos (a₁ * (t + (2 * b₂ + b₃).toNat : ℕ) + b₁).toNat\n          (a₂ * (t + (2 * b₂ + b₃).toNat : ℕ) + b₂).toNat\n          (a₃ * (t + (2 * b₂ + b₃).toNat : ℕ) + b₃).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:other-arithmetic",
+      "paper_label": "thm:other-arithmetic",
+      "kind": "arithmetic-theorems",
+      "statement_plain": "B2,C1,A1,A2 domain-qualified predicates are eventually constant on all integer affine coefficient rays.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.b2_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem b2_ray_all (a b c d : ℤ) :\n    EvConst (fun t : ℕ => B2Dom (a * t + b).toNat (c * t + d).toNat ∧\n      B2Pos (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.c1_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem c1_ray_all (a b c d : ℤ) :\n    EvConst (fun t : ℕ => C1Dom (a * t + b).toNat (c * t + d).toNat ∧\n      C1Pos (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.a1_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem a1_ray_all (a b : ℤ) :\n    EvConst (fun t : ℕ => A1Dom (a * t + b).toNat ∧ A1Pos (a * t + b).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude2.a2_ray_all",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem a2_ray_all (a b : ℤ) :\n    EvConst (fun t : ℕ => A2Dom (a * t + b).toNat ∧ A2Pos (a * t + b).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:a3-arithmetic",
+      "paper_label": "thm:a3-arithmetic",
+      "kind": "arithmetic-theorem",
+      "statement_plain": "The A3 arithmetic criterion is eventually periodic on every eventually interior integer affine ray. An executable threshold/period algorithm is not certified.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.a3_ray",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyRays.lean",
+            "sha256": "4b8964a8b07c359c507ddc476a6beef46ea5e126ebbd7aae0ef35fd502a3b9a1",
+            "bytes": 19219
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem a3_ray (a b c d : ℤ) (h : Ev (fun t : ℕ => 0 < c * t + d ∧ c * t + d < a * t + b)) :\n    EvPer (fun t : ℕ => ClaudeChallenge.criterion (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "ClaudeCor.criterion_ray",
+          "source": {
+            "path": "formal/Formal/ClaudeCorRays.lean",
+            "sha256": "643deb8d2e539fa95d174710bc2ae1237cac1c855735c69e864407921e82a43e",
+            "bytes": 23420
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem criterion_ray (a b c d : ℤ)\n    (h : Ev (fun t : ℕ => 0 < c * t + d ∧ c * t + d < a * t + b)) :\n    EvPer (fun t : ℕ => criterion (a * t + b).toNat (c * t + d).toNat)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "ex:exact-rays",
+      "paper_label": "ex:exact-rays",
+      "kind": "examples",
+      "statement_plain": "The four previously solved rays have the displayed all-t decisions. D12 two-ray computer-assisted receipts are separate from the K3/E10 arithmetic formalization.",
+      "status": "mixed-prose-and-formal-results",
+      "status_scope": "The four previously solved rays have the displayed all-t decisions. D12 two-ray computer-assisted receipts are separate from the K3/E10 arithmetic formalization.",
+      "depends_on": [
+        "ex:k3-formal",
+        "ex:e10-formal"
+      ],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/R004-v2/R004-affine-rays-report.txt.original.log",
+          "sha256": "601c3fb51932cf09380e80c25a430264a70c20cefe144f5c1c7e8447446dab92",
+          "bytes": 5699
+        },
+        {
+          "path": "evidence/R004-v2/coordinator-D12-s58.txt.original.log",
+          "sha256": "28f3def97b1cc7dba1ed984c1d3216cb61a6ffc6e74e8b7e580ce323d18b9f75",
+          "bytes": 1526
+        },
+        {
+          "path": "evidence/R004-v2/R004-d12-rays-proof.txt.original.log",
+          "sha256": "32f64ec7fd89da2b678dbcfa1336ac6fb7b4663968996a3055bf3876f1c49ec8",
+          "bytes": 8917
+        },
+        {
+          "path": "evidence/R004-v2/R004-affine-rays-proof.txt.original.log",
+          "sha256": "7ef75b273f983173502dd7a4b1d33e97c32513b40f368bbd33a9434c222656ab",
+          "bytes": 4431
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "ex:k3-formal",
+      "paper_label": "ex:k3-formal",
+      "kind": "arithmetic-example",
+      "statement_plain": "For every natural t, K3Pos(43+2t,170+5t) iff t=40 or t=42; its graph interpretation is supported by the separately received K3 classification.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.k3_example",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyExamples.lean",
+            "sha256": "146311872825c787077d6608f7e7620488887d0d3fccbb64d76a19b086c71d58",
+            "bytes": 3091
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem k3_example (t : ℕ) : K3Pos (43 + 2 * t) (170 + 5 * t) ↔ t = 40 ∨ t = 42",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "ex:e10-formal",
+      "paper_label": "ex:e10-formal",
+      "kind": "arithmetic-example",
+      "statement_plain": "For every natural t, E10Pos(200+5t,17+2t,23+t) iff t=3,10,17 or 34; graph interpretation still uses the prose classification.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2.e10_example",
+          "source": {
+            "path": "formal/Formal/Claude2FamilyExamples.lean",
+            "sha256": "146311872825c787077d6608f7e7620488887d0d3fccbb64d76a19b086c71d58",
+            "bytes": 3091
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem e10_example (t : ℕ) :\n    E10Pos (200 + 5 * t) (17 + 2 * t) (23 + t) ↔ t = 3 ∨ t = 10 ∨ t = 17 ∨ t = 34",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+            "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+            "bytes": 12800
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/second-paper-report-2026-10-19.md.original.log",
+          "sha256": "af97d115b3a5b3810ddbddf6de23da04bd853aa6ffbf6fc1aa8ee88dc327054f",
+          "bytes": 12800
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "thm:k3-sufficient",
+      "paper_label": "thm:k3-sufficient",
+      "kind": "graph-theorem",
+      "statement_plain": "On Claude2Aligned.k3Graph, natural r,s>=2 admit a literal path iff s=+-1 mod r. The earlier sufficient theorem is retained; no edge has three common neighbours on this domain.",
+      "status": "lean-result-received",
+      "status_scope": "Full K3 graph iff and the noThree common-neighbour theorem received from coordinator/Claude workers, with standard-three-axiom records. No research-team Lean execution, independent Lean derivation or human proof review.",
+      "depends_on": [
+        "def:literal"
+      ],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison.",
+        "Catalogue correspondence is supported by the prior challenge, one independent AI reader and finite comparisons, not a universal catalogue-isomorphism theorem."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2K3.k3_sufficient",
+          "source": {
+            "path": "formal/Formal/Claude2K3Sufficient.lean",
+            "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+            "bytes": 6078
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem k3_sufficient : K3Sufficient",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+            "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+            "bytes": 11955
+          },
+          "fresh_lean_run": false
+        },
+        {
+          "declaration": "Claude4K3.k3_statement",
+          "source": {
+            "path": "formal/Formal/Claude4K3NoThree.lean",
+            "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+            "bytes": 16161
+          },
+          "source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
+          "type_signature": "theorem k3_statement : K3Statement",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3/comparator-k3.md.original.log",
+            "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+            "bytes": 2695
+          },
+          "fresh_lean_run": false,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude2AlignedK3Glue.lean",
+              "sha256": "82ab305246905060caa79be5f7b850987f3c7e0fee703d127521d289e53662c3",
+              "bytes": 4661
+            },
+            {
+              "path": "formal/Formal/Claude2AlignedSpec.lean",
+              "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+              "bytes": 7508
+            },
+            {
+              "path": "formal/Formal/Claude2K3Apex.lean",
+              "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+              "bytes": 32579
+            },
+            {
+              "path": "formal/Formal/Claude2K3Classify.lean",
+              "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+              "bytes": 62695
+            },
+            {
+              "path": "formal/Formal/Claude2K3Corners.lean",
+              "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+              "bytes": 50025
+            },
+            {
+              "path": "formal/Formal/Claude2K3Degree.lean",
+              "sha256": "9ef84e62f8cd65c52560d423a7a3b47ffa8a7d4e00924b0a464275f6b20e6aad",
+              "bytes": 68750
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv.lean",
+              "sha256": "1d77466488394b8395c3f68471ace6cd24e0387b1cb3a704bbcf1bcb54fc48b9",
+              "bytes": 7896
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv3.lean",
+              "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+              "bytes": 9367
+            },
+            {
+              "path": "formal/Formal/Claude2K3Local.lean",
+              "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+              "bytes": 8401
+            },
+            {
+              "path": "formal/Formal/Claude2K3NecGcd.lean",
+              "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+              "bytes": 20407
+            },
+            {
+              "path": "formal/Formal/Claude2K3Necessity.lean",
+              "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+              "bytes": 16192
+            },
+            {
+              "path": "formal/Formal/Claude2K3Sufficient.lean",
+              "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+              "bytes": 6078
+            },
+            {
+              "path": "formal/Formal/Claude2K3Tube.lean",
+              "sha256": "8abe1dc3caf2ffaf8d9e9bb7e488b535fcd6f1cafc98269c7faa0031598cf3d5",
+              "bytes": 8382
+            },
+            {
+              "path": "formal/Formal/Claude2K3TwoCommon.lean",
+              "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+              "bytes": 4235
+            },
+            {
+              "path": "formal/Formal/Claude2K3Vertex.lean",
+              "sha256": "7a7e21d6b8d7072766f3e4d36249473700795e91f94bc7dcfb580dc4961c4995",
+              "bytes": 10698
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndPath.lean",
+              "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+              "bytes": 4792
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1a.lean",
+              "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+              "bytes": 22808
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1b.lean",
+              "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+              "bytes": 23198
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndS1.lean",
+              "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+              "bytes": 21780
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapInj.lean",
+              "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+              "bytes": 6761
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWd.lean",
+              "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+              "bytes": 8555
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWdB.lean",
+              "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+              "bytes": 9148
+            },
+            {
+              "path": "formal/Formal/Claude4K3Chord.lean",
+              "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+              "bytes": 4722
+            },
+            {
+              "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+              "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+              "bytes": 1604
+            },
+            {
+              "path": "formal/Formal/Claude4K3NoThree.lean",
+              "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+              "bytes": 16161
+            },
+            {
+              "path": "formal/Formal/Claude4K3PieceArith.lean",
+              "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+              "bytes": 7208
+            },
+            {
+              "path": "formal/Formal/Claude4K3Ray.lean",
+              "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+              "bytes": 7713
+            },
+            {
+              "path": "formal/Formal/Claude4K3Seam.lean",
+              "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+              "bytes": 4497
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamAlong.lean",
+              "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+              "bytes": 9449
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamEdge.lean",
+              "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+              "bytes": 5225
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamSite.lean",
+              "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+              "bytes": 15158
+            },
+            {
+              "path": "formal/Formal/Claude4K3TubeInj.lean",
+              "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+              "bytes": 5643
+            },
+            {
+              "path": "formal/Formal/Claude4K3Vtx.lean",
+              "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+              "bytes": 13363
+            },
+            {
+              "path": "formal/Formal/ClaudeChallengeSpec.lean",
+              "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+              "bytes": 6130
+            },
+            {
+              "path": "formal/Formal/ForcedContinuation.lean",
+              "sha256": "b30f97c2da9be368cea5c84904382843c4cfbc5c803148d86a3b88c5c6a00cdb",
+              "bytes": 6242
+            },
+            {
+              "path": "formal/Formal/SequenceDecision.lean",
+              "sha256": "f20863d8ca9c5a4a03ee98ca890b236d6d3efab211105ebd14629340a56a622e",
+              "bytes": 4963
+            }
+          ]
+        },
+        {
+          "declaration": "Claude4K3.noThree",
+          "source": {
+            "path": "formal/Formal/Claude4K3NoThree.lean",
+            "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+            "bytes": 16161
+          },
+          "source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
+          "type_signature": "theorem noThree (hr : 2 ≤ r) (hs : 2 ≤ s) : NoThreeCommon r s",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3/comparator-k3.md.original.log",
+            "sha256": "50b2477aabbcf9842f4f460b626b2ac0c18079f30c95c3baa9de3a47bb4aab79",
+            "bytes": 2695
+          },
+          "fresh_lean_run": false,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude2AlignedK3Glue.lean",
+              "sha256": "82ab305246905060caa79be5f7b850987f3c7e0fee703d127521d289e53662c3",
+              "bytes": 4661
+            },
+            {
+              "path": "formal/Formal/Claude2AlignedSpec.lean",
+              "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+              "bytes": 7508
+            },
+            {
+              "path": "formal/Formal/Claude2K3Apex.lean",
+              "sha256": "d90feaf1a101b2167aed7c62dd41d16f55e59fcc98f5f09e3042115cc8b8b18d",
+              "bytes": 32579
+            },
+            {
+              "path": "formal/Formal/Claude2K3Classify.lean",
+              "sha256": "1981a2dc9c99e34e6d922053bcae231f6a76a0ac9c21c0e2f979706707e2ae93",
+              "bytes": 62695
+            },
+            {
+              "path": "formal/Formal/Claude2K3Corners.lean",
+              "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+              "bytes": 50025
+            },
+            {
+              "path": "formal/Formal/Claude2K3Degree.lean",
+              "sha256": "9ef84e62f8cd65c52560d423a7a3b47ffa8a7d4e00924b0a464275f6b20e6aad",
+              "bytes": 68750
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv.lean",
+              "sha256": "1d77466488394b8395c3f68471ace6cd24e0387b1cb3a704bbcf1bcb54fc48b9",
+              "bytes": 7896
+            },
+            {
+              "path": "formal/Formal/Claude2K3Inv3.lean",
+              "sha256": "6381de37393597d39609a73d18c8c1198c93641385e4c22fe41282a2f439fdc3",
+              "bytes": 9367
+            },
+            {
+              "path": "formal/Formal/Claude2K3Local.lean",
+              "sha256": "a97d46a1feaca8f347cd34d04c8ce4e33fec8b5fbb4e169367c3601d71dc1dc8",
+              "bytes": 8401
+            },
+            {
+              "path": "formal/Formal/Claude2K3NecGcd.lean",
+              "sha256": "854fe035ee7fce4cec5ebf5caccf5660b3cea82a3d54d00b79d34f05cf99b699",
+              "bytes": 20407
+            },
+            {
+              "path": "formal/Formal/Claude2K3Necessity.lean",
+              "sha256": "d4c4907605a6ba2a919ee08e1697a437d3f56fe26543705d6aed1e831b005e6e",
+              "bytes": 16192
+            },
+            {
+              "path": "formal/Formal/Claude2K3Sufficient.lean",
+              "sha256": "5c893673ea32ef4cfe9011dba7f7ef740cca5bd7e4ec412d0afd2aca1fdccf8a",
+              "bytes": 6078
+            },
+            {
+              "path": "formal/Formal/Claude2K3Tube.lean",
+              "sha256": "8abe1dc3caf2ffaf8d9e9bb7e488b535fcd6f1cafc98269c7faa0031598cf3d5",
+              "bytes": 8382
+            },
+            {
+              "path": "formal/Formal/Claude2K3TwoCommon.lean",
+              "sha256": "222b2ba23636b4c9d51cd05772bad9cb9f4a0e33869528b37f9365dceba25ee5",
+              "bytes": 4235
+            },
+            {
+              "path": "formal/Formal/Claude2K3Vertex.lean",
+              "sha256": "7a7e21d6b8d7072766f3e4d36249473700795e91f94bc7dcfb580dc4961c4995",
+              "bytes": 10698
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndPath.lean",
+              "sha256": "5a2e8a877bcafa2e11f6c7271650d24501566561e4387af8ee712204986b27f6",
+              "bytes": 4792
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1a.lean",
+              "sha256": "e06da393835f8288ff8fdbc736eece3d6b891397cb8ab2c01acc725413b127da",
+              "bytes": 22808
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndR1b.lean",
+              "sha256": "f58787a6502342236d5d9e6e095a283db894db41dfdb2b3134ea52ea740b5d28",
+              "bytes": 23198
+            },
+            {
+              "path": "formal/Formal/Claude4K3BndS1.lean",
+              "sha256": "691ca39f4495992736bbc535bfb154163ce9b03fc87e92356ef4314d7ae8b342",
+              "bytes": 21780
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapInj.lean",
+              "sha256": "e668f9b242a5dfdfd4be3327f609b0ae6bc845e4f5aa5d9c78d38898255e72fb",
+              "bytes": 6761
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWd.lean",
+              "sha256": "4b073c12fba2f73d5847f54a4e4c55469ba9307d6d88f2f65034ced5b76d2436",
+              "bytes": 8555
+            },
+            {
+              "path": "formal/Formal/Claude4K3CapWdB.lean",
+              "sha256": "08bf35527884ef725c6eee559bb0a5ccee115b2dbe48fcd121712fd21a33a4a6",
+              "bytes": 9148
+            },
+            {
+              "path": "formal/Formal/Claude4K3Chord.lean",
+              "sha256": "b0e6c34365e3aacb5844a711c5c49be1c0dde58f1c22e4ea71b99c3ae469349a",
+              "bytes": 4722
+            },
+            {
+              "path": "formal/Formal/Claude4K3ComparatorSolution.lean",
+              "sha256": "18271691603a3eee39a92aa0a2ceabf300058b527397c705b54257228bd8e689",
+              "bytes": 1604
+            },
+            {
+              "path": "formal/Formal/Claude4K3NoThree.lean",
+              "sha256": "0a0bcdaed5eb18f3eb13c80eb8a1a41e3161e68c24f78901331469d78160de38",
+              "bytes": 16161
+            },
+            {
+              "path": "formal/Formal/Claude4K3PieceArith.lean",
+              "sha256": "8a1e3b5713ef8a8d82bd15d8bb1b79aae8f1b44dcd83483bbd18cd9bd77d11a7",
+              "bytes": 7208
+            },
+            {
+              "path": "formal/Formal/Claude4K3Ray.lean",
+              "sha256": "e468bb3ee7274e69e68361ea6aa268b9036f63c0f224324e4f95e8c79ea63530",
+              "bytes": 7713
+            },
+            {
+              "path": "formal/Formal/Claude4K3Seam.lean",
+              "sha256": "2e7f79c02b60198bc72f13cae591567394a0519a894a73705ed16fa2c64e2f55",
+              "bytes": 4497
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamAlong.lean",
+              "sha256": "ab74823741e693a4c1a427530b6a2a87c1aeaf4bd2999cb14c6c3f40c4c11769",
+              "bytes": 9449
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamEdge.lean",
+              "sha256": "e2881210c70bc4e5921e2fcf6c09edafadae84a42d14c4a1d70e50bf543f7c99",
+              "bytes": 5225
+            },
+            {
+              "path": "formal/Formal/Claude4K3SeamSite.lean",
+              "sha256": "ae3153804a14b1233426130051107f718d1cb7cb9a7eee687dad927d840ad386",
+              "bytes": 15158
+            },
+            {
+              "path": "formal/Formal/Claude4K3TubeInj.lean",
+              "sha256": "d797c89fc30dc4643f54a35b28a90aefaa711b5712d7957f540d0b9490e655bd",
+              "bytes": 5643
+            },
+            {
+              "path": "formal/Formal/Claude4K3Vtx.lean",
+              "sha256": "4fe7964ba550fca99357a69906972850dc1bad28ea3587cb25989fdfe04980e2",
+              "bytes": 13363
+            },
+            {
+              "path": "formal/Formal/ClaudeChallengeSpec.lean",
+              "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+              "bytes": 6130
+            },
+            {
+              "path": "formal/Formal/ForcedContinuation.lean",
+              "sha256": "b30f97c2da9be368cea5c84904382843c4cfbc5c803148d86a3b88c5c6a00cdb",
+              "bytes": 6242
+            },
+            {
+              "path": "formal/Formal/SequenceDecision.lean",
+              "sha256": "f20863d8ca9c5a4a03ee98ca890b236d6d3efab211105ebd14629340a56a622e",
+              "bytes": 4963
+            }
+          ],
+          "section_context": "variable {r s : ℕ}"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+          "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+          "bytes": 11955
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:k3-corners",
+      "paper_label": "lem:k3-corners",
+      "kind": "graph-lemma",
+      "statement_plain": "Every labelled K3 corner representative has actual degree five; exhaustion of all degree-five vertices is not supplied by this result.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison.",
+        "These older degree lemmas alone do not classify every vertex. K3 necessity is now separately received; no global degree classification is promoted."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2K3.deg_corner",
+          "source": {
+            "path": "formal/Formal/Claude2K3Corners.lean",
+            "sha256": "dd12f1aee5c24cca3599cb32aa9d64b6f985c0ac36b532af7c14729bb3fbeca9",
+            "bytes": 50025
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem deg_corner (hr : 2 ≤ r) (hs : 2 ≤ s) (a : Fin 12) :\n    deg (k3Graph r s)\n      (V r s (cornerRep a).1 ((k3Sig r s).pt (cornerRep a).1 (cornerRep a).2)) = 5",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+            "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+            "bytes": 11955
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+          "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+          "bytes": 11955
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:k3-hex-interior",
+      "paper_label": "lem:k3-hex-interior",
+      "kind": "graph-lemma",
+      "statement_plain": "Hexagon interior vertices have actual degree six, under the precise source hypotheses.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison.",
+        "These older degree lemmas alone do not classify every vertex. K3 necessity is now separately received; no global degree classification is promoted."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2K3.deg_hex_interior",
+          "source": {
+            "path": "formal/Formal/Claude2K3Interior.lean",
+            "sha256": "8bbe59ffd15fc32e94d1defe5ed3b2aeff172432b42c1a69c461bbd8be724e1f",
+            "bytes": 9231
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem deg_hex_interior (hr : 2 ≤ r) (hs : 2 ≤ s) (c : Fin 11) (hc : c = 8 ∨ c = 9 ∨ c = 10)\n    (z : ℤ × ℤ) (hz : HexInt r s z) : deg (k3Graph r s) (V r s c z) = 6",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+            "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+            "bytes": 11955
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+          "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+          "bytes": 11955
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:k3-tri-interior",
+      "paper_label": "lem:k3-tri-interior",
+      "kind": "graph-lemma",
+      "statement_plain": "Interior vertices of the six noncentral cap triangles have degree six; central cap triangles and general seam interiors remain outside the received degree classification.",
+      "status": "lean-result-received",
+      "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison.",
+        "These older degree lemmas alone do not classify every vertex. K3 necessity is now separately received; no global degree classification is promoted."
+      ],
+      "lean": [
+        {
+          "declaration": "Claude2K3.deg_tri_interior",
+          "source": {
+            "path": "formal/Formal/Claude2K3Interior.lean",
+            "sha256": "8bbe59ffd15fc32e94d1defe5ed3b2aeff172432b42c1a69c461bbd8be724e1f",
+            "bytes": 9231
+          },
+          "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
+          "type_signature": "theorem deg_tri_interior (hr : 2 ≤ r) (hs : 2 ≤ s) (c : Fin 11) (hc : c = 0 ∨ c = 1 ∨ c = 2 ∨ c = 4 ∨ c = 5 ∨ c = 6)\n    (z : ℤ × ℤ) (hz : TriInt r z) : deg (k3Graph r s) (V r s c z) = 6",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+            "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+            "bytes": 11955
+          },
+          "fresh_lean_run": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/k3-sufficiency-report-2026-10-19.md.original.log",
+          "sha256": "47ccbc4b5e1e3d4b183b24b0bc655c99be9081a86923d4f8e823cf5649a8b462",
+          "bytes": 11955
+        },
+        {
+          "path": "evidence/k3/k3-bridge-report.md.original.log",
+          "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
+          "bytes": 8689
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12",
+          "P006-L14"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "lem:historical-kernels",
+      "paper_label": "lem:historical-kernels",
+      "kind": "conditional-correspondence",
+      "statement_plain": "Historical finite path, lattice transport, cylinder and finite-branch induction kernels prove their stated conditional types, not a general geometric compiler.",
+      "status": "partial-formal-correspondence",
+      "status_scope": "Historical finite path, lattice transport, cylinder and finite-branch induction kernels prove their stated conditional types, not a general geometric compiler.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "claim:oblique",
+      "paper_label": "claim:oblique",
+      "kind": "extension",
+      "statement_plain": "The fixed oblique direction extension has coordinator skeleton review of AN 2-6 only. Explicit Section5 transfer conditions, Q-split AH/AM coefficient applicability, effective-elimination dependency and oblique numerical validation remain; no independent second proof for the wider domain.",
+      "status": "proof-sketch-ai-skeleton-reviewed",
+      "status_scope": "The fixed oblique direction extension has coordinator skeleton review of AN 2-6 only. Explicit Section5 transfer conditions, Q-split AH/AM coefficient applicability, effective-elimination dependency and oblique numerical validation remain; no independent second proof for the wider domain.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison.",
+        "Explicit Section5 transfers, Q-split tower coefficients, S2043 effective dependency and oblique numerical comparison; independent second proof absent."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/research/fixed-direction-ray-theorem-AN.md.original.log",
+          "sha256": "43b7f4c0f9f813f9fbe633cfda7653e485e53deeb69e9793dbc2a0ee25e40799",
+          "bytes": 12880
+        },
+        {
+          "path": "evidence/research/affine-rauzy-AH.md.original.log",
+          "sha256": "6c7c775a737050fbdac0d03b042985f419c15ad7357dc49c3a14832a8192ed77",
+          "bytes": 10787
+        },
+        {
+          "path": "evidence/research/finite-word-lemma-AM.md.original.log",
+          "sha256": "9d2a8b8907bcc6d6dd6fb788bd4146aa2d3e0c0460813adaf055932122677880",
+          "bytes": 13328
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "prop:cylinder",
+      "paper_label": "prop:cylinder",
+      "kind": "structured-special-case",
+      "statement_plain": "Fixed-width cylinder arguments give the explicit entrance period Q=2gL and a fixed cap-visit bound. These do not bound passage count in growing-width families.",
+      "status": "ai-reviewed-prose-argument",
+      "status_scope": "Fixed-width cylinder arguments give the explicit entrance period Q=2gL and a fixed cap-visit bound. These do not bound passage count in growing-width families.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/research/cylinder-theorem-AD.md.original.log",
+          "sha256": "be93fed7b97ac0f09099a721cdbebe6b85376a8e5b395d4deecd02116d54867f",
+          "bytes": 9458
+        },
+        {
+          "path": "evidence/extra/AH-literature-comparison.md.original.log",
+          "sha256": "728f6871ab5aaf66c8c1296f6a183ddab88e5212a365a52d9ec43962f7950741",
+          "bytes": 9679
+        },
+        {
+          "path": "evidence/extra/S2047-behmaram-boutillier.json.original.log",
+          "sha256": "eb2e8d6d6e7bf2f7daa5f73660c4354cc4128e31e5ccab5d159004c539080499",
+          "bytes": 1168
+        },
+        {
+          "path": "evidence/extra/S2073-li-chen-quasipolynomial.json.original.log",
+          "sha256": "4fb36be6fe3538d8270d8445358c87045a3c47e60f940f10801636ebc98168f3",
+          "bytes": 1695
+        },
+        {
+          "path": "evidence/extra/S2180-aixiv-guide.json.original.log",
+          "sha256": "d52f28e6f39f2e4be919aa659983ef38ab433ee1f565b45957ed4e63b2589439",
+          "bytes": 1457
+        },
+        {
+          "path": "evidence/extra/S2181-dd2004-next27.json.original.log",
+          "sha256": "e957643bb09af3d42e91490b17365e9bd21d73bb3b221d93b9b5241674fb59cd",
+          "bytes": 2153
+        },
+        {
+          "path": "evidence/extra/S2182-dd-zigzag-next27.json.original.log",
+          "sha256": "5bba0f90c7435c1f49262d195b3c3c4fa0d4e1463f3989782834c967547612eb",
+          "bytes": 1829
+        },
+        {
+          "path": "evidence/extra/S2183-zigzag-complexes.json.original.log",
+          "sha256": "930915ee021c6195d0394292ea02664d418d6fac7556ea5419d1217616929778",
+          "bytes": 1902
+        },
+        {
+          "path": "evidence/extra/S2184-book-next27-access.json.original.log",
+          "sha256": "3a877d55c66f44338927f21bc008fbca2ed8825338b58d9f8a936c08ec77f35d",
+          "bytes": 1759
+        },
+        {
+          "path": "evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log",
+          "sha256": "c5fd2e827144bbc416966f9fdcdc58af04b355d5ebe1aa7618042298334caa89",
+          "bytes": 3003
+        },
+        {
+          "path": "evidence/extra/S2186-book-archive-access-next28.json.original.log",
+          "sha256": "4e966d1f763bab138d13e0bc72c61a0a0f1191a8b11218ee317f5573e0937a0c",
+          "bytes": 2438
+        },
+        {
+          "path": "evidence/extra/S2187-book-official-access-next28.json.original.log",
+          "sha256": "2d361d95ea2457ac6d05cbd6ab67c25cd9800a99446e5220908ff88bd7659bb2",
+          "bytes": 2886
+        },
+        {
+          "path": "evidence/extra/S2188-mso-strings-next28.json.original.log",
+          "sha256": "b72d8dc681218a0209a0ddfbaa64abadf672572f271ccea6a25226964eeacf56",
+          "bytes": 2788
+        },
+        {
+          "path": "evidence/extra/S2189-fischer-makowsky-spectra.json.original.log",
+          "sha256": "b061ab8038bb71453befe164ac15654f7a6ea8aaa1f81d8009a856faf07a3991",
+          "bytes": 2919
+        },
+        {
+          "path": "evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log",
+          "sha256": "3fb37b932a0de909a74dbc8e259acd5fe4c3b86db1bf877dfc5a4e3a4edad1fb",
+          "bytes": 2285
+        },
+        {
+          "path": "evidence/extra/S2191-periodic-counter-graphs.json.original.log",
+          "sha256": "58d22575460d16af2a8c154c1ac3ebbf283d078476b24ea8c942307df786a7a0",
+          "bytes": 2117
+        },
+        {
+          "path": "evidence/extra/S2192-wanke-periodic-graphs.json.original.log",
+          "sha256": "c0cc81863b9395d765e1f33fe2633a66046b14197a8a152b1abc2dbd5000f4d2",
+          "bytes": 1967
+        },
+        {
+          "path": "evidence/extra/S2193-courcelle-finite-contexts.json.original.log",
+          "sha256": "62fb6f557b746637530b7dd7f8cd8da886cab95651835ddfac5074c0b842baca",
+          "bytes": 1620
+        },
+        {
+          "path": "evidence/extra/S2194-thomas-unary-binary.json.original.log",
+          "sha256": "eeeec10a523c6c77bd057067ec2585f483c973d3d1611ff3206fbec3cd0bc54f",
+          "bytes": 2127
+        },
+        {
+          "path": "evidence/extra/S2195-octagonal-acceleration.json.original.log",
+          "sha256": "b85a9a2746b0b40da120fd0c1df6bd1e7c382ba5d24ff3137542a7fa2d932e34",
+          "bytes": 2723
+        },
+        {
+          "path": "evidence/extra/S2196-mine-octagon-domain.json.original.log",
+          "sha256": "753c2ee7b7296cda4450505509ede8d20ac0106128baa28782ccf214e3ad4bb9",
+          "bytes": 1728
+        },
+        {
+          "path": "evidence/extra/next80c.original.log",
+          "sha256": "39f838a4f15d761fa854bf56fae2df3bfe990bb28641fa8fc513be7ea59f055a",
+          "bytes": 1648
+        },
+        {
+          "path": "evidence/extra/report-next28-2026-10-19.md.original.log",
+          "sha256": "5a5647be3f845575ddb3f0ee976a79a6b92b6361003edfefd168bcd189d7fdda",
+          "bytes": 17166
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "sec:finite",
+      "paper_label": "sec:finite",
+      "kind": "finite-evidence",
+      "statement_plain": "Only the enumerated historical finite checks are received. None is rerun or counted as an unseen sample or proof of all parameters.",
+      "status": "finite-evidence-only",
+      "status_scope": "Only the enumerated historical finite checks are received. None is rerun or counted as an unseen sample or proof of all parameters.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "sec:novelty",
+      "paper_label": "sec:novelty",
+      "kind": "novelty-boundary",
+      "statement_plain": "The contribution candidate is a uniform geometric reduction to one fixed MSO sentence on unary words. Unary MSO, BGW and fixed-boundary CMSO2 iteration give known short periodicity consequences. No prior full theorem under the same geometry was located in the specified reading; novelty remains unestablished. S2191/S2192 are abstract-only.",
+      "status": "unresolved",
+      "status_scope": "The contribution candidate is a uniform geometric reduction to one fixed MSO sentence on unary words. Unary MSO, BGW and fixed-boundary CMSO2 iteration give known short periodicity consequences. No prior full theorem under the same geometry was located in the specified reading; novelty remains unestablished. S2191/S2192 are abstract-only.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        },
+        {
+          "path": "evidence/extra/AH-literature-comparison.md.original.log",
+          "sha256": "728f6871ab5aaf66c8c1296f6a183ddab88e5212a365a52d9ec43962f7950741",
+          "bytes": 9679
+        },
+        {
+          "path": "evidence/extra/S2073-li-chen-quasipolynomial.json.original.log",
+          "sha256": "4fb36be6fe3538d8270d8445358c87045a3c47e60f940f10801636ebc98168f3",
+          "bytes": 1695
+        },
+        {
+          "path": "evidence/research/review-AW-R005-report12-snapshot.txt.original.log",
+          "sha256": "411e2ef572a57f1efc9f588ed058309830dae56ec29258f6f53cc24690682472",
+          "bytes": 3217
+        },
+        {
+          "path": "evidence/extra/S2047-behmaram-boutillier.json.original.log",
+          "sha256": "eb2e8d6d6e7bf2f7daa5f73660c4354cc4128e31e5ccab5d159004c539080499",
+          "bytes": 1168
+        },
+        {
+          "path": "evidence/extra/S2180-aixiv-guide.json.original.log",
+          "sha256": "d52f28e6f39f2e4be919aa659983ef38ab433ee1f565b45957ed4e63b2589439",
+          "bytes": 1457
+        },
+        {
+          "path": "evidence/extra/S2181-dd2004-next27.json.original.log",
+          "sha256": "e957643bb09af3d42e91490b17365e9bd21d73bb3b221d93b9b5241674fb59cd",
+          "bytes": 2153
+        },
+        {
+          "path": "evidence/extra/S2182-dd-zigzag-next27.json.original.log",
+          "sha256": "5bba0f90c7435c1f49262d195b3c3c4fa0d4e1463f3989782834c967547612eb",
+          "bytes": 1829
+        },
+        {
+          "path": "evidence/extra/S2183-zigzag-complexes.json.original.log",
+          "sha256": "930915ee021c6195d0394292ea02664d418d6fac7556ea5419d1217616929778",
+          "bytes": 1902
+        },
+        {
+          "path": "evidence/extra/S2184-book-next27-access.json.original.log",
+          "sha256": "3a877d55c66f44338927f21bc008fbca2ed8825338b58d9f8a936c08ec77f35d",
+          "bytes": 1759
+        },
+        {
+          "path": "evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log",
+          "sha256": "c5fd2e827144bbc416966f9fdcdc58af04b355d5ebe1aa7618042298334caa89",
+          "bytes": 3003
+        },
+        {
+          "path": "evidence/extra/S2186-book-archive-access-next28.json.original.log",
+          "sha256": "4e966d1f763bab138d13e0bc72c61a0a0f1191a8b11218ee317f5573e0937a0c",
+          "bytes": 2438
+        },
+        {
+          "path": "evidence/extra/S2187-book-official-access-next28.json.original.log",
+          "sha256": "2d361d95ea2457ac6d05cbd6ab67c25cd9800a99446e5220908ff88bd7659bb2",
+          "bytes": 2886
+        },
+        {
+          "path": "evidence/extra/S2188-mso-strings-next28.json.original.log",
+          "sha256": "b72d8dc681218a0209a0ddfbaa64abadf672572f271ccea6a25226964eeacf56",
+          "bytes": 2788
+        },
+        {
+          "path": "evidence/extra/S2189-fischer-makowsky-spectra.json.original.log",
+          "sha256": "b061ab8038bb71453befe164ac15654f7a6ea8aaa1f81d8009a856faf07a3991",
+          "bytes": 2919
+        },
+        {
+          "path": "evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log",
+          "sha256": "3fb37b932a0de909a74dbc8e259acd5fe4c3b86db1bf877dfc5a4e3a4edad1fb",
+          "bytes": 2285
+        },
+        {
+          "path": "evidence/extra/S2191-periodic-counter-graphs.json.original.log",
+          "sha256": "58d22575460d16af2a8c154c1ac3ebbf283d078476b24ea8c942307df786a7a0",
+          "bytes": 2117
+        },
+        {
+          "path": "evidence/extra/S2192-wanke-periodic-graphs.json.original.log",
+          "sha256": "c0cc81863b9395d765e1f33fe2633a66046b14197a8a152b1abc2dbd5000f4d2",
+          "bytes": 1967
+        },
+        {
+          "path": "evidence/extra/S2193-courcelle-finite-contexts.json.original.log",
+          "sha256": "62fb6f557b746637530b7dd7f8cd8da886cab95651835ddfac5074c0b842baca",
+          "bytes": 1620
+        },
+        {
+          "path": "evidence/extra/S2194-thomas-unary-binary.json.original.log",
+          "sha256": "eeeec10a523c6c77bd057067ec2585f483c973d3d1611ff3206fbec3cd0bc54f",
+          "bytes": 2127
+        },
+        {
+          "path": "evidence/extra/S2195-octagonal-acceleration.json.original.log",
+          "sha256": "b85a9a2746b0b40da120fd0c1df6bd1e7c382ba5d24ff3137542a7fa2d932e34",
+          "bytes": 2723
+        },
+        {
+          "path": "evidence/extra/S2196-mine-octagon-domain.json.original.log",
+          "sha256": "753c2ee7b7296cda4450505509ede8d20ac0106128baa28782ccf214e3ad4bb9",
+          "bytes": 1728
+        },
+        {
+          "path": "evidence/extra/next80c.original.log",
+          "sha256": "39f838a4f15d761fa854bf56fae2df3bfe990bb28641fa8fc513be7ea59f055a",
+          "bytes": 1648
+        },
+        {
+          "path": "evidence/extra/report-next28-2026-10-19.md.original.log",
+          "sha256": "5a5647be3f845575ddb3f0ee976a79a6b92b6361003edfefd168bcd189d7fdda",
+          "bytes": 17166
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    },
+    {
+      "id": "app:domains",
+      "paper_label": "app:domains",
+      "kind": "domain-audit",
+      "statement_plain": "Local polynomial/edge checks do not certify quotient validity or all zero degenerations; twice area gives carbon order only for valid quotients.",
+      "status": "finite-evidence-only",
+      "status_scope": "Local polynomial/edge checks do not certify quotient validity or all zero degenerations; twice area gives carbon order only for valid quotients.",
+      "depends_on": [],
+      "remaining_obligations": [
+        "Human proof peer review and novelty comparison."
+      ],
+      "lean": [],
+      "evidence": [
+        {
+          "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
+          "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+          "bytes": 16401
+        },
+        {
+          "path": "evidence/R004/R004-claim14-aligned-families.md.txt.original.log",
+          "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+          "bytes": 10874
+        },
+        {
+          "path": "evidence/R004/coordinator-claim14-review.txt.original.log",
+          "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+          "bytes": 3420
+        },
+        {
+          "path": "evidence/AN-5-6-review.original.log",
+          "sha256": "530ca66de2637cd2fb8579c15dedf0c1c925749a9df4058e1d74b7acbec4a6ac",
+          "bytes": 4855
+        }
+      ],
+      "review_history": {
+        "path": "P006-corrections.md",
+        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
+        "bytes": 5189,
+        "row_ids": [
+          "P006-L01",
+          "P006-L02",
+          "P006-L03",
+          "P006-L04",
+          "P006-L05",
+          "P006-L06",
+          "P006-L07",
+          "P006-L08",
+          "P006-L09",
+          "P006-L10",
+          "P006-L11",
+          "P006-L12"
+        ]
+      },
+      "human_review": false
+    }
+  ]
+}

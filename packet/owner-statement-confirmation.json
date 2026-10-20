@@ -1,0 +1,42 @@
+{
+  "status": "confirmed",
+  "kind": "owner-self-reported-statement-meaning-check",
+  "checked_on": "2026-10-20",
+  "reported_time": "about 09:44 JST",
+  "reviewer": "owner",
+  "recorded_by": "coordinator",
+  "basis": "owner-self-report-recorded-by-coordinator",
+  "scope": "challenge-statement-meaning-only",
+  "declaration": "ClaudeChallenge2.main",
+  "challenge_version": 2,
+  "guide_addendum_included": true,
+  "proof_peer_review": false,
+  "prose_bridge_review": false,
+  "novelty_review": false,
+  "K3_statement_check": false,
+  "publication_approval_recorded_by_this_receipt": false,
+  "decision_source_commit": "a674675a14e6e0a5a33c7e6fa198542d6fe76c88",
+  "decision_source_identifier": "docs/DECISIONS.md",
+  "decision_full_file_sha256": "dd9b8d5b5c75ab30ab9e910b0b5e26a76bfea56c6e22d228a7bfd8ce05cc7bf7",
+  "decision_extract": {
+    "path": "owner-decision-extract.original.txt",
+    "sha256": "e2101edeb355fdcac07bb9170c81f9722c5d244ae8896de9bfd47f02e68ca914",
+    "bytes": 314
+  },
+  "challenge": {
+    "path": "evidence/theorem1a/Challenge2.lean.original.log",
+    "sha256": "d2800a5c4560ce94b5f94faada54003063bcb3e38b599d32e035d23ab264a66d",
+    "bytes": 8364
+  },
+  "guide": {
+    "path": "evidence/theorem1a/challenge2-reading-guide-ja.md.original.log",
+    "sha256": "da5e185c56a54253c3ea9f59c4ee724f2070141ce442f992adad635a4f49a48f",
+    "bytes": 7401
+  },
+  "comparison": {
+    "path": "owner-copy-comparison.json",
+    "sha256": "9baf39fe8a2037be45b01b1c1e4c5c54b96abc3bf715a1aad2768d76bd3f5793",
+    "bytes": 906
+  },
+  "scope_note": "The owner confirmed the version-2 statement using the guide including its addendum. The formal assumptions are weaker than the geometric paper; the paper-to-specification representation remains prose and is not made owner-reviewed or Lean-formalized by this check."
+}

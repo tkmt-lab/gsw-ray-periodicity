@@ -1,0 +1,26 @@
+# 第14報の検査
+
+1. [算術証明](claim14-arithmetic-proof.md)1節の整除・gcdの場合分けを確認する。
+2. 2節のA3条件が[主張13](a3-claim13-proof-map.md)と同値で、r=0による除算を含まないことを確認する。
+3. D≠0の場合、定数になった除数mまたはrが|D|を割ることを確認する。
+4. 3節の七族の対応表を、リンク先の証明のパラメータ範囲と照らす。
+5. 計画073、T0226の保存後エラーと修正記録、T0227の結果を読む。
+
+evidence/claim14-arithmetic/certificates.jsonは378表示それぞれの閾値・周期・整除の行列式を持つ。
+summary.jsonには13,430組の有限照合の結果、memory.jsonには共有メモリの記録がある。
+失敗時の同じ算術出力はevidence/claim14-arithmetic-T0226/に保全した。
+コードはsrc/check_claim14_arithmetic.py、実行版はresults/T0226/code/とresults/T0227/code/。
+元のグラフ分類の検査を今回再実行したものではない。一般証明と有限照合を区別する。
+
+manifest-014.jsonは本報告の新しい保存物と、直接参照する既存証明の索引である。
+第13報までの全証拠を再収録した索引ではない。既存の試行・証拠は各報告を参照する。
+README・朝向け記録・Wikiは後続の作業で更新されるため、過去の索引のまま最新とはしない。
+第14報の証明本文・試行記録・コード・証拠・入力は変更しない。
+
+```sh
+.venv/bin/python studies/R004/src/build_manifest_014.py --check-only
+.venv/bin/python tools/trial.py check --study R004
+```
+
+保存物のhash・記録構造の一致は、数学の全体の形式化や独立査読を意味しない。
+実行入力だった証明本文はresults/T0227/inputs/にも保存し、入力hashと対応させる。

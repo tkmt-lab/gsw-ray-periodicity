@@ -1,0 +1,44 @@
+{
+  "source_id": "S2195",
+  "title": "Fast Acceleration of Ultimately Periodic Relations",
+  "authors_or_provider": "Marius Bozga; Radu Iosif; Filip Konečný",
+  "url_or_path": "https://www-verimag.imag.fr/TR/TR-2010-3.pdf",
+  "version": "VERIMAG TR-2010-3,16Dec2010,24PDFpages; related CAV2010 pp227–242 but page references use report",
+  "checked_at": "2026-10-19",
+  "read_scope": "§1 printedpp.1–2、§2 Def1(p2)、§4.2 Def6(p14)、§4.2.1 pp15–16、§4.2.2 Def8 p17を読む。PDFpp4,17,19描画目視。",
+  "section_or_pages": "§1 printedpp.1–2、§2 Def1(p2)、§4.2 Def6(p14)、§4.2.1 pp15–16、§4.2.2 Def8 p17を読む。PDFpp4,17,19描画目視。",
+  "claim_supported": "octagon不等式±x±y≤cとその反復・transitive closure・パラメトリック境界の処理は既知。主たる周期性は固定relationの反復回数で、率によるdriftを許す。幾何族tのBoolean周期性や全過去の出力衝突回避は別に接続が必要。",
+  "local_snapshot": "data/cache/R005/next28-stage2/octagon-verimag-report.txt",
+  "sha256": "d47ac1f01f46a44204c44dc9df8576d900351b73fbad52a3cfa72fd334ba3fb6",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "全実装・ベンチマーク・付録証明未監査。原著のzigzag automataはfullereneのzigzagではない。同じ語だけで対象を同一視しない。",
+  "quotes": [
+    {
+      "text": "Octagonal Relations are Ultimately Periodic",
+      "supports": "octagon不等式±x±y≤cとその反復・transitive closure・パラメトリック境界の処理は既知。主たる周期性は固定relationの反復回数で、率によるdriftを許す。幾何族tのBoolean周期性や全過去の出力衝突回避は別に接続が必要。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/octagon-verimag-report.raw",
+    "bytes": 284531,
+    "sha256": "7044a3dd6ef3fe6683ce1a60a0a33c20048db2b5e78b2e80fe2de4803c3ade03"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/octagon-def.png",
+      "bytes": 352957,
+      "sha256": "1475b0186e9fc437305e563fce0f6cc6397a913e8bdf953fc65b0a5c50a01795"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/octagon-17.png",
+      "bytes": 362127,
+      "sha256": "30cb07ab95284e1387f1273ee1b57a4fa3f551bdccecc25ee6090ba2a23269b8"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/octagon-19.png",
+      "bytes": 309932,
+      "sha256": "343cfe9742960f48cecb09f44c789503e72c3b289854eb81dabee8c060cd33dc"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:47:06.504352+00:00"
+}

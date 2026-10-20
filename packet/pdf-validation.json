@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "pdf_path": "paper-lines-v4-en.pdf",
+  "source_path": "paper-lines-v4-en.tex",
+  "pdf_sha256": "844a13ed8060f54072821cd566c261f01fbcbb3df01b2fda48578a1d4990a757",
+  "source_sha256": "e75aecea996e7cf6aa95ad332408ae8977f2cb40a34fba7221609bd1aa8a8527",
+  "pdf_bytes": 157693,
+  "pages": 15,
+  "typeset_trial": "T1265",
+  "render_trial": "T1266",
+  "tex_engine": "Tectonic 0.17.0",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "8344f3a35613142334765029669ffecbfa4215fc4bdf2ac11d4a80c555343f68"
+    },
+    {
+      "page": 2,
+      "sha256": "e2a6a5ea03b986f86f18c7c22553a6e1d7133270952f7ece3db86f0362ecd062"
+    },
+    {
+      "page": 3,
+      "sha256": "6e428d160cd19a406e94aa667de12b4be5c6379bdcf7897f5c8db2dd551c4e7c"
+    },
+    {
+      "page": 4,
+      "sha256": "2cacb94752609bb2425b738b0114aab1fa802000ad5b1fe13626665f3154c587"
+    },
+    {
+      "page": 5,
+      "sha256": "c937001a06efa2e423288688a3b1e9b834a969c9b64c885167ca6a068ea01f8f"
+    },
+    {
+      "page": 6,
+      "sha256": "6714b2754ed33e5dcb48e5cc2fa129b54caaa97ee8a37ad9b09881a521927bf9"
+    },
+    {
+      "page": 7,
+      "sha256": "d088be1d4d793910b8de14548934f5c287799af73d6613221200c66b57fa7554"
+    },
+    {
+      "page": 8,
+      "sha256": "5351d766b58436d4bbe40e01e3f1a6bdde8c54c402b7a73874708e203712b54e"
+    },
+    {
+      "page": 9,
+      "sha256": "ce75938f56dd1c54ec77ef4aeaa29baef19f412169099e7e55b457cae5577c13"
+    },
+    {
+      "page": 10,
+      "sha256": "174ffc6091084d022e3b65853325dcd61e95999364baee37b1fba6070ce525b9"
+    },
+    {
+      "page": 11,
+      "sha256": "aec0841baada52c045285b2878b3dccc6cc3b7d320258d091826abf059dd72be"
+    },
+    {
+      "page": 12,
+      "sha256": "43608f086e45053caae8d482b4c012308bc8927f214ac7583e31386e59356d9f"
+    },
+    {
+      "page": 13,
+      "sha256": "9c4d95a999fda31f270fd0073017cbf9e434c047ee9c3566a7156f0900e0fbf0"
+    },
+    {
+      "page": 14,
+      "sha256": "70526e8f8f89b511fb2db6c6546300ed64e20784357015c06be91b755420b35f"
+    },
+    {
+      "page": 15,
+      "sha256": "462c12e4fb0adc05401875810eefdcae01657c3ea833cb5273d5f2d35b92b3aa"
+    }
+  ],
+  "visual_review": {
+    "reviewer": "Codex main agent",
+    "all_pages_viewed": true,
+    "method": "All final fifteen pages from T1266 viewed individually after T1265 typesetting; next80c contribution and references included",
+    "observed": "No clipping, overlaps, missing glyphs or broken tables. One mild underfull line is readable. Main theorem/corollary and proof-sketch status are clearly separated.",
+    "independent_review": false
+  },
+  "published": false
+}

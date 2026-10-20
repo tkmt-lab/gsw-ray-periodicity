@@ -1,0 +1,26 @@
+{
+  "source_id": "S2035",
+  "title": "Parametric Presburger Arithmetic: Logic, Combinatorics, and Quasi-polynomial Behavior",
+  "authors_or_provider": "Tristram Bogart; John Goodrick; Kevin Woods",
+  "url_or_path": "https://arxiv.org/pdf/1608.08520v2",
+  "version": "Discrete Analysis 2017:4, 34 pp.; arXiv:1608.08520v2; DOI 10.19086/da.1254",
+  "checked_at": "2026-10-18",
+  "read_scope": "PDF pp.1–6: Definition 1.3, introductory examples, Examples 1.12–1.13, Properties 1–4, Theorem 1.15. Page 5 rendered and viewed. Full later proof not audited. Seventh report: Definition 1.3 and Theorem 1.15/Properties 1–2 reread; explicit translation of an assumed M4prime formula along a fixed affine line recorded in M4-reference Section E.2.",
+  "section_or_pages": "PDF pp.1–6: Definition 1.3, introductory examples, Examples 1.12–1.13, Properties 1–4, Theorem 1.15. Page 5 rendered and viewed. Full later proof not audited. Seventh report: Definition 1.3 and Theorem 1.15/Properties 1–2 reread; explicit translation of an assumed M4prime formula along a fixed affine line recorded in M4-reference Section E.2.",
+  "claim_supported": "One-parameter Presburger families have eventually periodic nonemptiness and EQP finite-fiber counts; two-parameter example limits uniform inference.",
+  "local_snapshot": "data/cache/R005/sixth/parametric.txt",
+  "sha256": "e8badbabe2aafff01681c3d363e70142c09f525a53479d60cf17d5578157c3eb",
+  "quotes": [],
+  "license_or_terms": "著者・出版社・公式repositoryの公開資料を個人研究用に照合。原文・画像・コードはGit非追跡cacheに保持し、再配布・実行しない。",
+  "limitations": "全証明未監査。QF割り切り式が与えられた場合の固定直線上の適用は第7報E.2で明示。gSWを表す単一の式の存在、座標の有効性、全域計数への適用は未証明。",
+  "original_document": {
+    "path": "data/cache/R005/sixth/parametric.pdf",
+    "sha256": "e516f97579717ba0ec11551e0b0b06ea79b827165d5b6cebc2ffc1fc6b586f39"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/sixth/parametric-p5.png",
+      "sha256": "18f99af155640dc56fefcc1b4ac799534ad1e322912c8d469969373a869186f8"
+    }
+  ]
+}

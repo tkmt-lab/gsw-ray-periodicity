@@ -1,0 +1,112 @@
+[
+  {
+    "path": "evidence/extra/AH-literature-comparison.md.original.log",
+    "sha256": "728f6871ab5aaf66c8c1296f6a183ddab88e5212a365a52d9ec43962f7950741",
+    "bytes": 9679
+  },
+  {
+    "path": "evidence/extra/S2047-behmaram-boutillier.json.original.log",
+    "sha256": "eb2e8d6d6e7bf2f7daa5f73660c4354cc4128e31e5ccab5d159004c539080499",
+    "bytes": 1168
+  },
+  {
+    "path": "evidence/extra/S2073-li-chen-quasipolynomial.json.original.log",
+    "sha256": "4fb36be6fe3538d8270d8445358c87045a3c47e60f940f10801636ebc98168f3",
+    "bytes": 1695
+  },
+  {
+    "path": "evidence/extra/S2180-aixiv-guide.json.original.log",
+    "sha256": "d52f28e6f39f2e4be919aa659983ef38ab433ee1f565b45957ed4e63b2589439",
+    "bytes": 1457
+  },
+  {
+    "path": "evidence/extra/S2181-dd2004-next27.json.original.log",
+    "sha256": "e957643bb09af3d42e91490b17365e9bd21d73bb3b221d93b9b5241674fb59cd",
+    "bytes": 2153
+  },
+  {
+    "path": "evidence/extra/S2182-dd-zigzag-next27.json.original.log",
+    "sha256": "5bba0f90c7435c1f49262d195b3c3c4fa0d4e1463f3989782834c967547612eb",
+    "bytes": 1829
+  },
+  {
+    "path": "evidence/extra/S2183-zigzag-complexes.json.original.log",
+    "sha256": "930915ee021c6195d0394292ea02664d418d6fac7556ea5419d1217616929778",
+    "bytes": 1902
+  },
+  {
+    "path": "evidence/extra/S2184-book-next27-access.json.original.log",
+    "sha256": "3a877d55c66f44338927f21bc008fbca2ed8825338b58d9f8a936c08ec77f35d",
+    "bytes": 1759
+  },
+  {
+    "path": "evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log",
+    "sha256": "c5fd2e827144bbc416966f9fdcdc58af04b355d5ebe1aa7618042298334caa89",
+    "bytes": 3003
+  },
+  {
+    "path": "evidence/extra/S2186-book-archive-access-next28.json.original.log",
+    "sha256": "4e966d1f763bab138d13e0bc72c61a0a0f1191a8b11218ee317f5573e0937a0c",
+    "bytes": 2438
+  },
+  {
+    "path": "evidence/extra/S2187-book-official-access-next28.json.original.log",
+    "sha256": "2d361d95ea2457ac6d05cbd6ab67c25cd9800a99446e5220908ff88bd7659bb2",
+    "bytes": 2886
+  },
+  {
+    "path": "evidence/extra/S2188-mso-strings-next28.json.original.log",
+    "sha256": "b72d8dc681218a0209a0ddfbaa64abadf672572f271ccea6a25226964eeacf56",
+    "bytes": 2788
+  },
+  {
+    "path": "evidence/extra/S2189-fischer-makowsky-spectra.json.original.log",
+    "sha256": "b061ab8038bb71453befe164ac15654f7a6ea8aaa1f81d8009a856faf07a3991",
+    "bytes": 2919
+  },
+  {
+    "path": "evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log",
+    "sha256": "3fb37b932a0de909a74dbc8e259acd5fe4c3b86db1bf877dfc5a4e3a4edad1fb",
+    "bytes": 2285
+  },
+  {
+    "path": "evidence/extra/S2191-periodic-counter-graphs.json.original.log",
+    "sha256": "58d22575460d16af2a8c154c1ac3ebbf283d078476b24ea8c942307df786a7a0",
+    "bytes": 2117
+  },
+  {
+    "path": "evidence/extra/S2192-wanke-periodic-graphs.json.original.log",
+    "sha256": "c0cc81863b9395d765e1f33fe2633a66046b14197a8a152b1abc2dbd5000f4d2",
+    "bytes": 1967
+  },
+  {
+    "path": "evidence/extra/S2193-courcelle-finite-contexts.json.original.log",
+    "sha256": "62fb6f557b746637530b7dd7f8cd8da886cab95651835ddfac5074c0b842baca",
+    "bytes": 1620
+  },
+  {
+    "path": "evidence/extra/S2194-thomas-unary-binary.json.original.log",
+    "sha256": "eeeec10a523c6c77bd057067ec2585f483c973d3d1611ff3206fbec3cd0bc54f",
+    "bytes": 2127
+  },
+  {
+    "path": "evidence/extra/S2195-octagonal-acceleration.json.original.log",
+    "sha256": "b85a9a2746b0b40da120fd0c1df6bd1e7c382ba5d24ff3137542a7fa2d932e34",
+    "bytes": 2723
+  },
+  {
+    "path": "evidence/extra/S2196-mine-octagon-domain.json.original.log",
+    "sha256": "753c2ee7b7296cda4450505509ede8d20ac0106128baa28782ccf214e3ad4bb9",
+    "bytes": 1728
+  },
+  {
+    "path": "evidence/extra/next80c.original.log",
+    "sha256": "39f838a4f15d761fa854bf56fae2df3bfe990bb28641fa8fc513be7ea59f055a",
+    "bytes": 1648
+  },
+  {
+    "path": "evidence/extra/report-next28-2026-10-19.md.original.log",
+    "sha256": "5a5647be3f845575ddb3f0ee976a79a6b92b6361003edfefd168bcd189d7fdda",
+    "bytes": 17166
+  }
+]

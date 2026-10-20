@@ -1,0 +1,60 @@
+# R005 next-28 作業1：未読文献の取得と第1弾v7.1との比較
+
+2026-10-19夜。依頼：`next-28-2026-10-19.md`、mailbox `556df5f3-0134-4d6c-99d3-2e1253cf3274`。固定入力・hashは[入力台帳](results/T0038/input-manifest.json)。R002本体と旧報告は変更していない。
+
+**判定：DDF2004の本文を取得・読解し、同じ二段分類は「読んだ範囲では見つからない」。2015書籍の指定節は本文未取得で、未読の留保を維持する。** 「既知理論から短く従わない」という不可能性の証明ではなく、世界的な新規性の確定でもない。
+
+## 取得と版
+
+Deza–Dutour–Fowler, *Zigzags, Railroads, and Knots in Fullerenes*, J. Chem. Inf. Comput. Sci.44(2004)1282–1293、DOI10.1021/ci049955hを、[著者旧ENSページの公開保存版](https://web.archive.org/web/20120322083854id_/http://www.liga.ens.fr/~deza/withFowler/Zig1.pdf)から取得した。12頁の出版社体裁のreprintであり、表題・著者・巻頁・DOIが一致する。PDFのSHA256は `97dae7eaa99eaa3553a870ba9c763cead3789fad12007edda925565c93d0b643`、取得2026-10-19T13:35:36Z。新規[S2185](../../sources/S2185-ddf2004-fulltext-next28.json)。旧S2100の「要旨まで」は当時の読解記録として固定した。
+
+本文§§1–9と図説明・参考文献を読んだ。数表の全値を再計算したものではなく、証明の独立査読でもない。pp.1283,1286,1290,1291を描画して定義・Table5・railroad図を目視した。著者のFig.7a訂正は既存S2100を継続参照し、未訂正図を再利用しない。
+
+## v7.1 §11.2の比較対象
+
+内部A3領域 `k>l>0` の全てに対し、合法開始から、最初の**元の面ID**の再訪を `R`、相異を課す前の最初の合法終点候補（奇数添字3以上、五角形で直前が六角形）を `E` とし、`E<R` を満たす開始の有無を二段の剰余条件へ帰着する主張。内部五角形の通過を許すliteral gSWの定義を守る。閉じた全六角形railroadの有無やzigzagの全長・交差総数とは、比較する事象が異なる。
+
+| DDF2004の場所 | 読めた結果 | この候補主張との距離 |
+|---|---|---|
+| §2、pp.1283–1284、Fig.1 | zigzag、自己交差I/II、z-vector、双対での型の交換 | 交差の総署名。印を付けた開始からの最初の元の面ID衝突時刻ではない |
+| §3、pp.1285–1286、Tables3–4 | z-uniform/transitive/balanced、交差vector。同じvectorを持つ異性体もある | これらのvectorだけから二段条件を得る記述はない。情報不足一般の証明には使わない |
+| §4、p.1286、Eq.(2)、Table5 | `20(i²+ij+j²)`、gcdによるinflation、zigzag長・本数、primitiveで6/10/15本、交差署名の例 | 全族の閉じたzigzag構造に関する既知理論。数論解析の参照18は既読EJC2004 R20（S2001）。`E,R`の順序や二段剰余式の追加命題は見つからない |
+| §§5–7、pp.1286–1290 | z-knot、対称性、Kekulé構造との関係、式(3)などの予想 | zigzagが複数あるprimitive A3全域の開いたliteral経路の分類ではない。予想を定理扱いしない |
+| §8、p.1290、(i)–(iii) | railroad定義、単純zigzagの6/6分離、単純railroadと二つの互いに交わらない単純zigzagの同値、tight時の上限30、上限15の予想 | pentagonへの接触保証は、合法な偶奇の終点が最初の元の面再訪より早いという保証ではない |
+| §8、pp.1290–1292、Figs.5–10 | railroadの二重/三重交差と結び目、局所Euler条件 | 全六角形の閉曲線。五角形を途中で通過できるliteral gSWの停止条件への同一視はできない |
+| §9、pp.1292–1293、Fig.11 | 無限graphite/nanotubeへのzigzag概念の展開 | 方向・周期格子という共通背景。内部A3二段分類の記載はない |
+
+**短い導出の点検。** §4のgcd分解は非primitive部分の既知構造に寄与する。§8(iii)は接触の存在を与える。しかし、いずれも合法終点の偶奇・直前面条件と、元の面IDへの最初の再訪を保存した全開始の先後比較を与えない。§4が参照する既読のposition mappingから有限に走査することは可能だが、それを二段算術へ縮める追加工程は今回も得られなかった。したがってこの本文に対する判定は「読んだ範囲では見つからない」。短い導出が存在しないとは結論しない。
+
+## arXiv:math/0212352（S2003）との重なり
+
+同じ内容の別名論文とは扱わない。S2003の§7（PDFp.29）は、自身をDDF02のfollow-upと記す。2003年のarXiv版と2004年の刊行年だけから、研究内容の前後を逆に推定しない。
+
+| 共通する主題 | S2003の位置 | DDF2004の位置 |
+|---|---|---|
+| zigzag・署名I/II・双対・z-vector・balancedness・medial | §1、pp.2–4 | §§2–3、pp.1283–1286 |
+| railroad、tight、局所Euler、pentagon接触 | §§2–3、pp.7–15、特にProp.3.2 p.14 | §8、p.1290 |
+| tight fullereneの数値例・上限15の予想・自己交差railroad | §7、pp.29–31、Table7、Fig.15 | §8、pp.1290–1292 |
+| 二つの単純zigzagの大きい交差を実現 | §7、Theorem7.1 pp.30–31 | §4直前、p.1286で上記を参照 |
+
+DDF2004の中心はfullereneのvector統計・z/r-knot・Kekulé構造・icosahedral例。S2003には3/6、4/6多面体の分類や一般patchの議論もある。対応は概念・結果ごとに確認したもので、全文の一致率を測ったものではない。両方を読んでも、閉回路の交差署名を開経路の最初の衝突時刻と同一視する根拠は得られない。
+
+## 2015書籍：未読を維持する
+
+*Geometric Structure of Chemistry-Relevant Graphs* の指定§2.5–2.6、§7.1–7.6の本文は取得できなかった。[S2186](../../sources/S2186-book-archive-access-next28.json)・[S2187](../../sources/S2187-book-official-access-next28.json)。
+
+- 著者現行サイトはTLS証明書の検証失敗。検証は無効化していない。旧ENSの公開保存版から著者ホームを取得し、公開されている `1-26.pdf` が「目次と第1章」であることを確認した。後年の著者サイト保存版と別mirrorで26頁の同一PDFを取得しSHA一致。指定節の本文はない。
+- この著者草稿は表紙2015-02-05、目次は第7章開始143頁。刊行版の第7章開始151頁と異なる。草稿の目次頁を刊行版の本文頁として引用しない。指定節名の確認に限る。
+- 著者のCorrections/Additions/Updatesは第1章p.14と第5章p.100の訂正のみ。指定節の本文はない。
+- Springerの全書PDF・章2/7のPDF URLはsubscription previewのHTMLへredirectした。HTTP200はPDF取得成功ではない。
+- Google Booksの通常URLでPA38,40,151,153,160を確認。取得した未認証HTMLは対象本文/対象頁画像を露出しなかった。この経路の限界であり、全利用者に非公開という断定ではない。
+- 著者ページのロシア語版リンク `biblio.mccme.ru/node/5339` は現在別の本 *Figurate Numbers* へ遷移した。対象書籍の取得とは数えない。
+- Scholarの完全表題/関連語・本の全versions・章7の全versions検索（本は著者excerpt/Google Books/出版社へ、章7は本文候補なし）、CORE、機関repository/CROSBIを調べたが、指定節を含む無料合法な本文は今回確認できなかった。購入・login・連絡はしていない。
+
+**本については三択判定を付けず「未読」**とする。無料合法版が世界中に存在しないという主張ではない。
+
+## 取得経路と限界の記録
+
+[全取得試行](results/T0038/acquisition-manifest.json)と各 `fetch-batch*.json.results.json` にURL、結果、成功資料の取得UTC・bytes・hashを残した。Semantic Scholar/OpenAlexはclosed表示だが、それ自体を本文が存在しない証拠とはしない。Scholarの10versions、OpenAlexの旧ENS原URL、保存された著者ホームから合法な旧公開reprintに到達した。CROSBIはwaiting-page、旧bib.irb.hr/CiteSeerはtimeout、FULIRの指定二語検索は0件、CORE/ACSは403。索引の失敗を数学的な負結果にしない。
+
+原本文はGit非追跡cache、書誌と限定読解記録はsources、試行T0038に保存。第1段は3時間上限内、費用0。独立agentレビュー、科学的計算、Lean再実行、R002編集は実施していない。次は第2弾の既知一般定理との比較。

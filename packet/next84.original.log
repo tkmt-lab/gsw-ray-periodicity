@@ -1,0 +1,19 @@
+# R002 次の作業（その84、2026-10-20未明、統括から）：公開用一式 1.0.2（P007 4回目の指摘）
+
+公開する形のリポジトリで P007 4回目を行った。両論文とも、二人の読み手が全10問に合格した（`studies/R008/p007-run4-2026-10-20/results-lines.md`・`results-a3.md`）。読み手が見つけた一式の中の不備を直して、両方の一式を **1.0.2** にする。数学・Lean・主張の状態は変えない。
+
+## 第1弾（A3 v8 → v8.1、一式 1.0.2）
+1. `claims.json` の `app:census.independent_verification` と `INDEPENDENT-PROOFS.md` に、「C182まで、C184以降は待ち」が残っている。P006-17・本文に合わせて C186（64サイズ、43,636,843、陰性346、C188–C200は研究チームのみ）に直す。他にも C182 の現在形の記述が残っていないか、全文で探す。
+2. 本文 §10.3 の見出し "Update authorized for this draft" を、公開版に合う中立な見出しに直す。
+3. `cor:rays` の `lean` 欄が null になっている。`ClaudeCor.criterion_ray` と `R002.A3Release.path_ray` を、存在の部分の宣言として記録する。実行できる計算法がないこと（open の理由）は保つ。
+4. `OWNER-STATEMENT-CHECK.md` に、本人が確かめた写しと今の `ComparatorChallengeMain.lean` の違いを書く。違いは import 行と注釈1行で、定義と定理の文は同じ。統括の確認方法：diff。
+5. P006 の表の「target」の列が、直した版なのか直された版なのか曖昧（例：P006-17）。表の頭に意味を一文で書く。
+
+## 第2弾（lines v4.1 → v4.2、一式 1.0.2）
+6. 本文の参考文献に第1弾（Tatsuhiko Takimoto, "A two-stage classification …", repository https://github.com/tkmt-lab/a3-gsw-classification）を加え、系1bの A3 の箇所から引用する。CITATION.cff に `references` として加える。
+7. P006 の表などの空白抜け（"Sections2-6"、"packet1.0.0"、"all114"、"Definition1(a)" など）を直す。`v3-correspondence.md` の "next-80b" と json の "next80b" を揃える。
+
+## 共通
+- repo 外の写しで四つの確認と拒否対照を通す。拒否対照に、1（C182に戻す）と3（lean欄をnullに戻す）を加える。
+- 上限：作業の実時間1.5時間。
+- 送ったartifactは書き換えない。終わったらmailboxで一度報告する。

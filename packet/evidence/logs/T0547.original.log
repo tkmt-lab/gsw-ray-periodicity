@@ -1,0 +1,4 @@
+'R002.cylinder_displacement_height' depends on axioms: [propext, Quot.sound]
+'R002.cylinder_height_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.cylinder_scaled_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.cylinder_portal_shift' depends on axioms: [propext, Classical.choice, Quot.sound]

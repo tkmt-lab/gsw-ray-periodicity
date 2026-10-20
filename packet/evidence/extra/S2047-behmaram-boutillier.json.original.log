@@ -1,0 +1,16 @@
+{
+  "source_id": "S2047",
+  "title": "Asymptotic enumeration of perfect matchings in m-barrel fullerene graphs",
+  "authors_or_provider": "Afshin Behmaram; Cedric Boutillier",
+  "url_or_path": "https://arxiv.org/pdf/1710.05156",
+  "version": "arXiv:1710.05156v1 label 14 Oct 2017; internal date 5 Sep 2018; published DAM 2019 DOI 10.1016/j.dam.2018.08.012",
+  "checked_at": "2026-10-18",
+  "read_scope": "Abstract/intro; Section 3 transfer matrix definition and Eq.(3.1), PDF pp.5-6.",
+  "section_or_pages": "Abstract/intro; Section 3 transfer matrix definition and Eq.(3.1), PDF pp.5-6.",
+  "claim_supported": "Exact perfect-matching counts on fixed-width repeated barrel graphs have a finite transfer-matrix expression.",
+  "local_snapshot": "data/cache/R005/eighth/behmaram-boutillier.pdf",
+  "sha256": "bc3d0e89a89aa15d7795314b17ce3d382b5a6e9e3298f1e1afc4eab6fff00ca0",
+  "quotes": [],
+  "license_or_terms": "Public author or journal copy for research reading; full text remains in untracked cache, not redistributed.",
+  "limitations": "Asymptotic proof not independently checked; integer counts need not be periodic; only m=5,6 give ordinary fullerenes here."
+}

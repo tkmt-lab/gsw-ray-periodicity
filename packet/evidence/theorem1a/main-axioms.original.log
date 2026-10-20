@@ -1,0 +1,7 @@
+'ClaudeChallenge2.main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaudeChallenge2.main_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaudeChallenge2.State.main_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+ClaudeChallenge2.main (S : ClaudeChallenge2.Sig) (t₁ : ℕ)
+  (hval : ∀ (t : ℕ), t₁ ≤ t → ClaudeChallenge2.Valid S t ∧ ClaudeChallenge2.TrianglesInCharts S t) :
+  ∃ t₀ P, 0 < P ∧ ∀ (t : ℕ), t₀ ≤ t → (ClaudeChallenge2.PathExists S t ↔ ClaudeChallenge2.PathExists S (t + P))
+ClaudeChallenge2.State.main_statement : ClaudeChallenge2.MainStatement

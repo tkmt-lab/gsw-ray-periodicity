@@ -1,0 +1,123 @@
+# 第2弾のLean形式化：着手報告（2026-10-19）
+
+Claude worker（claude-lean worktree、branch `claude-lean`）。作業時間は21:02–21:25 JST。Leanを1プロセスずつ、`-j1 -M4096`、`nice -n 10`で実行した。
+追加したLeanは6ファイル、計862行。全宣言にsorry・native_decide・新しい公理はない。`#print axioms`の結果は全て標準3公理 `[propext, Classical.choice, Quot.sound]` だった。
+既存ファイルと`Formal.lean`は変更していない。
+
+## 1. 作業1：閉条件のある族の整数一次直線（純算術、完了）
+
+### 1.1 述語（`formal/Formal/Claude2FamilyRays.lean`）
+
+族のパラメータは自然数とする。直線上のパラメータは、`ClaudeCor.criterion_ray`と同じく`(a*t+b).toNat`で表す。
+
+| 族 | 定義域述語 | 陽性の述語（§5.1の文言どおり） |
+|---|---|---|
+| K3(r,s) | `K3Dom r s := 2 ≤ r ∧ 2 ≤ s` | `K3Pos r s := (s:ℤ) ≡ 1 [ZMOD r] ∨ (s:ℤ) ≡ -1 [ZMOD r]` |
+| E10(p,r,s) | `E10Dom := 1 ≤ p ∧ 2 ≤ r ∧ 1 ≤ s` | `E10Pos p r s := ∃ d, (d = 0 ∨ d = r ∨ d = r+s) ∧ (p ≡ d+1 ∨ p ≡ d-1) [ZMOD 2r+s]` |
+| B2(p,r) | `1 ≤ p ∧ 1 ≤ r` | `B2Pos p r := p = 1 ∨ abs(p - r) = 1` |
+| C1(a,b) | `1 ≤ a ∧ 1 ≤ b` | `C1Pos a b := ¬ 2 ≤ b`（陰性 iff b≥2） |
+| A1(r) | `1 ≤ r` | `A1Pos r := False` |
+| A2(p) | `1 ≤ p` | `A2Pos p := p = 1` |
+| A3(k,l) | k>l>0 | `ClaudeChallenge.criterion`（第1弾の`criterion_ray`を`Claude2.a3_ray`として再掲） |
+
+これらは族の分類の**主張文**を述語にしたもので、グラフは使っていない。「述語 ↔ 双対グラフにliteral経路がある」という対応は、各族の分類（A3以外は非形式の証明）に委ねている。
+
+### 1.2 証明した定理
+
+`ClaudeCorRays`の`Ev`/`EvPer`、`IsAff`、`evPer_dvd`/`evPer_gcd`/`evPer_lt`/`ev_large`を再利用した。新たに「最終的に一定」を表す`EvConst`を定義し、∧・∨・¬、同値による置換、定義域との∧に対する閉包を示した。
+原子述語の補題は二つ追加した。`evConst_dvd`は、非定数の一次法による整除が最終的に一定であることを示す。`evPer_dom_and`は、定義域が最終的に一定なら`Dom ∧ Pos`が最終周期的になることを示す。
+
+| 定理 | 内容 |
+|---|---|
+| `Claude2.k3_ray a b c d` | 十分先で`2 ≤ r(t), 2 ≤ s(t)`なら、`K3Pos r(t) s(t)`は最終周期的 |
+| `Claude2.k3_ray_all` | **全ての**整数一次直線で`K3Dom ∧ K3Pos`が最終周期的（定義域の仮定なし） |
+| `Claude2.k3_ray_const` | rが非定数（a≠0）なら最終的に一定（周期1） |
+| `Claude2.k3_ray_period`（`Claude2FamilyPeriods.lean`） | r=b≥2が定数なら、定義域に入った時点Tから周期b |
+| `Claude2.e10_ray` / `e10_ray_all` | E10の同様の主張（6個の一次整除の論理和） |
+| `Claude2.e10_ray_const` | m=2r+sが非定数（2a₂+a₃≠0）なら最終的に一定 |
+| `Claude2.e10_ray_period` | mが定数（2a₂+a₃=0）なら、Tから周期m=2b₂+b₃ |
+| `Claude2.b2_ray`, `b2_ray_all` | B2は定義域内の直線で最終的に一定。全直線で`Dom∧Pos`が最終的に一定 |
+| `Claude2.c1_ray`, `c1_ray_all`, `a1_ray(_all)`, `a2_ray(_all)` | C1・A1・A2は全直線で最終的に一定 |
+| `Claude2.b2_c1_a1_a2_evPer` | 上の4族が全直線で最終周期的であることのまとめ |
+| `Claude2.a3_ray` | A3（第1弾 系4の算術形、`ClaudeCor.criterion_ray`） |
+
+§6.3の具体的な二直線は、閉条件から全てのt∈ℕについて決定した（`Claude2FamilyExamples.lean`）。
+
+- `Claude2.k3_example t : K3Pos (43+2t) (170+5t) ↔ t = 40 ∨ t = 42`
+- `Claude2.e10_example t : E10Pos (200+5t) (17+2t) (23+t) ↔ t = 3 ∨ t = 10 ∨ t = 17 ∨ t = 34`
+
+証明では行列式の補題（§6.1）を使った。整除`M ∣ X`から`M ∣ uX+vM = c ≠ 0`を作り、`M ≤ |c|`でtを有界にしてから、残る有限個を`norm_num`で評価した。定数cはK3では123と127、E10では142、144、739、749、681、691。R004 affine-rays-proof.mdの表と一致する。
+
+### 1.3 範囲
+
+- K3はr,s≥2、E10はp,s≥1・r≥2の域だけを扱い、§5.1の指定域外へiffを広げていない。`*_ray_all`は「定義域に入っており、かつ陽性」という述語の周期性であり、域外の陽性は主張しない。
+- O2・D14・D1の「両パラメータ≥2で陰性」は定数述語なので自明であり、形式化していない。D12は閉条件が未完のため対象外とした。
+- 周期と閾値の存在は構成的に示した。最小周期と一様な閾値の上界は示していない。
+
+## 2. 作業2：族のグラフ水準の形式化の実現可能性（K3を選択）
+
+### 2.1 仕様（`Claude2AlignedSpec.lean`、Mathlibと`ClaudeChallengeSpec`のみ）
+
+K3とD12は「整列族」である。全てのchart辺が格子の6方向に沿うため、単位三角形はどれも一つのchartに収まる。その結果、A3の`gcGraph`と違って、隣接に継ぎ目を越えた展開は要らない。そこで族ごとではなく、次の汎用の層を書いた。
+
+- `Sig`：N個のchartを持つ。各chartには、凸格子多角形の反時計回りの角の列`poly f`と、角ラベルの列`lab f`がある。
+- `InCell`：閉多角形への所属。全ての辺について外積が0以上であることで判定する。
+- `Glue g i f j m τ`：gの辺i（ラベルa→b）を、fの辺j（b→a）へ`z ↦ rotN m z + τ`で貼る。aをaへ、bをbへ移す。
+- `SamePoint`、`Vertex := Quot (EqvGen SamePoint)`、`graph`：同じchart内の代表が単位ベクトルだけ離れていれば隣接とする。
+- 族の具体化：`k3Sig r s`（R004 k3.py：r三角形8枚と、辺がr,r,s,r,r,sの六角形3枚）と`d12Sig r s`（12角形2枚）。
+- 主張文（Prop、未証明）：`K3Statement`（r,s≥2で陽性 iff s≡±1 mod r）、`K3Sufficient`、`D12QrStatement`（r≥3、s=qr±1で陽性）。`LiteralPath`と`deg`は第1弾の仕様のものをそのまま使っている。
+
+### 2.2 仕様の検査
+
+- **Lean**：`Claude2Aligned.k3_glue_complete`と`d12_glue_complete`（`Claude2AlignedK3Glue.lean`、`Claude2AlignedD12Glue.lean`）。全ての整数r,sについて、ラベルが対になる全ての有向辺（K3は42、D12は24）が実際に`Glue`で貼られることを示した。`Glue`は存在命題なので、辺長や向きを誤ると黙って貼られずに残る。その誤りを全パラメータで排除した。ラベルの対応は`decide`で、各辺の等長回転は`simp`/`omega`で確認した。
+- **Python鏡像**：`studies/R002/claude-lean/claude2_aligned_mirror.py`。Leanの定義を字義どおりに実装した（サイトの列挙、Glueの全列挙、SamePointの同値閉包、chart内単位差）。結果は`claude2-aligned-mirror-2026-10-19.json`に保存し、`all_ok: true`だった（0.7秒）。
+  1. K3は1≤r,s≤7の49組、D12は1≤r≤6・1≤s≤4の24組で、頂点数（K3は7r²+6rs+2、D12は6(r+2s)²+2）、辺数3V−6、次数列（次数5が12個、他は全て6）を確認した。
+  2. 同じ全組で、貼り合わせが境界点だけを同一視することを確認した。仕様の凸性の注記に対応する。
+  3. 同じ全組で、R004の独立構成（辺位置をキーにした`aligned_surface.construct`、読み取りのみ）と、サイトの分割・辺集合が完全に一致した。
+  4. K3は2≤r≤6・2≤s≤7の30組で、定義1(a)からの全探索によるliteral経路の有無がs≡±1 (mod r)と一致した。D12は既知の枝（s=qr±1・r≥3は陽性、gcd≥2は陰性）の該当10組で一致した（V≤1000の範囲）。
+  5. R004 k3-positive-proof.mdの明示経路（筒座標。六角形H+j(r,r)をcell 8+((2−j) mod 3)へ写す）は、2≤r≤8・2≤s≤14の41件の全てでliteral経路だった。Leanで十分性を示すときに使うchart写像を、事前に確かめたことになる。
+
+### 2.3 K3の閉条件を証明するのに必要なもの
+
+R004のK3証明は二つの部分からなる。必要性はcapの反射と筒の往復で示され、法rの剰余δ↦−δ、δ+σsという1次元の議論である。十分性は筒内の明示経路で示される。これをLeanに移すには次が必要になる。
+
+| 段階 | 内容 | 再利用できるもの | 見積もり（Lean行） |
+|---|---|---|---|
+| A. 頂点の標準形 | SamePointで不変なキー（角ラベル／辺位置／chart内部点）と、その逆（類の列挙）。任意のm,τのGlueが表の回転に一致すること、貼られる点が辺上にあること（記号r,sを含む凸性の不等式） | `k3_glue_complete`、`k3_pairs`、`rotN`の補題（ClaudePosFrame） | 600–1,000 |
+| B. 次数 | 内部点と辺上の点は6、角はラベルの角の和/60°=5。近傍集合のncardを類の列挙から計算する | Aの上に新規に書く。A3のGCClosedDegree系の手法を参照できる | 800–1,500 |
+| C. 十分性 | 筒座標から(cell,z)への写像、経路点の所属、隣接、相異（Aのキー）、端点の次数（B） | `K3Sufficient`の文、Python鏡像の5 | 800–1,500 |
+| D. 局所リンク | r,s≥2で各辺の共通隣接点がちょうど2個（`R002.TwoCommonNeighbors`）。3-閉路は全て面であることを、外部定理S1504を使わず局所計算で示す | `ForcedContinuation.lean`、`FiniteLiteralPath.lean`（グラフ一般、そのまま使える） | 800–1,500 |
+| E. 必要性 | 強制walkの平面への持ち上げ、capの4通過場合、奇数側の原始座標の剰余の不変量、全開始（12ラベル×10向き。上下交換と3回対称を自己同型として示すか、全場合を直接処理する） | A3のGCClosedPathLift/LiftStateの構成を参考にできる。ただしicosahedron固有の部分は使えない | 3,000–5,000 |
+
+合計は**約6,000–10,000行**と見積もる。A3の全分類（概算でGC系とClaude系の形式化が約15,000行、うち必要性側が約11,000行、十分性側のClaudePos・ClaudeBeltが約2,800行）の4–6割に当たる。
+今回の予算の残り（約1,600行）では、十分性Cまでも確実には終わらない。指示どおり証明本体には着手していない。
+
+**結論。** K3のグラフ水準の形式化は実現可能である。第一候補としてはD12よりK3がよい。理由は次の三つ。
+
+- 閉じたiffがある。
+- 証人が単純である。
+- 必要性が1次元の剰余の議論に帰着する。
+
+D12は二変数の閉条件が未完である。形式化できるのは既知の枝（s=qr±1の十分性、gcd≥2の陰性）とR004の二直線に限られる。後者の証明書2,814条件をLeanで再検査するには別の設計が要る。
+
+推奨する順序は、A・Bを整列族の汎用層として作り（D12・D14・O2でも再利用できる）、次にCで`K3Sufficient`を閉じ、最後にD・Eに進むことである。A＋B＋Cだけでも2,200–4,000行で、「K3の十分性のLean証明」という独立した成果になる。
+
+## 3. 残る隙間
+
+- 作業1の述語と実際のグラフとの対応（族の分類定理）はLeanにない。A3だけが第1弾で形式化済みである。
+- `Claude2AlignedSpec`は統括によるchallenge仕様ではなく、worker自身が書いたものである。人間による読み合わせと、R004 k3.py・d12.pyとの対応の確認を要する。Python鏡像では小さいパラメータで一致したが、Leanでは全パラメータについて貼り合わせの完全性しか示していない。
+- 仕様の注記「凸で反時計回りなら、貼り合わせは辺上の点だけを同一視する」はPythonで確認しただけで、Leanでは証明していない（段階Aに含まれる）。
+- `K3Statement`、`K3Sufficient`、`D12QrStatement`は文だけで、証明はない。
+
+## 4. ファイルとcommit
+
+- `formal/Formal/Claude2FamilyRays.lean`、`Claude2FamilyExamples.lean`：commit `5ff77e8d`
+- `formal/Formal/Claude2AlignedSpec.lean`、`Claude2AlignedK3Glue.lean`、`studies/R002/claude-lean/claude2_aligned_mirror.py`、`claude2-aligned-mirror-2026-10-19.json`：commit `9b144ea7`
+- `formal/Formal/Claude2FamilyPeriods.lean`、`Claude2AlignedD12Glue.lean`、鏡像の更新（明示経路の検査5）、本報告：最終commit
+
+再現手順：
+
+```bash
+cd formal && nice -n 10 lake build Formal.Claude2FamilyExamples Formal.Claude2FamilyPeriods Formal.Claude2AlignedD12Glue
+python3 studies/R002/claude-lean/claude2_aligned_mirror.py --r004 <verify worktree>/studies/R004/src
+```

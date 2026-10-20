@@ -1,0 +1,320 @@
+[
+  {
+    "path": "formal/Formal/Claude3ChallengeSpec.lean",
+    "sha256": "0013e3c331a5125385cb14efe0d886a86fa649669f00c9d335e41f2583967ae5",
+    "bytes": 8473,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoBasic.lean",
+    "sha256": "d3bb4edd93e4a7090ee964138243c217d513fed9628a6ff6a028801e7c235ff1",
+    "bytes": 10109,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoRows.lean",
+    "sha256": "e15c438bef36b63f192651e7b91369ddef6f163a606e479b88e8a9de049fc327",
+    "bytes": 16387,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoDeg.lean",
+    "sha256": "e4487ef1529e2d58a5a688597f0d3d11cc0f1e801e8cf23ca42e28a3f766550c",
+    "bytes": 7043,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoRot.lean",
+    "sha256": "48afd2b30a25250d1300761ed77a095a02e52dfbbd2e9c1428d3afc5128563ad",
+    "bytes": 8665,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoPassage.lean",
+    "sha256": "040b1afd088ecb5b62fafcf201c757c326fee5e88d175665f7abf81524181321",
+    "bytes": 5415,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoSeam.lean",
+    "sha256": "33f644825b630853cf59b2d25a8eb48e25f4e407aaf55d45d6ccdbcdcc0a496e",
+    "bytes": 10584,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoSyntax.lean",
+    "sha256": "c94f7c2069740e64472d79d16c034ba111c85371086bb0719c4f7f605314435b",
+    "bytes": 4445,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoDerived.lean",
+    "sha256": "dfd07fa9bc27efbe1df4ce350f8ca118830cb732a619e71926f3420e266ce860",
+    "bytes": 12173,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoAutomata.lean",
+    "sha256": "93c8fff2c159e1ff0bf4f5b3eeca01c339203edc3be923707cfc96edc1d7e71a",
+    "bytes": 10986,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoRegular.lean",
+    "sha256": "88fc1f76bba0f6c749d65d770677812006f5be1d1f8523d745595992b66e66e1",
+    "bytes": 12082,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoUnary.lean",
+    "sha256": "836436741d1e340ee4a9b4b8d4a33940e567729fcb8478fb63f2b919795c68d7",
+    "bytes": 7166,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3MsoLenMod.lean",
+    "sha256": "ed8afb0eed122a738c2d857bd87cf044e80b64778d755c45874e24517f8f9b18",
+    "bytes": 6193,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3FoldDef.lean",
+    "sha256": "b0402752b0ad4a708893d53b2c89c95be623b2cb4a42f2baf9060cbb53462356",
+    "bytes": 12785,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3FoldLin.lean",
+    "sha256": "bdbe0b99ada347741ba563db3d077a451e7321f1c21c53022984a0804b2adcf1",
+    "bytes": 9636,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3FoldSyntax.lean",
+    "sha256": "7174553c96131c0be247de19344587b9d439cc763be58d2b46dc1864467ef049",
+    "bytes": 5102,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateDef.lean",
+    "sha256": "d633b97421c841e4771b43cff5cdf35e65e05cd6e76d6b872595034e211a52aa",
+    "bytes": 13837,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateLemmas.lean",
+    "sha256": "485e3d42c2c1f77241b416d57461aeab6bfcf42dc0c60f93397a1e0448b7cddd",
+    "bytes": 8693,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateFwd.lean",
+    "sha256": "01f73729c2cf7ec1a396270b5bac0d18b9088b86505a8906645fbfb27e6cab48",
+    "bytes": 10257,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateHit.lean",
+    "sha256": "4e14c8801b587689a3f2d00ee55518b19da111a2c7202244a0cb7457fe83d46e",
+    "bytes": 7463,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateCond.lean",
+    "sha256": "f7b7dc9663cee4c66ab918258b39ef32fcceb41ab085862759c51c76009231ad",
+    "bytes": 18355,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateBack.lean",
+    "sha256": "1b16bb8d24efe1c721dae9efdc38c0eeaac1b3d7b9dc949551b60ba0a7182e39",
+    "bytes": 10764,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateExtract.lean",
+    "sha256": "ab57ea3dfc6f131a618a23cf050b652107203cf85590d9795fe58c820de13e0d",
+    "bytes": 9255,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3StateMain.lean",
+    "sha256": "d6a85422c5bd39af9ed9f9e698b4ca92ded6e601e05db7ecf3a47786f939ce22",
+    "bytes": 1831,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3FoldMain.lean",
+    "sha256": "751c652048979265884602c2108e8c3eff3cdce24fc127f78a59bfc40d132fb1",
+    "bytes": 10113,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3FoldTheorem.lean",
+    "sha256": "59b3ea8aa1567fd956543e9ce14cdcb8fa0bfe3f9c492109a63a45f5c5d2b5d6",
+    "bytes": 7813,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoQuot.lean",
+    "sha256": "bb6318e4d7d3d953dcef993f02985ea27aa73168f2779d357fcdbb1d0a7c28d2",
+    "bytes": 5948,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3GeoChain.lean",
+    "sha256": "a363b046c517268ea7446a0f5640fc89589953d3ab7919c590699d4ec659ed5c",
+    "bytes": 10896,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentNrm.lean",
+    "sha256": "92c64c1eb25069f94d450771d3fb187528f7a3234e328ab821a3114037dd990e",
+    "bytes": 18032,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentMeet.lean",
+    "sha256": "940c8437ec8fcc6a88f1f8b4f46613c314e4f8381b5cbdbb9b01c52f7613f916",
+    "bytes": 15457,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentHF.lean",
+    "sha256": "82fd665fb1a92e94789de8242b587bfac55f715ced43de7c90a0a18f070edb55",
+    "bytes": 6679,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDef.lean",
+    "sha256": "ce23cc447362b0b0ae6bf665bf6f37cbe34298855de363178e3770796dae9f5d",
+    "bytes": 7424,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentPred.lean",
+    "sha256": "dc97f4c89ca31696b2734a8a800729ae518f83efdbaa44f40972e8dd9f10f88f",
+    "bytes": 8796,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentSkel.lean",
+    "sha256": "a20e767d754809f603087805dc4b12064e0e392ab27816cbdfd264000eb5a36b",
+    "bytes": 10419,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentAdj.lean",
+    "sha256": "7940e4b6c1950d3903194a9704a028e4f726e7c744e1c9c3722f3e918cdb98ee",
+    "bytes": 12202,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentDeg.lean",
+    "sha256": "5bfd1fc2bf49a13101b35118b4bb7df06db3107cd70dab2d868471c4218350be",
+    "bytes": 15059,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3IdentRow.lean",
+    "sha256": "d819f33de01d9e56394b1e483ba91df551c85e422752eba0d9c1686b22b2bce0",
+    "bytes": 6802,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentRow.lean",
+    "sha256": "7fd36eb356e706d4a8403bba065e31dd9f3714da5fd5a13b644b04e23fe481a0",
+    "bytes": 9436,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentTrans.lean",
+    "sha256": "e0e7f91fd4e90dcd516dd3909fb4ffceccf99eef99ff9e8f153d2c85d40e33a3",
+    "bytes": 8667,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentTransHF.lean",
+    "sha256": "0e3679ee4f634b0da9e11932fea8d8d8343d9b8342b234843ef2a4ec31c67f32",
+    "bytes": 11692,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentPin.lean",
+    "sha256": "2d6c476a13876194acfdba0386d97b3bf3ec24e2d457f6ff89d6059977796fea",
+    "bytes": 6644,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDeg.lean",
+    "sha256": "4d74d6b14eac846ea67d5ea6e866be421876b6584531bcb54df3402201c56ea4",
+    "bytes": 10727,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentRoot.lean",
+    "sha256": "c6be6a3c3c71a7a5c51fa66a625350eb59f6136e279cd6e70d60c4246a32f36c",
+    "bytes": 10156,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentPar.lean",
+    "sha256": "fe062c7d9ad419a961fc88d9d3477c2403bee876356993c99c4095faabd958b8",
+    "bytes": 11564,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentTail.lean",
+    "sha256": "8b13d8dce2b8cdcea0deb08dadaca421f018c062edfb8f0ac642f8da3c080f05",
+    "bytes": 17866,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentEntry.lean",
+    "sha256": "93cd154627d798a70b190864ded4347adaf25c4cb01788acb4a4015dc7e4b078",
+    "bytes": 4880,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDbW.lean",
+    "sha256": "3325b103551126ba23be94fec98698be8b8a1a1092d2dbcad6b8eacac0fd5405",
+    "bytes": 7444,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDbNP.lean",
+    "sha256": "04b4b5644f15f831b8199dabeec778176d3a53dfd01437af661b2d72136e78aa",
+    "bytes": 4025,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDbP.lean",
+    "sha256": "cde325ec231aa7a7849b8feac369624b528066cf99f6303a62f0cd11d84bc5c7",
+    "bytes": 6839,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3SentDb.lean",
+    "sha256": "2cf7296a7e153c3dba80e81f64158c6059076d68cf7844873cd6646580b0a4ff",
+    "bytes": 14631,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3Thm1a.lean",
+    "sha256": "8a630a5a8b6118912412ce1869a4e10debad11bd1dcab505a35d3cfbead6db12",
+    "bytes": 3517,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3ComparatorSolution.lean",
+    "sha256": "4061d1ed401eb044faf68d8f881783935f540823998d8711ed2ac88f6ed984f9",
+    "bytes": 606,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  },
+  {
+    "path": "formal/Formal/Claude3Residue.lean",
+    "sha256": "5aad2c617926c8202bc1cd7c8a06309cc74f27ad35fae22324b39192f5fefd4c",
+    "bytes": 2503,
+    "source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8"
+  }
+]

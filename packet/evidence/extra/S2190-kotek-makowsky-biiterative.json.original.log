@@ -1,0 +1,39 @@
+{
+  "source_id": "S2190",
+  "title": "Recurrence Relations for Graph Polynomials on Bi-iterative Families of Graphs",
+  "authors_or_provider": "T. Kotek; J. A. Makowsky",
+  "url_or_path": "https://arxiv.org/pdf/1309.4020v1",
+  "version": "arXiv1309.4020v1(16Sep2013); published EJC41(2014)47–67",
+  "checked_at": "2026-10-19",
+  "read_scope": "§1、§5 pp.9–13(Defs17–20,Lemma28)、§6.5 pp.16–17(Thm30,Lemma31)、§7 p.17 Thm32。pp.13,17描画目視。",
+  "section_or_pages": "§1、§5 pp.9–13(Defs17–20,Lemma28)、§6.5 pp.16–17(Thm30,Lemma31)、§7 p.17 Thm32。pp.13,17描画目視。",
+  "claim_supported": "固定labelの(bi-)iterative族とMSO多項式の反復理論は既知。Lemma28は有界clique-width、格子graphはこの仮定から除外。Thm32はC2-finiteであり真偽列の周期性そのものではない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/kotek-makowsky.txt",
+  "sha256": "7b2c724e6e22ae28f85cb24ea581d8db9b9743a458896aef96bca72c20720780",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "全補題の独立再証明・C2-finite列の零集合の周期性は主張しない。gSWへの適用は別の翻訳を要する。",
+  "quotes": [
+    {
+      "text": "Bi-iterative families have bounded clique-width.",
+      "supports": "固定labelの(bi-)iterative族とMSO多項式の反復理論は既知。Lemma28は有界clique-width、格子graphはこの仮定から除外。Thm32はC2-finiteであり真偽列の周期性そのものではない。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/kotek-makowsky.raw",
+    "bytes": 475088,
+    "sha256": "ab9c4e027f7caf31e6f06c3587f83e708116a17131aba0aa01795c1ffa50d72c"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/km-p13.png",
+      "bytes": 289587,
+      "sha256": "c83bea90151eb6663e1fabcd3d67563be9279a415e24d9b74c464e3a6ee67a5d"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/km-p17.png",
+      "bytes": 250734,
+      "sha256": "f1a0271d11ae648e5b160ad3faa1cb18502261fe05d0219d610b734683010e64"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:42:38.117192+00:00"
+}

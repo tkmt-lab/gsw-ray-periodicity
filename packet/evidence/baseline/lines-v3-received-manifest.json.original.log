@@ -1,0 +1,294 @@
+{
+  "scope": "Fixed completed receipts only. No main-team materials sent to R004; no R004 code execution, fresh graph checks, new literature search, formalization or human peer review.",
+  "received_at_commit": "d71a0a9400ce36c363894c704967546c531fd7e8",
+  "sources": [
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-003.md.txt",
+      "source": "studies/R004/report-003.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "b46da0f1cd8ffe56b83898acb80a336653009ed94e93fa5b4fd2d3ec5bf5673f",
+      "bytes": 10394,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-004.md.txt",
+      "source": "studies/R004/report-004.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "856b6dd9a828c065e7bcb9ccac3766daaa91c7301334cc568d99b74d6f005b33",
+      "bytes": 10644,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-005.md.txt",
+      "source": "studies/R004/report-005.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "863017a492bd2baab9083da35fefaf6f406ef9d5b0fc96eb48a951cb925db360",
+      "bytes": 5893,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-006.md.txt",
+      "source": "studies/R004/report-006.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "7cb6c651839f989cba0a37b1f02cd40f9590174ea668eb7460d5fb911b3f24ca",
+      "bytes": 7499,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-007.md.txt",
+      "source": "studies/R004/report-007.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "4581d0397aa7fd656b4d52d0f7265340ea73d7713eb291e8887839187530d7f0",
+      "bytes": 13988,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-014.md.txt",
+      "source": "studies/R004/report-014.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "b62408a2e86fb3370e4b29239bb53acedcbf801766abcb66cd781652067ab546",
+      "bytes": 3015,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-report-015.md.txt",
+      "source": "studies/R004/report-015.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "1b6a5bd5694510356e091f32dbffa708b2bd82543e14b1c4d3a403e6f950d648",
+      "bytes": 6552,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-c1-proof.md.txt",
+      "source": "studies/R004/c1-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "715a2db7b9b8b51ea5e42571c78b40ab6896e5a2d24d1e327b91859132812278",
+      "bytes": 9804,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-b2-proof.md.txt",
+      "source": "studies/R004/b2-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "2aadfc1e9a6d5b4613e09cf6d8ddabce31361e8dec326ad2193868026ae9f0c7",
+      "bytes": 11031,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-gc-proof.md.txt",
+      "source": "studies/R004/gc-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "c0430d4029754d4ab75baa44abe25ff24ffc0af082fdf76c6dcecdd34fd07e8c",
+      "bytes": 3322,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-k3-positive-proof.md.txt",
+      "source": "studies/R004/k3-positive-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "36b1704a91e4e5baa2979b2a907c9b9085b9cc013d1f845c41febc9593dd9d8f",
+      "bytes": 4115,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-k3-necessity-proof.md.txt",
+      "source": "studies/R004/k3-necessity-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "41a450ac2c32c3f9d80aa30c5c32217e539060947ebc17d2ae85e61841dc87b0",
+      "bytes": 8185,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-e10-positive-proof.md.txt",
+      "source": "studies/R004/e10-positive-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "4c84034516d1268eabe11a961d85b686b219c9b40b5815b49eafd577da839db2",
+      "bytes": 3378,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-e10-necessity-proof.md.txt",
+      "source": "studies/R004/e10-necessity-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "e9c1756df0a9373634e86daa038c2a76f1473784f1826c6bf17f5536f274e596",
+      "bytes": 8984,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-d12-positive-proof.md.txt",
+      "source": "studies/R004/d12-positive-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "c0d2e989c9385586b9d753500af770832e5bc9f2d6b628f47c033f21da011099",
+      "bytes": 8654,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-o2-proof.md.txt",
+      "source": "studies/R004/o2-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "80d6867e18ed51831378cb25332b8b53910277e87b1b2027ba12a02f64b8e0d7",
+      "bytes": 7327,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-claim14-arithmetic-proof.md.txt",
+      "source": "studies/R004/claim14-arithmetic-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "2e743f6b4c061383238a141bea2946fab608e4a443d00bc800a0de4099d40617",
+      "bytes": 5832,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-aligned-periodicity-proof.md.txt",
+      "source": "studies/R004/aligned-periodicity-proof.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "d049f1b0988596c2e76322ec2ba71d3caf2b3fea6a21a91a75d67c76faa11d13",
+      "bytes": 16401,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-claim14-aligned-families.md.txt",
+      "source": "studies/R004/claim14-aligned-families.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "5210867c3756d0c0e3048e3d4fb1c94ed48b40a49f9ed7f8d068bc7b10fe5dd8",
+      "bytes": 10874,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-coordinator-review-claim14-2026-10-19.md.txt",
+      "source": "studies/R004/coordinator-review-claim14-2026-10-19.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "e755314de7bb17fe1fa65782b4b4f92b470130fb383756203110169d2432c031",
+      "bytes": 1121,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-independence-007.md.txt",
+      "source": "studies/R004/independence-007.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "3f8ff4658bfd2fb3385d9cf84fb26c64c8e565efed94277fc92bbdffeb5c3e2b",
+      "bytes": 1040,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-independence-014.md.txt",
+      "source": "studies/R004/independence-014.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "a0216b0940905b3f7ca9a25271f79425c8c0a256ee1d7177eba0636113a58df0",
+      "bytes": 1459,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-aligned-periodicity-recheck-fix.md.txt",
+      "source": "studies/R004/aligned-periodicity-recheck-fix.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "0d80002968c72c3ef8cbd9f0955e0eafda86a8cd8eed2cdd8bba11e43297eac7",
+      "bytes": 1926,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-claim14-arithmetic-recheck-fix.md.txt",
+      "source": "studies/R004/claim14-arithmetic-recheck-fix.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "6a889a96aa340001735f6416a4d32054e903739a0091495891bb85650bd3d67c",
+      "bytes": 668,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-reproduce-014.md.txt",
+      "source": "studies/R004/reproduce-014.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "774f235fe43b9fdc3f926e140130350b6fabe2aa9eb97649697d1c75ecc4e602",
+      "bytes": 1858,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-reproduce-015.md.txt",
+      "source": "studies/R004/reproduce-015.md",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "0590240592e31b721336aad6aefd3289e6a8adcbf41413900b1ba236c00e45b1",
+      "bytes": 2546,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-evidence--aligned-periodicity-final--summary.json.txt",
+      "source": "studies/R004/evidence/aligned-periodicity-final/summary.json",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "ffe9c09fdbf950e0b334da73624c7fbbac165424ef161fd14e7f8930b8df8d4f",
+      "bytes": 1636,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-evidence--claim14-arithmetic--summary.json.txt",
+      "source": "studies/R004/evidence/claim14-arithmetic/summary.json",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "4da47d10617f236cfb9a20b672a5fa1a5588980cf1548ef735c129fa2f0968fb",
+      "bytes": 515,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/coordinator-claim14-review.txt",
+      "source": "studies/R002/analysis/2026-10-18-claude-independent-gsw/2026-10-19-R004-claim14-review.md",
+      "source_worktree": ".worktrees/research",
+      "commit": "d71a0a9400ce36c363894c704967546c531fd7e8",
+      "sha256": "d26a4912dd58d856bf1f790296be7015891f39a8594cb57e526e92460fef37b8",
+      "bytes": 3420,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-source-S1504-cyclic-connectivity.json.txt",
+      "source": "sources/S1504-cyclic-connectivity.json",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "08f209e69efb37c59aeb0844a1790dc81b7dc2b58a4e1035d5bab080083f0440",
+      "bytes": 1061,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-source-S1512-graver-d1-d14.json.txt",
+      "source": "sources/S1512-graver-d1-d14.json",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "8a4488c8da12677ac73b0cf9c96af049a76c28d95438de4288e7627335d02f79",
+      "bytes": 1047,
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "studies/R002/lines-v3-received/R004-source-S1513-mso-finite-words.json.txt",
+      "source": "sources/S1513-mso-finite-words.json",
+      "source_worktree": ".worktrees/verify",
+      "commit": "25c281c8d555f2e6d5963970e0d51a08631b4e6d",
+      "sha256": "7a8cb7bbab7d0ebcdbe1c7b2ea50e5bfa9a411f1c02b1ba2636669aa288db1bc",
+      "bytes": 911,
+      "transformation": "byte-identical"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "source_id": "S2193",
+  "title": "Graph Structure and Monadic Second-Order Logic — finite signatures and iteration",
+  "authors_or_provider": "Bruno Courcelle; Joost Engelfriet",
+  "url_or_path": "https://www.labri.fr/perso/courcell/TheBookChap1.pdf",
+  "version": "Author-hosted Chapter1 of CUP2012 book; original sourceS2046 reused SHA c1e020d3e0a1b57bca8f4473aa8f616c31fbfff4ec468b78f4f116a2d63c506c",
+  "checked_at": "2026-10-19",
+  "read_scope": "§1.2.5 pp.38–39 Thm1.12、§1.3.2 p.46 Thm1.16、§1.5.1 pp.51–52 Thm1.21とCMS2/Cardp定義を再読。既存S2046と同じ原本。",
+  "section_or_pages": "§1.2.5 pp.38–39 Thm1.12、§1.3.2 p.46 Thm1.16、§1.5.1 pp.51–52 Thm1.21とCMS2/Cardp定義を再読。既存S2046と同じ原本。",
+  "claim_supported": "固定有限境界contextの反復と固定CMSO2式なら有限状態反復に帰着。単なるtreewidth有界や各tごとの別々の式だけでは足りない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/courcelle-reading-note.txt",
+  "sha256": "9cf3b8bdd0b3aac9445b4bbc43ba1d57cf775ae765d616e0e459f88f0d268768",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "第5章の全証明未監査。gSWの固定CMSO2記述と固定反復族への応用は本報告の翻訳。",
+  "quotes": [],
+  "original_document": {
+    "path": "data/cache/R005/eighth/courcelle-engelfriet-ch1.pdf",
+    "bytes": 910390,
+    "sha256": "c1e020d3e0a1b57bca8f4473aa8f616c31fbfff4ec468b78f4f116a2d63c506c"
+  }
+}

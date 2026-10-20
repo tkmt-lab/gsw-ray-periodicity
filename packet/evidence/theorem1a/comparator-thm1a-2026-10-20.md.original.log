@@ -1,0 +1,21 @@
+# Comparator照合：第2弾の主定理（定理1a）`ClaudeChallenge2.main`（2026-10-20）
+
+統括（Claude Code）。第2弾の主定理（定理1a、主張文 版2）の証明が、統括が証明より先に書いた主張文の `theorem main` と同じ文の証明であることを、`lake comparator --paranoid` で照合した。
+
+- 主張（challenge）：`formal/Formal/Claude3ComparatorChallenge.lean`。`namespace ClaudeChallenge2` 以下が `studies/R002/analysis/2026-10-20-claude-aligned-challenge/Challenge2.lean`（版2）と一字一句同じ（diffで確認）。`theorem main ... := by sorry` を含む。
+- 証明（solution）：`formal/Formal/Claude3ComparatorSolution.lean` → `ClaudeChallenge2.State.main_statement`（`formal/Formal/Claude3Thm1a.lean`）。Claudeサブエージェントの5層（MSO、折りたたみ、幾何、同一視、状態への帰着）と、文の組み立て（G6/A）。
+- 設定：`formal/comparator-thm1a.json`（許す公理はpropext・Quot.sound・Classical.choice）。
+
+## 結果
+
+`lake comparator --config comparator-thm1a.json --inadvisably-no-sandbox --paranoid`：
+**Lean paranoid・lean4lean・nanoda・con-leche（11,627宣言）・con-ron（11,627宣言）・Lean標準の6つのkernelが全て受理。Your solution is okay!** 67.6秒、最大2.96GB。生の出力：`comparator-thm1a-paranoid-2026-10-20.txt`。
+
+統括の別の確認：`#print axioms ClaudeChallenge2.main` と `State.main_statement` は `[propext, Classical.choice, Quot.sound]`。新しいファイルに sorry・native_decide・axiom はない。
+
+## 留保
+
+- macOSにbwrapがないため隔離なしで実行（自分たちのコードの検査。第三者の再現はLinuxでの隔離実行を勧める）。
+- 主張文が論文の定理1aと同じ意味であることは機械では保証されない（`studies/R002/challenge2-reading-guide-ja.md` で本人が確かめる）。
+- 主張文は統括一人が書いた。人間の点検はまだない。
+- 証明はすべてClaudeサブエージェントによる。研究チーム（Codex）による独立な証明はない（第1弾とは違う）。

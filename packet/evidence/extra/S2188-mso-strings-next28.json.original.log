@@ -1,0 +1,44 @@
+{
+  "source_id": "S2188",
+  "title": "Lecture Notes on Monadic First- and Second-Order Logic on Strings",
+  "authors_or_provider": "D. Mandrioli; D. Martinenghi; A. Morzenti; M. Pradella; M. Rossi",
+  "url_or_path": "https://arxiv.org/html/2301.10519v1",
+  "version": "arXiv2301.10519v1(2023-01-25); HTML Thm3.2, PDF Thm14",
+  "checked_at": "2026-10-19",
+  "read_scope": "§3の有限語MSOの構文・意味(PDFpp.10–11)、§3.1の同値定理と構成的同値の説明(PDFp.11)、p.12のFSA→MSO導入を読む。p.11 Thm14を描画目視。同一v1のHTMLではThm3.2と確認。構成の全手順・全証明は監査していない。",
+  "section_or_pages": "§3の有限語MSOの構文・意味(PDFpp.10–11)、§3.1の同値定理と構成的同値の説明(PDFp.11)、p.12のFSA→MSO導入を読む。p.11 Thm14を描画目視。同一v1のHTMLではThm3.2と確認。構成の全手順・全証明は監査していない。",
+  "claim_supported": "固定MSO文が定義する有限語言語は正規。一文字語の受理長の最終周期性は有限状態反復の既知の系。gSW幾何の定義可能性までは与えない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/mso-html.txt",
+  "sha256": "cc2cf39fed3e044ffa9d408149bae3fae2fde76c314481ecbde33acd09475556",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "講義ノートは既知定理の説明。原著三論文の全証明を新たに監査したとはしない。R004受領HTMLhashと一致。HTML/PDFで定理番号が異なる。",
+  "quotes": [
+    {
+      "text": "The MSO logic is strictly more expressive than the MFO logic.",
+      "supports": "固定MSO文が定義する有限語言語は正規。一文字語の受理長の最終周期性は有限状態反復の既知の系。gSW幾何の定義可能性までは与えない。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/mso-strings.raw",
+    "bytes": 202861,
+    "sha256": "18b7e4912906d4c28db5055edb9e28729f1080c102bf976f69604c5b8bc6bd64"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/mso-html.raw",
+      "bytes": 464725,
+      "sha256": "82764028f874c0c9b9e1b46c3dcb108a836898c577b07d49e91471e68edc493d"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/mso-strings.txt",
+      "bytes": 59607,
+      "sha256": "27cceac89482d2017ff681b6830a86c58bc384bca6b4f996db040e2f341ff2c4"
+    },
+    {
+      "path": "data/cache/R005/next28-stage2/mso-p11.png",
+      "bytes": 234115,
+      "sha256": "823285801ae3b9e2a38674aae9b42e74f785fa9ef6e9daa4b63be838dc5c7e3b"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:42:38.087658+00:00"
+}

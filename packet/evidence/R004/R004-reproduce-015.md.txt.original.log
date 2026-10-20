@@ -1,0 +1,38 @@
+# 第15報の検査と再現
+
+数学の点検は、[一般定理](aligned-periodicity-proof.md)の仮定から始める。
+面内列の式(3)〜(5)、全接続・全衝突の式(6)への帰着、二変数比較の折り畳み、
+MSO条件とliteral経路の両方向の対応を順に確認する。
+[族別適用](claim14-aligned-families.md)では、元の曲面との同一性と、整数一次座標・固定貼合せを点検する。
+既知定理への依存はS1504（全3-cycleが面となる帰結）とS1513（有限語MSO/正規言語同値）。
+
+数値的な一般周期性を予言して確認したものではない。
+局所補題の有限照合とD1の係数恒等式は、追加項目を含む計画075とT0232、
+evidence/aligned-periodicity-final/summary.jsonを参照。
+T0230の保存比較エラーと途中成果、T0231の結果と、後で手点検から訂正した本文の旧版も保持している。
+同じ条件を再実行する場合は、新しい出力先を選ぶ（既存先への上書きは拒否する）。
+
+```sh
+.venv/bin/python tools/trial.py run --study R004 --phase reproduction \
+  --intent '第15報の計画075を同条件で再現' \
+  --input studies/R004/plan-075-aligned-periodicity.md \
+  --code studies/R004/src/check_aligned_periodicity.py \
+  --code studies/R004/src/mac_memory_guard.py --timeout 150 -- \
+  /usr/bin/nice -n 10 .venv/bin/python studies/R004/src/check_aligned_periodicity.py \
+  --output studies/R004/evidence/aligned-periodicity-reproduction
+```
+
+コードの修正前後と入力文書は各results/T0230〜T0232のcode/、inputs/に保存。
+入力控えはtrial記録の元のhashに一致する。再現コードはPython標準ライブラリと既存メモリguardのみを使う。
+Macのguardが止まった場合、環境やメモリ条件を無断で迂回せず理由を確認する。
+
+```sh
+.venv/bin/python studies/R004/src/build_manifest_015.py --check-only
+.venv/bin/python tools/trial.py check --study R004
+```
+
+manifest-015.jsonは停止時索引next-15-progress-manifest.jsonの106ファイルを継承し、今回の成果を追加する。
+更新するのはREADME、next-15-progress、R004のWikiのみ。旧証明・旧コード・旧証拠は変えない。
+旧索引は停止時の履歴として残し、新しい索引でこの三つの最新文書も確認する。
+第14報以前の数学的証拠が変わっていないことも新しい検査器で確認する。
+hash一致は数学の形式化や別担当の査読を意味しない。

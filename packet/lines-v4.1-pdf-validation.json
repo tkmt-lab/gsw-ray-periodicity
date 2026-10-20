@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "pdf_path": "paper-lines-v4.1-en.pdf",
+  "source_path": "paper-lines-v4.1-en.tex",
+  "pdf_sha256": "9cda5dcbafaab11f47b437612d975aaf8a952fd20de1aa12bd440b9b4e45e37c",
+  "source_sha256": "c6618be7b2040e968a23884f11f5a0b3bb1faf3a0a1674d44d92cdfa5ac95367",
+  "pdf_bytes": 159247,
+  "pages": 15,
+  "typeset_trial": "T1285",
+  "render_trial": "T1287",
+  "tex_engine": "Tectonic0.17.0 (cached only)",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "3a6cde367f9d51ad6f4402620db00750a456b51606291e641a13b317b1eef968"
+    },
+    {
+      "page": 2,
+      "sha256": "2f9b63039cc04359fa294ed07da87395acf3f6eb3818ab1dcba666691825bf62"
+    },
+    {
+      "page": 3,
+      "sha256": "50eed5eb327a9a3b86ef6d893167ea082660c77a415033e3ab3fcb8c353ddc93"
+    },
+    {
+      "page": 4,
+      "sha256": "040f47ae8cde13a8287c5baba181b07e933960d1a2d1d989709b4ba0e3c0aae9"
+    },
+    {
+      "page": 5,
+      "sha256": "11ef1ca35766f36ce85a205dade3172cc25aa9c96d198880f5054f1cc4033659"
+    },
+    {
+      "page": 6,
+      "sha256": "9326cd6f95177232d4f2604d0f21d98b4da0b0756bb6e5c85ab8252cf08dc8e9"
+    },
+    {
+      "page": 7,
+      "sha256": "6756cf2d98644c52bb7948d4beebbd48a399fa5a7534b6635575fe9be09f05d3"
+    },
+    {
+      "page": 8,
+      "sha256": "03a89ebc6922c3d930616d77424c958d072e866375fd118ee793f13732cd124f"
+    },
+    {
+      "page": 9,
+      "sha256": "3ab575a251cc5ae575c8efdd0672e2228f3acad4f958fc1b93709674ea9812bf"
+    },
+    {
+      "page": 10,
+      "sha256": "1402523953c3cc94f1d2cb9884301f2ade94d898addb4d4f74d15d92dd932920"
+    },
+    {
+      "page": 11,
+      "sha256": "56f9e998dc3a8f657ae8b2e3f0267cd079c9c703af3f96c517facaad5548fe62"
+    },
+    {
+      "page": 12,
+      "sha256": "20a78c229f8a611716eae04fcb7e794e1bad5d59f099b53ae6d2f890f9a7a6eb"
+    },
+    {
+      "page": 13,
+      "sha256": "577246f3b2e3f67635f692e9993c9c9a5ab61be5a924d176f9d0899a7c1911ab"
+    },
+    {
+      "page": 14,
+      "sha256": "2b8d4948de7a03245a0db0495d11c1bc29355e84f48c499b22f03fe273672133"
+    },
+    {
+      "page": 15,
+      "sha256": "82f172cc6cbc959cf7558d4da25322076468f5ab8b0faf4f227f0b5efdcf6a8e"
+    }
+  ],
+  "mathematical_comparison": {
+    "numbered_statement_blocks": 3,
+    "display_expressions": 5,
+    "inline_expressions": 363,
+    "byte_identical": true,
+    "source_predecessor": "paper-lines-v4-en.tex"
+  },
+  "visual_review": {
+    "reviewer": "Codex main agent",
+    "all_pages_viewed": true,
+    "method": "All final pages rendered at1100px and viewed individually, including headers, first-page author, license/disclosure page and affiliation after references.",
+    "observed": "No clipping, overlap, missing glyphs or broken tables. Mild underfull lines are readable.",
+    "independent_review": false
+  },
+  "uploaded": false,
+  "publication_metadata_approved": true
+}

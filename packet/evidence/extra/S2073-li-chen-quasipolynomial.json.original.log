@@ -1,0 +1,26 @@
+{
+  "source_id": "S2073",
+  "title": "On the Ring of Integer-valued Quasi-polynomials",
+  "authors_or_provider": "Nan Li; Sheng Chen",
+  "url_or_path": "https://arxiv.org/pdf/0706.4288v2",
+  "version": "arXiv:0706.4288v2,20 September2007; PDF internal date1 February2008",
+  "checked_at": "2026-10-18",
+  "read_scope": "Abstract, Theorem12 statement p.9, Lemma20 pp.15-16, Theorem27 and proof p.20, Example28 p.21. Page20 rendered and viewed. Not all division proof steps audited.",
+  "section_or_pages": "Abstract, Theorem12 statement p.9, Lemma20 pp.15-16, Theorem27 and proof p.20, Example28 p.21. Page20 rendered and viewed. Not all division proof steps audited.",
+  "claim_supported": "Generalized Euclidean division and uniform bounded continued-fraction expansion length for polynomial ratios; finite case split.",
+  "local_snapshot": "data/cache/R005/eleventh/li-chen.txt",
+  "sha256": "387792b56ad1608541abc5fd701dfd2ff6a32dbc27aa6c3b887dc4cb79395b0b",
+  "quotes": [],
+  "license_or_terms": "Official publisher/author repository primary source. Untracked cache for research; no redistribution of full text/images.",
+  "limitations": "Theorem27 states denominator nonzero at all integers; AH only needs eventual positivity, addressed by eventual division results. Directly relevant to scalar/two-interval case; not a multi-interval theorem.",
+  "original_document": {
+    "path": "data/cache/R005/eleventh/li-chen.pdf",
+    "sha256": "b37037c44d99cdc80807b53d13070a03fac746d013d4b3ed1df7ca15c760736e"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/eleventh/li-chen-p20.png",
+      "sha256": "2db7dfe17a544d940c19d9a41a297a64eba584bba5c90a99e23239f606eadad0"
+    }
+  ]
+}

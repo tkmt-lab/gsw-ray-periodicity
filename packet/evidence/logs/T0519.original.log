@@ -1,0 +1,4 @@
+cwd=formal; command=['lake', 'env', 'lean', '-j1', '-M4096', 'Formal/FiniteLiteralPath.lean']
+'R002.finite_path_eq_forced_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.literal_path_iff_valid_forced_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.finite_literal_path_decision' depends on axioms: [propext, Classical.choice, Quot.sound]

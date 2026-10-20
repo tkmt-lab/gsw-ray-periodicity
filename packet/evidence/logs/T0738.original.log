@@ -1,0 +1,727 @@
+⚠ [862/914] Replayed Formal.GCArithmetic
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Data.Int.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Algebra.Group.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Algebra.Ring.Divisibility.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/GCArithmetic.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/GCArithmetic.lean:98:0: 'R002.strip_coordinates' depends on axioms: [propext, Quot.sound]
+info: Formal/GCArithmetic.lean:99:0: 'R002.strip_odd_not_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/GCArithmetic.lean:100:0: 'R002.strip_even_scaled_iff' depends on axioms: [propext, Quot.sound]
+info: Formal/GCArithmetic.lean:101:0: 'R002.explicitStrip_recurrence' depends on axioms: [propext, Quot.sound]
+info: Formal/GCArithmetic.lean:102:0: 'R002.adjacent_heights_not_both_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [863/914] Replayed Formal.LatticeTransport
+warning: Formal/LatticeTransport.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/LatticeTransport.lean:90:0: 'R002.rotate60_scaled_iff' depends on axioms: [propext, Quot.sound]
+info: Formal/LatticeTransport.lean:91:0: 'R002.rotateAbout_scaled_iff' depends on axioms: [propext, Quot.sound]
+info: Formal/LatticeTransport.lean:92:0: 'R002.transportCenters_scaled_iff' depends on axioms: [propext, Quot.sound]
+info: Formal/LatticeTransport.lean:93:0: 'R002.rotateAbout_next' depends on axioms: [propext]
+info: Formal/LatticeTransport.lean:94:0: 'R002.rotate60_norm' depends on axioms: [propext]
+info: Formal/LatticeTransport.lean:95:0: 'R002.transported_strip_odd_not_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [929/976] Replayed Formal.SequenceDecision
+warning: Formal/SequenceDecision.lean: imports `Mathlib.Data.Nat.Find` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/SequenceDecision.lean: imports `Mathlib.Data.Fintype.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/SequenceDecision.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/SequenceDecision.lean:122:0: 'R002.prefix_injective_iff_before_first_repeat' depends on axioms: [propext, Quot.sound]
+info: Formal/SequenceDecision.lean:123:0: 'R002.valid_exists_iff_first_endpoint_lt_repeat' depends on axioms: [propext, Quot.sound]
+info: Formal/SequenceDecision.lean:124:0: 'R002.valid_exists_iff_bounded_endpoint' depends on axioms: [propext, Quot.sound]
+info: Formal/SequenceDecision.lean:125:0: 'R002.first_repeat_exists_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/SequenceDecision.lean:126:0: 'R002.legal_cone_endpoint_has_even_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [980/1033] Replayed Formal.ForcedContinuation
+warning: Formal/ForcedContinuation.lean: imports `Mathlib.Combinatorics.SimpleGraph.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/ForcedContinuation.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/ForcedContinuation.lean:144:0: 'R002.unique_other_common' does not depend on any axioms
+info: Formal/ForcedContinuation.lean:145:0: 'R002.forced_walk_unique' depends on axioms: [propext, Quot.sound]
+info: Formal/ForcedContinuation.lean:146:0: 'R002.forced_walk_exists_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/ForcedContinuation.lean:147:0: 'R002.finite_forced_walk_decision' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [981/1033] Replayed Formal.FiniteLiteralPath
+warning: Formal/FiniteLiteralPath.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/FiniteLiteralPath.lean:118:0: 'R002.finite_path_eq_forced_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/FiniteLiteralPath.lean:119:0: 'R002.literal_path_iff_valid_forced_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/FiniteLiteralPath.lean:120:0: 'R002.finite_literal_path_decision' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [982/1033] Replayed Formal.CylinderArithmetic
+warning: Formal/CylinderArithmetic.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/CylinderArithmetic.lean:56:0: 'R002.cylinder_displacement_height' depends on axioms: [propext, Quot.sound]
+info: Formal/CylinderArithmetic.lean:57:0: 'R002.cylinder_height_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/CylinderArithmetic.lean:58:0: 'R002.cylinder_scaled_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/CylinderArithmetic.lean:59:0: 'R002.cylinder_portal_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3146/3150] Replayed Formal.AffineInduction
+warning: Formal/AffineInduction.lean: imports `Mathlib.Order.RelClasses` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/AffineInduction.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/AffineInduction.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Formal/AffineInduction.lean:117:0: 'R002.inductionRank_wellFounded' does not depend on any axioms
+info: Formal/AffineInduction.lean:118:0: 'R002.induction_subtract_positive' depends on axioms: [propext, Quot.sound]
+info: Formal/AffineInduction.lean:119:0: 'R002.induction_accelerate_constant' depends on axioms: [propext, Quot.sound]
+info: Formal/AffineInduction.lean:120:0: 'R002.induction_subtract_constant' depends on axioms: [propext, Quot.sound]
+info: Formal/AffineInduction.lean:121:0: 'R002.induction_erase' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/AffineInduction.lean:122:0: 'R002.induction_blocks_wellFounded' does not depend on any axioms
+info: Formal/AffineInduction.lean:123:0: 'R002.induction_no_infinite_run' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/AffineInduction.lean:124:0: 'R002.induction_uniform_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3147/3150] Replayed Formal.A3Arithmetic
+warning: Formal/A3Arithmetic.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/A3Arithmetic.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Formal/A3Arithmetic.lean:91:29: missing space in the source
+
+This part of the code
+  'l-2) (hu'
+should be written as
+  'l - 2)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:92:12: missing space in the source
+
+This part of the code
+  '(q*l+r)*u-l*v'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:92:17: missing space in the source
+
+This part of the code
+  '(q*l+r)*u-l*v = 1)'
+should be written as
+  'r) * u'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:101:29: missing space in the source
+
+This part of the code
+  'l-2) (hv'
+should be written as
+  'l - 2)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:102:11: missing space in the source
+
+This part of the code
+  'l*u+(q*l+r+l)*v'
+should be written as
+  'l * u'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:102:16: missing space in the source
+
+This part of the code
+  'l*u+(q*l+r+l)*v'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:102:23: missing space in the source
+
+This part of the code
+  'l*u+(q*l+r+l)*v = 1)'
+should be written as
+  'l) * v'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:116:11: missing space in the source
+
+This part of the code
+  'N*u = k+l+l*h)'
+should be written as
+  'N * u'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:116:17: missing space in the source
+
+This part of the code
+  'k+l+l*h) (hb'
+should be written as
+  'k + l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:116:32: missing space in the source
+
+This part of the code
+  'N*(-v)'
+should be written as
+  'N * (-v)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:116:41: missing space in the source
+
+This part of the code
+  'l*t-k)
+ '
+should be written as
+  'l * t'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:117:17: missing space in the source
+
+This part of the code
+  'J*N-k-l-l*b) :'
+should be written as
+  'J * N'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:127:42: missing space in the source
+
+This part of the code
+  'l-2)
+ '
+should be written as
+  'l - 2)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:12: missing space in the source
+
+This part of the code
+  '(q*l+r)*u-l*vA'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:17: missing space in the source
+
+This part of the code
+  '(q*l+r)*u-l*vA ='
+should be written as
+  'r) * u'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:37: missing space in the source
+
+This part of the code
+  'l*uB+(q*l+r+l)*v'
+should be written as
+  'l * uB'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:40: missing space in the source
+
+This part of the code
+  'l*uB+(q*l+r+l)*v'
+should be written as
+  'uB + (q'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:43: missing space in the source
+
+This part of the code
+  'l*uB+(q*l+r+l)*v'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:129:50: missing space in the source
+
+This part of the code
+  'l*uB+(q*l+r+l)*v = 1)'
+should be written as
+  'l) * v'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:130:15: missing space in the source
+
+This part of the code
+  'q*l+r) (hN'
+should be written as
+  'q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:130:38: missing space in the source
+
+This part of the code
+  '(q*l+r) l)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:131:17: missing space in the source
+
+This part of the code
+  '(q*l+r) l*u'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:131:24: missing space in the source
+
+This part of the code
+  'l*u = (q*l+r)+l+l*h)'
+should be written as
+  'l * u'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:131:31: missing space in the source
+
+This part of the code
+  '(q*l+r)+l+l*h)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:131:36: missing space in the source
+
+This part of the code
+  '(q*l+r)+l+l*h)
+ '
+should be written as
+  'r) + l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:132:17: missing space in the source
+
+This part of the code
+  '(q*l+r) l*(-v)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:132:24: missing space in the source
+
+This part of the code
+  'l*(-v)'
+should be written as
+  'l * (-v)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:132:33: missing space in the source
+
+This part of the code
+  'l*t-(q*l+r))'
+should be written as
+  'l * t'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:132:38: missing space in the source
+
+This part of the code
+  'l*t-(q*l+r))
+'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:133:17: missing space in the source
+
+This part of the code
+  '2*norm'
+should be written as
+  '2 * norm'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:133:25: missing space in the source
+
+This part of the code
+  '(q*l+r) l-(q*l+r)-l-l*b)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:133:32: missing space in the source
+
+This part of the code
+  'l-(q*l+r)-l-l*b)'
+should be written as
+  'l - (q'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:133:35: missing space in the source
+
+This part of the code
+  'l-(q*l+r)-l-l*b)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:133:40: missing space in the source
+
+This part of the code
+  'l-(q*l+r)-l-l*b)
+ '
+should be written as
+  'r) - l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Formal/A3Arithmetic.lean:134:22: missing space in the source
+
+This part of the code
+  '(q*l+r) l)'
+should be written as
+  '(q * l'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+info: Formal/A3Arithmetic.lean:143:0: 'R002.A3.unit_endpoint' depends on axioms: [propext]
+info: Formal/A3Arithmetic.lean:144:0: 'R002.A3.second_plus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:145:0: 'R002.A3.second_minus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:146:0: 'R002.A3.diagonal_plus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:147:0: 'R002.A3.diagonal_minus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:148:0: 'R002.A3.folded_second_plus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:149:0: 'R002.A3.folded_second_minus' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:150:0: 'R002.A3.outer_collisions' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:151:0: 'R002.A3.positive_fan_collisions' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:152:0: 'R002.A3.negative_fan_collisions' depends on axioms: [propext, Quot.sound]
+info: Formal/A3Arithmetic.lean:153:0: 'R002.A3.no_small_multiple' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3Arithmetic.lean:154:0: 'R002.A3.outer_u_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3Arithmetic.lean:155:0: 'R002.A3.outer_v_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3Arithmetic.lean:156:0: 'R002.A3.candidate_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3Arithmetic.lean:157:0: 'R002.A3.outer_endpoint_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3148/3150] Replayed Formal.IETComponent
+warning: Formal/IETComponent.lean: imports `Mathlib.Data.List.Perm.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Formal/IETComponent.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Formal/IETComponent.lean:33:8: `simp [ht, hb] at hc` is a flexible tactic modifying `hc`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Formal/IETComponent.lean:37:8: `exact (List.reverse_perm xs).trans (hh.cons_inv.trans (List.reverse_perm ys).symm)`
+uses `hc`, which was modified by the flexible tactic `simp` on line 33!
+warning: Formal/IETComponent.lean:36:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/IETComponent.lean:52:8: `simp [ht, hb, h] at hc` is a flexible tactic modifying `hc`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Formal/IETComponent.lean:60:8: `exact induction_erase _ _ _ _ _ (by omega)`
+uses `hc`, which was modified by the flexible tactic `simp` on line 52!
+info: Formal/IETComponent.lean:69:0: 'R002.iet_component_perm' depends on axioms: [propext]
+info: Formal/IETComponent.lean:70:0: 'R002.iet_component_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/IETComponent.lean:71:0: 'R002.iet_component_uniform_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3149/3150] Built Formal.A3PolynomialBounds (10s)
+warning: Formal/A3PolynomialBounds.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Formal/A3PolynomialBounds.lean:14:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:16:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:29:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:45:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:50:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:60:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:65:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:75:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:80:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:90:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:95:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:105:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:110:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:121:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:125:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:135:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:140:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:149:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:151:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:164:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:180:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:185:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:195:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:200:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:210:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:215:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:225:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:230:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:240:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:245:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:256:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:260:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:270:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:275:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:284:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:286:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:291:16: Unused tactic linter: `(try dsimp [norm])` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Formal/A3PolynomialBounds.lean:299:8: Variable name `N` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _N
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:306:16: Unused tactic linter: `(try dsimp [norm])` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Formal/A3PolynomialBounds.lean:315:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:320:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:330:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:335:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:345:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:350:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:360:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:365:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:375:8: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:380:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Formal/A3PolynomialBounds.lean:391:8: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Formal/A3PolynomialBounds.lean:395:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: Formal/A3PolynomialBounds.lean:398:0: 'R002.A3.au_c1_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:399:0: 'R002.A3.au_c1_b_minus_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:400:0: 'R002.A3.au_c1_N_minus_b_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:401:0: 'R002.A3.au_c1_v_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:402:0: 'R002.A3.au_c1_sum_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:403:0: 'R002.A3.au_c1_v_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:404:0: 'R002.A3.au_c1_sum_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:405:0: 'R002.A3.au_c1_early_inside_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:406:0: 'R002.A3.au_c1_endpoint_bound_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:407:0: 'R002.A3.au_c2_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:408:0: 'R002.A3.au_c2_b_minus_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:409:0: 'R002.A3.au_c2_N_minus_b_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:410:0: 'R002.A3.au_c2_v_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:411:0: 'R002.A3.au_c2_sum_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:412:0: 'R002.A3.au_c2_v_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:413:0: 'R002.A3.au_c2_sum_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:414:0: 'R002.A3.au_c2_early_inside_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:415:0: 'R002.A3.au_c2_endpoint_bound_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:416:0: 'R002.A3.au_neg_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:417:0: 'R002.A3.au_neg_b_minus_a_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:418:0: 'R002.A3.au_neg_N_minus_b_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:419:0: 'R002.A3.au_neg_u_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:420:0: 'R002.A3.au_neg_sum_upper_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:421:0: 'R002.A3.au_neg_u_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:422:0: 'R002.A3.au_neg_sum_late_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Formal/A3PolynomialBounds.lean:423:0: 'R002.A3.au_neg_early_inside_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3150/3150] Built Formal (9.9s)
+Build completed successfully (3150 jobs).

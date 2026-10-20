@@ -1,0 +1,9 @@
+# R002 next-85 への追加（その85a、2026-10-20 早朝、統括から）
+
+next-85 の作業の中で、次の二点も反映する。main に統合済みで、research worktree は fast-forward 可能（`git merge --ff-only main`）。
+
+1. **剰余類の変種は Lean で証明済み。** `ClaudeChallenge2.main_residue`（`formal/Formal/Claude3Residue.lean`）。剰余類 c mod m ごとの Sig `S c` で決定が経路の存在と一致し、各 `S c` が十分大きい t で `Valid ∧ TrianglesInCharts` なら、元の変数で最終周期的。next-85 の 2 の「剰余類の変種」は散文ではなくこの宣言を引き、claims.json の `thm:aligned` の `lean` 欄にも加える。
+2. **貼り合わせの橋渡し。** 主張文の独立な読み（`studies/R002/analysis/2026-10-20-claude-aligned-challenge/statement-review-1/review.md`、判定と統括の応答は同じ所の `response-ja.md`）が、最も重い指摘として次を挙げた：`SamePoint` は記録を、像が相手の面に入るすべての格子点に当てはめるので、論文の分解を Sig に写したとき余分な同一視が起きないことを示す必要がある。next-85 の 2 の橋渡しの補題に、これを独立した一項として入れる。統括の論証の筋は `response-ja.md` にある（支持直線で g(K) ∩ K′ ⊆ ℓ、重なりが継ぎ目より長いと端点の錐角が 2π を超えるか、ちょうど 2π で同じ写像による本当の同一視）。自分で確かめ、穴があれば報告する。
+3. 本文で、Lean の主張文は論文の仮定より弱い仮定（球面・十二の錐点・円板の非退化を仮定しない）で同じ結論を言う、より強い形であることを一文で書く。
+
+上限は next-85 と合わせて2.5時間。送ったartifactは書き換えない。報告は next-85 と合わせて一度でよい。

@@ -1,0 +1,16 @@
+{
+  "source_id": "S2043",
+  "title": "One-Parametric Presburger Arithmetic Has Quantifier Elimination",
+  "authors_or_provider": "Alessio Mansutti; Mikhail R. Starchak",
+  "url_or_path": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol345-mfcs2025/html/LIPIcs.MFCS.2025.72/LIPIcs.MFCS.2025.72.html",
+  "version": "LIPIcs 345, MFCS 2025, article 72; DOI 10.4230/LIPIcs.MFCS.2025.72",
+  "checked_at": "2026-10-18",
+  "read_scope": "Publisher HTML abstract, Section 1, Theorems 2–3 and beginning of Section 2. Full proof not read; no equation-number claim beyond displayed main theorems.",
+  "section_or_pages": "Publisher HTML abstract, Section 1, Theorems 2–3 and beginning of Section 2. Full proof not read; no equation-number claim beyond displayed main theorems.",
+  "claim_supported": "Effective quantifier elimination for one-parametric Presburger arithmetic after adding integer-division functions with polynomial-in-parameter denominators; existential satisfiability NP-complete. Not unrestricted variable-divisibility QE.",
+  "local_snapshot": "data/cache/R005/seventh/qe2025.html",
+  "sha256": "592c130c121c560c1f794fba86b9cb2bc2bfcf5c1ffbafd5e21f56c2e25fb804",
+  "quotes": [],
+  "license_or_terms": "公開された著者版・公式頁を個人研究の照合に使用。取得本文と画像はGit非追跡cacheに保持し、再配布しない。",
+  "limitations": "一パラメータと拡張言語の結果。M4prime全体の量化消去・一般EPADのNP上界とはしない。"
+}

@@ -1,0 +1,8 @@
+'R002.inductionRank_wellFounded' does not depend on any axioms
+'R002.induction_subtract_positive' depends on axioms: [propext, Quot.sound]
+'R002.induction_accelerate_constant' depends on axioms: [propext, Quot.sound]
+'R002.induction_subtract_constant' depends on axioms: [propext, Quot.sound]
+'R002.induction_erase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.induction_blocks_wellFounded' does not depend on any axioms
+'R002.induction_no_infinite_run' depends on axioms: [propext, Classical.choice, Quot.sound]
+'R002.induction_uniform_depth' depends on axioms: [propext, Classical.choice, Quot.sound]

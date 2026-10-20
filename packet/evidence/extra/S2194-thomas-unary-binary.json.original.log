@@ -1,0 +1,34 @@
+{
+  "source_id": "S2194",
+  "title": "Languages, Automata, and Logic",
+  "authors_or_provider": "Wolfgang Thomas",
+  "url_or_path": "https://www.cs.cornell.edu/courses/cs6860/2019sp/Handouts/thomas.pdf",
+  "version": "Report9607,May1996;76PDFpages; read this report version, not assumed identical to1997 Handbook pagination",
+  "checked_at": "2026-10-19",
+  "read_scope": "§3、printedpp.11–12(PDFpp.14–15)のWS1S・Presburgerと二進符号化、p.12 Thm3.5と1-recognizable集合の説明。PDFp14を描画目視。",
+  "section_or_pages": "§3、printedpp.11–12(PDFpp.14–15)のWS1S・Presburgerと二進符号化、p.12 Thm3.5と1-recognizable集合の説明。PDFp14を描画目視。",
+  "claim_supported": "整数の二進表現を正規言語へ移すことと、整数tを一文字語の長さにすることは別。一般の二進automatic性だけでは整数値集合の最終周期性は従わない。",
+  "local_snapshot": "data/cache/R005/next28-stage2/thomas-cornell.txt",
+  "sha256": "fce07cd27cbd41dea2222ebdf25f46e1c6e6c5197b67b54159a5afbb6be0ac94",
+  "license_or_terms": "公開の著者版・公式repository・公式要旨を個人研究に使用。原文と図はGit非追跡cache、再配布しない。",
+  "limitations": "原report全文の監査ではない。符号化の違いを確認するための限定読解。",
+  "quotes": [
+    {
+      "text": "The idea is to represent numbers in binary",
+      "supports": "整数の二進表現を正規言語へ移すことと、整数tを一文字語の長さにすることは別。一般の二進automatic性だけでは整数値集合の最終周期性は従わない。"
+    }
+  ],
+  "original_document": {
+    "path": "data/cache/R005/next28-stage2/thomas-cornell.raw",
+    "bytes": 478293,
+    "sha256": "c8326967aa56b685ec8ed98b0e211ea36773e2644b1bc3b5e368e6f50f28e8aa"
+  },
+  "related_assets": [
+    {
+      "path": "data/cache/R005/next28-stage2/thomas-p12.png",
+      "bytes": 115403,
+      "sha256": "8f835963ff3eb283e27152654b00dbdb5e579e6b173bedc502d4e8be43c95589"
+    }
+  ],
+  "fetched_at": "2026-10-19T13:47:06.481783+00:00"
+}

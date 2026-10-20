@@ -1,0 +1,259 @@
+# 定理1a G3b：行の点の同一視・隣接・次数は制限算術（作業報告）
+
+- 作成：Claude（G3b担当worker）、2026-10-20 02:10–02:40 JST（`date` で確認）
+- worktree：`.worktrees/claude-lean`、branch `claude-lean`（push・mergeなし）
+- 触っていないもの：仕様 `Claude3ChallengeSpec.lean`、`Claude3Geo*`、`Claude3Fold*`、`Claude3Mso*`、
+  `Claude3State*`（別worker。`Claude3StateDef.lean` は読んだだけ）、`Formal.lean`、`.worktrees/verify`、`studies/R004`
+- 名前空間：`ClaudeChallenge2.Geo`（幾何の土台と同じ）。目標の論理は `R002.Claude3Fold.HF`。
+
+## 1. 要約
+
+- 新しい6ファイル（計1,584行）。`sorry`・`native_decide`・新しい `axiom` は0件。
+  主な宣言21個の `#print axioms` はすべて `[propext, Classical.choice, Quot.sound]`。
+- 依頼の1–3は済み、4（隣接・次数）も済み。G6向けの便利な記述子（行の歩行の点、印の角など）も付けた。
+- **係数2が出ないことは定理として証明した**（`meetPA_ok`、`elim_ok`）。論文の「行列式 ±1」の議論は
+  「平行でない二つの法線で6つの法線はどれも係数 `{-1,0,1}` で書ける」という形で入っている。
+- **注意（G6への申し送り、§6.1）**：G4の設計では非根状態の入口の添字が前者の高さで決まる。
+  入口の添字を区間の端に使うと、位置を消したあとに3変数の原子式が出て、`HF`（2変数まで）に入らない
+  場合がある。私の結果は「各行の制約は自分の位置と自分の高さだけ」の場合を扱う。
+
+## 2. ファイル
+
+| ファイル | 行数 | 内容 |
+|---|---:|---|
+| `Claude3IdentNrm.lean` | 397 | 法線制約 `NC`、法線の補題、`AffMap.inv`、2変数原子 `PA`、位置の消去 `elim` |
+| `Claude3IdentMeet.lean` | 304 | 語の列挙、`ident_iff_word`、行の記述子 `RowSet`、`Meet`、`meet_iff_patoms` |
+| `Claude3IdentHF.lean` | 159 | `PA.toHF`、`bigAnd`/`bigOr`、`meetHF`、`sat_meetHF`、`sat_meetHF1` |
+| `Claude3IdentAdj.lean` | 249 | 省略可能な変数 `hgt`/`meetHFo`、近傍の行 `nbrRow`、`NbrMeet`、`AdjMeet`、`adjHFo` |
+| `Claude3IdentDeg.lean` | 324 | 次数：`count_classes`、`adj_iff_cand`、`DegEq`、`degEq_iff`、`degHFo`、`sat_degHFo` |
+| `Claude3IdentRow.lean` | 151 | `rowPtRow`/`rowPtPt`（式 (rows) の点）、`cornerRow`、`siteHFo`、`degAllHFo`、`guardHFo` |
+
+依存：`Nrm ← Meet ← HF ← Adj ← Deg ← Row`。`Nrm` は `Claude3GeoChain`、`HF` は `Claude3FoldSyntax` を import。
+
+## 3. 正確な主張（主なもの）
+
+記法：`pt S t f z hz := vtx ⟨(f, z), hz⟩`（`Claude3GeoBasic`）。`Embedded S t` は `Valid` の第2項。
+
+### 3.1 法線の補題（依頼1）
+
+```lean
+structure NC where p : ℤ; q : ℤ; F : Aff          -- p x + q y ≤ F(t)
+def NC.Sat (c : NC) (t : ℕ) (z : ℤ × ℤ) : Prop := c.p * z.1 + c.q * z.2 ≤ c.F.eval t
+def NC.Nrm (c : NC) : Prop   -- (p,q) ∈ {±(1,0), ±(0,1), ±(1,1)}
+def pullNCs (c : Chart) (φ : AffMap) : List NC := (chartNCs c).map (NC.pull · φ)
+
+theorem mem_apply_iff (c : Chart) (φ : AffMap) (t : ℕ) (z : ℤ × ℤ) :
+    c.Mem t (φ.apply t z) ↔ ∀ n ∈ pullNCs c φ, n.Sat t z
+theorem pullNCs_nrm (c : Chart) (φ : AffMap) : ∀ n ∈ pullNCs c φ, n.Nrm
+```
+
+`φ.apply t z = rotN J z + (A t, B t)`。1回の回転の引き戻しは `(p, q) ↦ (q, q - p)`（法線の符号付き置換）。
+
+### 3.2 位置の消去（依頼2の核）
+
+```lean
+structure PA where a : ℤ; b : ℤ; F : Aff           -- a h₁ + b h₂ ≤ F(t)
+def PA.OK (c : PA) : Prop := Sgn c.a ∧ Sgn c.b      -- 係数は {-1,0,1}
+def rowCoef (J : ℕ) : ℤ × ℤ := ((rotN J (1, 0)).2, (rotN J (0, 1)).2)
+theorem rotN_snd (J : ℕ) (z : ℤ × ℤ) :
+    (rotN J z).2 = (rowCoef J).1 * z.1 + (rowCoef J).2 * z.2
+def RowCoefOK (αβ : ℤ × ℤ) : Prop :=
+  (αβ.1 = 0 ∧ (αβ.2 = 1 ∨ αβ.2 = -1)) ∨ ((αβ.1 = 1 ∨ αβ.1 = -1) ∧ (αβ.2 = 0 ∨ αβ.2 = αβ.1))
+theorem rowCoef_ok (J : ℕ) : RowCoefOK (rowCoef J)
+
+theorem exists_iff_elim (αβ : ℤ × ℤ) (hαβ : RowCoefOK αβ) (E : Aff) (L : List NC)
+    (hL : ∀ c ∈ L, c.Nrm) (t : ℕ) (h₁ H : ℤ) :
+    (∃ X : ℤ, (∀ c ∈ L, c.Sat t (X, H)) ∧ h₁ = αβ.1 * X + αβ.2 * H + E.eval t) ↔
+      ∀ a ∈ elim αβ E L, a.Sat t h₁ H
+theorem elim_ok (αβ : ℤ × ℤ) (hαβ : RowCoefOK αβ) (E : Aff) (L : List NC)
+    (hL : ∀ c ∈ L, c.Nrm) : ∀ a ∈ elim αβ E L, a.OK
+```
+
+- 平行でない行（`α = ±1`）：代入 `X = α(h₁ − βH − E)`。法線 `(p,q)` は `(pα, q − pαβ)` になり、
+  `β ∈ {0, α}` なので係数は `{-1,0,1}`。
+- 平行な行（`α = 0`、`β = ±1`）：`h₁ = βH + E` と、`X` を含まない制約と、
+  下界（`p = −1`）と上界（`p = 1`）のすべての組の和（単位係数の Fourier–Motzkin、`exists_between_iff`）。
+  下界の `q` は `{0,−1}`、上界の `q` は `{0,1}` なので和も `{-1,0,1}`。
+
+### 3.3 行の記述子と同一視（依頼2・3）
+
+```lean
+structure RowSet (S : Sig) where
+  f : Fin S.C          -- チャート
+  emb : AffMap         -- (x, h) ↦ rotN J (x, h) + D(t)
+  cons : List NC       -- 整列座標 (x, h) の法線制約（位置の区間など）
+def RowSet.WF (R : RowSet S) : Prop := ∀ c ∈ R.cons, c.Nrm
+def RowSet.At (R : RowSet S) (t : ℕ) (h : ℤ) (z : ℤ × ℤ) : Prop :=
+  ∃ x : ℤ, (∀ c ∈ R.cons, c.Sat t (x, h)) ∧ z = R.emb.apply t (x, h)
+def Meet (S : Sig) (t : ℕ) (R₁ : RowSet S) (h₁ : ℤ) (R₂ : RowSet S) (h₂ : ℤ) : Prop :=
+  ∃ z₁ z₂ : ℤ × ℤ, R₁.At t h₁ z₁ ∧ R₂.At t h₂ z₂ ∧
+    ∃ (hz₁ : (S.chart R₁.f).Mem t z₁) (hz₂ : (S.chart R₂.f).Mem t z₂),
+      pt S t R₁.f z₁ hz₁ = pt S t R₂.f z₂ hz₂
+
+theorem ident_iff_word (hE : Embedded S t) (f f' : Fin S.C) (z z' : ℤ × ℤ) :
+    (∃ (hz : (S.chart f).Mem t z) (hz' : (S.chart f').Mem t z'), pt S t f z hz = pt S t f' z' hz')
+      ↔ ∃ w : List (Letter S), w.length < S.C ∧ WordOK S w f f' ∧
+        (∀ c ∈ wordCharts S w f, c.Mem t z) ∧ z' = (wordAff S w).apply t z
+
+theorem meet_iff_patoms (hE : Embedded S t) {R₁ R₂ : RowSet S} (hR₁ : R₁.WF) (hR₂ : R₂.WF)
+    (h₁ h₂ : ℤ) :
+    Meet S t R₁ h₁ R₂ h₂ ↔ ∃ w : List (Letter S), w.length < S.C ∧ WordOK S w R₂.f R₁.f ∧
+      ∀ a ∈ meetPA R₁ R₂ w, a.Sat t h₁ h₂
+theorem meetPA_ok {R₁ R₂ : RowSet S} (h₁ : R₁.WF) (h₂ : R₂.WF) (w : List (Letter S)) :
+    ∀ a ∈ meetPA R₁ R₂ w, a.OK
+```
+
+`meetPA R₁ R₂ w`（`t` によらない）＝ `elim (rowCoef Ψ.J) Ψ.B (allNC R₁ R₂ w)`、
+`Ψ = R₁.emb.inv ∘ wordAff w ∘ R₂.emb`、`allNC` は `R₂.cons`、語のチャートを `R₂.emb` で引き戻した法線、
+`R₁.cons` を `Ψ` で引き戻した法線。**語は `R₂` の側から `R₁` へ向けて使う**。こうすると
+`R₁` の点は `R₂` の整列座標の関数になり、`R₁` の位置は代入で、`R₂` の位置は `elim` で消える
+（両方が区間を動く場合も含む）。
+
+区間の記述（`Bnd`、`σ ∈ {-1,0}` が `Bnd.WF`）：
+
+```lean
+structure Bnd where σ : ℤ; c : Aff                     -- σ h + c(t)
+def intervalRow (f) (k : ℕ) (Dx Dy : Aff) (lows ups : List Bnd) : RowSet S
+theorem intervalRow_at ... : (intervalRow f k Dx Dy lows ups).At t h z ↔ ∃ x : ℤ,
+    ((∀ b ∈ lows, b.σ * h + b.c.eval t ≤ x) ∧ ∀ b ∈ ups, x ≤ b.σ * h + b.c.eval t) ∧
+      z = rotN k (x, h) + (Dx.eval t, Dy.eval t)
+def affineRow (f) (k) (Dx Dy) (b : Bnd) : RowSet S      -- x = σ h + c(t)
+theorem affineRow_at ... : (affineRow f k Dx Dy b).At t h z ↔
+    z = rotN k (b.σ * h + b.c.eval t, h) + (Dx.eval t, Dy.eval t)
+def constRow (f) (cx cy : Aff) : RowSet S               -- 高さ 0 の固定点
+theorem constRow_at ... : (constRow f cx cy).At t 0 z ↔ z = (cx.eval t, cy.eval t)
+```
+
+下界・上界を複数並べると `max`・`min` になる（例 `Aₑ = max(L_x, L_s − h)`）。枝の場合分けは不要。
+
+**`σ = +1` を除いた理由**：行の区間の端は `Aₑ, Bₑ, A_o, B_o`（`Claude3GeoRows`）で、`σ ∈ {-1,0}` しか出ない。
+`x − h` は格子の法線ではなく、これを許すと代入の段で係数2が出得る（例：平行でない行で `2h₂ + h₁`）。
+
+### 3.4 `HF` の式（依頼3）
+
+```lean
+def PA.toHF (x y : Fin m) (c : PA) : HF T m k      -- le / nle / addLe / subLe / negAddLe / tNonneg
+theorem PA.sat_toHF {c : PA} (hc : c.OK) (x y : Fin m) ... :
+    HF.Sat lo hi t (c.toHF x y) ν V ↔ c.Sat t (ν x).2 (ν y).2
+def meetHF (R₁ R₂ : RowSet S) (x y : Fin m) : HF T m k :=
+  bigOr ((wordsLT S S.C).map fun w =>
+    if WordOK S w R₂.f R₁.f then bigAnd ((meetPA R₁ R₂ w).map (PA.toHF x y)) else hfFalse)
+theorem sat_meetHF (hE : Embedded S t) {R₁ R₂ : RowSet S} (hR₁ : R₁.WF) (hR₂ : R₂.WF)
+    (x y : Fin m) {lo hi : T → R002.Claude3Fold.Aff} (ν : Fin m → T × ℤ)
+    (V : Fin k → Set (T × ℤ)) :
+    HF.Sat lo hi t (meetHF R₁ R₂ x y) ν V ↔ Meet S t R₁ (ν x).2 R₂ (ν y).2
+```
+
+- `T`、`lo`、`hi`、`m`、`k` は任意（G4/G5 の状態型に依存しない）。`x = y`（同じ状態の二点）でもよい。
+- 省略可能な変数版（`Claude3IdentAdj`）：`hgt ν : Option (Fin m) → ℤ`（`none ↦ 0`）、
+  `meetHFo R₁ R₂ ox oy`、`sat_meetHFo : … ↔ Meet S t R₁ (hgt ν ox) R₂ (hgt ν oy)`。
+  `none` の側は `constRow`/`cornerRow` に使う。`none, none` なら `m = 0` の文になる。
+  `sat_meetHF1` は第1行が高さ0の旧版。
+
+### 3.5 隣接と次数（依頼4）
+
+```lean
+def nbrRow (R : RowSet S) (g : Fin S.C) (w : List (Letter S)) (u : ℤ × ℤ) : RowSet S
+  -- 点 Φ_w(P) + u（チャート g）。語の鎖の途中のチャート条件も cons に入れる
+def NbrMeet S t R₁ h₁ R₂ h₂ : Prop   -- 代表が同じチャートで単位ベクトルだけ違う
+theorem nbrMeet_iff (hE : Embedded S t) (R₁ R₂ : RowSet S) (h₁ h₂ : ℤ) :
+    NbrMeet S t R₁ h₁ R₂ h₂ ↔ ∃ g w u, w.length < S.C ∧ WordOK S w R₁.f g ∧ u ∈ unitVec ∧
+      Meet S t (nbrRow R₁ g w u) h₁ R₂ h₂
+def RowSet.Single (R : RowSet S) (t : ℕ) (h : ℤ) : Prop := ∀ z z', R.At t h z → R.At t h z' → z = z'
+def AdjMeet S t R₁ h₁ R₂ h₂ : Prop   -- 二点の頂点が graph S t で隣接
+theorem adjMeet_iff (hS₁ : R₁.Single t h₁) (hS₂ : R₂.Single t h₂) :
+    AdjMeet S t R₁ h₁ R₂ h₂ ↔ NbrMeet S t R₁ h₁ R₂ h₂ ∧ ¬ Meet S t R₁ h₁ R₂ h₂
+theorem sat_adjHFo (hE) (hR₁ : R₁.WF) (hR₂ : R₂.WF) (ox oy) (ν V)
+    (hS₁ : R₁.Single t (hgt ν ox)) (hS₂ : R₂.Single t (hgt ν oy)) :
+    HF.Sat lo hi t (adjHFo R₁ R₂ ox oy) ν V ↔ AdjMeet S t R₁ (hgt ν ox) R₂ (hgt ν oy)
+
+theorem sat_degHFo (hE : Embedded S t) {R : RowSet S} (hR : R.WF) (n : ℕ)
+    (ox : Option (Fin m)) ... (hS : R.Single t (hgt ν ox)) {P : ℤ × ℤ}
+    (hA : R.At t (hgt ν ox) P) (hP : (S.chart R.f).Mem t P) :
+    HF.Sat lo hi t (degHFo R n ox) ν V ↔ deg (graph S t) (pt S t R.f P hP) = n
+```
+
+次数の式の作り方：候補 `degCands R`（`(g, w, u)`、語は `R.f` から `g`）の点 `candRow R c` について、
+「存在する」＝自分自身と `Meet`、「自分でない」＝`¬ Meet (candRow R c) R`、「同じ」＝候補どうしの `Meet`。
+`deg = n` ⇔ 長さ `n` の候補の部分列で、存在・非自分・互いに相異、かつ存在する非自分の候補をすべて代表するものがある
+（`DegEq`、`degEq_iff`。組合せの核は `count_classes`）。式は `degCands R` の部分列すべての有限選言
+（大きさは指数的だが固定）。`adj_iff_cand`：近傍はちょうど存在する非自分の候補の頂点。
+
+### 3.6 G6向けの記述子（`Claude3IdentRow`）
+
+```lean
+def rowPtRow (f) (k : ℕ) (η : ℤ) (lows ups : List Bnd) : RowSet S
+theorem rowPtRow_at (f) (k) (hη : η = 0 ∨ η = 1) (lows ups) (h z) :
+    (rowPtRow f k η lows ups).At t h z ↔ ∃ x : ℤ, (bounds) ∧ z = rotN k (rowPt h (2 * x + η))
+def rowPtPt (f) (k) (η) (b : Bnd) : RowSet S
+theorem rowPtPt_at ... : (rowPtPt f k η b).At t h z ↔
+    z = rotN k (rowPt h (2 * (b.σ * h + b.c.eval t) + η))
+theorem rowPtPt_single, rowPtPt_wf, affineRow_single, constRow_single, nbrRow_single
+def cornerRow (S) (m : Fin S.M) : RowSet S
+theorem meet_cornerRow_iff (R h m) : Meet S t R h (cornerRow S m) 0 ↔ ∃ z, R.At t h z ∧
+    ∃ hz hm, pt S t R.f z hz = vtx ⟨(S.mchart m, ((S.mx m).eval t, (S.my m).eval t)), hm⟩
+theorem sat_siteHFo  : HF.Sat … (siteHFo R ox) ν V ↔ ∃ P, R.At t (hgt ν ox) P ∧ (S.chart R.f).Mem t P
+theorem sat_degAllHFo (hS : R.Single …) : HF.Sat … (degAllHFo R n ox) ν V ↔
+    ∀ P (_ : R.At t (hgt ν ox) P) (hP), deg (graph S t) (pt S t R.f P hP) = n
+theorem sat_guardHFo (hL : ∀ a ∈ L, a.OK) : HF.Sat … (guardHFo L ox oy) ν V ↔
+    ∀ a ∈ L, a.Sat t (hgt ν ox) (hgt ν oy)
+```
+
+`Claude3StateDef` の `rp σ i = rotN σ.1.k (rowPt σ.2 i)`、`RV`、`AtCorner`、`CondEnds` の
+`∀ v, RV … v → deg v = 5` は、添字 `i` が自分の高さの一次式（偶奇固定）である限り、それぞれ
+`rowPtPt`、`Meet`、`meet_cornerRow_iff`、`sat_degAllHFo` にそのまま対応する。
+
+## 4. 公理
+
+`import Formal.Claude3IdentRow` の確認ファイル（scratchpad の `axident3.lean`）で次の21個を確認。すべて
+`[propext, Classical.choice, Quot.sound]`：
+`mem_apply_iff`、`exists_iff_elim`、`elim_ok`、`ident_iff_word`、`meet_iff_patoms`、`meetPA_ok`、
+`sat_meetHF`、`sat_meetHF1`、`sat_meetHFo`、`nbrMeet_iff`、`sat_nbrHFo`、`adjMeet_iff`、`sat_adjHFo`、
+`degEq_iff`、`sat_degHFo`、`rowPtRow_at`、`rowPtPt_at`、`meet_cornerRow_iff`、`sat_siteHFo`、
+`sat_degAllHFo`、`sat_guardHFo`。
+（ほかに `pullNCs_nrm`、`rowCoef_ok`、`intervalRow_at`、`affineRow_at`、`constRow_at`、`PA.sat_toHF`、
+`count_classes`、`adj_iff_cand` も同じ3つ。）
+
+## 5. 確認の手順と資源
+
+```bash
+cd formal
+nice -n 10 lake build Formal.Claude3IdentRow          # 6ファイルすべてを含む
+nice -n 10 lake env lean -M4096 Formal/Claude3Ident<名前>.lean
+```
+
+- 各ファイルの単独の確認：4.0–5.4秒。最大常駐メモリ 2.99–3.10 GB（`/usr/bin/time -l`、最大は `Nrm`）。
+- 空きメモリは開始時56%、作業中47–57%。Lean の処理は常に1つずつ。
+- 警告は体裁のもの（`simp` の flexible linter 1件など）だけ。
+
+commit（`claude-lean`）：`83ca47f4`（Nrm・Meet・HF）、`de353682`（Adj・Deg）、`8e6afa0c`（Row と体裁）、
+本報告は最後の commit。
+
+## 6. 残りの穴と申し送り
+
+1. **入口の添字が前者の高さで決まる場合（G4の設計）**。`RowSet.cons` の制約は自分の位置 `x` と自分の
+   高さ `h` だけを含む。出力の区間の左端を前者 `x` の高さ `h_x` で書くと、位置を消したあとの原子式は
+   一般に `h_y, h_x, h_{y'}` の3変数になり、`HF`（原子式は2変数まで）に入らない
+   （平行な行の Fourier–Motzkin では和が2変数に収まることもあるが、平行でない行の代入では3変数が残り得る）。
+   選択肢：(a) 論文どおり、型ごとに入口の添字が自分の高さの一次式（`c(t)`、`±h + c(t)`）になることを示し、
+   入口の形を型に入れる（論文 lem:restricted の「Within a fixed type, each endpoint …」）。
+   (b) 入口の点は前者の出口の点との同一視（`Meet`、2変数）で定め、出力の比較では入口の位置を使わずに
+   済む形（例えば「出力の点 ⇔ 行の点で、入口の点より後」を別の2変数の述語で書く）を探す。
+   G6の設計で最初に決める必要がある。
+2. `σ = +1`（位置 `x = h + c`）は扱わない（§3.3）。現在の行の補題からは出ない。
+3. `sat_*` の同値は各 `t` で `Embedded S t` を仮定する（`Valid` から `valid_embedded`）。
+4. 隣接の式 `adjHFo` と次数の式 `degHFo` は一点の行（`Single`）について。区間の行どうしでは
+   `NbrMeet`（同じチャートで単位ベクトル差）までが式になる（`sat_nbrHFo`）。
+5. 次数の式は候補の部分列すべての選言で、大きさは指数的（論理としては固定の有限の式なので問題はない）。
+6. 状態型（G4）・縮約定理（G5）・ψ の構成（G6）・折り畳み（F）・組み立て（A）には触れていない。
+
+## 7. G6に渡すインターフェース（まとめ）
+
+- 点の記述：`RowSet S`（`intervalRow`、`affineRow`、`rowPtRow`、`rowPtPt`、`constRow`、`cornerRow`、`nbrRow`）、
+  条件 `RowSet.WF`（`*_wf` の補題あり）、一点性 `RowSet.Single`（`*_single`）。
+- 述語：`Meet`、`NbrMeet`、`AdjMeet`、`deg (graph S t) (pt …)`。
+- 式（すべて `HF T m k`、`T lo hi m k` は任意、`t` によらない）：
+  `meetHF`/`meetHFo`、`nbrHFo`、`adjHFo`、`degHFo`、`degAllHFo`、`siteHFo`、`guardHFo`、
+  および `bigAnd`、`bigOr`、`hfTrue`、`hfFalse`、`PA.toHF`/`PA.toHFo`、`toFAff`。
+- 同値：`sat_meetHF`、`sat_meetHFo`、`sat_nbrHFo`、`sat_adjHFo`、`sat_degHFo`、`sat_degAllHFo`、
+  `sat_siteHFo`、`sat_guardHFo`（いずれも `Embedded S t` のもとで、すべての `ν V` について）。

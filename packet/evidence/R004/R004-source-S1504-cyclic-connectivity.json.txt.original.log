@@ -1,0 +1,18 @@
+{
+  "source_id": "S1504",
+  "title": "On Cyclic Edge-Connectivity of Fullerenes",
+  "authors_or_provider": "Klavdija Kutnar and Dragan Marusic",
+  "url_or_path": "https://arxiv.org/html/math/0702511v1",
+  "version": "arXiv math/0702511v1",
+  "published_at": "2007-02-17",
+  "checked_at": "2026-10-18",
+  "section_or_pages": "Section 1, statement citing Doslic [10], Theorem 2",
+  "read_scope": "Abstract and Section 1 connectivity statement; no gSW/C1 claims in this source were used",
+  "claim_supported": "Every fullerene graph is cyclically 5-edge-connected. Used as an established external theorem, not re-proved here.",
+  "local_snapshot": "data/cache/R004-sources/S1504-cyclic-connectivity.html",
+  "sha256": "67ab10d9a48c377d6662c5efd6ef0033250c64635ae6b6d937225a6252c90ec8",
+  "limitations": "The original Doslic proof has not been read in this study; the dependency is explicitly identified from the published research article.",
+  "license_or_terms": "Public arXiv article; original copyright retained",
+  "quotes": [],
+  "fetched_at": "2026-10-18"
+}

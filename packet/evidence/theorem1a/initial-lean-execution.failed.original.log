@@ -1,0 +1,299 @@
+{
+  "status": "FAIL",
+  "commands": [
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3ChallengeSpec"
+      ],
+      "exit_code": 0,
+      "seconds": 16.729,
+      "peak_owned_mib": 2137.2,
+      "max_lean_processes": 1,
+      "min_free_percent": 41,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoBasic"
+      ],
+      "exit_code": 0,
+      "seconds": 21.184,
+      "peak_owned_mib": 3491.16,
+      "max_lean_processes": 1,
+      "min_free_percent": 39,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoRows"
+      ],
+      "exit_code": 0,
+      "seconds": 18.112,
+      "peak_owned_mib": 3410.75,
+      "max_lean_processes": 1,
+      "min_free_percent": 38,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoDeg"
+      ],
+      "exit_code": 0,
+      "seconds": 17.904,
+      "peak_owned_mib": 3433.8,
+      "max_lean_processes": 1,
+      "min_free_percent": 42,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoRot"
+      ],
+      "exit_code": 0,
+      "seconds": 18.783,
+      "peak_owned_mib": 3490.42,
+      "max_lean_processes": 1,
+      "min_free_percent": 44,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoPassage"
+      ],
+      "exit_code": 0,
+      "seconds": 10.576,
+      "peak_owned_mib": 3453.14,
+      "max_lean_processes": 1,
+      "min_free_percent": 45,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3GeoSeam"
+      ],
+      "exit_code": 0,
+      "seconds": 13.074,
+      "peak_owned_mib": 3448.19,
+      "max_lean_processes": 1,
+      "min_free_percent": 42,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoSyntax"
+      ],
+      "exit_code": 0,
+      "seconds": 4.105,
+      "peak_owned_mib": 1964.95,
+      "max_lean_processes": 1,
+      "min_free_percent": 44,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoDerived"
+      ],
+      "exit_code": 0,
+      "seconds": 3.208,
+      "peak_owned_mib": 1975.28,
+      "max_lean_processes": 1,
+      "min_free_percent": 45,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoAutomata"
+      ],
+      "exit_code": 0,
+      "seconds": 3.87,
+      "peak_owned_mib": 2170.92,
+      "max_lean_processes": 1,
+      "min_free_percent": 47,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoRegular"
+      ],
+      "exit_code": 0,
+      "seconds": 2.958,
+      "peak_owned_mib": 2175.97,
+      "max_lean_processes": 1,
+      "min_free_percent": 47,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoUnary"
+      ],
+      "exit_code": 0,
+      "seconds": 2.956,
+      "peak_owned_mib": 2172.8,
+      "max_lean_processes": 1,
+      "min_free_percent": 47,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3MsoLenMod"
+      ],
+      "exit_code": 0,
+      "seconds": 2.982,
+      "peak_owned_mib": 2185.19,
+      "max_lean_processes": 1,
+      "min_free_percent": 48,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3FoldDef"
+      ],
+      "exit_code": 0,
+      "seconds": 3.641,
+      "peak_owned_mib": 2194.86,
+      "max_lean_processes": 1,
+      "min_free_percent": 48,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3FoldLin"
+      ],
+      "exit_code": 0,
+      "seconds": 4.179,
+      "peak_owned_mib": 2154.0,
+      "max_lean_processes": 1,
+      "min_free_percent": 48,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3FoldSyntax"
+      ],
+      "exit_code": 0,
+      "seconds": 3.906,
+      "peak_owned_mib": 2215.31,
+      "max_lean_processes": 1,
+      "min_free_percent": 46,
+      "stopped": null
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "lake",
+        "--no-cache",
+        "build",
+        "Formal.Claude3StateDef"
+      ],
+      "exit_code": -15,
+      "seconds": 8.099,
+      "peak_owned_mib": 1171.47,
+      "max_lean_processes": 2,
+      "min_free_percent": 45,
+      "stopped": "More than one Lean process"
+    }
+  ],
+  "source_inventory_sha256": "c47e91b1c3a7d8e09aaa7921bb44c78d69222c1d3d4eb2058cd530a1ef130dbe",
+  "sources_unchanged": true,
+  "new_proofs": 0,
+  "external_kernels_rerun": false,
+  "owner_statement_confirmation": false
+}
