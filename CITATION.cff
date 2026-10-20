@@ -41,5 +41,6 @@
       "license": "CC-BY-4.0",
       "repository-code": "https://github.com/tkmt-lab/a3-gsw-classification"
     }
-  ]
+  ],
+  "doi": "10.5281/zenodo.23491204"
 }

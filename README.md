@@ -10,6 +10,7 @@ This repository contains a paper and its verification packet. It is the second o
 
 The contribution is a uniform reduction of path existence to a fixed monadic second-order sentence over unary words. The final step, from MSO to eventual periodicity, is a known consequence of the MSO–regular-language equivalence. It is not claimed as a new principle.
 
+- Archived on Zenodo: [doi:10.5281/zenodo.23491204](https://doi.org/10.5281/zenodo.23491204) (all versions; this release v1.3.1 is [doi:10.5281/zenodo.23491205](https://doi.org/10.5281/zenodo.23491205)).
 - Paper: [`paper/paper-lines-en.pdf`](paper/paper-lines-en.pdf) (LaTeX source alongside).
 - Packet: [`packet/`](packet/). Start with [`packet/AGENTS.md`](packet/AGENTS.md).
 - Lean statements, written before the proofs (Mathlib only). Each ends in an intentional `sorry`: it is the statement only, and is not imported by any proof. Theorem 1a, formal version: [`statement/Challenge2.lean`](statement/Challenge2.lean), proved in [`Claude3ComparatorSolution.lean`](packet/formal/Formal/Claude3ComparatorSolution.lean). K3 on rays: [`statement/ChallengeK3.lean`](statement/ChallengeK3.lean), proved in [`Claude4K3ComparatorSolution.lean`](packet/formal/Formal/Claude4K3ComparatorSolution.lean).
