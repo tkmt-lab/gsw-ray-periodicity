@@ -45,6 +45,10 @@ lake env lean ../../ci/Axioms.lean      # prints the axioms of the 17 entry-poin
 
 The same steps run automatically on every push.
 
+## Acknowledgements
+
+This work extends the question of A. Bille, V. Buchstaber and E. Spodarev on linear generalized Stone–Wales paths to the fullerene families of J. E. Graver's catalogue. It relies on K. Kutnar and D. Marušič's work on cyclic edge-connectivity of fullerenes, and its last step is the theorem of J. R. Büchi, C. C. Elgot and B. A. Trakhtenbrot linking logic on words with finite automata. The proofs were checked with Lean 4, mathlib and the Comparator tool. Their work made this one possible. The author is grateful to them, and hopes this modest work adds a little to the field they opened. Full citations are in the paper.
+
 ## Licence
 
 Text, figures and data: CC BY 4.0. Code and Lean sources: Apache-2.0. See [`packet/LICENSING.md`](packet/LICENSING.md).

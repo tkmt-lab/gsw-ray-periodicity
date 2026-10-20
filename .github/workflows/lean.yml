@@ -26,6 +26,11 @@ jobs:
       - name: Download prebuilt mathlib
         working-directory: packet/formal
         run: lake exe cache get
+      - name: Raise the per-file memory threshold for CI
+        # lakefile.toml passes -M4096; Formal.Claude2K3Classify needs a little more than 4 GB.
+        # The runner has 16 GB, so CI uses -M12288. The packet's own lakefile is unchanged in git.
+        working-directory: packet/formal
+        run: sed -i 's/"-M4096"/"-M12288"/' lakefile.toml && grep moreLeanArgs lakefile.toml
       - name: Build the main modules
         working-directory: packet/formal
         run: lake build Formal.Claude2FamilyRays Formal.Claude2FamilyExamples Formal.Claude2K3Sufficient Formal.ClaudeCorRays Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution
