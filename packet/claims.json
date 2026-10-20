@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
-  "version": "1.3.1",
+  "version": "1.4.0",
   "paper": {
-    "path": "paper-lines-v4.7-en.tex",
-    "sha256": "0691a04e67c2ea757a0bd78b612b529534e8321d4b3415d9f26d1f94663fa1be",
-    "bytes": 69387
+    "path": "paper-lines-v4.8-en.tex",
+    "sha256": "5ce383fe1a36e5cfa6252676fe62ac002869d2adb4341b7fe952c57b3d11d650",
+    "bytes": 72751
   },
   "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "status_semantics": "The status lean-result-received means exact source and a fixed reported kernel acceptance were received, not newly elaborated. Arithmetic predicates, graph sufficiency, conditional kernels and general prose theorems have distinct scopes. depends_on is expository, not a Lean proof-term dependency graph.",
@@ -46,7 +46,11 @@
     "general_specification_lean_proof": true,
     "k3_literal_ray_without_prose_bridge_received": true,
     "k3_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison",
-    "historical_theorem1a_fresh_execution_receipt": true
+    "historical_theorem1a_fresh_execution_receipt": true,
+    "c1_graph_classification_received": true,
+    "c1_literal_ray_without_prose_bridge_received": true,
+    "c1_ipr_formalized": false,
+    "c1_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
   },
   "claims": [
     {
@@ -90,8 +94,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -173,8 +177,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -228,8 +232,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -1403,8 +1407,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -1465,7 +1469,7 @@
       "kind": "corollary",
       "statement_plain": "All eventually valid positive integer affine rays in exactly A1,A2,B2,C1,K3,E10,D12,D14,D1,O2 and separately A3 are eventually periodic; no additional leapfrog family or collapsed zero boundary is included.",
       "status": "mixed-prose-and-formal-results",
-      "status_scope": "Exactly the stated eleven-family corollary. Its K3 component is now Lean-proved without a prose bridge, including positive parameter-one boundaries; other families retain their prior routes. No whole-catalogue classification is claimed.",
+      "status_scope": "Exactly the eleven-family corollary. K3 and C1 actual-path ray results are now received Lean proofs without the general prose bridge. Their declarations use positive natural starts and nonnegative slopes; eventually positive integer rays are reindexed to a positive tail in the exposition. Other family routes retain their scope; no whole-catalogue classification.",
       "depends_on": [
         "thm:aligned",
         "prop:family-decompositions",
@@ -1678,6 +1682,145 @@
               "bytes": 4963
             }
           ]
+        },
+        {
+          "declaration": "ClaudeChallengeC1.main",
+          "source": {
+            "path": "formal/Formal/Claude4C1ComparatorSolution.lean",
+            "sha256": "581e36bb721f298fb6c3a7c297c3337595353bf026be740ac6bc3f79d4c3a05f",
+            "bytes": 2000
+          },
+          "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+          "type_signature": "theorem main (r₀ s₀ a b : ℕ) (hr : 1 ≤ r₀) (hs : 1 ≤ s₀) :\n    ∃ t₀ P : ℕ, 0 < P ∧ ∀ t : ℕ, t₀ ≤ t →\n      (PathExists (r₀ + a * t) (s₀ + b * t) ↔\n        PathExists (r₀ + a * (t + P)) (s₀ + b * (t + P)))",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/c1/comparator-c1.md.original.log",
+            "sha256": "842573e54e358c083895d8512e5bd4ee5df5aff9463b3923fd751d3a2dacb12d",
+            "bytes": 2190
+          },
+          "fresh_lean_run": false,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude2AlignedSpec.lean",
+              "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+              "bytes": 7508
+            },
+            {
+              "path": "formal/Formal/Claude4C1Block.lean",
+              "sha256": "02213a1301fc669e348dc7d5671c71cd1d5e3c610206d332eb0e45c4a2bea474",
+              "bytes": 5524
+            },
+            {
+              "path": "formal/Formal/Claude4C1ComparatorSolution.lean",
+              "sha256": "581e36bb721f298fb6c3a7c297c3337595353bf026be740ac6bc3f79d4c3a05f",
+              "bytes": 2000
+            },
+            {
+              "path": "formal/Formal/Claude4C1Deg.lean",
+              "sha256": "cb60404cb0238c6ccf5a6d154fb7e282f035ec4243ae621c3b9198c084131c04",
+              "bytes": 6547
+            },
+            {
+              "path": "formal/Formal/Claude4C1G4.lean",
+              "sha256": "8096032f3d2be33c4b5b620e3fbc7448c892a30568c762ecd3d475dcafce1413",
+              "bytes": 7672
+            },
+            {
+              "path": "formal/Formal/Claude4C1Iso.lean",
+              "sha256": "cfeb631c2a7c5342ff0b41ae446ea2a89f7deaf09a844d4b7038b7e0e7a79faf",
+              "bytes": 6227
+            },
+            {
+              "path": "formal/Formal/Claude4C1Main.lean",
+              "sha256": "cd3d43282ead0f11fbcb65fcc071b2989487d94439d432c489b0fd97953f6fc9",
+              "bytes": 5637
+            },
+            {
+              "path": "formal/Formal/Claude4C1Nec.lean",
+              "sha256": "7cbfd8ada669aad5881ba8849efd5e4cad4d887860b7634aeab5b16bf85364b2",
+              "bytes": 6686
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi.lean",
+              "sha256": "80a10366cfba399cd621c9e706aea7e852a08ad6e4cb9e4da7f4cad78798da1b",
+              "bytes": 16331
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi2.lean",
+              "sha256": "3921372fa826e1d4ac4c57859fff657bddcbc2147b4f314eca416bb5d35baa18",
+              "bytes": 11644
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi3.lean",
+              "sha256": "060ad588a998ae4a07631cbc0e558ab1543c895d29537bc3626fdea00fe1310d",
+              "bytes": 7902
+            },
+            {
+              "path": "formal/Formal/Claude4C1Spec.lean",
+              "sha256": "b5b9537bc701bb84a93694f5a7b691ac29356532ef842d82e55f736931c51949",
+              "bytes": 1624
+            },
+            {
+              "path": "formal/Formal/Claude4C1Start.lean",
+              "sha256": "1b904e523c558021477ef7db753ab48708ad86640db815569bfed23eea127995",
+              "bytes": 5134
+            },
+            {
+              "path": "formal/Formal/Claude4C1Strip.lean",
+              "sha256": "95dabc5ec6a4c35eefacc326a578a29255bd4b172bcbf1d09f7cfaf39d9d82ae",
+              "bytes": 8950
+            },
+            {
+              "path": "formal/Formal/Claude4C1Suff.lean",
+              "sha256": "200bf011d5984558ea9aedf53dfd6d5e41489adcd6254edd24d5a7243449687f",
+              "bytes": 3406
+            },
+            {
+              "path": "formal/Formal/Claude4C1Three.lean",
+              "sha256": "94721b861fc7ed95efe79d5bbcab93b4a3af485e37abfa2ab43f50d5ce2f21f7",
+              "bytes": 8206
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeI.lean",
+              "sha256": "f33b510842076573b46084babc37507b7c43f9f8e966f517e33e39671cf4036d",
+              "bytes": 5975
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeII.lean",
+              "sha256": "373c8fd4593b846f529a2ce802d291b0ce9070f33cd84912b620596a6485fa79",
+              "bytes": 6093
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeIII.lean",
+              "sha256": "fa9ceea3cd9c07a12cda9d9cd69ba6a01f385d1697a34e3b38eba173f3a31227",
+              "bytes": 9120
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeIV.lean",
+              "sha256": "c616494a519a39a7fd27eacde735e1631cb2ec2c5be6a1688a2aa2af21172bf8",
+              "bytes": 8940
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeS.lean",
+              "sha256": "5f0acbea5a3d873894e3bdab2dec73d03d0ed7252ad572c5ed32aac78e583142",
+              "bytes": 2604
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeV.lean",
+              "sha256": "2405ccc2501272dd87daa8c73a653b7be9ba7a3e57d875cf49128ea9da92d8ff",
+              "bytes": 4583
+            },
+            {
+              "path": "formal/Formal/ClaudeChallengeSpec.lean",
+              "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+              "bytes": 6130
+            }
+          ]
         }
       ],
       "evidence": [
@@ -1705,12 +1848,17 @@
           "path": "evidence/k3/k3-bridge-report.md.original.log",
           "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
           "bytes": 8689
+        },
+        {
+          "path": "evidence/c1/comparator-c1.md.original.log",
+          "sha256": "842573e54e358c083895d8512e5bd4ee5df5aff9463b3923fd751d3a2dacb12d",
+          "bytes": 2190
         }
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -1724,7 +1872,8 @@
           "P006-L10",
           "P006-L11",
           "P006-L12",
-          "P006-L14"
+          "P006-L14",
+          "P006-L15"
         ]
       },
       "human_review": false
@@ -1765,8 +1914,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -1820,8 +1969,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -1875,8 +2024,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2044,8 +2193,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2099,8 +2248,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2122,14 +2271,154 @@
       "id": "prop:closed",
       "paper_label": "prop:closed",
       "kind": "classification-table",
-      "statement_plain": "The received prose iff conditions apply only on the stated domains: A1 all absent, A2 p=1, C1 b=1, B2 p=1 or abs(p-r)=1, K3 r,s>=2 and s=+-1 mod r, E10 p,s>=1,r>=2 with the six stated residues.",
-      "status": "independent-prose-proof-received",
-      "status_scope": "The R004 prose classifications are retained. The K3 subcase r,s>=2 additionally has a received Lean graph iff (thm:k3-sufficient); other listed family statuses are unchanged.",
+      "statement_plain": "The received prose and specified Lean iff conditions apply only on the stated domains: A1 all absent, A2 p=1, C1 b=1, B2 p=1 or abs(p-r)=1, K3 r,s>=2 and s=+-1 mod r, E10 p,s>=1,r>=2 with the six stated residues.",
+      "status": "mixed-prose-and-formal-results",
+      "status_scope": "R004 prose classifications retained. K3 r,s>=2 separately has a Lean graph iff; C1 r,s>=1 now has a Lean actual-path iff s=1, with Lean r=paper a and s=paper b. The C1 IPR equivalence a,b>=2 is outside Lean; other family statuses unchanged.",
       "depends_on": [],
       "remaining_obligations": [
         "Human proof peer review and novelty comparison."
       ],
-      "lean": [],
+      "lean": [
+        {
+          "declaration": "ClaudeChallengeC1.classification",
+          "source": {
+            "path": "formal/Formal/Claude4C1ComparatorSolution.lean",
+            "sha256": "581e36bb721f298fb6c3a7c297c3337595353bf026be740ac6bc3f79d4c3a05f",
+            "bytes": 2000
+          },
+          "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+          "type_signature": "theorem classification (r s : ℕ) (hr : 1 ≤ r) (hs : 1 ≤ s) : PathExists r s ↔ s = 1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "verification_kind": "coordinator-reported-kernel-output",
+          "receipt": {
+            "path": "evidence/c1/comparator-c1.md.original.log",
+            "sha256": "842573e54e358c083895d8512e5bd4ee5df5aff9463b3923fd751d3a2dacb12d",
+            "bytes": 2190
+          },
+          "fresh_lean_run": false,
+          "source_closure": [
+            {
+              "path": "formal/Formal/Claude2AlignedSpec.lean",
+              "sha256": "a3527f25d7c36edda2aaa75107463a94bfa28e83fd3bb0385ee993ea3d454471",
+              "bytes": 7508
+            },
+            {
+              "path": "formal/Formal/Claude4C1Block.lean",
+              "sha256": "02213a1301fc669e348dc7d5671c71cd1d5e3c610206d332eb0e45c4a2bea474",
+              "bytes": 5524
+            },
+            {
+              "path": "formal/Formal/Claude4C1ComparatorSolution.lean",
+              "sha256": "581e36bb721f298fb6c3a7c297c3337595353bf026be740ac6bc3f79d4c3a05f",
+              "bytes": 2000
+            },
+            {
+              "path": "formal/Formal/Claude4C1Deg.lean",
+              "sha256": "cb60404cb0238c6ccf5a6d154fb7e282f035ec4243ae621c3b9198c084131c04",
+              "bytes": 6547
+            },
+            {
+              "path": "formal/Formal/Claude4C1G4.lean",
+              "sha256": "8096032f3d2be33c4b5b620e3fbc7448c892a30568c762ecd3d475dcafce1413",
+              "bytes": 7672
+            },
+            {
+              "path": "formal/Formal/Claude4C1Iso.lean",
+              "sha256": "cfeb631c2a7c5342ff0b41ae446ea2a89f7deaf09a844d4b7038b7e0e7a79faf",
+              "bytes": 6227
+            },
+            {
+              "path": "formal/Formal/Claude4C1Main.lean",
+              "sha256": "cd3d43282ead0f11fbcb65fcc071b2989487d94439d432c489b0fd97953f6fc9",
+              "bytes": 5637
+            },
+            {
+              "path": "formal/Formal/Claude4C1Nec.lean",
+              "sha256": "7cbfd8ada669aad5881ba8849efd5e4cad4d887860b7634aeab5b16bf85364b2",
+              "bytes": 6686
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi.lean",
+              "sha256": "80a10366cfba399cd621c9e706aea7e852a08ad6e4cb9e4da7f4cad78798da1b",
+              "bytes": 16331
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi2.lean",
+              "sha256": "3921372fa826e1d4ac4c57859fff657bddcbc2147b4f314eca416bb5d35baa18",
+              "bytes": 11644
+            },
+            {
+              "path": "formal/Formal/Claude4C1Phi3.lean",
+              "sha256": "060ad588a998ae4a07631cbc0e558ab1543c895d29537bc3626fdea00fe1310d",
+              "bytes": 7902
+            },
+            {
+              "path": "formal/Formal/Claude4C1Spec.lean",
+              "sha256": "b5b9537bc701bb84a93694f5a7b691ac29356532ef842d82e55f736931c51949",
+              "bytes": 1624
+            },
+            {
+              "path": "formal/Formal/Claude4C1Start.lean",
+              "sha256": "1b904e523c558021477ef7db753ab48708ad86640db815569bfed23eea127995",
+              "bytes": 5134
+            },
+            {
+              "path": "formal/Formal/Claude4C1Strip.lean",
+              "sha256": "95dabc5ec6a4c35eefacc326a578a29255bd4b172bcbf1d09f7cfaf39d9d82ae",
+              "bytes": 8950
+            },
+            {
+              "path": "formal/Formal/Claude4C1Suff.lean",
+              "sha256": "200bf011d5984558ea9aedf53dfd6d5e41489adcd6254edd24d5a7243449687f",
+              "bytes": 3406
+            },
+            {
+              "path": "formal/Formal/Claude4C1Three.lean",
+              "sha256": "94721b861fc7ed95efe79d5bbcab93b4a3af485e37abfa2ab43f50d5ce2f21f7",
+              "bytes": 8206
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeI.lean",
+              "sha256": "f33b510842076573b46084babc37507b7c43f9f8e966f517e33e39671cf4036d",
+              "bytes": 5975
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeII.lean",
+              "sha256": "373c8fd4593b846f529a2ce802d291b0ce9070f33cd84912b620596a6485fa79",
+              "bytes": 6093
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeIII.lean",
+              "sha256": "fa9ceea3cd9c07a12cda9d9cd69ba6a01f385d1697a34e3b38eba173f3a31227",
+              "bytes": 9120
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeIV.lean",
+              "sha256": "c616494a519a39a7fd27eacde735e1631cb2ec2c5be6a1688a2aa2af21172bf8",
+              "bytes": 8940
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeS.lean",
+              "sha256": "5f0acbea5a3d873894e3bdab2dec73d03d0ed7252ad572c5ed32aac78e583142",
+              "bytes": 2604
+            },
+            {
+              "path": "formal/Formal/Claude4C1TypeV.lean",
+              "sha256": "2405ccc2501272dd87daa8c73a653b7be9ba7a3e57d875cf49128ea9da92d8ff",
+              "bytes": 4583
+            },
+            {
+              "path": "formal/Formal/ClaudeChallengeSpec.lean",
+              "sha256": "d14259d1c70dcae93c2e2e7f9a91a010304bf2a5b8335472177981ae354ff3af",
+              "bytes": 6130
+            }
+          ]
+        }
+      ],
       "evidence": [
         {
           "path": "evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log",
@@ -2190,12 +2479,17 @@
           "path": "evidence/k3/k3-bridge-report.md.original.log",
           "sha256": "3207f73c574f34dac914f68bb72d66a3408ec22eb904f6ec7e7902b6d0a3d8ad",
           "bytes": 8689
+        },
+        {
+          "path": "evidence/c1/comparator-c1.md.original.log",
+          "sha256": "842573e54e358c083895d8512e5bd4ee5df5aff9463b3923fd751d3a2dacb12d",
+          "bytes": 2190
         }
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2209,7 +2503,8 @@
           "P006-L10",
           "P006-L11",
           "P006-L12",
-          "P006-L14"
+          "P006-L14",
+          "P006-L15"
         ]
       },
       "human_review": false
@@ -2265,8 +2560,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2320,8 +2615,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2447,8 +2742,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2574,8 +2869,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2723,8 +3018,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2828,8 +3123,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2906,8 +3201,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -2994,8 +3289,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3078,8 +3373,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3578,8 +3873,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3668,8 +3963,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3758,8 +4053,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3848,8 +4143,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3904,8 +4199,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -3975,8 +4270,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -4145,8 +4440,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -4200,8 +4495,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -4370,8 +4665,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",
@@ -4425,8 +4720,8 @@
       ],
       "review_history": {
         "path": "P006-corrections.md",
-        "sha256": "eaf600e22efdb2c38e9ce533165c0f0a9c4d85396e7d6a77d31c76a693c59c37",
-        "bytes": 5189,
+        "sha256": "626aae225a49927bd21a00472b01ab68b74f4cc708f5cbf8eb90fb098ce547c3",
+        "bytes": 5572,
         "row_ids": [
           "P006-L01",
           "P006-L02",

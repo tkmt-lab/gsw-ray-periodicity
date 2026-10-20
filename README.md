@@ -10,10 +10,10 @@ This repository contains a paper and its verification packet. It is the second o
 
 The contribution is a uniform reduction of path existence to a fixed monadic second-order sentence over unary words. The final step, from MSO to eventual periodicity, is a known consequence of the MSO–regular-language equivalence. It is not claimed as a new principle.
 
-- Archived on Zenodo: [doi:10.5281/zenodo.23491204](https://doi.org/10.5281/zenodo.23491204) (all versions; this release v1.3.1 is [doi:10.5281/zenodo.23491205](https://doi.org/10.5281/zenodo.23491205)).
+- Archived on Zenodo: [doi:10.5281/zenodo.23491204](https://doi.org/10.5281/zenodo.23491204) (all versions; releases are listed there).
 - Paper: [`paper/paper-lines-en.pdf`](paper/paper-lines-en.pdf) (LaTeX source alongside).
 - Packet: [`packet/`](packet/). Start with [`packet/AGENTS.md`](packet/AGENTS.md).
-- Lean statements, written before the proofs (Mathlib only). Each ends in an intentional `sorry`: it is the statement only, and is not imported by any proof. Theorem 1a, formal version: [`statement/Challenge2.lean`](statement/Challenge2.lean), proved in [`Claude3ComparatorSolution.lean`](packet/formal/Formal/Claude3ComparatorSolution.lean). K3 on rays: [`statement/ChallengeK3.lean`](statement/ChallengeK3.lean), proved in [`Claude4K3ComparatorSolution.lean`](packet/formal/Formal/Claude4K3ComparatorSolution.lean).
+- Lean statements, written before the proofs (Mathlib only). Each ends in an intentional `sorry`: it is the statement only, and is not imported by any proof. Theorem 1a, formal version: [`statement/Challenge2.lean`](statement/Challenge2.lean), proved in [`Claude3ComparatorSolution.lean`](packet/formal/Formal/Claude3ComparatorSolution.lean). K3 on rays: [`statement/ChallengeK3.lean`](statement/ChallengeK3.lean), proved in [`Claude4K3ComparatorSolution.lean`](packet/formal/Formal/Claude4K3ComparatorSolution.lean). C1 (classification and rays): [`statement/ChallengeC1.lean`](statement/ChallengeC1.lean), proved in [`Claude4C1ComparatorSolution.lean`](packet/formal/Formal/Claude4C1ComparatorSolution.lean).
 - The header comments of these statement files were written before the proofs. `ChallengeK3.lean` says `Valid` and `TrianglesInCharts` would have to be proved; the actual proof goes instead through the K3 classification, boundary paths and ray arithmetic. `Challenge2.lean` says everything to check is in the file; for the paper's Theorem 1a the prose correspondence lemma in the paper must also be checked.
 - Comparator records: [Theorem 1a](packet/evidence/theorem1a/comparator-thm1a-2026-10-20.md.original.log), [K3](packet/evidence/k3/comparator-k3.md.original.log).
 
@@ -22,9 +22,9 @@ The contribution is a uniform reduction of path existence to a fixed monadic sec
 | Item | Status |
 |---|---|
 | Theorem 1a | The **formal version is Lean-proved** ([`statement/Challenge2.lean`](statement/Challenge2.lean), declaration `ClaudeChallenge2.main`; residue-class variant `ClaudeChallenge2.main_residue` in [`Claude3Residue.lean`](packet/formal/Formal/Claude3Residue.lean), which assumes that on each residue class the decision agrees with path existence for a fixed signature). Its hypotheses are weaker than the paper's (it does not assume a sphere or exactly twelve cones), so it is a stronger theorem. The step from the paper's geometric hypotheses to the formal hypotheses is a **prose lemma** in the paper, not Lean. A paranoid Comparator run with six kernels confirmed that the proof proves exactly the formal statement. An earlier prose proof by a separate verification team is kept in the paper. No human peer review. |
-| Corollary 1b | **K3: Lean-proved with no prose bridge** ([`statement/ChallengeK3.lean`](statement/ChallengeK3.lean), `ClaudeChallengeK3.main`, on every ray in r, s ≥ 1; paranoid Comparator, six kernels). A3: from the first paper's classification. The other nine families: from Theorem 1a through explicit convex decompositions, so they rely on the prose lemma. |
-| Closed conditions for K3, E10, B2, C1, A1, A2 | K3: **Lean-proved** (`Claude4K3.k3_statement`: for r, s ≥ 2 a path exists iff s ≡ ±1 mod r), besides the prose proofs. E10, B2, C1, A1, A2: prose proofs (Section 5 of the paper). |
-| Other Lean results | Arithmetic eventual periodicity of the family predicates on all affine rays; exact decisions on two example rays for every $t$. All Lean results use only the standard axioms. The 17 declarations checked in [`ci/Axioms.lean`](ci/Axioms.lean) are the entry points; `packet/claims.json` records 25 declarations in all. The Lean proofs were written by Claude workers; the statements were written beforehand by a different agent and compared with the paper by independent AI readers (their findings and the resulting corrections are recorded in the packet) and by computation. |
+| Corollary 1b | **K3 and C1: Lean-proved with no prose bridge** ([`statement/ChallengeK3.lean`](statement/ChallengeK3.lean), `ClaudeChallengeK3.main`; [`statement/ChallengeC1.lean`](statement/ChallengeC1.lean), `ClaudeChallengeC1.main`; every ray in the positive domain; paranoid Comparator, six kernels). A3: from the first paper's classification. The other eight families: from Theorem 1a through explicit convex decompositions, so they rely on the prose lemma. |
+| Closed conditions for K3, E10, B2, C1, A1, A2 | K3: **Lean-proved** (`Claude4K3.k3_statement`: for r, s ≥ 2 a path exists iff s ≡ ±1 mod r). C1: **Lean-proved** (`ClaudeChallengeC1.classification`: for a, b ≥ 1 a path exists iff b = 1; the IPR clause of the C1 row is not formalized). Both besides the prose proofs. E10, B2, A1, A2: prose proofs (Section 5 of the paper). |
+| Other Lean results | Arithmetic eventual periodicity of the family predicates on all affine rays; exact decisions on two example rays for every $t$. All Lean results use only the standard axioms. The 19 declarations checked in [`ci/Axioms.lean`](ci/Axioms.lean) are the entry points; `packet/claims.json` records 27 declarations in all. The Lean proofs were written by Claude workers; the statements were written beforehand by a different agent and compared with the paper by independent AI readers (their findings and the resulting corrections are recorded in the packet) and by computation. |
 | Fixed oblique directions | Proof sketch only (Section 8); four obligations remain open. |
 | Novelty | Not settled; see Section 9.3. |
 
@@ -40,8 +40,9 @@ The research was carried out with AI systems (OpenAI Codex and Anthropic Claude 
 cd packet/formal
 lake exe cache get
 lake build Formal.Claude2FamilyRays Formal.Claude2FamilyExamples Formal.Claude2K3Sufficient Formal.ClaudeCorRays \
-  Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution
-lake env lean ../../ci/Axioms.lean      # prints the axioms of the 17 entry-point declarations
+  Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution \
+  Formal.Claude4C1ComparatorSolution
+lake env lean ../../ci/Axioms.lean      # prints the axioms of the 19 entry-point declarations
 ```
 
 The same steps run automatically on every push.

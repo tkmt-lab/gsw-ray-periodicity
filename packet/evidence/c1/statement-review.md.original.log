@@ -1,0 +1,56 @@
+# Independent statement review
+
+## 1. Verdict: FAITHFUL WITH CAVEATS
+
+The file faithfully specifies the C1 dual and the paper’s C1 **path-existence** classification. The parameter identification is **Lean `r` = paper `a`, Lean `s` = paper `b`**: `s = 1` is correct. Its ray theorem has equivalent eventual coverage after shifting to a positive tail. It does not state the separate IPR classification included in the paper’s C1 closed-condition row. No proof was attempted or Lean compilation performed.
+
+## 2. What `c1Sig` describes
+
+`c1Poly` supplies four counterclockwise equiangular hexagons with alternating side lengths `s,r,s,r,s,r`, and four counterclockwise equilateral triangles of side `r` (Lean 128–137). `c1Lab` gives precisely the truncated-tetrahedron incidence pattern. For example, hexagon 0 has the `r`-edge `8 → 9`, paired with triangle 6’s `9 → 8`, and the `s`-edge `2 → 8`, paired with hexagon 2’s `8 → 2`. All 36 directed sides have exactly one reversed-label partner; the twelve labels each occur at two hexagon corners and one triangle corner.
+
+The normalized doubled area of one hexagon is `r² + 4rs + s²`; that of one triangle is `r²`. Total carbon order is therefore
+
+`N = 8r² + 16rs + 4s²`,
+
+matching the paper’s C1 formula `8a² + 16ab + 4b²` (paper 1074–1085). This also distinguishes the parameters, rather than relying on the Lean comment at 24–25. Triangle collapse at `r = 0` and zero hexagon sides at `s = 0` agree with paper 1092–1095 under this identification.
+
+I ran a Python mirror of `walk`, `InCell`, every `Glue` rotation modulo six, unrestricted `SamePoint`, equivalence closure, and common-chart unit-step adjacency. It checked all 25 pairs `1 ≤ r,s ≤ 5`. Selected results:
+
+| `(r,s)` | Dual vertices | Edges | Unit triangles / carbon order | Degree-six vertices |
+|---|---:|---:|---:|---:|
+| `(1,1)` | 16 | 42 | 28 | 4 |
+| `(1,2)` | 30 | 84 | 56 | 18 |
+| `(2,1)` | 36 | 102 | 68 | 24 |
+| `(2,2)` | 58 | 168 | 112 | 46 |
+| `(2,3)` | 84 | 246 | 164 | 72 |
+
+Every checked graph had exactly twelve degree-five vertices, no other degrees, `V = N/2 + 2`, Euler characteristic two, and two unit triangles per edge. Each chart injected into the quotient; there were twelve distinct corner classes and no off-seam overlaps under any gluing record. Degree-five vertices were pairwise nonadjacent exactly when `r,s ≥ 2`, consistent with the paper’s IPR assertion. These are finite checks, not a universal catalogue-isomorphism certificate.
+
+**K3 cross-check.** The paper’s K3 has two caps of four triangles each and three hexagons (450–452), eleven polygons (719–722), 42 directed gluings (726–728), and carbon order `14r² + 12rs` (1083), hence dual order `7r² + 6rs + 2`. Those describe a different family. K3’s ray domain includes parameter one (483, 708–717); its modular classification requires both parameters at least two (510–517, 700–702). None of those K3-specific cell counts or modular conditions should be imposed on C1. The Lean phrase “as for K3” (22) appropriately refers only to the shared quotient machinery.
+
+## 3. Statements and logical strength
+
+`LiteralPath` (Lean 49–55) matches paper 89–98: `n` is the number of vertices, so even `n ≥ 4` equals odd edge-count `e ≥ 3`. Injectivity, consecutive and distance-two adjacency, and the four endpoint degree requirements agree. Internal degree-five vertices remain allowed. The unconstrained tail of `p : ℕ → V` does not weaken the finite-prefix requirements.
+
+`classification` (151–153) states exactly the paper’s C1 path iff on its whole domain `a,b ≥ 1` (paper 481, 508). It neither swaps parameters nor imports K3’s stricter classification domain. It omits the IPR clause.
+
+`main` (157–160) states actual graph-path eventual periodicity with a strictly positive period, matching paper 155–157. Natural starting coordinates at least one and natural slopes cover all rays positive from their start, including constant rays and parameter-one boundaries.
+
+Corollary 1b literally quantifies integer affine rays that are only **eventually** valid (paper 233–243). Thus `main` has a syntactically narrower input domain. Nevertheless, any eventually positive integer affine ray has nonnegative slopes; choosing a sufficiently late integer starting index gives positive natural starting coordinates. Applying `main` to that shifted ray and translating the threshold recovers the original tail statement. Its eventual content is equal, not substantively weaker. This is not the separate all-integer, domain-qualified arithmetic formulation at paper 569–592. Together with `classification`, the file asserts more than periodicity alone.
+
+## 4. Loopholes
+
+No vacuity or wrong-object loophole was found in the positive domain. `Sig` itself imposes no validity conditions (Lean 64–67), but the concrete polygons and labels supply the intended structure. `SamePoint` does not explicitly restrict sites to the named edge (98–99); here reversed boundary orientation places paired convex charts on opposite supporting halfplanes, restricting overlap to that edge. The computations checked this unrestricted definition directly. There are no reversed self-pairings or label collisions. Infinite rotation exponents add no maps beyond their six residues.
+
+Degrees use actual neighbour sets (44), which are finite for these bounded charts. Removing quotient self-loops in `graph` (112) does not conceal any observed chart collapse. Constant-ray periodicity is automatic, but that does not trivialize the nonconstant-ray quantification or classification.
+
+## 5. Concrete issues, ranked
+
+1. **Moderate completeness caveat:** Lean 149–161 contains no IPR predicate or theorem, whereas paper 508 includes “IPR iff `a,b ≥ 2`.” The path claims are faithful; the entire C1 row is not formalized.
+2. **Low, presentation:** Lean 155–160 does not literally state arbitrary integer intercepts/eventual validity. An explicit shifted-ray corollary would align its surface statement with paper 233–235; no mathematical coverage is lost.
+3. **Low, documentation:** Lean 22’s K3 reference could confuse family identity. C1’s eight cells and order differ correctly from K3’s eleven cells and order.
+
+The `sorry`s (153, 161) mean these are unproved challenge statements, as advertised; they do not establish either conclusion.
+
+## 統括の応答（2026-10-20）
+判定 FAITHFUL WITH CAVEATS。パラメータの対応（Lean の s = 論文の b）も読み手が面積の式 8r²+16rs+4s² で独立に確かめた。指摘1（IPR の条件は主張文にない）は、経路の主張の範囲外として主張文を変えない（論文の C1 の行のうち経路の部分だけを形式化する、と記録する）。指摘2・3は説明の問題で、主張文は変えない。なお指示文に K3 の語が残っていた（統括の誤り）が、読み手は C1 として読んだ。

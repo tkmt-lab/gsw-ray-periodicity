@@ -1,0 +1,17 @@
+# Comparator照合：C1 の分類と直線上の最終周期性（2026-10-20）
+
+統括（Claude Code）。C1 の証明が、統括が証明より先に書いた主張文（`formal/Formal/Claude4C1ComparatorChallenge.lean`）の二つの定理と同じ文の証明であることを、`lake comparator --paranoid` で照合した。
+
+- 主張：`ClaudeChallengeC1.classification`（r, s ≥ 1 で、経路がある ⇔ s = 1）と `ClaudeChallengeC1.main`（r₀, s₀ ≥ 1、a, b ≥ 0 のどの直線でも最終周期的）。定義は `ClaudeChallengeSpec.lean`・`Claude2AlignedSpec.lean`・`Claude4C1Spec.lean` からの一字一句の写し（統括が機械で確認）。
+- 主張文と論文の対応：独立な読み手1人（`studies/R002/analysis/2026-10-20-claude-c1-bridge/statement-review-1/`、FAITHFUL WITH CAVEATS、Lean の s = 論文の b を面積の式で独立に確認）と、Python の写し（R004 の独立な構成と36例一致）。人間の確認はない。
+- 証明：`Claude4C1ComparatorSolution.lean`（Claude サブエージェント、20ファイル 3,353 行）。道筋：C1 の曲面を ℤ⁴ の切頂単体に埋め込み、グラフの同型 `Claude4C1.c1_iff_g4` を証明。次数（角の12点で5、他は6）、共通の隣が3つの辺がないこと（座標の算術。R004 の散文の証明が使う外部のサイクリック辺連結性の定理を使わない）、座標の置換による対称性、強制された歩みの型ごとの検査で必要性、明示的な道で十分性。
+- 設定：`formal/comparator-c1.json`。
+
+## 結果
+**Lean paranoid・lean4lean・nanoda・con-leche（9,524宣言）・con-ron（9,524宣言）・Lean標準の6つのkernelが全て受理。Your solution is okay!** 77.7秒、最大2.03GB。生の出力：`comparator-c1-paranoid-2026-10-20.txt`。
+
+統括の別の確認：`#print axioms` は二つの定理とも標準の3つ。新しいファイルに sorry・native_decide・axiom はない。`lake build Formal.Claude4C1ComparatorSolution` 成功。
+
+## 留保
+- macOS に bwrap がないため隔離なしで実行。
+- 証明はすべて Claude サブエージェントによる。

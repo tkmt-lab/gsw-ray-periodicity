@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 4.7, 20 October 2026}
+\date{Version 4.8, 20 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -37,10 +37,12 @@ not a new general periodicity principle. We record
 the resulting ray statements for eleven specified catalogue families,
 alongside closed conditions on their stated domains. Existing Lean
 results establish arithmetic periodicity of several family predicates
-and determine the decisions on two example rays for every value of the ray parameter. For K3, both the graph classification and eventual periodicity on every
-positive integer affine ray are now Lean-proved on the explicit quotient
-specification, including parameter-one boundaries and without the general
-prose bridge. The general eventual-periodicity statement is now proved
+and determine two example rays for every ray parameter. For K3 and C1,
+graph classifications and actual-path periodicity on positive integer
+affine rays are Lean-proved on explicit quotient specifications, without
+the general prose bridge. K3 ray boundaries at one are included;
+C1 admits all positive parameters. The C1 IPR condition is outside Lean. The general
+eventual-periodicity statement is now proved
 in Lean against a specification written by the coordinator before the
 proof. Its correspondence to the geometric hypotheses is an explicit
 prose lemma, not a Lean theorem. The proof was supplied by Claude
@@ -75,7 +77,7 @@ statement meaning, not the proof or prose correspondence lemma. Previous
 authorship, affiliation and licensing decisions are retained; the
 statement-meaning check is separate from publication decisions. On
 20 October 2026 the owner discontinued owner statement-meaning checks as a
-verification procedure; the earlier record remains factual. The K3
+verification procedure; the earlier record remains factual. The K3 and C1
 correspondence evidence instead comprises a specification written before
 the proof, an independent AI statement reader and finite computational
 comparisons. The first paper's
@@ -242,9 +244,12 @@ There are eleven families in this statement. Positive boundaries with
 a parameter fixed at 1 are included, notably K3 and O2 and E10 with
 $r=1$. Collapsed zero boundaries are not. The corollary gives no
 two-variable closed classification merely from ray periodicity.
-The K3 part now also has a direct Lean proof on its quotient graph,
-including the positive boundaries, without invoking the general prose
-correspondence lemma; the other family routes retain their stated scope.
+The K3 and C1 parts now also have direct Lean proofs on their quotient
+graphs, including positive boundary parameters, without invoking the
+general prose correspondence lemma. Their ray declarations start with
+positive natural coordinates and nonnegative slopes; an eventually positive
+integer ray is covered by reindexing its positive tail. The other family
+routes retain their stated scope.
 A3 generally has changing parent-edge directions and is not silently
 placed under Theorem~\ref{thm:aligned}. The catalogue terminology and
 corrections are Graver's \cite{Graver}; the constructions are not claimed
@@ -478,7 +483,7 @@ Family and domain & Received reason for all valid affine rays\\\midrule
 A1, $r\ge1$ & Integer GC absence, including the separate $r=1$ case; eventual period one.\\
 A2, $p\ge1$ & Nonconstant rays eventually give nonprimitive GC images; constant rays are constant graphs.\\
 B2, $p,r\ge1$ & Its closed condition is a finite disjunction of affine equalities.\\
-C1, $a,b\ge1$ & Its closed condition is $b=1$.\\
+C1, $a,b\ge1$ & Lean graph iff $b=1$ and actual-path ray periodicity; no general prose bridge.\\
 A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:arithmetic}.\\
 K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
 E10, $p,r,s\ge1$ & Arithmetic for $r\ge2$; the five-piece decomposition includes $r=1$.\\
@@ -492,8 +497,8 @@ receipts and the separate arithmetic results. It does not cover all
 
 \section{Closed conditions and the scope of partial results}\label{sec:conditions}
 The following are received classifications of valid catalogue graphs.
-The R004 prose arguments are retained; K3 now additionally has a full
-Lean graph classification on its specified closed domain. Independent derivation of the same conclusion is distinct
+The R004 prose arguments are retained; K3 and C1 now additionally have
+Lean graph classifications on their respective stated domains. Independent derivation of the same conclusion is distinct
 from checking every coordinate convention in the research team's
 tables. Lean arithmetic for a predicate does not by itself prove its
 equivalence to a graph property.
@@ -505,7 +510,7 @@ equivalence to a graph property.
 Family/domain & Literal path condition & Received scope\\\midrule
 A1, $r\ge1$ & Never positive & Integer GC for $r\ge2$; at 1 no degree-six vertex. R004 report 4 and GC proof.\\
 A2, $p\ge1$ & $p=1$ & Existing $C_{60}$ witness and integer GC. R004 report 14 does not supply a new $p=1$ witness.\\
-C1, $a,b\ge1$ & $b=1$; IPR iff $a,b\ge2$ & R004 report 3 and C1 proof; coordinator review of the team's argument.\\
+C1, $a,b\ge1$ & $b=1$; IPR iff $a,b\ge2$ & R004 prose proof retained; Lean graph iff received for paths only. The IPR condition is outside Lean.\\
 B2, $p,r\ge1$ & $p=1$ or $|p-r|=1$ & R004 report 4 and B2 proof, whole positive domain.\\
 K3, $r,s\ge2$ & $s\equiv\pm1\pmod r$ & R004 positive and necessary prose proofs retained; full Lean graph iff now received, without a prose bridge.\\
 E10, $p,s\ge1,r\ge2$ & $m=2r+s$ and $p\equiv d\pm1\pmod m$ for some $d\in\{0,r,r+s\}$ & R004 reports 5--6 and both prose directions. Predicate-ray arithmetic formalized; full graph iff not formalized.\\\bottomrule
@@ -764,6 +769,48 @@ field or procedure is used for K3. Shared specification files contain
 unused D12 definitions, but no new D12 classification is a root or
 claimed result of this package.
 
+\subsection{C1 graph classification and ray periodicity}\label{sec:c1-formal}
+The two received entry declarations are
+\begin{quote}\small\noindent
+\record{ClaudeChallengeC1.classification};\\
+\record{ClaudeChallengeC1.main}.
+\end{quote}
+On \record{Claude2Aligned.c1Graph}$(r,s)$, natural $r,s\ge1$ admit a
+literal path if and only if $s=1$. Lean's $r,s$ are the paper's $a,b$;
+this is the path condition $b=1$ in Section~\ref{sec:conditions},
+including $a=1$. The separate IPR equivalence $a,b\ge2$ is not stated
+or proved by these declarations. R004's C1 prose proof remains separate
+evidence. The second declaration proves actual-path eventual periodicity
+on every ray $(r_0+ut,s_0+vt)$ with $r_0,s_0\ge1$ and $u,v\ge0$,
+including constant rays. Eventually positive integer rays are covered
+after shifting their starting index; this reindexing is explanatory
+arithmetic, not a separately received all-integer Lean declaration.
+
+The eight-cell specification has four hexagons with alternating sides
+$s,r,s,r,s,r$ and four triangles of side $r$. The vertex bijection
+\record{Claude4C1.vEquiv} and adjacency theorem \record{adj_iff} identify
+its quotient with the lattice surface in $\mathbb Z^4$ cut out by
+$0\le x_i\le r+s$, $\sum_i x_i=2r+s$, and some $x_i\in\{0,r+s\}$.
+The transfer \record{Claude4C1.c1_iff_g4} preserves literal-path
+existence. The proof establishes degrees and excludes three common
+neighbours of an edge directly, then uses forced strips for $s\ge2$
+and an explicit path for $s=1$. It does not use the external cyclic
+edge-connectivity theorem of the R004 prose argument. C1 thus needs
+no general prose geometric-to-specification bridge for these path claims.
+
+The coordinator fixed the specification and challenge before the proof.
+One independent AI statement reader returned ``faithful with caveats'',
+checking the parameter correspondence by the area formula
+$8r^2+16rs+4s^2$ and identifying IPR as outside the challenge.
+The saved mirror agrees with the R004 construction on counts, degree
+sequence and the path decision for 36 pairs $1\le r,s\le6$; the reader's
+25 finite pairs lie within that range and are not a second disjoint census.
+These finite checks are not a universal catalogue-isomorphism certificate
+or human proof review. No owner-confirmation field or procedure is added.
+The challenge has two intentional placeholders and is excluded from proof
+dependencies; the solution proves both statements. Exact sources and
+receipt hashes are supplied in the machine packet.
+
 \subsection{Historical conditional kernels}\label{sec:historical-formal}
 \label{lem:historical-kernels}\claimid{lem:historical-kernels}
 The earlier research layer supplies conditional pieces:
@@ -797,8 +844,14 @@ The saved six-kernel K3 Comparator receipt checks
 six-kernel check of \record{k3_statement} or \record{noThree}.
 It is also distinct from the earlier Theorem 1a and A3 receipts.
 All six kernels check the same proof, not six independent derivations.
-The K3 execution lacked OS process isolation on macOS. No external kernel
-or Lean command is rerun for this edition.
+The K3 execution lacked OS process isolation on macOS. For C1, a separate
+paranoid Comparator receipt covers both
+\record{ClaudeChallengeC1.classification} and \record{ClaudeChallengeC1.main}:
+all six kernels accepted the same two supplied proofs. The coordinator
+also records a successful build and standard-three-axiom queries for
+both declarations. The worker report predates that Comparator run;
+its not-run note is retained as historical. C1 likewise lacked OS process
+isolation on macOS. No external kernel or Lean command is rerun for this edition.
 The claims' expository dependencies and Lean's imported proof-term
 dependencies are different. A prose statement can remain open for
 its coordinate or human-semantic bridge while a separate exact
@@ -1111,7 +1164,9 @@ The primary received declarations now include
 \record{Claude2.k3_example}, \record{Claude2.e10_example}, and
 \record{Claude2K3.k3_sufficient}. The new K3 entries are
 \record{ClaudeChallengeK3.main}, \record{Claude4K3.k3_statement} and
-\record{Claude4K3.noThree}. The machine layer supplies their exact
+\record{Claude4K3.noThree}. The new C1 entries are
+\record{ClaudeChallengeC1.classification} and \record{ClaudeChallengeC1.main}.
+The machine layer supplies their exact
 types, source commit and the kind of proof receipt. The historical
 representative kernel types remain:
 \begin{quote}\small
@@ -1145,10 +1200,10 @@ to assist with literature organization, mathematical exploration,
 proof drafting, implementation, finite verification, formalization of
 the explicitly identified arithmetic and graph statements and the
 specification-level Theorem 1a, and English exposition. Claude workers
-supplied the general theorem's and K3's Lean proofs against the
+supplied the general theorem's, K3's and C1's Lean proofs against the
 coordinator's prior specifications. The research team checked the
 received sources and records; it did not supply an independent Lean
-derivation or rerun Lean for this K3 edition. The author is responsible
+derivation or rerun Lean for this C1 edition. The author is responsible
 for the published account, its provenance, and the stated limits of
 verification. AI systems are not listed as authors. AI prose reviews
 are identified separately from human review. Only the explicitly

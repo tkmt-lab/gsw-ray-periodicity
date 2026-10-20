@@ -6,6 +6,8 @@ from packet_common import ROOT,PIN,THM_PIN,FAMILIES,load,fingerprint,local,resul
 def main():
  from check_k3_received import check_k3
  check_k3(ROOT)
+ from check_c1_received import check_c1
+ check_c1(ROOT)
  from check_owner_statement import check_owner_statement
  check_owner_statement(ROOT)
  a=load('claims.json');schema=load('claims.schema.json');validate(a,schema,schema)
@@ -31,12 +33,12 @@ def main():
   visit(c['id']);assert c['id']==c['paper_label'] and c['human_review'] is False
   for e in c['evidence']+[c['review_history']]:fingerprint(e)
   review=local(c['review_history']['path']).read_text()
-  assert len(c['review_history']['row_ids'])==(13 if c['id'] in ['cor:catalog','thm:k3-sufficient','prop:closed','ex:k3-formal','lem:k3-corners','lem:k3-hex-interior','lem:k3-tri-interior'] else 12)
+  assert len(c['review_history']['row_ids'])==(14 if c['id'] in ['cor:catalog','prop:closed'] else 13 if c['id'] in ['cor:catalog','thm:k3-sufficient','prop:closed','ex:k3-formal','lem:k3-corners','lem:k3-hex-interior','lem:k3-tri-interior'] else 12)
   for id in c['review_history']['row_ids']:assert len(re.findall(r'^\| '+re.escape(id)+r' ',review,re.M))==1
-  assert bool(c['lean'])==(c['status']=='lean-result-received' or c['id']=='cor:catalog')
+  assert bool(c['lean'])==(c['status']=='lean-result-received' or c['id'] in ['cor:catalog','prop:closed'])
   formal_claims+=bool(c['lean'])
   for r in c['lean']:
-   count+=1;assert r['source_commit']==(THM_PIN if c['id']=='thm:aligned' else 'a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec' if r['declaration'] in ['ClaudeChallengeK3.main','Claude4K3.k3_statement','Claude4K3.noThree'] else PIN)
+   count+=1;assert r['source_commit']==(THM_PIN if c['id']=='thm:aligned' else '65bbc23c5a229d8096c65a4a79bf8d8131935b9f' if r['declaration'].startswith('ClaudeChallengeC1.') else 'a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec' if r['declaration'] in ['ClaudeChallengeK3.main','Claude4K3.k3_statement','Claude4K3.noThree'] else PIN)
    assert r['fresh_lean_run'] is (c['id']=='thm:aligned')
    fingerprint(r['source']);fingerprint(r['receipt']);s=local(r['source']['path']).read_text()
    short=r['declaration'].rsplit('.',1)[-1];m=re.search(r'(?m)^theorem '+re.escape(short)+r'\b',s);assert m
@@ -48,8 +50,11 @@ def main():
    else:
     assert r['verification_kind']=='coordinator-reported-kernel-output'
     assert r['axioms']==['propext','Classical.choice','Quot.sound']
-    assert all(x in text for x in ['propext','Classical.choice','Quot.sound'])
- assert formal_claims==13 and count==25
+    if r['declaration'].startswith('ClaudeChallengeC1.'):
+     assert r['declaration'] in text and '標準の3つ' in text
+     # check_c1 already binds the detailed worker axiom names, raw export and permitted-axiom config.
+    else:assert all(x in text for x in ['propext','Classical.choice','Quot.sound'])
+ assert formal_claims==14 and count==27
  assert [r['declaration'] for r in by['thm:aligned']['lean']]==['ClaudeChallenge2.main','ClaudeChallenge2.State.main_statement','ClaudeChallenge2.main_residue'], 'missing Theorem 1a Lean declarations'
  for r in by['thm:aligned']['lean']:
   assert r['verification_kind']=='fresh-kernel-output' and r['source_closure']

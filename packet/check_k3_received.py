@@ -13,7 +13,7 @@ def check_k3(root):
   raw=(root/p).read_bytes();assert len(raw)==r['bytes'] and hashlib.sha256(raw).hexdigest()==r['sha256'],('K3 fingerprint',r['path']);return raw
  m=load('k3-manifest.json');a=load('claims.json');by={r['id']:r for r in a['claims']}
  assert m['status']=='RECEIVED_REPORTED_PASS' and m['source_commit']==K3_PIN
- assert [r['declaration'] for r in by['cor:catalog']['lean']]==NEW_DECLS[:1],'missing K3 Lean declarations'
+ assert [r['declaration'] for r in by['cor:catalog']['lean'] if r['declaration'].startswith('ClaudeChallengeK3.')]==NEW_DECLS[:1],'missing K3 Lean declarations'
  assert [r['declaration'] for r in by['thm:k3-sufficient']['lean']]==['Claude2K3.k3_sufficient',*NEW_DECLS[1:]],'missing K3 Lean declarations'
  assert by['cor:catalog']['status']=='mixed-prose-and-formal-results'
  assert all('statement_human_check' not in c for c in a['claims'] if c['id']!='thm:aligned'),'unsupported owner-confirmation field outside historical Theorem 1a record'

@@ -1,0 +1,11 @@
+# C1 statement correspondence and received-kernel scope
+
+The coordinator fixed Claude4C1Spec.lean and the challenge before the proof. Exact challenge and solution PathExists definitions and the two theorem headers agree. Twenty-two graph/specification definitions agree after removing comments and whitespace. This static comparison is by the same research agent, without Lean.
+
+One independent AI reader returned FAITHFUL WITH CAVEATS: the path classification is faithful, with Lean r=paper a and Lean s=paper b, checked by area 8r^2+16rs+4s^2. The paper's separate C1 IPR condition a,b>=2 is outside the challenge and is not Lean-proved here. Positive-natural starts and nonnegative slopes cover the theorem as stated; an eventually positive integer ray reindexes to a positive tail in exposition, not in a separately received all-integer Lean theorem.
+
+The saved mirror has 36 known pairs 1<=r,s<=6, matching R004 vertex/edge counts, degree sequence and path iff s=1. The reader reports 25 known pairs within this range. Do not sum them into a disjoint independent census or claim a universal catalogue-isomorphism theorem. The mirror is an inert original receipt requiring the historical R004 inputs; it is not run by the advertised packet checks. Finite record consistency is checked without rerunning the computation.
+
+Both C1 declarations are targets in the coordinator's paranoid Comparator config and raw six-kernel acceptance record. All six check the same supplied proofs, not six independent derivations. Build and standard-three-axiom queries are reported by the coordinator and worker; the raw comparator exports the permitted axioms but is not a standalone print-axioms log. The worker report predates Comparator and its not-run note is historical. OS process isolation was absent on macOS. There is no research-team Lean/external-kernel rerun or independent Lean derivation.
+
+No owner-confirmation field/procedure is added. Earlier owner confirmations remain historical facts. Human proof peer review and novelty are unresolved. R004's prose proof remains separate evidence; the new Z^4 model directly proves degrees and the common-neighbour property without the external cyclic edge-connectivity theorem. These C1 path claims do not use the general prose bridge; the general theorem and all other family scopes retain their stated boundaries.

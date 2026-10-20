@@ -3,7 +3,7 @@ import re
 from packet_common import load,local,fingerprint,result,sha
 
 def main():
- tex=local('paper-lines-v4.7-en.tex').read_text();stack=[]
+ tex=local('paper-lines-v4.8-en.tex').read_text();stack=[]
  for m in re.finditer(r'\\(begin|end)\{([^}]+)\}',tex):
   if m[1]=='begin':stack.append(m[2])
   else:assert stack and stack.pop()==m[2],m[2]
@@ -30,11 +30,13 @@ def main():
  assert sections<=covered and len(corr['rows'])==28,(sections-covered,len(corr['rows']))
  ids={c['id'] for c in load('claims.json')['claims']}
  for r in corr['rows']:assert r['v4_label'] in labels and set(r['claim_ids'])<=ids
- receipt=load('lines-v4.6-pdf-validation.json');assert receipt['status']=='PASS' and receipt['pages']>=16
+ receipt=load(load('release-metadata.json')['pdf_validation_file']);assert receipt['status']=='PASS' and receipt['pages']>=16
  assert sha(local(receipt['pdf_path']))==receipt['pdf_sha256'] and sha(local(receipt['source_path']))==receipt['source_sha256']
  assert receipt['visual_review']['all_pages_viewed'] and len(receipt['page_render_hashes'])==receipt['pages']
  assert not receipt['overfull_boxes'] and not receipt['undefined_references'] and not receipt['duplicate_destinations']
  assert 'ClaudeChallengeK3.main' in tex and 'Claude4K3.k3_statement' in tex and 'Claude4K3.noThree' in tex
  assert 'No K3 graph-necessity proof' not in tex and 'Lean graph sufficiency only' not in tex
+ assert 'ClaudeChallengeC1.classification' in tex and 'ClaudeChallengeC1.main' in tex
+ assert 'The IPR condition is outside Lean.' in tex
  result(pages=receipt['pages'],claims=len(ids),correspondence_rows=28,scope='structure, correspondence and recorded visual receipt only')
 if __name__=='__main__':main()

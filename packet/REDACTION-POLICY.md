@@ -1,6 +1,6 @@
 # Public-record redaction policy
 
-Only private execution locations and internal tool/environment names are replaced. Mathematical statements, assumptions, proof source bytes, recorded axioms, outcomes, timing and memory measurements are retained. The current article in this packet is version 4.7. The inherited redactions themselves do not alter article or proof bytes; separate owner-confirmation prose edits are described in CHANGELOG.md.
+Only private execution locations and internal tool/environment names are replaced. Mathematical statements, assumptions, proof source bytes, recorded axioms, outcomes, timing and memory measurements are retained. The current article in this packet is version 4.8. The inherited redactions themselves do not alter article or proof bytes; separate owner-confirmation prose edits are described in CHANGELOG.md.
 
 | Rule | Transformation |
 |---|---|
@@ -19,3 +19,5 @@ The privacy check covers every filename and file's raw/UTF-16 views, plus every 
 The distributed scanner checks only generic path, email, hostname and local-address patterns. Individual private-name checks were performed by a nonpublic internal scanner with an external private table. No private names, their fingerprints or reversible encodings are distributed as a scanner vocabulary. Approved public author fields remain explicit.
 
 The six inherited privacy derivatives remain unchanged. New K3 sources and records are exact copies, with their original identities in k3-manifest.json; they introduce no additional privacy substitutions. K3 proof-scope updates and current article edits are separate from the old redaction-only byte flags.
+
+C1 sources and records are exact pinned copies, with no new privacy substitutions. Their receipt identities are in c1-manifest.json. Current C1 proof-scope/article updates are separate from historical redaction-only byte flags.

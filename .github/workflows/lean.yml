@@ -33,10 +33,10 @@ jobs:
         run: sed -i 's/"-M4096"/"-M12288"/' lakefile.toml && grep moreLeanArgs lakefile.toml
       - name: Build the main modules
         working-directory: packet/formal
-        run: lake build Formal.Claude2FamilyRays Formal.Claude2FamilyExamples Formal.Claude2K3Sufficient Formal.ClaudeCorRays Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution
+        run: lake build Formal.Claude2FamilyRays Formal.Claude2FamilyExamples Formal.Claude2K3Sufficient Formal.ClaudeCorRays Formal.Claude3ComparatorSolution Formal.Claude3Residue Formal.Claude4K3ComparatorSolution Formal.Claude4C1ComparatorSolution
       - name: Axiom gate (standard axioms only)
         working-directory: packet/formal
         run: |
           lake env lean ../../ci/Axioms.lean | tee axioms.txt
-          test "$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" axioms.txt)" -eq 17
-          test "$(wc -l < axioms.txt)" -eq 17
+          test "$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" axioms.txt)" -eq 19
+          test "$(wc -l < axioms.txt)" -eq 19

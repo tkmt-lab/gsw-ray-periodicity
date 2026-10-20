@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+"""C1 (Graver, truncated tetrahedron) as Claude2Aligned-style labelled polygons; mirror checks.
+
+Cells (from R004's independent c1.py, re-derived): four hexagons, one per tetrahedron face
+(a,b,c), corner labels (a,b),(b,a),(b,c),(c,b),(c,a),(a,c), sides s,r,s,r,s,r (side length r
+when both labels share the tetrahedron vertex, s otherwise); four triangles of side r, one per
+tetrahedron vertex a, labels (a,b),(a,c),(a,d) in the cyclic order around a. Label (a,b) is
+encoded as 4a+b. Checks the Lean-literal surface (claude2_aligned_mirror.Surface) against
+R004's construction: vertex and edge counts, degree sequence, and literal-path existence.
+"""
+import json
+import sys
+
+HERE = sys.argv[1]  # path to studies/R002/claude-lean (mirror module)
+R004 = sys.argv[2]  # path to R004 src (read-only)
+sys.path.insert(0, HERE)
+sys.path.insert(1, R004)
+from claude2_aligned_mirror import Surface, walk, literal_path_exists  # noqa: E402
+import c1 as r004_c1  # noqa: E402
+
+TETRA = [(0, 2, 1), (0, 1, 3), (0, 3, 2), (1, 2, 3)]
+
+
+def c1_cells():
+    cells, around = [], {a: {} for a in range(4)}
+    for a, b, c in TETRA:
+        cells.append([(a, b), (b, a), (b, c), (c, b), (c, a), (a, c)])
+        for x, y, z in ((a, b, c), (b, c, a), (c, a, b)):
+            around[x][y] = z
+    for a, links in around.items():
+        b = min(links)
+        cells.append([(a, b), (a, links[b]), (a, links[links[b]])])
+    return cells
+
+
+def c1_sig(r, s):
+    lab, poly = [], []
+    for cell in c1_cells():
+        lab.append([4 * a + b for a, b in cell])
+        if len(cell) == 6:
+            poly.append(walk((0, 0), [(s, 0), (r, 1), (s, 2), (r, 3), (s, 4), (r, 5)]))
+        else:
+            poly.append(walk((0, 0), [(r, 0), (r, 2), (r, 4)]))
+    return lab, poly
+
+
+def main():
+    rows, bad = [], []
+    for r in range(1, 7):
+        for s in range(1, 7):
+            lab, poly = c1_sig(r, s)
+            S = Surface(lab, poly)
+            E = sum(S.deg) // 2
+            G = r004_c1.construct(r, s)
+            Vr = len(G)
+            Er = sum(len(row) for row in G) // 2
+            dr = sorted(len(row) for row in G)
+            row = {"r": r, "s": s, "V": S.V, "E": E, "deg5": S.deg.count(5),
+                   "deg_ok": sorted(S.deg) == dr, "V_r004": Vr, "E_r004": Er,
+                   "boundary_only": S.boundary_only(),
+                   "path": literal_path_exists(S)}
+            rows.append(row)
+            if not (S.V == Vr and E == Er and row["deg_ok"] and row["deg5"] == 12 and row["boundary_only"]):
+                bad.append(row)
+    pos = sorted({(x["r"], x["s"]) for x in rows if x["path"]})
+    print(json.dumps({"cases": len(rows), "bad": len(bad),
+                      "path_iff_r1": all(x["path"] == (x["r"] == 1) for x in rows),
+                      "path_iff_s1": all(x["path"] == (x["s"] == 1) for x in rows),
+                      "positives": pos}))
+    json.dump({"rows": rows, "bad": bad}, open(sys.argv[3], "w"), indent=0)
+
+
+if __name__ == "__main__":
+    main()

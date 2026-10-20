@@ -3,17 +3,17 @@ import re
 from packet_common import ROOT,PIN,THM_PIN,load,local,fingerprint,strip_lean,result
 
 def main():
- a=load('receipt-manifest.json');assert a['formal_source_commit']==PIN and a['status']=='MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_PROOF'
+ a=load('receipt-manifest.json');assert a['formal_source_commit']==PIN and a['status']=='MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_PROOFS'
  assert a['new_lean_proofs']==a['new_scientific_runs']==0 and a['new_lean_runs']==0
  assert a['D12_new_classification_included'] is False
  records={r['path']:r for r in a['receipts']}
  for r in records.values():fingerprint(r)
- lean=[r for r in records.values() if r['path'].endswith('.lean')];assert len(lean)==a['lean_sources']==193
+ lean=[r for r in records.values() if r['path'].endswith('.lean')];assert len(lean)==a['lean_sources']==215
  seen=set()
  def visit(module):
   name='formal/'+module.replace('.','/')+'.lean';assert name in records,('import closure',module)
   if name in seen:return
-  seen.add(name);r=records[name];assert r['source_commit']==(THM_PIN if name.startswith('formal/Formal/Claude3') else a['K3_source_commit'] if name in a['K3_added_source_paths'] else PIN)
+  seen.add(name);r=records[name];assert r['source_commit']==(THM_PIN if name.startswith('formal/Formal/Claude3') else a['C1_source_commit'] if name in a['C1_added_source_paths'] else a['K3_source_commit'] if name in a['K3_added_source_paths'] else PIN)
   text=strip_lean(local(name).read_text())
   assert not re.search(r'\b(sorry|admit|axiom|native_decide)\b',text),('unproved/extra axiom',name)
   for m in re.finditer(r'(?m)^import\s+([^\n]+)',text):
@@ -24,7 +24,7 @@ def main():
  benchmarks={r['path'] for r in a['benchmark_sources']}
  assert seen=={r['path'] for r in lean}-benchmarks
  for name in benchmarks:
-  text=strip_lean(local(name).read_text());assert not re.search(r'(?m)^import Formal',text) and len(re.findall(r'\bsorry\b',text))==1
+  text=strip_lean(local(name).read_text());assert not re.search(r'(?m)^import Formal',text) and len(re.findall(r'\bsorry\b',text))==a['benchmark_placeholder_counts'][name]
  assert not (seen & benchmarks), 'benchmark became proof dependency'
  actual={p.relative_to(ROOT).as_posix() for p in (ROOT/'formal').rglob('*.lean')}
  assert actual==seen|benchmarks,'unexpected/new proof payload'
@@ -47,5 +47,7 @@ def main():
  assert execution['status']=='PASS' and all(r['exit_code']==0 and r['max_lean_processes']<=1 and r['min_free_percent']>=20 and not r['stopped'] for r in execution['commands'])
  from check_k3_received import check_k3
  check_k3(ROOT)
+ from check_c1_received import check_c1
+ check_c1(ROOT)
  result(lean_sources=len(actual),proof_sources=len(seen),benchmark_sources=len(benchmarks),received_files=len(records),extra_receipts=len(load('extra-receipts.json')),inherited_theorem1a_execution_receipt=True,received_K3_coordinator_receipt=True,scope='static receipts, not proof checking')
 if __name__=='__main__':main()

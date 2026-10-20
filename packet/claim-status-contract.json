@@ -9,7 +9,7 @@
   "lem:folding": "independent-prose-proof-ai-reviewed",
   "lem:mso-path": "independent-prose-proof-ai-reviewed",
   "prop:family-decompositions": "independent-prose-proof-ai-reviewed",
-  "prop:closed": "independent-prose-proof-received",
+  "prop:closed": "mixed-prose-and-formal-results",
   "prop:partial": "mixed-prose-and-finite-evidence",
   "lem:divisibility": "prose-proof-received",
   "thm:k3-arithmetic": "lean-result-received",

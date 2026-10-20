@@ -1,5 +1,5 @@
 {
-  "status": "MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_PROOF",
+  "status": "MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_PROOFS",
   "formal_source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "roots": [
     "Claude2FamilyRays",
@@ -16,9 +16,10 @@
     "IETComponent",
     "Claude3ComparatorSolution",
     "Claude3Residue",
-    "Claude4K3ComparatorSolution"
+    "Claude4K3ComparatorSolution",
+    "Claude4C1ComparatorSolution"
   ],
-  "lean_sources": 193,
+  "lean_sources": 215,
   "new_lean_proofs": 0,
   "new_lean_runs": 0,
   "new_scientific_runs": 0,
@@ -2447,12 +2448,273 @@
       "source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
       "kind": "Comparator-config",
       "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Block.lean",
+      "sha256": "02213a1301fc669e348dc7d5671c71cd1d5e3c610206d332eb0e45c4a2bea474",
+      "bytes": 5524,
+      "source": "formal/Formal/Claude4C1Block.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1ComparatorSolution.lean",
+      "sha256": "581e36bb721f298fb6c3a7c297c3337595353bf026be740ac6bc3f79d4c3a05f",
+      "bytes": 2000,
+      "source": "formal/Formal/Claude4C1ComparatorSolution.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Deg.lean",
+      "sha256": "cb60404cb0238c6ccf5a6d154fb7e282f035ec4243ae621c3b9198c084131c04",
+      "bytes": 6547,
+      "source": "formal/Formal/Claude4C1Deg.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1G4.lean",
+      "sha256": "8096032f3d2be33c4b5b620e3fbc7448c892a30568c762ecd3d475dcafce1413",
+      "bytes": 7672,
+      "source": "formal/Formal/Claude4C1G4.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Iso.lean",
+      "sha256": "cfeb631c2a7c5342ff0b41ae446ea2a89f7deaf09a844d4b7038b7e0e7a79faf",
+      "bytes": 6227,
+      "source": "formal/Formal/Claude4C1Iso.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Main.lean",
+      "sha256": "cd3d43282ead0f11fbcb65fcc071b2989487d94439d432c489b0fd97953f6fc9",
+      "bytes": 5637,
+      "source": "formal/Formal/Claude4C1Main.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Nec.lean",
+      "sha256": "7cbfd8ada669aad5881ba8849efd5e4cad4d887860b7634aeab5b16bf85364b2",
+      "bytes": 6686,
+      "source": "formal/Formal/Claude4C1Nec.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Phi.lean",
+      "sha256": "80a10366cfba399cd621c9e706aea7e852a08ad6e4cb9e4da7f4cad78798da1b",
+      "bytes": 16331,
+      "source": "formal/Formal/Claude4C1Phi.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Phi2.lean",
+      "sha256": "3921372fa826e1d4ac4c57859fff657bddcbc2147b4f314eca416bb5d35baa18",
+      "bytes": 11644,
+      "source": "formal/Formal/Claude4C1Phi2.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Phi3.lean",
+      "sha256": "060ad588a998ae4a07631cbc0e558ab1543c895d29537bc3626fdea00fe1310d",
+      "bytes": 7902,
+      "source": "formal/Formal/Claude4C1Phi3.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Spec.lean",
+      "sha256": "b5b9537bc701bb84a93694f5a7b691ac29356532ef842d82e55f736931c51949",
+      "bytes": 1624,
+      "source": "formal/Formal/Claude4C1Spec.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Start.lean",
+      "sha256": "1b904e523c558021477ef7db753ab48708ad86640db815569bfed23eea127995",
+      "bytes": 5134,
+      "source": "formal/Formal/Claude4C1Start.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Strip.lean",
+      "sha256": "95dabc5ec6a4c35eefacc326a578a29255bd4b172bcbf1d09f7cfaf39d9d82ae",
+      "bytes": 8950,
+      "source": "formal/Formal/Claude4C1Strip.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Suff.lean",
+      "sha256": "200bf011d5984558ea9aedf53dfd6d5e41489adcd6254edd24d5a7243449687f",
+      "bytes": 3406,
+      "source": "formal/Formal/Claude4C1Suff.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1Three.lean",
+      "sha256": "94721b861fc7ed95efe79d5bbcab93b4a3af485e37abfa2ab43f50d5ce2f21f7",
+      "bytes": 8206,
+      "source": "formal/Formal/Claude4C1Three.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeI.lean",
+      "sha256": "f33b510842076573b46084babc37507b7c43f9f8e966f517e33e39671cf4036d",
+      "bytes": 5975,
+      "source": "formal/Formal/Claude4C1TypeI.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeII.lean",
+      "sha256": "373c8fd4593b846f529a2ce802d291b0ce9070f33cd84912b620596a6485fa79",
+      "bytes": 6093,
+      "source": "formal/Formal/Claude4C1TypeII.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeIII.lean",
+      "sha256": "fa9ceea3cd9c07a12cda9d9cd69ba6a01f385d1697a34e3b38eba173f3a31227",
+      "bytes": 9120,
+      "source": "formal/Formal/Claude4C1TypeIII.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeIV.lean",
+      "sha256": "c616494a519a39a7fd27eacde735e1631cb2ec2c5be6a1688a2aa2af21172bf8",
+      "bytes": 8940,
+      "source": "formal/Formal/Claude4C1TypeIV.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeS.lean",
+      "sha256": "5f0acbea5a3d873894e3bdab2dec73d03d0ed7252ad572c5ed32aac78e583142",
+      "bytes": 2604,
+      "source": "formal/Formal/Claude4C1TypeS.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1TypeV.lean",
+      "sha256": "2405ccc2501272dd87daa8c73a653b7be9ba7a3e57d875cf49128ea9da92d8ff",
+      "bytes": 4583,
+      "source": "formal/Formal/Claude4C1TypeV.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude4C1ComparatorChallenge.lean",
+      "sha256": "3130ba4ea41f9bba0e1c213d47c089497b936d0eba22ae15a1c445bfc109e956",
+      "bytes": 7169,
+      "source": "formal/Formal/Claude4C1ComparatorChallenge.lean",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Lean-benchmark",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/comparator-paranoid.txt.original.log",
+      "sha256": "38fddac3b5308a61d798ba2f1f95990b61c6454ab404fff5a89f63135ffe9559",
+      "bytes": 21716,
+      "source": "studies/R002/claude-lean/comparator-c1-paranoid-2026-10-20.txt",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/comparator-c1.md.original.log",
+      "sha256": "842573e54e358c083895d8512e5bd4ee5df5aff9463b3923fd751d3a2dacb12d",
+      "bytes": 2190,
+      "source": "studies/R002/claude-lean/comparator-c1-2026-10-20.md",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/c1-bridge-report.md.original.log",
+      "sha256": "b8cc0859d97ffbbac55a2261434836335d2c1aeb8f10e33fdd8ea8ef8ade2e38",
+      "bytes": 8862,
+      "source": "studies/R002/claude-lean/c1-bridge-report-2026-10-20.md",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/statement-review.md.original.log",
+      "sha256": "5bbd0e88f977d4ce5898c94453be3a9a2dcdcfbdea014c70f88558bed938bcf6",
+      "bytes": 6973,
+      "source": "studies/R002/analysis/2026-10-20-claude-c1-bridge/statement-review-1/review.md",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/c1_mirror.py.original.log",
+      "sha256": "6fb9c2a19a77b64257032c93df78c2f322aac2442c380899942944f28fc2ff90",
+      "bytes": 3011,
+      "source": "studies/R002/analysis/2026-10-20-claude-c1-bridge/c1_mirror.py",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/c1/c1-mirror-result.json.original.log",
+      "sha256": "a52d54d5390d40f26097069e3c911b7b92d6ffd068f81fa361dcb7470f39ce1f",
+      "bytes": 4901,
+      "source": "studies/R002/analysis/2026-10-20-claude-c1-bridge/c1-mirror-result.json",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "C1-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/comparator-c1.json",
+      "sha256": "a1ac9ad0f133ee81e21635b6f920ba11812566a845964915fa67010629b531b0",
+      "bytes": 329,
+      "source": "formal/comparator-c1.json",
+      "source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+      "kind": "Comparator-config",
+      "transformation": "byte-identical"
     }
   ],
   "new_lean_runs_meaning": "Lean-driving commands (including cached Lake targets), not independent proof derivations",
   "theorem_source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8",
   "inherited_theorem1a_build_and_axiom_check": true,
-  "proof_source_count": 192,
+  "proof_source_count": 213,
   "K3_source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
   "K3_added_source_paths": [
     "formal/Formal/Claude2K3Apex.lean",
@@ -2487,7 +2749,42 @@
       "path": "formal/Formal/Claude4K3ComparatorChallenge.lean",
       "sha256": "80fcf97e49d64935643d9d6a70b1d82b7eed9668559eed0ad9b0b529eb8055d8",
       "bytes": 7951
+    },
+    {
+      "path": "formal/Formal/Claude4C1ComparatorChallenge.lean",
+      "sha256": "3130ba4ea41f9bba0e1c213d47c089497b936d0eba22ae15a1c445bfc109e956",
+      "bytes": 7169
     }
   ],
-  "new_received_K3_declarations": 3
+  "new_received_K3_declarations": 3,
+  "C1_source_commit": "65bbc23c5a229d8096c65a4a79bf8d8131935b9f",
+  "C1_added_source_paths": [
+    "formal/Formal/Claude4C1Block.lean",
+    "formal/Formal/Claude4C1ComparatorSolution.lean",
+    "formal/Formal/Claude4C1Deg.lean",
+    "formal/Formal/Claude4C1G4.lean",
+    "formal/Formal/Claude4C1Iso.lean",
+    "formal/Formal/Claude4C1Main.lean",
+    "formal/Formal/Claude4C1Nec.lean",
+    "formal/Formal/Claude4C1Phi.lean",
+    "formal/Formal/Claude4C1Phi2.lean",
+    "formal/Formal/Claude4C1Phi3.lean",
+    "formal/Formal/Claude4C1Spec.lean",
+    "formal/Formal/Claude4C1Start.lean",
+    "formal/Formal/Claude4C1Strip.lean",
+    "formal/Formal/Claude4C1Suff.lean",
+    "formal/Formal/Claude4C1Three.lean",
+    "formal/Formal/Claude4C1TypeI.lean",
+    "formal/Formal/Claude4C1TypeII.lean",
+    "formal/Formal/Claude4C1TypeIII.lean",
+    "formal/Formal/Claude4C1TypeIV.lean",
+    "formal/Formal/Claude4C1TypeS.lean",
+    "formal/Formal/Claude4C1TypeV.lean",
+    "formal/Formal/Claude4C1ComparatorChallenge.lean"
+  ],
+  "new_received_C1_declarations": 2,
+  "benchmark_placeholder_counts": {
+    "formal/Formal/Claude4K3ComparatorChallenge.lean": 1,
+    "formal/Formal/Claude4C1ComparatorChallenge.lean": 2
+  }
 }

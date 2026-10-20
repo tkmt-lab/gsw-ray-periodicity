@@ -1,0 +1,122 @@
+# C1 橋渡し 報告 2026-10-20
+
+作業：Claude（claude-lean worktree、branch `claude-lean`）。対象は
+`formal/Formal/Claude4C1ComparatorChallenge.lean` の2つの主張文。
+
+## 結論
+
+`ClaudeChallengeC1.classification`（r, s ≥ 1 で「文字どおりの道がある ⇔ s = 1」）と
+`ClaudeChallengeC1.main`（直線上で最終的に周期的）を、`sorry`・`native_decide`・新しい `axiom`
+なしで証明した。解答ファイルは `formal/Formal/Claude4C1ComparatorSolution.lean`。
+r = 1 も含む全範囲（r, s ≥ 1）で、条件付きの部分は残っていない。
+
+検証チームの文章の証明（R004 `c1-proof.md`）が外部定理として使っていた
+「フラーレンの巡回5辺連結性（S1504）」は使っていない。その代わりに
+「どの辺にも共通隣接点は3個ない」を Lean で直接証明した（下の ℤ⁴ のモデルで）。
+
+## 経路：ℤ⁴ への埋め込み
+
+C1(r,s) は切頂四面体の表面そのものである。単体 {x ∈ ℤ⁴ : x ≥ 0, Σx = 2r+s} の各頂点 a を
+x_a ≤ r+s で切ると、面は六角形 x_d = 0（辺 s, r, …）と三角形 x_a = r+s（辺 r）になり、
+ラベル 4a+b の角は x_a = r+s, x_b = r, 他 0 の点になる。各セルの格子座標から ℤ⁴ への写像は
+アフィンで（`phi`）、単位ベクトルを根 e_i − e_j に送る。そこで次のグラフ G4 を作った。
+
+- 頂点：0 ≤ x_i ≤ r+s, Σx = 2r+s, ある座標が 0 または r+s（`InS`）。
+- 辺：y = x + e_i − e_j で、i, j 以外のある座標 k について x_k ∈ {0, r+s}（同じ面にある、`AdjR`）。
+
+証明は三段。
+
+1. **同型**（`Claude4C1.c1_iff_g4`）：`c1Graph r s` と G4 は同型で、文字どおりの道の存在は
+   同値。貼り合わせ 36 本で `phi` が不変（`samePoint_phi`）、同じ像の2つの site は同じ頂点
+   （セルの組 64 通り：同じセル／辺を共有する組は貼り合わせ1回／接しない組は像が交わらない、
+   `eqv_of_phi`）、逆写像 `psi` で全射、隣接の対応（`adj_iff`）。
+2. **G4 の局所構造**：
+   - 次数（`deg_g4`）：角（ある座標が r+s、2つの座標が 0）で 5、他は 6。近傍は (i, j) の組で
+     数えられ、条件は「どの座標が 0 か、どれが r+s か」のパターンだけで決まるので、256 通りの
+     パターンを `decide` で確かめた（`pattern_deg`）。
+   - 三つの共通隣接点はない（`no_three`）：y = x + e_a − e_b の共通隣接点は
+     x + e_a − e_c か x + e_c − e_b（c ∉ {a,b}）で、そのとき残りの座標 d は 0 か r+s（三角形は
+     面 d の中、`tri_cand`）。3つあると両方の c が使われ、x_c ∈ {0, r+s} と
+     x_c − 1 ≥ 0, x_c + 1 ≤ r+s が両立しない。
+   - 座標の置換は G4 の自己同型（`pmE`）。四面体の対称性はこれで自明になる。
+3. **帯に沿った強制と分類**：
+   - 帯（ブロック (A, D, E, L) の列、`Blk`, `wk`）の一般論（`strip_of_chain`）と、
+     文字どおりの道が最初の3点で帯と一致すれば帯に沿って一致すること（`forced`、
+     三つの共通隣接点がないことから）。帯が始点に戻り、奇数番目の点が角でない（または直前が角）
+     なら道はない（`no_literal_of_strip`）。
+   - 必要性（`c1_no_path`、s ≥ 2）：始点の角を置換で 01 = (r+s, r, 0, 0) に移し
+     （`corner_norm`）、2番目は5つの隣接点 B0…B4（`nbr_C01`）、3番目は共通隣接点。
+     10 通りの始めの三角形のうち 5 つは R004 §3 の型 I〜V、残り 5 つは座標 2, 3 の入れ替え
+     （01 を固定）でそれらに移る。各型の帯は ℤ⁴ で 3〜6 ブロック（R004 §4 の表を ℤ⁴ で書き直した
+     もの、Python で強制歩行と一致を確認）。各ブロックの面内包含・根・継ぎ目・奇数点が角でない
+     ことを omega で確かめた。r = 1 では B2, B3 が角なので 2番目にならない（次数 6 の条件）。
+     r = 1 の型 III の三角形ブロックでは奇数点が角になるが直前も角で、最後から2番目の次数 6 に反する
+     （`OddOK` の「直前が角」の場合）。
+   - 十分性（`c1_path_s1`、s = 1）：型 II の最初の2ブロック（2番目を1歩延長）を 4r+2 点で切った
+     道。1次式 x₀ + 3x₂ + 2x₃ が k 番目の点で r+1+k なので点は相異なる。
+   - 分類（`c1_classification`）と直線（`c1_rays`、t₀ = 1、周期 1：b > 0 なら t ≥ 1 で
+     s(t) ≥ 2、b = 0 なら s は一定）。
+
+## 証明したもの（宣言名とファイル）
+
+- `ClaudeChallengeC1.classification`, `ClaudeChallengeC1.main`（`Claude4C1ComparatorSolution.lean`）
+- `Claude4C1.c1_classification`, `Claude4C1.c1_rays`, `Claude4C1.c1_no_path`,
+  `Claude4C1.no_path_g4`（`Claude4C1Main.lean`）
+- `Claude4C1.c1_path_s1`, `Claude4C1.literal_s1`（`Claude4C1Suff.lean`）
+- `Claude4C1.c1_iff_g4`, `Claude4C1.adj_iff`, `Claude4C1.vEquiv`（`Claude4C1Iso.lean`）
+- `Claude4C1.deg_g4`（`Claude4C1Deg.lean`）、`Claude4C1.no_three`, `Claude4C1.next_unique`
+  （`Claude4C1Three.lean`）
+
+## 行数
+
+新しいファイル 20 個、計 3353 行（主張文ファイルと `Claude4C1Spec.lean` を除く）。各 345 行以下。
+
+| ファイル | 行 | 内容 |
+|---|---|---|
+| Claude4C1G4 | 178 | ℤ⁴ のモデル、置換、同型での次数・道の移送 |
+| Claude4C1Phi | 343 | セルの線形化、`phi`、貼り合わせ表、`samePoint_phi`（生成） |
+| Claude4C1Phi2 / Phi3 | 326 / 239 | 貼り合わせ 36 本、`eqv_of_phi`、逆写像 `psi`（生成） |
+| Claude4C1Iso | 146 | 頂点の全単射、隣接の対応、`c1_iff_g4` |
+| Claude4C1Deg | 147 | 次数 |
+| Claude4C1Three | 147 | 三つの共通隣接点がない |
+| Claude4C1Strip | 202 | 帯の一般論、強制、道がないことの一般形 |
+| Claude4C1Block | 119 | ブロックの検査を一次式に落とす補題 |
+| Claude4C1TypeI〜V, TypeS | 139 / 139 / 199 / 199 / 109 / 63 | 各型の帯（生成） |
+| Claude4C1Start | 111 | 始点、01 の隣接点、各型で道がない |
+| Claude4C1Nec | 137 | 角の正規化、非隣接、正準な5型 |
+| Claude4C1Suff | 75 | s = 1 の道 |
+| Claude4C1Main | 133 | 鏡映、必要性、分類、直線 |
+| Claude4C1ComparatorSolution | 39 | 解答 |
+
+生成スクリプトとPythonの検査は `studies/R002/claude-lean/c1-scripts/` に置いた
+（`gen_phi1.py`, `gen_phi2.py`, `gen_types.py`；`gen_phi2.py` の出力はその後 Phi2/Phi3 に
+2分割し、lint の設定を少し足した。正本は Lean のファイル）。Python の検査：`g4.py`
+（r, s ≤ 4 で C1 の literal な面と G4 が同型）、`checktypes.py`（ブロックの表が強制歩行と一致、
+r = 1..6, s = 2..6；s = 1 の道）。Lean の証明はこれらに依存しない。
+
+## 検査
+
+- `diff`：主張文ファイルと解答ファイルの `namespace ClaudeChallengeC1` 以降は、`sorry` の行を
+  除けば証明の行だけが違う（`PathExists` の定義と2つの主張文は一字一句同じ）。
+- 主張文ファイルの定義（`PathExists` 以外の 22 個）が spec 3 ファイルに一字一句含まれることを
+  スクリプトで確認した。
+- `#print axioms ClaudeChallengeC1.classification` / `main`：`propext, Classical.choice,
+  Quot.sound` のみ。
+- `grep`：新しいファイルに `sorry`, `native_decide`, `axiom` なし。
+- `nice -n 10 lake build Formal.Claude4C1ComparatorSolution`：成功。そのあと C1 の全モジュールの
+  olean を消し、依存の順に一つずつ `lake build` し直して成功（並列にならないように）。
+- comparator（`lake comparator`）は走らせていない。
+
+## メモリ
+
+すべて RSS 3 GB で止める監視つき、Lean は常に1本、`nice -n 10`。止まったことはない。
+作り直しの各モジュールの lean の常駐メモリの最大：Three 2.39 GB、Phi 2.30 GB、他は 1.4〜1.75 GB。
+
+## 残り・疑問
+
+- 残りはない（分類・直線とも無条件）。
+- 主張文の C1 の面のラベルと座標（`c1Lab`, `c1Poly`）が Graver の C1 であることは spec 作成時の
+  照合（Python の写し、R004 の構成と 36 例一致）に依る。Lean では、その spec の面が ℤ⁴ の
+  切頂単体の表面と同型であることを示した（つまり spec は確かに切頂四面体の三角形分割）。
+- 警告：未使用変数、`if_pos`/`if_neg` の非推奨などの lint 警告が残る（証明には影響しない）。
+- `formal/` 直下の追跡されていない `gen_bnd.py` などは以前の作業のもので、触っていない。
