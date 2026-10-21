@@ -5,7 +5,7 @@ from packet_common import ROOT,PIN,THM_PIN,load,local,fingerprint,strip_lean,res
 def main():
  a=load('receipt-manifest.json');assert a['formal_source_commit']==PIN and a['status']=='MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_O2_D14_E10_PROOFS'
  assert a['new_lean_proofs']==a['new_scientific_runs']==0 and a['new_lean_runs']==0
- assert a['D12_new_classification_included'] is False
+ assert a['D12_new_classification_included'] is True
  records={r['path']:r for r in a['receipts']}
  for r in records.values():fingerprint(r)
  lean=[r for r in records.values() if r['path'].endswith('.lean')];assert len(lean)==a['lean_sources']==412
@@ -55,5 +55,7 @@ def main():
  check_d14(ROOT)
  from check_e10_received import check_e10
  check_e10(ROOT)
+ from check_d12_packet import check_d12
+ check_d12(ROOT)
  result(lean_sources=len(actual),proof_sources=len(seen),benchmark_sources=len(benchmarks),received_files=len(records),extra_receipts=len(load('extra-receipts.json')),inherited_theorem1a_execution_receipt=True,received_K3_coordinator_receipt=True,scope='static receipts, not proof checking')
 if __name__=='__main__':main()

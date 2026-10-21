@@ -1,0 +1,9613 @@
+{
+  "status": "PASS",
+  "cases": 120,
+  "positives": 57,
+  "starts": 14160,
+  "representatives": 1180,
+  "symmetry": {
+    "status": "PASS",
+    "vertex_correspondences": 48,
+    "rows": [
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 0,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 1,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 2,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 3,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 4,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 5,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 6,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 7,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 8,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 9,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 10,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 0,
+        "target_face": 0,
+        "label": 11,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 0,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 1,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 2,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 3,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 4,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 5,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 6,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 7,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 8,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 9,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 10,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "R",
+        "source_face": 1,
+        "target_face": 1,
+        "label": 11,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 0,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 1,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 2,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 3,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 4,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 5,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 6,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 7,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 8,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 9,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 10,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 0,
+        "target_face": 1,
+        "label": 11,
+        "rotation": 5,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 0,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 1,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 2,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 3,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 4,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 5,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 6,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 7,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 8,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 9,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 10,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "generator": "J",
+        "source_face": 1,
+        "target_face": 0,
+        "label": 11,
+        "rotation": 1,
+        "difference_affine_coefficients": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "corner_orbit": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "rows": [
+    {
+      "r": 1,
+      "s": 1,
+      "positive": true,
+      "vertices": 56,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          10,
+          30,
+          4
+        ],
+        [
+          1,
+          10,
+          27,
+          3
+        ],
+        [
+          2,
+          12,
+          25,
+          3
+        ],
+        [
+          3,
+          10,
+          33,
+          5
+        ],
+        [
+          5,
+          12,
+          29,
+          4
+        ],
+        [
+          6,
+          12,
+          32,
+          4
+        ],
+        [
+          8,
+          12,
+          25,
+          3
+        ],
+        [
+          9,
+          16,
+          25,
+          3
+        ]
+      ],
+      "sha256": "a0b9218cd33f3fae89604cef243675eda3067f0a20e69ad69c78feb53554535d",
+      "seconds": 0.006740165990777314
+    },
+    {
+      "r": 2,
+      "s": 2,
+      "positive": false,
+      "vertices": 218,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          60,
+          4
+        ],
+        [
+          1,
+          null,
+          55,
+          3
+        ],
+        [
+          2,
+          null,
+          75,
+          5
+        ],
+        [
+          3,
+          null,
+          67,
+          5
+        ],
+        [
+          4,
+          null,
+          52,
+          3
+        ],
+        [
+          5,
+          null,
+          59,
+          4
+        ],
+        [
+          6,
+          null,
+          64,
+          4
+        ],
+        [
+          7,
+          null,
+          52,
+          3
+        ],
+        [
+          8,
+          null,
+          51,
+          3
+        ],
+        [
+          9,
+          null,
+          67,
+          4
+        ]
+      ],
+      "sha256": "b73615f6755eaec4ce480ed6158576750454f88123e141fb47213db4c64088cb",
+      "seconds": 0.007669750018976629
+    },
+    {
+      "r": 3,
+      "s": 2,
+      "positive": true,
+      "vertices": 296,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          72,
+          4
+        ],
+        [
+          1,
+          48,
+          86,
+          5
+        ],
+        [
+          2,
+          null,
+          61,
+          3
+        ],
+        [
+          3,
+          38,
+          59,
+          3
+        ],
+        [
+          4,
+          null,
+          62,
+          3
+        ],
+        [
+          5,
+          52,
+          65,
+          4
+        ],
+        [
+          6,
+          null,
+          76,
+          4
+        ],
+        [
+          7,
+          null,
+          60,
+          3
+        ],
+        [
+          8,
+          null,
+          59,
+          3
+        ],
+        [
+          9,
+          62,
+          65,
+          4
+        ]
+      ],
+      "sha256": "5f40829b056049e36bf8be5e091b52dba8f04bb1ae031da0f34563e1e33a2568",
+      "seconds": 0.008487874991260469
+    },
+    {
+      "r": 1,
+      "s": 2,
+      "positive": true,
+      "vertices": 152,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          34,
+          60,
+          6
+        ],
+        [
+          1,
+          16,
+          45,
+          3
+        ],
+        [
+          2,
+          34,
+          44,
+          3
+        ],
+        [
+          3,
+          16,
+          79,
+          7
+        ],
+        [
+          4,
+          28,
+          54,
+          5
+        ],
+        [
+          5,
+          20,
+          49,
+          4
+        ],
+        [
+          6,
+          38,
+          64,
+          6
+        ],
+        [
+          7,
+          36,
+          44,
+          3
+        ],
+        [
+          8,
+          null,
+          43,
+          3
+        ],
+        [
+          9,
+          26,
+          43,
+          3
+        ]
+      ],
+      "sha256": "ec97ab4a2a80d1d4740485af19958ecd204d8c015c188995e8f791bfef45c0c2",
+      "seconds": 0.005939041031524539
+    },
+    {
+      "r": 1,
+      "s": 3,
+      "positive": true,
+      "vertices": 296,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          82,
+          118,
+          8
+        ],
+        [
+          1,
+          22,
+          63,
+          3
+        ],
+        [
+          2,
+          null,
+          62,
+          3
+        ],
+        [
+          3,
+          22,
+          145,
+          9
+        ],
+        [
+          4,
+          74,
+          110,
+          7
+        ],
+        [
+          5,
+          28,
+          69,
+          4
+        ],
+        [
+          6,
+          88,
+          124,
+          8
+        ],
+        [
+          7,
+          50,
+          62,
+          3
+        ],
+        [
+          8,
+          null,
+          61,
+          3
+        ],
+        [
+          9,
+          36,
+          61,
+          3
+        ]
+      ],
+      "sha256": "8e3fffea99b732722986a5dfa03667990de23feb853356409c286107be7c3ea2",
+      "seconds": 0.009885292034596205
+    },
+    {
+      "r": 1,
+      "s": 4,
+      "positive": true,
+      "vertices": 488,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          150,
+          196,
+          10
+        ],
+        [
+          1,
+          28,
+          81,
+          3
+        ],
+        [
+          2,
+          null,
+          80,
+          3
+        ],
+        [
+          3,
+          28,
+          231,
+          11
+        ],
+        [
+          4,
+          140,
+          186,
+          9
+        ],
+        [
+          5,
+          36,
+          89,
+          4
+        ],
+        [
+          6,
+          158,
+          204,
+          10
+        ],
+        [
+          7,
+          64,
+          80,
+          3
+        ],
+        [
+          8,
+          null,
+          79,
+          3
+        ],
+        [
+          9,
+          46,
+          79,
+          3
+        ]
+      ],
+      "sha256": "0d7503b35886b43ee84b0f4dd8c8e63e64814b3ba15670bf3ae5d9f6750858b4",
+      "seconds": 0.01620233291760087
+    },
+    {
+      "r": 1,
+      "s": 5,
+      "positive": true,
+      "vertices": 728,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          238,
+          294,
+          12
+        ],
+        [
+          1,
+          34,
+          99,
+          3
+        ],
+        [
+          2,
+          null,
+          98,
+          3
+        ],
+        [
+          3,
+          34,
+          337,
+          13
+        ],
+        [
+          4,
+          226,
+          282,
+          11
+        ],
+        [
+          5,
+          44,
+          109,
+          4
+        ],
+        [
+          6,
+          248,
+          304,
+          12
+        ],
+        [
+          7,
+          78,
+          98,
+          3
+        ],
+        [
+          8,
+          null,
+          97,
+          3
+        ],
+        [
+          9,
+          56,
+          97,
+          3
+        ]
+      ],
+      "sha256": "2066600ea44ccab66fa54a4b4ab05e83c1fcaae1f05807d6afaab37c4b612bdd",
+      "seconds": 0.02932883403263986
+    },
+    {
+      "r": 1,
+      "s": 6,
+      "positive": true,
+      "vertices": 1016,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          346,
+          412,
+          14
+        ],
+        [
+          1,
+          40,
+          117,
+          3
+        ],
+        [
+          2,
+          null,
+          116,
+          3
+        ],
+        [
+          3,
+          40,
+          463,
+          15
+        ],
+        [
+          4,
+          332,
+          398,
+          13
+        ],
+        [
+          5,
+          52,
+          129,
+          4
+        ],
+        [
+          6,
+          358,
+          424,
+          14
+        ],
+        [
+          7,
+          92,
+          116,
+          3
+        ],
+        [
+          8,
+          null,
+          115,
+          3
+        ],
+        [
+          9,
+          66,
+          115,
+          3
+        ]
+      ],
+      "sha256": "f7259603b68376a5e39cc9d5989e9a2debd52f41153824b42298d81177958ed3",
+      "seconds": 0.05014349997509271
+    },
+    {
+      "r": 1,
+      "s": 7,
+      "positive": true,
+      "vertices": 1352,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          474,
+          550,
+          16
+        ],
+        [
+          1,
+          46,
+          135,
+          3
+        ],
+        [
+          2,
+          null,
+          134,
+          3
+        ],
+        [
+          3,
+          46,
+          609,
+          17
+        ],
+        [
+          4,
+          458,
+          534,
+          15
+        ],
+        [
+          5,
+          60,
+          149,
+          4
+        ],
+        [
+          6,
+          488,
+          564,
+          16
+        ],
+        [
+          7,
+          106,
+          134,
+          3
+        ],
+        [
+          8,
+          null,
+          133,
+          3
+        ],
+        [
+          9,
+          76,
+          133,
+          3
+        ]
+      ],
+      "sha256": "de53205a994fc43f1a65847112b30e1588d77dcb259f6f88c0b79ce6ce2cdb8d",
+      "seconds": 0.054631958017125726
+    },
+    {
+      "r": 1,
+      "s": 8,
+      "positive": true,
+      "vertices": 1736,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          622,
+          708,
+          18
+        ],
+        [
+          1,
+          52,
+          153,
+          3
+        ],
+        [
+          2,
+          null,
+          152,
+          3
+        ],
+        [
+          3,
+          52,
+          775,
+          19
+        ],
+        [
+          4,
+          604,
+          690,
+          17
+        ],
+        [
+          5,
+          68,
+          169,
+          4
+        ],
+        [
+          6,
+          638,
+          724,
+          18
+        ],
+        [
+          7,
+          120,
+          152,
+          3
+        ],
+        [
+          8,
+          null,
+          151,
+          3
+        ],
+        [
+          9,
+          86,
+          151,
+          3
+        ]
+      ],
+      "sha256": "7b87e35e4a5f054ee56d8e797e5e23576a48e3934ed9e2e52d00ed69302978cc",
+      "seconds": 0.10159545799251646
+    },
+    {
+      "r": 1,
+      "s": 9,
+      "positive": true,
+      "vertices": 2168,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          790,
+          886,
+          20
+        ],
+        [
+          1,
+          58,
+          171,
+          3
+        ],
+        [
+          2,
+          null,
+          170,
+          3
+        ],
+        [
+          3,
+          58,
+          961,
+          21
+        ],
+        [
+          4,
+          770,
+          866,
+          19
+        ],
+        [
+          5,
+          76,
+          189,
+          4
+        ],
+        [
+          6,
+          808,
+          904,
+          20
+        ],
+        [
+          7,
+          134,
+          170,
+          3
+        ],
+        [
+          8,
+          null,
+          169,
+          3
+        ],
+        [
+          9,
+          96,
+          169,
+          3
+        ]
+      ],
+      "sha256": "966d474099ce8405636a12807530426ceeeb80cabec9c3a59c1c6e713e43b69c",
+      "seconds": 0.23433929204475135
+    },
+    {
+      "r": 1,
+      "s": 10,
+      "positive": true,
+      "vertices": 2648,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          978,
+          1084,
+          22
+        ],
+        [
+          1,
+          64,
+          189,
+          3
+        ],
+        [
+          2,
+          null,
+          188,
+          3
+        ],
+        [
+          3,
+          64,
+          1167,
+          23
+        ],
+        [
+          4,
+          956,
+          1062,
+          21
+        ],
+        [
+          5,
+          84,
+          209,
+          4
+        ],
+        [
+          6,
+          998,
+          1104,
+          22
+        ],
+        [
+          7,
+          148,
+          188,
+          3
+        ],
+        [
+          8,
+          null,
+          187,
+          3
+        ],
+        [
+          9,
+          106,
+          187,
+          3
+        ]
+      ],
+      "sha256": "b98d55df106a80d74dd29c102d5c97ce90396023fc40135eb3907b2c75dd662d",
+      "seconds": 0.17912558291573077
+    },
+    {
+      "r": 1,
+      "s": 11,
+      "positive": true,
+      "vertices": 3176,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          1186,
+          1302,
+          24
+        ],
+        [
+          1,
+          70,
+          207,
+          3
+        ],
+        [
+          2,
+          null,
+          206,
+          3
+        ],
+        [
+          3,
+          70,
+          1393,
+          25
+        ],
+        [
+          4,
+          1162,
+          1278,
+          23
+        ],
+        [
+          5,
+          92,
+          229,
+          4
+        ],
+        [
+          6,
+          1208,
+          1324,
+          24
+        ],
+        [
+          7,
+          162,
+          206,
+          3
+        ],
+        [
+          8,
+          null,
+          205,
+          3
+        ],
+        [
+          9,
+          116,
+          205,
+          3
+        ]
+      ],
+      "sha256": "1a859784b27af69a6536c050aad16d8ae204a59a9286b026b59e6140bad2b5eb",
+      "seconds": 0.193575541023165
+    },
+    {
+      "r": 1,
+      "s": 12,
+      "positive": true,
+      "vertices": 3752,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          1414,
+          1540,
+          26
+        ],
+        [
+          1,
+          76,
+          225,
+          3
+        ],
+        [
+          2,
+          null,
+          224,
+          3
+        ],
+        [
+          3,
+          76,
+          1639,
+          27
+        ],
+        [
+          4,
+          1388,
+          1514,
+          25
+        ],
+        [
+          5,
+          100,
+          249,
+          4
+        ],
+        [
+          6,
+          1438,
+          1564,
+          26
+        ],
+        [
+          7,
+          176,
+          224,
+          3
+        ],
+        [
+          8,
+          null,
+          223,
+          3
+        ],
+        [
+          9,
+          126,
+          223,
+          3
+        ]
+      ],
+      "sha256": "6140290afca63425a29ddcba89988357d31609ddf24d1be266949bf9b3fce778",
+      "seconds": 0.19054520805366337
+    },
+    {
+      "r": 2,
+      "s": 1,
+      "positive": true,
+      "vertices": 98,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          14,
+          41,
+          4
+        ],
+        [
+          1,
+          28,
+          36,
+          3
+        ],
+        [
+          2,
+          16,
+          33,
+          3
+        ],
+        [
+          3,
+          22,
+          33,
+          3
+        ],
+        [
+          5,
+          30,
+          37,
+          4
+        ],
+        [
+          6,
+          16,
+          43,
+          4
+        ],
+        [
+          8,
+          16,
+          33,
+          3
+        ],
+        [
+          9,
+          36,
+          37,
+          4
+        ]
+      ],
+      "sha256": "618c4df718d330e01dbabfb4ffd6dff808359d5b57cc4f44c69c15928ef8fdf0",
+      "seconds": 0.008842417038977146
+    },
+    {
+      "r": 2,
+      "s": 3,
+      "positive": true,
+      "vertices": 386,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          54,
+          98,
+          6
+        ],
+        [
+          1,
+          null,
+          73,
+          3
+        ],
+        [
+          2,
+          54,
+          72,
+          3
+        ],
+        [
+          3,
+          84,
+          89,
+          5
+        ],
+        [
+          4,
+          44,
+          88,
+          5
+        ],
+        [
+          5,
+          null,
+          79,
+          4
+        ],
+        [
+          6,
+          60,
+          104,
+          6
+        ],
+        [
+          7,
+          null,
+          70,
+          3
+        ],
+        [
+          8,
+          null,
+          69,
+          3
+        ],
+        [
+          9,
+          null,
+          89,
+          4
+        ]
+      ],
+      "sha256": "3f5e4f3d319f9910a1a3797943e6454f8239999ce006b7f4b11b2c588e035a1e",
+      "seconds": 0.014407000038772821
+    },
+    {
+      "r": 2,
+      "s": 4,
+      "positive": false,
+      "vertices": 602,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          122,
+          6
+        ],
+        [
+          1,
+          null,
+          91,
+          3
+        ],
+        [
+          2,
+          null,
+          90,
+          3
+        ],
+        [
+          3,
+          null,
+          159,
+          7
+        ],
+        [
+          4,
+          null,
+          110,
+          5
+        ],
+        [
+          5,
+          null,
+          99,
+          4
+        ],
+        [
+          6,
+          null,
+          130,
+          6
+        ],
+        [
+          7,
+          null,
+          88,
+          3
+        ],
+        [
+          8,
+          null,
+          87,
+          3
+        ],
+        [
+          9,
+          null,
+          111,
+          4
+        ]
+      ],
+      "sha256": "0cc45f052d3d7d63be5d5b129a352bc9cfcab6fe82dd949be8af2945de816502",
+      "seconds": 0.025684332940727472
+    },
+    {
+      "r": 2,
+      "s": 5,
+      "positive": true,
+      "vertices": 866,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          140,
+          204,
+          8
+        ],
+        [
+          1,
+          null,
+          109,
+          3
+        ],
+        [
+          2,
+          null,
+          108,
+          3
+        ],
+        [
+          3,
+          186,
+          191,
+          7
+        ],
+        [
+          4,
+          126,
+          190,
+          7
+        ],
+        [
+          5,
+          null,
+          119,
+          4
+        ],
+        [
+          6,
+          150,
+          214,
+          8
+        ],
+        [
+          7,
+          null,
+          106,
+          3
+        ],
+        [
+          8,
+          null,
+          105,
+          3
+        ],
+        [
+          9,
+          null,
+          133,
+          4
+        ]
+      ],
+      "sha256": "a14636d57bf22181611b9276580992ce60b323e90777c8b92d7c089ae160d32c",
+      "seconds": 0.04515095800161362
+    },
+    {
+      "r": 2,
+      "s": 6,
+      "positive": false,
+      "vertices": 1178,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          238,
+          8
+        ],
+        [
+          1,
+          null,
+          127,
+          3
+        ],
+        [
+          2,
+          null,
+          126,
+          3
+        ],
+        [
+          3,
+          null,
+          291,
+          9
+        ],
+        [
+          4,
+          null,
+          222,
+          7
+        ],
+        [
+          5,
+          null,
+          139,
+          4
+        ],
+        [
+          6,
+          null,
+          250,
+          8
+        ],
+        [
+          7,
+          null,
+          124,
+          3
+        ],
+        [
+          8,
+          null,
+          123,
+          3
+        ],
+        [
+          9,
+          null,
+          155,
+          4
+        ]
+      ],
+      "sha256": "d15c2c758d415b86d1e7142c92199503a953b602a356ab5c6bf65eb569220587",
+      "seconds": 0.053882291074842215
+    },
+    {
+      "r": 2,
+      "s": 7,
+      "positive": true,
+      "vertices": 1538,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          266,
+          350,
+          10
+        ],
+        [
+          1,
+          null,
+          145,
+          3
+        ],
+        [
+          2,
+          null,
+          144,
+          3
+        ],
+        [
+          3,
+          328,
+          333,
+          9
+        ],
+        [
+          4,
+          248,
+          332,
+          9
+        ],
+        [
+          5,
+          null,
+          159,
+          4
+        ],
+        [
+          6,
+          280,
+          364,
+          10
+        ],
+        [
+          7,
+          null,
+          142,
+          3
+        ],
+        [
+          8,
+          null,
+          141,
+          3
+        ],
+        [
+          9,
+          null,
+          177,
+          4
+        ]
+      ],
+      "sha256": "02a889630d28325025c4548615eb87ab21fbdc8b329a6489fc86277372a121f2",
+      "seconds": 0.06385291705373675
+    },
+    {
+      "r": 2,
+      "s": 8,
+      "positive": false,
+      "vertices": 1946,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          394,
+          10
+        ],
+        [
+          1,
+          null,
+          163,
+          3
+        ],
+        [
+          2,
+          null,
+          162,
+          3
+        ],
+        [
+          3,
+          null,
+          463,
+          11
+        ],
+        [
+          4,
+          null,
+          374,
+          9
+        ],
+        [
+          5,
+          null,
+          179,
+          4
+        ],
+        [
+          6,
+          null,
+          410,
+          10
+        ],
+        [
+          7,
+          null,
+          160,
+          3
+        ],
+        [
+          8,
+          null,
+          159,
+          3
+        ],
+        [
+          9,
+          null,
+          199,
+          4
+        ]
+      ],
+      "sha256": "cd8ca7ad20218ae3ca6f47d9fe63f1be1a74e26ef0521ae8733c45ef3bdfdb3e",
+      "seconds": 0.11606916703749448
+    },
+    {
+      "r": 2,
+      "s": 9,
+      "positive": true,
+      "vertices": 2402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          432,
+          536,
+          12
+        ],
+        [
+          1,
+          null,
+          181,
+          3
+        ],
+        [
+          2,
+          null,
+          180,
+          3
+        ],
+        [
+          3,
+          510,
+          515,
+          11
+        ],
+        [
+          4,
+          410,
+          514,
+          11
+        ],
+        [
+          5,
+          null,
+          199,
+          4
+        ],
+        [
+          6,
+          450,
+          554,
+          12
+        ],
+        [
+          7,
+          null,
+          178,
+          3
+        ],
+        [
+          8,
+          null,
+          177,
+          3
+        ],
+        [
+          9,
+          null,
+          221,
+          4
+        ]
+      ],
+      "sha256": "6c2a959b5d5f862689c6958243e2f6001dfd0d463bffa200218441422d0cfec8",
+      "seconds": 0.10243433399591595
+    },
+    {
+      "r": 2,
+      "s": 10,
+      "positive": false,
+      "vertices": 2906,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          590,
+          12
+        ],
+        [
+          1,
+          null,
+          199,
+          3
+        ],
+        [
+          2,
+          null,
+          198,
+          3
+        ],
+        [
+          3,
+          null,
+          675,
+          13
+        ],
+        [
+          4,
+          null,
+          566,
+          11
+        ],
+        [
+          5,
+          null,
+          219,
+          4
+        ],
+        [
+          6,
+          null,
+          610,
+          12
+        ],
+        [
+          7,
+          null,
+          196,
+          3
+        ],
+        [
+          8,
+          null,
+          195,
+          3
+        ],
+        [
+          9,
+          null,
+          243,
+          4
+        ]
+      ],
+      "sha256": "7f870618853280d7f54ceddfba1ce9ac37824edc3fef15a0e9f2de38abb5f80c",
+      "seconds": 0.12250000005587935
+    },
+    {
+      "r": 2,
+      "s": 11,
+      "positive": true,
+      "vertices": 3458,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          638,
+          762,
+          14
+        ],
+        [
+          1,
+          null,
+          217,
+          3
+        ],
+        [
+          2,
+          null,
+          216,
+          3
+        ],
+        [
+          3,
+          732,
+          737,
+          13
+        ],
+        [
+          4,
+          612,
+          736,
+          13
+        ],
+        [
+          5,
+          null,
+          239,
+          4
+        ],
+        [
+          6,
+          660,
+          784,
+          14
+        ],
+        [
+          7,
+          null,
+          214,
+          3
+        ],
+        [
+          8,
+          null,
+          213,
+          3
+        ],
+        [
+          9,
+          null,
+          265,
+          4
+        ]
+      ],
+      "sha256": "a1ea0b4f0ae9cee87fcd06daa84013aa0a7bbbdea3e0574695d5fdfe49780948",
+      "seconds": 0.17141479207202792
+    },
+    {
+      "r": 2,
+      "s": 12,
+      "positive": false,
+      "vertices": 4058,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          826,
+          14
+        ],
+        [
+          1,
+          null,
+          235,
+          3
+        ],
+        [
+          2,
+          null,
+          234,
+          3
+        ],
+        [
+          3,
+          null,
+          927,
+          15
+        ],
+        [
+          4,
+          null,
+          798,
+          13
+        ],
+        [
+          5,
+          null,
+          259,
+          4
+        ],
+        [
+          6,
+          null,
+          850,
+          14
+        ],
+        [
+          7,
+          null,
+          232,
+          3
+        ],
+        [
+          8,
+          null,
+          231,
+          3
+        ],
+        [
+          9,
+          null,
+          287,
+          4
+        ]
+      ],
+      "sha256": "de968aff8092ec9c7a3d78669c830cb9728d2ea1682652eaafdb972ec072a711",
+      "seconds": 0.20773795794229954
+    },
+    {
+      "r": 3,
+      "s": 1,
+      "positive": true,
+      "vertices": 152,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          18,
+          51,
+          4
+        ],
+        [
+          1,
+          null,
+          44,
+          3
+        ],
+        [
+          2,
+          20,
+          41,
+          3
+        ],
+        [
+          3,
+          null,
+          43,
+          3
+        ],
+        [
+          5,
+          null,
+          46,
+          4
+        ],
+        [
+          6,
+          20,
+          53,
+          4
+        ],
+        [
+          8,
+          20,
+          41,
+          3
+        ],
+        [
+          9,
+          null,
+          54,
+          4
+        ]
+      ],
+      "sha256": "5e33050f9367df0e79233c8eae4f667c0b57af88aa9bd0ccc47792f086ee3b9d",
+      "seconds": 0.014461415936239064
+    },
+    {
+      "r": 3,
+      "s": 3,
+      "positive": false,
+      "vertices": 488,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          90,
+          4
+        ],
+        [
+          1,
+          null,
+          83,
+          3
+        ],
+        [
+          2,
+          null,
+          113,
+          5
+        ],
+        [
+          3,
+          null,
+          101,
+          5
+        ],
+        [
+          4,
+          null,
+          78,
+          3
+        ],
+        [
+          5,
+          null,
+          89,
+          4
+        ],
+        [
+          6,
+          null,
+          96,
+          4
+        ],
+        [
+          7,
+          null,
+          78,
+          3
+        ],
+        [
+          8,
+          null,
+          77,
+          3
+        ],
+        [
+          9,
+          null,
+          101,
+          4
+        ]
+      ],
+      "sha256": "0025028a7cc0c285cde1216be9971eb0f1748f0847ee954d57eb15ae812a67c9",
+      "seconds": 0.02723720797803253
+    },
+    {
+      "r": 3,
+      "s": 4,
+      "positive": true,
+      "vertices": 728,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          74,
+          136,
+          6
+        ],
+        [
+          1,
+          null,
+          101,
+          3
+        ],
+        [
+          2,
+          74,
+          100,
+          3
+        ],
+        [
+          3,
+          null,
+          123,
+          5
+        ],
+        [
+          4,
+          60,
+          122,
+          5
+        ],
+        [
+          5,
+          null,
+          109,
+          4
+        ],
+        [
+          6,
+          82,
+          144,
+          6
+        ],
+        [
+          7,
+          null,
+          96,
+          3
+        ],
+        [
+          8,
+          null,
+          95,
+          3
+        ],
+        [
+          9,
+          null,
+          123,
+          4
+        ]
+      ],
+      "sha256": "d9fe3669bb340e43c046e51558e25aaf6c6154ae75564e8fd09456062a53526a",
+      "seconds": 0.04703112505376339
+    },
+    {
+      "r": 3,
+      "s": 5,
+      "positive": true,
+      "vertices": 1016,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          160,
+          6
+        ],
+        [
+          1,
+          null,
+          119,
+          3
+        ],
+        [
+          2,
+          null,
+          118,
+          3
+        ],
+        [
+          3,
+          136,
+          145,
+          5
+        ],
+        [
+          4,
+          null,
+          144,
+          5
+        ],
+        [
+          5,
+          null,
+          129,
+          4
+        ],
+        [
+          6,
+          null,
+          170,
+          6
+        ],
+        [
+          7,
+          null,
+          114,
+          3
+        ],
+        [
+          8,
+          null,
+          113,
+          3
+        ],
+        [
+          9,
+          null,
+          145,
+          4
+        ]
+      ],
+      "sha256": "b968660bfff720b3b6c361811a369bb0871f0b0ff17453836ddd05ccb210f02e",
+      "seconds": 0.04744641704019159
+    },
+    {
+      "r": 3,
+      "s": 6,
+      "positive": false,
+      "vertices": 1352,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          184,
+          6
+        ],
+        [
+          1,
+          null,
+          137,
+          3
+        ],
+        [
+          2,
+          null,
+          136,
+          3
+        ],
+        [
+          3,
+          null,
+          239,
+          7
+        ],
+        [
+          4,
+          null,
+          166,
+          5
+        ],
+        [
+          5,
+          null,
+          149,
+          4
+        ],
+        [
+          6,
+          null,
+          196,
+          6
+        ],
+        [
+          7,
+          null,
+          132,
+          3
+        ],
+        [
+          8,
+          null,
+          131,
+          3
+        ],
+        [
+          9,
+          null,
+          167,
+          4
+        ]
+      ],
+      "sha256": "c983e485c428015cd11e66825f724790bb4df607d7204ab9ae9736223e09f49a",
+      "seconds": 0.06015091703739017
+    },
+    {
+      "r": 3,
+      "s": 7,
+      "positive": true,
+      "vertices": 1736,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          198,
+          290,
+          8
+        ],
+        [
+          1,
+          null,
+          155,
+          3
+        ],
+        [
+          2,
+          null,
+          154,
+          3
+        ],
+        [
+          3,
+          null,
+          271,
+          7
+        ],
+        [
+          4,
+          178,
+          270,
+          7
+        ],
+        [
+          5,
+          null,
+          169,
+          4
+        ],
+        [
+          6,
+          212,
+          304,
+          8
+        ],
+        [
+          7,
+          null,
+          150,
+          3
+        ],
+        [
+          8,
+          null,
+          149,
+          3
+        ],
+        [
+          9,
+          null,
+          189,
+          4
+        ]
+      ],
+      "sha256": "c042be1509cd4d3fab44a5de972cd36d288b2ae95d43a1b096f23b8cf16ecbbb",
+      "seconds": 0.07541712489910424
+    },
+    {
+      "r": 3,
+      "s": 8,
+      "positive": true,
+      "vertices": 2168,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          324,
+          8
+        ],
+        [
+          1,
+          null,
+          173,
+          3
+        ],
+        [
+          2,
+          null,
+          172,
+          3
+        ],
+        [
+          3,
+          294,
+          303,
+          7
+        ],
+        [
+          4,
+          null,
+          302,
+          7
+        ],
+        [
+          5,
+          null,
+          189,
+          4
+        ],
+        [
+          6,
+          null,
+          340,
+          8
+        ],
+        [
+          7,
+          null,
+          168,
+          3
+        ],
+        [
+          8,
+          null,
+          167,
+          3
+        ],
+        [
+          9,
+          null,
+          211,
+          4
+        ]
+      ],
+      "sha256": "9c68a26d2492eb88e1ae2d29ac39d8eecb450c16688d67131d7c096dccfcb8ac",
+      "seconds": 0.08796804200392216
+    },
+    {
+      "r": 3,
+      "s": 9,
+      "positive": false,
+      "vertices": 2648,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          358,
+          8
+        ],
+        [
+          1,
+          null,
+          191,
+          3
+        ],
+        [
+          2,
+          null,
+          190,
+          3
+        ],
+        [
+          3,
+          null,
+          437,
+          9
+        ],
+        [
+          4,
+          null,
+          334,
+          7
+        ],
+        [
+          5,
+          null,
+          209,
+          4
+        ],
+        [
+          6,
+          null,
+          376,
+          8
+        ],
+        [
+          7,
+          null,
+          186,
+          3
+        ],
+        [
+          8,
+          null,
+          185,
+          3
+        ],
+        [
+          9,
+          null,
+          233,
+          4
+        ]
+      ],
+      "sha256": "b759594c9279e098966b8aabcb438cf89780894d34f453576cc19b2d84dc2acf",
+      "seconds": 0.10634166607633233
+    },
+    {
+      "r": 3,
+      "s": 10,
+      "positive": true,
+      "vertices": 3176,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          382,
+          504,
+          10
+        ],
+        [
+          1,
+          null,
+          209,
+          3
+        ],
+        [
+          2,
+          null,
+          208,
+          3
+        ],
+        [
+          3,
+          null,
+          479,
+          9
+        ],
+        [
+          4,
+          356,
+          478,
+          9
+        ],
+        [
+          5,
+          null,
+          229,
+          4
+        ],
+        [
+          6,
+          402,
+          524,
+          10
+        ],
+        [
+          7,
+          null,
+          204,
+          3
+        ],
+        [
+          8,
+          null,
+          203,
+          3
+        ],
+        [
+          9,
+          null,
+          255,
+          4
+        ]
+      ],
+      "sha256": "e1dddbe8ac11e652e2ccc5f2b9bc9090a6fce4c694dbdec292e9f0269918c554",
+      "seconds": 0.15526162495370954
+    },
+    {
+      "r": 3,
+      "s": 11,
+      "positive": true,
+      "vertices": 3752,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          548,
+          10
+        ],
+        [
+          1,
+          null,
+          227,
+          3
+        ],
+        [
+          2,
+          null,
+          226,
+          3
+        ],
+        [
+          3,
+          512,
+          521,
+          9
+        ],
+        [
+          4,
+          null,
+          520,
+          9
+        ],
+        [
+          5,
+          null,
+          249,
+          4
+        ],
+        [
+          6,
+          null,
+          570,
+          10
+        ],
+        [
+          7,
+          null,
+          222,
+          3
+        ],
+        [
+          8,
+          null,
+          221,
+          3
+        ],
+        [
+          9,
+          null,
+          277,
+          4
+        ]
+      ],
+      "sha256": "423cc1620b9bc68467f3be163743f264e0c2fc8359b6dbf0c4ffdf9385183ab7",
+      "seconds": 0.16153708309866488
+    },
+    {
+      "r": 3,
+      "s": 12,
+      "positive": false,
+      "vertices": 4376,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          592,
+          10
+        ],
+        [
+          1,
+          null,
+          245,
+          3
+        ],
+        [
+          2,
+          null,
+          244,
+          3
+        ],
+        [
+          3,
+          null,
+          695,
+          11
+        ],
+        [
+          4,
+          null,
+          562,
+          9
+        ],
+        [
+          5,
+          null,
+          269,
+          4
+        ],
+        [
+          6,
+          null,
+          616,
+          10
+        ],
+        [
+          7,
+          null,
+          240,
+          3
+        ],
+        [
+          8,
+          null,
+          239,
+          3
+        ],
+        [
+          9,
+          null,
+          299,
+          4
+        ]
+      ],
+      "sha256": "71b8c2396bfc5be9f889445602e03480b9e4ee4397effc754ab08fc2a02f32b4",
+      "seconds": 0.2122979999985546
+    },
+    {
+      "r": 4,
+      "s": 1,
+      "positive": true,
+      "vertices": 218,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          22,
+          61,
+          4
+        ],
+        [
+          1,
+          null,
+          52,
+          3
+        ],
+        [
+          2,
+          24,
+          49,
+          3
+        ],
+        [
+          3,
+          68,
+          68,
+          4
+        ],
+        [
+          5,
+          null,
+          54,
+          4
+        ],
+        [
+          6,
+          24,
+          63,
+          4
+        ],
+        [
+          8,
+          24,
+          49,
+          3
+        ],
+        [
+          9,
+          null,
+          64,
+          4
+        ]
+      ],
+      "sha256": "09825c586d3a591a55ec0c39eec9f26e79249ce873c395499c6f61548a1345f3",
+      "seconds": 0.014883499941788614
+    },
+    {
+      "r": 4,
+      "s": 2,
+      "positive": false,
+      "vertices": 386,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          83,
+          4
+        ],
+        [
+          1,
+          null,
+          72,
+          3
+        ],
+        [
+          2,
+          null,
+          69,
+          3
+        ],
+        [
+          3,
+          null,
+          69,
+          3
+        ],
+        [
+          4,
+          null,
+          72,
+          3
+        ],
+        [
+          5,
+          null,
+          75,
+          4
+        ],
+        [
+          6,
+          null,
+          87,
+          4
+        ],
+        [
+          7,
+          null,
+          68,
+          3
+        ],
+        [
+          8,
+          null,
+          67,
+          3
+        ],
+        [
+          9,
+          null,
+          87,
+          4
+        ]
+      ],
+      "sha256": "d9529740348e7e805b2226eafaecf0f320ed5700f3cccf8c0e6e3775e20b72e3",
+      "seconds": 0.031075082952156663
+    },
+    {
+      "r": 4,
+      "s": 3,
+      "positive": true,
+      "vertices": 602,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          102,
+          4
+        ],
+        [
+          1,
+          68,
+          124,
+          5
+        ],
+        [
+          2,
+          null,
+          125,
+          5
+        ],
+        [
+          3,
+          54,
+          85,
+          3
+        ],
+        [
+          4,
+          null,
+          88,
+          3
+        ],
+        [
+          5,
+          74,
+          93,
+          4
+        ],
+        [
+          6,
+          null,
+          108,
+          4
+        ],
+        [
+          7,
+          null,
+          86,
+          3
+        ],
+        [
+          8,
+          null,
+          85,
+          3
+        ],
+        [
+          9,
+          88,
+          93,
+          4
+        ]
+      ],
+      "sha256": "87fb93d3f115b74b4cc1fc39fbc52f9980f84745d1804a3130e7e6864b6efbd3",
+      "seconds": 0.02129116700962186
+    },
+    {
+      "r": 4,
+      "s": 4,
+      "positive": false,
+      "vertices": 866,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          120,
+          4
+        ],
+        [
+          1,
+          null,
+          111,
+          3
+        ],
+        [
+          2,
+          null,
+          151,
+          5
+        ],
+        [
+          3,
+          null,
+          135,
+          5
+        ],
+        [
+          4,
+          null,
+          104,
+          3
+        ],
+        [
+          5,
+          null,
+          119,
+          4
+        ],
+        [
+          6,
+          null,
+          128,
+          4
+        ],
+        [
+          7,
+          null,
+          104,
+          3
+        ],
+        [
+          8,
+          null,
+          103,
+          3
+        ],
+        [
+          9,
+          null,
+          135,
+          4
+        ]
+      ],
+      "sha256": "1ebb3e5e5aec736f34a4f6c053132fe7bd995521ea2e05bf812b1ec67db4794c",
+      "seconds": 0.03333129198290408
+    },
+    {
+      "r": 4,
+      "s": 5,
+      "positive": true,
+      "vertices": 1178,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          94,
+          174,
+          6
+        ],
+        [
+          1,
+          null,
+          129,
+          3
+        ],
+        [
+          2,
+          94,
+          128,
+          3
+        ],
+        [
+          3,
+          null,
+          157,
+          5
+        ],
+        [
+          4,
+          76,
+          156,
+          5
+        ],
+        [
+          5,
+          null,
+          139,
+          4
+        ],
+        [
+          6,
+          104,
+          184,
+          6
+        ],
+        [
+          7,
+          null,
+          122,
+          3
+        ],
+        [
+          8,
+          null,
+          121,
+          3
+        ],
+        [
+          9,
+          null,
+          157,
+          4
+        ]
+      ],
+      "sha256": "9506ee5fc41afad026f16f7f17fc36ba5e0afc00ddf7df6a62ee0ccf6b0a794b",
+      "seconds": 0.04937829100526869
+    },
+    {
+      "r": 4,
+      "s": 6,
+      "positive": false,
+      "vertices": 1538,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          198,
+          6
+        ],
+        [
+          1,
+          null,
+          147,
+          3
+        ],
+        [
+          2,
+          null,
+          146,
+          3
+        ],
+        [
+          3,
+          null,
+          179,
+          5
+        ],
+        [
+          4,
+          null,
+          178,
+          5
+        ],
+        [
+          5,
+          null,
+          159,
+          4
+        ],
+        [
+          6,
+          null,
+          210,
+          6
+        ],
+        [
+          7,
+          null,
+          140,
+          3
+        ],
+        [
+          8,
+          null,
+          139,
+          3
+        ],
+        [
+          9,
+          null,
+          179,
+          4
+        ]
+      ],
+      "sha256": "a14bb43fa2c8faea1edacbd2ac146a33d6e065f089c8f0413f27afae961a4c1e",
+      "seconds": 0.06457416689954698
+    },
+    {
+      "r": 4,
+      "s": 7,
+      "positive": true,
+      "vertices": 1946,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          222,
+          6
+        ],
+        [
+          1,
+          null,
+          165,
+          3
+        ],
+        [
+          2,
+          null,
+          164,
+          3
+        ],
+        [
+          3,
+          188,
+          201,
+          5
+        ],
+        [
+          4,
+          null,
+          200,
+          5
+        ],
+        [
+          5,
+          null,
+          179,
+          4
+        ],
+        [
+          6,
+          null,
+          236,
+          6
+        ],
+        [
+          7,
+          null,
+          158,
+          3
+        ],
+        [
+          8,
+          null,
+          157,
+          3
+        ],
+        [
+          9,
+          null,
+          201,
+          4
+        ]
+      ],
+      "sha256": "1e1d8a273563b320fc5ea984242e674e116266d097e136a55c9545f4c978e45e",
+      "seconds": 0.0874227499589324
+    },
+    {
+      "r": 4,
+      "s": 8,
+      "positive": false,
+      "vertices": 2402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          246,
+          6
+        ],
+        [
+          1,
+          null,
+          183,
+          3
+        ],
+        [
+          2,
+          null,
+          182,
+          3
+        ],
+        [
+          3,
+          null,
+          319,
+          7
+        ],
+        [
+          4,
+          null,
+          222,
+          5
+        ],
+        [
+          5,
+          null,
+          199,
+          4
+        ],
+        [
+          6,
+          null,
+          262,
+          6
+        ],
+        [
+          7,
+          null,
+          176,
+          3
+        ],
+        [
+          8,
+          null,
+          175,
+          3
+        ],
+        [
+          9,
+          null,
+          223,
+          4
+        ]
+      ],
+      "sha256": "06156143d1ba76d7e04e70c1d1f79807e055576cf8d3d43c559cb08a9dbe1657",
+      "seconds": 0.10140845808200538
+    },
+    {
+      "r": 4,
+      "s": 9,
+      "positive": true,
+      "vertices": 2906,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          256,
+          376,
+          8
+        ],
+        [
+          1,
+          null,
+          201,
+          3
+        ],
+        [
+          2,
+          null,
+          200,
+          3
+        ],
+        [
+          3,
+          null,
+          351,
+          7
+        ],
+        [
+          4,
+          230,
+          350,
+          7
+        ],
+        [
+          5,
+          null,
+          219,
+          4
+        ],
+        [
+          6,
+          274,
+          394,
+          8
+        ],
+        [
+          7,
+          null,
+          194,
+          3
+        ],
+        [
+          8,
+          null,
+          193,
+          3
+        ],
+        [
+          9,
+          null,
+          245,
+          4
+        ]
+      ],
+      "sha256": "bd5474783aac6ef021f03a95e68a7be8f2227dd8326d93312800aee48d9f63e4",
+      "seconds": 0.19752708403393626
+    },
+    {
+      "r": 4,
+      "s": 10,
+      "positive": false,
+      "vertices": 3458,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          410,
+          8
+        ],
+        [
+          1,
+          null,
+          219,
+          3
+        ],
+        [
+          2,
+          null,
+          218,
+          3
+        ],
+        [
+          3,
+          null,
+          383,
+          7
+        ],
+        [
+          4,
+          null,
+          382,
+          7
+        ],
+        [
+          5,
+          null,
+          239,
+          4
+        ],
+        [
+          6,
+          null,
+          430,
+          8
+        ],
+        [
+          7,
+          null,
+          212,
+          3
+        ],
+        [
+          8,
+          null,
+          211,
+          3
+        ],
+        [
+          9,
+          null,
+          267,
+          4
+        ]
+      ],
+      "sha256": "7caee9eff3a3a1b7198f4fbc9e57d86e38deae3af22f461f55f52060d77f6d1c",
+      "seconds": 0.21453262493014336
+    },
+    {
+      "r": 4,
+      "s": 11,
+      "positive": true,
+      "vertices": 4058,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          444,
+          8
+        ],
+        [
+          1,
+          null,
+          237,
+          3
+        ],
+        [
+          2,
+          null,
+          236,
+          3
+        ],
+        [
+          3,
+          402,
+          415,
+          7
+        ],
+        [
+          4,
+          null,
+          414,
+          7
+        ],
+        [
+          5,
+          null,
+          259,
+          4
+        ],
+        [
+          6,
+          null,
+          466,
+          8
+        ],
+        [
+          7,
+          null,
+          230,
+          3
+        ],
+        [
+          8,
+          null,
+          229,
+          3
+        ],
+        [
+          9,
+          null,
+          289,
+          4
+        ]
+      ],
+      "sha256": "2050c9102227941523ca9d0c5f66b1af0ce61926621170650b3ee698b4baf570",
+      "seconds": 0.2111331250052899
+    },
+    {
+      "r": 4,
+      "s": 12,
+      "positive": false,
+      "vertices": 4706,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          478,
+          8
+        ],
+        [
+          1,
+          null,
+          255,
+          3
+        ],
+        [
+          2,
+          null,
+          254,
+          3
+        ],
+        [
+          3,
+          null,
+          583,
+          9
+        ],
+        [
+          4,
+          null,
+          446,
+          7
+        ],
+        [
+          5,
+          null,
+          279,
+          4
+        ],
+        [
+          6,
+          null,
+          502,
+          8
+        ],
+        [
+          7,
+          null,
+          248,
+          3
+        ],
+        [
+          8,
+          null,
+          247,
+          3
+        ],
+        [
+          9,
+          null,
+          311,
+          4
+        ]
+      ],
+      "sha256": "98cb6f2218b318436839dc1e28930ea9b5e7539bd801d8ce2631bfe5bd2ab5f1",
+      "seconds": 0.2219807090004906
+    },
+    {
+      "r": 5,
+      "s": 1,
+      "positive": true,
+      "vertices": 296,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          26,
+          71,
+          4
+        ],
+        [
+          1,
+          null,
+          60,
+          3
+        ],
+        [
+          2,
+          28,
+          57,
+          3
+        ],
+        [
+          3,
+          null,
+          78,
+          4
+        ],
+        [
+          5,
+          null,
+          62,
+          4
+        ],
+        [
+          6,
+          28,
+          73,
+          4
+        ],
+        [
+          8,
+          28,
+          57,
+          3
+        ],
+        [
+          9,
+          null,
+          74,
+          4
+        ]
+      ],
+      "sha256": "20ee6c2a4b0bacde11b9ae7af77e92e5e971bbf30e43e7fb1c18aeab5b87bbe2",
+      "seconds": 0.014809541986323893
+    },
+    {
+      "r": 5,
+      "s": 2,
+      "positive": true,
+      "vertices": 488,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          93,
+          4
+        ],
+        [
+          1,
+          null,
+          80,
+          3
+        ],
+        [
+          2,
+          null,
+          77,
+          3
+        ],
+        [
+          3,
+          null,
+          79,
+          3
+        ],
+        [
+          4,
+          102,
+          102,
+          5
+        ],
+        [
+          5,
+          null,
+          84,
+          4
+        ],
+        [
+          6,
+          null,
+          97,
+          4
+        ],
+        [
+          7,
+          null,
+          76,
+          3
+        ],
+        [
+          8,
+          null,
+          75,
+          3
+        ],
+        [
+          9,
+          null,
+          98,
+          4
+        ]
+      ],
+      "sha256": "fd60a46ca05bba69172ad395202b285fa99e2d3463bb998783e1b914eff079ad",
+      "seconds": 0.021657582954503596
+    },
+    {
+      "r": 5,
+      "s": 3,
+      "positive": false,
+      "vertices": 728,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          114,
+          4
+        ],
+        [
+          1,
+          null,
+          136,
+          5
+        ],
+        [
+          2,
+          null,
+          97,
+          3
+        ],
+        [
+          3,
+          null,
+          95,
+          3
+        ],
+        [
+          4,
+          null,
+          98,
+          3
+        ],
+        [
+          5,
+          null,
+          103,
+          4
+        ],
+        [
+          6,
+          null,
+          120,
+          4
+        ],
+        [
+          7,
+          null,
+          94,
+          3
+        ],
+        [
+          8,
+          null,
+          93,
+          3
+        ],
+        [
+          9,
+          null,
+          119,
+          4
+        ]
+      ],
+      "sha256": "798b88425b97d0bfded2ac7c6e97704fc17977f8a69c3afa403d05a5058522a7",
+      "seconds": 0.02619204204529524
+    },
+    {
+      "r": 5,
+      "s": 4,
+      "positive": true,
+      "vertices": 1016,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          132,
+          4
+        ],
+        [
+          1,
+          88,
+          162,
+          5
+        ],
+        [
+          2,
+          null,
+          163,
+          5
+        ],
+        [
+          3,
+          70,
+          111,
+          3
+        ],
+        [
+          4,
+          null,
+          114,
+          3
+        ],
+        [
+          5,
+          96,
+          121,
+          4
+        ],
+        [
+          6,
+          null,
+          140,
+          4
+        ],
+        [
+          7,
+          null,
+          112,
+          3
+        ],
+        [
+          8,
+          null,
+          111,
+          3
+        ],
+        [
+          9,
+          114,
+          121,
+          4
+        ]
+      ],
+      "sha256": "870d563e50d96e11d31d62b3714ab043d86c153e58848991649c96d65d9a93dc",
+      "seconds": 0.04240354208741337
+    },
+    {
+      "r": 5,
+      "s": 5,
+      "positive": false,
+      "vertices": 1352,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          150,
+          4
+        ],
+        [
+          1,
+          null,
+          139,
+          3
+        ],
+        [
+          2,
+          null,
+          189,
+          5
+        ],
+        [
+          3,
+          null,
+          169,
+          5
+        ],
+        [
+          4,
+          null,
+          130,
+          3
+        ],
+        [
+          5,
+          null,
+          149,
+          4
+        ],
+        [
+          6,
+          null,
+          160,
+          4
+        ],
+        [
+          7,
+          null,
+          130,
+          3
+        ],
+        [
+          8,
+          null,
+          129,
+          3
+        ],
+        [
+          9,
+          null,
+          169,
+          4
+        ]
+      ],
+      "sha256": "6566df70f3e79dfeb1c0c2f9eef3a464c479386222867947170feaff5b4ed72f",
+      "seconds": 0.05381487496197224
+    },
+    {
+      "r": 5,
+      "s": 6,
+      "positive": true,
+      "vertices": 1736,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          114,
+          212,
+          6
+        ],
+        [
+          1,
+          null,
+          157,
+          3
+        ],
+        [
+          2,
+          114,
+          156,
+          3
+        ],
+        [
+          3,
+          null,
+          191,
+          5
+        ],
+        [
+          4,
+          92,
+          190,
+          5
+        ],
+        [
+          5,
+          null,
+          169,
+          4
+        ],
+        [
+          6,
+          126,
+          224,
+          6
+        ],
+        [
+          7,
+          null,
+          148,
+          3
+        ],
+        [
+          8,
+          null,
+          147,
+          3
+        ],
+        [
+          9,
+          null,
+          191,
+          4
+        ]
+      ],
+      "sha256": "659a2968b60a7d94423524db816afe38015466b848b853233a5093ffd6cec2f2",
+      "seconds": 0.07144445809535682
+    },
+    {
+      "r": 5,
+      "s": 7,
+      "positive": false,
+      "vertices": 2168,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          236,
+          6
+        ],
+        [
+          1,
+          null,
+          175,
+          3
+        ],
+        [
+          2,
+          null,
+          174,
+          3
+        ],
+        [
+          3,
+          null,
+          213,
+          5
+        ],
+        [
+          4,
+          null,
+          212,
+          5
+        ],
+        [
+          5,
+          null,
+          189,
+          4
+        ],
+        [
+          6,
+          null,
+          250,
+          6
+        ],
+        [
+          7,
+          null,
+          166,
+          3
+        ],
+        [
+          8,
+          null,
+          165,
+          3
+        ],
+        [
+          9,
+          null,
+          213,
+          4
+        ]
+      ],
+      "sha256": "35cead67d1e9021af987bd52001b7fe88c40fa716339753a990be7bb49d8c22f",
+      "seconds": 0.08782608399633318
+    },
+    {
+      "r": 5,
+      "s": 8,
+      "positive": false,
+      "vertices": 2648,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          260,
+          6
+        ],
+        [
+          1,
+          null,
+          193,
+          3
+        ],
+        [
+          2,
+          null,
+          192,
+          3
+        ],
+        [
+          3,
+          null,
+          235,
+          5
+        ],
+        [
+          4,
+          null,
+          234,
+          5
+        ],
+        [
+          5,
+          null,
+          209,
+          4
+        ],
+        [
+          6,
+          null,
+          276,
+          6
+        ],
+        [
+          7,
+          null,
+          184,
+          3
+        ],
+        [
+          8,
+          null,
+          183,
+          3
+        ],
+        [
+          9,
+          null,
+          235,
+          4
+        ]
+      ],
+      "sha256": "f67fbcff5b6b8d0ce4220d174077e31b0f4c11fb497af16a13bfa3719985ed37",
+      "seconds": 0.09129170805681497
+    },
+    {
+      "r": 5,
+      "s": 9,
+      "positive": true,
+      "vertices": 3176,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          284,
+          6
+        ],
+        [
+          1,
+          null,
+          211,
+          3
+        ],
+        [
+          2,
+          null,
+          210,
+          3
+        ],
+        [
+          3,
+          240,
+          257,
+          5
+        ],
+        [
+          4,
+          null,
+          256,
+          5
+        ],
+        [
+          5,
+          null,
+          229,
+          4
+        ],
+        [
+          6,
+          null,
+          302,
+          6
+        ],
+        [
+          7,
+          null,
+          202,
+          3
+        ],
+        [
+          8,
+          null,
+          201,
+          3
+        ],
+        [
+          9,
+          null,
+          257,
+          4
+        ]
+      ],
+      "sha256": "39e6c657c3e13fc6812a5413e7455bdc369bbbbf4e31678fc313b143c09c5f10",
+      "seconds": 0.12527370802126825
+    },
+    {
+      "r": 5,
+      "s": 10,
+      "positive": false,
+      "vertices": 3752,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          308,
+          6
+        ],
+        [
+          1,
+          null,
+          229,
+          3
+        ],
+        [
+          2,
+          null,
+          228,
+          3
+        ],
+        [
+          3,
+          null,
+          399,
+          7
+        ],
+        [
+          4,
+          null,
+          278,
+          5
+        ],
+        [
+          5,
+          null,
+          249,
+          4
+        ],
+        [
+          6,
+          null,
+          328,
+          6
+        ],
+        [
+          7,
+          null,
+          220,
+          3
+        ],
+        [
+          8,
+          null,
+          219,
+          3
+        ],
+        [
+          9,
+          null,
+          279,
+          4
+        ]
+      ],
+      "sha256": "fdcfeefd256d725f73f9385949e198cb2d3df04ccfc5885d18731ffa5b448d5e",
+      "seconds": 0.13729241699911654
+    },
+    {
+      "r": 5,
+      "s": 11,
+      "positive": true,
+      "vertices": 4376,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          314,
+          462,
+          8
+        ],
+        [
+          1,
+          null,
+          247,
+          3
+        ],
+        [
+          2,
+          null,
+          246,
+          3
+        ],
+        [
+          3,
+          null,
+          431,
+          7
+        ],
+        [
+          4,
+          282,
+          430,
+          7
+        ],
+        [
+          5,
+          null,
+          269,
+          4
+        ],
+        [
+          6,
+          336,
+          484,
+          8
+        ],
+        [
+          7,
+          null,
+          238,
+          3
+        ],
+        [
+          8,
+          null,
+          237,
+          3
+        ],
+        [
+          9,
+          null,
+          301,
+          4
+        ]
+      ],
+      "sha256": "0a3e877b8609ea443bf07971abce137adf90ae651e2cbde7c8cc3c5ed5cedfb4",
+      "seconds": 0.16822391690220684
+    },
+    {
+      "r": 5,
+      "s": 12,
+      "positive": false,
+      "vertices": 5048,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          496,
+          8
+        ],
+        [
+          1,
+          null,
+          265,
+          3
+        ],
+        [
+          2,
+          null,
+          264,
+          3
+        ],
+        [
+          3,
+          null,
+          463,
+          7
+        ],
+        [
+          4,
+          null,
+          462,
+          7
+        ],
+        [
+          5,
+          null,
+          289,
+          4
+        ],
+        [
+          6,
+          null,
+          520,
+          8
+        ],
+        [
+          7,
+          null,
+          256,
+          3
+        ],
+        [
+          8,
+          null,
+          255,
+          3
+        ],
+        [
+          9,
+          null,
+          323,
+          4
+        ]
+      ],
+      "sha256": "06f10a3c917dda7fb2a3f85adaa184811b15697c0f6f026baaad268999e35114",
+      "seconds": 0.16044858295936137
+    },
+    {
+      "r": 6,
+      "s": 1,
+      "positive": true,
+      "vertices": 386,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          30,
+          81,
+          4
+        ],
+        [
+          1,
+          null,
+          68,
+          3
+        ],
+        [
+          2,
+          32,
+          65,
+          3
+        ],
+        [
+          3,
+          null,
+          88,
+          4
+        ],
+        [
+          5,
+          null,
+          70,
+          4
+        ],
+        [
+          6,
+          32,
+          83,
+          4
+        ],
+        [
+          8,
+          32,
+          65,
+          3
+        ],
+        [
+          9,
+          null,
+          84,
+          4
+        ]
+      ],
+      "sha256": "8e662a7b20f004b2ea35d53184e481657e27d28bb5303ad058535acc7f61aae8",
+      "seconds": 0.016475167009048164
+    },
+    {
+      "r": 6,
+      "s": 2,
+      "positive": false,
+      "vertices": 602,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          103,
+          4
+        ],
+        [
+          1,
+          null,
+          88,
+          3
+        ],
+        [
+          2,
+          null,
+          85,
+          3
+        ],
+        [
+          3,
+          null,
+          115,
+          5
+        ],
+        [
+          4,
+          null,
+          113,
+          4
+        ],
+        [
+          5,
+          null,
+          92,
+          4
+        ],
+        [
+          6,
+          null,
+          107,
+          4
+        ],
+        [
+          7,
+          null,
+          84,
+          3
+        ],
+        [
+          8,
+          null,
+          83,
+          3
+        ],
+        [
+          9,
+          null,
+          108,
+          4
+        ]
+      ],
+      "sha256": "c12418ee7667fdc76ba9b6792cd260b13214b90d14644d122467e610ac5d14b4",
+      "seconds": 0.020318625029176474
+    },
+    {
+      "r": 6,
+      "s": 3,
+      "positive": false,
+      "vertices": 866,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          125,
+          4
+        ],
+        [
+          1,
+          null,
+          108,
+          3
+        ],
+        [
+          2,
+          null,
+          105,
+          3
+        ],
+        [
+          3,
+          null,
+          105,
+          3
+        ],
+        [
+          4,
+          null,
+          108,
+          3
+        ],
+        [
+          5,
+          null,
+          113,
+          4
+        ],
+        [
+          6,
+          null,
+          131,
+          4
+        ],
+        [
+          7,
+          null,
+          102,
+          3
+        ],
+        [
+          8,
+          null,
+          101,
+          3
+        ],
+        [
+          9,
+          null,
+          131,
+          4
+        ]
+      ],
+      "sha256": "338b62ff473eebf116b22545e3e7b30fa0887555647ef0804e3823b0deba45cb",
+      "seconds": 0.025382542051374912
+    },
+    {
+      "r": 6,
+      "s": 4,
+      "positive": false,
+      "vertices": 1178,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          144,
+          4
+        ],
+        [
+          1,
+          null,
+          174,
+          5
+        ],
+        [
+          2,
+          null,
+          175,
+          5
+        ],
+        [
+          3,
+          null,
+          121,
+          3
+        ],
+        [
+          4,
+          null,
+          124,
+          3
+        ],
+        [
+          5,
+          null,
+          131,
+          4
+        ],
+        [
+          6,
+          null,
+          152,
+          4
+        ],
+        [
+          7,
+          null,
+          120,
+          3
+        ],
+        [
+          8,
+          null,
+          119,
+          3
+        ],
+        [
+          9,
+          null,
+          151,
+          4
+        ]
+      ],
+      "sha256": "03b6289757a683772bda00f70bc712c390819297f21b3dbf2255b5cbb2b3f601",
+      "seconds": 0.03412437508814037
+    },
+    {
+      "r": 6,
+      "s": 5,
+      "positive": true,
+      "vertices": 1538,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          162,
+          4
+        ],
+        [
+          1,
+          108,
+          200,
+          5
+        ],
+        [
+          2,
+          null,
+          201,
+          5
+        ],
+        [
+          3,
+          86,
+          137,
+          3
+        ],
+        [
+          4,
+          null,
+          140,
+          3
+        ],
+        [
+          5,
+          118,
+          149,
+          4
+        ],
+        [
+          6,
+          null,
+          172,
+          4
+        ],
+        [
+          7,
+          null,
+          138,
+          3
+        ],
+        [
+          8,
+          null,
+          137,
+          3
+        ],
+        [
+          9,
+          140,
+          149,
+          4
+        ]
+      ],
+      "sha256": "58c040eccc3bc50de8ec76a9f795d814d8dd4689b98a68ad3f510bb7de6cdda5",
+      "seconds": 0.06399058399256319
+    },
+    {
+      "r": 6,
+      "s": 6,
+      "positive": false,
+      "vertices": 1946,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          180,
+          4
+        ],
+        [
+          1,
+          null,
+          167,
+          3
+        ],
+        [
+          2,
+          null,
+          227,
+          5
+        ],
+        [
+          3,
+          null,
+          203,
+          5
+        ],
+        [
+          4,
+          null,
+          156,
+          3
+        ],
+        [
+          5,
+          null,
+          179,
+          4
+        ],
+        [
+          6,
+          null,
+          192,
+          4
+        ],
+        [
+          7,
+          null,
+          156,
+          3
+        ],
+        [
+          8,
+          null,
+          155,
+          3
+        ],
+        [
+          9,
+          null,
+          203,
+          4
+        ]
+      ],
+      "sha256": "29836a2f4b75ea9c4e0429160464545b098dde8f76229b97f1fb80e332d6dacc",
+      "seconds": 0.07323508302215487
+    },
+    {
+      "r": 6,
+      "s": 7,
+      "positive": true,
+      "vertices": 2402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          134,
+          250,
+          6
+        ],
+        [
+          1,
+          null,
+          185,
+          3
+        ],
+        [
+          2,
+          134,
+          184,
+          3
+        ],
+        [
+          3,
+          null,
+          225,
+          5
+        ],
+        [
+          4,
+          108,
+          224,
+          5
+        ],
+        [
+          5,
+          null,
+          199,
+          4
+        ],
+        [
+          6,
+          148,
+          264,
+          6
+        ],
+        [
+          7,
+          null,
+          174,
+          3
+        ],
+        [
+          8,
+          null,
+          173,
+          3
+        ],
+        [
+          9,
+          null,
+          225,
+          4
+        ]
+      ],
+      "sha256": "7d852989af07d375c6be24b6ae323d00f47e628c28e131574610e1c9cf507c1d",
+      "seconds": 0.08910787501372397
+    },
+    {
+      "r": 6,
+      "s": 8,
+      "positive": false,
+      "vertices": 2906,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          274,
+          6
+        ],
+        [
+          1,
+          null,
+          203,
+          3
+        ],
+        [
+          2,
+          null,
+          202,
+          3
+        ],
+        [
+          3,
+          null,
+          247,
+          5
+        ],
+        [
+          4,
+          null,
+          246,
+          5
+        ],
+        [
+          5,
+          null,
+          219,
+          4
+        ],
+        [
+          6,
+          null,
+          290,
+          6
+        ],
+        [
+          7,
+          null,
+          192,
+          3
+        ],
+        [
+          8,
+          null,
+          191,
+          3
+        ],
+        [
+          9,
+          null,
+          247,
+          4
+        ]
+      ],
+      "sha256": "ddbf508bf9d84de30b741afead3094dda93c8882d43be7e58705e6515c63ba24",
+      "seconds": 0.10689499997533858
+    },
+    {
+      "r": 6,
+      "s": 9,
+      "positive": false,
+      "vertices": 3458,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          298,
+          6
+        ],
+        [
+          1,
+          null,
+          221,
+          3
+        ],
+        [
+          2,
+          null,
+          220,
+          3
+        ],
+        [
+          3,
+          null,
+          269,
+          5
+        ],
+        [
+          4,
+          null,
+          268,
+          5
+        ],
+        [
+          5,
+          null,
+          239,
+          4
+        ],
+        [
+          6,
+          null,
+          316,
+          6
+        ],
+        [
+          7,
+          null,
+          210,
+          3
+        ],
+        [
+          8,
+          null,
+          209,
+          3
+        ],
+        [
+          9,
+          null,
+          269,
+          4
+        ]
+      ],
+      "sha256": "72d98bcd2561af069fc8521797f163093ccf6697cb1639bf7b163e326e52c008",
+      "seconds": 0.13364241702947766
+    },
+    {
+      "r": 6,
+      "s": 10,
+      "positive": false,
+      "vertices": 4058,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          322,
+          6
+        ],
+        [
+          1,
+          null,
+          239,
+          3
+        ],
+        [
+          2,
+          null,
+          238,
+          3
+        ],
+        [
+          3,
+          null,
+          291,
+          5
+        ],
+        [
+          4,
+          null,
+          290,
+          5
+        ],
+        [
+          5,
+          null,
+          259,
+          4
+        ],
+        [
+          6,
+          null,
+          342,
+          6
+        ],
+        [
+          7,
+          null,
+          228,
+          3
+        ],
+        [
+          8,
+          null,
+          227,
+          3
+        ],
+        [
+          9,
+          null,
+          291,
+          4
+        ]
+      ],
+      "sha256": "ca8b2473cbb0897f721f8b7ed8d904bad9f6beb5c4154c64451bc6a89531fcd3",
+      "seconds": 0.1683334169210866
+    },
+    {
+      "r": 6,
+      "s": 11,
+      "positive": true,
+      "vertices": 4706,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          346,
+          6
+        ],
+        [
+          1,
+          null,
+          257,
+          3
+        ],
+        [
+          2,
+          null,
+          256,
+          3
+        ],
+        [
+          3,
+          292,
+          313,
+          5
+        ],
+        [
+          4,
+          null,
+          312,
+          5
+        ],
+        [
+          5,
+          null,
+          279,
+          4
+        ],
+        [
+          6,
+          null,
+          368,
+          6
+        ],
+        [
+          7,
+          null,
+          246,
+          3
+        ],
+        [
+          8,
+          null,
+          245,
+          3
+        ],
+        [
+          9,
+          null,
+          313,
+          4
+        ]
+      ],
+      "sha256": "51b09b6a1b86b0c9d5bd523e9758b9b77382253203feea32e9360c5e95b7bad4",
+      "seconds": 0.2015619589947164
+    },
+    {
+      "r": 6,
+      "s": 12,
+      "positive": false,
+      "vertices": 5402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          370,
+          6
+        ],
+        [
+          1,
+          null,
+          275,
+          3
+        ],
+        [
+          2,
+          null,
+          274,
+          3
+        ],
+        [
+          3,
+          null,
+          479,
+          7
+        ],
+        [
+          4,
+          null,
+          334,
+          5
+        ],
+        [
+          5,
+          null,
+          299,
+          4
+        ],
+        [
+          6,
+          null,
+          394,
+          6
+        ],
+        [
+          7,
+          null,
+          264,
+          3
+        ],
+        [
+          8,
+          null,
+          263,
+          3
+        ],
+        [
+          9,
+          null,
+          335,
+          4
+        ]
+      ],
+      "sha256": "0b2f90b4b3e3303963b2651b6ba86ea44414cd5c9826ab92f2753e7d5be954e5",
+      "seconds": 0.18883166695013642
+    },
+    {
+      "r": 7,
+      "s": 1,
+      "positive": true,
+      "vertices": 488,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          34,
+          91,
+          4
+        ],
+        [
+          1,
+          null,
+          76,
+          3
+        ],
+        [
+          2,
+          36,
+          73,
+          3
+        ],
+        [
+          3,
+          null,
+          98,
+          4
+        ],
+        [
+          5,
+          null,
+          78,
+          4
+        ],
+        [
+          6,
+          36,
+          93,
+          4
+        ],
+        [
+          8,
+          36,
+          73,
+          3
+        ],
+        [
+          9,
+          null,
+          94,
+          4
+        ]
+      ],
+      "sha256": "7727a11dd79547c5aec4208a5d0c9c81815c74e2162556e6ae4c5d90230ae991",
+      "seconds": 0.015084917075000703
+    },
+    {
+      "r": 7,
+      "s": 2,
+      "positive": true,
+      "vertices": 728,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          113,
+          4
+        ],
+        [
+          1,
+          null,
+          96,
+          3
+        ],
+        [
+          2,
+          null,
+          93,
+          3
+        ],
+        [
+          3,
+          124,
+          126,
+          5
+        ],
+        [
+          4,
+          null,
+          123,
+          4
+        ],
+        [
+          5,
+          null,
+          100,
+          4
+        ],
+        [
+          6,
+          null,
+          117,
+          4
+        ],
+        [
+          7,
+          null,
+          92,
+          3
+        ],
+        [
+          8,
+          null,
+          91,
+          3
+        ],
+        [
+          9,
+          null,
+          118,
+          4
+        ]
+      ],
+      "sha256": "baf763e52c9a6a57fb1dbdc4156f35719db22152ff98e5707fe1804dff06dd32",
+      "seconds": 0.028544417000375688
+    },
+    {
+      "r": 7,
+      "s": 3,
+      "positive": false,
+      "vertices": 1016,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          135,
+          4
+        ],
+        [
+          1,
+          null,
+          116,
+          3
+        ],
+        [
+          2,
+          null,
+          113,
+          3
+        ],
+        [
+          3,
+          null,
+          115,
+          3
+        ],
+        [
+          4,
+          null,
+          148,
+          5
+        ],
+        [
+          5,
+          null,
+          122,
+          4
+        ],
+        [
+          6,
+          null,
+          141,
+          4
+        ],
+        [
+          7,
+          null,
+          110,
+          3
+        ],
+        [
+          8,
+          null,
+          109,
+          3
+        ],
+        [
+          9,
+          null,
+          142,
+          4
+        ]
+      ],
+      "sha256": "fccb0ff5ed71e2b8ce0242d5a31caae8e6aadabe6a63dec184eea4e80f6978f6",
+      "seconds": 0.02498295798432082
+    },
+    {
+      "r": 7,
+      "s": 4,
+      "positive": false,
+      "vertices": 1352,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          156,
+          4
+        ],
+        [
+          1,
+          null,
+          186,
+          5
+        ],
+        [
+          2,
+          null,
+          133,
+          3
+        ],
+        [
+          3,
+          null,
+          131,
+          3
+        ],
+        [
+          4,
+          null,
+          134,
+          3
+        ],
+        [
+          5,
+          null,
+          141,
+          4
+        ],
+        [
+          6,
+          null,
+          164,
+          4
+        ],
+        [
+          7,
+          null,
+          128,
+          3
+        ],
+        [
+          8,
+          null,
+          127,
+          3
+        ],
+        [
+          9,
+          null,
+          163,
+          4
+        ]
+      ],
+      "sha256": "412ee33b9c8ab75c80b7c65095427b6fe8cfa527b5ba44f1229d5531ad085c1a",
+      "seconds": 0.05411316698882729
+    },
+    {
+      "r": 7,
+      "s": 5,
+      "positive": false,
+      "vertices": 1736,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          174,
+          4
+        ],
+        [
+          1,
+          null,
+          212,
+          5
+        ],
+        [
+          2,
+          null,
+          213,
+          5
+        ],
+        [
+          3,
+          null,
+          147,
+          3
+        ],
+        [
+          4,
+          null,
+          150,
+          3
+        ],
+        [
+          5,
+          null,
+          159,
+          4
+        ],
+        [
+          6,
+          null,
+          184,
+          4
+        ],
+        [
+          7,
+          null,
+          146,
+          3
+        ],
+        [
+          8,
+          null,
+          145,
+          3
+        ],
+        [
+          9,
+          null,
+          183,
+          4
+        ]
+      ],
+      "sha256": "048b8586919dbd83b6067eb9aace0b2f9c3a1d74843a70c9e15a95b731f889ee",
+      "seconds": 0.07868745899759233
+    },
+    {
+      "r": 7,
+      "s": 6,
+      "positive": true,
+      "vertices": 2168,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          192,
+          4
+        ],
+        [
+          1,
+          128,
+          238,
+          5
+        ],
+        [
+          2,
+          null,
+          239,
+          5
+        ],
+        [
+          3,
+          102,
+          163,
+          3
+        ],
+        [
+          4,
+          null,
+          166,
+          3
+        ],
+        [
+          5,
+          140,
+          177,
+          4
+        ],
+        [
+          6,
+          null,
+          204,
+          4
+        ],
+        [
+          7,
+          null,
+          164,
+          3
+        ],
+        [
+          8,
+          null,
+          163,
+          3
+        ],
+        [
+          9,
+          166,
+          177,
+          4
+        ]
+      ],
+      "sha256": "b0ff4b792f02c659e4ba09b775b3c3ec59f1822ef7f2bdf87ef546cb4fb9be8e",
+      "seconds": 0.09079833293799311
+    },
+    {
+      "r": 7,
+      "s": 7,
+      "positive": false,
+      "vertices": 2648,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          210,
+          4
+        ],
+        [
+          1,
+          null,
+          195,
+          3
+        ],
+        [
+          2,
+          null,
+          265,
+          5
+        ],
+        [
+          3,
+          null,
+          237,
+          5
+        ],
+        [
+          4,
+          null,
+          182,
+          3
+        ],
+        [
+          5,
+          null,
+          209,
+          4
+        ],
+        [
+          6,
+          null,
+          224,
+          4
+        ],
+        [
+          7,
+          null,
+          182,
+          3
+        ],
+        [
+          8,
+          null,
+          181,
+          3
+        ],
+        [
+          9,
+          null,
+          237,
+          4
+        ]
+      ],
+      "sha256": "a3ff8297606ba8be2de5db067d5a61b1a15b7ffc95099c9aad6e1e0dd46a3e96",
+      "seconds": 0.0783255830174312
+    },
+    {
+      "r": 7,
+      "s": 8,
+      "positive": true,
+      "vertices": 3176,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          154,
+          288,
+          6
+        ],
+        [
+          1,
+          null,
+          213,
+          3
+        ],
+        [
+          2,
+          154,
+          212,
+          3
+        ],
+        [
+          3,
+          null,
+          259,
+          5
+        ],
+        [
+          4,
+          124,
+          258,
+          5
+        ],
+        [
+          5,
+          null,
+          229,
+          4
+        ],
+        [
+          6,
+          170,
+          304,
+          6
+        ],
+        [
+          7,
+          null,
+          200,
+          3
+        ],
+        [
+          8,
+          null,
+          199,
+          3
+        ],
+        [
+          9,
+          null,
+          259,
+          4
+        ]
+      ],
+      "sha256": "15498694d8b8988dfd31a2731d02a435834c5ec6814a43292e8ec7dd03804ad6",
+      "seconds": 0.12485583394300193
+    },
+    {
+      "r": 7,
+      "s": 9,
+      "positive": false,
+      "vertices": 3752,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          312,
+          6
+        ],
+        [
+          1,
+          null,
+          231,
+          3
+        ],
+        [
+          2,
+          null,
+          230,
+          3
+        ],
+        [
+          3,
+          null,
+          281,
+          5
+        ],
+        [
+          4,
+          null,
+          280,
+          5
+        ],
+        [
+          5,
+          null,
+          249,
+          4
+        ],
+        [
+          6,
+          null,
+          330,
+          6
+        ],
+        [
+          7,
+          null,
+          218,
+          3
+        ],
+        [
+          8,
+          null,
+          217,
+          3
+        ],
+        [
+          9,
+          null,
+          281,
+          4
+        ]
+      ],
+      "sha256": "d9b5cee852f9cffd0896773c130e4a4ad41896d5f3c5ed7833081daf1ed76277",
+      "seconds": 0.14066204195842147
+    },
+    {
+      "r": 7,
+      "s": 10,
+      "positive": false,
+      "vertices": 4376,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          336,
+          6
+        ],
+        [
+          1,
+          null,
+          249,
+          3
+        ],
+        [
+          2,
+          null,
+          248,
+          3
+        ],
+        [
+          3,
+          null,
+          303,
+          5
+        ],
+        [
+          4,
+          null,
+          302,
+          5
+        ],
+        [
+          5,
+          null,
+          269,
+          4
+        ],
+        [
+          6,
+          null,
+          356,
+          6
+        ],
+        [
+          7,
+          null,
+          236,
+          3
+        ],
+        [
+          8,
+          null,
+          235,
+          3
+        ],
+        [
+          9,
+          null,
+          303,
+          4
+        ]
+      ],
+      "sha256": "49c4753990e59ada480e6aa8415f91159d6fe74d652a30bd9e882db93df5310d",
+      "seconds": 0.17361450009047985
+    },
+    {
+      "r": 7,
+      "s": 11,
+      "positive": false,
+      "vertices": 5048,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          360,
+          6
+        ],
+        [
+          1,
+          null,
+          267,
+          3
+        ],
+        [
+          2,
+          null,
+          266,
+          3
+        ],
+        [
+          3,
+          null,
+          325,
+          5
+        ],
+        [
+          4,
+          null,
+          324,
+          5
+        ],
+        [
+          5,
+          null,
+          289,
+          4
+        ],
+        [
+          6,
+          null,
+          382,
+          6
+        ],
+        [
+          7,
+          null,
+          254,
+          3
+        ],
+        [
+          8,
+          null,
+          253,
+          3
+        ],
+        [
+          9,
+          null,
+          325,
+          4
+        ]
+      ],
+      "sha256": "18cf230b81b84c45f09aa802917ae9cf85f0e66fa45890b4888a471e5b0e0e57",
+      "seconds": 0.24465120793320239
+    },
+    {
+      "r": 7,
+      "s": 12,
+      "positive": false,
+      "vertices": 5768,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          384,
+          6
+        ],
+        [
+          1,
+          null,
+          285,
+          3
+        ],
+        [
+          2,
+          null,
+          284,
+          3
+        ],
+        [
+          3,
+          null,
+          347,
+          5
+        ],
+        [
+          4,
+          null,
+          346,
+          5
+        ],
+        [
+          5,
+          null,
+          309,
+          4
+        ],
+        [
+          6,
+          null,
+          408,
+          6
+        ],
+        [
+          7,
+          null,
+          272,
+          3
+        ],
+        [
+          8,
+          null,
+          271,
+          3
+        ],
+        [
+          9,
+          null,
+          347,
+          4
+        ]
+      ],
+      "sha256": "ab90fa101739891fae38eeaf9d5da3f45da6ec080404adc975ef1ef41106599a",
+      "seconds": 0.22617862501647323
+    },
+    {
+      "r": 8,
+      "s": 1,
+      "positive": true,
+      "vertices": 602,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          38,
+          101,
+          4
+        ],
+        [
+          1,
+          null,
+          84,
+          3
+        ],
+        [
+          2,
+          40,
+          81,
+          3
+        ],
+        [
+          3,
+          null,
+          108,
+          4
+        ],
+        [
+          5,
+          null,
+          86,
+          4
+        ],
+        [
+          6,
+          40,
+          103,
+          4
+        ],
+        [
+          8,
+          40,
+          81,
+          3
+        ],
+        [
+          9,
+          null,
+          104,
+          4
+        ]
+      ],
+      "sha256": "55bc99acae9d84969869d08bc6f054e078d659a76d330d7b79a8ef738967a6a2",
+      "seconds": 0.021954166004434228
+    },
+    {
+      "r": 8,
+      "s": 2,
+      "positive": false,
+      "vertices": 866,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          123,
+          4
+        ],
+        [
+          1,
+          null,
+          104,
+          3
+        ],
+        [
+          2,
+          null,
+          101,
+          3
+        ],
+        [
+          3,
+          null,
+          136,
+          4
+        ],
+        [
+          4,
+          null,
+          133,
+          4
+        ],
+        [
+          5,
+          null,
+          108,
+          4
+        ],
+        [
+          6,
+          null,
+          127,
+          4
+        ],
+        [
+          7,
+          null,
+          100,
+          3
+        ],
+        [
+          8,
+          null,
+          99,
+          3
+        ],
+        [
+          9,
+          null,
+          128,
+          4
+        ]
+      ],
+      "sha256": "d95873dc8e9628f5b597dcd79b8b7c62de1f98c69b238cc4dfe3d3cc4cf693f8",
+      "seconds": 0.03225895809009671
+    },
+    {
+      "r": 8,
+      "s": 3,
+      "positive": true,
+      "vertices": 1178,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          145,
+          4
+        ],
+        [
+          1,
+          null,
+          124,
+          3
+        ],
+        [
+          2,
+          null,
+          121,
+          3
+        ],
+        [
+          3,
+          null,
+          161,
+          5
+        ],
+        [
+          4,
+          158,
+          160,
+          5
+        ],
+        [
+          5,
+          null,
+          130,
+          4
+        ],
+        [
+          6,
+          null,
+          151,
+          4
+        ],
+        [
+          7,
+          null,
+          118,
+          3
+        ],
+        [
+          8,
+          null,
+          117,
+          3
+        ],
+        [
+          9,
+          null,
+          152,
+          4
+        ]
+      ],
+      "sha256": "3d171da8c1a94a863ac7b66f947c8abb40855ac50a601e5dd64813abf19121ca",
+      "seconds": 0.04137399990577251
+    },
+    {
+      "r": 8,
+      "s": 4,
+      "positive": false,
+      "vertices": 1538,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          167,
+          4
+        ],
+        [
+          1,
+          null,
+          144,
+          3
+        ],
+        [
+          2,
+          null,
+          141,
+          3
+        ],
+        [
+          3,
+          null,
+          141,
+          3
+        ],
+        [
+          4,
+          null,
+          144,
+          3
+        ],
+        [
+          5,
+          null,
+          151,
+          4
+        ],
+        [
+          6,
+          null,
+          175,
+          4
+        ],
+        [
+          7,
+          null,
+          136,
+          3
+        ],
+        [
+          8,
+          null,
+          135,
+          3
+        ],
+        [
+          9,
+          null,
+          175,
+          4
+        ]
+      ],
+      "sha256": "0b2812e6733cec44aed4e3e70e1699daba5e45d8b82841f8af7a1ff4844ebadf",
+      "seconds": 0.06037929200101644
+    },
+    {
+      "r": 8,
+      "s": 5,
+      "positive": false,
+      "vertices": 1946,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          186,
+          4
+        ],
+        [
+          1,
+          null,
+          224,
+          5
+        ],
+        [
+          2,
+          null,
+          225,
+          5
+        ],
+        [
+          3,
+          null,
+          157,
+          3
+        ],
+        [
+          4,
+          null,
+          160,
+          3
+        ],
+        [
+          5,
+          null,
+          169,
+          4
+        ],
+        [
+          6,
+          null,
+          196,
+          4
+        ],
+        [
+          7,
+          null,
+          154,
+          3
+        ],
+        [
+          8,
+          null,
+          153,
+          3
+        ],
+        [
+          9,
+          null,
+          195,
+          4
+        ]
+      ],
+      "sha256": "72759904f2ef3a92f400fe505b8583fe6b199a4c6b58eb1dca97af341dc9fd51",
+      "seconds": 0.0842272499576211
+    },
+    {
+      "r": 8,
+      "s": 6,
+      "positive": false,
+      "vertices": 2402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          204,
+          4
+        ],
+        [
+          1,
+          null,
+          250,
+          5
+        ],
+        [
+          2,
+          null,
+          251,
+          5
+        ],
+        [
+          3,
+          null,
+          173,
+          3
+        ],
+        [
+          4,
+          null,
+          176,
+          3
+        ],
+        [
+          5,
+          null,
+          187,
+          4
+        ],
+        [
+          6,
+          null,
+          216,
+          4
+        ],
+        [
+          7,
+          null,
+          172,
+          3
+        ],
+        [
+          8,
+          null,
+          171,
+          3
+        ],
+        [
+          9,
+          null,
+          215,
+          4
+        ]
+      ],
+      "sha256": "5492bcc5f7e0f579a716eafa90bf1f044b1b4b68ff6b4416dac909dc31694fcc",
+      "seconds": 0.09245716594159603
+    },
+    {
+      "r": 8,
+      "s": 7,
+      "positive": true,
+      "vertices": 2906,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          222,
+          4
+        ],
+        [
+          1,
+          148,
+          276,
+          5
+        ],
+        [
+          2,
+          null,
+          277,
+          5
+        ],
+        [
+          3,
+          118,
+          189,
+          3
+        ],
+        [
+          4,
+          null,
+          192,
+          3
+        ],
+        [
+          5,
+          162,
+          205,
+          4
+        ],
+        [
+          6,
+          null,
+          236,
+          4
+        ],
+        [
+          7,
+          null,
+          190,
+          3
+        ],
+        [
+          8,
+          null,
+          189,
+          3
+        ],
+        [
+          9,
+          192,
+          205,
+          4
+        ]
+      ],
+      "sha256": "2bfcc7066b5867955cbe64e7a93e691baff02d71142e0117f779cc1c73996218",
+      "seconds": 0.09559441590681672
+    },
+    {
+      "r": 8,
+      "s": 8,
+      "positive": false,
+      "vertices": 3458,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          240,
+          4
+        ],
+        [
+          1,
+          null,
+          223,
+          3
+        ],
+        [
+          2,
+          null,
+          303,
+          5
+        ],
+        [
+          3,
+          null,
+          271,
+          5
+        ],
+        [
+          4,
+          null,
+          208,
+          3
+        ],
+        [
+          5,
+          null,
+          239,
+          4
+        ],
+        [
+          6,
+          null,
+          256,
+          4
+        ],
+        [
+          7,
+          null,
+          208,
+          3
+        ],
+        [
+          8,
+          null,
+          207,
+          3
+        ],
+        [
+          9,
+          null,
+          271,
+          4
+        ]
+      ],
+      "sha256": "86fe36391718aa3ede9810151722b72aac5275186a432f1dfc048dcb8e41175a",
+      "seconds": 0.1151812500320375
+    },
+    {
+      "r": 8,
+      "s": 9,
+      "positive": true,
+      "vertices": 4058,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          174,
+          326,
+          6
+        ],
+        [
+          1,
+          null,
+          241,
+          3
+        ],
+        [
+          2,
+          174,
+          240,
+          3
+        ],
+        [
+          3,
+          null,
+          293,
+          5
+        ],
+        [
+          4,
+          140,
+          292,
+          5
+        ],
+        [
+          5,
+          null,
+          259,
+          4
+        ],
+        [
+          6,
+          192,
+          344,
+          6
+        ],
+        [
+          7,
+          null,
+          226,
+          3
+        ],
+        [
+          8,
+          null,
+          225,
+          3
+        ],
+        [
+          9,
+          null,
+          293,
+          4
+        ]
+      ],
+      "sha256": "9e4851ad2f25bd330083f06b472f07601388d639a5e21c699b74f82247187058",
+      "seconds": 0.17554087494499981
+    },
+    {
+      "r": 8,
+      "s": 10,
+      "positive": false,
+      "vertices": 4706,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          350,
+          6
+        ],
+        [
+          1,
+          null,
+          259,
+          3
+        ],
+        [
+          2,
+          null,
+          258,
+          3
+        ],
+        [
+          3,
+          null,
+          315,
+          5
+        ],
+        [
+          4,
+          null,
+          314,
+          5
+        ],
+        [
+          5,
+          null,
+          279,
+          4
+        ],
+        [
+          6,
+          null,
+          370,
+          6
+        ],
+        [
+          7,
+          null,
+          244,
+          3
+        ],
+        [
+          8,
+          null,
+          243,
+          3
+        ],
+        [
+          9,
+          null,
+          315,
+          4
+        ]
+      ],
+      "sha256": "ec1157dbbdd1bf1d950ae31a2499bd85f8fef1d0087eab3c13e71461b948d323",
+      "seconds": 0.20729454094544053
+    },
+    {
+      "r": 8,
+      "s": 11,
+      "positive": false,
+      "vertices": 5402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          374,
+          6
+        ],
+        [
+          1,
+          null,
+          277,
+          3
+        ],
+        [
+          2,
+          null,
+          276,
+          3
+        ],
+        [
+          3,
+          null,
+          337,
+          5
+        ],
+        [
+          4,
+          null,
+          336,
+          5
+        ],
+        [
+          5,
+          null,
+          299,
+          4
+        ],
+        [
+          6,
+          null,
+          396,
+          6
+        ],
+        [
+          7,
+          null,
+          262,
+          3
+        ],
+        [
+          8,
+          null,
+          261,
+          3
+        ],
+        [
+          9,
+          null,
+          337,
+          4
+        ]
+      ],
+      "sha256": "7e8ca69ed427837c7bdf43a936b21aa8a289e123d00c4e307178e40c38f7fd44",
+      "seconds": 0.21344716602470726
+    },
+    {
+      "r": 8,
+      "s": 12,
+      "positive": false,
+      "vertices": 6146,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          398,
+          6
+        ],
+        [
+          1,
+          null,
+          295,
+          3
+        ],
+        [
+          2,
+          null,
+          294,
+          3
+        ],
+        [
+          3,
+          null,
+          359,
+          5
+        ],
+        [
+          4,
+          null,
+          358,
+          5
+        ],
+        [
+          5,
+          null,
+          319,
+          4
+        ],
+        [
+          6,
+          null,
+          422,
+          6
+        ],
+        [
+          7,
+          null,
+          280,
+          3
+        ],
+        [
+          8,
+          null,
+          279,
+          3
+        ],
+        [
+          9,
+          null,
+          359,
+          4
+        ]
+      ],
+      "sha256": "6dcaf798c8aa4e3b2cd81c18c9dd5e9f3435f5ea662a05823a43c9e69030717d",
+      "seconds": 0.14738650002982467
+    },
+    {
+      "r": 9,
+      "s": 1,
+      "positive": true,
+      "vertices": 728,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          42,
+          111,
+          4
+        ],
+        [
+          1,
+          null,
+          92,
+          3
+        ],
+        [
+          2,
+          44,
+          89,
+          3
+        ],
+        [
+          3,
+          null,
+          118,
+          4
+        ],
+        [
+          5,
+          null,
+          94,
+          4
+        ],
+        [
+          6,
+          44,
+          113,
+          4
+        ],
+        [
+          8,
+          44,
+          89,
+          3
+        ],
+        [
+          9,
+          null,
+          114,
+          4
+        ]
+      ],
+      "sha256": "a5431b876cf7011d4de5b38cf1a1d3fa4c4f1ac01a28500ec8e12bebf9b2d525",
+      "seconds": 0.01622804196085781
+    },
+    {
+      "r": 9,
+      "s": 2,
+      "positive": false,
+      "vertices": 1016,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          133,
+          4
+        ],
+        [
+          1,
+          null,
+          112,
+          3
+        ],
+        [
+          2,
+          null,
+          109,
+          3
+        ],
+        [
+          3,
+          null,
+          146,
+          4
+        ],
+        [
+          4,
+          null,
+          143,
+          4
+        ],
+        [
+          5,
+          null,
+          116,
+          4
+        ],
+        [
+          6,
+          null,
+          137,
+          4
+        ],
+        [
+          7,
+          null,
+          108,
+          3
+        ],
+        [
+          8,
+          null,
+          107,
+          3
+        ],
+        [
+          9,
+          null,
+          138,
+          4
+        ]
+      ],
+      "sha256": "4b2782a106e589ad3ff87ad4a0162aa62b0596e653dfd2a01e5ce81a02f0a8f9",
+      "seconds": 0.02387824992183596
+    },
+    {
+      "r": 9,
+      "s": 3,
+      "positive": false,
+      "vertices": 1352,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          155,
+          4
+        ],
+        [
+          1,
+          null,
+          132,
+          3
+        ],
+        [
+          2,
+          null,
+          129,
+          3
+        ],
+        [
+          3,
+          null,
+          173,
+          5
+        ],
+        [
+          4,
+          null,
+          171,
+          5
+        ],
+        [
+          5,
+          null,
+          138,
+          4
+        ],
+        [
+          6,
+          null,
+          161,
+          4
+        ],
+        [
+          7,
+          null,
+          126,
+          3
+        ],
+        [
+          8,
+          null,
+          125,
+          3
+        ],
+        [
+          9,
+          null,
+          162,
+          4
+        ]
+      ],
+      "sha256": "61c66b88ebd045371d82188f4a6f62539ed6a4200822e6619fd8f42ab511b1f9",
+      "seconds": 0.03269991697743535
+    },
+    {
+      "r": 9,
+      "s": 4,
+      "positive": false,
+      "vertices": 1736,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          177,
+          4
+        ],
+        [
+          1,
+          null,
+          152,
+          3
+        ],
+        [
+          2,
+          null,
+          149,
+          3
+        ],
+        [
+          3,
+          null,
+          151,
+          3
+        ],
+        [
+          4,
+          null,
+          194,
+          5
+        ],
+        [
+          5,
+          null,
+          160,
+          4
+        ],
+        [
+          6,
+          null,
+          185,
+          4
+        ],
+        [
+          7,
+          null,
+          144,
+          3
+        ],
+        [
+          8,
+          null,
+          143,
+          3
+        ],
+        [
+          9,
+          null,
+          186,
+          4
+        ]
+      ],
+      "sha256": "a36d38a99907d011998636b3b4eb427f132ba95bb547d9756a982f3c359ed5a1",
+      "seconds": 0.04263595899101347
+    },
+    {
+      "r": 9,
+      "s": 5,
+      "positive": false,
+      "vertices": 2168,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          198,
+          4
+        ],
+        [
+          1,
+          null,
+          236,
+          5
+        ],
+        [
+          2,
+          null,
+          169,
+          3
+        ],
+        [
+          3,
+          null,
+          167,
+          3
+        ],
+        [
+          4,
+          null,
+          170,
+          3
+        ],
+        [
+          5,
+          null,
+          179,
+          4
+        ],
+        [
+          6,
+          null,
+          208,
+          4
+        ],
+        [
+          7,
+          null,
+          162,
+          3
+        ],
+        [
+          8,
+          null,
+          161,
+          3
+        ],
+        [
+          9,
+          null,
+          207,
+          4
+        ]
+      ],
+      "sha256": "96668222d74bae7a5d0505b7c1216321fbf04b122787c3577fcf11f72b4f1020",
+      "seconds": 0.05875658290460706
+    },
+    {
+      "r": 9,
+      "s": 6,
+      "positive": false,
+      "vertices": 2648,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          216,
+          4
+        ],
+        [
+          1,
+          null,
+          262,
+          5
+        ],
+        [
+          2,
+          null,
+          263,
+          5
+        ],
+        [
+          3,
+          null,
+          183,
+          3
+        ],
+        [
+          4,
+          null,
+          186,
+          3
+        ],
+        [
+          5,
+          null,
+          197,
+          4
+        ],
+        [
+          6,
+          null,
+          228,
+          4
+        ],
+        [
+          7,
+          null,
+          180,
+          3
+        ],
+        [
+          8,
+          null,
+          179,
+          3
+        ],
+        [
+          9,
+          null,
+          227,
+          4
+        ]
+      ],
+      "sha256": "eaa69ce05ff619afbd2e3bf100ca9e901f5ed8bd4e59539ab10525e1840b73f9",
+      "seconds": 0.12111858301796019
+    },
+    {
+      "r": 9,
+      "s": 7,
+      "positive": false,
+      "vertices": 3176,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          234,
+          4
+        ],
+        [
+          1,
+          null,
+          288,
+          5
+        ],
+        [
+          2,
+          null,
+          289,
+          5
+        ],
+        [
+          3,
+          null,
+          199,
+          3
+        ],
+        [
+          4,
+          null,
+          202,
+          3
+        ],
+        [
+          5,
+          null,
+          215,
+          4
+        ],
+        [
+          6,
+          null,
+          248,
+          4
+        ],
+        [
+          7,
+          null,
+          198,
+          3
+        ],
+        [
+          8,
+          null,
+          197,
+          3
+        ],
+        [
+          9,
+          null,
+          247,
+          4
+        ]
+      ],
+      "sha256": "4392d8819a78d8928ddc74df798a1e23ab337bfcaf2c4cd55e05d46ba184e915",
+      "seconds": 0.1286547500640154
+    },
+    {
+      "r": 9,
+      "s": 8,
+      "positive": true,
+      "vertices": 3752,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          252,
+          4
+        ],
+        [
+          1,
+          168,
+          314,
+          5
+        ],
+        [
+          2,
+          null,
+          315,
+          5
+        ],
+        [
+          3,
+          134,
+          215,
+          3
+        ],
+        [
+          4,
+          null,
+          218,
+          3
+        ],
+        [
+          5,
+          184,
+          233,
+          4
+        ],
+        [
+          6,
+          null,
+          268,
+          4
+        ],
+        [
+          7,
+          null,
+          216,
+          3
+        ],
+        [
+          8,
+          null,
+          215,
+          3
+        ],
+        [
+          9,
+          218,
+          233,
+          4
+        ]
+      ],
+      "sha256": "f6955cc39fc110e4ec663dfa547b488dc5a7881febfefe2552e945a2dec0a46b",
+      "seconds": 0.17431241692975163
+    },
+    {
+      "r": 9,
+      "s": 9,
+      "positive": false,
+      "vertices": 4376,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          270,
+          4
+        ],
+        [
+          1,
+          null,
+          251,
+          3
+        ],
+        [
+          2,
+          null,
+          341,
+          5
+        ],
+        [
+          3,
+          null,
+          305,
+          5
+        ],
+        [
+          4,
+          null,
+          234,
+          3
+        ],
+        [
+          5,
+          null,
+          269,
+          4
+        ],
+        [
+          6,
+          null,
+          288,
+          4
+        ],
+        [
+          7,
+          null,
+          234,
+          3
+        ],
+        [
+          8,
+          null,
+          233,
+          3
+        ],
+        [
+          9,
+          null,
+          305,
+          4
+        ]
+      ],
+      "sha256": "ed661b258d865fa4c03c8163ddb59c72a9ab36316141e551f9a3157ca7405f21",
+      "seconds": 0.17096983396913856
+    },
+    {
+      "r": 9,
+      "s": 10,
+      "positive": true,
+      "vertices": 5048,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          194,
+          364,
+          6
+        ],
+        [
+          1,
+          null,
+          269,
+          3
+        ],
+        [
+          2,
+          194,
+          268,
+          3
+        ],
+        [
+          3,
+          null,
+          327,
+          5
+        ],
+        [
+          4,
+          156,
+          326,
+          5
+        ],
+        [
+          5,
+          null,
+          289,
+          4
+        ],
+        [
+          6,
+          214,
+          384,
+          6
+        ],
+        [
+          7,
+          null,
+          252,
+          3
+        ],
+        [
+          8,
+          null,
+          251,
+          3
+        ],
+        [
+          9,
+          null,
+          327,
+          4
+        ]
+      ],
+      "sha256": "894a79a27c8e71863803a3f3b05df09597af8d4a62152e555bb1b0c36b93fb0b",
+      "seconds": 0.21432299993466586
+    },
+    {
+      "r": 9,
+      "s": 11,
+      "positive": false,
+      "vertices": 5768,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          388,
+          6
+        ],
+        [
+          1,
+          null,
+          287,
+          3
+        ],
+        [
+          2,
+          null,
+          286,
+          3
+        ],
+        [
+          3,
+          null,
+          349,
+          5
+        ],
+        [
+          4,
+          null,
+          348,
+          5
+        ],
+        [
+          5,
+          null,
+          309,
+          4
+        ],
+        [
+          6,
+          null,
+          410,
+          6
+        ],
+        [
+          7,
+          null,
+          270,
+          3
+        ],
+        [
+          8,
+          null,
+          269,
+          3
+        ],
+        [
+          9,
+          null,
+          349,
+          4
+        ]
+      ],
+      "sha256": "2a0650e6476416b20341ab378ae780a33133a694400f1a8a1938ce2961ee42dc",
+      "seconds": 0.31515154195949435
+    },
+    {
+      "r": 9,
+      "s": 12,
+      "positive": false,
+      "vertices": 6536,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          412,
+          6
+        ],
+        [
+          1,
+          null,
+          305,
+          3
+        ],
+        [
+          2,
+          null,
+          304,
+          3
+        ],
+        [
+          3,
+          null,
+          371,
+          5
+        ],
+        [
+          4,
+          null,
+          370,
+          5
+        ],
+        [
+          5,
+          null,
+          329,
+          4
+        ],
+        [
+          6,
+          null,
+          436,
+          6
+        ],
+        [
+          7,
+          null,
+          288,
+          3
+        ],
+        [
+          8,
+          null,
+          287,
+          3
+        ],
+        [
+          9,
+          null,
+          371,
+          4
+        ]
+      ],
+      "sha256": "d91e38cc8b4dd026e67504dd19ac3c1be95d314d14301d0728d43c03b0fa22e2",
+      "seconds": 0.2537890840321779
+    },
+    {
+      "r": 10,
+      "s": 1,
+      "positive": true,
+      "vertices": 866,
+      "starts": 96,
+      "representatives": 8,
+      "invalid_starts": [
+        4,
+        7
+      ],
+      "representative_hits": [
+        [
+          0,
+          46,
+          121,
+          4
+        ],
+        [
+          1,
+          null,
+          100,
+          3
+        ],
+        [
+          2,
+          48,
+          97,
+          3
+        ],
+        [
+          3,
+          null,
+          128,
+          4
+        ],
+        [
+          5,
+          null,
+          102,
+          4
+        ],
+        [
+          6,
+          48,
+          123,
+          4
+        ],
+        [
+          8,
+          48,
+          97,
+          3
+        ],
+        [
+          9,
+          null,
+          124,
+          4
+        ]
+      ],
+      "sha256": "3eb2611eb3192b465e5aefcc64aae236fa23499d004e676c27c8fa7ab694695d",
+      "seconds": 0.032356917043216527
+    },
+    {
+      "r": 10,
+      "s": 2,
+      "positive": false,
+      "vertices": 1178,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          143,
+          4
+        ],
+        [
+          1,
+          null,
+          120,
+          3
+        ],
+        [
+          2,
+          null,
+          117,
+          3
+        ],
+        [
+          3,
+          null,
+          156,
+          4
+        ],
+        [
+          4,
+          null,
+          153,
+          4
+        ],
+        [
+          5,
+          null,
+          124,
+          4
+        ],
+        [
+          6,
+          null,
+          147,
+          4
+        ],
+        [
+          7,
+          null,
+          116,
+          3
+        ],
+        [
+          8,
+          null,
+          115,
+          3
+        ],
+        [
+          9,
+          null,
+          148,
+          4
+        ]
+      ],
+      "sha256": "6d731b1e573d48f5a7ea6626537e041f2aea1f52e6e33ced5f4d07f3396b7c4e",
+      "seconds": 0.03836129198316485
+    },
+    {
+      "r": 10,
+      "s": 3,
+      "positive": true,
+      "vertices": 1538,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          165,
+          4
+        ],
+        [
+          1,
+          null,
+          140,
+          3
+        ],
+        [
+          2,
+          null,
+          137,
+          3
+        ],
+        [
+          3,
+          180,
+          184,
+          5
+        ],
+        [
+          4,
+          null,
+          181,
+          4
+        ],
+        [
+          5,
+          null,
+          146,
+          4
+        ],
+        [
+          6,
+          null,
+          171,
+          4
+        ],
+        [
+          7,
+          null,
+          134,
+          3
+        ],
+        [
+          8,
+          null,
+          133,
+          3
+        ],
+        [
+          9,
+          null,
+          172,
+          4
+        ]
+      ],
+      "sha256": "f9a58e68c14972b442e10e185a0980d723e791fdf7441263878e4a2232a9433f",
+      "seconds": 0.05874374997802079
+    },
+    {
+      "r": 10,
+      "s": 4,
+      "positive": false,
+      "vertices": 1946,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          187,
+          4
+        ],
+        [
+          1,
+          null,
+          160,
+          3
+        ],
+        [
+          2,
+          null,
+          157,
+          3
+        ],
+        [
+          3,
+          null,
+          207,
+          5
+        ],
+        [
+          4,
+          null,
+          206,
+          5
+        ],
+        [
+          5,
+          null,
+          168,
+          4
+        ],
+        [
+          6,
+          null,
+          195,
+          4
+        ],
+        [
+          7,
+          null,
+          152,
+          3
+        ],
+        [
+          8,
+          null,
+          151,
+          3
+        ],
+        [
+          9,
+          null,
+          196,
+          4
+        ]
+      ],
+      "sha256": "7cbb0c579adfe8ad2718ec72d73e666b92a053bcc214d1e5cb94394eba33c698",
+      "seconds": 0.09519762499257922
+    },
+    {
+      "r": 10,
+      "s": 5,
+      "positive": false,
+      "vertices": 2402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          209,
+          4
+        ],
+        [
+          1,
+          null,
+          180,
+          3
+        ],
+        [
+          2,
+          null,
+          177,
+          3
+        ],
+        [
+          3,
+          null,
+          177,
+          3
+        ],
+        [
+          4,
+          null,
+          180,
+          3
+        ],
+        [
+          5,
+          null,
+          189,
+          4
+        ],
+        [
+          6,
+          null,
+          219,
+          4
+        ],
+        [
+          7,
+          null,
+          170,
+          3
+        ],
+        [
+          8,
+          null,
+          169,
+          3
+        ],
+        [
+          9,
+          null,
+          219,
+          4
+        ]
+      ],
+      "sha256": "25802d214f86e71d9c528e18f90b2d76efa9add06d916d4852c19fc7e401efd2",
+      "seconds": 0.10782012494746596
+    },
+    {
+      "r": 10,
+      "s": 6,
+      "positive": false,
+      "vertices": 2906,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          228,
+          4
+        ],
+        [
+          1,
+          null,
+          274,
+          5
+        ],
+        [
+          2,
+          null,
+          275,
+          5
+        ],
+        [
+          3,
+          null,
+          193,
+          3
+        ],
+        [
+          4,
+          null,
+          196,
+          3
+        ],
+        [
+          5,
+          null,
+          207,
+          4
+        ],
+        [
+          6,
+          null,
+          240,
+          4
+        ],
+        [
+          7,
+          null,
+          188,
+          3
+        ],
+        [
+          8,
+          null,
+          187,
+          3
+        ],
+        [
+          9,
+          null,
+          239,
+          4
+        ]
+      ],
+      "sha256": "45aa05abebd9574ff9ac2726c7414a54401d7262bb3a849e0bc1381cc84612c8",
+      "seconds": 0.1333179579814896
+    },
+    {
+      "r": 10,
+      "s": 7,
+      "positive": false,
+      "vertices": 3458,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          246,
+          4
+        ],
+        [
+          1,
+          null,
+          300,
+          5
+        ],
+        [
+          2,
+          null,
+          301,
+          5
+        ],
+        [
+          3,
+          null,
+          209,
+          3
+        ],
+        [
+          4,
+          null,
+          212,
+          3
+        ],
+        [
+          5,
+          null,
+          225,
+          4
+        ],
+        [
+          6,
+          null,
+          260,
+          4
+        ],
+        [
+          7,
+          null,
+          206,
+          3
+        ],
+        [
+          8,
+          null,
+          205,
+          3
+        ],
+        [
+          9,
+          null,
+          259,
+          4
+        ]
+      ],
+      "sha256": "1712d613815be71578c085f438692e299d00fae25d636f3d12ac051c5f5e28d4",
+      "seconds": 0.19758775003720075
+    },
+    {
+      "r": 10,
+      "s": 8,
+      "positive": false,
+      "vertices": 4058,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          264,
+          4
+        ],
+        [
+          1,
+          null,
+          326,
+          5
+        ],
+        [
+          2,
+          null,
+          327,
+          5
+        ],
+        [
+          3,
+          null,
+          225,
+          3
+        ],
+        [
+          4,
+          null,
+          228,
+          3
+        ],
+        [
+          5,
+          null,
+          243,
+          4
+        ],
+        [
+          6,
+          null,
+          280,
+          4
+        ],
+        [
+          7,
+          null,
+          224,
+          3
+        ],
+        [
+          8,
+          null,
+          223,
+          3
+        ],
+        [
+          9,
+          null,
+          279,
+          4
+        ]
+      ],
+      "sha256": "b3bb820cf31f41af3d95f87a4bdd387ca4de3d04bd487d523826d496944a51cd",
+      "seconds": 0.18333537504076958
+    },
+    {
+      "r": 10,
+      "s": 9,
+      "positive": true,
+      "vertices": 4706,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          282,
+          4
+        ],
+        [
+          1,
+          188,
+          352,
+          5
+        ],
+        [
+          2,
+          null,
+          353,
+          5
+        ],
+        [
+          3,
+          150,
+          241,
+          3
+        ],
+        [
+          4,
+          null,
+          244,
+          3
+        ],
+        [
+          5,
+          206,
+          261,
+          4
+        ],
+        [
+          6,
+          null,
+          300,
+          4
+        ],
+        [
+          7,
+          null,
+          242,
+          3
+        ],
+        [
+          8,
+          null,
+          241,
+          3
+        ],
+        [
+          9,
+          244,
+          261,
+          4
+        ]
+      ],
+      "sha256": "504e19f6aff7c2e89c854197080e6c8b826683e6bdfeb3a202b65514990deb6d",
+      "seconds": 0.22910304204560816
+    },
+    {
+      "r": 10,
+      "s": 10,
+      "positive": false,
+      "vertices": 5402,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          300,
+          4
+        ],
+        [
+          1,
+          null,
+          279,
+          3
+        ],
+        [
+          2,
+          null,
+          379,
+          5
+        ],
+        [
+          3,
+          null,
+          339,
+          5
+        ],
+        [
+          4,
+          null,
+          260,
+          3
+        ],
+        [
+          5,
+          null,
+          299,
+          4
+        ],
+        [
+          6,
+          null,
+          320,
+          4
+        ],
+        [
+          7,
+          null,
+          260,
+          3
+        ],
+        [
+          8,
+          null,
+          259,
+          3
+        ],
+        [
+          9,
+          null,
+          339,
+          4
+        ]
+      ],
+      "sha256": "afc2fb5dd8ea1e9d043c8d055f251eae2322b2327698292d455a2e9151ab40f2",
+      "seconds": 0.2712638749508187
+    },
+    {
+      "r": 10,
+      "s": 11,
+      "positive": true,
+      "vertices": 6146,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          214,
+          402,
+          6
+        ],
+        [
+          1,
+          null,
+          297,
+          3
+        ],
+        [
+          2,
+          214,
+          296,
+          3
+        ],
+        [
+          3,
+          null,
+          361,
+          5
+        ],
+        [
+          4,
+          172,
+          360,
+          5
+        ],
+        [
+          5,
+          null,
+          319,
+          4
+        ],
+        [
+          6,
+          236,
+          424,
+          6
+        ],
+        [
+          7,
+          null,
+          278,
+          3
+        ],
+        [
+          8,
+          null,
+          277,
+          3
+        ],
+        [
+          9,
+          null,
+          361,
+          4
+        ]
+      ],
+      "sha256": "46ef9a519a5a7643e17765ba118a6d35979af950f69bdbdba1348b7ef3810e0c",
+      "seconds": 0.21546175004914403
+    },
+    {
+      "r": 10,
+      "s": 12,
+      "positive": false,
+      "vertices": 6938,
+      "starts": 120,
+      "representatives": 10,
+      "invalid_starts": [],
+      "representative_hits": [
+        [
+          0,
+          null,
+          426,
+          6
+        ],
+        [
+          1,
+          null,
+          315,
+          3
+        ],
+        [
+          2,
+          null,
+          314,
+          3
+        ],
+        [
+          3,
+          null,
+          383,
+          5
+        ],
+        [
+          4,
+          null,
+          382,
+          5
+        ],
+        [
+          5,
+          null,
+          339,
+          4
+        ],
+        [
+          6,
+          null,
+          450,
+          6
+        ],
+        [
+          7,
+          null,
+          296,
+          3
+        ],
+        [
+          8,
+          null,
+          295,
+          3
+        ],
+        [
+          9,
+          null,
+          383,
+          4
+        ]
+      ],
+      "sha256": "d1938e1e9d7c961659f05a798f33c7c0a2e3841c8f00b230a7227d113a8165b1",
+      "seconds": 0.32771941693499684
+    }
+  ],
+  "seconds": 13.448390208999626,
+  "peak_rss_bytes": 51478528
+}

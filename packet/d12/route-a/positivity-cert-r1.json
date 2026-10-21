@@ -1,0 +1,123 @@
+[
+  {
+    "start": 0,
+    "lap_pairs_leaves": 3,
+    "lap_pairs_ok": true,
+    "pos": [
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -2
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      },
+      {
+        "extra": [
+          [
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      }
+    ]
+  },
+  {
+    "start": 3,
+    "skipped": true
+  },
+  {
+    "start": 4,
+    "lap_pairs_leaves": 3,
+    "lap_pairs_ok": true,
+    "pos": [
+      {
+        "extra": [
+          [
+            0,
+            2,
+            -1,
+            -2
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      },
+      {
+        "extra": [
+          [
+            0,
+            -2,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            -1,
+            -1
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      }
+    ]
+  },
+  {
+    "start": 8,
+    "lap_pairs_leaves": 6,
+    "lap_pairs_ok": true,
+    "pos": [
+      {
+        "extra": [
+          [
+            1,
+            1,
+            -1,
+            -3
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      },
+      {
+        "extra": [
+          [
+            -1,
+            -1,
+            1,
+            2
+          ]
+        ],
+        "leaves": 5,
+        "final_vs_laps": true,
+        "final_vs_transient": true,
+        "laps_vs_transient": true
+      }
+    ]
+  }
+]

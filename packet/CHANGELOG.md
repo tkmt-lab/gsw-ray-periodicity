@@ -1,3 +1,7 @@
+# 1.9.0 / article6.2
+
+Add the existing D12 two-route closed classification as one section and a supplementary certificate package, preserving all earlier mathematics and Lean proof scopes.
+
 # 1.8.0 / article6.1
 
 Receive E10 graph classification for r>=2 and all positive-ray periodicity including the formal r=1 route, preserving the separate verification record and earlier mathematical scopes.

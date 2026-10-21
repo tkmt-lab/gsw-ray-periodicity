@@ -1,3 +1,4 @@
+Current local candidate1.9.0 / article6.2.
 ## Current E10 proof scope (article6.1 / packet1.8.0)
 
 Classification: `ClaudeChallengeE10.classification` proves the graph iff for natural p,s>=1 and r>=2, with m=2r+s and p congruent to d+1 or d-1 modulo m for d in {0,r,r+s}. `ClaudeChallengeE10.main` proves actual-path eventual periodicity for every positive natural start and nonnegative natural slope, including r=1. That branch applies formal Theorem1a `ClaudeChallenge2.State.main_statement` after proving `Valid` and `TrianglesInCharts` on the E10 model; it uses no prose geometric bridge. It does not prove a closed r=1 classification. The general prose bridge and the separate r=1 sufficient conditions/converse remain unchanged. Named catalogue correspondence retains its statement-reader caveat.
@@ -8,7 +9,7 @@ Both listed E10 declarations, and only those listed E10 targets, share the coord
 
 The following earlier edition notes describe historical checkpoints; the current scope and counts are stated above.
 
-Current local candidate1.8.0 / article6.1; publication is separate under the author's decision.
+Historical checkpoint1.8.0 / article6.1; publication is separate under the author's decision.
 
 Historical candidate 1.7.0 / article 6.0: publication is performed separately by the coordinator under the author's decision. The authorization records below are inherited historical records; no upload is performed by this preparation.
 
@@ -43,3 +44,7 @@ The preceding O2 edition received graph absence for t,d>=2 and positive-natural-
 This edition receives D14 actual-path periodicity on all positive-natural rays without the general prose bridge. ClaudeChallengeD14.main is its ONLY Comparator target. The auxiliary d14_no_path proves absence r,s>=2, and pe_R1/pe_S1 prove boundary paths from 2 upwards; these are build/axiom-report records, not separate six-kernel targets. Existence at D14(1,1) is outside Lean. No new standalone iff, owner-confirmation procedure, human review or novelty promotion. R004 prose proof remains; the general prose bridge is unchanged. Current total 300 Lean files: 296 proof sources and four inert challenges (K3 one, C1 two, O2 two, D14 one placeholders). No current Lean, external-kernel or scientific execution. Read D14-STATEMENT-CHECK.md and d14-manifest.json.
 
 Article 6.0 presents mathematics and current proof scope. Read [VERIFICATION-RECORD.md](VERIFICATION-RECORD.md) for roles, independent-derivation limits, Comparator scope, correction history and the full list of moved passages. All 300 Lean sources and the thirty claim status values are inherited unchanged.
+
+## D12 addition, article 6.2 / packet 1.9.0
+
+Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.

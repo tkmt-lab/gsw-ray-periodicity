@@ -1,0 +1,5 @@
+# D12 supplement to article 6.2
+
+The full two-route argument is in proof-notes.tex. Route A contains symbolic region/cylinder certificates and their source checkers. Route B contains explicit strip proofs, affine certificates and source checkers. The atlas reference model supports the archived finite comparisons. The present advertised four packet commands check fingerprints and exact stored rational contradiction identities, not a fresh graph census or a replay of every historical checker. Original derivation scripts are included as provenance sources; their historical launch paths and resource guards are not advertised as portable commands.
+
+Neither route is Lean. Global geometry, catalogue correspondence, exact executor semantics, arbitrary strip/lap induction and global simplicity are prose obligations. Necessity uses external cyclic five-edge-connectivity. The verification record distinguishes derivation independence from failed strict blind outcome isolation. No human proof review or priority conclusion is supplied. These limitations are unchanged from draft v2.

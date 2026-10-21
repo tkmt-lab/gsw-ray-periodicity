@@ -1,0 +1,787 @@
+{
+  "status": "PUBLIC_DERIVATIVES",
+  "originals_included": false,
+  "records": [
+    {
+      "public": {
+        "path": "d12/route-a/arith_check.py",
+        "sha256": "febe66c684e206b8b6596d7f108b2ea54924d73f5b8b291e4d76e94889f48557",
+        "bytes": 1526
+      },
+      "original_sha256": "febe66c684e206b8b6596d7f108b2ea54924d73f5b8b291e4d76e94889f48557",
+      "original_bytes": 1526,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-main.json",
+        "sha256": "3c57dc9668c5a1d7f5ae7c20af468ff7c43aa5afd558c15afd3300e943617a9b",
+        "bytes": 89707
+      },
+      "original_sha256": "c4eadc1bfda8a17599bb0c3f7d59ec42fb26b31a9c2d73a81ae4a16c09f16553",
+      "original_bytes": 24438,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-rows12.json",
+        "sha256": "6b3eb994bbc9fe86152329d3ce18e4a31689131d98489887071812b13908bb60",
+        "bytes": 12387
+      },
+      "original_sha256": "eaf0389ff5c6628bc2ae6ce823b7b0645e77b38aee8fd786761e00c4fd362043",
+      "original_bytes": 3768,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w1-6.json",
+        "sha256": "00512d02b5288a969248759ad035940556534e3f182573184eb2ca5cb63f8881",
+        "bytes": 169513
+      },
+      "original_sha256": "6c6a28d5acbe0fccdc5ebff4df3b0431ae99d2ac1a3842f8cd68587f71a73c46",
+      "original_bytes": 43182,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w1-9.json",
+        "sha256": "66a6ba653f53f1029208502f129659b3e0df640d8522fceac61f48c23a816abb",
+        "bytes": 257218
+      },
+      "original_sha256": "94ba42c4332ddac23fad3edefff1093335baee4928c068c10cab231fb82b8d58",
+      "original_bytes": 65805,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w13-17.json",
+        "sha256": "cca062032d08ccfd73f7e2525f786a8d487b4c367b6d09cc621dfab195a89816",
+        "bytes": 145017
+      },
+      "original_sha256": "b4e5cbe2d8f7980cd2a916d3616bcf3e788bc3a887d19e3d1ccc96cf215a4814",
+      "original_bytes": 37824,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w18-21.json",
+        "sha256": "0f0ac968cc6a6c97ff23ca5db812f3612e9c236b9161c8368e0fb8730ed938c3",
+        "bytes": 114076
+      },
+      "original_sha256": "b7e4c4bba2cdf0c360137e249c8806fd36c127314104787e5f73daf8d8701012",
+      "original_bytes": 29855,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w22-24.json",
+        "sha256": "9e8bade7e68c26768ac57799ec0eade206898213f94aa49f3f429bcb35cf2636",
+        "bytes": 83157
+      },
+      "original_sha256": "726db36bfaf2a60436ab7e47eee91f1288a09a3a718c6c7f0b29f01fe05b9781",
+      "original_bytes": 21908,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cert-w7-12.json",
+        "sha256": "bfab8b4202371b937a65150b5b779e1e2ec2c5809b8cd59bbd14550563309de5",
+        "bytes": 170614
+      },
+      "original_sha256": "d39b6b7e9f053c883ced33d7fa4facbfc1b059e5a9a1a361bb280bd95dbd6742",
+      "original_bytes": 44283,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cylinders-cert-r1.json",
+        "sha256": "9199d5b7aa6af7eddb940ad5cf052d317b214d4be37ac571e8031dd897989953",
+        "bytes": 4645
+      },
+      "original_sha256": "58f31a789492e25bc4ce350599a2bcc3fa7ba02edfb81793fbf15fb091c669ab",
+      "original_bytes": 3440,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cylinders-cert-r2.json",
+        "sha256": "6fc4082fa9c9a913b7195312e64757ec04350195d93806a3720274f08d4848c9",
+        "bytes": 8543
+      },
+      "original_sha256": "2d9456613e599852e72b1644ec70ab0edf25046d029061bbe2595121adb88da6",
+      "original_bytes": 6044,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cylinders-cert.json",
+        "sha256": "0e004e741b171437f6835d0d5a7eadbb6f94267402d13689e4e8edc2b5785d36",
+        "bytes": 33881
+      },
+      "original_sha256": "bea9e18139ed2d1bd68e5bb1a5d4c18d83d6634969b7bfe35ba4216857870d6a",
+      "original_bytes": 22634,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cylinders.py",
+        "sha256": "4542e1da388f0876d66c277610b0f2856433fea882c7a6e7458b8d7d2911546b",
+        "bytes": 4720
+      },
+      "original_sha256": "4542e1da388f0876d66c277610b0f2856433fea882c7a6e7458b8d7d2911546b",
+      "original_bytes": 4720,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/cylinders_check.py",
+        "sha256": "28ebd54fbe9a5bbb1bbfa4fe48619baba06081fcc989b6645b79875ddfbe9572",
+        "bytes": 1930
+      },
+      "original_sha256": "28ebd54fbe9a5bbb1bbfa4fe48619baba06081fcc989b6645b79875ddfbe9572",
+      "original_bytes": 1930,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/d12walk.py",
+        "sha256": "6c349037466d9476494034b494a5e4b4b3fdabb4f4a4838859e1a8af4e4c7fbb",
+        "bytes": 6837
+      },
+      "original_sha256": "f03871282a46dbaa426ccc1c55a8b6f446d503c039e05cc1e3602ab64347ade9",
+      "original_bytes": 6858,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/discovery-r1-40-s1-40.jsonl.gz",
+        "sha256": "0ec04d11c69874b58aaa993b4ac1a582a6de9a5f339c98cb912abd65bc6b0c5c",
+        "bytes": 80927
+      },
+      "original_sha256": "76b04dc530c6d90ade383066a99109ebaff8511dc74d2556e8636fbc2d85ea6b",
+      "original_bytes": 83746,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/holdout-295.jsonl.gz",
+        "sha256": "fd64dc35ece210d43a8e7b6bdb6f7018e2387f7e8d30c0350bf746d1629e90f4",
+        "bytes": 19906
+      },
+      "original_sha256": "4d1505911b47b20c4ac2f9ff26ad7c11ac3af72b0e35079faeafc05261baceca",
+      "original_bytes": 20254,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/holdout-result-2026-10-19.json",
+        "sha256": "83b90090e7e19a28f1c004b7a5b259b69940aeb32f8803fc1a4e3661f47bd1dd",
+        "bytes": 590
+      },
+      "original_sha256": "0b6ffb566d6df9748baccd194d20e58a528a2f3b120b4c40a97bc7f2d43d01f3",
+      "original_bytes": 518,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/lap.py",
+        "sha256": "429bbc83de1b73f1d1be92d83c29f9e3c8e126eea7d57033b6260fe310dd319e",
+        "bytes": 3400
+      },
+      "original_sha256": "429bbc83de1b73f1d1be92d83c29f9e3c8e126eea7d57033b6260fe310dd319e",
+      "original_bytes": 3400,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/positivity-cert-r1.json",
+        "sha256": "aa7995591206548ea5418420b3ec67108c258f00d4d3d84fb22e20c03c66a017",
+        "bytes": 2032
+      },
+      "original_sha256": "fdcf3e00bdb6e1f8e23792e1e6b9a3d2dc760bc8aaca7ac1d5ab825a8ac0a485",
+      "original_bytes": 1537,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/positivity-cert-r2.json",
+        "sha256": "26effdced33fe8b728e0b708df0c13b820c96709e97069cd835acfb9e9f6d3e0",
+        "bytes": 3453
+      },
+      "original_sha256": "ec65c228d434e13e325bd5d7c0dbc1d14ed0211a3d296d9ed135ecaee5e831ff",
+      "original_bytes": 2484,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/positivity-cert.json",
+        "sha256": "26effdced33fe8b728e0b708df0c13b820c96709e97069cd835acfb9e9f6d3e0",
+        "bytes": 3453
+      },
+      "original_sha256": "ec65c228d434e13e325bd5d7c0dbc1d14ed0211a3d296d9ed135ecaee5e831ff",
+      "original_bytes": 2484,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/positivity.py",
+        "sha256": "277b0b3d6051046fa8ebc07fe31b7fbd5c3ab10c16b0c8810a1fd87bfb05096e",
+        "bytes": 5725
+      },
+      "original_sha256": "277b0b3d6051046fa8ebc07fe31b7fbd5c3ab10c16b0c8810a1fd87bfb05096e",
+      "original_bytes": 5725,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/predict.py",
+        "sha256": "feaadf1323774d0754f8864b97ce0b8dfe9868446539ce18e3c9b357d8194f16",
+        "bytes": 3256
+      },
+      "original_sha256": "25e768aa88d5ed1a444a4b7a237434f9bfa97b8a6f30aa1c05146772b0b72cf2",
+      "original_bytes": 3259,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/preregistration-2026-10-19.md",
+        "sha256": "5cb17f3d289be824a6bd6179601deb2af124e54cb0268a944ce7c02a5ef5a131",
+        "bytes": 2692
+      },
+      "original_sha256": "ef612f910353af7632bf00ef0df902cc4132c8b4d9f45b591eb648bfb5cd8d0e",
+      "original_bytes": 2708,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/preregistration-wedges-2026-10-19.md",
+        "sha256": "4e1acef052a2fca25d3115edd64422c8ed681a00bbf8b98ebb0105dd9373ee10",
+        "bytes": 1088
+      },
+      "original_sha256": "0b6cffdffbe8652250c61d60292897cc3d4771236e03cc096e93d3ea77fcfb25",
+      "original_bytes": 1091,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/prove_regions.py",
+        "sha256": "4cc3d8ec855394815c138ff8843726aa9b9586b0411dd96fb6550dce7968f92d",
+        "bytes": 3222
+      },
+      "original_sha256": "4cc3d8ec855394815c138ff8843726aa9b9586b0411dd96fb6550dce7968f92d",
+      "original_bytes": 3222,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/report-2026-10-19.md",
+        "sha256": "a8e8e8ba34a427a4baa3a4aed790c3b13b75ca7636bd0343a8b614ad3a8ef75f",
+        "bytes": 8531
+      },
+      "original_sha256": "4535a9c89e03f4f10df0265a1b01db492bfb1757fa4bb9c3ed640da9e36f053d",
+      "original_bytes": 8548,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/sweep.py",
+        "sha256": "10c9362db17d4ef86b26057d49d13d36e73150bd500df801d05be414f8864654",
+        "bytes": 1412
+      },
+      "original_sha256": "10c9362db17d4ef86b26057d49d13d36e73150bd500df801d05be414f8864654",
+      "original_bytes": 1412,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/symdrive.py",
+        "sha256": "fdae04acf81bd9038b8cf0ec70212d99c98dd49f8a3011218b51b2403d56b005",
+        "bytes": 1806
+      },
+      "original_sha256": "fdae04acf81bd9038b8cf0ec70212d99c98dd49f8a3011218b51b2403d56b005",
+      "original_bytes": 1806,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/symmetry_check.py",
+        "sha256": "1dbd19f743fb3df101abf7ec4fa585ffb2129496e3864d3922047dc3198a5203",
+        "bytes": 1665
+      },
+      "original_sha256": "1dbd19f743fb3df101abf7ec4fa585ffb2129496e3864d3922047dc3198a5203",
+      "original_bytes": 1665,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/symwalk.py",
+        "sha256": "0ead0735ce8852ded3dee536fa1d09008cbc5f3f5da0dc304d1cf4b3a82c7dda",
+        "bytes": 18847
+      },
+      "original_sha256": "0ead0735ce8852ded3dee536fa1d09008cbc5f3f5da0dc304d1cf4b3a82c7dda",
+      "original_bytes": 18847,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/symwalk3.py",
+        "sha256": "51740dd3424bf723a6718d46081298e1133fdbaf7e67d680bb3c2053336605de",
+        "bytes": 18437
+      },
+      "original_sha256": "51740dd3424bf723a6718d46081298e1133fdbaf7e67d680bb3c2053336605de",
+      "original_bytes": 18437,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/symwalk4.py",
+        "sha256": "efacaf2c2fc1487acd8457d77f04f7a2b1ca37ca82b03942fefe515f04d2ffa5",
+        "bytes": 19623
+      },
+      "original_sha256": "efacaf2c2fc1487acd8457d77f04f7a2b1ca37ca82b03942fefe515f04d2ffa5",
+      "original_bytes": 19623,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/validate_mirror.py",
+        "sha256": "636a7543e3cf41e3cb64df301f04059c3216f54b4033fa314c8021b40b7f8fbe",
+        "bytes": 1093
+      },
+      "original_sha256": "0816ee7f3fbb57e8ddf836034fa000e95802dec93fa3338f683af01489fbc5b2",
+      "original_bytes": 1106,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/verify_all.sh",
+        "sha256": "46220db0bb63dd976f386ddccfc4ea6e57bf24e96c87a294608573fcbd40d7b4",
+        "bytes": 2005
+      },
+      "original_sha256": "ab9f1814157d1d178b8dc5fcac47e4d6e7baddb4658ec8f5001b289b0054ed7b",
+      "original_bytes": 2008,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-a/wedge-test-result.json",
+        "sha256": "2a6738fd3fdaec862b2e29b22eab74abbcd74ce7b2d6653af42b0a89fe7d1738",
+        "bytes": 2081
+      },
+      "original_sha256": "db8e28a8d3fe6e9d467d57ce84aea0050cc4a1800bca4fccf82bf85ea4aee632",
+      "original_bytes": 1765,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/atlas/reference_model.py",
+        "sha256": "f78782adc178d4bf466ebb3d0f11d138c4751db8637656ed6a20b54e19a0c2a7",
+        "bytes": 14247
+      },
+      "original_sha256": "57857f23abc0a45982b344a5000503ab077fd94a151681e046ba19397818f860",
+      "original_bytes": 14170,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/d12-classification-proof.md",
+        "sha256": "7e4dbd2887148a4288b15db547499f25a6d8b981bbea8953270701d8a848a496",
+        "bytes": 15107
+      },
+      "original_sha256": "7e4dbd2887148a4288b15db547499f25a6d8b981bbea8953270701d8a848a496",
+      "original_bytes": 15107,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/d12-classification-sufficiency.md",
+        "sha256": "32d98f9d49ac8870f392af75abd82df7baf57825a4022641724c8abf86bcfd03",
+        "bytes": 8198
+      },
+      "original_sha256": "32d98f9d49ac8870f392af75abd82df7baf57825a4022641724c8abf86bcfd03",
+      "original_bytes": 8198,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/d12-positive-proof.md",
+        "sha256": "c0d2e989c9385586b9d753500af770832e5bc9f2d6b628f47c033f21da011099",
+        "bytes": 8654
+      },
+      "original_sha256": "c0d2e989c9385586b9d753500af770832e5bc9f2d6b628f47c033f21da011099",
+      "original_bytes": 8654,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-boundary/candidates.json",
+        "sha256": "def6a0af48fe0afa9ca502385ff32c540450e30e652ef647eaac31566dcc23ef",
+        "bytes": 16582
+      },
+      "original_sha256": "def6a0af48fe0afa9ca502385ff32c540450e30e652ef647eaac31566dcc23ef",
+      "original_bytes": 16582,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-boundary/symbolic-check-v3.json",
+        "sha256": "8ed2f461d3d5d778b523326202de9e5e917a26ed984eaa90db1fc23f919e59e8",
+        "bytes": 337024
+      },
+      "original_sha256": "8ed2f461d3d5d778b523326202de9e5e917a26ed984eaa90db1fc23f919e59e8",
+      "original_bytes": 337024,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-classification-audit/summary-v2.json",
+        "sha256": "a2e44f72f738a613311e7811aad81a9e834050bb3a9c1ed19228e4b0620afa5d",
+        "bytes": 1513
+      },
+      "original_sha256": "244d4134f1162fba8838dd48f34361957067075a61df64d5f69bd8be4d052f20",
+      "original_bytes": 1403,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-classification-small/summary.json",
+        "sha256": "a875b9450166f753f0025b3ee22d250bfca3f6cad0db2fe54d852aab5a7c1629",
+        "bytes": 146190
+      },
+      "original_sha256": "a875b9450166f753f0025b3ee22d250bfca3f6cad0db2fe54d852aab5a7c1629",
+      "original_bytes": 146190,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-loops/symbolic-check.json",
+        "sha256": "ccfa82c73e32fedfea9cce9d1211ffecfe572d429dcd120a5c10770cb5a89fdc",
+        "bytes": 1585876
+      },
+      "original_sha256": "ccfa82c73e32fedfea9cce9d1211ffecfe572d429dcd120a5c10770cb5a89fdc",
+      "original_bytes": 1585876,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-positive/affine-certificates.json",
+        "sha256": "8f164778e587383861bdb1548f1b31a9616149ffcef22c5e9c80fc3d2b0ed30c",
+        "bytes": 117111
+      },
+      "original_sha256": "8f164778e587383861bdb1548f1b31a9616149ffcef22c5e9c80fc3d2b0ed30c",
+      "original_bytes": 117111,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-positive/joins.json",
+        "sha256": "8fd5620414fd988bab1b927c5bed8dc42c11a4e89b8750149ad7712470add503",
+        "bytes": 2171
+      },
+      "original_sha256": "8fd5620414fd988bab1b927c5bed8dc42c11a4e89b8750149ad7712470add503",
+      "original_bytes": 2171,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-positive-r2/affine-certificates.json",
+        "sha256": "2b0c7b7ecefcda2f1f23597297639ec67fd5f00c8731f1a2cc4cd8f7aef1a866",
+        "bytes": 117097
+      },
+      "original_sha256": "2b0c7b7ecefcda2f1f23597297639ec67fd5f00c8731f1a2cc4cd8f7aef1a866",
+      "original_bytes": 117097,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-positive-r2/joins.json",
+        "sha256": "8fd5620414fd988bab1b927c5bed8dc42c11a4e89b8750149ad7712470add503",
+        "bytes": 2171
+      },
+      "original_sha256": "8fd5620414fd988bab1b927c5bed8dc42c11a4e89b8750149ad7712470add503",
+      "original_bytes": 2171,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-reproduction/summary.json",
+        "sha256": "f02bcba8d011e74d165548cf9ab198c2c62188455eef1d9c32b02fc244ada256",
+        "bytes": 4017
+      },
+      "original_sha256": "b75df40c496d50001817f310ad5e7929218604194c3a0aee11e0aa261ad83b9e",
+      "original_bytes": 3885,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-short/candidates-v2.json",
+        "sha256": "3a87caa57d0e8049b9f0d957426a9e71a1d255fddee16eb1b02d1bccec17d821",
+        "bytes": 188129
+      },
+      "original_sha256": "3a87caa57d0e8049b9f0d957426a9e71a1d255fddee16eb1b02d1bccec17d821",
+      "original_bytes": 188129,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/evidence/d12-short/symbolic-check-v5.json",
+        "sha256": "743cfc9ded1367091e13d4e7779f803fbfdd94dc07b107499e373467137fa272",
+        "bytes": 3886115
+      },
+      "original_sha256": "743cfc9ded1367091e13d4e7779f803fbfdd94dc07b107499e373467137fa272",
+      "original_bytes": 3886115,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference. Historical file-path metadata is labelled recorded_source_identifier rather than a current packet reference."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/independence-014.md",
+        "sha256": "a0216b0940905b3f7ca9a25271f79425c8c0a256ee1d7177eba0636113a58df0",
+        "bytes": 1459
+      },
+      "original_sha256": "a0216b0940905b3f7ca9a25271f79425c8c0a256ee1d7177eba0636113a58df0",
+      "original_bytes": 1459,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/reproduce-016.md",
+        "sha256": "22ded4c399deb59f3ad7504bb45900f250e81a5b2b01ef950486c0f8e87f275b",
+        "bytes": 3761
+      },
+      "original_sha256": "ae8a7355bdd6e55435a5e45c7424c98f3dbbc89bd9d320fdd415930c3b39780f",
+      "original_bytes": 3759,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/affine2.py",
+        "sha256": "17022b7e04e4c63aa5807dda060097cb14cb82aa1bc3fe0d33787f0f18bd4a23",
+        "bytes": 3791
+      },
+      "original_sha256": "17022b7e04e4c63aa5807dda060097cb14cb82aa1bc3fe0d33787f0f18bd4a23",
+      "original_bytes": 3791,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/aligned_atlas.py",
+        "sha256": "1d73c9f78df806ddf63b17a9e73d44f674ab67cea0c5ff770ceaf228efa69719",
+        "bytes": 4429
+      },
+      "original_sha256": "1d73c9f78df806ddf63b17a9e73d44f674ab67cea0c5ff770ceaf228efa69719",
+      "original_bytes": 4429,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/aligned_surface.py",
+        "sha256": "d68d955ec63994d1edd2bebf28332e672d758a5b38a9409f74b5d5205d125009",
+        "bytes": 2732
+      },
+      "original_sha256": "d68d955ec63994d1edd2bebf28332e672d758a5b38a9409f74b5d5205d125009",
+      "original_bytes": 2732,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/audit_d12_classification.py",
+        "sha256": "804d0a6e47d4338ca75aaab46d2b9e733f64db69b9892943ef085f2707c0b361",
+        "bytes": 14164
+      },
+      "original_sha256": "804d0a6e47d4338ca75aaab46d2b9e733f64db69b9892943ef085f2707c0b361",
+      "original_bytes": 14164,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/b2.py",
+        "sha256": "70e90c68d0c075a618a7de2bbf75b546f77469df91740ad14647e23e13e76347",
+        "bytes": 4924
+      },
+      "original_sha256": "70e90c68d0c075a618a7de2bbf75b546f77469df91740ad14647e23e13e76347",
+      "original_bytes": 4924,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/check_d12_boundary.py",
+        "sha256": "0cd3df4d1fd37e9545482d5ffe38461b1fdb8fdd6c220307d45081aaeef7b896",
+        "bytes": 1846
+      },
+      "original_sha256": "0cd3df4d1fd37e9545482d5ffe38461b1fdb8fdd6c220307d45081aaeef7b896",
+      "original_bytes": 1846,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/check_d12_loops.py",
+        "sha256": "6b4639f21491bb914146dd98b3de4ebf5412ba19b3d882b699b3a3200c0ecb4b",
+        "bytes": 10287
+      },
+      "original_sha256": "6b4639f21491bb914146dd98b3de4ebf5412ba19b3d882b699b3a3200c0ecb4b",
+      "original_bytes": 10287,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/check_d12_short.py",
+        "sha256": "e88a3600f8ae09d097631d16bb46cbf68d2248de51ebe072b6c48f65eadaba68",
+        "bytes": 10355
+      },
+      "original_sha256": "e88a3600f8ae09d097631d16bb46cbf68d2248de51ebe072b6c48f65eadaba68",
+      "original_bytes": 10355,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12.py",
+        "sha256": "fed1ed2967fbd04c00eaf1eee6eaeb534efd9b36cc24e42624c52201e797baf3",
+        "bytes": 750
+      },
+      "original_sha256": "fed1ed2967fbd04c00eaf1eee6eaeb534efd9b36cc24e42624c52201e797baf3",
+      "original_bytes": 750,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12_affine2.py",
+        "sha256": "883db4ebdb22492ded203006c33fdb71181eb621bd785a5c4befe66612b6079a",
+        "bytes": 6429
+      },
+      "original_sha256": "883db4ebdb22492ded203006c33fdb71181eb621bd785a5c4befe66612b6079a",
+      "original_bytes": 6429,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12_affine3.py",
+        "sha256": "c57e95642589ed9c45c5731ae9b8735050a0413abc092629d95373efd231bf08",
+        "bytes": 6258
+      },
+      "original_sha256": "c57e95642589ed9c45c5731ae9b8735050a0413abc092629d95373efd231bf08",
+      "original_bytes": 6258,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12_affine_certificate.py",
+        "sha256": "17100b9bc11720d021ee23b76d53888e5c98f4fc12c02fcfe2d469848d0f9a01",
+        "bytes": 12294
+      },
+      "original_sha256": "17100b9bc11720d021ee23b76d53888e5c98f4fc12c02fcfe2d469848d0f9a01",
+      "original_bytes": 12294,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12_atlas_trace.py",
+        "sha256": "b97838784cfb897cbb6d5f70980aa9b2c5ee892d8a85d6365ff4fccb691ba026",
+        "bytes": 4034
+      },
+      "original_sha256": "b97838784cfb897cbb6d5f70980aa9b2c5ee892d8a85d6365ff4fccb691ba026",
+      "original_bytes": 4034,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/d12_witness.py",
+        "sha256": "e8ed276f1a737ef4d1fc21abfa87388743a8064866df784f386764631a2ca131",
+        "bytes": 1020
+      },
+      "original_sha256": "e8ed276f1a737ef4d1fc21abfa87388743a8064866df784f386764631a2ca131",
+      "original_bytes": 1020,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/graphs.py",
+        "sha256": "2a697338393306fe9e506c9387c7f591d6fb26d8e61f8dbdab4133099e60b5cc",
+        "bytes": 6076
+      },
+      "original_sha256": "7c3a0562371ef6540206e2786c031fc48aff4e2f50bf9afc991edaefdcb8ef3f",
+      "original_bytes": 6073,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/linear_farkas.py",
+        "sha256": "b2d12884b17d675f235d39d43650b61e4f0c5bcabebca5def9eed118158ec576",
+        "bytes": 2259
+      },
+      "original_sha256": "b2d12884b17d675f235d39d43650b61e4f0c5bcabebca5def9eed118158ec576",
+      "original_bytes": 2259,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/mac_memory_guard.py",
+        "sha256": "c415e008eb38f24015389f03eb13aafa9f71e7c6eed7a6fbb31afe9bfc4f8cb8",
+        "bytes": 3318
+      },
+      "original_sha256": "c415e008eb38f24015389f03eb13aafa9f71e7c6eed7a6fbb31afe9bfc4f8cb8",
+      "original_bytes": 3318,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/reproduce_d12_classification.py",
+        "sha256": "cdc8d9e5cc7083f2f3b8cd9d8841390652ddafb04ced6e41c3a5f5e9aa332ba8",
+        "bytes": 3965
+      },
+      "original_sha256": "cdc8d9e5cc7083f2f3b8cd9d8841390652ddafb04ced6e41c3a5f5e9aa332ba8",
+      "original_bytes": 3965,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/verify_d12_blocks.py",
+        "sha256": "0dbd4e6ceb4edd6a1099867a0498072765460e17334b639438554991b2074347",
+        "bytes": 6735
+      },
+      "original_sha256": "0dbd4e6ceb4edd6a1099867a0498072765460e17334b639438554991b2074347",
+      "original_bytes": 6735,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/route-b/src/verify_d12_blocks_r2.py",
+        "sha256": "d751ee7cf499be5f34bdbf25e4e3f749c60977dddd14a3b4e54371442ef166b9",
+        "bytes": 6772
+      },
+      "original_sha256": "d751ee7cf499be5f34bdbf25e4e3f749c60977dddd14a3b4e54371442ef166b9",
+      "original_bytes": 6772,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/proof-notes.tex",
+        "sha256": "cf289a00ec444dbcb12e9e0416975ce28b992b8d86e3d4dda9ed321ed2837a91",
+        "bytes": 31261
+      },
+      "original_sha256": "72c9d4c700d483015c59ba88d4e4563cc335a4e6564c4797ff92c23c0738e493",
+      "original_bytes": 31370,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained. Claim-ID display macro disabled for supplementary source."
+    },
+    {
+      "public": {
+        "path": "d12/VERIFICATION-RECORD.md",
+        "sha256": "685a2cce9ec7adaab72c94ddfc24b3b408ae0fd31983108159b9f3cbafd6e738",
+        "bytes": 25239
+      },
+      "original_sha256": "ae6316de08b5a48d96fb1bd8ca5a4bef8f3db9e2a236323f08c76eb6c2c8020c",
+      "original_bytes": 25217,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    },
+    {
+      "public": {
+        "path": "d12/provenance-reception.md",
+        "sha256": "f92f2fe7bb17882ea493699c362bc93cb33b664265211db47e9ba53b2c52fa42",
+        "bytes": 3798
+      },
+      "original_sha256": "94cd7f7242be190bb0723830f513e00e44c345c33540c40246e641c3264db951",
+      "original_bytes": 3792,
+      "transformation": "Neutral process identifiers and local path strings only; JSON formatting and gzip headers normalized. Mathematical expressions retained."
+    }
+  ],
+  "scope": "Only new D12 files; inherited redaction ledger remains separate."
+}

@@ -1,5 +1,5 @@
 {
-  "packet_version": "1.8.0",
+  "packet_version": "1.9.0",
   "status": "REDACTED_PUBLIC_DERIVATIVES",
   "originals_included": false,
   "proof_sources_changed": false,
@@ -73,5 +73,10 @@
       ]
     }
   ],
-  "change_scope": "No new privacy transformations. E10 exact sources/records plus article6.1 proof-scope update; old payloads unchanged."
+  "change_scope": "Earlier redacted derivatives unchanged. New D12 process-identifier/local-path transformations recorded separately in d12/derivatives.json.",
+  "D12_derivatives": {
+    "path": "d12/derivatives.json",
+    "sha256": "7ab815fbb9742309a64a604cdfa826fc98cc1ecd97015bd5438cb651789a9239",
+    "bytes": 40983
+  }
 }

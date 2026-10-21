@@ -22,3 +22,5 @@ Packet1.6.0 adds exact D14 proof/receipt copies and article 5.0, without new pri
 Packet 1.7.0 adds article 6.0 and VERIFICATION-RECORD.md by editorial separation, without new privacy substitutions. The earlier article 5.0 and all inherited proof/evidence payloads retain exact bytes. The inherited paper_bytes_changed=false field refers to privacy transformations, not to the addition of the new article version.
 
 Packet1.8.0 adds exact E10 source/record copies and article6.1 with its current proof-scope edits. No new privacy transformations. Earlier article/proof/evidence bytes preserved; editorial proof-scope edits are distinct from privacy substitutions.
+
+New D12 derivative mappings: d12/derivatives.json; prose identifiers and local paths neutralized, mathematical expressions retained. Earlier records and all Lean source bytes unchanged.

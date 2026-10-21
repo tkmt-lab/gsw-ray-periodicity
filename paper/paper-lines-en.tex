@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 6.1, 21 October 2026}
+\date{Version 6.2, 21 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -70,6 +70,10 @@ Corollary~\ref{cor:catalog} & Geometric decompositions and arithmetic; direct Le
 K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all five positive-natural ray results, including E10 $r=1$.\\
 Family boundaries & Lean explicit paths and finite checks & O2 paths on $(1,d)$, $d\ge3$, and $(t,1)$, $t\ge3$; D14 paths on $(1,s)$, $s\ge2$, and $(r,1)$, $r\ge2$. Small remaining boundary decisions are finite evidence.\\
 Other closed conditions and examples & Prose geometry, Lean predicate arithmetic, explicit witnesses and checkers & The domains and finite ranges specified in Sections~\ref{sec:conditions}, \ref{sec:arithmetic} and \ref{sec:finite}; C1/O2 IPR is prose.\\
+% D12-SCOPE-BEGIN
+D12 classification & Two prose/computer-assisted proof routes; no Lean & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\ref{sec:d12-classification}.\\
+D12 ray consequence & Theorem~\ref{thm:aligned} with prose correspondence; alternatively classification and arithmetic & Every eventually positive integer affine ray. No family-specific Lean proof of D12.\\
+% D12-SCOPE-END
 Fixed-oblique extension & Proof sketch & The four transfer obligations in Section~\ref{sec:extension}.\\
 \bottomrule
 \end{tabular}
@@ -531,8 +535,7 @@ For D12, the following partial branches apply:
 $\gcd(r,s)\ge2$ gives absence; $r\ge3$, $s=qr\pm1$, $q\ge1$
 gives existence by the separately derived simple witnesses. The
 additional $|r-3s|=1$ and $r\ge4s$ branches are construction and
-absence arguments with their stated geometric conditions. A full D12
-classification is the subject of a separate article.
+absence arguments with their stated geometric conditions. The full D12 classification is given in Section~\ref{sec:d12-classification}.
 
 \section{Arithmetic on affine rays and exact examples}\label{sec:arithmetic}
 \subsection{The determinant reduction}\label{lem:divisibility}
@@ -1017,8 +1020,143 @@ Moving to canonical representatives or allowing variable divisibility
 does not follow from raywise periodicity. These stronger global-definability questions remain separate. General E10 $r=1$ necessity, untranscribed
 families, all degenerations, human proof peer review, and a formal
 geometric-to-program pipeline are not completed here. A3 minimum,
-density and the IPR census belong to the first article. No new D12
-classification is asserted by this paper.
+density and the IPR census belong to the first article. The D12 classification in Section~\ref{sec:d12-classification} retains its two prose/computer-assisted proof bases.
+
+
+% D12-SECTION-BEGIN
+\section{A closed classification for the D12 family}\label{sec:d12-classification}
+The D12 member of Corollary~\ref{cor:catalog} also admits a closed
+condition. We use the positive integer parameters of the catalogue
+\cite{Graver}: put $L=r+2s$, so the carbon order is $12L^2$.
+One quotient convention takes two chart-tagged copies of
+\[
+ H_L=\{(x,y)\in\Z^2:-L\le x\le L,\quad 0\le y\le2L,
+                            \quad0\le x+y\le2L\}.
+\]
+In counterclockwise order its corners are
+$(0,0),(L,0),(L,L),(0,2L),(-L,2L),(-L,L)$.
+Each side is marked at distance $r+s$ from its initial corner.
+The alternating corners and marks have cyclic labels
+$(11,0,1,\ldots,10)$ in the first chart and
+$(0,11,10,\ldots,1)$ in the second. Equally labelled segments
+are glued in reverse order, preserving distance. Quotient vertices
+are chart sites modulo these identifications; adjacency is a unit
+lattice edge in a common chart.
+
+\paragraph{Classification.}\label{thm:d12-classification}
+% \claimid{thm:d12-classification}
+For this positive-parameter quotient convention, the two proof routes
+below give a literal path if and only if
+\[
+ \boxed{\quad r\mid(s-1)\quad\hbox{or}\quad r\mid(s+1)
+                     \quad\hbox{or}\quad |r-3s|=1.\quad}
+\]
+Equivalently, the condition is
+\[
+ r=1\quad\hbox{or}\quad(r=2\ \hbox{and }s\hbox{ odd})\quad\hbox{or}\quad
+ \bigl(r\ge3\ \hbox{and }(s\equiv\pm1\pmod r\ \hbox{or }|r-3s|=1)\bigr).
+\]
+Divisibility by one is automatic; modulo two the two residues both
+mean odd $s$, and $|2-3s|=1$ adds only $s=1$.
+The all-parameter quotient geometry and catalogue correspondence,
+the semantics of the computations and the inductions described below
+are prose/computer-assisted premises of these routes. Neither route
+is a Lean proof. Complete arguments, explicit strip formulas,
+certificate inputs and their checkers accompany the D12 supplement.
+
+\subsection{A symbolic region cover and cylinder induction}
+The first route reduces the twelve degree-five starting sites to ten
+representative oriented triangles by two affine lattice symmetries.
+The forced-prefix rule of Section~\ref{sec:definitions} then follows
+each triangle until a legal endpoint or a repeated quotient vertex.
+An exact symbolic executor splits integer affine sign conditions;
+the earlier event is constant on each terminal region. Repetition
+takes precedence at a tie.
+
+For $r\ge3$, finitely many regions cover $r\ge s-1$ and nine wedges
+cover the remaining starts through $s\le10r+1$. Their positive leaves
+give the exceptional lines $r=3s\pm1$ and modular boundaries.
+The unbounded tail $s\ge10r$ has an overlapping cover by cylinders.
+For its four residual starts, one lap increments an auxiliary state
+parameter by $2r$. A first exit lies in a window of width $2r$;
+the two positive exit planes differ by $r$ and reduce to
+$s\equiv\pm1\pmod r$. This is induction on an arbitrary number
+of laps, rather than a bound on the number of face passages.
+Positive exits are compared with every earlier lap, including
+same-chart, seam and parallel collisions. The cases $r=2$ have
+a finite complement to the tail, and $r=1$ has explicit boundary paths.
+
+This route requires faithful passage rows and seam maps, exhaustive
+integer sign splits, sound rational polyhedral tests, earliest-event
+and parity checks, and the full-history cylinder argument. In
+particular, its polyhedral emptiness shortcut uses pointedness;
+the supplied constraints must satisfy that condition. Finite graph
+audits support these semantics on their specified inputs and do not
+replace the all-parameter geometric and inductive arguments.
+
+\subsection{Explicit strips and rational certificates}
+The second route independently constructs the same quotient, after a
+translation of one chart, and derives explicit alternating strips
+\[
+ (f,A,d,e,n):\qquad A+\lfloor j/2\rfloor d+(j\bmod2)e,
+                  \qquad 0\le j<n.
+\]
+Here $f$ is a chart and $n$ counts vertices. Unit differences
+$d,e,d-e$ produce consecutive triangular triples. The negative
+parameter regions are covered by short repeated prefixes or by
+an arbitrary number of strip pairs followed by a terminal repetition.
+The short part uses 29 explicit candidates and 46 region--start covers.
+The long part advances a strip offset by $r$ and uses quotient
+automorphisms to prove the continuation for every repetition count.
+An exhibited repetition with no earlier legal endpoint suffices;
+it need not be the first repetition globally.
+
+The infeasibility certificates use nonnegative rational weights
+$w_i$ for constraints $f_i\ge0$, with
+\[
+ \sum_i w_i f_i=-c,\qquad c>0,
+\]
+and all variable coefficients zero. These identities can be checked
+without trusting the search for the weights. Exhaustive integer
+coverage splits the negation of $f\ge0$ as $-f-1\ge0$.
+The geometric interpretation of the constraints and the arbitrary-strip
+induction remain part of the prose argument.
+
+For sufficiency, explicit paths have $6s+4$ vertices when $r=1$,
+$4r+6$ when $s=1,r\ge2$, and $56s+12$ on $r=3s+1$, $s\ge1$,
+or $56s-10$ on $r=3s-1$, $s\ge2$. For $s=qr\pm1$, $r\ge3$,
+$q\ge1$, the alternating constructions have
+$2q(3r+5s)+2$ or $2q(3r+5s)$ vertices; the positive-sign
+construction extends to $r=2$. Containment, endpoints and seam
+ownership are checked, and a global simplicity argument separates
+all even/odd rows, including arbitrarily separated strips.
+The witnesses allow internal degree-five vertices, as does the definition.
+
+The necessity arguments use cyclic five-edge-connectivity of fullerenes
+\cite{Connectivity} to exclude nonfacial dual triangles and justify
+unique continuation. The explicit positive unit triangles do not need
+that external theorem. The two routes have separately developed
+geometry and code; the record gives their derivation-independence and
+outcome-exposure qualifications. Human proof review and priority
+comparison remain open.
+
+\subsection{Relation to the ray theorem}
+The D12 closed condition is an additional classification, not an extra
+hypothesis of Theorem~\ref{thm:aligned}. The convex-face decomposition
+already supplies D12 ray periodicity through that theorem and its
+prose correspondence. There is also an elementary arithmetic
+consequence conditional on the classification. For
+$r(t)=at+b$, $s(t)=ct+d$ on an eventually positive integer ray,
+positive $a$ makes both divisibility decisions eventually constant:
+$r(t)\mid s(t)-\varepsilon$ implies
+$r(t)\mid a(d-\varepsilon)-bc$. If this fixed determinant vanishes,
+the ratio is $c/a$ and integrality decides the condition. The
+exceptional equality $|r(t)-3s(t)|=1$ is eventually constant as well.
+For constant $r=m\ge3$, a valid period divides $m/\gcd(m,c)$;
+$m=1,2$ have periods dividing one and two. This arithmetic alternative
+and the general ray-theorem application are separate from a
+family-specific Lean formalization of D12.
+% D12-SECTION-END
 
 \appendix
 \section{Local polygons and zero boundaries}\label{app:domains}
@@ -1066,7 +1204,7 @@ The concrete equal-final-label removal component has such a depth.
 \end{quote}
 
 \section*{Acknowledgements and AI-use statement}
-The author used Codex and Claude Code to assist with literature
+The author used AI systems to assist with literature
 organization, mathematical exploration, proof drafting, implementation,
 finite verification, formalization and English exposition. The author
 is responsible for the mathematical account and its stated proof

@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "source_path": "paper-lines-v6.2-en.tex",
+  "source_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
+  "pdf_path": "paper-lines-v6.2-en.pdf",
+  "pdf_sha256": "4463eb238ba213272269be12186181c5c6967bc4b9c711d3625cb1ea9ad6e507",
+  "pdf_bytes": 183451,
+  "pages": 18,
+  "tex_engine": "Tectonic 0.17.0 cached only",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "duplicate_destinations": false,
+  "page_render_hashes": [
+    {
+      "page": 1,
+      "sha256": "d344c60b7eadb0992ea1b944315471cb23a17e33dc3b20b2007c80b2c9d91b1e"
+    },
+    {
+      "page": 2,
+      "sha256": "7d16b7dc890fa8f0e80f99ed0bd516373deca08d7df3ffe5a557ef946645fc45"
+    },
+    {
+      "page": 3,
+      "sha256": "ccacccf2576f221475d19c8f169b5afcc3bdb617d49b214489297245d0023172"
+    },
+    {
+      "page": 4,
+      "sha256": "1c0f0d083ca88ff0cf0bea5721f64c4e7dc09b52d79f8d15c4434ba6eceb6e73"
+    },
+    {
+      "page": 5,
+      "sha256": "26bcf09b1d91a15d50d34317caea560c15e2bad26f58fe2f78fba0c95cf82363"
+    },
+    {
+      "page": 6,
+      "sha256": "e83748754017785af7c891c2be30f6c253fc461fce227727bf834f13fe61bc71"
+    },
+    {
+      "page": 7,
+      "sha256": "e7478a6951e07c63dbf9ced28dac4ecb31cc3473e90fabdbb3352034f004ab6e"
+    },
+    {
+      "page": 8,
+      "sha256": "4d1c6b6910d7b9f301607422e3d27408fd300ad9cf5f464f36ab2b441af1ebf1"
+    },
+    {
+      "page": 9,
+      "sha256": "f0153d6810b986108ce829ab81bfc04dda305c50ad5d38b970c3fcd225fea1a5"
+    },
+    {
+      "page": 10,
+      "sha256": "7ff19f4c5b3c213c3831117a92a1d54ff7cf165852cbbd32c85767f5e2c9e608"
+    },
+    {
+      "page": 11,
+      "sha256": "4ea741a2efd62c0c6a6568b2c3e04254d5528cfe20d8ddf432bbdedd724e9cf7"
+    },
+    {
+      "page": 12,
+      "sha256": "2e4c36d3e8b452a55e7d68aa4c2905d337bc77689c1c20b2fa918229c637b632"
+    },
+    {
+      "page": 13,
+      "sha256": "247fa8bb75fb8d494a747cf591affbe4257216a1db6d0b2dea284e868b20bee8"
+    },
+    {
+      "page": 14,
+      "sha256": "841fca61de7c08a1287109585b2e198b8e4277020e3dcea7d900a861acd65556"
+    },
+    {
+      "page": 15,
+      "sha256": "cc338eb179ff97d7cba9b68404ea2439f4050258a321c6c1b46099a3abdad6de"
+    },
+    {
+      "page": 16,
+      "sha256": "32708f9b17d3a91919e9df812ef65dda83f12b7fcfe40ccfa5ed316df319898c"
+    },
+    {
+      "page": 17,
+      "sha256": "09ce14fe9fae77634cb4b6fb95eab24cb5abefc0be21c2bfb0f89459317182b7"
+    },
+    {
+      "page": 18,
+      "sha256": "c01978402e5c1f7269a78bcd8fdaea7b37ff2dd8ca76a136560bdf931355d1d4"
+    }
+  ],
+  "mathematical_comparison": {
+    "predecessor": "paper-lines-v6.1-en.tex",
+    "target": "paper-lines-v6.2-en.tex",
+    "predecessor_sha256": "f27f1c5b59f88068db9fed27abb7e18a280e023b9d73af9584be3d865ca11de8",
+    "target_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
+    "edits": "See lines-v6.2-edit-map.json",
+    "prior_numbered_blocks_and_all_math_byte_identical": true,
+    "existing_claim_ids_unchanged": 30,
+    "added_claim_ids": [
+      "thm:d12-classification"
+    ]
+  },
+  "visual_review": {
+    "reviewer": "main research agent",
+    "all_pages_viewed": true,
+    "independent_review": false,
+    "method": "18 rendered pages at 95dpi, with final changed pages checked again.",
+    "observed": "No clipping, overlapping tables, missing glyphs or broken references. D12 is main Section12; its two proof-scope rows and classification are legible."
+  },
+  "uploaded": false,
+  "revision_publication_authorized": false
+}

@@ -1,0 +1,125 @@
+{
+  "wedges": [
+    {
+      "q": 1,
+      "match_prereg_or_fit": true,
+      "sec": 1.87
+    },
+    {
+      "q": 2,
+      "match_prereg_or_fit": true,
+      "sec": 3.56
+    },
+    {
+      "q": 3,
+      "match_prereg_or_fit": true,
+      "sec": 6.36
+    },
+    {
+      "q": 4,
+      "match_prereg_or_fit": true,
+      "sec": 9.08
+    },
+    {
+      "q": 5,
+      "match_prereg_or_fit": true,
+      "sec": 13.67
+    },
+    {
+      "q": 6,
+      "match_prereg_or_fit": true,
+      "sec": 17.82
+    },
+    {
+      "q": 7,
+      "match_prereg_or_fit": true,
+      "sec": 28.7
+    },
+    {
+      "q": 8,
+      "match_prereg_or_fit": true,
+      "sec": 32.4
+    },
+    {
+      "q": 9,
+      "match_prereg_or_fit": true,
+      "sec": 41.13
+    },
+    {
+      "q": 10,
+      "match_prereg_or_fit": true,
+      "sec": 52.83
+    },
+    {
+      "q": 11,
+      "match_prereg_or_fit": true,
+      "sec": 63.47
+    },
+    {
+      "q": 12,
+      "match_prereg_or_fit": true,
+      "sec": 68.13
+    },
+    {
+      "q": 13,
+      "match_prereg_or_fit": true,
+      "sec": 79.14
+    },
+    {
+      "q": 14,
+      "match_prereg_or_fit": true,
+      "sec": 88.83
+    },
+    {
+      "q": 15,
+      "match_prereg_or_fit": true,
+      "sec": 109.04
+    },
+    {
+      "q": 16,
+      "match_prereg_or_fit": true,
+      "sec": 105.31
+    },
+    {
+      "q": 17,
+      "match_prereg_or_fit": true,
+      "sec": 125.61
+    },
+    {
+      "q": 18,
+      "match_prereg_or_fit": true,
+      "sec": 141.38
+    },
+    {
+      "q": 19,
+      "match_prereg_or_fit": true,
+      "sec": 170.08
+    },
+    {
+      "q": 20,
+      "match_prereg_or_fit": true,
+      "sec": 161.18
+    },
+    {
+      "q": 21,
+      "match_prereg_or_fit": true,
+      "sec": 177.14
+    },
+    {
+      "q": 22,
+      "match_prereg_or_fit": true,
+      "sec": 209.41
+    },
+    {
+      "q": 23,
+      "match_prereg_or_fit": true,
+      "sec": 233.39
+    },
+    {
+      "q": 24,
+      "match_prereg_or_fit": true,
+      "sec": 213.02
+    }
+  ],
+  "note": "q=1..6 were the fitting data; q=7..24 are the preregistered test (q=25..30 not run)"
+}

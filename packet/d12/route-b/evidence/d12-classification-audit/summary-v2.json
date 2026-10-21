@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "counts": {
+    "integer_univariate_checks": 1094,
+    "r2_coefficient_checks": 552,
+    "verified_farkas_certificates": 9542,
+    "independently_rederived_short_geometries": 29,
+    "independently_rederived_odd_exclusions": 2464,
+    "independently_replayed_coverage_regions": 46
+  },
+  "seconds": 1.7140005419496447,
+  "inputs": [
+    {
+      "recorded_source_identifier": "evidence/d12-boundary/symbolic-check-v3.json",
+      "sha256": "8ed2f461d3d5d778b523326202de9e5e917a26ed984eaa90db1fc23f919e59e8"
+    },
+    {
+      "recorded_source_identifier": "evidence/d12-positive-r2/affine-certificates.json",
+      "sha256": "2b0c7b7ecefcda2f1f23597297639ec67fd5f00c8731f1a2cc4cd8f7aef1a866"
+    },
+    {
+      "recorded_source_identifier": "evidence/d12-short/candidates-v2.json",
+      "sha256": "3a87caa57d0e8049b9f0d957426a9e71a1d255fddee16eb1b02d1bccec17d821"
+    },
+    {
+      "recorded_source_identifier": "evidence/d12-short/symbolic-check-v5.json",
+      "sha256": "743cfc9ded1367091e13d4e7779f803fbfdd94dc07b107499e373467137fa272"
+    },
+    {
+      "recorded_source_identifier": "evidence/d12-loops/symbolic-check.json",
+      "sha256": "ccfa82c73e32fedfea9cce9d1211ffecfe572d429dcd120a5c10770cb5a89fdc"
+    }
+  ],
+  "scope": "integer interval and coefficient arithmetic; all saved Farkas weights; independently rederived short-prefix geometry and odd exclusions; complete short-domain coverage replay; loop geometry remains the explicit inductive proof plus primary checker"
+}

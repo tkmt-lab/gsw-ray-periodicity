@@ -1,0 +1,37 @@
+{
+  "prereg_commit": "cb21490d",
+  "pairs": 295,
+  "binary_agree": 295,
+  "count_agree": 295,
+  "observed_positive": 74,
+  "by_stratum": {
+    "uniform": [
+      100,
+      100
+    ],
+    "pos": [
+      56,
+      56
+    ],
+    "near": [
+      109,
+      109
+    ],
+    "r=1": [
+      10,
+      10
+    ],
+    "r=2": [
+      10,
+      10
+    ],
+    "s=2": [
+      10,
+      10
+    ]
+  },
+  "wall_sec": 503.55,
+  "workers": 4,
+  "peak_rss_bytes_reported": 3037282304,
+  "note": "peak RSS exceeded the 2GB rule (r<=2 rows with s up to 453, walks of length ~s^2 with lazy caches); see report"
+}

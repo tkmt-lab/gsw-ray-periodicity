@@ -22,7 +22,7 @@
   "k3_graph_sufficiency_received": true,
   "k3_graph_necessity_received": true,
   "k3_global_degree_classification": false,
-  "new_D12_classification_included": false,
+  "new_D12_classification_included": true,
   "human_peer_review": false,
   "novelty_established": false,
   "independent_derivation_strict_blind": false,

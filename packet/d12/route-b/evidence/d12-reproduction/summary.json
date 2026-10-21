@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "scratch": "scratch/d12-proof-replay-nk72xgbk",
+  "source_sha256": {
+    "check_d12_boundary": "0cd3df4d1fd37e9545482d5ffe38461b1fdb8fdd6c220307d45081aaeef7b896",
+    "d12_affine_certificate": "5db169d07a1d51af2b17eaba981889446dee309eac3627642184aa1b68a11359",
+    "verify_d12_blocks_r2": "d751ee7cf499be5f34bdbf25e4e3f749c60977dddd14a3b4e54371442ef166b9",
+    "d12_witness": "e8ed276f1a737ef4d1fc21abfa87388743a8064866df784f386764631a2ca131",
+    "check_d12_short": "e88a3600f8ae09d097631d16bb46cbf68d2248de51ebe072b6c48f65eadaba68",
+    "d12_affine2": "8a54bf1ba4d2c4633c1b1cd429208b580059fc8d023db0b1cd1344055699acac",
+    "affine2": "17022b7e04e4c63aa5807dda060097cb14cb82aa1bc3fe0d33787f0f18bd4a23",
+    "check_d12_loops": "6b4639f21491bb914146dd98b3de4ebf5412ba19b3d882b699b3a3200c0ecb4b",
+    "d12_affine3": "677a1713a19e027751e567431f7089471dc694d0a04d765f009d2b8dd4535e32",
+    "linear_farkas": "b2d12884b17d675f235d39d43650b61e4f0c5bcabebca5def9eed118158ec576",
+    "verify_d12_blocks": "0dbd4e6ceb4edd6a1099867a0498072765460e17334b639438554991b2074347",
+    "d12_atlas_trace": "b97838784cfb897cbb6d5f70980aa9b2c5ee892d8a85d6365ff4fccb691ba026",
+    "aligned_atlas": "1d73c9f78df806ddf63b17a9e73d44f674ab67cea0c5ff770ceaf228efa69719",
+    "d12": "fed1ed2967fbd04c00eaf1eee6eaeb534efd9b36cc24e42624c52201e797baf3",
+    "aligned_surface": "d68d955ec63994d1edd2bebf28332e672d758a5b38a9409f74b5d5205d125009",
+    "b2": "70e90c68d0c075a618a7de2bbf75b546f77469df91740ad14647e23e13e76347",
+    "graphs": "7c3a0562371ef6540206e2786c031fc48aff4e2f50bf9afc991edaefdcb8ef3f",
+    "audit_d12_classification": "804d0a6e47d4338ca75aaab46d2b9e733f64db69b9892943ef085f2707c0b361",
+    "mac_memory_guard": "c415e008eb38f24015389f03eb13aafa9f71e7c6eed7a6fbb31afe9bfc4f8cb8"
+  },
+  "commands": [
+    {
+      "script": "check_d12_boundary",
+      "exit": 0,
+      "seconds": 0.5795535410288721
+    },
+    {
+      "script": "verify_d12_blocks_r2",
+      "exit": 0,
+      "seconds": 0.03218670794740319
+    },
+    {
+      "script": "check_d12_short",
+      "exit": 0,
+      "seconds": 1.3890465000877157
+    },
+    {
+      "script": "check_d12_loops",
+      "exit": 0,
+      "seconds": 1.395334625034593
+    },
+    {
+      "script": "audit_d12_classification",
+      "exit": 0,
+      "seconds": 1.8633574999403208
+    }
+  ],
+  "comparisons": [
+    {
+      "recorded_source_identifier": "d12-boundary/symbolic-check-v3.json",
+      "fields": [
+        "cases",
+        "constraints",
+        "replays"
+      ],
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "fcfffa98e5788d3bdf8983541c6a33cb1414f8047ae0cf853588553ee2305bd6"
+    },
+    {
+      "recorded_source_identifier": "d12-positive-r2/affine-certificates.json",
+      "fields": null,
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "3c94464214a86917f848448f347382d5c945b72706275727dc48caa8ff747459"
+    },
+    {
+      "recorded_source_identifier": "d12-positive-r2/joins.json",
+      "fields": null,
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "751684e2f83c1f1d36421e661eaf43e9cd7c51e9a055b18b74a876c2a11e9281"
+    },
+    {
+      "recorded_source_identifier": "d12-short/symbolic-check-v5.json",
+      "fields": [
+        "domains",
+        "coverage",
+        "constraints"
+      ],
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "d42aff3a25ae1adc8a91d4fcf09cf0a189fd8fce52153393a4cf21c49d2776ca"
+    },
+    {
+      "recorded_source_identifier": "d12-loops/symbolic-check.json",
+      "fields": [
+        "checks",
+        "constraints",
+        "replays"
+      ],
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "5fcb1fd5bda2f47ce1bcd13647606f5278ddd884a139089f3fb91f5530a4cc26"
+    },
+    {
+      "recorded_source_identifier": "d12-classification-audit/summary-v2.json",
+      "fields": [
+        "status",
+        "counts"
+      ],
+      "status": "EXACT_MATCH",
+      "semantic_sha256": "7f221e4eeafd8bc61b1156e679faafe979622c9b55d05b500b3a9c60fb601b5e"
+    }
+  ],
+  "seconds": 5.3255604159785435
+}

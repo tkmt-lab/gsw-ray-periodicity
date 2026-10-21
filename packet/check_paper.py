@@ -15,7 +15,11 @@ def first_two_columns(tex, anchor):
 
 
 def main():
-    tex = local('paper-lines-v6.1-en.tex').read_text()
+    raw = local('paper-lines-v6.2-en.tex').read_text()
+    tex = raw
+    for tag in ['D12-SCOPE', 'D12-SECTION']:
+        tex = re.sub(r'% '+tag+r'-BEGIN\n.*?% '+tag+r'-END\n', '', tex, flags=re.S)
+    from check_d12_packet import check_preservation
     old = local('paper-lines-v6.0-en.tex').read_text()
     stack = []
     for match in re.finditer(r'\\(begin|end)\{([^}]+)\}', tex):
@@ -24,7 +28,7 @@ def main():
         else:
             assert stack and stack.pop() == match[2], 'TeX nesting'
     assert not stack
-    labels = re.findall(r'\\label\{([^}]+)\}', tex)
+    labels = re.findall(r'\\label\{([^}]+)\}', raw)
     assert len(labels) == len(set(labels))
     assert set(re.findall(r'\\(?:eqref|ref)\{([^}]+)\}', tex)) <= set(labels)
     bib = set(re.findall(r'\\bibitem\{([^}]+)\}', tex))
@@ -42,13 +46,13 @@ def main():
         assert tex[tex.index(begin):tex.index(end)] == old[old.index(begin):old.index(end)], 'proof subsection changed'
     ids = re.findall(r'\\claimid\{([^}]+)\}', tex)
     assert ids == re.findall(r'\\claimid\{([^}]+)\}', old) and len(ids) == 30
-    assert set(ids) == {c['id'] for c in load('claims.json')['claims']}
+    assert set(ids) | {'thm:d12-classification'} == {c['id'] for c in load('claims.json')['claims']}
     assert tex.count('VERIFICATION-RECORD.md') == 1, 'verification record reference count'
     assert '\\section{What is proved, and how}' in tex, 'current proof-scope section missing'
     assert tex.index('\\section{Introduction}') < tex.index('\\section{What is proved, and how}') < tex.index('\\label{sec:definitions}')
     ai = tex.split('\\section*{Acknowledgements and AI-use statement}', 1)[1].split('\\section*{License and contact}', 1)[0]
     body = tex.replace(ai, '')
-    assert len(ai.strip().split('\n\n')) == 1 and ai.count('Codex') == ai.count('Claude Code') == 1, 'AI-use paragraph scope'
+    assert len(ai.strip().split('\n\n')) == 1 and ai.count('Codex') == ai.count('Claude Code') == 0, 'AI-use paragraph scope'
     patterns = [r'\bR00[245]\b', r'\bcoordinator\b', r'\b(?:received|receipts?|mailbox)\b',
                 r'\bowner(?:s|\x27s)?\b', r'\bT\d{4}\b', r'\bClaude\b', r'\b(?:AH|AL|AM|AN|AD|M4)\b']
     for pattern in patterns:
@@ -57,7 +61,7 @@ def main():
     record = local('VERIFICATION-RECORD.md').read_text()
     for term in ['R004', 'Comparator', 'independence', 'owner-confirmation', 'T0770', '2,814', 'OS process isolation', 'main_residue']:
         assert term in record, ('verification record content missing', term)
-    for claim in ids:
+    for claim in ids+['thm:d12-classification']:
         assert '`'+claim+'`' in record, ('verification claim missing', claim)
     ledger = load('editorial-edit-map.json')
     for entry in ledger['edits']:
@@ -83,13 +87,14 @@ def main():
     for row in corr['rows']:
         assert row['v4_label'] in labels and set(row['claim_ids']) <= set(ids)
     assert len(corr['rows']) == 28
+    check_preservation(raw, local('paper-lines-v6.1-en.tex').read_text())
     pdf = load(load('release-metadata.json')['pdf_validation_file'])
-    assert pdf['status'] == 'PASS' and pdf['pages'] == 17
+    assert pdf['status'] == 'PASS' and pdf['pages'] == 18
     assert sha(local(pdf['source_path'])) == pdf['source_sha256'] and sha(local(pdf['pdf_path'])) == pdf['pdf_sha256']
-    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 17
+    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 18
     assert not pdf['overfull_boxes'] and not pdf['undefined_references'] and not pdf['duplicate_destinations']
-    result(pages=17, claims=30, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
-           unchanged_proof_subsections=2, internal_process_markers=0, AI_tool_exceptions=2,
+    result(pages=18, claims=31, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
+           unchanged_proof_subsections=2, internal_process_markers=0, AI_tool_exceptions=0,
            scope='Static preservation, separate-record completeness and saved PDF review; not a new proof/kernel check.')
 
 

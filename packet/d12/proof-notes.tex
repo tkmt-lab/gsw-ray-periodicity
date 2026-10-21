@@ -1,0 +1,618 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,array,booktabs,longtable,xurl}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\D}{\mathrm{D12}}
+\newcommand{\record}[1]{\nolinkurl{#1}}
+\newcommand{\claimid}[1]{}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\qedsymbol}{\rule{0.6em}{0.6em}}
+\renewcommand{\arraystretch}{1.12}
+\raggedbottom
+\title{Supplementary proof notes for the D12 section of article 6.2}
+\author{Tatsuhiko Takimoto}
+\address{Independent researcher}
+\date{Draft v2, 21 October 2026. Unpublished.}
+\begin{document}
+\begin{abstract}
+We study literal linear generalized Stone--Wales paths in the
+positive-parameter D12 family. Two separately derived proof routes give
+the criterion $r\mid(s-1)$ or $r\mid(s+1)$ or $|r-3s|=1$.
+Route A uses a bespoke symbolic executor; Route B uses explicit
+lattice strips, rational infeasibility certificates and induction on
+an arbitrary number of strips. We state the geometric, code and prose
+dependencies of each route. Finite graph audits compare the symbolic
+decisions with an eager graph construction and a definition-based path
+search. Both universal arguments use prose geometry and induction;
+the ray consequence follows by elementary arithmetic. The manuscript
+is an unpublished draft, with human proof peer review and priority
+comparison open.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Graver's catalogue supplies the D12 construction and its parameters
+\cite{Graver}. Bille, Buchstaber and Spodarev formulate the graph-path
+conditions and the broader fullerene questions used here \cite{BBS}.
+The standard cyclic edge-connectivity fact recalled by Kutnar and
+Maru\v{s}i\v{c} supplies the local continuation premise \cite{Connectivity}.
+Our proposed contribution concerns an exact path criterion for this
+existing catalogue family and the finite computations supporting its
+symbolic proof route. The family construction and the definition are
+inherited. Within the literature searched so far, no matching complete D12
+criterion has been identified. This bounded search does not establish
+priority; the comparison remains open.
+
+\clearpage
+\section{What is proved, and how}\label{sec:guarantees}
+\begin{center}\small
+\begin{tabular}{p{.22\textwidth}p{.28\textwidth}p{.38\textwidth}}
+\toprule Claim & Present proof basis & Scope\\\midrule
+Theorem~\ref{thm:d12-classification} & Two prose/computer-assisted routes & Positive integer $r,s$ in the stated quotient convention, with the model and soundness premises below.\\
+Route A & Exact symbolic region splitting and cylinder induction & All ten representative starts; six semantic obligations in Section~\ref{sec:trust}.\\
+Route B & Explicit strips, rational infeasibility certificates and prose induction & Universal necessity and sufficiency; global simplicity covers arbitrary strip counts.\\
+Finite audits & Eager and lazy graph constructors, literal-path searches and certificate checks & The input ranges and overlapping counts stated below.\\
+Ray consequence & Conditional prose arithmetic & Every eventually positive integer affine ray, assuming the classification.\\
+Auxiliary start counts & Empirical prediction & The observed inputs; the stated universal boundary count is open.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The two routes are separately derived on the same positive-parameter
+domain, without sharing their D12 constructions, proofs or code.
+Their shared model and semantic premises are stated below; human proof
+peer review, Lean formalization and the priority comparison remain open.
+The supplementary \record{VERIFICATION-RECORD.md} contains the roles,
+outcome-exposure qualification, reproduction provenance and history.
+
+This third manuscript follows an A3 classification manuscript and a
+ray-periodicity manuscript \cite{A3,Lines}. The latter includes D12 in
+its catalogue-ray corollary but deliberately excludes a full D12
+classification. The present criterion would close that D12 subproblem;
+it does not change the second manuscript's general geometric theorem.
+K3, C1, O2 and D14 have Lean graph results. Those
+results provide formalization patterns, not a Lean proof of D12.
+
+\section{The model and the literal path}
+\begin{definition}[D12 quotient convention]\label{def:d12-model}
+Let $r,s\in\Z_{\ge1}$ and $L=r+2s$. In the triangular lattice with
+unit differences
+\[
+ (1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1),
+\]
+take two chart-tagged copies of the closed hexagon
+\[
+ H_L=\{(x,y)\in\Z^2:-L\le x\le L,\ 0\le y\le2L,
+                         \ 0\le x+y\le2L\}.
+\]
+Its counterclockwise vertices are
+$(0,0),(L,0),(L,L),(0,2L),(-L,2L),(-L,L)$.
+Mark each side at distance $r+s$ from its initial vertex. The twelve
+boundary points, alternating vertices and marks, receive labels
+\[
+ (11,0,1,2,\ldots,10)\quad\hbox{and}\quad(0,11,10,\ldots,1)
+\]
+in the two charts. Glue equally labelled segments in reverse order,
+preserving lattice distance along the segment. Vertices are equivalence
+classes of chart sites; adjacency is a unit edge within a common chart.
+Write $G(r,s)$ for the resulting simple graph.
+\end{definition}
+\claimid{def:d12-model}
+
+This normalized D12 signature is obtained by translating
+the first chart by $(r+s,0)$ and cyclically shifting its corner list
+so that both underlying hexagons equal $H_L$. All 48 coordinate-form
+identities and the labels agree by exact coefficient comparison.
+The catalogue convention has coordinate lengths $r+s$ and $s$ and
+carbon order $12(r+2s)^2$ \cite[p.~12]{Graver}.
+
+\paragraph{Geometric premise.}\label{lem:geometry}
+The intended quotient is a simple fullerene dual on a sphere, with
+$6L^2+2$ vertices, twelve degree-five vertices at the marked labels,
+and degree six elsewhere. Pairing the entire boundaries of two disks
+in opposite order explains the sphere and the absence of extra
+within-chart identifications. Each marked label joins a hexagon angle
+$2\pi/3$ to a straight boundary angle $\pi$. All other sites have total
+angle $2\pi$. These geometric model premises are supported by the
+finite model audit and belong to the computer-assisted argument's
+prose surface correspondence.
+\claimid{lem:geometry}
+
+A fullerene is cyclically 5-edge-connected, as recalled in
+\cite{Connectivity}. A nonfacial dual triangle would give a cyclic
+three-edge cut in the primal graph; hence every dual triangle is facial.
+An edge of the simple triangulated sphere therefore has exactly its two
+facial common neighbours. This external connectivity fact supplies the local continuation premise.
+
+\begin{definition}[Literal linear gSW path]\label{def:literal}
+A literal path is a sequence $p_0,\ldots,p_{n-1}$ with even $n\ge4$,
+all vertices distinct, with consecutive and distance-two vertices
+adjacent, and
+\[
+ \deg p_0=\deg p_{n-1}=5,\qquad
+ \deg p_1=\deg p_{n-2}=6.
+\]
+\end{definition}
+\claimid{def:literal}
+This is the path condition of \cite[Definition 1(a)]{BBS}, using a
+vertex count rather than an edge count. Even vertex count is part of
+the definition. Internal degree-five vertices are allowed. We classify
+this graph predicate; no chemical activation barrier or experimental
+isomerization conclusion is inferred.
+
+\begin{lemma}[Forced prefixes]\label{lem:forced}
+Suppose every edge of a finite graph has exactly two common neighbours.
+After a valid oriented starting triangle $(p_0,p_1,p_2)$ is fixed,
+every literal path extending it is a prefix of the continuation
+\[
+ p_{i+1}\in(N(p_{i-1})\cap N(p_i))\setminus\{p_{i-2}\}.
+\]
+The right side has one element. A path exists from that start precisely
+when a legal endpoint is reached strictly before the first repeated
+vertex. A legal endpoint has odd index at least three, degree five,
+and a degree-six predecessor.
+\end{lemma}
+\claimid{lem:forced}
+\begin{proof}
+Skip adjacency and distinctness force the other common neighbour.
+A legal prefix satisfies every condition in Definition~\ref{def:literal}.
+A first repeated vertex prevents all longer prefixes from being simple.
+At a tie, repetition invalidates the prefix. Since the graph is finite,
+a first repetition or earlier legal endpoint is eventually reached.
+\end{proof}
+
+\section{Classification and route A: the finite region cover}
+\begin{theorem}[Classification with disclosed proof dependencies]\label{thm:d12-classification}
+For the positive-parameter quotient convention above, the two received
+proof routes assert that $G(r,s)$ has a literal path if and only if
+\[
+ \boxed{\quad
+ r=1\quad\hbox{or}\quad
+ (r=2\ \hbox{and }s\hbox{ odd})\quad\hbox{or}\quad
+ \bigl(r\ge3\ \hbox{and }(s\equiv\pm1\pmod r\ \hbox{or }|r-3s|=1)\bigr).
+ \quad}
+\]
+Equivalently, for all positive $r,s$, the criterion is
+$r\mid(s-1)$ or $r\mid(s+1)$ or $|r-3s|=1$. Indeed, divisibility by
+one is automatic; modulo two, $+1$ and $-1$ both mean odd $s$, while
+$|2-3s|=1$ adds only $s=1$; for $r\ge3$ the formulas are identical.
+\end{theorem}
+\claimid{thm:d12-classification}
+Route A uses the six semantic obligations in Section~\ref{sec:trust};
+route B uses the explicit construction, rational certificates and prose
+induction in Section~\ref{sec:route_b}. These are alternative routes on
+the shared model, not a combined list of premises. The domain is the
+positive-parameter quotient convention.
+
+\paragraph{Symmetry reduction.}\label{lem:symmetry}
+The label permutations $u\mapsto u+2$ and $u\mapsto1-u$ are realized
+by affine lattice isometries, with the second interchanging the charts.
+The symbolic corner check verifies the twelve corner identities in
+each chart. The induced group is transitive on the twelve degree-five
+labels. It suffices to consider the ten candidate oriented triangles
+at label zero, numbered as in \record{start_triples()}. A candidate
+with degree-five second vertex is invalid. There are 120 valid starts
+when $s>1$ and 96 when $s=1$ in the supplied model.
+\claimid{lem:symmetry}
+
+\paragraph{Finite regions.}\label{prop:regions}
+On each region the executor splits integer affine sign conditions until
+an invalid start or the earlier of a legal endpoint and repetition has
+a fixed symbolic description. The symbolic core summaries give:
+\claimid{prop:regions}
+\begin{center}\small
+\begin{tabular}{p{.25\linewidth}r p{.57\linewidth}}
+\toprule
+Region & Leaves & Positive canonical starts and conditions\\\midrule
+$s\ge2,\ r\ge s+2$ &61& Start 0 at $r=3s-1$; start 3 at $r=3s+1$.\\
+$s=1,\ r\ge3$ &20& Starts 2,4,6,8; additionally start 3 at $r=4$.\\
+$s=r-1,\ r\ge3$ &18& Starts 1,3,5,7.\\
+$s=r,\ r\ge3$ &10& None.\\
+$s=r+1,\ r\ge3$ &12& Starts 0,2,4,8.\\
+$s\ge r+2,\ r\ge3$ &6& None for starts 1,2,5,6,7,9.\\
+$W_1,\ldots,W_9$ &304& Remaining starts 0,3,4,8; positive at the two modular boundaries described below.\\\bottomrule
+\end{tabular}
+\end{center}
+Here $W_q=\{r\ge3:qr+2\le s\le(q+1)r+1\}$. These nine wedges cover
+$r+2\le s\le10r+1$ for the four remaining starts. The two exceptional
+lines in the first row have endpoint indices $56s-11$ and $56s+11$.
+The count 304 is a count of symbolic leaves, not of fullerene isomers.
+The leaves are not assumed disjoint across alternative starting triangles.
+
+For $s\ge10r$, the remaining four starts use the cylinder argument in
+Section~\ref{sec:cylinders}. There is an overlap with $W_9$, rather than
+a gap. For $r=2$, the non-cylinder starts are treated symbolically and
+the cylinder calculation applies for $s\ge20$; the finite complement is
+$s\le19$. For $r=1,s\ge2$, canonical start 1 is positive in the boundary
+certificate. The point $(1,1)$ is decided directly. These regions cover
+all positive integer parameters. Together with the terminal events and
+symmetry reduction, they give the stated classification under the
+soundness obligations.
+
+\section{Unbounded passage counts and cylinder exits}\label{sec:cylinders}
+\paragraph{Cylinder state.}\label{lem:cylinders}
+The passage count is not bounded uniformly in $s/r$. Instead a state
+family $S(a)$ recurs after four runs as $S(a+2r)$. The common state shape
+for starts 0 and 3 in chart 0, and start 4 in chart 1, is
+\[
+ ((a+1,-1),(a,0),(a+1,0)).
+\]
+Start 8 in chart 1 uses $((a+1,-1),(a+1,0),(a,0))$.
+The index increment is $12r+20s$ for starts 0,3,4 and $8r+20s$ for
+start 8. The transient has no earlier legal endpoint or repetition;
+the lap calculation returns to the same state family and is cone-free.
+\claimid{lem:cylinders}
+
+\begin{center}\small
+\begin{tabular}{c c c c c}
+\toprule
+Start&$a_0$&Last lap bound $h$&Positive exit planes&Residue\\\midrule
+0&$2r$&$s-2r-2$&$s-2r-1,\ s-r-1$&$s\equiv1$\\
+3&$2r-1$&$s-2r-2$&$s-2r,\ s-r$&$s\equiv-1$\\
+4&$3r+s$&$2s-r-2$&$2s-r-1,\ 2s-1$&$s\equiv1$\\
+8&$2r$&$s-r-2$&$s-r-1,\ s-1$&$s\equiv1$\\\bottomrule
+\end{tabular}
+\end{center}
+Residues in the last column are modulo $r$.
+
+\paragraph{All previous laps.}\label{lem:history}
+A negative exit leaf exhibits a repetition in the transient/last-two-lap
+history before any legal endpoint. For positivity that bounded history
+is insufficient: every earlier lap must be excluded. The four-variable
+calculation compares the exit against a lap with arbitrary integer
+parameter $b\in[a_0,a-2r]$, the transient against every such lap,
+and two laps separated by at least $2r$. It also checks transient/exit
+and internal coincidences. Relaxing the actual arithmetic progression
+to every integer $b$ gives a sufficient overapproximation for collision
+exclusion. A proof of the implementation of these comparisons remains
+one of the universal obligations.
+\claimid{lem:history}
+
+\begin{lemma}[Exit arithmetic]\label{lem:exit-congruence}
+On $r\ge2,s\ge10r$, accept the geometric cylinder and terminal-leaf
+premises of the table. Then its exit conditions reduce respectively
+to $s\equiv1,-1,1,1\pmod r$.
+\end{lemma}
+\claimid{lem:exit-congruence}
+\begin{proof}
+Let $a_j=a_0+2rj$. There is a unique first value $a_f>h$, and
+$h+1\le a_f\le h+2r$. The two positive planes in each row lie in this
+window, differ by $r$, and represent the two lifts of one residue
+modulo $r$ to residues modulo $2r$. Thus $a_f$ equals one of the two
+planes exactly when that plane is congruent to $a_0$ modulo $r$.
+Substituting the four rows gives the stated residues. The bound
+$s\ge10r$ ensures $a_f\ge a_0+4r$, so the two prior laps used by the
+exit calculation exist.
+
+These inequalities and the exact reduction of the positive-leaf
+constraints to the displayed planes were checked independently of
+the geometric executor. Substitute each plane into all its constraints,
+then write $r=2+u$, $s=10r+v$, $u,v\ge0$. Every required expression has
+nonnegative constant and coefficients. In the other direction, each
+positive leaf explicitly contains both $a-c\ge0$ and $c-a\ge0$ for
+its plane $a=c$, including the window constraint where needed.
+This proves the arithmetic identities; it does not prove the
+geometric premise that the listed terminal leaves are correct.
+\end{proof}
+
+\section{Finite checks and input ranges}
+The exact-rational symbolic recipe has thirteen steps and seven
+certificate summaries. It covers thirty mirror graphs, the symmetry
+identities, finite-region and wedge summaries, cylinder and full-history
+positivity summaries, 452 cylinder sample/start checks and exit
+arithmetic. The comparison checks JSON structures after removing runtime
+fields. Wedges above $q=9$ are exploratory inputs separate from the
+finite region cover; the arbitrary tail uses the cylinder argument.
+
+\paragraph{Separate finite implementation.}\label{prop:independent-finite}
+A separately written eager constructor enumerates every lattice site
+of the two normalized hexagons, forms the boundary quotient by
+union--find, and builds all unit edges. It then searches all simple
+literal prefixes by backtracking common neighbours; its search routine
+does not assume unique continuation. The pilot $r,s\le3$ is included
+in the subsequent $r,s\le6$ grid of 36 pairs and 4,176 starts.
+The finite complement and known cutover tests add $r=2,1\le s\le21$
+and $r=3,s\in\{29,30,31,32\}$. After removing overlap there are
+55 parameter pairs and 6,456 starts: 33 positive pairs, 22 negative
+pairs, and 1,800 successful oriented starts. Every vertex partition,
+edge set, start set and start outcome agrees with the lazy decider.
+The largest checked graph has 26,936 dual vertices.
+\claimid{prop:independent-finite}
+
+At the same 36 grid points the two-, three- and four-variable executors
+were specialized to exact point regions. All 1,080 canonical-start
+comparisons agree with the eager graph on invalidity, first event
+kind and its exact index. These are overlapping finite checks of known
+inputs. Constructor, search and symbolic-event comparisons have
+these finite ranges.
+
+\paragraph{Discovery and fixed-prediction ranges.}\label{prop:holdout}
+The 1,600 discovery points are $r,s\le40$. The saved
+295 test points all have $\max(r,s)\ge41$; 74 are positive. The saved binary decisions and successful-start counts agree
+with the fixed predictions.
+\claimid{prop:holdout}
+
+The generated test set has nine pairs beyond its stated
+$r,s\le400$ range, with maxima $r=441$, $s=453$. These are the actual
+input limits of the saved comparison.
+
+The wedge prediction fits event formulas at $q=1,\ldots,6$
+and tests them at $q=7,\ldots,24$. Their saved terminal-event formulas
+agree with the fixed predictions; the arbitrary tail uses the cylinder
+argument. The planned range $q=25,\ldots,30$ has no executed tests.
+
+\paragraph{Auxiliary counts.}\label{conj:start-counts}
+The saved prediction also gives successful-start counts, agreeing on
+all discovery and test records and on the independent finite tests.
+In particular it predicts 96 successful starts for $r=1,s\ge3$.
+That universal boundary count remains an auxiliary prediction.
+We retain these counts as an auxiliary prediction, not as part of
+Theorem~\ref{thm:d12-classification}. Counts refer to starting oriented
+triangles, not to distinct paths or fullerene isomers.
+\claimid{conj:start-counts}
+
+\section{Route B: explicit strips and rational certificates}\label{sec:route_b}
+Route B \cite{ProofB} proves necessity and sufficiency separately using explicit
+strip formulas, seam maps and rational certificate inputs.
+
+\paragraph{Coordinates and starts.}
+Put $D=r+s$, $B=r+3s$, $C=2r+3s$ and retain $L=r+2s$.
+B's chart zero is
+\[
+ -C\le x\le s,\qquad 0\le y\le2L,\qquad -D\le x+y\le B;
+\]
+chart one is $H_L$. Translating chart zero by $(D,0)$ gives precisely
+the two hexagons and labelled boundary convention of
+Definition~\ref{def:d12-model}. Thus this is a coordinate change, not a
+different parameter convention. Passing from affine coordinate and
+label identities to the spherical quotient remains a prose argument.
+With $T(x,y)=(-y,x+y)$, the symmetries are
+\[
+ R:\ (T+(s,D),\ T^5+(-L,L)),\qquad
+ J:\ (T^5+(-s,s),\ T+(s,0)),
+\]
+where $J$ exchanges charts; their label actions are $i\mapsto i+2$
+and $i\mapsto1-i$. Let $P=R^3$ and $K=R^{-1}J$.
+The arithmetic checks verify 48 corner correspondences for $R,J$ and
+24 each for $P,K$. Transitivity reduces necessity to ten starts at
+label zero. \emph{B's start numbering is local to B}: its residual
+starts are $0,3,4,6$, whereas A uses $0,3,4,8$ for its cylinder domain.
+No equality of start numbers across implementations is assumed.
+
+\paragraph{Necessity: short strips.}\label{prop:route_b-necessity}
+Write a strip as $(f,A,d,e,n)$, representing vertices
+\[
+ A+\lfloor j/2\rfloor d+(j\bmod2)e,\qquad 0\le j<n,
+\]
+in chart $f$; $n$ counts vertices. Unit differences $d,e,d-e$ give
+triangles with recurrence $p_{j+3}=p_{j+1}+p_{j+2}-p_j$.
+For negative candidates $r,s\ge2$, B covers the following regions:
+\begin{center}\small
+\begin{tabular}{ll}\toprule
+Region & Excluded B-starts\\\midrule
+$r=s$ & all ten\\
+$s+2\le r\le3s-2$ & all ten\\
+$r=3s$ & all ten\\
+$r\ge3s+2$ & all ten\\
+$s\ge r+2$ & $1,2,5,7,8,9$\\\bottomrule
+\end{tabular}
+\end{center}
+There are 29 explicit prefix candidates. Each certifies chart
+containment, seam continuation, a repeated vertex and exclusion of
+every earlier possible odd-index degree-five endpoint. The repeated
+vertex need not be the globally first repeat: no earlier legal endpoint
+and any subsequent repetition suffice for nonexistence. The 46
+region--start cover records and 2,464 odd-vertex exclusions make this
+a parameter-domain argument, not a sample fit.
+
+For each infeasible linear system $f_i(r,s)\ge0$, nonnegative rational
+weights satisfy $\sum_iw_if_i=-c$ with $c>0$ and all variable
+coefficients zero. Adding the coefficients verifies infeasibility
+without trusting the search for the weights. Equalities are represented
+by two inequalities. Integer coverage splits on the first violated
+facet, using $\neg(f\ge0)\iff -f-1\ge0$ for integer-valued $f$.
+
+\paragraph{Necessity: arbitrarily many strips.}
+For B-starts 3 and 4, put $\varepsilon=-1,+1$, respectively.
+The repeated pair is $P^jE_{jr},P^jO_{jr}$, where
+\begin{center}\small
+\begin{tabular}{ccllll}\toprule
+Strip & $f$ & $A$ & $d$ & $e$ for $-1;+1$ & $n$\\\midrule
+$E_h$ &0&$(h,0)$&$(0,1)$&$(-1,1);(1,0)$&$2(B-h)$\\
+$O_h$ &1&$(-L,r+4s-h)$&$(1,0)$&$(0,1);(1,-1)$&$2(L+h+r)$\\\bottomrule
+\end{tabular}
+\end{center}
+The one-pair identities hold for $h\ge0$, $r,s\ge2$, with
+$s-h\ge r$ for $-1$ and $s-h\ge r+2$ for $+1$.
+They prove containment, seam transitions and absence of odd-index
+degree-five points. Because $P$ is an automorphism, induction gives
+the sequence for arbitrary $j$, not just tested lap counts.
+
+In the remaining negative region $s\ge r+2$, with
+$s\not\equiv\pm1\pmod r$, choose
+\[
+ m=\begin{cases}\lfloor s/r\rfloor&\varepsilon=-1,\\
+                  \lfloor(s-2)/r\rfloor&\varepsilon=+1,
+   \end{cases}\qquad h=mr,\quad v=s-h.
+\]
+Here $m\ge1$; $v$ is either in $[2,r-2]$, or is $0$ for $-1$
+and $r$ for $+1$. In the orientation pulled back by $P^m$, the final
+pair reaches a terminal strip beginning at $(-C,r+5s-h)$.
+Its last point equals a previously visited point of $PE_{h-r}$,
+at local index $4r-2$ for $-1$ and $4r-1$ for $+1$.
+The bound $h\le s\le3s$ puts that index inside the earlier strip.
+All preceding odd-index degree-five candidates are excluded by the
+linear certificates. B-starts 0 and 6 have even initial prefixes of
+length $2D$ and $2L$, followed by $K$- and $R$-images of start 4.
+Any earlier collision with those prefixes only strengthens negativity.
+This closes all ten starts; the positive boundary cases excluded from
+the negative domains are supplied next.
+\claimid{prop:route_b-necessity}
+
+\paragraph{Sufficiency and global simplicity.}\label{prop:route_b-sufficiency}
+B supplies the following positive witnesses, with vertex counts:
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+Parameters & Shape & Vertices\\\midrule
+$r=1$, $s\ge1$ & one strip & $6s+4$\\
+$s=1$, $r\ge2$ & two strips & $4r+6$\\
+$r=3s+1$, $s\ge1$ & four strips & $56s+12$\\
+$r=3s-1$, $s\ge2$ & four strips & $56s-10$\\
+$s=qr\pm1$, $r\ge3$, $q\ge1$ & alternating strips &
+ $2q(3r+5s)+2$ for $+1$, $2q(3r+5s)$ for $-1$\\\bottomrule
+\end{tabular}
+\end{center}
+The $+1$ construction extends to $r=2$ by 552 coefficient checks
+and the accompanying simplicity argument; $q=0$ is the $s=1$ case.
+The $r=1$ strip has even vertices $(-j,j)$ and odd vertices
+$(-j-1,j)$, which have distinct coordinate sums. Its endpoint is
+label 8 and its adjacent vertices have degree six.
+
+For the four boundary families, exact one-variable inequalities check
+containment, endpoints and intersections of every pair of even/odd
+rows, including identified seams. Nonparallel directions have
+determinant $\pm1$; parallel directions reduce to interval overlap.
+For the unbounded congruence family, the prose proof separates
+columns and rows by $2r$, separates the two parities into disjoint
+chart ranges, and assigns ownership of seam vertices to avoid counting
+a boundary point in both blocks. These are global simplicity
+arguments, not an assertion based only on the final two strips.
+Explicit unit triangles prove existence without the external
+cyclic-connectivity theorem. Internal degree-five sites are allowed.
+\claimid{prop:route_b-sufficiency}
+
+\paragraph{Rational and finite audits.}\label{prop:route_b-reproduction}
+The finite audit contains 120 graphs, 14,160 starts and 1,180 canonical
+coordinate traces, with 57 positive and 63 negative pairs, overlapping
+the previous graph audit. A separate arithmetic implementation checks
+9,542 rational certificates, 1,094 one-variable integer conditions
+and 552 coefficients; it rederives 29 short geometries, 2,464 exclusions
+and 46 covers. The long-strip argument uses the displayed induction
+and primary checker.
+\claimid{prop:route_b-reproduction}
+
+\paragraph{Derivation scope.}\label{claim:independence}
+The derivation and outcome-exposure qualifications are documented in
+the supplementary record; the universal route uses the explicit
+geometric and arithmetic premises stated here.
+\claimid{claim:independence}
+
+\section{Semantic premises for the two routes}\label{sec:trust}
+The following six obligations delimit route A of the universal
+classification. Route B has its own strip and certificate semantics.
+\begin{enumerate}
+\item The quotient convention must faithfully represent the catalogue
+family, and its all-parameter simple-sphere and degree properties must
+hold. The geometric explanation, exact chart normalization and finite
+checks are distinguished from a formal proof of this correspondence.
+\item Affine passage rows must enumerate exactly the forced vertices,
+with correct seam transfers, endpoint parity and predecessor degree.
+\item Polyhedral sign tests must be sound and integer branch splits
+exhaustive. The code uses exact rational vertices and recession rays.
+The emptiness shortcut assumes pointed polyhedra; callers must preserve
+that property when adding the auxiliary variables and constraints.
+\item Coincidence tests must cover same-chart, seam and parallel
+intersections and return the earliest repeated index. A tie must be
+resolved in favour of repetition.
+\item Cylinder transients, lap induction, exit coverage and arbitrary
+previous-lap collision exclusion must connect to the actual walk.
+\item The finite parameter-region cover and the symmetry reduction
+must cover every valid start, including the small boundary cases.
+\end{enumerate}
+The symbolic summaries contain branch constraints, terminal indices,
+flags and sample readbacks. The universal route uses the six semantic
+premises above to connect them to the actual graph.
+
+For route B, the corresponding dependencies are the all-parameter
+surface construction and catalogue correspondence; the quotient
+automorphisms and exhaustive start reduction; the external cyclic
+5-edge-connectivity theorem for necessity; the strip formulas and
+unbounded induction; and the global simplicity and seam ownership of
+positive witnesses. Rational weighted sums can be checked independently
+of their search procedure, but relating their input inequalities to the
+actual graph remains a geometric and semantic obligation. The separate
+arithmetic audit rederives the short-strip geometry, not the entire
+long-strip geometry. B's explicit positive triangles do not require
+the external connectivity theorem.
+
+\section{Relation to affine-ray periodicity}\label{cor:d12-rays}
+\begin{corollary}[Conditional arithmetic consequence]
+Assume Theorem~\ref{thm:d12-classification}. On every eventually positive
+integer affine ray $r(t)=at+b$, $s(t)=ct+d$, path existence is eventually
+periodic. If $a>0$, the decision is eventually constant. If $r=m$ is
+constant, a valid period divides $m/\gcd(m,c)$ for $m\ge3$; the cases
+$m=1,2$ have periods dividing one and two, respectively.
+\end{corollary}
+\claimid{cor:d12-rays}
+\begin{proof}
+Eventual positivity forces $a,c\ge0$. For $a>0$, set
+$\Delta_\varepsilon=a(d-\varepsilon)-bc$, $\varepsilon\in\{-1,1\}$.
+If $r(t)\mid s(t)-\varepsilon$, then $r(t)\mid\Delta_\varepsilon$.
+A nonzero fixed $\Delta_\varepsilon$ excludes this once
+$r(t)>|\Delta_\varepsilon|$. If it is zero, the ratio
+$(s(t)-\varepsilon)/r(t)=c/a$ is constant, so divisibility holds
+exactly when $a\mid c$. The condition $|r(t)-3s(t)|=1$ is eventually
+constant as well: its affine coefficient either vanishes or its
+absolute value eventually exceeds one. The boundary $r\le2$ eventually
+disappears. Thus the decision stabilizes.
+
+For constant $r=m\ge3$, the two congruences are periodic with period
+$m/\gcd(m,c)$. The exceptional affine equality is constant or eventually
+absent. For $m=1$ the criterion is always true, and for $m=2$ it is the
+parity of $s$. These arguments give elementary threshold bounds from
+the coefficients. They are prose arithmetic, not a certified geometric
+compiler or a least-period computation.
+\end{proof}
+The second manuscript already supplies a broader D12 ray statement.
+Here the conditional closed classification explains its decisions
+arithmetically; no new general periodicity principle is claimed.
+
+\section{Further mathematical obligations}
+A direct formalization can use a quotient graph and path-transport
+interfaces with generated strip expressions and kernel-checked algebra.
+The central obligations are graph semantics, exhaustive starts and
+arbitrary-length strip induction. Positive congruence witnesses require
+collision exclusion against every previous strip and across seams;
+a fixed last-two-strips check is insufficient. Rational witnesses
+provide arithmetic input while their relation to surface geometry
+requires proof.
+
+\section*{Authorship and AI assistance}
+The author used AI and AI system for mathematical exploration,
+proof drafting, implementation, finite and arithmetic checks,
+reproduction, evidence organization and English exposition. The author
+is responsible for the manuscript and its stated verification scope.
+AI systems are not listed as authors.
+
+\begin{thebibliography}{9}
+\bibitem{Graver} J. E. Graver,
+\emph{Catalog of All Fullerenes with Ten or More Symmetries},
+DIMACS Series 69 (2005), 167--188; author version with corrections,
+D12 entry on PDF page 12.
+\bibitem{BBS} A. Bille, V. Buchstaber, and E. Spodarev,
+\emph{Some open mathematical problems on fullerenes},
+arXiv:2410.19322v1 (2024), Definition 1(a).
+Published version (2025), doi:10.1021/acs.jcim.4c01997.
+\bibitem{Connectivity} K. Kutnar and D. Maru\v{s}i\v{c},
+\emph{On Cyclic Edge-Connectivity of Fullerenes},
+arXiv:math/0702511v1 (2007). The cited cyclic 5-edge-connectivity fact
+is recalled there as known.
+\bibitem{A3} T. Takimoto,
+\emph{A two-stage classification of linear generalized Stone--Wales paths
+in Goldberg--Coxeter images of the dodecahedron}, version 8.1 (2026).
+\bibitem{Lines} T. Takimoto,
+\emph{Eventual periodicity of linear generalized Stone--Wales paths in
+affine fullerene families with convex lattice-face decompositions},
+version 5.0 (2026), Corollary 1b and the D12 partial-result discussion.
+\bibitem{ProofB} Unpublished research note,
+\emph{D12 classification: necessity and sufficiency with rational
+certificates}, 20 October 2026. Exact provenance and authorship roles
+are supplied in the supplementary record.
+\end{thebibliography}
+\end{document}

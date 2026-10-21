@@ -15,7 +15,7 @@
       "const": 3
     },
     "version": {
-      "const": "1.8.0"
+      "const": "1.9.0"
     },
     "paper": {
       "$ref": "#/$defs/evidence"
@@ -126,7 +126,7 @@
           "const": false
         },
         "new_D12_classification_included": {
-          "const": false
+          "const": true
         },
         "human_peer_review": {
           "const": false
@@ -241,8 +241,8 @@
     },
     "claims": {
       "type": "array",
-      "minItems": 30,
-      "maxItems": 30,
+      "minItems": 31,
+      "maxItems": 31,
       "items": {
         "type": "object",
         "required": [
@@ -286,7 +286,8 @@
               "prose-proof-received",
               "scope-definition",
               "source-definition",
-              "unresolved"
+              "unresolved",
+              "two-separately-derived-universal-proof-routes-received"
             ]
           },
           "status_scope": {

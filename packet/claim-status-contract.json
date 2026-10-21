@@ -28,5 +28,6 @@
   "prop:cylinder": "ai-reviewed-prose-argument",
   "sec:finite": "finite-evidence-only",
   "sec:novelty": "unresolved",
-  "app:domains": "finite-evidence-only"
+  "app:domains": "finite-evidence-only",
+  "thm:d12-classification": "two-separately-derived-universal-proof-routes-received"
 }

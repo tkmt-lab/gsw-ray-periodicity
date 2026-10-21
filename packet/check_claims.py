@@ -23,7 +23,7 @@ def main():
  assert scope==baseline,'scope promotion or unrecorded change'
  assert scope['catalogue_families']==FAMILIES
  tex=local(a['paper']['path']).read_text();display=re.findall(r'\\claimid\{([^}]+)\}',tex)
- ids=[c['id'] for c in a['claims']];assert len(ids)==len(set(ids))==30 and set(ids)==set(display) and len(display)==30
+ ids=[c['id'] for c in a['claims']];assert len(ids)==len(set(ids))==31 and set(ids)==set(display) and len(display)==31
  labels=re.findall(r'\\label\{([^}]+)\}',tex);assert len(labels)==len(set(labels)) and set(ids)<=set(labels)
  by={c['id']:c for c in a['claims']};states=load('claim-status-contract.json');assert {i:c['status'] for i,c in by.items()}==states
  done=set();active=set()
@@ -38,6 +38,10 @@ def main():
  for c in a['claims']:
   visit(c['id']);assert c['id']==c['paper_label'] and c['human_review'] is False
   for e in c['evidence']+[c['review_history']]:fingerprint(e)
+  if c['id']=='thm:d12-classification':
+   from check_d12_packet import check_d12
+   check_d12(ROOT)
+   continue
   review=local(c['review_history']['path']).read_text()
   assert len(c['review_history']['row_ids'])==(17 if c['id']=='cor:catalog' else 16 if c['id']=='prop:closed' else 14 if c['id']=='prop:partial' else 13 if c['id'] in ['cor:catalog','thm:k3-sufficient','prop:closed','ex:k3-formal','lem:k3-corners','lem:k3-hex-interior','lem:k3-tri-interior'] else 12)
   for id in c['review_history']['row_ids']:assert len(re.findall(r'^\| '+re.escape(id)+r' ',review,re.M))==1
@@ -68,5 +72,5 @@ def main():
   assert r['source_closure']==load('theorem1a-manifest.json')['sources'], 'incomplete theorem source closure'
  assert by['thm:aligned']['status']=='lean-result-received'
  assert by['thm:aligned']['lean'] and not by['claim:oblique']['lean']
- result(claims=30,received_formal_claims=formal_claims,declaration_records=count,lean_runs_by_this_static_command=0,fresh_theorem_receipt_present=True)
+ result(claims=31,received_formal_claims=formal_claims,declaration_records=count,lean_runs_by_this_static_command=0,fresh_theorem_receipt_present=True)
 if __name__=='__main__':main()

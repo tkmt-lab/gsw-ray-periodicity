@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
-  "version": "1.8.0",
+  "version": "1.9.0",
   "paper": {
-    "path": "paper-lines-v6.1-en.tex",
-    "sha256": "f27f1c5b59f88068db9fed27abb7e18a280e023b9d73af9584be3d865ca11de8",
-    "bytes": 63342
+    "path": "paper-lines-v6.2-en.tex",
+    "sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
+    "bytes": 70743
   },
   "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "status_semantics": "The status lean-result-received means exact source and a fixed reported kernel acceptance were received, not newly elaborated. Arithmetic predicates, graph sufficiency, conditional kernels and general prose theorems have distinct scopes. depends_on is expository, not a Lean proof-term dependency graph.",
@@ -32,7 +32,7 @@
     "k3_graph_sufficiency_received": true,
     "k3_graph_necessity_received": true,
     "k3_global_degree_classification": false,
-    "new_D12_classification_included": false,
+    "new_D12_classification_included": true,
     "human_peer_review": false,
     "novelty_established": false,
     "independent_derivation_strict_blind": false,
@@ -7811,6 +7811,53 @@
         ]
       },
       "human_review": false
+    },
+    {
+      "id": "thm:d12-classification",
+      "paper_label": "thm:d12-classification",
+      "kind": "theorem",
+      "statement_plain": "For all positive r,s, D12(r,s) has a literal path iff r|(s-1) or r|(s+1) or |r-3s|=1. Equivalently r=1; r=2 and s odd; or r>=3 with that criterion.",
+      "status": "two-separately-derived-universal-proof-routes-received",
+      "status_scope": "Positive integers r,s. Two alternative universal prose/computer-assisted proof routes, exactly as in D12 draft v2; neither is Lean.",
+      "depends_on": [
+        "def:literal",
+        "prop:forced",
+        "prop:family-decompositions"
+      ],
+      "remaining_obligations": [
+        "Alternative proof routes with distinct code/prose dependencies; not one combined premise list.",
+        "Both require prose model correspondence; route A has six executor obligations; route B uses explicit strips, rational certificates, external connectivity for necessity, arbitrary-length induction and global simplicity.",
+        "RouteB derivation did not read A construction/proof/code, but independence-014 precludes strict blind outcome isolation.",
+        "The new coordinator summary gives 18/19 submitted source hashes identical; only the documented monitoring helper differs. Historical T0250 has three source differences attributed by RouteB to summary-output argument handling, directly unconfirmed because the old bytes are unavailable. Own replay remained stopped at the unchanged memory guard.",
+        "No human proof review or Lean proof.",
+        "Within literature searched only; priority not established.",
+        "IPR subclass and zero parameters outside this claim."
+      ],
+      "lean": [],
+      "human_review": false,
+      "evidence": [
+        {
+          "path": "d12/proof-notes.tex",
+          "sha256": "cf289a00ec444dbcb12e9e0416975ce28b992b8d86e3d4dda9ed321ed2837a91",
+          "bytes": 31261
+        },
+        {
+          "path": "d12/derivatives.json",
+          "sha256": "7ab815fbb9742309a64a604cdfa826fc98cc1ecd97015bd5438cb651789a9239",
+          "bytes": 40983
+        },
+        {
+          "path": "d12/VERIFICATION-RECORD.md",
+          "sha256": "685a2cce9ec7adaab72c94ddfc24b3b408ae0fd31983108159b9f3cbafd6e738",
+          "bytes": 25239
+        }
+      ],
+      "review_history": {
+        "path": "d12/VERIFICATION-RECORD.md",
+        "sha256": "685a2cce9ec7adaab72c94ddfc24b3b408ae0fd31983108159b9f3cbafd6e738",
+        "bytes": 25239,
+        "row_ids": []
+      }
     }
   ]
 }

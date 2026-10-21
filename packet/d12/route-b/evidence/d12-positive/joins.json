@@ -1,0 +1,194 @@
+[
+  {
+    "epsilon": -1,
+    "parity": 0,
+    "kind": "E",
+    "rotation": 5,
+    "offset": [
+      [
+        -2,
+        -5,
+        0,
+        0
+      ],
+      [
+        1,
+        4,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      0
+    ]
+  },
+  {
+    "epsilon": -1,
+    "parity": 0,
+    "kind": "O",
+    "rotation": 4,
+    "offset": [
+      [
+        -4,
+        -6,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      1
+    ]
+  },
+  {
+    "epsilon": -1,
+    "parity": 1,
+    "kind": "E",
+    "rotation": 5,
+    "offset": [
+      [
+        2,
+        3,
+        0,
+        0
+      ],
+      [
+        -1,
+        -2,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      0
+    ]
+  },
+  {
+    "epsilon": -1,
+    "parity": 1,
+    "kind": "O",
+    "rotation": 4,
+    "offset": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      1
+    ]
+  },
+  {
+    "epsilon": 1,
+    "parity": 0,
+    "kind": "E",
+    "rotation": 5,
+    "offset": [
+      [
+        -2,
+        -5,
+        0,
+        0
+      ],
+      [
+        1,
+        4,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      1
+    ]
+  },
+  {
+    "epsilon": 1,
+    "parity": 0,
+    "kind": "O",
+    "rotation": 4,
+    "offset": [
+      [
+        -4,
+        -6,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      0
+    ]
+  },
+  {
+    "epsilon": 1,
+    "parity": 1,
+    "kind": "E",
+    "rotation": 5,
+    "offset": [
+      [
+        2,
+        3,
+        0,
+        0
+      ],
+      [
+        -1,
+        -2,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      1
+    ]
+  },
+  {
+    "epsilon": 1,
+    "parity": 1,
+    "kind": "O",
+    "rotation": 4,
+    "offset": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "triangle_faces": [
+      0,
+      0
+    ]
+  }
+]

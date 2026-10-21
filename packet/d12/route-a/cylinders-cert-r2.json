@@ -1,0 +1,572 @@
+[
+  {
+    "start": 0,
+    "cell": 0,
+    "transient": {
+      "ok": true,
+      "index_of_T2": "12r+20s+1",
+      "a0": "2r",
+      "index_form": [
+        12,
+        20,
+        0,
+        1
+      ]
+    },
+    "lap": {
+      "leaves": 1,
+      "all_ok": true,
+      "index_increment": [
+        "12r+20s"
+      ],
+      "range": [
+        "1",
+        "-2r+s-2"
+      ],
+      "increment_form": [
+        12,
+        20,
+        0,
+        0
+      ]
+    },
+    "final": [
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -2
+          ],
+          [
+            -2,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "8r+22s-2a-1",
+        "index_form": [
+          8,
+          22,
+          -2,
+          -1
+        ],
+        "runs": 4
+      },
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -2
+          ],
+          [
+            2,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "12r+22s-2a-2",
+        "index_form": [
+          12,
+          22,
+          -2,
+          -2
+        ],
+        "runs": 5
+      },
+      {
+        "extra": [
+          [
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "4r+12s-2a-1",
+        "index_form": [
+          4,
+          12,
+          -2,
+          -1
+        ],
+        "runs": 2
+      },
+      {
+        "extra": [
+          [
+            1,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "8r+12s-2a-2",
+        "index_form": [
+          8,
+          12,
+          -2,
+          -2
+        ],
+        "runs": 3
+      }
+    ],
+    "final_kinds": [
+      "neg",
+      "pos"
+    ]
+  },
+  {
+    "start": 3,
+    "cell": 0,
+    "transient": {
+      "ok": true,
+      "index_of_T2": "12r+20s",
+      "a0": "2r-1",
+      "index_form": [
+        12,
+        20,
+        0,
+        0
+      ]
+    },
+    "lap": {
+      "leaves": 1,
+      "all_ok": true,
+      "index_increment": [
+        "12r+20s"
+      ],
+      "range": [
+        "1",
+        "-2r+s-2"
+      ],
+      "increment_form": [
+        12,
+        20,
+        0,
+        0
+      ]
+    },
+    "final": [
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -2
+          ],
+          [
+            -2,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "16r+32s-2a-3",
+        "index_form": [
+          16,
+          32,
+          -2,
+          -3
+        ],
+        "runs": 7
+      },
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -2
+          ],
+          [
+            2,
+            -1,
+            1,
+            0
+          ],
+          [
+            -2,
+            1,
+            -1,
+            0
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "8r+22s-2a-1",
+        "index_form": [
+          8,
+          22,
+          -2,
+          -1
+        ],
+        "runs": 4
+      },
+      {
+        "extra": [
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "12r+22s-2a-3",
+        "index_form": [
+          12,
+          22,
+          -2,
+          -3
+        ],
+        "runs": 5
+      },
+      {
+        "extra": [
+          [
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            -1,
+            1,
+            -1,
+            0
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "4r+12s-2a-1",
+        "index_form": [
+          4,
+          12,
+          -2,
+          -1
+        ],
+        "runs": 2
+      }
+    ],
+    "final_kinds": [
+      "neg",
+      "pos"
+    ]
+  },
+  {
+    "start": 4,
+    "cell": 1,
+    "transient": {
+      "ok": true,
+      "index_of_T2": "14r+22s+1",
+      "a0": "3r+s",
+      "index_form": [
+        14,
+        22,
+        0,
+        1
+      ]
+    },
+    "lap": {
+      "leaves": 1,
+      "all_ok": true,
+      "index_increment": [
+        "12r+20s"
+      ],
+      "range": [
+        "r+s+1",
+        "-r+2s-2"
+      ],
+      "increment_form": [
+        12,
+        20,
+        0,
+        0
+      ]
+    },
+    "final": [
+      {
+        "extra": [
+          [
+            0,
+            2,
+            -1,
+            -2
+          ],
+          [
+            -1,
+            2,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "10r+24s-2a-1",
+        "index_form": [
+          10,
+          24,
+          -2,
+          -1
+        ],
+        "runs": 4
+      },
+      {
+        "extra": [
+          [
+            0,
+            2,
+            -1,
+            -2
+          ],
+          [
+            1,
+            -2,
+            1,
+            0
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "14r+24s-2a-2",
+        "index_form": [
+          14,
+          24,
+          -2,
+          -2
+        ],
+        "runs": 5
+      },
+      {
+        "extra": [
+          [
+            0,
+            -2,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "6r+14s-2a-1",
+        "index_form": [
+          6,
+          14,
+          -2,
+          -1
+        ],
+        "runs": 2
+      },
+      {
+        "extra": [
+          [
+            0,
+            -2,
+            1,
+            0
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "10r+14s-2a-2",
+        "index_form": [
+          10,
+          14,
+          -2,
+          -2
+        ],
+        "runs": 3
+      }
+    ],
+    "final_kinds": [
+      "neg",
+      "pos"
+    ]
+  },
+  {
+    "start": 8,
+    "cell": 1,
+    "transient": {
+      "ok": true,
+      "index_of_T2": "8r+20s",
+      "a0": "2r",
+      "index_form": [
+        8,
+        20,
+        0,
+        0
+      ]
+    },
+    "lap": {
+      "leaves": 2,
+      "all_ok": true,
+      "index_increment": [
+        "8r+20s"
+      ],
+      "range": [
+        "1",
+        "-r+s-2"
+      ],
+      "increment_form": [
+        8,
+        20,
+        0,
+        0
+      ]
+    },
+    "final": [
+      {
+        "extra": [
+          [
+            1,
+            1,
+            -1,
+            -3
+          ],
+          [
+            0,
+            1,
+            -1,
+            -2
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "8r+14s+2a+1",
+        "index_form": [
+          8,
+          14,
+          2,
+          1
+        ],
+        "runs": 3
+      },
+      {
+        "extra": [
+          [
+            1,
+            1,
+            -1,
+            -3
+          ],
+          [
+            0,
+            1,
+            -1,
+            -2
+          ],
+          [
+            1,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "10r+16s-2",
+        "index_form": [
+          10,
+          16,
+          0,
+          -2
+        ],
+        "runs": 4
+      },
+      {
+        "extra": [
+          [
+            1,
+            1,
+            -1,
+            -3
+          ],
+          [
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "kind": "pos",
+        "index_rel": "2r+4s+2a+1",
+        "index_form": [
+          2,
+          4,
+          2,
+          1
+        ],
+        "runs": 1
+      },
+      {
+        "extra": [
+          [
+            -1,
+            -1,
+            1,
+            2
+          ]
+        ],
+        "kind": "neg",
+        "index_rel": "6r+6s-2",
+        "index_form": [
+          6,
+          6,
+          0,
+          -2
+        ],
+        "runs": 2
+      }
+    ],
+    "final_kinds": [
+      "neg",
+      "pos"
+    ]
+  }
+]

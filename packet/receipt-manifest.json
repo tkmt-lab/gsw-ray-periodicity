@@ -27,7 +27,7 @@
   "new_lean_runs": 0,
   "new_scientific_runs": 0,
   "network": false,
-  "D12_new_classification_included": false,
+  "D12_new_classification_included": true,
   "receipts": [
     {
       "path": "evidence/R004/R004-evidence--claim14-arithmetic--summary.json.txt.original.log",
@@ -4988,5 +4988,6 @@
     "formal/Formal/Claude5E10Two.lean",
     "formal/Formal/Claude5E10ComparatorChallenge.lean"
   ],
-  "new_received_E10_comparator_declarations": 2
+  "new_received_E10_comparator_declarations": 2,
+  "D12_lean_proof": false
 }

@@ -1,3 +1,11 @@
+# Article6.2 / packet1.9.0 verification record
+
+## D12 addition, article 6.2 / packet 1.9.0
+
+Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.
+
+`thm:d12-classification`: `two-separately-derived-universal-proof-routes-received`; no Lean and no human proof review. See d12/VERIFICATION-RECORD.md for the full unchanged draft-v2 limitations, including failed strict blind outcome isolation. The authoring agent checked stored rational certificate arithmetic and packaging, not a third independent proof.
+
 # Verification record: affine fullerene ray periodicity
 
 ## E10 reception and current verification boundary
