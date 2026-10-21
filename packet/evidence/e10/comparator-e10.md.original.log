@@ -1,0 +1,17 @@
+# Comparator照合：E10 の分類と直線上の最終周期性（2026-10-21）
+
+統括（Claude Code）。E10 の証明が、証明より先に主張文担当の Claude サブエージェントが書いた主張文（`formal/Formal/Claude5E10ComparatorChallenge.lean`）の二つの定理と同じ文の証明であることを、`lake comparator --paranoid` で照合した。
+
+- 主張：`ClaudeChallengeE10.classification`（p ≥ 1, r ≥ 2, s ≥ 1 で、道がある ⇔ ∃ d ∈ {0, r, r+s}, p ≡ d ± 1 (mod 2r+s)）と `ClaudeChallengeE10.main`（p₀, r₀, s₀ ≥ 1 のどの直線でも最終周期的、r = 1 の直線を含む）。
+- 主張文と論文の対応：独立な読み手（`studies/R002/analysis/2026-10-20-claude-e10-bridge/statement-review-1/`、FAITHFUL WITH CAVEATS）と Python の写し（同じ場所、702 例で R004 の二つの構成と同型）。
+- 証明：`Claude5E10ComparatorSolution.lean`（Claude サブエージェント、110 ファイル、手書き約 6,200 行・生成約 26,500 行）。道筋：二つの六角形の蓋と周 3m・高さ 2p の筒（ねじれ w = p mod 3m）のモデルとの同型、r ≥ 2 の必要性は直線の状態の不変量（K3 と同じ型）、十分性は筒のジグザグ、次数5は12の角。r = 1 の直線は Theorem 1a の形式版（`ClaudeChallenge2.State.main_statement`）を E10 の署名に当てはめた（Valid と TrianglesInCharts をモデルの事実から証明）。r = 1 の閉じた分類式は証明していない（主張文も求めない）。報告：`e10-bridge-report-2026-10-20.md`。
+- 設定：`formal/comparator-e10.json`。
+
+## 結果
+**Lean paranoid・lean4lean・nanoda・con-leche（26,246宣言）・con-ron（26,246宣言）・Lean標準の6つのkernelが全て受理。Your solution is okay!** 595.4秒、最大3.21GB。生の出力：`comparator-e10-paranoid-2026-10-21.txt`。
+
+統括の別の確認：`#print axioms` は二つの定理とも標準の3つ。新しいファイルに sorry・native_decide・axiom はない。`namespace ClaudeChallengeE10` 以降の challenge との差は二つの sorry の行だけ。分岐点からの差分は新しいファイルの追加だけ。`lake build Formal.Claude5E10ComparatorSolution` 成功（3,323 jobs）。
+
+## 留保
+- macOS に bwrap がないため隔離なしで実行。証明はすべて Claude サブエージェントによる。
+- O2 と D14 の解答は補助 tactic `peq` の名前が衝突し、一つのファイルで同時に import できない（E10 は無関係。O2＋E10、D14＋E10 はそれぞれビルドが通る）。

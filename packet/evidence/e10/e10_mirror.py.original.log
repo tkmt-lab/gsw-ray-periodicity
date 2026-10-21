@@ -1,0 +1,181 @@
+#!/usr/bin/env python3
+"""E10 (Graver) as Claude2Aligned-style labelled polygons; mirror checks of Claude5E10Spec.lean.
+
+Parameters: Lean = paper = R004 e10_aligned.py (p, r, s).  Check: twice the total area is
+2(6r^2 + 6rs + s^2) + 3 * 4pm = 12r^2 + 2s^2 + 12rs + 24pr + 12ps with m = 2r + s, the paper's
+E10 carbon order (appendix table).
+
+Cells (re-derived from R004's aligned E10 retiling e10_aligned.py, read-only):
+  cell 0: lower cap, labels L0..L5 = 0..5, hexagon with sides r, r+s, r, r+s, r, r+s;
+  cell 1: upper cap, labels U0, U5, U4, U3, U2, U1 (U_i = 6 + i), hexagon with sides
+          r+s, r, ... and, unless k in {0, r}, three auxiliary straight corners (labels 12..14)
+          where the tube cuts meet it;
+  cells 2, 3, 4: the tube sectors c = 0, 1, 2, parallelograms with lower side m along
+          direction 5 and vertical side 2p, whose upper side carries the upper-cap corners.
+Here m = 2r + s, k = p mod m, j = (p div m) mod 3.  Upper corner U_{2i} sits at tube position
+p - i m and U_{2i+1} at p - r - i m (mod 3m); the cuts are at 0, m, 2m (lower corners L0, L4, L2).
+Checks as in the O2 mirror (counts, degrees, isomorphism with R004 e10_aligned.construct via
+canonical_fast, twelve degree-5 vertices, no off-seam identification, literal paths), also
+isomorphism with R004's original non-aligned E10 construction e10.construct (caps + six oblique
+parallelograms), and the paper's E10 condition.
+Usage: e10_mirror.py MIRROR_DIR R004_SRC OUT.json
+"""
+
+import json
+import sys
+from itertools import product
+
+HERE, R004 = sys.argv[1], sys.argv[2]
+sys.path.insert(0, HERE)
+sys.path.insert(1, R004)
+from claude2_aligned_mirror import (Surface, walk, literal_path_exists,  # noqa: E402
+                                    check_literal, r004_compare)
+from graphs import from_oriented_triangles  # noqa: E402
+from canonical_fast import canonical_fast  # noqa: E402
+import e10_aligned as r004_e10  # noqa: E402
+import e10 as r004_e10_original  # noqa: E402
+
+# ---------------------------------------------------------------- Lean data (Claude5E10Spec)
+
+
+def e10_lab_poly(p, r, s, f):
+    m = 2 * r + s
+    k, j = p % m, (p // m) % 3
+
+    def e(i):
+        return 6 + 2 * (i % 3)
+
+    def o(i):
+        return 7 + 2 * (i % 3)
+
+    def cut(c):
+        return 12 + c % 3
+
+    if f == 0:
+        return [0, 1, 2, 3, 4, 5], walk((0, 0), [(r, 0), (r + s, 1), (r, 2), (r + s, 3), (r, 4), (r + s, 5)])
+    if f == 1:
+        if k == 0 or k == r:
+            return [6, 11, 10, 9, 8, 7], walk((0, 0), [(r + s, 0), (r, 1), (r + s, 2), (r, 3), (r + s, 4), (r, 5)])
+        if k < r:
+            return ([6, 11, cut(j + 1), 10, 9, cut(j + 2), 8, 7, cut(j)],
+                    walk((0, 0), [(r + s, 0), (r - k, 1), (k, 1), (r + s, 2), (r - k, 3), (k, 3),
+                                  (r + s, 4), (r - k, 5), (k, 5)]))
+        return ([6, cut(j + 1), 11, 10, cut(j + 2), 9, 8, cut(j), 7],
+                walk((0, 0), [(m - k, 0), (k - r, 0), (r, 1), (m - k, 2), (k - r, 2), (r, 3),
+                              (m - k, 4), (k - r, 4), (r, 5)]))
+    c = f - 2
+    a, b = (j + 3 - c) % 3, (j + 5 - c) % 3
+    low = [(6 - 2 * c) % 6, 5 - 2 * c, 4 - 2 * c]
+    base = [(m - r, 5), (r, 5), (2 * p, 1)]
+    if k == 0:
+        return low + [e(b), o(b), e(a)], walk((0, 0), base + [(r, 2), (m - r, 2), (2 * p, 4)])
+    if k < r:
+        return (low + [cut(c + 1), o(b), e(a), cut(c)],
+                walk((0, 0), base + [(r - k, 2), (m - r, 2), (k, 2), (2 * p, 4)]))
+    if k == r:
+        return low + [o(b), e(a), o(a)], walk((0, 0), base + [(m - r, 2), (r, 2), (2 * p, 4)])
+    return (low + [cut(c + 1), e(a), o(a), cut(c)],
+            walk((0, 0), base + [(m - k, 2), (r, 2), (k - r, 2), (2 * p, 4)]))
+
+
+def e10_sig(p, r, s):
+    cells = [e10_lab_poly(p, r, s, f) for f in range(5)]
+    return [x for x, _ in cells], [y for _, y in cells]
+
+
+def e10_pos(p, r, s):
+    """The paper's closed condition (stated for p, s >= 1, r >= 2)."""
+    m = 2 * r + s
+    return any((p - d - e) % m == 0 for d in (0, r, r + s) for e in (1, -1))
+
+
+# ---------------------------------------------------------------- generic checks
+
+
+def rotation_system(S):
+    """Oriented unit triangles of every cell (whole bounding box), as vertex classes, turned
+    into an R004 rotation system (this also asserts every dart lies in exactly one triangle)."""
+    tri = []
+    for f in range(S.N):
+        P = S.poly[f]
+        for x, y in product(range(min(a for a, _ in P), max(a for a, _ in P) + 1),
+                            range(min(b for _, b in P), max(b for _, b in P) + 1)):
+            for trip in (((x, y), (x + 1, y), (x, y + 1)), ((x + 1, y), (x + 1, y + 1), (x, y + 1))):
+                if all((f, q) in S.index for q in trip):
+                    tri.append(tuple(S.cls[S.index[f, q]] for q in trip))
+    return from_oriented_triangles(tri), len(tri)
+
+
+def charts_injective(S):
+    seen = {}
+    for k, (f, z) in enumerate(S.sites):
+        if seen.setdefault((f, S.cls[k]), z) != z:
+            return False
+    return True
+
+
+def check_case(lab, poly, construct_graph, area2):
+    S = Surface(lab, poly)
+    E = sum(S.deg) // 2
+    G = construct_graph
+    rot, ntri = rotation_system(S)
+    rec = {"V": S.V, "E": E, "V_r004": len(G), "E_r004": sum(len(x) for x in G) // 2,
+           "deg5": S.deg.count(5), "other_deg": sorted(set(S.deg) - {5, 6}),
+           "deg_seq_eq": sorted(S.deg) == sorted(len(x) for x in G),
+           "triangles": ntri, "area2": area2,
+           "tri_edges_eq_adj": all(set(rot[v]) == S.adj[v] for v in range(S.V)),
+           "boundary_only": S.boundary_only(), "charts_injective": charts_injective(S),
+           "same_as_aligned_surface": r004_compare(S, lab, poly, R004)[0]}
+    rec["iso_r004"] = canonical_fast(rot) == canonical_fast(G)
+    w = literal_path_exists(S, want_witness=True)
+    rec["path"] = w is not None
+    if w is not None:
+        assert check_literal(S, w)
+    rec["ok"] = (rec["V"] == rec["V_r004"] and rec["E"] == rec["E_r004"] and rec["deg_seq_eq"]
+                 and rec["deg5"] == 12 and not rec["other_deg"] and ntri == area2
+                 and rec["tri_edges_eq_adj"] and rec["boundary_only"] and rec["charts_injective"]
+                 and rec["same_as_aligned_surface"] and rec["iso_r004"])
+    return rec
+
+
+def main():
+    rows = []
+    # every k = p mod m and j = (p div m) mod 3 occurs for each (r, s): p = 1 .. 3m + 1
+    grid = [(r, s, p) for r in range(1, 6) for s in range(1, 6) for p in range(1, 3 * (2 * r + s) + 2)]
+    grid += [(1, 11, 17), (1, 7, 31)]  # the paper's further r = 1 negatives (C3038, C3542)
+    for r, s, p in sorted(set(grid)):
+        lab, poly = e10_sig(p, r, s)
+        m = 2 * r + s
+        rec = {"p": p, "r": r, "s": s, "m": m, "k": p % m, "j": (p // m) % 3}
+        rec.update(check_case(lab, poly, r004_e10.construct(p, r, s),
+                              12 * r * r + 2 * s * s + 12 * r * s + 24 * p * r + 12 * p * s))
+        # also against R004's original (non-aligned, six oblique parallelograms) E10 construction
+        rot, _ = rotation_system(Surface(lab, poly))
+        rec["iso_r004_original_e10"] = canonical_fast(rot) == canonical_fast(r004_e10_original.construct(p, r, s))
+        rec["ok"] = rec["ok"] and rec["iso_r004_original_e10"]
+        rec["paper_cond"] = e10_pos(p, r, s)
+        rec["r1_sufficient"] = r == 1 and (p < m or p % m in (0, 1, 2, m - 2, m - 1))
+        rows.append(rec)
+        print(p, r, s, rec["ok"], rec["path"], rec["paper_cond"], file=sys.stderr)
+    bad = [x for x in rows if not x["ok"]]
+    dom = [x for x in rows if x["r"] >= 2]
+    r1 = [x for x in rows if x["r"] == 1]
+    summary = {"cases": len(rows), "bad": len(bad),
+               "k_cases_seen": sorted({("k=0" if x["k"] == 0 else "0<k<r" if x["k"] < x["r"] else
+                                        "k=r" if x["k"] == x["r"] else "k>r", x["j"]) for x in rows}),
+               "r_ge_2_cases": len(dom),
+               "r_ge_2_disagreements": [(x["p"], x["r"], x["s"], x["path"]) for x in dom
+                                        if x["path"] != x["paper_cond"]],
+               "r_ge_2_positives": sum(x["path"] for x in dom),
+               "r1_cases": len(r1),
+               "r1_negatives": [(x["p"], x["r"], x["s"]) for x in r1 if not x["path"]],
+               "r1_sufficient_but_negative": [(x["p"], x["r"], x["s"]) for x in r1
+                                              if x["r1_sufficient"] and not x["path"]],
+               "r1_path_vs_formula_disagreements": [(x["p"], x["r"], x["s"], x["path"]) for x in r1
+                                                    if x["path"] != x["paper_cond"]]}
+    print(json.dumps(summary))
+    json.dump({"summary": summary, "rows": rows}, open(sys.argv[3], "w"), indent=0)
+
+
+if __name__ == "__main__":
+    main()

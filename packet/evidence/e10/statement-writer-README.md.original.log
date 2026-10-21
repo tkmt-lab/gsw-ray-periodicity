@@ -1,0 +1,94 @@
+# E10 bridge: Lean data and challenge statements (statement writer, 2026-10-20)
+
+Statements only; no proofs (the two theorems end in `sorry`).
+
+## Files
+- `formal/Formal/Claude5E10Spec.lean` — `e10Cell`, `e10Lab`, `e10Poly`, `e10Sig`, `e10Graph` in
+  namespace `Claude2Aligned`. Compiles.
+- `formal/Formal/Claude5E10ComparatorChallenge.lean` (copy: `ChallengeE10.lean`) — Mathlib-only
+  challenge, C1 style (also imports `Mathlib.Data.Int.ModEq` for `[ZMOD]`). Compiles; 2 `sorry`s.
+- `e10_mirror.py`, `e10-mirror-result.json` — Python mirror and its output.
+- `lean_eval_check/` — `EvalData.lean` evaluates the Lean data of all three families
+  (`#eval`), `compare_lean_eval.py` compares with the mirrors' data: 3660 cells (O2 16 pairs,
+  D14 16 pairs, E10 the 700 regular grid points × 5 cells), 0 mismatches. This checks the Lean
+  `%`, `/`, `toNat`, `walk` and case splits.
+- Verbatim check: `../2026-10-20-claude-o2-bridge/check_verbatim.py formal E10` → 24 verbatim
+  blocks; new: `PathExists`, `classification`, `main`; nothing else.
+
+## Data source and parameters
+R004 `.worktrees/verify/studies/R004/src/e10_aligned.py` (read-only), the paper's retiling
+(`sec:families`: cut moved from `(p,p)` to `(0,2p)`, three parallelograms of width `m = 2r + s`
+and two caps, five disks, also for `r = 1`). R004's original `e10.py` (caps + six oblique
+parallelograms with a `(p,p)` side) is not aligned, so it is used only as a second comparison.
+
+Paper parameters `p, r, s` = R004 `p, r, s`. Confirmation: twice the area is
+`2(6r² + 6rs + s²) + 3·4pm = 12r² + 2s² + 12rs + 24pr + 12ps`, the paper's appendix E10 row,
+and E10(9,1,4) has 740 carbons and no path, the paper's "E10(9,1,4) = C740 is negative".
+
+Cell data (the combinatorics depend on `k = p mod m` and `j = (p div m) mod 3`):
+- cell 0, lower cap `L0..L5` (labels 0..5), sides `r, r+s, …`; the cuts at tube positions
+  `0, m, 2m` meet it at `L0, L4, L2`;
+- cell 1, upper cap `U0 U5 U4 U3 U2 U1` (`Uᵢ = 6+i`), sides `r+s, r, …`; for `k ∉ {0, r}` three
+  auxiliary straight corners `12 + c` (cut at `cm`) are inserted, on the `r`-sides if `0 < k < r`,
+  on the `(r+s)`-sides if `k > r`;
+- cells 2..4, tube sector `c` from position `cm` to `(c+1)m`: lower corners
+  `L(6−2c mod 6), L(5−2c), L(4−2c)`, vertical side `2p`, and the upper corners in the sector
+  (`U(2i)` at position `p − im`, `U(2i+1)` at `p − r − im`, mod `3m`).
+This is a hand derivation of the constructor's sorting of positions into four `k`-cases; the
+mirror checks it reproduces the constructor's surface. All 12 combinations (4 `k`-cases × 3
+values of `j`) occur in the grid.
+
+## Mirror results (r, s = 1..5, p = 1..3m+1, plus E10(17,1,11), E10(31,1,7); 702 cases)
+Every case: counts, degree sequence and isomorphism (`canonical_fast`) with R004
+`e10_aligned.construct`, **and** isomorphism with R004's original `e10.construct`; twelve
+degree-5 vertices; unit triangles = `12r²+2s²+12rs+24pr+12ps`; no off-seam identification (same
+partition and edges as R004 `aligned_surface` on the same data, injective charts, glued pairs
+only on boundaries). Bad cases: 0. Largest case: 4467 vertices.
+
+Literal paths (exhaustive search) against the paper's condition
+`∃ d ∈ {0, r, r+s}, p ≡ d ± 1 (mod m)`:
+
+| r | s | p range | cases | paths | agree with condition |
+|---|---|---|---|---|---|
+| 2 | 1..5 | 1..3m+1 | 110 | 62 | 110/110 |
+| 3 | 1..5 | 1..3m+1 | 140 | 92 | 140/140 |
+| 4 | 1..5 | 1..3m+1 | 170 | 92 | 170/170 |
+| 5 | 1..5 | 1..3m+1 | 200 | 92 | 200/200 |
+| 1 | 1..5 | 1..3m+1 | 80 | 74 | 77/80 |
+| 1 | 7, 11 | 31, 17 | 2 | 0 | 2/2 |
+
+`r ≥ 2` (620 cases, the paper's classification domain): **no disagreement**.
+`r = 1` (outside the classification): negatives exactly (9,1,4), (15,1,4), (10,1,5), (11,1,5),
+(17,1,5), (18,1,5), (31,1,7), (17,1,11) — including the paper's three (C740, C3038, C3542). The
+paper's `r = 1` sufficiency (`p < m` or `p mod m ∈ {0,1,2,m−2,m−1}`) holds in every case, and on
+this grid it is also necessary; the three formula disagreements are `p < m` positives
+((3,1,4), (3,1,5), (4,1,5)). Not stated as a theorem (the paper proves no `r = 1` necessity).
+
+## Statements (`ClaudeChallengeE10`)
+```lean
+def PathExists (p r s : ℤ) : Prop := ∃ n q, LiteralPath (e10Graph p r s) n q
+
+theorem classification (p r s : ℕ) (hp : 1 ≤ p) (hr : 2 ≤ r) (hs : 1 ≤ s) :
+    PathExists p r s ↔
+      ∃ d : ℤ, (d = 0 ∨ d = r ∨ d = r + s) ∧
+        ((p : ℤ) ≡ d + 1 [ZMOD 2 * r + s] ∨ (p : ℤ) ≡ d - 1 [ZMOD 2 * r + s])
+
+theorem main (p₀ r₀ s₀ a b c : ℕ) (hp : 1 ≤ p₀) (hr : 1 ≤ r₀) (hs : 1 ≤ s₀) :
+    ∃ n₀ P : ℕ, 0 < P ∧ ∀ n : ℕ, n₀ ≤ n →
+      (PathExists (p₀ + a * n) (r₀ + b * n) (s₀ + c * n) ↔
+        PathExists (p₀ + a * (n + P)) (r₀ + b * (n + P)) (s₀ + c * (n + P)))
+```
+`classification` is the paper's `prop:closed` E10 row (domain `p, s ≥ 1, r ≥ 2`; the paper
+marks the full graph iff as not formalized). `main` is Corollary 1b for E10 (domain
+`p, r, s ≥ 1`, including the `r = 1` rays, where no closed condition is known).
+
+## Doubts
+- The cell combinatorics are not uniform in `p` (four `k`-cases, three `j`-values). This is
+  forced for an aligned decomposition (straight lattice cuts from the lower boundary reach the
+  upper boundary only at offsets `0` or `2p`, while upper corners sit at offset `p`), and is what
+  the paper says ("cut-corner positions involve `p mod C`"). A proof of `main` must work per
+  residue branch (`ClaudeChallenge2.main_residue`-style) or through the classification.
+- `main` on `r = 1` rays cannot be obtained from `classification`; it needs the general
+  aligned-face route or new `r = 1` results.
+- Isomorphism with the aligned constructor uses R004's gluing engine; the additional isomorphism
+  with R004's original non-aligned `e10.py` (its own transition-map gluing) is more independent.

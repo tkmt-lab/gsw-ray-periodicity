@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 6.0, 21 October 2026}
+\date{Version 6.1, 21 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -36,8 +36,9 @@ to eleven specified catalogue families. The specification-level
 periodicity theorem is Lean-proved, with a prose correspondence lemma
 connecting its assumptions to the geometric hypotheses. Family-specific
 Lean proofs establish K3 and C1 path classifications, O2 absence on
-its stated domain, and positive-ray actual-path periodicity for K3,
-C1, O2 and D14. We also describe closed conditions, exact decisions on
+its stated domain, and the E10 classification for $r\ge2$.
+Positive-ray actual-path periodicity is Lean-proved for K3, C1, O2,
+D14 and E10, including the E10 boundary $r=1$. We also describe closed conditions, exact decisions on
 two example rays for every ray parameter, finite checks, and a
 fixed-oblique-direction extension as a separate proof sketch.
 \end{abstract}
@@ -66,7 +67,7 @@ existing logical and fixed-boundary periodicity theorems.
 Theorem~\ref{thm:aligned} & Lean specification theorem; prose geometric correspondence & Convex six-direction disk decompositions, with fixed affine gluing and eventual validity; fixed-residue variants.\\
 Logical periodicity step & External MSO/regular-language theorem & One fixed sentence over unary finite words.\\
 Corollary~\ref{cor:catalog} & Geometric decompositions and arithmetic; direct Lean family proofs & Eleven specified valid positive-parameter families.\\
-K3, C1, O2, D14 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; all four positive-natural ray results.\\
+K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all five positive-natural ray results, including E10 $r=1$.\\
 Family boundaries & Lean explicit paths and finite checks & O2 paths on $(1,d)$, $d\ge3$, and $(t,1)$, $t\ge3$; D14 paths on $(1,s)$, $s\ge2$, and $(r,1)$, $r\ge2$. Small remaining boundary decisions are finite evidence.\\
 Other closed conditions and examples & Prose geometry, Lean predicate arithmetic, explicit witnesses and checkers & The domains and finite ranges specified in Sections~\ref{sec:conditions}, \ref{sec:arithmetic} and \ref{sec:finite}; C1/O2 IPR is prose.\\
 Fixed-oblique extension & Proof sketch & The four transfer obligations in Section~\ref{sec:extension}.\\
@@ -226,9 +227,12 @@ There are eleven families in this statement. Positive boundaries with
 a parameter fixed at 1 are included, notably K3 and O2 and E10 with
 $r=1$. Collapsed zero boundaries are not. The corollary gives no
 two-variable closed classification merely from ray periodicity.
-The K3, C1, O2 and D14 parts have direct family-specific ray proofs on their
-quotient graphs, including positive boundary parameters, without invoking the
-general prose correspondence lemma. Their ray declarations start with
+The K3, C1, O2 and D14 parts have direct family-specific ray proofs on
+their quotient graphs, including positive boundary parameters. E10 also
+has a formal actual-path ray proof: its $r=1$ branch applies the formal
+general periodicity theorem with the validity and triangle-lifting
+hypotheses proved on the E10 model. These five results use no general
+prose correspondence lemma. Their ray declarations start with
 positive natural coordinates and nonnegative slopes; an eventually positive
 integer ray is covered by reindexing its positive tail. The other family
 routes retain their stated scope.
@@ -462,7 +466,7 @@ B2, $p,r\ge1$ & Its closed condition is a finite disjunction of affine equalitie
 C1, $a,b\ge1$ & Lean graph iff $b=1$ and actual-path ray periodicity; no general prose bridge.\\
 A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:arithmetic}.\\
 K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
-E10, $p,r,s\ge1$ & Arithmetic for $r\ge2$; the five-piece decomposition includes $r=1$.\\
+E10, $p,r,s\ge1$ & Lean actual-path ray periodicity; for $r=1$, the formal general theorem applies with model hypotheses proved in Lean.\\
 D12, D1 & The convex decompositions on valid positive integer parameters.\\
 D14, $r,s\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\
 O2, $t,d\ge1$ & Lean actual-path ray periodicity, including parameter 1; Lean absence for $t,d\ge2$. No general prose bridge.\\\bottomrule
@@ -486,7 +490,7 @@ C1, $a,b\ge1$ & $b=1$; IPR iff $a,b\ge2$ & Graph iff in Lean; IPR equivalence by
 B2, $p,r\ge1$ & $p=1$ or $|p-r|=1$ & Prose proof on the whole positive domain.\\
 K3, $r,s\ge2$ & $s\equiv\pm1\pmod r$ & Graph iff in Lean on the displayed domain.\\
 O2, $t,d\ge2$ & Never positive & Graph absence in Lean; IPR by prose geometry.\\
-E10, $p,s\ge1,r\ge2$ & $m=2r+s$ and $p\equiv d\pm1\pmod m$ for some $d\in\{0,r,r+s\}$ & Prose graph iff and Lean predicate-ray arithmetic.\\\bottomrule
+E10, $p,s\ge1,r\ge2$ & $m=2r+s$ and $p\equiv d\pm1\pmod m$ for some $d\in\{0,r,r+s\}$ & Graph iff in Lean on the displayed domain; the ray theorem also covers $r=1$.\\\bottomrule
 \end{tabular}
 \end{center}
 K3 writes $s=qr+u$: $u=0$ is excluded by integer GC,
@@ -735,6 +739,27 @@ Absence holds for $r,s\ge2$. Explicit paths exist at $(1,s)$ for
 $s\ge2$ and $(r,1)$ for $r\ge2$. At $(1,1)$, a finite path witness
 supplies the decision; the constant-ray statement follows directly
 from constancy of the graph.
+
+\subsection{E10 graph classification and all positive rays}\label{sec:e10-formal}
+For natural $p,s\ge1$ and $r\ge2$, the E10 quotient admits a literal
+path exactly under the six congruences in the closed-condition table.
+An isomorphism identifies the five-polygon quotient with two hexagonal
+caps and a tube of circumference $3m$ and height $2p$, where $m=2r+s$
+and the twist is $p\bmod3m$. Degree five occurs exactly at the twelve
+cap corners. A line-state invariant excludes the six negative regions;
+explicit tube zigzags establish the positive residues.
+
+Actual-path existence is eventually periodic for all positive natural
+starts and nonnegative natural slopes in $p,r,s$. When $r$ is eventually
+at least two, the classification reduces the problem to affine
+divisibility. On a ray with $r=1$, a five-chart affine signature has
+75 gluing records and twelve marked corners. Its quotient graph is
+isomorphic to the tube model. Chart injectivity, degrees, the two-common-
+neighbour property and triangle lifting are proved on that model,
+supplying the hypotheses of the formal general periodicity theorem.
+Residue classes make the twist affine, and their eventual periods combine.
+This formal route leaves the separate $r=1$ sufficient conditions above
+and their open converse unchanged; it gives no $r=1$ closed classification.
 
 \subsection{Conditional auxiliary lemmas}\label{sec:historical-formal}
 \label{lem:historical-kernels}\claimid{lem:historical-kernels}

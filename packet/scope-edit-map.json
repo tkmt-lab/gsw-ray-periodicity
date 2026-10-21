@@ -1,0 +1,61 @@
+{
+  "predecessor": "paper-lines-v6.0-en.tex",
+  "target": "paper-lines-v6.1-en.tex",
+  "predecessor_sha256": "32fd9c64a92d49686f22897ced0a68521ff0e3a31138a63897b7d0233cac8e53",
+  "target_sha256": "f27f1c5b59f88068db9fed27abb7e18a280e023b9d73af9584be3d865ca11de8",
+  "edits": [
+    {
+      "number": 1,
+      "before": "Version 6.0, 21 October 2026",
+      "after": "Version 6.1, 21 October 2026",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 23
+    },
+    {
+      "number": 2,
+      "before": "Lean proofs establish K3 and C1 path classifications, O2 absence on\nits stated domain, and positive-ray actual-path periodicity for K3,\nC1, O2 and D14.",
+      "after": "Lean proofs establish K3 and C1 path classifications, O2 absence on\nits stated domain, and the E10 classification for $r\\ge2$.\nPositive-ray actual-path periodicity is Lean-proved for K3, C1, O2,\nD14 and E10, including the E10 boundary $r=1$.",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 38
+    },
+    {
+      "number": 3,
+      "before": "K3, C1, O2, D14 & Lean quotient-graph proofs & K3 iff for $r,s\\ge2$; C1 iff for $a,b\\ge1$; O2 absence for $t,d\\ge2$; all four positive-natural ray results.",
+      "after": "K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\\ge2$; C1 iff for $a,b\\ge1$; O2 absence for $t,d\\ge2$; E10 iff for $p,s\\ge1,r\\ge2$; all five positive-natural ray results, including E10 $r=1$.",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 69
+    },
+    {
+      "number": 4,
+      "before": "The K3, C1, O2 and D14 parts have direct family-specific ray proofs on their\nquotient graphs, including positive boundary parameters, without invoking the\ngeneral prose correspondence lemma. Their ray declarations start with\npositive natural coordinates and nonnegative slopes;",
+      "after": "The K3, C1, O2 and D14 parts have direct family-specific ray proofs on\ntheir quotient graphs, including positive boundary parameters. E10 also\nhas a formal actual-path ray proof: its $r=1$ branch applies the formal\ngeneral periodicity theorem with the validity and triangle-lifting\nhypotheses proved on the E10 model. These five results use no general\nprose correspondence lemma. Their ray declarations start with\npositive natural coordinates and nonnegative slopes;",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 229
+    },
+    {
+      "number": 5,
+      "before": "E10, $p,r,s\\ge1$ & Arithmetic for $r\\ge2$; the five-piece decomposition includes $r=1$.",
+      "after": "E10, $p,r,s\\ge1$ & Lean actual-path ray periodicity; for $r=1$, the formal general theorem applies with model hypotheses proved in Lean.",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 465
+    },
+    {
+      "number": 6,
+      "before": "Prose graph iff and Lean predicate-ray arithmetic.",
+      "after": "Graph iff in Lean on the displayed domain; the ray theorem also covers $r=1$.",
+      "reason": "Update E10 current proof scope; retain formula and domain.",
+      "source_line": 489
+    },
+    {
+      "number": 7,
+      "before": "\\subsection{Conditional auxiliary lemmas}",
+      "after": "\\subsection{E10 graph classification and all positive rays}\\label{sec:e10-formal}\nFor natural $p,s\\ge1$ and $r\\ge2$, the E10 quotient admits a literal\npath exactly under the six congruences in the closed-condition table.\nAn isomorphism identifies the five-polygon quotient with two hexagonal\ncaps and a tube of circumference $3m$ and height $2p$, where $m=2r+s$\nand the twist is $p\\bmod3m$. Degree five occurs exactly at the twelve\ncap corners. A line-state invariant excludes the six negative regions;\nexplicit tube zigzags establish the positive residues.\n\nActual-path existence is eventually periodic for all positive natural\nstarts and nonnegative natural slopes in $p,r,s$. When $r$ is eventually\nat least two, the classification reduces the problem to affine\ndivisibility. On a ray with $r=1$, a five-chart affine signature has\n75 gluing records and twelve marked corners. Its quotient graph is\nisomorphic to the tube model. Chart injectivity, degrees, the two-common-\nneighbour property and triangle lifting are proved on that model,\nsupplying the hypotheses of the formal general periodicity theorem.\nResidue classes make the twist affine, and their eventual periods combine.\nThis formal route leaves the separate $r=1$ sufficient conditions above\nand their open converse unchanged; it gives no $r=1$ closed classification.\n\n\\subsection{Conditional auxiliary lemmas}",
+      "reason": "Add the E10 proof route, with r>=2 classification and r=1 ray mechanism distinguished.",
+      "source_line": 739
+    }
+  ],
+  "numbered_blocks_byte_identical": 3,
+  "displayed_math_byte_identical": true,
+  "claim_ids_unchanged": 30,
+  "mathematical_change": "No definition, theorem, corollary, display formula or closed domain/condition changed. Update E10 proof basis and describe its existing formal proof route."
+}

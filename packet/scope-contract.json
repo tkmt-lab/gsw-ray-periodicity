@@ -51,5 +51,12 @@
   "d14_boundary_path_lemmas_received": true,
   "d14_small_boundary_existence_formalized": false,
   "d14_comparator_targets_main_only": true,
-  "d14_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
+  "d14_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison",
+  "e10_graph_classification_received": true,
+  "e10_literal_ray_without_prose_bridge_received": true,
+  "e10_r1_ray_uses_formal_general_theorem": true,
+  "e10_r1_geometric_model_hypotheses_formalized": true,
+  "e10_r1_closed_classification_formalized": false,
+  "e10_named_catalogue_correspondence_formalized": false,
+  "e10_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
 }

@@ -1,0 +1,86 @@
+# E10 の橋渡し：報告（2026-10-20 開始、2026-10-21 完了）
+
+Claude の作業者（Lean 担当）。計画は `e10-plan-2026-10-20.md`。
+
+## 結果
+
+`formal/Formal/Claude5E10ComparatorChallenge.lean` の二つの定理を、新しいファイル
+`formal/Formal/Claude5E10ComparatorSolution.lean` で証明した。
+
+- `ClaudeChallengeE10.classification`（`r ≥ 2` の分類）
+- `ClaudeChallengeE10.main`（すべての直線で、`r = 1` の境界も含めて、最終的に周期的）
+
+解答ファイルの `namespace ClaudeChallengeE10` 以降は、課題の二つの `sorry` の行が証明の行に
+変わっただけである（`diff` で確認）。import は spec の三つ（`ClaudeChallengeSpec`、
+`Claude2AlignedSpec`、`Claude5E10Spec`）と自分の証明（`Claude5E10RayB`、`Claude5E10T1a`）。
+
+`#print axioms`：二つとも `[propext, Classical.choice, Quot.sound]` のみ。
+`sorry`・`native_decide`・新しい `axiom` は E10 のどのファイルにもない（grep で確認）。
+
+## 道筋
+
+1. **模型**（`Model`〜`Seam`）：E10 を二つの六角形の蓋と、周 `3m`・高さ `2p` の筒（ねじれ
+   `w = p mod 3m`）で表す。
+2. **spec と模型の同型**（`IsoBase`〜`IsoGen`、生成した `Cell*`・`G*`）：`k = p mod m` の四つの場合と
+   `j = (p div m) mod 3` の三つ、計12の場合ごとに、spec の五つの多角形を模型へ写す
+   （`e10_iff_gm`、`r ≥ 1`）。
+3. **`r ≥ 2` の分類**：必要性は直線状態の不変量（K3 と同じ形）。六つの負の領域ごとに生成した表
+   （`R0`〜`R5`）から `no_path_of_inv`。十分性は筒のジグザグ二種（`Suff`）。次数は角の12点だけが
+   5（`Deg*`）。まとめて `e10_classify`、課題の形で `classification_int`。
+4. **`r` が最終的に 2 以上になる直線**：分類が六つの割り算の条件になり、直線上の割り算は最終的に
+   周期的（`Ray`、`MainA` の `rays_A`）。
+5. **`r = 1` の直線**（計画の道 B）：Theorem 1a（`ClaudeChallenge2.State.main_statement`、
+   `Formal.Claude3Thm1a`）を使う。
+   - 署名 `e10S Q`（`SigDef`）：五つの図（蓋二つ、筒の三つの扇形 `c m ≤ x ≤ (c+1) m`）、75 の記録
+     （扇形どうし3、蓋の辺の等長写像 `gmap` を周期 0 か 1 だけずらして各扇形へ 72）、12 の印（蓋の角）。
+     `p, r, s, w` は `t` の一次式。
+   - その graph は模型と同型（`SigIso`、`SigAdj`）。`Valid` と `TrianglesInCharts` を模型の事実から
+     示した：共通隣接点ちょうど二つ（`two_common`）、図の単射、次数 5 か 6（`deg_cases`）、次数 5 は角
+     （`deg_five_corner`、`corner_site`）、三角形は一つの図に入る（`tri`、`chart_tri`）。
+   - 直線を剰余類に分けて `p, s, w` を一次式にする（`RayB`）：`c = 0` なら `n mod 3m₀` の類、
+     `c ≥ 1` なら `p div 3m` が最終的に一定（`eventual_quot`）。類ごとの周期性をまとめる
+     （`evper_classes`）。
+   - `e10_rays`：`b ≥ 1` か `r₀ ≥ 2` なら `rays_A`、そうでなければ `rays_B`。
+
+`r = 1` の閉じた分類（Python では 377 例で確かめた形）は証明していない（課題も求めていない）。
+
+## ファイルと行数
+
+E10 の自作ファイルは 110 個（課題と spec を除く）：
+
+- 手書き 40 個、約 6200 行（解答ファイルを含む）
+- 生成 70 個、約 26500 行（`R0`〜`R5` の表、`Cell*`、`G*`。生成器は
+  `studies/R002/claude-lean/e10-scripts/gen_tables.py`、`gen_iso.py`）
+
+生成ファイルの一部（`R*Misc` など）は約 670 行で、400 行の目安を超える。
+
+## 名前の衝突と、まとめての import
+
+新しく定義した macro は `e10om`（`Claude5E10Model`）だけ。syntax・notation・tactic の定義はない。
+
+O2・D14・E10 の三つの解答を一つのファイルで import すると、
+`import Formal.Claude5D14StripHelp failed, environment already contains 'tacticPeq' from
+Formal.Claude5O2StripHelp` で失敗する。これは統括の注意にある O2 と D14 の `peq` の衝突で、
+E10 は関係しない。E10 については次を確かめた（一時ファイルで、確認後に削除）：
+
+- O2 の解答 ＋ E10 の解答：ビルド成功（最大 RSS 2905 MB）
+- D14 の解答 ＋ E10 の解答：ビルド成功（最大 RSS 2998 MB）
+
+## メモリ
+
+lean は常に一つずつ、`nice -n 10`、RSS の見張り（3 GB で kill）付きの `e10-scripts/build.sh` で
+ビルドした。kill は一度もない。
+
+- E10 の大半のモジュール：2.5 GB 以下
+- Theorem 1a を import するモジュールは重い：import だけで約 2.7 GB。`Claude5E10T1a` 2827 MB、
+  解答ファイル 2895 MB、axioms の確認 2913 MB、D14 との同時 import 2998 MB（最大）
+- このため、Theorem 1a を import するファイルは小さく分けた（`T1a` は 30 行、`RayB` は Theorem 1a
+  を仮定 `T1aGM` として受け取り、import しない）
+
+## 残った点
+
+- E10 の全モジュールを clean からのビルドし直しはしていない（lake の追跡でビルドは最新。
+  解答ファイルのビルドで 3324 の job がすべて最新か成功）
+- Theorem 1a を import すると 3 GB に近い。O2・D14 と同時に import する検査は、
+  `peq` の衝突が直ったあとでも 3 GB を超えるおそれがある
+- `lake comparator` は実行していない（指示どおり不要）

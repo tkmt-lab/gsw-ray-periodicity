@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Formal.Claude5E10ComparatorChallenge",
+  "solution_module": "Formal.Claude5E10ComparatorSolution",
+  "theorem_names": [
+    "ClaudeChallengeE10.classification",
+    "ClaudeChallengeE10.main"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

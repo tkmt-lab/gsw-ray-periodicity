@@ -1,0 +1,49 @@
+# E10 statement review
+
+**Verdict: FAITHFUL WITH CAVEATS.** The construction and both requested statements agree with the paper on inspection and finite tests. No concrete parameter, boundary, label, or path-definition error was found. The caveat is the unestablished general correspondence between this explicit quotient and the paper’s valid catalogue graphs.
+
+## 1. Geometry and parameter mapping
+
+The paper describes two caps and three tube parallelograms, with circumference `C = 3(2r+s)` and the longitudinal cut moved from `(p,p)` to `(0,2p)` (`paper.tex:471–478`). This is the structure of `e10Cell` (`ChallengeE10.lean:146–184`):
+
+- The lower cap has alternating side lengths `r, r+s`; the upper cap has the reverse order (`154–167`).
+- Each tube sector has width `m = 2r+s` and height vector `2p·(0,1)` (`173–184`). Thus the parameters retain the paper’s meanings; `p` is not being substituted for the tube’s full height.
+- `k = p mod m` and `j = (p div m) mod 3` together encode `p mod C` (`147–149`). Both the remainder and the sector shift affect the upper-cap labels. The branches `k=0`, `0<k<r`, `k=r`, and `k>r` account for coincident cut corners without zero-length auxiliary sides.
+- Labels `0–11` mark the twelve cones; auxiliary labels `12–14` mark flat corners. Reversed endpoint labels specify the seam pairings (`102–105`).
+
+The polygon area calculation gives
+
+`N = 12r² + 2s² + 12rs + 12p(2r+s)`,
+
+exactly the paper’s carbon formula (`paper.tex:1132`). Carbon order counts dual triangles, not dual vertices; the corresponding vertex count is `N/2 + 2`.
+
+I mirrored the definitions in Python, including **all** in-cell identifications allowed by `SamePoint`, rather than silently restricting them to seam segments. I checked 143 distinct triples: all `1≤p≤8, 1≤r,s≤4`, additional sector-shift/cut-boundary cases, and the three published negative boundary examples. Every case had:
+
+- exactly one reversed, geometrically matching partner for each polygon side;
+- no off-seam identifications and no identification of distinct sites within a chart;
+- twelve distinct degree-five vertices at labels `0–11`, all other vertices of degree six;
+- `V=N/2+2`, `E=3V−6`, exactly `N` triangles, connected graph, and cyclic vertex links.
+
+For `(p,r,s)=(1,1,1)`, `(1,2,1)`, and `(9,1,4)`, respectively, `(N,V)` was `(62,33)`, `(134,69)`, and `(740,372)`. These checks support the mapping and explicitly include parameter-one boundaries. They are this reviewer’s finite computations, not a certified Lean computation or universal catalogue-isomorphism certificate. The paper supplies no complete labelled coordinate specification against which every label can independently be compared.
+
+## 2. What the theorems claim
+
+`LiteralPath` (`62–68`) matches the paper’s definition (`paper.tex:91–100`): even vertex count at least four, distinct vertices, adjacency at offsets one and two, degree-five endpoints, and degree-six vertices immediately next to the endpoints. It correctly permits other internal degree-five vertices. The unrestricted values of `q` after its first `n` entries do not weaken the finite-path requirement.
+
+**`classification` (`208–212`): equal in arithmetic condition and parameter domain.** The table explicitly states `p,s≥1, r≥2` and the six congruences `p ≡ d±1 mod (2r+s)`, with `d∈{0,r,r+s}` (`paper.tex:516`). Lean expresses exactly that iff, including `p=1` and `s=1`, and excludes `r=1`. The sentence at `paper.tex:522` excluding extension to `r=1` or `s=1` concerns **K3**, not E10.
+
+Exhaustive literal-path searches agreed with this iff on all 103 tested triples with `r≥2`. The search enumerated every eligible initial oriented triangle and continued until repetition; each tested graph’s edges had exactly two common neighbours, so no alternative simple continuation was omitted.
+
+**`main` (`216–220`): equal ray-periodicity content, subject to geometric correspondence.** Its positive natural starts and nonnegative slopes cover every eventually positive integer affine ray after shifting to a positive tail. Negative slopes cannot remain positive indefinitely. The positive period and eventual equivalence are exactly the paper’s periodicity conclusion (`paper.tex:235–251`). Constant rays and rays with any parameter fixed at one, especially `r=1`, are included. Zero boundaries are excluded.
+
+The file does not state the separate `r=1` sufficient conditions or individual examples (`paper.tex:538–547`). That is an omission only if “all E10 claims” means every partial result; it is not a weakening of the two requested targets. It correctly avoids asserting an `r=1` iff. Indeed, the mirror finds a path for `(3,1,4)` outside the classification congruences. It also reproduces all 84 cases with `r=1, N≤740`, with only `(9,1,4)` negative, and the negatives `(17,1,11)` and `(31,1,7)`.
+
+## 3. Ranked problems and loopholes
+
+1. **Medium: general correspondence/validity remains an obligation.** `e10Graph` is an unconditional quotient definition (`192–195`), and neither theorem assumes validity (`208–220`). The paper expressly qualifies its claims by valid catalogue graphs (`paper.tex:128–139, 236–237, 499`). Consequently, the Lean statements are formally stronger unless every positive-parameter quotient has the intended validity and correspondence. Inspection and finite evidence support this, but do not establish it universally. This is a missing bridge, not a discovered wrong graph.
+
+2. **Low: the generic gluing relation is broader than its comment.** `SamePoint` (`110–112`) never requires its sites to lie on the selected edges. An arbitrary `Sig` with overlapping transformed cells could therefore identify interiors and change degrees or path existence. No such over-identification occurred for the tested E10 data; convexity and reversed side orientation explain why the construction appears safe here. The generic API alone does not guarantee safe gluing.
+
+3. **Low: partial boundary claims are unstated.** As noted above, `204–220` does not package the paper’s separate `r=1` sufficiency results. This does not affect faithfulness to Corollary 1b and the closed-condition table.
+
+No critical defect, vacuous domain, degenerate positive boundary, or demonstrated wrong label was found. The two `sorry`s are the intentional theorem placeholders, not additional assumptions hidden in the definitions.

@@ -1,6 +1,21 @@
 # Verification record: affine fullerene ray periodicity
 
-This supplement accompanies article 6.0 and local packet candidate 1.7.0.
+## E10 reception and current verification boundary
+
+Source pin: e0b0f1eb3ac84e1f793f98aaf7bacd76a9bd27fe. Prior challenge/specification pin: 5b29fee0e77b7c639cebc77885937d1ed8b1af0f. The research session statically compared23 copied definitions plus PathExists and both exact theorem signatures. All166 closure fingerprints agree;111 files are new (110 proof and one specification),55 inherited. The separate challenge has two intentional sorry placeholders, is outside dependencies and was not used as proof. Current totals412 Lean files:407 proof/specification sources and five inert challenges. All300 predecessor Lean source bytes are preserved.
+
+The received E10 Comparator targets are ClaudeChallengeE10.classification and ClaudeChallengeE10.main, BOTH in the saved six-kernel paranoid run. Lean paranoid, lean4lean, nanoda, con-leche, con-ron and Lean default accepted the same supplied proofs. This is not six independent derivations. The coordinator records595.42 seconds and3,205,365,760 maximum-RSS bytes; those are inherited measurements, not current execution. Standard-three-axiom queries (propext, Classical.choice, Quot.sound) are coordinator/worker-reported, not new raw kernel output. The worker's earlier Comparator-not-run and no-clean-rebuild notes remain intact, preceding the later coordinator run. No current Lean or external kernel was run; macOS OS process isolation was absent.
+
+The iff domain is natural p,s>=1,r>=2. The literal-path ray domain is positive natural starts and nonnegative natural slopes in all three coordinates, including constant rays and r=1. On r=1, formal ClaudeChallenge2.State.main_statement applies to the E10 affine signature after Valid and TrianglesInCharts are proved in Lean. This is a formal use of the general theorem, NOT use of its prose geometric bridge. No formal r=1 closed classification is received; the earlier sufficient conditions and open converse are unchanged. The general paper-to-specification bridge remains prose, and no formal named-catalogue correspondence certificate is asserted.
+
+The independent AI statement reader returned FAITHFUL WITH CAVEATS, covering143 triples (103 in the classification domain). The writer mirror saved702 known triples (620 with r>=2,82 with r=1); counts, chart/seam safety, path results and graph isomorphism agree with aligned and original non-aligned R004 constructors. There are zero classification mismatches on r>=2. The old six-congruence formula disagrees at positive r=1 points (3,1,4),(3,1,5),(4,1,5), outside that iff's domain. These are finite readbacks, not graph regeneration or a universal catalogue-isomorphism theorem. Reader and writer ranges overlap;143 and702 must not be summed as disjoint independent evidence. No new owner-confirmation procedure, human proof peer review or novelty establishment is claimed.
+
+CI/query layout: O2 and D14 collide on peq / tacticPeq; keep O2-side Axioms.lean and D14-side AxiomsD14.lean separate. E10 can be added to either side. No combined import or new Lean query was attempted; see CI-AXIOM-SPLIT.md.
+
+All30 claim IDs and status values persist. Only cor:catalog and prop:closed acquire E10 declaration/evidence/scope records; the other28 claim payloads are unchanged apart from the shared correction-log fingerprint. The current total is34 Lean declaration references across15 claims. The two E10 additions do not change the historical scope of any earlier kernel receipt. The historical sections and100-item editorial archive below describe the preceding checkpoint except where this section explicitly updates E10.
+
+
+This supplement accompanies article 6.1 and local packet candidate 1.8.0.
 It records who supplied arguments, how declarations and finite evidence
 were checked, historical corrections and the limits of those checks.
 The article gives the mathematics and one present-scope table. The
@@ -9,7 +24,7 @@ This supplement is a verification record, not a new proof or publication authori
 
 ## Present evidence by claim
 
-The thirty claim IDs and their status values are unchanged from packet 1.6.0. All human proof-review flags remain false. The packet contains 300 Lean files: 296 proof sources and four inert challenge files, with the same proof dependency roots. No Lean or external kernel is run for this editorial revision.
+The thirty claim IDs and their status values are unchanged from packet1.7.0. All human proof-review flags remain false. Current total412 Lean files:407 proof/specification sources and five inert challenges. The E10 proof dependency root is added; no Lean or external kernel is run for this reception.
 
 | Claim | Status | Lean declaration records | Evidence and review trail |
 |---|---|---:|---|
@@ -17,13 +32,13 @@ The thirty claim IDs and their status values are unchanged from packet 1.6.0. Al
 | `prop:forced` | `lean-result-received` | 1 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/logs/T0519.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `def:signature` | `scope-definition` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `thm:aligned` | `lean-result-received` | 3 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/extra/AH-literature-comparison.md.original.log`, `evidence/extra/S2047-behmaram-boutillier.json.original.log`, `evidence/extra/S2073-li-chen-quasipolynomial.json.original.log`, `evidence/extra/S2180-aixiv-guide.json.original.log`, `evidence/extra/S2181-dd2004-next27.json.original.log`, `evidence/extra/S2182-dd-zigzag-next27.json.original.log`, `evidence/extra/S2183-zigzag-complexes.json.original.log`, `evidence/extra/S2184-book-next27-access.json.original.log`, `evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log`, `evidence/extra/S2186-book-archive-access-next28.json.original.log`, `evidence/extra/S2187-book-official-access-next28.json.original.log`, `evidence/extra/S2188-mso-strings-next28.json.original.log`, `evidence/extra/S2189-fischer-makowsky-spectra.json.original.log`, `evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log`, `evidence/extra/S2191-periodic-counter-graphs.json.original.log`, `evidence/extra/S2192-wanke-periodic-graphs.json.original.log`, `evidence/extra/S2193-courcelle-finite-contexts.json.original.log`, `evidence/extra/S2194-thomas-unary-binary.json.original.log`, `evidence/extra/S2195-octagonal-acceleration.json.original.log`, `evidence/extra/S2196-mine-octagon-domain.json.original.log`, `evidence/extra/next80c.original.log`, `evidence/extra/report-next28-2026-10-19.md.original.log`, `evidence/theorem1a/Challenge2.lean.original.log`, `evidence/theorem1a/ComparatorChallenge.lean.original.log`, `evidence/theorem1a/challenge2-reading-guide-ja.md.original.log`, `evidence/theorem1a/comparator-thm1a-2026-10-20.md.original.log`, `evidence/theorem1a/comparator-thm1a-paranoid-2026-10-20.txt.original.log`, `evidence/theorem1a/comparator-thm1a.json.original.log`, `evidence/theorem1a/fold-report-2026-10-20.md.original.log`, `evidence/theorem1a/initial-lean-execution.failed.original.log`, `evidence/theorem1a/initial-proof-source-inventory.original.log`, `evidence/theorem1a/lean-execution.json`, `evidence/theorem1a/main-axioms.original.log`, `evidence/theorem1a/mso-report-2026-10-20.md.original.log`, `evidence/theorem1a/next85.original.log`, `evidence/theorem1a/next85a.original.log`, `evidence/theorem1a/proof-source-inventory.json`, `evidence/theorem1a/response-ja.md.original.log`, `evidence/theorem1a/review.md.original.log`, `evidence/theorem1a/serial-build-output.original.log`, `evidence/theorem1a/spec-comparison.json`, `evidence/theorem1a/thm1a-final-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-geo-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-ident-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-state-report-2026-10-20.md.original.log`, `owner-statement-confirmation.json`, `owner-copy-comparison.json`, `owner-copy-diff.txt`, `owner-decision-extract.original.txt`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
-| `cor:catalog` | `mixed-prose-and-formal-results` | 4 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/d14/comparator-d14.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16, P006-L17 |
+| `cor:catalog` | `mixed-prose-and-formal-results` | 5 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/d14/comparator-d14.md.original.log`, `evidence/e10/comparator-e10.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16, P006-L17, P006-L18 |
 | `lem:rows` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `lem:restricted` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `lem:folding` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `lem:mso-path` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/extra/AH-literature-comparison.md.original.log`, `evidence/extra/S2047-behmaram-boutillier.json.original.log`, `evidence/extra/S2073-li-chen-quasipolynomial.json.original.log`, `evidence/extra/S2180-aixiv-guide.json.original.log`, `evidence/extra/S2181-dd2004-next27.json.original.log`, `evidence/extra/S2182-dd-zigzag-next27.json.original.log`, `evidence/extra/S2183-zigzag-complexes.json.original.log`, `evidence/extra/S2184-book-next27-access.json.original.log`, `evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log`, `evidence/extra/S2186-book-archive-access-next28.json.original.log`, `evidence/extra/S2187-book-official-access-next28.json.original.log`, `evidence/extra/S2188-mso-strings-next28.json.original.log`, `evidence/extra/S2189-fischer-makowsky-spectra.json.original.log`, `evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log`, `evidence/extra/S2191-periodic-counter-graphs.json.original.log`, `evidence/extra/S2192-wanke-periodic-graphs.json.original.log`, `evidence/extra/S2193-courcelle-finite-contexts.json.original.log`, `evidence/extra/S2194-thomas-unary-binary.json.original.log`, `evidence/extra/S2195-octagonal-acceleration.json.original.log`, `evidence/extra/S2196-mine-octagon-domain.json.original.log`, `evidence/extra/next80c.original.log`, `evidence/extra/report-next28-2026-10-19.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `prop:family-decompositions` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
-| `prop:closed` | `mixed-prose-and-formal-results` | 2 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/R004/R004-c1-proof.md.txt.original.log`, `evidence/R004/R004-b2-proof.md.txt.original.log`, `evidence/R004/R004-gc-proof.md.txt.original.log`, `evidence/R004/R004-k3-positive-proof.md.txt.original.log`, `evidence/R004/R004-k3-necessity-proof.md.txt.original.log`, `evidence/R004/R004-e10-positive-proof.md.txt.original.log`, `evidence/R004/R004-e10-necessity-proof.md.txt.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16 |
+| `prop:closed` | `mixed-prose-and-formal-results` | 3 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/R004/R004-c1-proof.md.txt.original.log`, `evidence/R004/R004-b2-proof.md.txt.original.log`, `evidence/R004/R004-gc-proof.md.txt.original.log`, `evidence/R004/R004-k3-positive-proof.md.txt.original.log`, `evidence/R004/R004-k3-necessity-proof.md.txt.original.log`, `evidence/R004/R004-e10-positive-proof.md.txt.original.log`, `evidence/R004/R004-e10-necessity-proof.md.txt.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/e10/comparator-e10.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16, P006-L18 |
 | `prop:partial` | `mixed-prose-and-formal-results` | 2 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/R004/R004-report-004.md.txt.original.log`, `evidence/R004/R004-o2-proof.md.txt.original.log`, `evidence/R004/R004-d12-positive-proof.md.txt.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/d14/comparator-d14.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L16, P006-L17 |
 | `lem:divisibility` | `prose-proof-received` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `thm:k3-arithmetic` | `lean-result-received` | 3 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/second-paper-report-2026-10-19.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
@@ -190,7 +205,7 @@ prior specifications, AI reading and finite correspondence checks.
 Article 4.3/packet 1.1.0 added the specification-level theorem; later
 editions incorporated K3, C1, O2 and D14 at their exact recorded scopes.
 Article 5.0/packet 1.6.0 added D14 main-only Comparator evidence and
-separately scoped auxiliary lemmas. Article 6.0/packet 1.7.0 separates
+separately scoped auxiliary lemmas. Article 6.1/packet 1.8.0 separates
 this process record from the article; mathematical claim IDs and
 status values are unchanged. The complete prior chronology is retained
 in CHANGELOG and P006-corrections, and declaration/source navigation
@@ -1458,3 +1473,54 @@ Move verification history; retain current mathematics and scope.
 containment and order inequalities of the Section 5 transfer
 ```
 
+
+## Article6.0 to6.1 scope-edit archive
+
+The following seven predecessor passages are retained for editorial traceability; the replacement text is recorded in scope-edit-map.json. These are old passages, not current E10 proof assertions.
+
+### E10 scope edit 1
+
+```tex
+Version 6.0, 21 October 2026
+```
+
+### E10 scope edit 2
+
+```tex
+Lean proofs establish K3 and C1 path classifications, O2 absence on
+its stated domain, and positive-ray actual-path periodicity for K3,
+C1, O2 and D14.
+```
+
+### E10 scope edit 3
+
+```tex
+K3, C1, O2, D14 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; all four positive-natural ray results.
+```
+
+### E10 scope edit 4
+
+```tex
+The K3, C1, O2 and D14 parts have direct family-specific ray proofs on their
+quotient graphs, including positive boundary parameters, without invoking the
+general prose correspondence lemma. Their ray declarations start with
+positive natural coordinates and nonnegative slopes;
+```
+
+### E10 scope edit 5
+
+```tex
+E10, $p,r,s\ge1$ & Arithmetic for $r\ge2$; the five-piece decomposition includes $r=1$.
+```
+
+### E10 scope edit 6
+
+```tex
+Prose graph iff and Lean predicate-ray arithmetic.
+```
+
+### E10 scope edit 7
+
+```tex
+\subsection{Conditional auxiliary lemmas}
+```

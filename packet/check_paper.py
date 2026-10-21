@@ -15,8 +15,8 @@ def first_two_columns(tex, anchor):
 
 
 def main():
-    tex = local('paper-lines-v6.0-en.tex').read_text()
-    old = local('paper-lines-v5.0-en.tex').read_text()
+    tex = local('paper-lines-v6.1-en.tex').read_text()
+    old = local('paper-lines-v6.0-en.tex').read_text()
     stack = []
     for match in re.finditer(r'\\(begin|end)\{([^}]+)\}', tex):
         if match[1] == 'begin':
@@ -63,6 +63,13 @@ def main():
     for entry in ledger['edits']:
         assert entry['before'].rstrip() in record, ('moved paragraph missing', entry['number'])
     assert ledger['predecessor_sha256'] == sha(local('paper-lines-v5.0-en.tex'))
+    scope_ledger = load('scope-edit-map.json')
+    assert scope_ledger['predecessor_sha256'] == sha(local('paper-lines-v6.0-en.tex'))
+    assert scope_ledger['target_sha256'] == sha(local('paper-lines-v6.1-en.tex'))
+    for entry in scope_ledger['edits']:
+        assert entry['before'].rstrip() in record, 'E10 scope edit missing from record'
+    assert 'sec:e10-formal' in tex and 'validity and triangle-lifting' in tex
+    assert 'it gives no $r=1$ closed classification' in tex
     audit = load('editorial-audit.json')
     assert audit['status'] == 'PASS' and not any(audit['internal_name_scan'].values())
     abstract = tex.split('\\begin{abstract}', 1)[1].split('\\end{abstract}', 1)[0]
@@ -77,11 +84,11 @@ def main():
         assert row['v4_label'] in labels and set(row['claim_ids']) <= set(ids)
     assert len(corr['rows']) == 28
     pdf = load(load('release-metadata.json')['pdf_validation_file'])
-    assert pdf['status'] == 'PASS' and pdf['pages'] == 16
+    assert pdf['status'] == 'PASS' and pdf['pages'] == 17
     assert sha(local(pdf['source_path'])) == pdf['source_sha256'] and sha(local(pdf['pdf_path'])) == pdf['pdf_sha256']
-    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 16
+    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 17
     assert not pdf['overfull_boxes'] and not pdf['undefined_references'] and not pdf['duplicate_destinations']
-    result(pages=16, claims=30, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
+    result(pages=17, claims=30, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
            unchanged_proof_subsections=2, internal_process_markers=0, AI_tool_exceptions=2,
            scope='Static preservation, separate-record completeness and saved PDF review; not a new proof/kernel check.')
 

@@ -1,5 +1,5 @@
 {
-  "packet_version": "1.7.0",
+  "packet_version": "1.8.0",
   "status": "REDACTED_PUBLIC_DERIVATIVES",
   "originals_included": false,
   "proof_sources_changed": false,
@@ -73,5 +73,5 @@
       ]
     }
   ],
-  "change_scope": "No new privacy transformations. Add editorial article 6.0 and verification supplement; earlier article/proof/evidence bytes preserved."
+  "change_scope": "No new privacy transformations. E10 exact sources/records plus article6.1 proof-scope update; old payloads unchanged."
 }

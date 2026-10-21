@@ -1,0 +1,1139 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,array,booktabs,longtable}
+\usepackage{xurl}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\GC}{\operatorname{GC}}
+\newcommand{\record}[1]{\nolinkurl{#1}}
+\newcommand{\claimid}[1]{\par\nopagebreak\noindent\textit{Machine-readable claim:} \record{#1}.\par}
+\newtheorem{alignedtheorem}{Theorem}
+\renewcommand{\thealignedtheorem}{1a}
+\newtheorem{catalogcor}{Corollary}
+\renewcommand{\thecatalogcor}{1b}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}\newtheorem{definition}{Definition}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
+\author{Tatsuhiko Takimoto}
+\address{Independent researcher}
+\date{Version 6.1, 21 October 2026}
+\begin{document}
+\begin{abstract}
+We study literal linear generalized Stone--Wales paths in fullerene
+duals. For an integer affine family with a fixed decomposition into
+embedded convex lattice polygons in the six triangular-lattice
+directions, we give a uniform reduction of literal-path existence to a
+fixed monadic second-order sentence over unary finite words. The
+construction uses maximal face passages, their two-row outputs and all
+vertex collisions. Eventual periodicity follows from the known equivalence
+between MSO and regular languages. The result is a geometric definability
+reduction. We apply it, together with separate arithmetic arguments,
+to eleven specified catalogue families. The specification-level
+periodicity theorem is Lean-proved, with a prose correspondence lemma
+connecting its assumptions to the geometric hypotheses. Family-specific
+Lean proofs establish K3 and C1 path classifications, O2 absence on
+its stated domain, and the E10 classification for $r\ge2$.
+Positive-ray actual-path periodicity is Lean-proved for K3, C1, O2,
+D14 and E10, including the E10 boundary $r=1$. We also describe closed conditions, exact decisions on
+two example rays for every ray parameter, finite checks, and a
+fixed-oblique-direction extension as a separate proof sketch.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+A literal linear generalized Stone--Wales path is a simple alternating
+triangle strip between degree-five vertices of a fullerene dual
+\cite{BBS}. In an affine family, both the graph size and the number of
+face passages can grow with the parameter. The question is whether
+path existence nevertheless becomes periodic on an integer ray.
+
+Our main construction represents passages and every possible
+surface-vertex collision in one fixed finite-word MSO sentence.
+Theorem~\ref{thm:aligned} treats embedded convex lattice faces with
+fixed affine gluing. Corollary~\ref{cor:catalog} applies to eleven
+specified families from Graver's catalogue \cite{Graver}; A3 uses its
+separate classification and arithmetic argument \cite{A3}.
+Section~\ref{sec:novelty} places this geometric reduction beside the
+existing logical and fixed-boundary periodicity theorems.
+
+\section{What is proved, and how}\label{sec:guarantees}
+\begin{center}\small
+\begin{tabular}{p{.23\textwidth}p{.27\textwidth}p{.38\textwidth}}
+\toprule Claim & Present proof basis & Scope\\\midrule
+Theorem~\ref{thm:aligned} & Lean specification theorem; prose geometric correspondence & Convex six-direction disk decompositions, with fixed affine gluing and eventual validity; fixed-residue variants.\\
+Logical periodicity step & External MSO/regular-language theorem & One fixed sentence over unary finite words.\\
+Corollary~\ref{cor:catalog} & Geometric decompositions and arithmetic; direct Lean family proofs & Eleven specified valid positive-parameter families.\\
+K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all five positive-natural ray results, including E10 $r=1$.\\
+Family boundaries & Lean explicit paths and finite checks & O2 paths on $(1,d)$, $d\ge3$, and $(t,1)$, $t\ge3$; D14 paths on $(1,s)$, $s\ge2$, and $(r,1)$, $r\ge2$. Small remaining boundary decisions are finite evidence.\\
+Other closed conditions and examples & Prose geometry, Lean predicate arithmetic, explicit witnesses and checkers & The domains and finite ranges specified in Sections~\ref{sec:conditions}, \ref{sec:arithmetic} and \ref{sec:finite}; C1/O2 IPR is prose.\\
+Fixed-oblique extension & Proof sketch & The four transfer obligations in Section~\ref{sec:extension}.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The formal family claims concern the explicit quotient models; their
+catalogue identification uses the stated coordinate conventions.
+The convex-face result has two separately developed derivations on
+the common six-direction domain. Human proof peer review and the
+priority comparison remain open. The supplementary
+\record{VERIFICATION-RECORD.md} records provenance, implementation
+identifiers, independence qualifications and validation history.
+
+\section{Definitions, signatures and valid rays}\label{sec:definitions}
+\subsection{The literal path}
+\begin{definition}\label{def:literal}
+In the dual $G$ of a fullerene, a literal linear gSW path is a sequence
+$p_0,\ldots,p_e$ with odd $e\ge3$, all vertices distinct, consecutive
+and distance-two vertices adjacent, $\deg p_0=\deg p_e=5$, and
+$\deg p_1=\deg p_{e-1}=6$.
+\end{definition}
+\claimid{def:literal}
+This is Definition 1(a) of \cite{BBS}. Internal degree-five vertices
+are allowed. Even vertex count is part of the definition, not a new
+obstruction. Positive means existence of such a path; no chemical
+barrier, radial operation, or operation permitting heptagons is inferred.
+A fullerene is a simple three-connected cubic plane graph with only
+pentagonal and hexagonal faces. Its dual is a spherical triangulation
+with twelve degree-five vertices and all other degrees six.
+
+When every three-cycle is facial and an edge has just the two common
+neighbours supplied by its incident triangles, an oriented triangle
+$(a,b,c)$ has a unique next vertex: the common neighbour of $b,c$
+different from $a$. A simple path is a prefix of this forced sequence.
+If $\rho$ is its first repeated-vertex index, a legal endpoint must
+occur strictly before $\rho$, not at $\rho$.
+\label{prop:forced}\claimid{prop:forced}
+For fullerene duals, cyclic edge-connectivity
+\cite{Connectivity} excludes nonfacial three-cycles and supplies the
+two-common-neighbour property. The finite-graph decision argument
+applies once this local geometric hypothesis and the start are fixed.
+
+\subsection{Signatures and eventual validity}\label{def:signature}
+\claimid{def:signature}
+Work in the triangular lattice $\Lambda=\Z^2$, with
+$R(x,y)=(-y,x+y)$. A signature specifies a fixed finite set of polygon
+charts, paired boundary segments, corner equivalence classes, and
+transition maps $z\mapsto R^jz+d$. Corner coordinates and translations
+are integer affine functions of the parameters; rotations and gluing
+combinatorics are fixed. Along a ray $p(t)=at+b$, $t\in\N$, we require
+eventually positive edge lengths, embedded chart interiors, only the
+specified seam identifications, noncrossing macro edges, and a valid
+simple fullerene dual. Every cone has a marked corner label. Seams
+need an ownership convention, and full corner equivalence classes are
+used. Positive parameters and positive area alone do not prove validity.
+
+A component $a_it+b_i$ eventually lies in the positive integers exactly
+when $a_i>0$ or $a_i=0,b_i\ge1$. In the first case an entry bound is
+$\max(0,\lceil(1-b_i)/a_i\rceil)$. Replacing 1 by 2 gives the analogous
+bound for a lower limit two. A negative slope has no infinite positive
+tail. These arithmetic entry bounds do not certify the quotient.
+
+\section{The main result: convex lattice-face decompositions}\label{sec:main}
+\begin{alignedtheorem}[Convex lattice-face rays]\label{thm:aligned}
+For all sufficiently large integers $t$, suppose a valid simple
+fullerene dual has a decomposition into a fixed finite number of
+embedded closed convex lattice-polygon disks. Every side has positive
+length and one of the six lattice directions. Straight angles and
+auxiliary degree-six corners are permitted. No distinct boundary
+points of one disk are identified. Corner coordinates and transition
+translations are integer affine in $t$, while rotations, side pairings
+and corner identifications are fixed. All degree-five vertices occur
+among the marked corners, with a fixed label set. Then the set of
+$t$ for which a literal path exists is eventually periodic.
+The conclusion also holds when these hypotheses hold separately on
+finitely many residue classes modulo a fixed integer.
+\end{alignedtheorem}
+\claimid{thm:aligned}
+Thus some $t_0\ge0,P\ge1$ satisfy the same decision at $t$ and $t+P$
+for all $t\ge t_0$. This is an existence theorem for a threshold and
+positive period. The following correspondence lemma connects the
+geometric hypotheses to the specification-level theorem, while
+Section~\ref{sec:proof} gives the passage-to-word proof.
+
+\paragraph{Prose correspondence lemma.}
+The geometric hypotheses of Theorem~\ref{thm:aligned} determine a fixed
+\record{Sig} $S$ and a tail on which
+\record{Valid} $S\,t$ and \record{TrianglesInCharts} $S\,t$ hold;
+the quotient \record{graph} $S\,t$ is the stated fullerene dual and
+\record{LiteralPath} is Definition~\ref{def:literal}.
+
+\emph{Prose justification.}
+For a convex lattice polygon with the six permitted side directions,
+its supporting lines give exactly three closed strips
+$L_x\le x\le U_x$, $L_y\le y\le U_y$,
+$L_s\le x+y\le U_s$. Their extrema are selected from finitely many
+affine corner coordinates; after their orders stabilize, all six
+bounds are integer affine. Retain the fixed charts, rotation exponents,
+affine translations and marked corners as the fields of $S$. For each
+paired side, use its prescribed transition as a gluing record.
+
+\emph{No extra identifications from unrestricted records.}
+Let $g$ unfold a paired segment $A\subset K$ onto $g(A)\subset K'$,
+and let $\ell$ be its supporting line. The consistently oriented disks
+$g(K)$ and $K'$ occupy opposite closed supporting halfplanes, so
+$g(K)\cap K'\subset\ell$. Their overlap there is an interval $I$
+containing $g(A)$. If $I$ continues beyond an endpoint of $g(A)$,
+both supporting edges continue straight at that point. The two disks
+each contribute angle $\pi$. A fullerene dual has total cone angle
+$5\pi/3$ or $2\pi$, so the point is flat, the two disks exhaust its
+neighbourhood, and their actual seam must continue across it. The
+orientation-preserving lattice isometry along the continued seam is
+the same $g$: it agrees on a nontrivial line segment. Repeat across
+the finitely many side subdivisions until reaching the endpoint of
+$I$. Thus every pair identified by this unrestricted record is truly
+the same surface point, even if it lies beyond the named subdivision.
+Conversely, the prescribed paired sides are included in the records.
+A self-pairing of distinct points is excluded by the embedded-closed-disk
+hypothesis; an identity record is harmless. Transitive closure therefore
+gives exactly the prescribed seam and full corner equivalences, without
+extra identifications. This supporting-line and cone-angle argument is
+a prose geometric argument. Thus sites
+modulo these records are precisely the surface vertices, and common-chart
+unit steps are precisely the graph edges. Closed-disk embeddedness
+supplies the injectivity clause of \record{Valid}; the fullerene degrees
+and marked-corner hypothesis supply its degree clauses.
+
+Use the same external fullerene fact as in Section~\ref{sec:definitions}:
+all dual three-cycles are facial, by cyclic edge-connectivity
+\cite{Connectivity}. Each edge therefore has exactly the two distinct
+opposite vertices of its incident triangular faces as common neighbours.
+This gives \record{TwoCommonNeighbors}. Since chart boundaries follow
+lattice edges, no open unit triangle is cut by a boundary; the covering
+decomposition puts every triangular face inside a closed chart.
+Every graph triangle is facial, so its three vertices lift there with
+all three differences unit vectors. This is exactly
+\record{TrianglesInCharts}. These geometric identifications and the external fullerene fact
+supply the geometric correspondence.
+
+Apply the specification-level periodicity theorem on the resulting tail. For fixed
+residue branches write $t=r+qn$ and apply the construction to each
+branch. The residue-class theorem combines the branches in the
+original parameter, assuming eventual
+agreement of the decision with each branch's \record{PathExists}.
+That agreement is supplied by this prose representation lemma;
+the combination of eventual periods is Lean-proved.
+\begin{catalogcor}[Specified catalogue families]\label{cor:catalog}
+On every integer affine ray eventually remaining in the valid positive
+integer domain of each of A1, A2, B2, C1, K3, E10, D12, D14, D1 and O2,
+literal-path existence is eventually periodic. The same conclusion
+holds for A3 on rays eventually satisfying $k>l>0$, by its separate
+classification and arithmetic argument~\cite{A3}.
+\end{catalogcor}
+\claimid{cor:catalog}
+There are eleven families in this statement. Positive boundaries with
+a parameter fixed at 1 are included, notably K3 and O2 and E10 with
+$r=1$. Collapsed zero boundaries are not. The corollary gives no
+two-variable closed classification merely from ray periodicity.
+The K3, C1, O2 and D14 parts have direct family-specific ray proofs on
+their quotient graphs, including positive boundary parameters. E10 also
+has a formal actual-path ray proof: its $r=1$ branch applies the formal
+general periodicity theorem with the validity and triangle-lifting
+hypotheses proved on the E10 model. These five results use no general
+prose correspondence lemma. Their ray declarations start with
+positive natural coordinates and nonnegative slopes; an eventually positive
+integer ray is covered by reindexing its positive tail. The other family
+routes retain their stated scope.
+A3 generally has changing parent-edge directions and is not silently
+placed under Theorem~\ref{thm:aligned}. The catalogue terminology and
+corrections are Graver's \cite{Graver}; the constructions are not claimed
+as new. Additional leapfrog families are discussed only as prospects
+in Section~\ref{sec:extension}.
+
+\section{Proof of the convex-face theorem}\label{sec:proof}
+The proof uses the common six-direction domain and its restricted
+arithmetic-to-word reduction. The fixed-oblique-direction sketch is
+treated separately in Section~\ref{sec:extension}.
+
+\subsection{Maximal face passages and their outputs}\label{lem:rows}
+\claimid{lem:rows}
+Rotate a passage direction to $(1,0)$. A suitable phase of the forced
+vertex sequence is
+\begin{equation}\label{eq:rows}
+ q_{2j}=(j,h),\qquad q_{2j+1}=(j,h+1).
+\end{equation}
+A convex six-direction polygon is specified by
+\[
+ L_x\le x\le U_x,\qquad L_y\le y\le U_y,\qquad
+ L_s\le x+y\le U_s.
+\]
+Its bounds are affine in $t$ after the finitely many max/min orders
+stabilize. Redundant collinear sides do not alter this description.
+With $L_y\le h\le U_y-1$, the triangle
+$T_i=\{q_i,q_{i+1},q_{i+2}\}$ lies in the polygon precisely in the ranges
+\begin{equation}\label{eq:triangle-bounds}
+\begin{aligned}
+ A_e&=\max(L_x,L_s-h),& B_e&=\min(U_x-1,U_s-h-1),\\
+ A_o&=\max(L_x,L_s-h-1),& B_o&=\min(U_x-1,U_s-h-2).
+\end{aligned}
+\end{equation}
+Even indices are $2j$ for $A_e\le j\le B_e$, odd indices are $2j+1$
+for $A_o\le j\le B_o$. Put $\delta=A_e-A_o$ and
+$\epsilon=B_o-B_e+1$, both in $\{0,1\}$. The full triangle-index set
+is empty or the interval
+\begin{equation}\label{eq:passage}
+ \ell=2A_e-\delta\le i\le u=2B_e+\epsilon.
+\end{equation}
+This includes the one-odd-triangle case $A_e=B_e+1$,
+$\delta=\epsilon=1$. It must not be discarded as an empty even range.
+
+The first two vertices of an entered passage already belong to the
+previous passage. Its new output is only
+$q_{\ell+2},\ldots,q_{u+2}$, comprising
+\begin{equation}\label{eq:output}
+\begin{array}{ll}
+ y=h:   &A_e+1\le x\le B_e+1,\\
+ y=h+1: &A_e+1-\delta\le x\le B_e+\epsilon.
+\end{array}
+\end{equation}
+For example the upper row has
+$x\ge L_x+1-\delta$, $x+y\ge L_s+2-\delta$,
+$x\le U_x-1+\epsilon$, and $x+y\le U_s+\epsilon$.
+Empty rows are allowed, but a nonempty passage has nonempty output.
+
+Root and terminal passages can be truncated. There are finitely many
+marked cone corners and at most ten oriented initial triangles at each.
+The initial triangle fixes $h$ and an index of the form twice an affine
+expression plus fixed parity. Store its first two vertices separately.
+An endpoint corner and choice of output row similarly determine the
+last index. Truncation adds affine bounds on $x$. Both cuts are made
+when the whole path lies in one passage. Internal degree-five corners
+are not compulsory stopping points. The two endpoint neighbours must
+be distinct from all degree-five labels.
+
+\subsection{States, transitions and all collisions}\label{lem:restricted}
+\claimid{lem:restricted}
+A state is $(\tau,h)$, where the finite type $\tau$ records face,
+direction, max/min branches, parity, subdivided entry/exit side, and
+root/terminal information. A constant $C$ bounds $|h|\le Ct+C$.
+The number of states or face passages need not be bounded independently
+of $t$. The relevant relations are Boolean combinations of
+\begin{equation}\label{eq:restricted}
+ \pm h\le at+b,\qquad \pm h\pm h'\le at+b,
+ \qquad at+b\ge0,
+\end{equation}
+and fixed-modulus congruences. A relation such as $2h+h'\le at+b$
+with distinct free variables is not part of this language. Substituting
+one variable for another can be reduced by fixed parity and rounding.
+
+Within a fixed type, each endpoint's three normal coordinates has the
+form $c(t)$, $h+c(t)$ or $-h+c(t)$. When the last ordered pair of a
+passage is glued to the next one's first ordered pair, the directions
+are rotated together. In direction-aligned coordinates the linear part
+of this transition is the identity, so $h'=h+c(t)$, not a doubling map.
+The paired unit edge determines the opposite face; its interior
+contains no macro corner. The conditions therefore have
+form~\eqref{eq:restricted}.
+
+Each output row fixes one of $x,y,x+y$ at $\pm h+c(t)$ and imposes
+affine bounds in all three normals. For distinct row normals the
+determinant is $\pm1$: their intersection is integral, and the third
+normal is their sum or difference. Substitution into both rows gives
+\eqref{eq:restricted}. Equal normals first require equal values;
+the remaining integer interval is nonempty exactly when every lower
+bound is at most every upper bound. The same restricted form results.
+Between different faces, compare through every shared side and every
+common marked corner label. Rotations permute the three normals with
+signs. Embeddedness and fixed gluing ensure these exhaust quotient
+identifications, even when faces share several sides. Auxiliary flat
+corners are included. Comparison with the root's two saved vertices
+uses the same formulas. Since an embedded face row is injective,
+pairwise disjoint outputs and their disjointness from the root are
+exactly the full vertex-distinctness condition.
+
+\subsection{Folding the restricted arithmetic into a finite word}\label{lem:folding}
+\claimid{lem:folding}
+For $t\ge2$, write a height variable uniquely as $h=jt+y$, $0\le y<t$.
+The quotient $j$ ranges over a fixed finite set. Set $t=2n+\eta$,
+$\eta\in\{0,1\}$, and split $y$ into
+\begin{equation}\label{eq:fold}
+ L:y=v,\qquad R:y=t-1-v\quad(0\le v<n),\qquad
+ M:y=n\quad(\eta=1).
+\end{equation}
+Original type, $j$ and $L/R/M$ are finitely many copies of the positions
+of a unary word of length $n$. A middle copy is placed at the first
+position and interpreted as coordinate $n$, independent of that position.
+
+For two ordinary positions the inequalities become
+\[
+ \alpha v+\beta w\le 2cn+d,\qquad \alpha,\beta\in\{-1,1\}.
+\]
+The coefficient of $n$ is even. If $\alpha=-\beta$, then for $c\ne0$
+truth stabilizes, while $c=0$ is order with a fixed successor offset.
+If $\alpha=\beta=1$, the sum lies between 0 and $2n-2$. The only
+nontrivial cases are $c=0$, a finite list near the left end, and $c=1$.
+For $c=1$, putting $a=n-1-v,b=n-1-w$ gives
+$a+b\ge-d-2$, either automatic or the exclusion of finitely many
+near-end pairs. The case $\alpha=\beta=-1$ is its integer complement.
+If one position is a middle copy, only one variable remains and the
+nontrivial inequalities are fixed distances from an end. Two middle
+copies give an affine truth value that stabilizes.
+
+Fixed-modulus congruences are represented by cyclic MSO colours on
+the word: the first position has colour zero and each successor
+increments the colour. The final colour determines $n$ modulo the
+fixed modulus. Finite copies of element or set quantifiers are expanded
+copy by copy. Thus every fixed Boolean combination used above is
+MSO-definable. This argument does not permit an arbitrary Presburger
+relation such as $v+w\le n$; it uses the even coefficient obtained by
+the folding step.
+
+\subsection{The exact path sentence and unary regularity}\label{lem:mso-path}
+\claimid{lem:mso-path}
+Choose a nonempty state set $S$, root $a$ and terminal $b$. Terminal
+states have no outgoing transition and root states no incoming one.
+Record the parity of the number of vertices already output as a finite
+type. Initially it is even, since the root has two saved vertices;
+each transition adds the parity of $u-\ell+1$.
+Impose the following MSO conditions:
+\begin{enumerate}
+\item If $a=b$, $S=\{a\}$. Otherwise $a$ has in/out degrees $(0,1)$,
+      $b$ has $(1,0)$, and every other state has $(1,1)$ within $S$.
+\item Every nonempty proper subset of $S$ has a transition, in either
+      direction, across its boundary. This is unary-set connectivity.
+\item Outputs of distinct states are disjoint, and all outputs are
+      disjoint from the two saved root vertices.
+\item Endpoint degrees are $5,6,6,5$ as in Definition~\ref{def:literal}.
+      Total vertex count is even and at least four.
+\end{enumerate}
+For one state, the last size condition is $u-\ell+1\ge2$; with two
+or more nonempty-output states it is automatic. Degree conditions are
+membership or nonmembership in the finite marked-cone set. No binary
+relation quantifier is used.
+
+On a finite set, the first two conditions give one directed path
+through all of $S$: a reached cycle would create an extra incoming edge,
+and a separate cycle would contradict connectivity. Join the passages
+in this order. Ordered seam pairs give consecutive and skip adjacency;
+the third condition gives distinct vertices. Size, parity and degree
+conditions give exactly the literal path.
+
+Conversely, split any literal path into maximal consecutive passages
+in its convex faces, truncating only at its ends. Equations
+\eqref{eq:triangle-bounds}--\eqref{eq:output} recover their states.
+Nonempty output and path simplicity prevent a repeated state. Any extra
+eligible successor within $S$ would share the next output vertex with
+the actual successor, contradicting disjointness. Hence the selected
+states satisfy all four conditions. One-passage paths and paths with
+internal cones are included in both directions.
+
+Finite-word MSO defines exactly the regular languages
+\cite[Section 3.1, Theorem 3.2]{MSO}. Apply this established result
+only at this last logical step. For each $\eta$, a deterministic
+automaton over one letter eventually repeats a state, so its accepted
+lengths $n$ are eventually periodic. Combine $t=2n+\eta$ and, if
+necessary, the initially fixed residue branches. This proves
+Theorem~\ref{thm:aligned}. The geometric passage construction supplies
+the fixed sentence to which the external automata theorem applies.
+
+\section{Applying the theorem to the specified families}\label{sec:families}
+\label{prop:family-decompositions}\claimid{prop:family-decompositions}
+D12 uses two subdivided hexagons and D14
+two convex hexagons whose long sides are subdivided with lengths
+$r,s,r$. O2 uses two hexagons and six triangles. K3 uses two caps,
+each divided into four triangles, and three hexagons. These
+decompositions retain the positive parameter-1 boundaries.
+
+D1's original thirty-degree sides do not directly satisfy the six
+direction hypothesis. Cut a triangle $A_iB_iW_i$ from each oblique side
+and move it to the back by the same lattice isometry. For example,
+\[
+ A_0=(r,0),\quad B_0=(r+p,p),\quad W_0=(r,p),\quad C=(-p,r+2p),
+\]
+and $W_0-C=\alpha(A_0-C)+\alpha(B_0-C)$ with
+$\alpha=(r+p)/(2r+3p)$ and $0<2\alpha<1$. The pieces are contained
+and disjoint. The result is eight convex pieces: one regular hexagon,
+six quadrilaterals, and the back hexagon. New corners are flat degree
+six. Area equality alone is not used to infer the same quotient.
+
+For E10 put $m=2r+s$, tube circumference $C=3m$. Move the longitudinal
+cut from $(p,p)$ to $(0,2p)$, obtaining three lattice parallelograms
+of width $m<C$ and two caps: five disks, also when $r=1$. Cut-corner
+positions involve $p\bmod C$. If $C$ grows, $\lfloor p/C\rfloor$
+eventually stabilizes; if $C$ is constant, use fixed residue classes.
+Delete duplicate auxiliary corners and fix their order to obtain
+affine coordinates and fixed gluing. This does not classify E10 with
+$r=1$.
+
+\begin{center}\small
+\begin{tabular}{p{.19\textwidth}p{.69\textwidth}}\toprule
+Family and domain & Reason for all valid affine rays\\\midrule
+A1, $r\ge1$ & Integer GC absence, including the separate $r=1$ case; eventual period one.\\
+A2, $p\ge1$ & Nonconstant rays eventually give nonprimitive GC images; constant rays are constant graphs.\\
+B2, $p,r\ge1$ & Its closed condition is a finite disjunction of affine equalities.\\
+C1, $a,b\ge1$ & Lean graph iff $b=1$ and actual-path ray periodicity; no general prose bridge.\\
+A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:arithmetic}.\\
+K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
+E10, $p,r,s\ge1$ & Lean actual-path ray periodicity; for $r=1$, the formal general theorem applies with model hypotheses proved in Lean.\\
+D12, D1 & The convex decompositions on valid positive integer parameters.\\
+D14, $r,s\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\
+O2, $t,d\ge1$ & Lean actual-path ray periodicity, including parameter 1; Lean absence for $t,d\ge2$. No general prose bridge.\\\bottomrule
+\end{tabular}
+\end{center}
+These decompositions and the separate arithmetic results prove
+Corollary~\ref{cor:catalog} on its stated domains.
+
+\section{Closed conditions and the scope of partial results}\label{sec:conditions}
+The following closed conditions concern valid catalogue graphs on
+the displayed domains.
+
+\subsection{The specified closed domains}\label{prop:closed}
+\claimid{prop:closed}
+\begin{center}\small
+\begin{tabular}{p{.19\textwidth}p{.36\textwidth}p{.31\textwidth}}\toprule
+Family/domain & Literal path condition & Proof and domain\\\midrule
+A1, $r\ge1$ & Never positive & Integer GC for $r\ge2$; at 1 no degree-six vertex.\\
+A2, $p\ge1$ & $p=1$ & $C_{60}$ witness and integer GC.\\
+C1, $a,b\ge1$ & $b=1$; IPR iff $a,b\ge2$ & Graph iff in Lean; IPR equivalence by prose geometry.\\
+B2, $p,r\ge1$ & $p=1$ or $|p-r|=1$ & Prose proof on the whole positive domain.\\
+K3, $r,s\ge2$ & $s\equiv\pm1\pmod r$ & Graph iff in Lean on the displayed domain.\\
+O2, $t,d\ge2$ & Never positive & Graph absence in Lean; IPR by prose geometry.\\
+E10, $p,s\ge1,r\ge2$ & $m=2r+s$ and $p\equiv d\pm1\pmod m$ for some $d\in\{0,r,r+s\}$ & Graph iff in Lean on the displayed domain; the ray theorem also covers $r=1$.\\\bottomrule
+\end{tabular}
+\end{center}
+K3 writes $s=qr+u$: $u=0$ is excluded by integer GC,
+$2\le u\le r-2$ by belts of widths $r,u,r-u$, and $u=1,r-1$
+by explicit simple paths. The overlapping small cases $r=2,3$ are
+separate. The iff is not extended to $r=1$ or $s=1$. E10's candidate
+congruences come from the positions of corners around the tube;
+reaching a cone does not alone establish simplicity. The E10 argument uses eighteen parameter regions, their walls and
+explicit witnesses.
+
+\subsection{Partial branches and boundary examples}\label{prop:partial}
+\claimid{prop:partial}
+For O2, absence holds on $t,d\ge2$, with IPR on that domain supplied
+by prose geometry. Boundary paths exist at O2$(1,d)$ for $d\ge3$ and
+O2$(t,1)$ for $t\ge3$. At O2$(1,1)$, O2$(1,2)$ and O2$(2,1)$,
+the path decisions have finite computational evidence. Every constant
+graph has a constant ray decision, independently of computing it.
+For D14, absence holds for $r,s\ge2$, and explicit paths exist at
+$(1,s)$ for $s\ge2$ and $(r,1)$ for $r\ge2$. These are Lean graph
+lemmas; the D14 ray theorem includes all positive boundary rays.
+D14$(1,1)$ has a finite path witness. For D1 with both parameters at
+least two, a belt-based absence argument is a proof sketch. Common
+integer scaling by at least two gives absence in the specified
+leapfrog domains, without classifying their primitive points.
+
+For E10$(p,1,s)$, $m=s+2$, explicit witnesses give
+sufficiency when $p<m$ or
+$p\bmod m\in\{0,1,2,m-2,m-1\}$. General necessity is not proved.
+Among the 84 positive $(p,s)$ with
+$N=12+2s^2+12s+12p(2+s)\le740$, exactly E10$(9,1,4)=C_{740}$
+is negative; all 83 smaller examples are positive. E10$(17,1,11)$
+and $(31,1,7)$ give further negatives at $C_{3038},C_{3542}$.
+These three examples are non-IPR. Exhaustive construction and
+independent checks establish the stated minimality inside the $r=1$
+E10 family.
+
+For D12, the following partial branches apply:
+$\gcd(r,s)\ge2$ gives absence; $r\ge3$, $s=qr\pm1$, $q\ge1$
+gives existence by the separately derived simple witnesses. The
+additional $|r-3s|=1$ and $r\ge4s$ branches are construction and
+absence arguments with their stated geometric conditions. A full D12
+classification is the subject of a separate article.
+
+\section{Arithmetic on affine rays and exact examples}\label{sec:arithmetic}
+\subsection{The determinant reduction}\label{lem:divisibility}
+\claimid{lem:divisibility}
+Let $A(t)=\alpha t+\beta$ be eventually positive and
+$B(t)=\gamma t+\delta$. A constant $A$ gives a fixed-modulus
+congruence. If $\alpha>0$, then
+\begin{equation}\label{eq:determinant}
+ A\mid B\quad\Longrightarrow\quad A\mid\alpha\delta-\gamma\beta.
+\end{equation}
+For nonzero right side, divisibility is impossible once
+$A>|\alpha\delta-\gamma\beta|$. For zero right side, the ratio
+$B/A=\gamma/\alpha$ is constant and is either always integral or
+never integral. Finite Boolean combinations of affine divisibilities
+are eventually periodic; a growing modulus gives eventual constancy.
+Take a common multiple of fixed moduli and a maximum stabilization
+threshold. This elementary arithmetic is not proposed as new number
+theory. The following exact predicates have Lean arithmetic proofs.
+
+For all integer ray coefficients, define parameters by
+$(at+b).\operatorname{toNat}$. The formal statements for all rays use
+\emph{domain and positive predicate}; they do not call out-of-domain
+graphs positive. On an eventually positive domain the conversion
+agrees with the integer affine parameter.
+\label{thm:k3-arithmetic}\claimid{thm:k3-arithmetic}
+For K3, eventual periodicity holds for
+$\mathrm{K3Dom}\wedge\mathrm{K3Pos}$ on all integer affine rays,
+where the domain is $r,s\ge2$ and the predicate is
+$r\mid(s-1)$ or $r\mid(s+1)$. If $r$ is nonconstant on a valid tail,
+the predicate is eventually constant. If $r=b\ge2$ is
+constant, period $b$ is valid from any specified
+domain-entry threshold. These need not be least periods.
+\label{thm:e10-arithmetic}\claimid{thm:e10-arithmetic}
+For E10, the corresponding all-ray statement holds
+for domain $p,s\ge1,r\ge2$ and the six divisibilities in the E10
+condition. If $2r+s$ is nonconstant, the predicate is eventually
+constant; when it is constant, that
+positive modulus is a period on the given domain tail.
+\label{thm:other-arithmetic}\claimid{thm:other-arithmetic}
+For B2, C1, A1 and A2, eventual constancy holds for the domain-qualified
+predicates. The conjunction/disjunction/negation closure and domain
+qualification are proved in the same arithmetic layer.
+
+\subsection{A3 is a separate variable-direction case}\label{thm:a3-arithmetic}
+\claimid{thm:a3-arithmetic}
+For $k(t)=at+b,l(t)=ct+d$ set $\Delta=ad-bc$. If $\Delta\ne0$,
+$\gcd(k,l)=\gcd(k,l,\Delta)$, so primitivity is periodic modulo
+$|\Delta|$. When $\Delta=0$ and the ray is nonconstant, it is
+eventually an increasing integer multiple of a fixed primitive
+direction and hence negative by integer GC. Constant rays are constant.
+In the primitive case put $m=\min(l,k-l)$. The A3 criterion is
+$m=1$, or quotient $q=\lfloor k/m\rfloor\ge3$ with $m\mid(k\pm1)$,
+or $q=2$ with $r=k-2m=1$ or $r\mid(m\pm1)$. Branches and quotient
+stabilize, including an integer limiting ratio by checking the sign
+of the constant remainder. The persistent $q=2,r=0$ growing branch
+is not primitive. Apply~\eqref{eq:determinant} to the remaining tests.
+
+The first paper proves the full graph classification and a graph-path
+ray theorem. Its arithmetic proof establishes a threshold and positive
+period; an independent arithmetic derivation permits period $|\Delta|$
+for nonconstant $\Delta\ne0$ rays and period 1 otherwise. These are
+valid periods, with no claim of leastness. After classification,
+eventual periodicity is also a consequence of
+\cite[Theorem 1.15]{BGW}.
+
+\subsection{Four previously solved rays}\label{ex:exact-rays}
+\claimid{ex:exact-rays}
+\begin{center}
+\begin{tabular}{lll}\toprule
+Ray, $t\ge0$ & Positive values & Valid period and threshold\\\midrule
+D12$(124+3t,41+t)$ & All $t$ & $P=1,t_0=0$\\
+D12$(125+3t,41+t)$ & None & $P=1,t_0=0$\\
+K3$(43+2t,170+5t)$ & $40,42$ & $P=1,t_0=43$\\
+E10$(200+5t,17+2t,23+t)$ & $3,10,17,34$ & $P=1,t_0=35$\\\bottomrule
+\end{tabular}
+\end{center}
+Compressed-word calculations and independent family-condition
+arguments give these exact all-parameter decisions.
+\label{ex:k3-formal}\claimid{ex:k3-formal}
+For every $t\in\N$, the K3 arithmetic theorem gives
+$\mathrm{K3Pos}(43+2t,170+5t)\leftrightarrow(t=40\lor t=42)$.
+\label{ex:e10-formal}\claimid{ex:e10-formal}
+The E10 arithmetic theorem gives the corresponding predicate
+iff $t\in\{3,10,17,34\}$. The determinant constants used are
+$123,127$ for K3 and $142,144,739,749,681,691$ for E10. Divisibility
+bounds $t$ before the remaining cases are checked by kernel arithmetic.
+These are all-$t$ arithmetic proofs, not graph iff proofs by themselves.
+
+For every $s\ge41$, D12$(3s+2,s)$ is negative and
+D12$(3s+1,s)$ has a path with $56s+12$ distinct vertices. The
+computer-assisted proof checks 2,058 nonnegativity conditions and
+756 no-integer-solution conditions, 2,814 in total. A separate
+construction at $s=58$ gives a 3,260-vertex positive witness.
+
+\section{Specification and family-specific graph proofs}\label{sec:formal}
+For every fixed signature $S$ and $t_1$, the specification-level
+theorem states that if \record{Valid} $S\,t$ and
+\record{TrianglesInCharts} $S\,t$ hold for every $t\ge t_1$, then
+some $t_0$ and positive $P$ satisfy
+\record{PathExists} $S\,t\leftrightarrow$
+\record{PathExists} $S\,(t+P)$ for all $t\ge t_0$.
+These assumptions require the local validity and triangle-lifting
+properties; the geometric correspondence lemma supplies them from
+the convex disk decomposition. The residue-class variant combines
+fixed branches after their decisions agree with the original family.
+
+\subsection{K3 graph classification and ray periodicity}\label{thm:k3-sufficient}
+\claimid{thm:k3-sufficient}
+For natural $r,s\ge2$, K3 has a literal path if and only if
+$s\equiv\pm1\pmod r$. A classification of graph triangles in the
+cap or tube proves that no edge has three common neighbours and
+supplies the forced-continuation argument for necessity.
+
+Literal-path existence is eventually periodic on every ray
+$(r,s)=(r_0+at,s_0+bt)$ with $r_0,s_0\ge1$ and $a,b\ge0$.
+The proof constructs the common-neighbour property directly.
+Nonconstant parameter-one boundary rays use explicit eventual paths;
+constant rays have constant decisions. The modular iff has domain
+$r,s\ge2$.
+
+The specification uses eleven convex polygons, equivalence closure of
+explicit affine side gluings, and adjacency from unit differences inside
+a common chart. The literal path and actual neighbour-set degree
+ definitions are those of the first paper's specification.
+
+The proof uses a tube construction. A glued-site invariant
+is $(\mathrm{hgt},\mathrm{ang}\bmod6r)$. It is preserved by all
+42 directed edge gluings. It is not globally injective: the two
+central cap triangles are not separated by it. On tube points with
+horizontal coordinate difference at most one, however, equality of
+quotient vertices forces equality of points. The explicit paths are
+\[
+ P_n^+=(-(n\bmod2),\lfloor(n+1)/2\rfloor),\qquad
+ P_n^-= (n\bmod2,\lfloor n/2\rfloor),
+\]
+with $4s-2$ vertices for $s=qr+1$ and $4s+4$ for $s=qr-1$.
+Chart membership, consecutive and skip adjacency, distinctness, and
+the four endpoint degree requirements are proved on the quotient.
+The invariant is not used to claim a global vertex normal form.
+
+\label{lem:k3-corners}\claimid{lem:k3-corners}
+All twelve labelled corner representatives have degree five. These
+representatives supply the endpoint degree-five witnesses.
+\label{lem:k3-hex-interior}\claimid{lem:k3-hex-interior}
+Hexagon interiors have degree six.
+\label{lem:k3-tri-interior}\claimid{lem:k3-tri-interior}
+The six noncentral cap-triangle interiors have degree six.
+The necessity argument uses the cap/tube triangle classification
+and common-neighbour bound together with these local degree facts.
+
+\subsection{C1 graph classification and ray periodicity}\label{sec:c1-formal}
+For C1, natural $r,s\ge1$ admit a literal path if and only if $s=1$.
+Here $r,s$ correspond to the paper's $a,b$. Actual-path existence is
+eventually periodic on every ray $(r_0+ut,s_0+vt)$ with
+$r_0,s_0\ge1$ and $u,v\ge0$, including constant rays.
+Eventually positive integer rays are covered by shifting their
+starting index to the positive natural domain.
+
+The eight-cell specification has four hexagons with alternating sides
+$s,r,s,r,s,r$ and four triangles of side $r$. A vertex bijection preserving adjacency identifies
+its quotient with the lattice surface in $\mathbb Z^4$ cut out by
+$0\le x_i\le r+s$, $\sum_i x_i=2r+s$, and some $x_i\in\{0,r+s\}$.
+The bijection preserves literal-path existence. The proof establishes degrees and excludes three common
+neighbours of an edge directly, then uses forced strips for $s\ge2$
+and an explicit path for $s=1$.
+
+\subsection{O2 absence and ray periodicity}\label{sec:o2-formal}
+For natural $t,d\ge2$, O2 has no literal path. Actual-path existence
+is eventually periodic on every ray $(t_0+an,d_0+bn)$ with
+$t_0,d_0\ge1$ and $a,b\ge0$, including parameter-one and constant
+rays. Eventually positive integer rays are reindexed to their
+positive tail.
+
+The eight-cell specification uses two hexagons with alternating sides
+$2t,d,2t,d,2t,d$, each long side split at its midpoint, and six triangles
+of side $t$. A graph equivalence identifies it
+with two overlaid hexagons sewn along the three $d$-sides, with a rhombic
+pocket inserted into each $2t$-side slit. The proof directly rules out
+three common neighbours on an edge, locates degree-five vertices at the
+twelve corners, and covers the 120 starting triangles by ten closed
+strips.
+
+Explicit boundary paths are proved for $(1,d)$ with $d\ge3$ and
+$(t,1)$ with $t\ge3$. Path existence at $(1,1),(1,2),(2,1)$ is supported by finite checks. These three constant graphs do not
+require their existence decision for the ray theorem: any fixed graph
+has a constant decision. Explicit finite witnesses give paths there.
+
+\subsection{D14 ray periodicity and auxiliary boundary lemmas}\label{sec:d14-formal}
+For D14, actual-path existence is eventually periodic on all natural
+rays $(r_0+an,s_0+bn)$ with $r_0,s_0\ge1$ and nonnegative slopes,
+including parameter-one and constant rays. Eventually positive
+integer rays are reindexed to a positive natural tail.
+
+The specification consists of two hexagons with alternating side lengths
+$s,2r+s$, subdividing each long side as $r,s,r$. A graph
+equivalence maps the quotient to two lattice hexagons
+whose boundary circles are identified with an offset between their
+corners. A seam vertex is recorded by its arclength modulo $6r+6s$.
+The proof directly excludes three common neighbours on an edge and,
+for $r,s\ge2$, locates degree-five vertices at the twelve corners.
+Twelve closed strips cover all 120 starts.
+
+Absence holds for $r,s\ge2$. Explicit paths exist at $(1,s)$ for
+$s\ge2$ and $(r,1)$ for $r\ge2$. At $(1,1)$, a finite path witness
+supplies the decision; the constant-ray statement follows directly
+from constancy of the graph.
+
+\subsection{E10 graph classification and all positive rays}\label{sec:e10-formal}
+For natural $p,s\ge1$ and $r\ge2$, the E10 quotient admits a literal
+path exactly under the six congruences in the closed-condition table.
+An isomorphism identifies the five-polygon quotient with two hexagonal
+caps and a tube of circumference $3m$ and height $2p$, where $m=2r+s$
+and the twist is $p\bmod3m$. Degree five occurs exactly at the twelve
+cap corners. A line-state invariant excludes the six negative regions;
+explicit tube zigzags establish the positive residues.
+
+Actual-path existence is eventually periodic for all positive natural
+starts and nonnegative natural slopes in $p,r,s$. When $r$ is eventually
+at least two, the classification reduces the problem to affine
+divisibility. On a ray with $r=1$, a five-chart affine signature has
+75 gluing records and twelve marked corners. Its quotient graph is
+isomorphic to the tube model. Chart injectivity, degrees, the two-common-
+neighbour property and triangle lifting are proved on that model,
+supplying the hypotheses of the formal general periodicity theorem.
+Residue classes make the twist affine, and their eventual periods combine.
+This formal route leaves the separate $r=1$ sufficient conditions above
+and their open converse unchanged; it gives no $r=1$ closed classification.
+
+\subsection{Conditional auxiliary lemmas}\label{sec:historical-formal}
+\label{lem:historical-kernels}\claimid{lem:historical-kernels}
+The auxiliary lemmas have the following hypotheses:
+\record{finite_literal_path_decision} assumes a finite type and two
+common neighbours; GC lattice transport excludes odd endpoints in a
+scaled lattice; the four cylinder arithmetic declarations prove the
+height-kernel displacement with stated divisibility hypotheses;
+\record{induction_uniform_depth} assumes a finitely branching child
+list and genuinely decreasing lexicographic rank. The concrete
+\record{ietComponentChildren} models only removal of equal last labels,
+not every subtraction, equal-length elimination or accelerated suffix.
+The finite decision, scaled-lattice transport and rank statements
+are used with their displayed hypotheses.
+
+\label{sec:formal-records}
+\section{An extension to fixed oblique directions (proof sketch)}\label{sec:extension}
+\label{claim:oblique}\claimid{claim:oblique}
+The proposed extension replaces the six side directions by an arbitrary
+fixed finite set of primitive lattice directions, keeping eventual
+validity, ownership and fixed affine gluing. For a direction $v$, use
+transverse coordinate $h=\det(v,z)$. Across a seam the shift is affine.
+Let $D$ be a common multiple of the nonzero $|\det(v,e)|$ and put
+$Q=4D$. Add the transverse cell modulo $Q$ and $t$ modulo $Q$ to the
+finite labels. Entrance and exit indices are
+$k_{\rm in}=\lceil\xi_{\rm in}\rceil$,
+$k_{\rm out}=\lceil\xi_{\rm out}\rceil$ with
+$k_{\rm in}\le k<k_{\rm out}$. Reordering cells $n=\sigma+Qq$
+conjugates the discrete midpoint permutation; it does not claim an
+order-preserving conjugacy of the continuous intervals.
+
+The return-tower construction keeps a full partition into return towers,
+including saved periodic components. Equal final labels remove a
+periodic tower; equal lengths merge and remove a label without losing
+an orbit. Repeated winner cycles are compressed as powers. The claimed
+bound is on the number of Letter/Cat/Power nodes, not on expanded
+passage count. Base widths and exponents are affine on fixed residue
+branches; word lengths and displacement vectors are rational
+polynomials in $t$. A lexicographic measure uses leading coefficient
+sum in the original parameter, number of labels, and constant length;
+it is not silently reused after coefficient-amplifying reparameterization.
+
+For local ownership, close the side directions under rotations. A
+unit triangle meets at most
+$\sum_e(\max_\Delta\det(e,z)-\min_\Delta\det(e,z)+1)$
+candidate macro-edge levels. Embedded noncrossing edges and finitely
+many corner displays bound the length of the local gluing word.
+A finite number of charts alone does not bound how often they can
+be revisited. Entrance-closed, exit-open ownership excludes repeated
+representations of one position from genuine quotient collisions.
+Keep the full corner class and the degree-six second-point test;
+non-IPR graphs can have fewer than 120 legal starts.
+
+Tower return restores midpoint and direction; two returns restore
+left/right phase. Nonempty output, initial suffix and terminal prefix
+must be connected before using this as a finite first-repeat bound.
+Positions are leaf types and ancestor-power repetition indices.
+A free index $j$ contributes $j$ times a displacement depending only
+on $t$. Products $jt$ or $jt^2$ are allowed coefficients in one-parameter
+Presburger arithmetic; products of two freely quantified repetition
+indices are not used. Fix one start address $\theta$ throughout:
+\[
+\begin{split}
+\mathrm{Bad}(t,\theta,e)\ \Longleftrightarrow\
+\exists\xi,\eta\,[D_\theta(\xi)\wedge D_\theta(\eta)
+\wedge\xi\le e\wedge\eta\le e\\
+\wedge\neg I_\theta(\xi,\eta)\wedge G_\theta(\xi,\eta)].
+\end{split}
+\]
+Success would be $\exists\theta,e\,[\mathrm{Legal}(t,\theta,e)
+\wedge\neg\mathrm{Bad}(t,\theta,e)]$. Legal includes odd endpoint index,
+minimum length, degrees and the preceding output position. Allowing
+each collision a different start address would be incorrect.
+
+The remaining obligations are: (i) write the first-crossed-edge,
+containment and order inequalities of the local geometric transfer, with an
+oblique-family example; (ii) verify the affine tower coefficients
+for the $Q$-split IET; (iii) keep effective threshold/period computation
+dependent on the effective elimination result \cite{QE}; (iv) compare an oblique-family ray's predicted
+tail against full graph decisions. These four conditions delimit the proof sketch.
+BGW supplies eventual periodicity only after the geometric formula
+has been established.
+
+\subsection{Prospective applications only}
+C2 and K4 are specified leapfrogs of C1 and K3; the identified O1$(p,0,s)$
+subfamily is a specified leapfrog of O2. The local coordinate map
+$(x,y)\mapsto(x-y,x+2y)$ has determinant 3. These are prospects through
+the extension, not families in Corollary~\ref{cor:catalog}. Leapfrog
+is not assumed to preserve absence in general, and the full
+three-parameter O1 family is not classified. These prospects do not
+cover arbitrary signatures or every degenerate boundary. For the prospective signatures, twice area is $24a^2+48ab+12b^2$ for C2 and $42r^2+36rs$ for K4. Their $a=0$ and $r=0$ cases collapse faces, while $b=0$ and $s=0$ give zero sides. The zero middle coordinate in the identified O1 subfamily denotes a separately identified leapfrog signature, not permission to discard a zero edge in the old signature.
+
+\section{Fixed-width structure, finite checks and novelty}\label{sec:evidence}
+\subsection{Belts and a fixed cylinder}\label{prop:cylinder}
+\claimid{prop:cylinder}
+Developed triangle midpoints lie on a straight line; vertices alternate
+on its two neighbouring integer-height rows. Under $z'=Mz+q$, a height
+$h(z)=n\cdot z+e$ transforms as $n'=nM^{-1}$,
+$e'=e-n'\cdot q$. If every start is covered by a return preserving
+position, direction and primitive height, no cone lies inside a band,
+and all widths are at least two, the required pair of endpoint rows
+cannot both occur. Width one alone is not sufficient: simplicity and
+endpoint-neighbour degrees remain necessary. For integer GC$(k,0)$,
+$k\ge2$, the odd-point determinant $\pm1$ contradicts membership in
+the $k$-multiple lattice; rotations about parent vertices preserve that
+scaled lattice.
+
+For the fixed-cylinder argument let circumference vector $W=gu$,
+$g=\gcd(|W_1|,|W_2|)$, $h(z)=\det(u,z)$, and insertion vector $D$
+have $H=h(D)>0$. Let $L$ be the least common multiple of the nonzero
+$|h(v)|$ over the six unit directions. An entrance-state period is
+\begin{equation}\label{eq:cylinder}
+ Q=2gL,\qquad {Q\over h(v)}(Hv-h(v)D)\in\Z W.
+\end{equation}
+Directions with $h(v)=0$ loop in the flat core and repeat without
+reaching a cone. If the caps and collars have a fixed finite vertex
+set $C$, at most $|C|+1$ new cap visits occur before stopping. Overlap
+of the same three-vertex display is not a new visit. On a residue
+branch the passages have form $a_i(n)+jv_i$, $0\le j\le\ell_i(n)$,
+with affine $a_i,\ell_i$ and fixed $v_i,W$. All collisions are
+$a_i(n)+jv_i=a_k(n)+qv_k+zW$, with distinct-position and range
+conditions. Ordinary Presburger arithmetic then gives periodicity.
+$Q$ is an entrance period, not necessarily the final or least period.
+
+The uniform cap argument does not extend to growing width/caps.
+The D12$(3,3t+4)$ example has passage word $(BA)^{t+1}$ and first
+legal endpoint index $30t^2+88t+59$. Its $2(t+1)$ passages are unbounded.
+
+\subsection{Finite checks and their domains}\label{sec:finite}
+\claimid{sec:finite}
+An arithmetic comparison evaluates 1,809 values on nine known A3
+rays, and fourteen full graph decisions use an independent constructor.
+The fourteen graph inputs are known examples and the arithmetic
+values form one sample set. Fixed tail coefficients beyond 64 are
+checked on those rays. The E10 descriptor audit checks eight charts,
+36 inverse gluings, 108 intervals, 156 connections, 120 descriptors
+and twelve labels. A local polygon audit covers 71 charts, 342 edges
+and 21 single-zero boundaries. The return-tower audit has 6,564
+inputs and 67,312 states. The phase audit covers 48 directions,
+14,904 entrances, 4,005 intervals (1,013 empty), 5,496 lifts and
+40,380 conjugacy cells.
+
+An independent arithmetic implementation checks 378 coefficient
+representations and 13,430 pairs, with maximum period 44 and
+threshold 69 in those finite records. Passage-output tests cover
+7,056 strips, 2,255 nonempty row outputs, 16,212 subintervals,
+99,225 ordered row pairs and 509,160 folded-point comparisons.
+These finite ranges check the specified algebra and constructors.
+
+Quotient-model mirror tests compare vertex and edge counts, degree
+sequences, seams and path decisions. C1 uses 36 pairs $1\le r,s\le6$;
+O2 uses 80 pairs $1\le t\le8$, $1\le d\le10$; D14 uses 81 pairs
+$1\le r,s\le9$. Statement-reader samples of 25, 36 and 25 pairs,
+respectively, are contained in those ranges. Generated degree and
+strip formulas are verified universally by their Lean proofs.
+
+\subsection{Novelty and remaining obligations}\label{sec:novelty}
+\claimid{sec:novelty}
+\paragraph{Immediate known consequences.}
+Once a fixed sentence $\psi_\eta$ describes success on $a^n$,
+$t=2n+\eta$, MSO/regular-language equivalence gives a finite automaton;
+its unary state orbit is eventually a cycle \cite[Section 3.1]{MSO}.
+Finite fixed-modulus residue branches preserve eventual periodicity.
+Likewise, a fixed-size parametric Presburger description gives the
+conclusion directly by \cite[Theorem 1.15]{BGW}. Neither theorem builds
+the geometric description: an unbounded list of path vertices is not
+a fixed list of quantified variables, and variable-variable products
+are not permitted by that Presburger theorem.
+
+For a fixed-width construction $G_n=C[F^n(B)]$ with fixed finite
+boundary, literal-path existence has a fixed CMSO$_2$ description.
+Quantify a vertex set $X$, an edge set $E'$ and distinct endpoints
+$a,b$: $(X,E')$ is connected, has degree one at $a,b$ and degree two
+elsewhere; $|X|\ge4$ is even; $a,b$ have ambient degree five and their
+path neighbours ambient degree six; every two-edge path in $E'$ has
+adjacent outer vertices in the ambient graph. This permits interior
+cones and extra chords. The selected subgraph is precisely a literal
+path, in both directions. Finite-state recognizability for a fixed
+HR signature \cite[Chapter 1, Theorems 1.12 and 1.21(2)]{Courcelle}
+then makes iteration of $F$ a finite-state orbit. Thus this fixed-width
+existence statement is a short known consequence, not a new principle.
+Mere bounded treewidth of an arbitrary indexed sequence is insufficient:
+the uniform repeated construction is essential. The explicit $Q$,
+cap-visit bound and actual period-calculation procedure require
+separate evaluation.
+
+\paragraph{Nearby results and the missing translations.}
+Behmaram--Boutillier's fixed-circumference matching transfer matrix
+has $2^m$ states \cite[Section 3, Eq.\ (3.1)]{Behmaram}; increasing
+width does not leave the same matrix, and its observable is matchings,
+not literal paths. Fischer--Makowsky prove periodicity or semilinearity
+of model-size spectra for CMSOL classes with bounded width
+\cite[Theorems 1.4, 1.7 and 1.10]{Fischer}. Such a spectrum asserts
+existence of some model of a size, rather than deciding a specified
+$G_t$. Kotek--Makowsky's labelled (bi-)iterative graph families and MSO
+polynomials admit finite matrix transfers and $C^2$-finite recurrences
+\cite[Definitions 17--20, Lemma 28, Theorems 30 and 32]{Kotek}.
+Their bounded-clique-width framework does not automatically include
+growing lattice patches; a recurrence for values is not itself
+Boolean periodicity. In each case the geometric family and its
+parameter require a uniform interpretation satisfying the cited
+hypotheses.
+
+The syntax $\pm x\pm y\le c$ is already the octagon domain
+\cite[p.~1]{Mine}. Bozga--Iosif--Kone\v{c}n\'y's difference,
+octagonal and finite-monoid affine relations have acceleration and
+Presburger transitive-closure results
+\cite[Definition 1 and Sections 4.2.1--4.2.2]{Bozga}. These principally
+iterate a fixed relation and allow linear drift; here the relation
+itself varies with $t$, and all previously output surface vertices
+must remain distinct. A fixed-dimensional translation preserving that
+condition has not been supplied. The term ``zigzag automata'' there
+does not identify the subject with fullerene zigzags.
+
+Jonoska--Krajcevski--McColm study counter languages of walks returning
+to a unit cell in periodic digraphs \cite{Counter}; Wanke studies
+path/cycle algorithms on finite periodic graphs \cite{Wanke}.
+The available abstracts and bibliographic records describe these
+walk and algorithm problems. Walks or
+decidability alone do not preserve literal simplicity or prove
+periodicity of the parameter set.
+
+\paragraph{Unary length is essential.}
+The standard WS1S encoding of Presburger integers uses their binary
+representations \cite[printed pp.~11--12]{Thomas}. Binary regularity
+does not imply eventual periodicity of the represented integers:
+the regular language $10^*$ represents powers of two. Our reduction
+uses $n$ as unary word length, not the binary digits of $t$.
+A separate formula for each $t$ would also be insufficient.
+
+\paragraph{Boundary of the contribution.}
+Within the literature comparison of the cited theorem statements
+and sections, no prior result giving the full claim from the same
+geometric hypotheses has been located. The priority comparison remains
+open. The
+remaining candidate contribution is the uniform, two-way translation
+of geometric passages, seam ownership, legal truncation and all
+surface-vertex collisions into one fixed MSO sentence, even with
+growing widths and passage counts. Fixed-width theory and the known
+logical conclusions do not supply that translation by themselves;
+we do not prove that a shorter existing reduction is impossible.
+The convex-face reduction is the result proved here. The full
+comparison with catalogue and zigzag theory and the extension's
+geometric transfer obligations remain separate questions.
+
+The two-interval arithmetic kernel is covered by Li--Chen's uniform
+bound for continued fractions of ratios of parameter polynomials
+\cite[Theorem 27]{LiChen}. For several intervals, finite residue
+branches and a uniform compressed node count, the literature comparison has not located an identical general theorem;
+the comparison remains open.
+
+K3's variable-modulus behaviour obstructs a single ordinary
+multivariable Presburger description in fixed common coordinates.
+Moving to canonical representatives or allowing variable divisibility
+does not follow from raywise periodicity. These stronger global-definability questions remain separate. General E10 $r=1$ necessity, untranscribed
+families, all degenerations, human proof peer review, and a formal
+geometric-to-program pipeline are not completed here. A3 minimum,
+density and the IPR census belong to the first article. No new D12
+classification is asserted by this paper.
+
+\appendix
+\section{Local polygons and zero boundaries}\label{app:domains}
+\claimid{app:domains}
+Twice total polygon area is the carbon order only when the quotient
+is valid. The local coefficient audit gives
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+Signature & Side factors & Twice total area\\\midrule
+E10 & $p,r,r+s$ & $12r^2+2s^2+12rs+24pr+12ps$\\
+D12 & $s,r+s$ & $12r^2+48rs+48s^2$\\
+D14 & $r,s$ & $8r^2+24rs+12s^2$\\
+D1 & $p,r$ & $36p^2+48pr+12r^2$\\
+K3 & $r,s$ & $14r^2+12rs$\\
+B2 & $p,r$ & $12p^2+24pr+4r^2$\\
+C1 & $a,b$ & $8a^2+16ab+4b^2$\\
+O2 & $t,d$ & $14t^2+16td+2d^2$\\\bottomrule
+\end{tabular}
+\end{center}
+The 71-chart/342-edge audit establishes local convexity, positive area
+and side lengths in its stated positive domain, not global quotient
+simplicity. With other parameters positive, E10 $s=0$ and D12 $r=0$
+alone remain locally nondegenerate. E10 $p=0$ or $r=0$, K3 $r=0$,
+B2 $p=0$ or $r=0$, C1 $a=0$, and O2 $t=0$ collapse some faces.
+D12 $s=0$, either D14/D1 zero, K3 $s=0$, C1 $b=0$ and O2 $d=0$
+produce zero sides. Removing an IET zero-length label is not the same
+as redefining a graph after cone mergers. The omitted leapfrog-domain
+data remain in the extension's prospective records, not the main
+corollary. A3's $l=0$ and $k=l$ are the separate A1 and A2 boundaries.
+
+\section{Auxiliary formal statements}\label{app:correspondence}
+The auxiliary results retain the following mathematical hypotheses.
+\begin{quote}\small
+A finite graph with two common neighbours per edge, a cone predicate
+and a fixed oriented triangle has a first repeat at most the number
+of vertices; a literal path exists exactly when a legal endpoint
+occurs before that repeat.\par
+A B\'ezout witness for primitive $u$ and
+$g\mid Q/\mathrm{cylHeight}(u,v)$ imply that the stated shifted
+displacement is a multiple of $gu$, with integer-division and
+divisibility hypotheses.\par
+A finite-list child relation with a strictly decreasing lexicographic
+natural rank has a finite uniform depth from each starting state.\par
+The concrete equal-final-label removal component has such a depth.
+\end{quote}
+
+\section*{Acknowledgements and AI-use statement}
+The author used Codex and Claude Code to assist with literature
+organization, mathematical exploration, proof drafting, implementation,
+finite verification, formalization and English exposition. The author
+is responsible for the mathematical account and its stated proof
+scope. AI systems are not listed as authors.
+
+\section*{License and contact}
+Copyright 2026 Tatsuhiko Takimoto. The article text, figures and research
+data are available under CC BY 4.0; the accompanying code and Lean
+sources are under Apache-2.0, with third-party notices retained.
+Contact is through GitHub Issues of the public repository; its URL
+has one canonical location in the accompanying
+\record{REPOSITORY-URL.txt}. No contact email is listed.
+
+\clearpage
+\begin{thebibliography}{99}
+\bibitem{A3} Tatsuhiko Takimoto,
+\emph{A two-stage classification of linear generalized Stone--Wales paths in
+Goldberg--Coxeter images of the dodecahedron}, version 8.1 (2026).
+{\urlstyle{rm}\url{https://github.com/tkmt-lab/a3-gsw-classification}}.
+\bibitem{BBS} A. Bille, V. Buchstaber, and E. Spodarev,
+\emph{Some open mathematical problems on fullerenes}, arXiv:2410.19322,
+2024; published 2025, doi:10.1021/acs.jcim.4c01997.
+\bibitem{Graver} J. E. Graver,
+\emph{Catalog of All Fullerenes with Ten or More Symmetries},
+DIMACS Series 69 (2005), 167--188; author version with corrections.
+\bibitem{Connectivity} K. Kutnar and D. Maru\v{s}i\v{c},
+\emph{On Cyclic Edge-Connectivity of Fullerenes}, arXiv:math/0702511v1,
+2007. The cyclic 5-edge-connectivity statement is cited there as known.
+\bibitem{MSO} D. Mandrioli, D. Martinenghi, A. Morzenti,
+M. Pradella, and M. Rossi,
+\emph{Lecture Notes on Monadic First- and Second-Order Logic on Strings},
+arXiv:2301.10519v1, 2023, Section 3.1, Theorem 3.2.
+\bibitem{BGW} T. Bogart, J. Goodrick, and K. Woods,
+\emph{Parametric Presburger Arithmetic: Logic, Combinatorics, and
+Quasi-polynomial Behavior}, Discrete Analysis (2017), article 4,
+doi:10.19086/da.1254, Theorem 1.15.
+\bibitem{QE} A. Mansutti and M. R. Starchak,
+\emph{One-Parametric Presburger Arithmetic Has Quantifier Elimination},
+LIPIcs 345, MFCS 2025, article 72, doi:10.4230/LIPIcs.MFCS.2025.72.
+\bibitem{LiChen} N. Li and S. Chen,
+\emph{On the Ring of Integer-valued Quasi-polynomials},
+arXiv:0706.4288v2 (2007; internal PDF date 2008), Theorem 27.
+\bibitem{Courcelle} B. Courcelle and J. Engelfriet,
+\emph{Graph Structure and Monadic Second-Order Logic}, Cambridge
+University Press, 2012; author-hosted Chapter 1, Theorems 1.12, 1.21.
+\bibitem{Behmaram} A. Behmaram and C. Boutillier,
+\emph{Asymptotic enumeration of perfect matchings in m-barrel fullerene graphs},
+arXiv:1710.05156, Section 3.
+\bibitem{Fischer} E. Fischer and J. A. Makowsky,
+\emph{On spectra of sentences of Monadic Second Order Logic with counting},
+author draft, 22 May 2003; Journal of Symbolic Logic 69 (2004), 617--640.
+\bibitem{Kotek} T. Kotek and J. A. Makowsky,
+\emph{Recurrence Relations for Graph Polynomials on Bi-iterative
+Families of Graphs}, arXiv:1309.4020v1, 2013.
+\bibitem{Mine} A. Min\'e, \emph{The Octagon Abstract Domain},
+arXiv:cs/0703084v1, 2007, p.~1.
+\bibitem{Bozga} M. Bozga, R. Iosif, and F. Kone\v{c}n\'y,
+\emph{Fast Acceleration of Ultimately Periodic Relations},
+VERIMAG Technical Report TR-2010-3, 2010.
+\bibitem{Counter} N. Jonoska, M. Krajcevski, and G. McColm,
+\emph{Counter machines and crystallographic structures},
+Natural Computing 15 (2016), 97--113,
+doi:10.1007/s11047-015-9527-0.
+\bibitem{Wanke} E. Wanke, \emph{Paths and cycles in finite periodic graphs},
+MFCS 1993, LNCS 711, 751--760,
+doi:10.1007/3-540-57182-5\_66.
+\bibitem{Thomas} W. Thomas, \emph{Languages, Automata, and Logic},
+Report 9607, May 1996; printed pp.~11--12 (PDF pp.~14--15).
+\end{thebibliography}
+\end{document}

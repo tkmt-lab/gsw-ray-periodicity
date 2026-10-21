@@ -1,3 +1,7 @@
+# 1.8.0 / article6.1
+
+Receive E10 graph classification for r>=2 and all positive-ray periodicity including the formal r=1 route, preserving the separate verification record and earlier mathematical scopes.
+
 # 1.7.0 / article 6.0
 
 Focus the article on mathematics and current proof scope, moving verification process/history to VERIFICATION-RECORD.md.

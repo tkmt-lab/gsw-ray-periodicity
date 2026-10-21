@@ -1,3 +1,13 @@
+## Current E10 proof scope (article6.1 / packet1.8.0)
+
+Classification: `ClaudeChallengeE10.classification` proves the graph iff for natural p,s>=1 and r>=2, with m=2r+s and p congruent to d+1 or d-1 modulo m for d in {0,r,r+s}. `ClaudeChallengeE10.main` proves actual-path eventual periodicity for every positive natural start and nonnegative natural slope, including r=1. That branch applies formal Theorem1a `ClaudeChallenge2.State.main_statement` after proving `Valid` and `TrianglesInCharts` on the E10 model; it uses no prose geometric bridge. It does not prove a closed r=1 classification. The general prose bridge and the separate r=1 sufficient conditions/converse remain unchanged. Named catalogue correspondence retains its statement-reader caveat.
+
+Both listed E10 declarations, and only those listed E10 targets, share the coordinator's saved six-kernel paranoid Comparator acceptance. This is a receipt readback, not a new run or independent mathematical derivation. Read `e10-manifest.json`, `VERIFICATION-RECORD.md` and `CI-AXIOM-SPLIT.md` for chronology, statement correspondence, axiom-report basis and the O2/D14 tacticPeq import collision. No owner-confirmation procedure, human review or novelty promotion is added. Current total:412 Lean files =407 proof/specification files plus five inert benchmarks. The E10 closure has166 files, including111 new proof/specification files (110 proof + one spec) and55 inherited files; its separate inert challenge has two placeholders. All300 predecessor Lean sources and old payloads retain exact bytes. No current Lean, external-kernel or scientific execution, no upload.
+
+## Inherited checkpoint documentation (through packet1.7.0)
+
+The following earlier edition notes describe historical checkpoints; the current scope and counts are stated above.
+
 # Scope and novelty boundary
 
 Main result: Theorem 1a and Corollary 1b. Exactly A1,A2,B2,C1,K3,E10,D12,D14,D1,O2,A3 are in the stated corollary, on their eventually valid domains; A3 uses a separate route. Parameter 1 boundaries differ from collapsed zero boundaries. Positive area is not global quotient validity.

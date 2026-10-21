@@ -15,7 +15,7 @@
       "const": 3
     },
     "version": {
-      "const": "1.7.0"
+      "const": "1.8.0"
     },
     "paper": {
       "$ref": "#/$defs/evidence"
@@ -70,7 +70,14 @@
         "d14_boundary_path_lemmas_received",
         "d14_small_boundary_existence_formalized",
         "d14_comparator_targets_main_only",
-        "d14_statement_correspondence"
+        "d14_statement_correspondence",
+        "e10_graph_classification_received",
+        "e10_literal_ray_without_prose_bridge_received",
+        "e10_r1_ray_uses_formal_general_theorem",
+        "e10_r1_geometric_model_hypotheses_formalized",
+        "e10_r1_closed_classification_formalized",
+        "e10_named_catalogue_correspondence_formalized",
+        "e10_statement_correspondence"
       ],
       "properties": {
         "main_result": {
@@ -206,6 +213,27 @@
           "const": true
         },
         "d14_statement_correspondence": {
+          "const": "prior-specification-independent-AI-reader-finite-comparison"
+        },
+        "e10_graph_classification_received": {
+          "const": true
+        },
+        "e10_literal_ray_without_prose_bridge_received": {
+          "const": true
+        },
+        "e10_r1_ray_uses_formal_general_theorem": {
+          "const": true
+        },
+        "e10_r1_geometric_model_hypotheses_formalized": {
+          "const": true
+        },
+        "e10_r1_closed_classification_formalized": {
+          "const": false
+        },
+        "e10_named_catalogue_correspondence_formalized": {
+          "const": false
+        },
+        "e10_statement_correspondence": {
           "const": "prior-specification-independent-AI-reader-finite-comparison"
         }
       },
