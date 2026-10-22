@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+"""D12 (Graver) as Claude2Aligned-style labelled polygons; mirror checks of the D12 data used by
+Claude7D12Spec.lean / Claude7D12ComparatorChallenge.lean (defined in Claude2AlignedSpec.lean).
+
+Parameters: Lean = paper = R004 d12.py (r, s), L = r + 2s.  Check: twice the total area is
+2 * 6 (r+2s)^2 = 12r^2 + 48rs + 48s^2, the paper's D12 row (appendix table), not symmetric.
+
+Lean data, copied literally:
+  d12Lab = [0..11], [0, 11, 10, ..., 1]
+  cell 0: walk [(s,0),(r+s,1),(s,1),(r+s,2),(s,2),(r+s,3),(s,3),(r+s,4),(s,4),(r+s,5),(s,5),(r+s,0)]
+  cell 1: walk [(r+s,0),(s,0),(r+s,1),(s,1),(r+s,2),(s,2),(r+s,3),(s,3),(r+s,4),(s,4),(r+s,5),(s,5)]
+Checks:
+  1. the Lean data equal R004 d12.signature literally (cells and polygons);
+  2. the Lean data equal the paper's chart description (sec:d12-classification: H_L, marks at
+     distance r+s from each initial corner, labels (11,0,1,...,10) and (0,11,...,1)) up to the
+     translation (r+s, 0) of cell 0;
+  3. as in the D14 mirror: counts, degree sequence, isomorphism with R004 d12.construct
+     (canonical_fast), twelve degree-5 vertices, unit triangles = twice the area, no off-seam
+     identification, same partition/edges as R004 aligned_surface;
+  4. exhaustive literal-path search, compared with the paper's closed condition
+     r | s-1 or r | s+1 or |r - 3s| = 1, and with its stated equivalent form.
+Usage: d12_mirror.py MIRROR_DIR R004_SRC OUT.json RMAX SMAX FULLMAX
+  (all checks for r, s <= FULLMAX; checks 1, 2, 4 and the counts for r <= RMAX, s <= SMAX)
+"""
+
+import json
+import sys
+from itertools import product
+from math import gcd
+
+HERE, R004 = sys.argv[1], sys.argv[2]
+sys.path.insert(0, HERE)
+sys.path.insert(1, R004)
+from claude2_aligned_mirror import (Surface, walk, literal_path_exists,  # noqa: E402
+                                    check_literal, r004_compare, rotN)
+from graphs import from_oriented_triangles  # noqa: E402
+from canonical_fast import canonical_fast  # noqa: E402
+import d12 as r004_d12  # noqa: E402
+
+# ---------------------------------------------------------------- Lean data (Claude2AlignedSpec)
+D12_LAB = [list(range(12)), [0] + list(range(11, 0, -1))]
+
+
+def d12_poly(r, s, f):
+    if f == 0:
+        return walk((0, 0), [(s, 0), (r + s, 1), (s, 1), (r + s, 2), (s, 2), (r + s, 3),
+                             (s, 3), (r + s, 4), (s, 4), (r + s, 5), (s, 5), (r + s, 0)])
+    return walk((0, 0), [(r + s, 0), (s, 0), (r + s, 1), (s, 1), (r + s, 2), (s, 2),
+                         (r + s, 3), (s, 3), (r + s, 4), (s, 4), (r + s, 5), (s, 5)])
+
+
+def d12_sig(r, s):
+    return D12_LAB, [d12_poly(r, s, f) for f in range(2)]
+
+
+# ---------------------------------------------------------------- paper's description
+
+
+def paper_charts(r, s):
+    """sec:d12-classification: corners (0,0),(L,0),(L,L),(0,2L),(-L,2L),(-L,L) of H_L; each side
+    marked at distance r+s from its initial corner; corners and marks alternately labelled
+    (11,0,1,...,10) in chart 1 and (0,11,10,...,1) in chart 2.  Returns, per chart, the cyclic
+    list of (label, point) starting at corner (0,0)."""
+    L = r + 2 * s
+    C = [(0, 0), (L, 0), (L, L), (0, 2 * L), (-L, 2 * L), (-L, L)]
+    pts = []
+    for i in range(6):
+        a, b = C[i], C[(i + 1) % 6]
+        d = ((b[0] - a[0]) // L, (b[1] - a[1]) // L)
+        pts += [a, (a[0] + (r + s) * d[0], a[1] + (r + s) * d[1])]
+    lab1 = [11] + list(range(11))
+    lab2 = [0] + list(range(11, 0, -1))
+    return [list(zip(lab1, pts)), list(zip(lab2, pts))]
+
+
+def lean_vs_paper(r, s):
+    lab, poly = d12_sig(r, s)
+    P1, P2 = paper_charts(r, s)
+    c0 = [(lab[0][i], (poly[0][i][0] + r + s, poly[0][i][1])) for i in range(12)]
+    c1 = [(lab[1][i], poly[1][i]) for i in range(12)]
+    # cell 0 starts at label 0 (the mark), the paper's chart 1 at corner 11: compare cyclically
+    k = [x[0] for x in P1].index(0)
+    return c0 == P1[k:] + P1[:k] and c1 == P2
+
+
+# ---------------------------------------------------------------- generic checks (as D14 mirror)
+
+
+def rotation_system(S):
+    tri = []
+    for f in range(S.N):
+        P = S.poly[f]
+        for x, y in product(range(min(a for a, _ in P), max(a for a, _ in P) + 1),
+                            range(min(b for _, b in P), max(b for _, b in P) + 1)):
+            for trip in (((x, y), (x + 1, y), (x, y + 1)), ((x + 1, y), (x + 1, y + 1), (x, y + 1))):
+                if all((f, q) in S.index for q in trip):
+                    tri.append(tuple(S.cls[S.index[f, q]] for q in trip))
+    return from_oriented_triangles(tri), len(tri)
+
+
+def charts_injective(S):
+    seen = {}
+    for k, (f, z) in enumerate(S.sites):
+        if seen.setdefault((f, S.cls[k]), z) != z:
+            return False
+    return True
+
+
+def cond(r, s):
+    """The paper's closed condition (divisibility in Z)."""
+    return (s - 1) % r == 0 or (s + 1) % r == 0 or abs(r - 3 * s) == 1
+
+
+def cond_equiv(r, s):
+    """The paper's stated equivalent form."""
+    return (r == 1 or (r == 2 and s % 2 == 1) or
+            (r >= 3 and (s % r in (1, r - 1) or abs(r - 3 * s) == 1)))
+
+
+def check_case(r, s, full):
+    lab, poly = d12_sig(r, s)
+    rl, rp = r004_d12.signature(r, s)
+    S = Surface(lab, poly)
+    E = sum(S.deg) // 2
+    area2 = 12 * r * r + 48 * r * s + 48 * s * s
+    rot, ntri = rotation_system(S)
+    rec = {"r": r, "s": s, "V": S.V, "E": E,
+           "lean_eq_r004_signature": (lab == rl and [list(p) for p in poly] == [list(p) for p in rp]),
+           "lean_eq_paper_charts": lean_vs_paper(r, s),
+           "deg5": S.deg.count(5), "other_deg": sorted(set(S.deg) - {5, 6}),
+           "triangles": ntri, "area2": area2, "V_expected": 6 * (r + 2 * s) ** 2 + 2,
+           "tri_edges_eq_adj": all(set(rot[v]) == S.adj[v] for v in range(S.V)),
+           "charts_injective": charts_injective(S)}
+    ok = (rec["lean_eq_r004_signature"] and rec["lean_eq_paper_charts"] and rec["deg5"] == 12
+          and not rec["other_deg"] and ntri == area2 and S.V == rec["V_expected"]
+          and E == 3 * S.V - 6 and rec["tri_edges_eq_adj"] and rec["charts_injective"])
+    rec["full"] = full
+    if full:
+        G = r004_d12.construct(r, s)
+        rec.update({"V_r004": len(G), "E_r004": sum(len(x) for x in G) // 2,
+                    "deg_seq_eq": sorted(S.deg) == sorted(len(x) for x in G),
+                    "boundary_only": S.boundary_only(),
+                    "same_as_aligned_surface": r004_compare(S, lab, poly, R004)[0],
+                    "iso_r004": canonical_fast(rot) == canonical_fast(G)})
+        ok = ok and (rec["V"] == rec["V_r004"] and rec["E"] == rec["E_r004"] and rec["deg_seq_eq"]
+                     and rec["boundary_only"] and rec["same_as_aligned_surface"] and rec["iso_r004"])
+    w = literal_path_exists(S, want_witness=True)
+    rec["path"] = w is not None
+    rec["path_len"] = len(w) if w is not None else None
+    if w is not None:
+        assert check_literal(S, w)
+    rec["cond"] = cond(r, s)
+    rec["cond_equiv_agrees"] = cond(r, s) == cond_equiv(r, s)
+    rec["agree"] = rec["path"] == rec["cond"]
+    rec["ok"] = ok
+    return rec
+
+
+def main():
+    RMAX, SMAX, FULL = map(int, sys.argv[4:7])
+    rows = []
+    for r in range(1, RMAX + 1):
+        for s in range(1, SMAX + 1):
+            rows.append(check_case(r, s, r <= FULL and s <= FULL))
+            print(r, s, rows[-1]["path"], rows[-1]["cond"], rows[-1]["ok"], flush=True, file=sys.stderr)
+    bad = [(x["r"], x["s"]) for x in rows if not x["ok"]]
+    disagree = [(x["r"], x["s"], x["path"], x["cond"]) for x in rows if not x["agree"]]
+    summary = {"cases": len(rows), "full_cases": sum(x["full"] for x in rows),
+               "range": [RMAX, SMAX, FULL], "bad": bad,
+               "classification_disagreements": disagree,
+               "cond_equiv_disagreements": [(x["r"], x["s"]) for x in rows if not x["cond_equiv_agrees"]],
+               "positives": sum(x["path"] for x in rows),
+               "negatives": sum(not x["path"] for x in rows),
+               "positives_by_branch": {
+                   "r|s-1 or r|s+1": sum(x["path"] and ((x["s"] - 1) % x["r"] == 0 or (x["s"] + 1) % x["r"] == 0) for x in rows),
+                   "only |r-3s|=1": sum(x["path"] and not ((x["s"] - 1) % x["r"] == 0 or (x["s"] + 1) % x["r"] == 0) for x in rows)},
+               "negatives_with_gcd_1": sorted((x["r"], x["s"]) for x in rows
+                                              if not x["path"] and gcd(x["r"], x["s"]) == 1)}
+    print(json.dumps(summary))
+    json.dump({"summary": summary, "rows": rows}, open(sys.argv[3], "w"), indent=0)
+    sys.exit(1 if bad or disagree else 0)
+
+
+if __name__ == "__main__":
+    main()

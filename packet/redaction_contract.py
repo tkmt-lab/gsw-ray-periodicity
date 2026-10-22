@@ -1,3 +1,3 @@
 """Fixed original receipt identities; no private strings or original bytes."""
-PACKET_VERSION = '1.9.0'
+PACKET_VERSION = '1.10.0'
 ORIGINALS = [('evidence/R004/R004-report-005.md.txt.original.log', '863017a492bd2baab9083da35fefaf6f406ef9d5b0fc96eb48a951cb925db360', 5893), ('evidence/theorem1a/lean-execution.json', 'c0cf38c92b36638aa663846db89f798cd5fd9cf3496e7f25c62541e192c412fe', 18896), ('evidence/theorem1a/serial-build-output.original.log', '35d804c710d761515a8a5dcf6952457548fc8695f83dcd7bebb1dfc450646eca', 216999), ('evidence/theorem1a/thm1a-final-report-2026-10-20.md.original.log', 'd85a2443f811786d1fe523dc1d90498c81e19782f921df259da38251218bc22c', 13420), ('evidence/theorem1a/thm1a-geo-report-2026-10-20.md.original.log', 'e86b1fcd3d41fab0b26084e82e9a1247d0becb277961d9335ec7cd021834d397', 10053), ('evidence/theorem1a/thm1a-state-report-2026-10-20.md.original.log', '91b8498a4e9d9201ff64c60102bad7ea1bc21719c4bb366e391d339375427993', 18364)]

@@ -1,0 +1,79 @@
+# D12 bridge: Lean data and challenge statements (statement writer, 2026-10-21)
+
+Statements only; no proofs (`classification` and `main` end in `sorry`). The research side's
+D12 proof (computer-assisted, R004 certificates) was not read; the statements come from the
+definitions and the paper only.
+
+## Files
+- `formal/Formal/Claude7D12Spec.lean` — imports `Formal.Claude2AlignedSpec` and documents the
+  D12 data; **defines nothing new**: `d12Lab`, `d12Poly`, `d12Sig`, `d12Graph` (namespace
+  `Claude2Aligned`) already exist in `Claude2AlignedSpec.lean` (2026-10-19), and a second
+  definition under the same names would clash. They were re-derived from R004 `d12.py` and agree
+  with it literally (below). Compiles.
+- `formal/Formal/Claude7D12ComparatorChallenge.lean` (copy: `ChallengeD12.lean`) — Mathlib-only
+  challenge, namespace `ClaudeChallengeD12`, C1/E10 style. Compiles; 2 `sorry`s (only the
+  `sorry` warnings).
+- `d12_mirror.py`, `d12-mirror-result.json` — Python mirror and its output.
+- `check_verbatim.py`, `check-verbatim-result.txt` — the O2 bridge's check with the file prefix as
+  an argument (that script hard-codes `Claude5`): `check_verbatim.py formal Claude7 D12` →
+  23 verbatim blocks (`rot … LiteralPath`, `Sig … walk`, `d12Lab`, `d12Poly`, `d12Sig`,
+  `d12Graph`); new: `PathExists`, `classification`, `main`; nothing else; 2 `sorry`s.
+- `lean_eval_check/` — `EvalData.lean` evaluates `d12Lab`/`d12Poly` for `r, s = 1..6` (`#eval`);
+  `compare_lean_eval.py` compares with the mirror's data and with R004 `d12.signature`:
+  72 cells, 0 mismatches.
+
+## Data source and parameters
+R004 `.worktrees/verify/studies/R004/src/d12.py` (read-only): labels `0..11` and
+`0, 11, 10, …, 1`; cell 0 has side lengths `(s, r+s)×6` with direction `k = (j+1)//2`, cell 1
+`(r+s, s)×6` with `k = j//2`. This is exactly the Lean `walk` lists of `d12Poly` (cell 0 ends with
+direction `0` where R004 has `6`; `rotN 6 = id`). Each cell is a regular hexagon of side
+`L = r + 2s`, every side cut at a label into `s` and `r + s`.
+
+Paper parameters `r, s` = R004 `r, s`. Confirmation: twice the area is `2·6(r+2s)² =
+12r² + 48rs + 48s²`, the appendix row `D12 & s,r+s & 12r²+48rs+48s²` (not symmetric, so the
+order is fixed); also `sec:d12-classification` puts `L = r + 2s`, carbon order `12L²`. The
+section's chart description (`H_L`, corners `(0,0),(L,0),(L,L),(0,2L),(-L,2L),(-L,L)`, a mark
+at distance `r + s` from each initial corner, labels `(11,0,1,…,10)` and `(0,11,…,1)`) equals
+Lean cell 1 literally and Lean cell 0 translated by `(r + s, 0)` (checked by the mirror).
+
+## Mirror results
+`d12_mirror.py studies/R002/claude-lean <R004 src> d12-mirror-result.json 20 12 12`
+(run with `studies/R011/run_capped.sh`; about 2 min).
+- All 240 cases `r = 1..20`, `s = 1..12`: Lean data = R004 signature = paper charts; vertices
+  `6(r+2s)² + 2`, `E = 3V − 6`, twelve degree-5 vertices and the rest degree 6; unit triangles =
+  `12r² + 48rs + 48s²`; triangle edges = adjacency; injective charts.
+- The 144 cases `r, s ≤ 12` also: same counts and degree sequence as R004 `d12.construct`,
+  isomorphic (`canonical_fast`), same partition and edges as R004 `aligned_surface`, glued pairs
+  only on boundaries. Bad cases: 0.
+- Literal paths (exhaustive search, witnesses re-checked): 78 positives, 162 negatives;
+  **0 disagreements** with `r ∣ s−1 ∨ r ∣ s+1 ∨ |r−3s| = 1` (and 0 with the paper's stated
+  equivalent form). 11 positives come only from `|r − 3s| = 1` (e.g. `(5,2)`, `(7,2)`, `(8,3)`).
+  75 negatives have `gcd(r, s) = 1` (e.g. `(5,3)`, `(9,2)`), so the gcd absence branch alone
+  does not explain the negatives.
+
+## Statement (`ClaudeChallengeD12`)
+```lean
+def PathExists (r s : ℤ) : Prop := ∃ n p, LiteralPath (d12Graph r s) n p
+
+theorem classification (r s : ℕ) (hr : 1 ≤ r) (hs : 1 ≤ s) :
+    PathExists r s ↔
+      ((r : ℤ) ∣ (s : ℤ) - 1 ∨ (r : ℤ) ∣ (s : ℤ) + 1 ∨ |(r : ℤ) - 3 * (s : ℤ)| = 1)
+
+theorem main (r₀ s₀ a b : ℕ) (hr : 1 ≤ r₀) (hs : 1 ≤ s₀) :
+    ∃ n₀ P : ℕ, 0 < P ∧ ∀ n : ℕ, n₀ ≤ n →
+      (PathExists (r₀ + a * n) (s₀ + b * n) ↔
+        PathExists (r₀ + a * (n + P)) (s₀ + b * (n + P)))
+```
+`classification` is the paper's `thm:d12-classification` on its whole domain `r, s ≥ 1`
+(divisibility and absolute value in `ℤ`, so `s − 1` is not truncated). `main` is Corollary 1b for
+D12, as for D14 (`main` also follows from `classification` by the paper's arithmetic remark, but
+is stated on its own).
+
+## Doubts
+- `Claude7D12Spec.lean` has no declarations of its own (see Files). If a self-contained spec is
+  preferred, the names would have to change (e.g. a new namespace), which would no longer be the
+  `Claude2Aligned` D12 used by `Claude2AlignedD12Glue.lean`.
+- The paper's quotient is described with charts `H_L`; the Lean quotient is the generic
+  `Claude2Aligned` gluing. Their agreement is checked on data (labels, points, gluing by the
+  mirror against R004), not proved.
+- Isomorphism is checked against R004's construction, which uses the same R004 gluing engine.

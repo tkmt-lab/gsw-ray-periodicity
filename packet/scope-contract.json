@@ -58,5 +58,10 @@
   "e10_r1_geometric_model_hypotheses_formalized": true,
   "e10_r1_closed_classification_formalized": false,
   "e10_named_catalogue_correspondence_formalized": false,
-  "e10_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
+  "e10_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison",
+  "d12_graph_classification_received": true,
+  "d12_literal_ray_without_prose_bridge_received": true,
+  "d12_named_catalogue_correspondence_formalized": false,
+  "d12_lean_derivation_independent_of_prose_routes": false,
+  "d12_statement_correspondence": "prior-specification-independent-AI-reader-finite-comparison"
 }

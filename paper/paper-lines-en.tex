@@ -20,7 +20,7 @@
 \title[Affine fullerene families and eventual periodicity]{Eventual periodicity of linear generalized Stone--Wales paths in affine fullerene families with convex lattice-face decompositions}
 \author{Tatsuhiko Takimoto}
 \address{Independent researcher}
-\date{Version 6.2, 21 October 2026}
+\date{Version 6.3, 22 October 2026}
 \begin{document}
 \begin{abstract}
 We study literal linear generalized Stone--Wales paths in fullerene
@@ -35,10 +35,10 @@ reduction. We apply it, together with separate arithmetic arguments,
 to eleven specified catalogue families. The specification-level
 periodicity theorem is Lean-proved, with a prose correspondence lemma
 connecting its assumptions to the geometric hypotheses. Family-specific
-Lean proofs establish K3 and C1 path classifications, O2 absence on
-its stated domain, and the E10 classification for $r\ge2$.
+Lean proofs establish the K3, C1 and D12 path classifications, O2
+absence on its stated domain, and the E10 classification for $r\ge2$.
 Positive-ray actual-path periodicity is Lean-proved for K3, C1, O2,
-D14 and E10, including the E10 boundary $r=1$. We also describe closed conditions, exact decisions on
+D12, D14 and E10, including the E10 boundary $r=1$. We also describe closed conditions, exact decisions on
 two example rays for every ray parameter, finite checks, and a
 fixed-oblique-direction extension as a separate proof sketch.
 \end{abstract}
@@ -67,12 +67,11 @@ existing logical and fixed-boundary periodicity theorems.
 Theorem~\ref{thm:aligned} & Lean specification theorem; prose geometric correspondence & Convex six-direction disk decompositions, with fixed affine gluing and eventual validity; fixed-residue variants.\\
 Logical periodicity step & External MSO/regular-language theorem & One fixed sentence over unary finite words.\\
 Corollary~\ref{cor:catalog} & Geometric decompositions and arithmetic; direct Lean family proofs & Eleven specified valid positive-parameter families.\\
-K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all five positive-natural ray results, including E10 $r=1$.\\
+K3, C1, O2, D12, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; D12 iff for $r,s\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all six positive-natural ray results, including E10 $r=1$.\\
 Family boundaries & Lean explicit paths and finite checks & O2 paths on $(1,d)$, $d\ge3$, and $(t,1)$, $t\ge3$; D14 paths on $(1,s)$, $s\ge2$, and $(r,1)$, $r\ge2$. Small remaining boundary decisions are finite evidence.\\
 Other closed conditions and examples & Prose geometry, Lean predicate arithmetic, explicit witnesses and checkers & The domains and finite ranges specified in Sections~\ref{sec:conditions}, \ref{sec:arithmetic} and \ref{sec:finite}; C1/O2 IPR is prose.\\
 % D12-SCOPE-BEGIN
-D12 classification & Two prose/computer-assisted proof routes; no Lean & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\ref{sec:d12-classification}.\\
-D12 ray consequence & Theorem~\ref{thm:aligned} with prose correspondence; alternatively classification and arithmetic & Every eventually positive integer affine ray. No family-specific Lean proof of D12.\\
+D12 classification, further proofs & Two prose/computer-assisted proofs, in addition to the Lean proof & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\ref{sec:d12-classification}.\\
 % D12-SCOPE-END
 Fixed-oblique extension & Proof sketch & The four transfer obligations in Section~\ref{sec:extension}.\\
 \bottomrule
@@ -231,11 +230,11 @@ There are eleven families in this statement. Positive boundaries with
 a parameter fixed at 1 are included, notably K3 and O2 and E10 with
 $r=1$. Collapsed zero boundaries are not. The corollary gives no
 two-variable closed classification merely from ray periodicity.
-The K3, C1, O2 and D14 parts have direct family-specific ray proofs on
-their quotient graphs, including positive boundary parameters. E10 also
+The K3, C1, O2, D12 and D14 parts have direct family-specific ray proofs
+on their quotient graphs, including positive boundary parameters. E10 also
 has a formal actual-path ray proof: its $r=1$ branch applies the formal
 general periodicity theorem with the validity and triangle-lifting
-hypotheses proved on the E10 model. These five results use no general
+hypotheses proved on the E10 model. These six results use no general
 prose correspondence lemma. Their ray declarations start with
 positive natural coordinates and nonnegative slopes; an eventually positive
 integer ray is covered by reindexing its positive tail. The other family
@@ -471,7 +470,8 @@ C1, $a,b\ge1$ & Lean graph iff $b=1$ and actual-path ray periodicity; no general
 A3, $k>l>0$ & Separate complete classification and arithmetic; Section~\ref{sec:arithmetic}.\\
 K3, $r,s\ge1$ & Lean literal-path ray periodicity, including parameter 1; no general prose bridge is used.\\
 E10, $p,r,s\ge1$ & Lean actual-path ray periodicity; for $r=1$, the formal general theorem applies with model hypotheses proved in Lean.\\
-D12, D1 & The convex decompositions on valid positive integer parameters.\\
+D12, $r,s\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\
+D1 & The convex decomposition on valid positive integer parameters.\\
 D14, $r,s\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\
 O2, $t,d\ge1$ & Lean actual-path ray periodicity, including parameter 1; Lean absence for $t,d\ge2$. No general prose bridge.\\\bottomrule
 \end{tabular}
@@ -535,7 +535,7 @@ For D12, the following partial branches apply:
 $\gcd(r,s)\ge2$ gives absence; $r\ge3$, $s=qr\pm1$, $q\ge1$
 gives existence by the separately derived simple witnesses. The
 additional $|r-3s|=1$ and $r\ge4s$ branches are construction and
-absence arguments with their stated geometric conditions. The full D12 classification is given in Section~\ref{sec:d12-classification}.
+absence arguments with their stated geometric conditions. The full D12 classification, with a Lean proof, is given in Section~\ref{sec:d12-classification}.
 
 \section{Arithmetic on affine rays and exact examples}\label{sec:arithmetic}
 \subsection{The determinant reduction}\label{lem:divisibility}
@@ -1020,7 +1020,7 @@ Moving to canonical representatives or allowing variable divisibility
 does not follow from raywise periodicity. These stronger global-definability questions remain separate. General E10 $r=1$ necessity, untranscribed
 families, all degenerations, human proof peer review, and a formal
 geometric-to-program pipeline are not completed here. A3 minimum,
-density and the IPR census belong to the first article. The D12 classification in Section~\ref{sec:d12-classification} retains its two prose/computer-assisted proof bases.
+density and the IPR census belong to the first article. The D12 classification in Section~\ref{sec:d12-classification} is Lean-proved.
 
 
 % D12-SECTION-BEGIN
@@ -1045,8 +1045,8 @@ lattice edge in a common chart.
 
 \paragraph{Classification.}\label{thm:d12-classification}
 % \claimid{thm:d12-classification}
-For this positive-parameter quotient convention, the two proof routes
-below give a literal path if and only if
+For this positive-parameter quotient convention, a literal path exists
+if and only if
 \[
  \boxed{\quad r\mid(s-1)\quad\hbox{or}\quad r\mid(s+1)
                      \quad\hbox{or}\quad |r-3s|=1.\quad}
@@ -1058,11 +1058,50 @@ Equivalently, the condition is
 \]
 Divisibility by one is automatic; modulo two the two residues both
 mean odd $s$, and $|2-3s|=1$ adds only $s=1$.
-The all-parameter quotient geometry and catalogue correspondence,
-the semantics of the computations and the inductions described below
-are prose/computer-assisted premises of these routes. Neither route
-is a Lean proof. Complete arguments, explicit strip formulas,
-certificate inputs and their checkers accompany the D12 supplement.
+This classification, and eventual periodicity of path existence on
+every positive-natural ray, are Lean-proved for the explicit quotient
+model above, with no prose step (Section~\ref{sec:d12-lean}). Its
+identification with the catalogue family uses the stated coordinate
+conventions. Two further proofs follow. They were developed
+separately from each other; each is computer-assisted, and its
+all-parameter quotient geometry, the semantics of its computations
+and its inductions are prose premises. Complete arguments, explicit
+strip formulas, certificate inputs and their checkers accompany the
+D12 supplement.
+
+\subsection{A formal proof}\label{sec:d12-lean}
+The Lean proof works with the quotient model directly. The two charts
+are glued along one boundary circle of length $6L$, and a seam vertex
+is recorded by its arc length. For all $r,s\ge1$ the endpoints of an
+edge have at most two common neighbours and the twelve labelled points
+have degree five; for $r,s\ge2$ they are the only vertices of degree
+five. A rotation of
+both charts by $60^\circ$ and an exchange of the two charts are
+automorphisms of the quotient, so every start can be moved to the
+label-$0$ point, from which ten first triangles remain.
+
+Necessity concerns $r,s\ge2$, since the condition always holds when
+$r=1$ or $s=1$. For each of the ten starts the forced strip is shown to
+repeat a vertex before a legal endpoint whenever the condition fails.
+Six starts, and the other four when $s\le r+1$, are settled by a finite
+cover of the negative parameter region by integer polyhedra; on each
+piece the strip has one fixed combinatorial form. For the other four
+starts with $s\ge r+2$ the strip winds around the sphere. Writing
+$s=qr+c+t$ with $0\le t<r$ and a fixed offset $c$, the strip consists of
+an initial block, a number of laps of four blocks each, and a tail. Each
+lap is affine in $r$, $s$ and a lap offset, so induction on the number
+of laps carries the strip to the tail. The repetition occurs between
+the last lap and the tail unless $s\equiv\pm1\pmod r$.
+
+Sufficiency exhibits explicit literal paths: single blocks for $r=1$
+and for $s=1$, a fixed number of blocks on $r=3s\pm1$ and on $s=r\pm1$,
+and lap-periodic paths for $s=qr\pm1$, $q\ge2$, whose vertices are
+shown distinct for every number of laps. The ray statement follows from
+the classification by the arithmetic at the end of this section. The
+two-common-neighbour property is proved on the model, so this proof
+does not use cyclic edge-connectivity. It follows the strip
+decomposition of the two proofs below and is therefore not a third
+independent derivation; its correctness rests on the kernel check.
 
 \subsection{A symbolic region cover and cylinder induction}
 The first route reduces the twelve degree-five starting sites to ten
@@ -1144,8 +1183,8 @@ comparison remain open.
 The D12 closed condition is an additional classification, not an extra
 hypothesis of Theorem~\ref{thm:aligned}. The convex-face decomposition
 already supplies D12 ray periodicity through that theorem and its
-prose correspondence. There is also an elementary arithmetic
-consequence conditional on the classification. For
+prose correspondence. The classification also gives the ray result by
+elementary arithmetic; the Lean proof takes this route. For
 $r(t)=at+b$, $s(t)=ct+d$ on an eventually positive integer ray,
 positive $a$ makes both divisibility decisions eventually constant:
 $r(t)\mid s(t)-\varepsilon$ implies
@@ -1153,9 +1192,9 @@ $r(t)\mid a(d-\varepsilon)-bc$. If this fixed determinant vanishes,
 the ratio is $c/a$ and integrality decides the condition. The
 exceptional equality $|r(t)-3s(t)|=1$ is eventually constant as well.
 For constant $r=m\ge3$, a valid period divides $m/\gcd(m,c)$;
-$m=1,2$ have periods dividing one and two. This arithmetic alternative
-and the general ray-theorem application are separate from a
-family-specific Lean formalization of D12.
+$m=1,2$ have periods dividing one and two. The Lean ray statement starts at
+positive natural coordinates with nonnegative slopes; an eventually
+positive integer ray is covered by reindexing its positive tail.
 % D12-SECTION-END
 
 \appendix

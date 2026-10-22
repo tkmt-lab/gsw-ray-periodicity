@@ -1,0 +1,138 @@
+# D12 の Lean 証明：報告（2026-10-22）
+
+作業：Claude の作業者（Lean 担当、worktree `.worktrees/claude-lean`、branch `claude-lean`）。
+本人の決定（docs/DECISIONS.md 2026-10-22「D12 の Lean の証明を…上限 1 日」）による。
+着手 10:55、証明の完成 14:10（`date` で確認）。
+
+## 結論
+
+主張文 `formal/Formal/Claude7D12ComparatorChallenge.lean` の二つの定理を、新しいファイル
+`formal/Formal/Claude7D12ComparatorSolution.lean` で証明した。主張文は変更していない。
+
+- `ClaudeChallengeD12.classification`：r, s ≥ 1 で、文字どおりの道がある ⇔
+  r ∣ s − 1 ∨ r ∣ s + 1 ∨ |r − 3s| = 1（ℤ で）。
+- `ClaudeChallengeD12.main`：r₀, s₀ ≥ 1・a, b ≥ 0 のどの直線 (r₀ + a n, s₀ + b n) でも、道の
+  存在は最終的に周期的。
+
+`#print axioms`：二つとも `[propext, Classical.choice, Quot.sound]` のみ。新しいファイルに
+`sorry`・`native_decide`・`axiom` はない（主張文ファイルの二つの `sorry` だけ）。
+`namespace ClaudeChallengeD12` 以降の主張文との差は、二つの `sorry` の行が証明の行に
+変わっただけ（`diff` で確認）。Comparator の結果は下の「Comparator」の節。
+
+外部の定理（巡回 5 辺連結性など）は使っていない。「辺の共通隣接点は二つ以下」は Lean で直接
+示した（D14 と同じ方法）。
+
+## 道筋
+
+1. **継ぎ目の円のモデル**（`Claude7D12Model`〜`Iso`、D14 の方法を移した）。D12 の二つのセルは
+   辺 L = r + 2s の正六角形で、境界の円（長さ 6L）を角を s ずらして貼り合わせたもの。頂点は
+   各セルの内部の点と継ぎ目の点（弧長 0 ≤ l < 6L）。spec の `d12Graph r s` と同型
+   （`d12_iff_gm`、r, s ≥ 1）。貼り合わせ表 24 本は生成。
+2. **局所構造**：三つの共通隣接点はない（`no_three`、r, s ≥ 1）。r, s ≥ 2 で次数 5 なら 12 個の
+   ラベルの点（`deg_five`）。12 個のラベルの点の次数はちょうど 5（`deg_cone*`、r, s ≥ 1）。
+3. **対称性**（`Sym`, `SymE`）：二つのセルを 60° 回す写像（継ぎ目で l ↦ l − L）と二つのセルを
+   入れ替える写像（l ↦ s − l）がグラフの自己同型。これで道の始点（次数 5 の点）をラベル 0 の点へ
+   移せる（`to_label0`）。ラベル 0 の点から始まる最初の三角形は 10 通り（`no_label0`）。
+4. **必要性**（r, s ≥ 2 で条件が成り立たないとき道なし、`d12_no_path`）。10 通りの始めの
+   それぞれで、強制される帯（三角形の列）が、奇数番目に角が来る前に頂点を繰り返すことを示す
+   （`kill_rep`, `kill_list`, `kill_split`。道は帯の先頭部分なので、終点の前に繰り返しが
+   あれば道にならない）。
+   - 6 つの始め（1, 2, 5, 6, 7, 9）と、残りの 4 つ（0, 3, 4, 8）の s ≤ r + 1 は、r, s の一次
+     不等式の多面体領域ごとの有限の葉（計 28 葉、111 ブロック、`N0`〜`N9`）。領域の和が負の
+     点をすべて覆うことは `omega` が確かめる（正の直線 s = r ± 1, r = 3s ± 1 だけを除く）。
+   - 始め 0, 3, 4, 8 の s ≥ r + 2 は、帯が球面を何周も回る（螺旋）。s = q r + c + t（0 ≤ t < r、
+     c = 2 または 0）、q = 2Q + e と書き、帯を「最初のブロック（ある始めのみ）＋ 4 ブロックの周
+     Q 回 ＋ 尾」に分ける。周 j のブロックは r, s と u = j r の一次式、尾は r, s と v = q r の
+     一次式。補題は u, v を r の倍数に限らない自然数として述べ、周の数についての帰納
+     （`laps`, `chain_gen`）でつなぐ。繰り返しは最後の周と尾の間で起きる（`sp*_K0`, `sp*_K1`,
+     `sp*_Kz`）。t が正の剰余（s ≡ ±1 mod r）なら仮定から外れる。
+5. **十分性**（条件が成り立てば道がある、`path_gm`）：明示的な文字どおりの道。
+   - 有限の家族：r = 1（1 ブロック、6s + 4 点）、s = 1（1 ブロック）、r = 3s + 1（4 ブロック）、
+     r = 3s − 1（5 ブロック）、s = r + 1（3 ブロック）、s = r − 1（2 ブロック）。
+   - 螺旋の家族：s = q r + 1（始め 0）と s = q r − 1（始め 3）、q ≥ 2、q の偶奇で二つずつ。
+     点が相異なることは、二つのブロックが（周どうしの継ぎ目を除いて）共通の点を持たないことを
+     ブロックの型の組ごとに示し（`q*_pa`, `q*_pb`, `q*_pc`, `q*_t*_pd`）、周の数によらない
+     一般の補題 `inj_laps` で組み立てる。端の次数 5 と隣の次数 6 も具体的に数える。
+6. **分類と直線**（`Main`）：分類は 4 と 5 から。直線では、r(n) ∣ s(n) ∓ 1 は最終的に周期的
+   （r が一定なら周期 r、増えるなら最終的に一定）、|r(n) − 3s(n)| = 1 は最終的に一定
+   （`evper_cond`。E10 の `Claude5E10Ray` の補題をこの名前空間に写した）。
+
+研究側の二つの証明経路（`studies/R002/claude-d12/` の記号実行、R004 の明示経路）は、報告
+`claude-d12/report-2026-10-19.md` と論文 §12 を読んだうえで、帯の分け方（周・尾・繰り返しの
+位置）を自分の Python のモデル（`d12-scripts/`）で探して当てはめた。研究側の記号実行器・証明書は
+使っていない。読んだので、研究側の経路から独立した導出とは呼ばない。
+
+## ファイルと行数
+
+新しい Lean ファイル 73 個（主張文と `Claude7D12Spec.lean` を除く）、計約 17,100 行。
+
+| 種類 | ファイル | 内容 |
+|---|---|---|
+| D14 から移した（機械的な置き換え） | Model, Chart, Three, Iso, DegBase, SuffBase | モデル、弧長、同型、共通隣接点、次数の道具 |
+| 生成 | Phi, Eqv, DegGenA/B, Deg, Strip, DegCone | 貼り合わせ表、次数、帯の土台、ラベルの点の次数 |
+| 生成（必要性） | N0〜N9, S0/S3/S4/S8, SA0/SA3/SA4/SA8, Nec | 28 の有限の葉、螺旋の補題と組み立て、始めの列挙 |
+| 生成（十分性） | PR1, PS1, PAp, PAm, PQp, PQm, Q0*, Q3*, QT00〜QT31L | 有限の家族、螺旋の周と尾 |
+| 手書き | Help, Sym, SymE, Laps, Pos, Suff, Ray, Main, ComparatorSolution | 殺しの補題、対称性、周の帰納と単射性、組み立て |
+
+生成スクリプトと Python の検査は `studies/R002/claude-lean/d12-scripts/`（README あり）。
+Python は道の形を見つけて当てはめるためだけに使い、Lean の証明はその結果に依存しない
+（当てはめが間違っていれば Lean が通らない）。
+
+## 検査
+
+- `#print axioms ClaudeChallengeD12.classification` / `main`：`propext, Classical.choice,
+  Quot.sound`。途中の `Claude7D12.d12_no_path` も同じ。
+- `grep`：新しいファイルに `sorry`, `native_decide`, `axiom` なし。
+- 主張文との `diff`：上の通り。解答ファイルは `Formal.ClaudeChallengeSpec`,
+  `Formal.Claude2AlignedSpec`, `Formal.Claude7D12Spec`, `Formal.Claude7D12Main` を import し、
+  主張文は import しない。
+- 作り直し：D12 の全 73 モジュールの build 成果物を消し、依存の順に一つずつ `lake build`
+  （記録 `d12-scripts/rebuild.log`）。
+  最初の通しでは `Q3B6`（周どうしの 4 つの組の補題）が 3,094 MB で監視に止められたので、
+  その行を二つのファイルに分けて（`gen_sppos.py`）、そこから続けた。全 73 モジュールが成功
+  （14:12〜14:54、計約 41 分、各モジュールの最大 2,795 MB）。生成スクリプトを今の版で全部
+  生成し直し、Lean のファイルと一致することも確かめた。
+- 主張文・spec・`Formal.lean`・既存のファイル・既存の comparator*.json は編集していない
+  （新しく `formal/comparator-d12.json` を作った）。`formal/gen_*.py`（追跡されていない他人の
+  ファイル）には触れていない。
+
+## Comparator
+
+**未完了（3 GB の上限のため）。** 設定 `formal/comparator-d12.json` を作り、
+`cd formal && nice -n 10 lake comparator --config comparator-d12.json --inadvisably-no-sandbox --paranoid`
+を RSS 3 GB で止める監視つき（`d12-scripts/comparator.sh`）で走らせた。主張文と解答の build は
+成功したが、解答の宣言の書き出し（export）の段で 3,083 MB に達して監視に止められた（47 秒、
+exit 137）。kernel の照合までは進んでいない。生の出力：
+`studies/R002/claude-lean/comparator-d12-paranoid-2026-10-22.txt`。
+
+上限 3 GB の指示に従い、上限を上げて走らせ直してはいない。E10 の照合は統括が最大 3.21 GB で
+行っている。D12 の olean は計 590 MB（E10 は 303 MB。最大は `QT31` 64 MB、`PAm` 53 MB で、
+組の補題の `simp … at * <;> split_ifs <;> omega` の証明項が大きい）。統括が上の命令で走らせるか、
+上限を 4〜5 GB に上げてよいかの判断をお願いしたい。証明の項を小さくする作り直し（組の補題の
+分割・書き方の変更）でも下げられる見込みはあるが、今回はしていない。
+
+## CI の公理の検査
+
+D12 の補助 tactic は `d12om`, `d12peq`, `d12peq2`, `d12glue_tac` で、O2 と D14 の `peq` とは
+衝突しない。一時ファイルで確かめた：D12 の解答＋O2 の解答、D12 の解答＋D14 の解答の
+どちらも import でき、`#print axioms`（`classification`, `main`, `d12_no_path`, `path_gm`）は
+すべて標準の 3 つ（最大 1.82 GB）。
+公開 repo には触れていない。追加の案は同じ場所の `ci-axioms-d12.lean` にある（統括が公開 repo の
+`ci/AxiomsD14.lean` か `ci/Axioms.lean` に足す）。
+
+## メモリと時間
+
+Lean は常に一つずつ、`nice -n 10`、RSS 3 GB で止める監視つき（`d12-scripts/build.sh`）。
+開発中に一度、螺旋の正の周の補題を一つのファイルに入れた版（`Q0`）が 3.6 GB で監視に止められた。
+補題をファイル（`Q0A`, `Q0B0`〜`Q0B10`, `Q0C`。`Q3` も同じ）に分けた。成功した build の最大は 2,795 MB。監視に止められたのは、上の `Q0`（開発中）、作り直しの最初の `Q3B6`（3,094 MB、分割して解決）、Comparator の export（3,083 MB）の三回。
+開発中、変更の後の `lake build` が依存先のモジュールを作り直した場面があり、そのときは lake が
+複数の lean を同時に動かした可能性がある（作り直しの最終確認は上の通り一つずつ）。
+
+## 残り・疑問
+
+- 主張文の読み手の留保（FAITHFUL WITH CAVEATS：Graver のカタログの D12 と spec の面の対応、
+  Definition 1(a) の原文との照合）はそのまま残る。Lean で示したのは spec の面についての分類。
+- 研究側の二つの証明経路との独立性：上の通り、研究側の報告と §12 を読んで作った。
+- 論文 §12 の「r = 3s − 1, s ≥ 2 で 56s − 10 点」「s = qr ± 1 で 2q(3r + 5s) (+2) 点」などの
+  道の長さは、この証明では使った始めが違うため一致を確かめていない（使った道：r = 1 で 6s + 4 点、
+  r = 3s − 1 で s の一次式、など。各家族の Lean ファイルを参照）。

@@ -3,17 +3,17 @@ import re
 from packet_common import ROOT,PIN,THM_PIN,load,local,fingerprint,strip_lean,result
 
 def main():
- a=load('receipt-manifest.json');assert a['formal_source_commit']==PIN and a['status']=='MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_O2_D14_E10_PROOFS'
+ a=load('receipt-manifest.json');assert a['formal_source_commit']==PIN and a['status']=='MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_O2_D14_E10_D12_PROOFS'
  assert a['new_lean_proofs']==a['new_scientific_runs']==0 and a['new_lean_runs']==0
  assert a['D12_new_classification_included'] is True
  records={r['path']:r for r in a['receipts']}
  for r in records.values():fingerprint(r)
- lean=[r for r in records.values() if r['path'].endswith('.lean')];assert len(lean)==a['lean_sources']==412
+ lean=[r for r in records.values() if r['path'].endswith('.lean')];assert len(lean)==a['lean_sources']==495
  seen=set()
  def visit(module):
   name='formal/'+module.replace('.','/')+'.lean';assert name in records,('import closure',module)
   if name in seen:return
-  seen.add(name);r=records[name];assert r['source_commit']==(THM_PIN if name.startswith('formal/Formal/Claude3') else a['E10_source_commit'] if name in a['E10_added_source_paths'] else a['D14_source_commit'] if name in a['D14_added_source_paths'] else a['O2_source_commit'] if name in a['O2_added_source_paths'] else a['C1_source_commit'] if name in a['C1_added_source_paths'] else a['K3_source_commit'] if name in a['K3_added_source_paths'] else PIN)
+  seen.add(name);r=records[name];assert r['source_commit']==(THM_PIN if name.startswith('formal/Formal/Claude3') else a['D12_source_commit'] if name in a['D12_added_source_paths'] else a['E10_source_commit'] if name in a['E10_added_source_paths'] else a['D14_source_commit'] if name in a['D14_added_source_paths'] else a['O2_source_commit'] if name in a['O2_added_source_paths'] else a['C1_source_commit'] if name in a['C1_added_source_paths'] else a['K3_source_commit'] if name in a['K3_added_source_paths'] else PIN)
   text=strip_lean(local(name).read_text())
   assert not re.search(r'\b(sorry|admit|axiom|native_decide)\b',text),('unproved/extra axiom',name)
   for m in re.finditer(r'(?m)^import\s+([^\n]+)',text):
@@ -55,6 +55,8 @@ def main():
  check_d14(ROOT)
  from check_e10_received import check_e10
  check_e10(ROOT)
+ from check_d12_received import check_d12_received
+ check_d12_received(ROOT)
  from check_d12_packet import check_d12
  check_d12(ROOT)
  result(lean_sources=len(actual),proof_sources=len(seen),benchmark_sources=len(benchmarks),received_files=len(records),extra_receipts=len(load('extra-receipts.json')),inherited_theorem1a_execution_receipt=True,received_K3_coordinator_receipt=True,scope='static receipts, not proof checking')

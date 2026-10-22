@@ -1,4 +1,4 @@
-"""Read-only D12 scope, source fingerprints and rational identities; not Lean."""
+"""Read-only D12 route certificates, rational identities and the historical 6.2 article check; not Lean. Lean records: check_d12_received.py."""
 from pathlib import Path
 from fractions import Fraction
 import ast,gzip,hashlib,json,re
@@ -33,11 +33,11 @@ def check_d12(root):
     root=Path(root)
     claims=json.loads((root/'claims.json').read_text())
     c=next(c for c in claims['claims'] if c['id']=='thm:d12-classification')
-    assert c['status']==STATUS and not c['lean'],'D12 Lean promotion'
+    assert c['status']=='lean-result-received' and [r['declaration'] for r in c['lean']]==['ClaudeChallengeD12.classification'],'D12 Lean record'
     assert c['human_review'] is False and c['paper_label']==c['id']
     assert claims['scope']['new_D12_classification_included'] is True
     assert c['statement_plain']=='For all positive r,s, D12(r,s) has a literal path iff r|(s-1) or r|(s+1) or |r-3s|=1. Equivalently r=1; r=2 and s odd; or r>=3 with that criterion.'
-    assert len(c['remaining_obligations'])==7 and 'No human proof review or Lean proof.' in c['remaining_obligations']
+    assert len(c['remaining_obligations'])==9 and 'No human proof review.' in c['remaining_obligations']
     ledger=json.loads((root/'d12/derivatives.json').read_text())
     assert ledger['status']=='PUBLIC_DERIVATIVES' and not ledger['originals_included']
     from publication_privacy import matches
@@ -66,7 +66,7 @@ def check_d12(root):
     raw=(root/'paper-lines-v6.2-en.tex').read_text();check_preservation(raw,(root/'paper-lines-v6.1-en.tex').read_text())
     assert 'D12 ray consequence &' in raw and 'D12 classification &' in raw
     assert 'Neither route' in raw and 'is a Lean proof.' in raw and 'cyclic five-edge-connectivity' in raw
-    return dict(status='PASS',rational_identities=total,derivative_files=len(paths),D12_lean=False,
+    return dict(status='PASS',rational_identities=total,derivative_files=len(paths),D12_lean=True,
                 scope='Stored rational contradiction identities and static scope; all-parameter geometry, semantics and induction remain prose.')
 
 if __name__=='__main__':print(json.dumps(check_d12(Path(__file__).resolve().parent),sort_keys=True))

@@ -29,5 +29,5 @@
   "sec:finite": "finite-evidence-only",
   "sec:novelty": "unresolved",
   "app:domains": "finite-evidence-only",
-  "thm:d12-classification": "two-separately-derived-universal-proof-routes-received"
+  "thm:d12-classification": "lean-result-received"
 }

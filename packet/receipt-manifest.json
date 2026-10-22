@@ -1,5 +1,5 @@
 {
-  "status": "MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_O2_D14_E10_PROOFS",
+  "status": "MIXED_FIXED_RECEIPTS_AND_RECEIVED_K3_C1_O2_D14_E10_D12_PROOFS",
   "formal_source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "roots": [
     "Claude2FamilyRays",
@@ -20,9 +20,10 @@
     "Claude4C1ComparatorSolution",
     "Claude5O2ComparatorSolution",
     "Claude5D14ComparatorSolution",
-    "Claude5E10ComparatorSolution"
+    "Claude5E10ComparatorSolution",
+    "Claude7D12ComparatorSolution"
   ],
-  "lean_sources": 412,
+  "lean_sources": 495,
   "new_lean_proofs": 0,
   "new_lean_runs": 0,
   "new_scientific_runs": 0,
@@ -4683,12 +4684,849 @@
       "source_commit": "2dfcc0a84eaeaffdd0795e5cbc69d7f3823bb681",
       "kind": "Comparator-config",
       "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Chart.lean",
+      "sha256": "2fa696eba09022c28cc4cca3cdba154fc17546a98509c50f6250658ce313862d",
+      "bytes": 8091,
+      "source": "formal/Formal/Claude7D12Chart.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12ComparatorSolution.lean",
+      "sha256": "fc7ea28b3f5d934eeb4e9f5e2a17e4152a19aceff38ba4b023c7496c977a6bbf",
+      "bytes": 2591,
+      "source": "formal/Formal/Claude7D12ComparatorSolution.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Deg.lean",
+      "sha256": "7ae21e3bda24b909eba86e2cbaf5d30c47e362c920799b0fa15d6358b80d7ab1",
+      "bytes": 3881,
+      "source": "formal/Formal/Claude7D12Deg.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12DegBase.lean",
+      "sha256": "118a1602e66603ab56bd4d7f157b569b0e513a952db2adadae55c9a516bc9736",
+      "bytes": 6159,
+      "source": "formal/Formal/Claude7D12DegBase.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12DegCone.lean",
+      "sha256": "274a8f7df3dbe3ef3b8c826a3a251be334e9979216374ed55974ad16bfbc086e",
+      "bytes": 78609,
+      "source": "formal/Formal/Claude7D12DegCone.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12DegGenA.lean",
+      "sha256": "ac65071c5014eacbab256bbe4b60fff0476f92dc1109e953988f5e1b658b82e6",
+      "bytes": 29370,
+      "source": "formal/Formal/Claude7D12DegGenA.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12DegGenB.lean",
+      "sha256": "df7a414ef5fdb3a54ce2e794ba1e67cfdc7fa701356063b5cd2f35a35e17d9e1",
+      "bytes": 32579,
+      "source": "formal/Formal/Claude7D12DegGenB.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Eqv.lean",
+      "sha256": "6c6ffcc5c572bb1995ebc0aaaf4bad943337e1d3c42dfd5a422f166627e03ecf",
+      "bytes": 9449,
+      "source": "formal/Formal/Claude7D12Eqv.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Help.lean",
+      "sha256": "148ce8a7491a1716f650fe2ad920d709ff05f8fe99351c1cd2afd10940262c82",
+      "bytes": 5942,
+      "source": "formal/Formal/Claude7D12Help.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Iso.lean",
+      "sha256": "81e94919267107f53092c80dce1dafa0206b4f4befce385d8a350469bfc90a3d",
+      "bytes": 5574,
+      "source": "formal/Formal/Claude7D12Iso.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Laps.lean",
+      "sha256": "ea436864c014c812a67e31e02f0a50e7d4ddcdd63f117ac51fe50b6b0e9130ac",
+      "bytes": 9482,
+      "source": "formal/Formal/Claude7D12Laps.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Main.lean",
+      "sha256": "8abd530fb4163e23378f0f115cdbbf66c30a1ab90911bdc1144755c21d989950",
+      "bytes": 1983,
+      "source": "formal/Formal/Claude7D12Main.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Model.lean",
+      "sha256": "ccad5561ef036e53a34982a3afb580078ff831376ecf5919cf449c10abfbad21",
+      "bytes": 7768,
+      "source": "formal/Formal/Claude7D12Model.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N0.lean",
+      "sha256": "59d5c76cee5876a13cdea3fef2a2bb844592d6f271c2fa488e61b23e50489c26",
+      "bytes": 65703,
+      "source": "formal/Formal/Claude7D12N0.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N1.lean",
+      "sha256": "5e0436d51f3738b32a2983cc372b44316a35e8c356f11c507eabe8ee349be62c",
+      "bytes": 46525,
+      "source": "formal/Formal/Claude7D12N1.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N2.lean",
+      "sha256": "8fb2d2df0ced52d599cfef20767ad4f8b8558eddddbc723d9e9e7c7e5f7669f6",
+      "bytes": 43755,
+      "source": "formal/Formal/Claude7D12N2.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N3.lean",
+      "sha256": "69caf05ec7bd8aa14321ea02643597ad546867b42ecb8f04a477a65ff13aec56",
+      "bytes": 98630,
+      "source": "formal/Formal/Claude7D12N3.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N4.lean",
+      "sha256": "37fbab50aaef425f9e6b30df0ce069ebf9ae70025ab55fb3fe179129ee3eb320",
+      "bytes": 31583,
+      "source": "formal/Formal/Claude7D12N4.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N5.lean",
+      "sha256": "ad0dac6de7bc7d718aa2aca3acbf1af340e5532023601937cd4833b7f5c5877c",
+      "bytes": 43737,
+      "source": "formal/Formal/Claude7D12N5.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N6.lean",
+      "sha256": "b3a7dfdb45bdf9183998a3eea86411e1de30df567e45716179f72beb59493e59",
+      "bytes": 12242,
+      "source": "formal/Formal/Claude7D12N6.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N7.lean",
+      "sha256": "fdf9c84b0a6835142b91f917e56aaab80556dce27838768c1383c1a8d5e3d29f",
+      "bytes": 46383,
+      "source": "formal/Formal/Claude7D12N7.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N8.lean",
+      "sha256": "87ea779379a540cfa8ca05d6f86d6817229931053198309fa40a9c55e3029e84",
+      "bytes": 31737,
+      "source": "formal/Formal/Claude7D12N8.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12N9.lean",
+      "sha256": "87cb6d6e1d004b6c9624d1a3cd080f1ab315e4340d7e417c5f484642e449edd6",
+      "bytes": 12412,
+      "source": "formal/Formal/Claude7D12N9.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Nec.lean",
+      "sha256": "897c63e97122138e38c0e00c0fd700692dd6d9237d4a4d7cee91f510148d8da9",
+      "bytes": 24531,
+      "source": "formal/Formal/Claude7D12Nec.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PAm.lean",
+      "sha256": "16d7e39d7227153ea6b3016c032ccf7c3a5186bee9aa60446b627414e522aec4",
+      "bytes": 67124,
+      "source": "formal/Formal/Claude7D12PAm.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PAp.lean",
+      "sha256": "7f2f2c615484853218d81af5ba3d01003e11c66e1ddafc57301f493edd5cf7a9",
+      "bytes": 42634,
+      "source": "formal/Formal/Claude7D12PAp.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PQm.lean",
+      "sha256": "a904c865ae76f4e89071b1d1c7dabd47a633d0463d0418fec08498e22c6fb085",
+      "bytes": 26005,
+      "source": "formal/Formal/Claude7D12PQm.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PQp.lean",
+      "sha256": "93627bf0066cd64bb30150b66609525544f6d3902947564db8fbc576817b193c",
+      "bytes": 47468,
+      "source": "formal/Formal/Claude7D12PQp.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PR1.lean",
+      "sha256": "bcb5ef36a2995996ba1d72229c0a427927bdd40fda734da89fa4986ad5f8db9e",
+      "bytes": 26792,
+      "source": "formal/Formal/Claude7D12PR1.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12PS1.lean",
+      "sha256": "3e950f3c4c1a6dd0badf3f5390a2e47042b44755bad4edf638a79d1c2af1aa39",
+      "bytes": 26426,
+      "source": "formal/Formal/Claude7D12PS1.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Phi.lean",
+      "sha256": "f470549b546123ea984fe27259e06c13c57a0ff0208df73e488a0ee875cad86d",
+      "bytes": 9140,
+      "source": "formal/Formal/Claude7D12Phi.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Pos.lean",
+      "sha256": "8c1418b169540e42992c220aa07b6582af9e9b13fd25478ba6db749c7e3d7474",
+      "bytes": 13336,
+      "source": "formal/Formal/Claude7D12Pos.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0A.lean",
+      "sha256": "f6a6102bbe221614321fd49061ab19842fc54b204ced6607b01b583879452456",
+      "bytes": 15064,
+      "source": "formal/Formal/Claude7D12Q0A.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B0.lean",
+      "sha256": "1ddf87473d49fe2023c0dfae796dec0e9ff618281675f2bfa8c5e6649101a49c",
+      "bytes": 5729,
+      "source": "formal/Formal/Claude7D12Q0B0.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B1.lean",
+      "sha256": "e50584c42f5c84c35fc8b77bdfe70f91665e122936bf62902cd7cf43637c676b",
+      "bytes": 4509,
+      "source": "formal/Formal/Claude7D12Q0B1.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B10.lean",
+      "sha256": "9f0c2e460f9e76c17baf120caf5b4d1a46ebccc61f7422e2e0eb0dd251160c5f",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q0B10.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B2.lean",
+      "sha256": "9401f4496df1d5ff35ec6be2ba82e07bf9efe78d5b82d04ff1d8ddd7188e09a1",
+      "bytes": 5685,
+      "source": "formal/Formal/Claude7D12Q0B2.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B3.lean",
+      "sha256": "98feb71be829d864d7cff48da0e5d6503ced0a9e2c71346a5f52decdc2ff200a",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q0B3.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B4.lean",
+      "sha256": "32a47090ad4f8cdb3f21c006dca638d9f98d3e8177dbb095efb3172f7d3c1043",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q0B4.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B5.lean",
+      "sha256": "5ae61bdf0b880982de705c5d67eefb3f6d08dd64522be6220f58710325cbb0f0",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q0B5.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B6.lean",
+      "sha256": "fce1a46aa5db5be0b8885d6ab0c79561a414736d38f0c873fcc3527ca02d31ac",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q0B6.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B7.lean",
+      "sha256": "be52419444032255078e5a4ff0e9caefb50369b418b4547f13c4c7cbf93d0ea1",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q0B7.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B8.lean",
+      "sha256": "fcdc13baddcc7716bf73d24200716bc808c1c65a0a4f8936cf9395bff5ea2490",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q0B8.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0B9.lean",
+      "sha256": "5158c40242de49d84e20c6ccac409cdf92769ca70ea75aee4dfbd7f95380178f",
+      "bytes": 3046,
+      "source": "formal/Formal/Claude7D12Q0B9.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q0C.lean",
+      "sha256": "8f9e3a81e57245cbc20b06f0488402075d38ddaa6b036310ab6226a575ff5fc3",
+      "bytes": 2985,
+      "source": "formal/Formal/Claude7D12Q0C.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3A.lean",
+      "sha256": "77209f52e3aa5a74b69b3348e17bd67047eed62fea2104e86a0e1809fa64f794",
+      "bytes": 15060,
+      "source": "formal/Formal/Claude7D12Q3A.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B0.lean",
+      "sha256": "540f4eedb9045367d7492d6865f90e72967fd97bbfdf0d3c65c26fc1f012d923",
+      "bytes": 5729,
+      "source": "formal/Formal/Claude7D12Q3B0.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B1.lean",
+      "sha256": "282f1e141c3220d33c3ca4ab904bde5571e5cc87ef1a363964edc96ae67cffa2",
+      "bytes": 4509,
+      "source": "formal/Formal/Claude7D12Q3B1.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B10.lean",
+      "sha256": "8dafa88a56d69e50b7b23f9f6710ede517cb6b3d4f60ee3af18260125a1f9c02",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q3B10.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B2.lean",
+      "sha256": "bdd91d900f40338d90d24a380ee918b7cf03e4aa26dc5731e5e534f7593adde2",
+      "bytes": 5685,
+      "source": "formal/Formal/Claude7D12Q3B2.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B3.lean",
+      "sha256": "5a94245d0c98158d9857e6d9facd88a0d1b15d6c070723acc81e28f5352b4721",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q3B3.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B4.lean",
+      "sha256": "6ebdc4bc0ff4035aa9a5542c9df941ae3800036e8a85912692e62821f3a4f148",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q3B4.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B5.lean",
+      "sha256": "1ed8862af3b4299b746af787c8d0e9267fc0a8ffef3fd38f00157b17f8edcf07",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q3B5.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B6.lean",
+      "sha256": "ad3fef45af6a7ef005363d85292b7a13e9a193fcb8e95cdf8fc35e187e52be96",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q3B6.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B7.lean",
+      "sha256": "19af354bb6e8ebab84e3f88e2b87ae922cc0eceb938ff1c6d6207972f3d890ad",
+      "bytes": 2992,
+      "source": "formal/Formal/Claude7D12Q3B7.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B8.lean",
+      "sha256": "1360aa6f606f0bec79f48c04796fedac242bfcb416a5dfc06189d545679f4c65",
+      "bytes": 2982,
+      "source": "formal/Formal/Claude7D12Q3B8.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3B9.lean",
+      "sha256": "0cc06c3762159f601d0609a0b80f25d26902b57bff0b989063bc74dfec5f2eb8",
+      "bytes": 3046,
+      "source": "formal/Formal/Claude7D12Q3B9.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Q3C.lean",
+      "sha256": "0f5285e1b2cdfd15283264f22b20cffd6f1d60849274003423de7328731f8afe",
+      "bytes": 2985,
+      "source": "formal/Formal/Claude7D12Q3C.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT00.lean",
+      "sha256": "7a76ed04b2ac1d48ba7df4025446801629faed93cf62ffab8ce2db56004e25d1",
+      "bytes": 32735,
+      "source": "formal/Formal/Claude7D12QT00.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT00L.lean",
+      "sha256": "ce7e3169e80c6dba2a1e2a9c5264a76774430606aee6b67365f3457b28517c30",
+      "bytes": 8630,
+      "source": "formal/Formal/Claude7D12QT00L.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT01.lean",
+      "sha256": "a8d7718f94609eaf6106cfb1b9fb267a40818dd982788015e77a464206bf3812",
+      "bytes": 53024,
+      "source": "formal/Formal/Claude7D12QT01.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT01L.lean",
+      "sha256": "339d302569fd988c64d1d0494d533c97ce796886db2cdc8baefe5891999cbc69",
+      "bytes": 10068,
+      "source": "formal/Formal/Claude7D12QT01L.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT30.lean",
+      "sha256": "f2b9496e7b9ea4026b5b5f3f10741c216074c7c5735670e090e262b9df4ce302",
+      "bytes": 7934,
+      "source": "formal/Formal/Claude7D12QT30.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT30L.lean",
+      "sha256": "5f72741eaeb8046312559fd18212036c58e6eaf260653336eb34fdf712080f31",
+      "bytes": 9281,
+      "source": "formal/Formal/Claude7D12QT30L.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT31.lean",
+      "sha256": "eef10998c4e5f4f254592439e27436d1d5488137ad8c8ab1c09bcdfa4ae145b3",
+      "bytes": 31465,
+      "source": "formal/Formal/Claude7D12QT31.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12QT31L.lean",
+      "sha256": "ebd5f0f1bf6e700d60b3eec7db0257a24910f51d16aa821739eabb91aa900f69",
+      "bytes": 9628,
+      "source": "formal/Formal/Claude7D12QT31L.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Ray.lean",
+      "sha256": "476d5ed6308850ff4705a1210a5407b3ce3fba4724be600f50b5c56b2ed92d43",
+      "bytes": 6214,
+      "source": "formal/Formal/Claude7D12Ray.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12S0.lean",
+      "sha256": "d81f0f5cbc4bffd760dcf798a8fc34bb1e33eb131be2787e901d2fe0dd5111a4",
+      "bytes": 58292,
+      "source": "formal/Formal/Claude7D12S0.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12S3.lean",
+      "sha256": "6b2a74f6e7dc8891460df8b09735e4140f69d07937e07571de94d3131a858097",
+      "bytes": 58089,
+      "source": "formal/Formal/Claude7D12S3.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12S4.lean",
+      "sha256": "224dfd036bb98662fafd01d82530ebd7d930c789ebc641834782063eaf4b3602",
+      "bytes": 64730,
+      "source": "formal/Formal/Claude7D12S4.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12S8.lean",
+      "sha256": "6ac9459aee6a631097a6dd727ee31a4e397aefbf3d9712206ecefd1a2fa65fb0",
+      "bytes": 64315,
+      "source": "formal/Formal/Claude7D12S8.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SA0.lean",
+      "sha256": "3a13ad2581c61cf3eaf1b00ffbf50dc55648bac5c53735faea2b0486bce91fd4",
+      "bytes": 11678,
+      "source": "formal/Formal/Claude7D12SA0.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SA3.lean",
+      "sha256": "bf8710c736e61a002e6f235c47fbc20dc6271d48ba0e992c6971c780b5595169",
+      "bytes": 11666,
+      "source": "formal/Formal/Claude7D12SA3.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SA4.lean",
+      "sha256": "6dbc7d0609236acc9a9bf28567346481990f5d827138845d8b388dcfd000528c",
+      "bytes": 9805,
+      "source": "formal/Formal/Claude7D12SA4.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SA8.lean",
+      "sha256": "5c8a82f47c236707dc6b105dc4452b91789c86385a5ec2f38d1269750be0495b",
+      "bytes": 9805,
+      "source": "formal/Formal/Claude7D12SA8.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Spec.lean",
+      "sha256": "c8873397dde05c73c64efb4b08e10aa1d6fbf63aa17a6b07b55563174eb8eea1",
+      "bytes": 1890,
+      "source": "formal/Formal/Claude7D12Spec.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Strip.lean",
+      "sha256": "a11b8adda9c521e3ab91a1692cc60dd256e1f2ea85919e203d7bc1b8c17bb4a4",
+      "bytes": 21605,
+      "source": "formal/Formal/Claude7D12Strip.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Suff.lean",
+      "sha256": "63d4c031321c605231482eabf3a9e2ba02dec4661df4bad71855ef226f705b38",
+      "bytes": 3238,
+      "source": "formal/Formal/Claude7D12Suff.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SuffBase.lean",
+      "sha256": "c931c9dfeb4867357acdf486e4342addd68f18464a2c15f69b86d4cac4d4be5d",
+      "bytes": 9030,
+      "source": "formal/Formal/Claude7D12SuffBase.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Sym.lean",
+      "sha256": "82435059cf2c1d351b6f39a8886ed3128d5a4f31b62019988098888154d4b00b",
+      "bytes": 14257,
+      "source": "formal/Formal/Claude7D12Sym.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12SymE.lean",
+      "sha256": "04accc9601f937e8caac52da99f41fe17f26e3695591db10cc4af31a3643895d",
+      "bytes": 9196,
+      "source": "formal/Formal/Claude7D12SymE.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12Three.lean",
+      "sha256": "d380626c8754fc4ea36ae41beba3758be3148a0f7fcf7305c348227080fa3d5c",
+      "bytes": 9592,
+      "source": "formal/Formal/Claude7D12Three.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-source",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/Formal/Claude7D12ComparatorChallenge.lean",
+      "sha256": "9e47ed9a4012fa8823c6c3bf4d04004aa7e5137642eaaa4a77cdff59ab1d7e77",
+      "bytes": 8016,
+      "source": "formal/Formal/Claude7D12ComparatorChallenge.lean",
+      "source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+      "kind": "Lean-benchmark",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/comparator-paranoid.txt.original.log",
+      "sha256": "64a9ee99e45b1148c1131decaea68a749a01cb8d0243127fcb9d430225efc85b",
+      "bytes": 101281,
+      "source": "studies/R002/claude-lean/comparator-d12-paranoid-coordinator-2026-10-22.txt",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/comparator-worker-stopped.txt.original.log",
+      "sha256": "4dade6c1b1f7bd63bc88461f57692aa2aef292690b598162cc4da48b3bc54b94",
+      "bytes": 96777,
+      "source": "studies/R002/claude-lean/comparator-d12-paranoid-2026-10-22.txt",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/d12-proof-report.md.original.log",
+      "sha256": "1053b4825d0332e8af1461131c2df1e5c746733c826000284f3049ab36463c23",
+      "bytes": 11550,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/proof-report.md",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/d12-rebuild.log.original.log",
+      "sha256": "64cb64a56439308ff31cc79b1d55fc0b4a7589979ad11820b747100f16ccedba",
+      "bytes": 6295,
+      "source": "studies/R002/claude-lean/d12-scripts/rebuild.log",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/statement-review.md.original.log",
+      "sha256": "0b86ab9972e42c98c183c25a1e694a023ffa592f9c8b7af5f99a27e043d85253",
+      "bytes": 8845,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/statement-review-1/review.md",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/statement-writer-README.md.original.log",
+      "sha256": "9431efcf1a63bb29efdabe8aa840be31c06b7c50c9c0a8170f95dd5dae53f7da",
+      "bytes": 5133,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/README.md",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/check-verbatim-result.txt.original.log",
+      "sha256": "02beeec6785c87e9acc39cfeb12b80318a9e3669048faf8a3b1010a84de7626b",
+      "bytes": 526,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/check-verbatim-result.txt",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/d12_mirror.py.original.log",
+      "sha256": "cbc763ae1417a5953059df611178f5c396f4c101668fd8a5fb4cf5eb20ab9f2b",
+      "bytes": 8622,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/d12_mirror.py",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "evidence/d12/d12-mirror-result.json.original.log",
+      "sha256": "24d373f07b36cb9e4c77ba3ff0cd82fae21ec57f98e55aef6cc49d6caaa90797",
+      "bytes": 104668,
+      "source": "studies/R002/analysis/2026-10-22-claude-d12-bridge/d12-mirror-result.json",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "D12-fixed-receipt",
+      "transformation": "byte-identical"
+    },
+    {
+      "path": "formal/comparator-d12.json",
+      "sha256": "aca28deb43e5df3c909472aa40ffcd0681137fdf0cb6dc331c1ddcc31659cd6f",
+      "bytes": 333,
+      "source": "formal/comparator-d12.json",
+      "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
+      "kind": "Comparator-config",
+      "transformation": "byte-identical"
     }
   ],
   "new_lean_runs_meaning": "Lean-driving commands (including cached Lake targets), not independent proof derivations",
   "theorem_source_commit": "5ea6bde55db57830bef11ea29dcd360b138c9dc8",
   "inherited_theorem1a_build_and_axiom_check": true,
-  "proof_source_count": 407,
+  "proof_source_count": 489,
   "K3_source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
   "K3_added_source_paths": [
     "formal/Formal/Claude2K3Apex.lean",
@@ -4743,6 +5581,11 @@
       "path": "formal/Formal/Claude5E10ComparatorChallenge.lean",
       "sha256": "d057a0882ce28b4a9321674bdc21bf56ec767a1fd07ceff01551602d231b25d0",
       "bytes": 10452
+    },
+    {
+      "path": "formal/Formal/Claude7D12ComparatorChallenge.lean",
+      "sha256": "9e47ed9a4012fa8823c6c3bf4d04004aa7e5137642eaaa4a77cdff59ab1d7e77",
+      "bytes": 8016
     }
   ],
   "new_received_K3_declarations": 3,
@@ -4777,7 +5620,8 @@
     "formal/Formal/Claude4C1ComparatorChallenge.lean": 2,
     "formal/Formal/Claude5O2ComparatorChallenge.lean": 2,
     "formal/Formal/Claude5D14ComparatorChallenge.lean": 1,
-    "formal/Formal/Claude5E10ComparatorChallenge.lean": 2
+    "formal/Formal/Claude5E10ComparatorChallenge.lean": 2,
+    "formal/Formal/Claude7D12ComparatorChallenge.lean": 2
   },
   "O2_source_commit": "1494e90b3c27efb272c919b36fc0f79b70e762bc",
   "O2_added_source_paths": [
@@ -4989,5 +5833,92 @@
     "formal/Formal/Claude5E10ComparatorChallenge.lean"
   ],
   "new_received_E10_comparator_declarations": 2,
-  "D12_lean_proof": false
+  "D12_lean_proof": true,
+  "D12_source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
+  "D12_added_source_paths": [
+    "formal/Formal/Claude7D12Chart.lean",
+    "formal/Formal/Claude7D12ComparatorSolution.lean",
+    "formal/Formal/Claude7D12Deg.lean",
+    "formal/Formal/Claude7D12DegBase.lean",
+    "formal/Formal/Claude7D12DegCone.lean",
+    "formal/Formal/Claude7D12DegGenA.lean",
+    "formal/Formal/Claude7D12DegGenB.lean",
+    "formal/Formal/Claude7D12Eqv.lean",
+    "formal/Formal/Claude7D12Help.lean",
+    "formal/Formal/Claude7D12Iso.lean",
+    "formal/Formal/Claude7D12Laps.lean",
+    "formal/Formal/Claude7D12Main.lean",
+    "formal/Formal/Claude7D12Model.lean",
+    "formal/Formal/Claude7D12N0.lean",
+    "formal/Formal/Claude7D12N1.lean",
+    "formal/Formal/Claude7D12N2.lean",
+    "formal/Formal/Claude7D12N3.lean",
+    "formal/Formal/Claude7D12N4.lean",
+    "formal/Formal/Claude7D12N5.lean",
+    "formal/Formal/Claude7D12N6.lean",
+    "formal/Formal/Claude7D12N7.lean",
+    "formal/Formal/Claude7D12N8.lean",
+    "formal/Formal/Claude7D12N9.lean",
+    "formal/Formal/Claude7D12Nec.lean",
+    "formal/Formal/Claude7D12PAm.lean",
+    "formal/Formal/Claude7D12PAp.lean",
+    "formal/Formal/Claude7D12PQm.lean",
+    "formal/Formal/Claude7D12PQp.lean",
+    "formal/Formal/Claude7D12PR1.lean",
+    "formal/Formal/Claude7D12PS1.lean",
+    "formal/Formal/Claude7D12Phi.lean",
+    "formal/Formal/Claude7D12Pos.lean",
+    "formal/Formal/Claude7D12Q0A.lean",
+    "formal/Formal/Claude7D12Q0B0.lean",
+    "formal/Formal/Claude7D12Q0B1.lean",
+    "formal/Formal/Claude7D12Q0B10.lean",
+    "formal/Formal/Claude7D12Q0B2.lean",
+    "formal/Formal/Claude7D12Q0B3.lean",
+    "formal/Formal/Claude7D12Q0B4.lean",
+    "formal/Formal/Claude7D12Q0B5.lean",
+    "formal/Formal/Claude7D12Q0B6.lean",
+    "formal/Formal/Claude7D12Q0B7.lean",
+    "formal/Formal/Claude7D12Q0B8.lean",
+    "formal/Formal/Claude7D12Q0B9.lean",
+    "formal/Formal/Claude7D12Q0C.lean",
+    "formal/Formal/Claude7D12Q3A.lean",
+    "formal/Formal/Claude7D12Q3B0.lean",
+    "formal/Formal/Claude7D12Q3B1.lean",
+    "formal/Formal/Claude7D12Q3B10.lean",
+    "formal/Formal/Claude7D12Q3B2.lean",
+    "formal/Formal/Claude7D12Q3B3.lean",
+    "formal/Formal/Claude7D12Q3B4.lean",
+    "formal/Formal/Claude7D12Q3B5.lean",
+    "formal/Formal/Claude7D12Q3B6.lean",
+    "formal/Formal/Claude7D12Q3B7.lean",
+    "formal/Formal/Claude7D12Q3B8.lean",
+    "formal/Formal/Claude7D12Q3B9.lean",
+    "formal/Formal/Claude7D12Q3C.lean",
+    "formal/Formal/Claude7D12QT00.lean",
+    "formal/Formal/Claude7D12QT00L.lean",
+    "formal/Formal/Claude7D12QT01.lean",
+    "formal/Formal/Claude7D12QT01L.lean",
+    "formal/Formal/Claude7D12QT30.lean",
+    "formal/Formal/Claude7D12QT30L.lean",
+    "formal/Formal/Claude7D12QT31.lean",
+    "formal/Formal/Claude7D12QT31L.lean",
+    "formal/Formal/Claude7D12Ray.lean",
+    "formal/Formal/Claude7D12S0.lean",
+    "formal/Formal/Claude7D12S3.lean",
+    "formal/Formal/Claude7D12S4.lean",
+    "formal/Formal/Claude7D12S8.lean",
+    "formal/Formal/Claude7D12SA0.lean",
+    "formal/Formal/Claude7D12SA3.lean",
+    "formal/Formal/Claude7D12SA4.lean",
+    "formal/Formal/Claude7D12SA8.lean",
+    "formal/Formal/Claude7D12Spec.lean",
+    "formal/Formal/Claude7D12Strip.lean",
+    "formal/Formal/Claude7D12Suff.lean",
+    "formal/Formal/Claude7D12SuffBase.lean",
+    "formal/Formal/Claude7D12Sym.lean",
+    "formal/Formal/Claude7D12SymE.lean",
+    "formal/Formal/Claude7D12Three.lean",
+    "formal/Formal/Claude7D12ComparatorChallenge.lean"
+  ],
+  "new_received_D12_comparator_declarations": 2
 }

@@ -1,6 +1,6 @@
 # P006: corrections and receipt scope for the second paper
 
-Eighteen local rows, P006-L01 through P006-L18. The first twelve retain the recorded claim-review history; P006-L13 is a documentation-only audit correction. These IDs belong to this article, not the A3 paper's correction table. Human proof peer review: none recorded.
+Nineteen local rows, P006-L01 through P006-L19. The first twelve retain the recorded claim-review history; P006-L13 is a documentation-only audit correction. These IDs belong to this article, not the A3 paper's correction table. Human proof peer review: none recorded.
 
 The target column identifies the affected version or subject; the correction column identifies the repair and may describe a later version.
 
@@ -24,5 +24,6 @@ The target column identifies the affected version or subject; the correction col
 | P006-L16 | O2 / article v4.9, packet 1.5.0 | Receive Lean absence t,d>=2 and positive-natural-ray periodicity, without general prose bridge. R004 prose proof retained; IPR and three small boundary existence cases outside Lean. | Exact source/type/hash comparison; coordinator two-target six-kernel receipt; one AI statement reader with caveats and 80 known mirror cases, no current Lean or human review. |
 | P006-L17 | D14 / article v5.0, packet 1.6.0 | Receive main ray proof without the general prose bridge; absence/boundary lemmas are separately scoped. D14(1,1) existence outside Lean; no new iff. | Exact source/type/hash comparison; coordinator six-kernel main-only receipt, separate build/axiom reports for auxiliaries, AI reader with caveat and81 finite records. |
 | P006-L18 | E10 / article6.1, packet1.8.0 | Receive graph iff p,s>=1,r>=2 and all positive-natural ray periodicity, including r=1 via formal Theorem1a and proved model hypotheses. No r=1 closed classification or prose bridge. | Exact166-source closure; two target types; six-kernel receipt for both; standard-axiom reports; one AI statement reader with catalogue caveat; saved702 finite comparisons, no rerun. |
+| P006-L19 | D12 / article6.3, packet1.10.0 | Receive the D12 graph iff for r,s>=1 and all positive-natural ray periodicity in Lean, without the general prose bridge; the two earlier prose/computer-assisted routes are kept as additional proofs. Lean proof not independent of those routes. | Exact86-source closure; two target types identical to the prior challenge; coordinator six-kernel paranoid receipt for both; worker standard-axiom report; one AI statement reader with catalogue and Definition 1(a) caveats; saved240-case mirror, no rerun. |
 
 Packaging audit 2 (1.3.1): remove private scanner fingerprints, clarify retained/redacted receipt bytes and current artifact navigation; mathematical and proof/review statuses are unchanged.

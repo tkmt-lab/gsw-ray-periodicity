@@ -1,3 +1,7 @@
+# 1.10.0 / article6.3
+
+Receive the D12 Lean proof (classification for r,s>=1 and all positive-natural rays, no prose step); article 6.3 states it in Section 12 and keeps the two earlier routes as additional proofs.
+
 # 1.9.0 / article6.2
 
 Add the existing D12 two-route closed classification as one section and a supplementary certificate package, preserving all earlier mathematics and Lean proof scopes.

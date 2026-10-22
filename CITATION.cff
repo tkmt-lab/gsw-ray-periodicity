@@ -10,7 +10,7 @@
       "affiliation": "Independent researcher"
     }
   ],
-  "version": "1.9.0",
+  "version": "1.10.0",
   "license": "Apache-2.0",
   "preferred-citation": {
     "type": "article",
@@ -22,7 +22,7 @@
         "affiliation": "Independent researcher"
       }
     ],
-    "version": "6.2",
+    "version": "6.3",
     "license": "CC-BY-4.0"
   },
   "repository-code": "https://github.com/tkmt-lab/gsw-ray-periodicity",

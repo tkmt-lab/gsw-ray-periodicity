@@ -10,18 +10,12 @@
     "worker_name": 0,
     "internal_stage": 0
   },
-  "exceptions": [
-    {
-      "location": "single AI-use paragraph",
-      "text": "Codex and Claude Code",
-      "reason": "One requested disclosure each."
-    }
-  ],
+  "exceptions": [],
   "displayed_math_blocks_byte_identical": true,
   "numbered_statement_blocks_byte_identical": 3,
   "claim_ids_unchanged": 30,
-  "changed_passages": 7,
+  "changed_passages": 13,
   "new_lean_runs": 0,
   "publication_operations": 0,
-  "scope": "E10 proof basis and neutral mathematical route only; formulae and domains unchanged."
+  "scope": "D12 proof basis (Lean) and one new D12 subsection; formulae and domains unchanged."
 }

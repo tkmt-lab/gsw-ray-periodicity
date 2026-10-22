@@ -31,3 +31,5 @@ Packet1.7.0 adds article6.0 and VERIFICATION-RECORD.md by editorial separation, 
 Packet1.8.0 adds exact E10 source/record copies and article6.1 with its current proof-scope edits. No new privacy transformations. Earlier article/proof/evidence bytes preserved; editorial proof-scope edits are distinct from privacy substitutions.
 
 New D12 derivative mappings: d12/derivatives.json; prose identifiers and local paths neutralized, mathematical expressions retained. Earlier records and all Lean source bytes unchanged.
+
+Packet1.10.0 adds exact D12 Lean source/record copies and article6.3 with its current proof-scope edits. No new privacy transformations.

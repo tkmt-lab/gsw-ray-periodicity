@@ -15,7 +15,7 @@ def first_two_columns(tex, anchor):
 
 
 def main():
-    raw = local('paper-lines-v6.2-en.tex').read_text()
+    raw = local('paper-lines-v6.3-en.tex').read_text()
     tex = raw
     for tag in ['D12-SCOPE', 'D12-SECTION']:
         tex = re.sub(r'% '+tag+r'-BEGIN\n.*?% '+tag+r'-END\n', '', tex, flags=re.S)
@@ -87,13 +87,16 @@ def main():
     for row in corr['rows']:
         assert row['v4_label'] in labels and set(row['claim_ids']) <= set(ids)
     assert len(corr['rows']) == 28
-    check_preservation(raw, local('paper-lines-v6.1-en.tex').read_text())
+    check_preservation(local('paper-lines-v6.2-en.tex').read_text(), local('paper-lines-v6.1-en.tex').read_text())
+    from check_d12_received import check_v63
+    check_v63(local('.'))
+    assert 'sec:d12-lean' in raw and 'not a third\nindependent derivation' in raw
     pdf = load(load('release-metadata.json')['pdf_validation_file'])
-    assert pdf['status'] == 'PASS' and pdf['pages'] == 18
+    assert pdf['status'] == 'PASS' and pdf['pages'] == 19
     assert sha(local(pdf['source_path'])) == pdf['source_sha256'] and sha(local(pdf['pdf_path'])) == pdf['pdf_sha256']
-    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 18
+    assert pdf['visual_review']['all_pages_viewed'] and len(pdf['page_render_hashes']) == 19
     assert not pdf['overfull_boxes'] and not pdf['undefined_references'] and not pdf['duplicate_destinations']
-    result(pages=18, claims=31, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
+    result(pages=19, claims=31, unchanged_numbered_blocks=3, displayed_math_unchanged=True,
            unchanged_proof_subsections=2, internal_process_markers=0, AI_tool_exceptions=0,
            scope='Static preservation, separate-record completeness and saved PDF review; not a new proof/kernel check.')
 

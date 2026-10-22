@@ -1,0 +1,87 @@
+{
+  "predecessor": "paper-lines-v6.2-en.tex",
+  "target": "paper-lines-v6.3-en.tex",
+  "predecessor_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
+  "target_sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
+  "edits": [
+    {
+      "number": 1,
+      "before": "Version 6.2, 21 October 2026",
+      "after": "Version 6.3, 22 October 2026",
+      "reason": "Edition number and date only."
+    },
+    {
+      "number": 2,
+      "before": "Lean proofs establish K3 and C1 path classifications, O2 absence on\nits stated domain, and the E10 classification for $r\\ge2$.\nPositive-ray actual-path periodicity is Lean-proved for K3, C1, O2,\nD14 and E10, including the E10 boundary $r=1$.",
+      "after": "Lean proofs establish the K3, C1 and D12 path classifications, O2\nabsence on its stated domain, and the E10 classification for $r\\ge2$.\nPositive-ray actual-path periodicity is Lean-proved for K3, C1, O2,\nD12, D14 and E10, including the E10 boundary $r=1$.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 3,
+      "before": "K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\\ge2$; C1 iff for $a,b\\ge1$; O2 absence for $t,d\\ge2$; E10 iff for $p,s\\ge1,r\\ge2$; all five positive-natural ray results, including E10 $r=1$.",
+      "after": "K3, C1, O2, D12, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\\ge2$; C1 iff for $a,b\\ge1$; D12 iff for $r,s\\ge1$; O2 absence for $t,d\\ge2$; E10 iff for $p,s\\ge1,r\\ge2$; all six positive-natural ray results, including E10 $r=1$.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 4,
+      "before": "D12 classification & Two prose/computer-assisted proof routes; no Lean & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\\ref{sec:d12-classification}.\\\\\nD12 ray consequence & Theorem~\\ref{thm:aligned} with prose correspondence; alternatively classification and arithmetic & Every eventually positive integer affine ray. No family-specific Lean proof of D12.\\\\\n",
+      "after": "D12 classification, further proofs & Two prose/computer-assisted proofs, in addition to the Lean proof & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\\ref{sec:d12-classification}.\\\\\n",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 5,
+      "before": "The K3, C1, O2 and D14 parts have direct family-specific ray proofs on\ntheir quotient graphs, including positive boundary parameters. E10 also",
+      "after": "The K3, C1, O2, D12 and D14 parts have direct family-specific ray proofs\non their quotient graphs, including positive boundary parameters. E10 also",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 6,
+      "before": "hypotheses proved on the E10 model. These five results use no general",
+      "after": "hypotheses proved on the E10 model. These six results use no general",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 7,
+      "before": "D12, D1 & The convex decompositions on valid positive integer parameters.\\\\",
+      "after": "D12, $r,s\\ge1$ & Lean actual-path ray periodicity, including parameter 1; no general prose bridge.\\\\\nD1 & The convex decomposition on valid positive integer parameters.\\\\",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 8,
+      "before": "The full D12 classification is given in Section~\\ref{sec:d12-classification}.",
+      "after": "The full D12 classification, with a Lean proof, is given in Section~\\ref{sec:d12-classification}.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 9,
+      "before": "The D12 classification in Section~\\ref{sec:d12-classification} retains its two prose/computer-assisted proof bases.",
+      "after": "The D12 classification in Section~\\ref{sec:d12-classification} is Lean-proved.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 10,
+      "before": "For this positive-parameter quotient convention, the two proof routes\nbelow give a literal path if and only if",
+      "after": "For this positive-parameter quotient convention, a literal path exists\nif and only if",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 11,
+      "before": "The all-parameter quotient geometry and catalogue correspondence,\nthe semantics of the computations and the inductions described below\nare prose/computer-assisted premises of these routes. Neither route\nis a Lean proof. Complete arguments, explicit strip formulas,\ncertificate inputs and their checkers accompany the D12 supplement.\n",
+      "after": "This classification, and eventual periodicity of path existence on\nevery positive-natural ray, are Lean-proved for the explicit quotient\nmodel above, with no prose step (Section~\\ref{sec:d12-lean}). Its\nidentification with the catalogue family uses the stated coordinate\nconventions. Two further proofs follow. They were developed\nseparately from each other; each is computer-assisted, and its\nall-parameter quotient geometry, the semantics of its computations\nand its inductions are prose premises. Complete arguments, explicit\nstrip formulas, certificate inputs and their checkers accompany the\nD12 supplement.\n\n\\subsection{A formal proof}\\label{sec:d12-lean}\nThe Lean proof works with the quotient model directly. The two charts\nare glued along one boundary circle of length $6L$, and a seam vertex\nis recorded by its arc length. For all $r,s\\ge1$ the endpoints of an\nedge have at most two common neighbours and the twelve labelled points\nhave degree five; for $r,s\\ge2$ they are the only vertices of degree\nfive. A rotation of\nboth charts by $60^\\circ$ and an exchange of the two charts are\nautomorphisms of the quotient, so every start can be moved to the\nlabel-$0$ point, from which ten first triangles remain.\n\nNecessity concerns $r,s\\ge2$, since the condition always holds when\n$r=1$ or $s=1$. For each of the ten starts the forced strip is shown to\nrepeat a vertex before a legal endpoint whenever the condition fails.\nSix starts, and the other four when $s\\le r+1$, are settled by a finite\ncover of the negative parameter region by integer polyhedra; on each\npiece the strip has one fixed combinatorial form. For the other four\nstarts with $s\\ge r+2$ the strip winds around the sphere. Writing\n$s=qr+c+t$ with $0\\le t<r$ and a fixed offset $c$, the strip consists of\nan initial block, a number of laps of four blocks each, and a tail. Each\nlap is affine in $r$, $s$ and a lap offset, so induction on the number\nof laps carries the strip to the tail. The repetition occurs between\nthe last lap and the tail unless $s\\equiv\\pm1\\pmod r$.\n\nSufficiency exhibits explicit literal paths: single blocks for $r=1$\nand for $s=1$, a fixed number of blocks on $r=3s\\pm1$ and on $s=r\\pm1$,\nand lap-periodic paths for $s=qr\\pm1$, $q\\ge2$, whose vertices are\nshown distinct for every number of laps. The ray statement follows from\nthe classification by the arithmetic at the end of this section. The\ntwo-common-neighbour property is proved on the model, so this proof\ndoes not use cyclic edge-connectivity. It follows the strip\ndecomposition of the two proofs below and is therefore not a third\nindependent derivation; its correctness rests on the kernel check.\n",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 12,
+      "before": "There is also an elementary arithmetic\nconsequence conditional on the classification.",
+      "after": "The classification also gives the ray result by\nelementary arithmetic; the Lean proof takes this route.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 13,
+      "before": "This arithmetic alternative\nand the general ray-theorem application are separate from a\nfamily-specific Lean formalization of D12.",
+      "after": "The Lean ray statement starts at\npositive natural coordinates with nonnegative slopes; an eventually\npositive integer ray is covered by reindexing its positive tail.",
+      "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    }
+  ],
+  "scope": "D12 proof-scope prose and one new D12 subsection inside the D12 section. Numbered statements, displayed formulae, domains and claim identifiers unchanged."
+}

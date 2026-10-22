@@ -8,6 +8,7 @@ import Formal.Claude4K3ComparatorSolution
 import Formal.Claude4C1ComparatorSolution
 import Formal.Claude5O2ComparatorSolution
 import Formal.Claude5E10ComparatorSolution
+import Formal.Claude7D12ComparatorSolution
 
 /-! Prints the axioms of the main declarations of this release.
 CI fails unless every line lists only `propext`, `Classical.choice`, `Quot.sound`. -/
@@ -35,3 +36,5 @@ CI fails unless every line lists only `propext`, `Classical.choice`, `Quot.sound
 #print axioms ClaudeChallengeO2.main
 #print axioms ClaudeChallengeE10.classification
 #print axioms ClaudeChallengeE10.main
+#print axioms ClaudeChallengeD12.classification
+#print axioms ClaudeChallengeD12.main

@@ -1,6 +1,21 @@
-# Article6.2 / packet1.9.0 verification record
+# Article6.3 / packet1.10.0 verification record
 
-## D12 addition, article 6.2 / packet 1.9.0
+## D12 Lean reception and current verification boundary
+
+Source pin: e2c2b460d1708f78739aa8d18064814f98aab317 (proof); research merge 38b386fc606b1a1417f7593bac7f48b6062cc16c (proof and coordinator Comparator log). Prior challenge/specification pin: 6785c4a809bab0507b96d23a7e38bf7ca4bba7a2; the challenge and Claude7D12Spec.lean are byte-identical at both pins. Packaging statically compared 22 copied definitions plus PathExists and both exact theorem signatures (challenge vs solution). All 86 closure fingerprints agree; 82 files are new (81 proof and one specification), 4 inherited. The separate challenge has two intentional sorry placeholders, is outside dependencies and was not used as proof. Current totals 495 Lean files: 489 proof/specification sources and six inert challenges. All 412 predecessor Lean source bytes are preserved.
+
+`thm:d12-classification`: `lean-result-received` (ClaudeChallengeD12.classification). `cor:catalog` adds ClaudeChallengeD12.main. Both are the targets of the coordinator's paranoid Comparator run with six kernels (Lean paranoid, lean4lean, nanoda, con-leche, con-ron, Lean default), all accepting the same supplied proof: 1637.79 seconds, 2,954,018,816 maximum-RSS bytes (inherited measurements, not current execution; sandbox disabled, no OS process isolation). This is not six independent derivations. Standard-three-axiom results (propext, Classical.choice, Quot.sound) for both targets and for the intermediate d12_no_path and path_gm are worker-reported. Chronology: the worker's own Comparator attempt stopped at its 3 GB guard during export (kept as comparator-worker-stopped.txt.original.log); the coordinator then ran it to completion. The worker rebuilt all D12 modules one at a time (d12-rebuild.log.original.log). The release preparation of the public repository ran its CI-equivalent build check and axiom query once on the same sources (27 standard-axiom lines); that output is outside the packet and is not a receipt here.
+
+Independence: the Lean proof was written after its author read the route-A report and the article 6.2 D12 section; it searched strip decompositions with its own Python model and did not use the route-A executor or route-B certificates. It is therefore not an independent third derivation. Its correctness rests on the kernel check, not on the routes; the routes remain additional evidence. The article says this in one sentence.
+
+Statement correspondence: one independent AI statement reader returned FAITHFUL WITH CAVEATS. Caveats: the all-parameter identification with Graver's catalogue family is not formalized (the chart data agree with the article's explicit quotient convention); Definition 1(a) of the cited source was not supplied verbatim, so exact agreement of LiteralPath with the source wording is not independently certified. The writer's saved mirror covers 240 cases r<=20, s<=12 (144 with isomorphism to the earlier constructor): 78 positive, 162 negative, zero disagreements with the classification. These are finite readbacks, not a universal catalogue-isomorphism theorem. No owner-confirmation procedure, human proof peer review or novelty establishment is claimed.
+
+CI/query layout: D12 helper tactics (d12om, d12peq, d12peq2, d12glue_tac) do not collide with the O2/D14 peq; D12 is queried in the O2-side Axioms.lean. See CI-AXIOM-SPLIT.md.
+
+Article 6.3 edits: thirteen passages of article 6.2 changed (lines-v6.3-edit-map.json); one new subsection (12.1, a formal proof) inside the D12 section. Numbered statements, displayed formulae, domains and claim identifiers are unchanged. The 6.2 passages are archived at the end of this record.
+
+
+## Historical D12 addition, article 6.2 / packet 1.9.0 (no-Lean statement superseded by 1.10.0)
 
 Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.
 
@@ -40,7 +55,7 @@ The thirty claim IDs and their status values are unchanged from packet1.7.0. All
 | `prop:forced` | `lean-result-received` | 1 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/logs/T0519.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `def:signature` | `scope-definition` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `thm:aligned` | `lean-result-received` | 3 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/extra/AH-literature-comparison.md.original.log`, `evidence/extra/S2047-behmaram-boutillier.json.original.log`, `evidence/extra/S2073-li-chen-quasipolynomial.json.original.log`, `evidence/extra/S2180-aixiv-guide.json.original.log`, `evidence/extra/S2181-dd2004-next27.json.original.log`, `evidence/extra/S2182-dd-zigzag-next27.json.original.log`, `evidence/extra/S2183-zigzag-complexes.json.original.log`, `evidence/extra/S2184-book-next27-access.json.original.log`, `evidence/extra/S2185-ddf2004-fulltext-next28.json.original.log`, `evidence/extra/S2186-book-archive-access-next28.json.original.log`, `evidence/extra/S2187-book-official-access-next28.json.original.log`, `evidence/extra/S2188-mso-strings-next28.json.original.log`, `evidence/extra/S2189-fischer-makowsky-spectra.json.original.log`, `evidence/extra/S2190-kotek-makowsky-biiterative.json.original.log`, `evidence/extra/S2191-periodic-counter-graphs.json.original.log`, `evidence/extra/S2192-wanke-periodic-graphs.json.original.log`, `evidence/extra/S2193-courcelle-finite-contexts.json.original.log`, `evidence/extra/S2194-thomas-unary-binary.json.original.log`, `evidence/extra/S2195-octagonal-acceleration.json.original.log`, `evidence/extra/S2196-mine-octagon-domain.json.original.log`, `evidence/extra/next80c.original.log`, `evidence/extra/report-next28-2026-10-19.md.original.log`, `evidence/theorem1a/Challenge2.lean.original.log`, `evidence/theorem1a/ComparatorChallenge.lean.original.log`, `evidence/theorem1a/challenge2-reading-guide-ja.md.original.log`, `evidence/theorem1a/comparator-thm1a-2026-10-20.md.original.log`, `evidence/theorem1a/comparator-thm1a-paranoid-2026-10-20.txt.original.log`, `evidence/theorem1a/comparator-thm1a.json.original.log`, `evidence/theorem1a/fold-report-2026-10-20.md.original.log`, `evidence/theorem1a/initial-lean-execution.failed.original.log`, `evidence/theorem1a/initial-proof-source-inventory.original.log`, `evidence/theorem1a/lean-execution.json`, `evidence/theorem1a/main-axioms.original.log`, `evidence/theorem1a/mso-report-2026-10-20.md.original.log`, `evidence/theorem1a/next85.original.log`, `evidence/theorem1a/next85a.original.log`, `evidence/theorem1a/proof-source-inventory.json`, `evidence/theorem1a/response-ja.md.original.log`, `evidence/theorem1a/review.md.original.log`, `evidence/theorem1a/serial-build-output.original.log`, `evidence/theorem1a/spec-comparison.json`, `evidence/theorem1a/thm1a-final-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-geo-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-ident-report-2026-10-20.md.original.log`, `evidence/theorem1a/thm1a-state-report-2026-10-20.md.original.log`, `owner-statement-confirmation.json`, `owner-copy-comparison.json`, `owner-copy-diff.txt`, `owner-decision-extract.original.txt`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
-| `cor:catalog` | `mixed-prose-and-formal-results` | 5 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/d14/comparator-d14.md.original.log`, `evidence/e10/comparator-e10.md.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16, P006-L17, P006-L18 |
+| `cor:catalog` | `mixed-prose-and-formal-results` | 6 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`, `evidence/k3/k3-bridge-report.md.original.log`, `evidence/c1/comparator-c1.md.original.log`, `evidence/o2/comparator-o2.md.original.log`, `evidence/d14/comparator-d14.md.original.log`, `evidence/e10/comparator-e10.md.original.log`, `evidence/d12/comparator-paranoid.txt.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12, P006-L14, P006-L15, P006-L16, P006-L17, P006-L18, P006-L19 |
 | `lem:rows` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `lem:restricted` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
 | `lem:folding` | `independent-prose-proof-ai-reviewed` | 0 | `evidence/R004/R004-aligned-periodicity-proof.md.txt.original.log`, `evidence/R004/R004-claim14-aligned-families.md.txt.original.log`, `evidence/R004/coordinator-claim14-review.txt.original.log`, `evidence/AN-5-6-review.original.log`; review rows P006-L01, P006-L02, P006-L03, P006-L04, P006-L05, P006-L06, P006-L07, P006-L08, P006-L09, P006-L10, P006-L11, P006-L12 |
@@ -1531,4 +1546,99 @@ Prose graph iff and Lean predicate-ray arithmetic.
 
 ```tex
 \subsection{Conditional auxiliary lemmas}
+```
+
+## Article6.2 to6.3 scope-edit archive
+
+The following thirteen predecessor passages are retained for editorial traceability; the replacement text is recorded in lines-v6.3-edit-map.json. These are old passages, not current D12 proof assertions.
+
+### D12 scope edit 1
+
+```tex
+Version 6.2, 21 October 2026
+```
+
+### D12 scope edit 2
+
+```tex
+Lean proofs establish K3 and C1 path classifications, O2 absence on
+its stated domain, and the E10 classification for $r\ge2$.
+Positive-ray actual-path periodicity is Lean-proved for K3, C1, O2,
+D14 and E10, including the E10 boundary $r=1$.
+```
+
+### D12 scope edit 3
+
+```tex
+K3, C1, O2, D14, E10 & Lean quotient-graph proofs & K3 iff for $r,s\ge2$; C1 iff for $a,b\ge1$; O2 absence for $t,d\ge2$; E10 iff for $p,s\ge1,r\ge2$; all five positive-natural ray results, including E10 $r=1$.
+```
+
+### D12 scope edit 4
+
+```tex
+D12 classification & Two prose/computer-assisted proof routes; no Lean & Positive integer $r,s$, with the quotient, geometric and certificate semantics stated in Section~\ref{sec:d12-classification}.\\
+D12 ray consequence & Theorem~\ref{thm:aligned} with prose correspondence; alternatively classification and arithmetic & Every eventually positive integer affine ray. No family-specific Lean proof of D12.\\
+```
+
+### D12 scope edit 5
+
+```tex
+The K3, C1, O2 and D14 parts have direct family-specific ray proofs on
+their quotient graphs, including positive boundary parameters. E10 also
+```
+
+### D12 scope edit 6
+
+```tex
+hypotheses proved on the E10 model. These five results use no general
+```
+
+### D12 scope edit 7
+
+```tex
+D12, D1 & The convex decompositions on valid positive integer parameters.\\
+```
+
+### D12 scope edit 8
+
+```tex
+The full D12 classification is given in Section~\ref{sec:d12-classification}.
+```
+
+### D12 scope edit 9
+
+```tex
+The D12 classification in Section~\ref{sec:d12-classification} retains its two prose/computer-assisted proof bases.
+```
+
+### D12 scope edit 10
+
+```tex
+For this positive-parameter quotient convention, the two proof routes
+below give a literal path if and only if
+```
+
+### D12 scope edit 11
+
+```tex
+The all-parameter quotient geometry and catalogue correspondence,
+the semantics of the computations and the inductions described below
+are prose/computer-assisted premises of these routes. Neither route
+is a Lean proof. Complete arguments, explicit strip formulas,
+certificate inputs and their checkers accompany the D12 supplement.
+```
+
+### D12 scope edit 12
+
+```tex
+There is also an elementary arithmetic
+consequence conditional on the classification.
+```
+
+### D12 scope edit 13
+
+```tex
+This arithmetic alternative
+and the general ray-theorem application are separate from a
+family-specific Lean formalization of D12.
 ```

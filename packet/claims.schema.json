@@ -15,7 +15,7 @@
       "const": 3
     },
     "version": {
-      "const": "1.9.0"
+      "const": "1.10.0"
     },
     "paper": {
       "$ref": "#/$defs/evidence"
@@ -77,7 +77,12 @@
         "e10_r1_geometric_model_hypotheses_formalized",
         "e10_r1_closed_classification_formalized",
         "e10_named_catalogue_correspondence_formalized",
-        "e10_statement_correspondence"
+        "e10_statement_correspondence",
+        "d12_graph_classification_received",
+        "d12_literal_ray_without_prose_bridge_received",
+        "d12_named_catalogue_correspondence_formalized",
+        "d12_lean_derivation_independent_of_prose_routes",
+        "d12_statement_correspondence"
       ],
       "properties": {
         "main_result": {
@@ -234,6 +239,21 @@
           "const": false
         },
         "e10_statement_correspondence": {
+          "const": "prior-specification-independent-AI-reader-finite-comparison"
+        },
+        "d12_graph_classification_received": {
+          "const": true
+        },
+        "d12_literal_ray_without_prose_bridge_received": {
+          "const": true
+        },
+        "d12_named_catalogue_correspondence_formalized": {
+          "const": false
+        },
+        "d12_lean_derivation_independent_of_prose_routes": {
+          "const": false
+        },
+        "d12_statement_correspondence": {
           "const": "prior-specification-independent-AI-reader-finite-comparison"
         }
       },
