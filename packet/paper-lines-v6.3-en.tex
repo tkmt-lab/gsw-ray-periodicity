@@ -629,6 +629,9 @@ D12$(3s+1,s)$ has a path with $56s+12$ distinct vertices. The
 computer-assisted proof checks 2,058 nonnegativity conditions and
 756 no-integer-solution conditions, 2,814 in total. A separate
 construction at $s=58$ gives a 3,260-vertex positive witness.
+These D12 decisions, and those on the two D12 rays in the table
+above, also follow from the Lean classification of
+Section~\ref{sec:d12-classification}.
 
 \section{Specification and family-specific graph proofs}\label{sec:formal}
 For every fixed signature $S$ and $t_1$, the specification-level
@@ -641,6 +644,8 @@ These assumptions require the local validity and triangle-lifting
 properties; the geometric correspondence lemma supplies them from
 the convex disk decomposition. The residue-class variant combines
 fixed branches after their decisions agree with the original family.
+The D12 classification and its rays are proved in
+Section~\ref{sec:d12-lean}.
 
 \subsection{K3 graph classification and ray periodicity}\label{thm:k3-sufficient}
 \claimid{thm:k3-sufficient}
@@ -1020,7 +1025,7 @@ Moving to canonical representatives or allowing variable divisibility
 does not follow from raywise periodicity. These stronger global-definability questions remain separate. General E10 $r=1$ necessity, untranscribed
 families, all degenerations, human proof peer review, and a formal
 geometric-to-program pipeline are not completed here. A3 minimum,
-density and the IPR census belong to the first article. The D12 classification in Section~\ref{sec:d12-classification} is Lean-proved.
+density and the IPR census belong to the first article. The D12 classification in Section~\ref{sec:d12-classification} is Lean-proved for its explicit quotient model.
 
 
 % D12-SECTION-BEGIN
@@ -1062,7 +1067,8 @@ This classification, and eventual periodicity of path existence on
 every positive-natural ray, are Lean-proved for the explicit quotient
 model above, with no prose step (Section~\ref{sec:d12-lean}). Its
 identification with the catalogue family uses the stated coordinate
-conventions. Two further proofs follow. They were developed
+conventions and is not part of the Lean statement, whose model uses a
+translate of the first chart. Two further proofs follow. They were developed
 separately from each other; each is computer-assisted, and its
 all-parameter quotient geometry, the semantics of its computations
 and its inductions are prose premises. Complete arguments, explicit
@@ -1101,7 +1107,9 @@ the classification by the arithmetic at the end of this section. The
 two-common-neighbour property is proved on the model, so this proof
 does not use cyclic edge-connectivity. It follows the strip
 decomposition of the two proofs below and is therefore not a third
-independent derivation; its correctness rests on the kernel check.
+independent derivation; its correctness rests on the Lean kernel
+check of the two stated declarations, which six kernel implementations
+accept under the Comparator tool (see the verification record).
 
 \subsection{A symbolic region cover and cylinder induction}
 The first route reduces the twelve degree-five starting sites to ten

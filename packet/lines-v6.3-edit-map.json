@@ -2,7 +2,7 @@
   "predecessor": "paper-lines-v6.2-en.tex",
   "target": "paper-lines-v6.3-en.tex",
   "predecessor_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
-  "target_sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
+  "target_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
   "edits": [
     {
       "number": 1,
@@ -55,7 +55,7 @@
     {
       "number": 9,
       "before": "The D12 classification in Section~\\ref{sec:d12-classification} retains its two prose/computer-assisted proof bases.",
-      "after": "The D12 classification in Section~\\ref{sec:d12-classification} is Lean-proved.",
+      "after": "The D12 classification in Section~\\ref{sec:d12-classification} is Lean-proved for its explicit quotient model.",
       "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
     },
     {
@@ -67,7 +67,7 @@
     {
       "number": 11,
       "before": "The all-parameter quotient geometry and catalogue correspondence,\nthe semantics of the computations and the inductions described below\nare prose/computer-assisted premises of these routes. Neither route\nis a Lean proof. Complete arguments, explicit strip formulas,\ncertificate inputs and their checkers accompany the D12 supplement.\n",
-      "after": "This classification, and eventual periodicity of path existence on\nevery positive-natural ray, are Lean-proved for the explicit quotient\nmodel above, with no prose step (Section~\\ref{sec:d12-lean}). Its\nidentification with the catalogue family uses the stated coordinate\nconventions. Two further proofs follow. They were developed\nseparately from each other; each is computer-assisted, and its\nall-parameter quotient geometry, the semantics of its computations\nand its inductions are prose premises. Complete arguments, explicit\nstrip formulas, certificate inputs and their checkers accompany the\nD12 supplement.\n\n\\subsection{A formal proof}\\label{sec:d12-lean}\nThe Lean proof works with the quotient model directly. The two charts\nare glued along one boundary circle of length $6L$, and a seam vertex\nis recorded by its arc length. For all $r,s\\ge1$ the endpoints of an\nedge have at most two common neighbours and the twelve labelled points\nhave degree five; for $r,s\\ge2$ they are the only vertices of degree\nfive. A rotation of\nboth charts by $60^\\circ$ and an exchange of the two charts are\nautomorphisms of the quotient, so every start can be moved to the\nlabel-$0$ point, from which ten first triangles remain.\n\nNecessity concerns $r,s\\ge2$, since the condition always holds when\n$r=1$ or $s=1$. For each of the ten starts the forced strip is shown to\nrepeat a vertex before a legal endpoint whenever the condition fails.\nSix starts, and the other four when $s\\le r+1$, are settled by a finite\ncover of the negative parameter region by integer polyhedra; on each\npiece the strip has one fixed combinatorial form. For the other four\nstarts with $s\\ge r+2$ the strip winds around the sphere. Writing\n$s=qr+c+t$ with $0\\le t<r$ and a fixed offset $c$, the strip consists of\nan initial block, a number of laps of four blocks each, and a tail. Each\nlap is affine in $r$, $s$ and a lap offset, so induction on the number\nof laps carries the strip to the tail. The repetition occurs between\nthe last lap and the tail unless $s\\equiv\\pm1\\pmod r$.\n\nSufficiency exhibits explicit literal paths: single blocks for $r=1$\nand for $s=1$, a fixed number of blocks on $r=3s\\pm1$ and on $s=r\\pm1$,\nand lap-periodic paths for $s=qr\\pm1$, $q\\ge2$, whose vertices are\nshown distinct for every number of laps. The ray statement follows from\nthe classification by the arithmetic at the end of this section. The\ntwo-common-neighbour property is proved on the model, so this proof\ndoes not use cyclic edge-connectivity. It follows the strip\ndecomposition of the two proofs below and is therefore not a third\nindependent derivation; its correctness rests on the kernel check.\n",
+      "after": "This classification, and eventual periodicity of path existence on\nevery positive-natural ray, are Lean-proved for the explicit quotient\nmodel above, with no prose step (Section~\\ref{sec:d12-lean}). Its\nidentification with the catalogue family uses the stated coordinate\nconventions and is not part of the Lean statement, whose model uses a\ntranslate of the first chart. Two further proofs follow. They were developed\nseparately from each other; each is computer-assisted, and its\nall-parameter quotient geometry, the semantics of its computations\nand its inductions are prose premises. Complete arguments, explicit\nstrip formulas, certificate inputs and their checkers accompany the\nD12 supplement.\n\n\\subsection{A formal proof}\\label{sec:d12-lean}\nThe Lean proof works with the quotient model directly. The two charts\nare glued along one boundary circle of length $6L$, and a seam vertex\nis recorded by its arc length. For all $r,s\\ge1$ the endpoints of an\nedge have at most two common neighbours and the twelve labelled points\nhave degree five; for $r,s\\ge2$ they are the only vertices of degree\nfive. A rotation of\nboth charts by $60^\\circ$ and an exchange of the two charts are\nautomorphisms of the quotient, so every start can be moved to the\nlabel-$0$ point, from which ten first triangles remain.\n\nNecessity concerns $r,s\\ge2$, since the condition always holds when\n$r=1$ or $s=1$. For each of the ten starts the forced strip is shown to\nrepeat a vertex before a legal endpoint whenever the condition fails.\nSix starts, and the other four when $s\\le r+1$, are settled by a finite\ncover of the negative parameter region by integer polyhedra; on each\npiece the strip has one fixed combinatorial form. For the other four\nstarts with $s\\ge r+2$ the strip winds around the sphere. Writing\n$s=qr+c+t$ with $0\\le t<r$ and a fixed offset $c$, the strip consists of\nan initial block, a number of laps of four blocks each, and a tail. Each\nlap is affine in $r$, $s$ and a lap offset, so induction on the number\nof laps carries the strip to the tail. The repetition occurs between\nthe last lap and the tail unless $s\\equiv\\pm1\\pmod r$.\n\nSufficiency exhibits explicit literal paths: single blocks for $r=1$\nand for $s=1$, a fixed number of blocks on $r=3s\\pm1$ and on $s=r\\pm1$,\nand lap-periodic paths for $s=qr\\pm1$, $q\\ge2$, whose vertices are\nshown distinct for every number of laps. The ray statement follows from\nthe classification by the arithmetic at the end of this section. The\ntwo-common-neighbour property is proved on the model, so this proof\ndoes not use cyclic edge-connectivity. It follows the strip\ndecomposition of the two proofs below and is therefore not a third\nindependent derivation; its correctness rests on the Lean kernel\ncheck of the two stated declarations, which six kernel implementations\naccept under the Comparator tool (see the verification record).\n",
       "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
     },
     {
@@ -81,6 +81,18 @@
       "before": "This arithmetic alternative\nand the general ray-theorem application are separate from a\nfamily-specific Lean formalization of D12.",
       "after": "The Lean ray statement starts at\npositive natural coordinates with nonnegative slopes; an eventually\npositive integer ray is covered by reindexing its positive tail.",
       "reason": "D12 is Lean-proved: update the current proof scope; formulae and domains unchanged."
+    },
+    {
+      "number": 14,
+      "before": "construction at $s=58$ gives a 3,260-vertex positive witness.\n",
+      "after": "construction at $s=58$ gives a 3,260-vertex positive witness.\nThese D12 decisions, and those on the two D12 rays in the table\nabove, also follow from the Lean classification of\nSection~\\ref{sec:d12-classification}.\n",
+      "reason": "Cross-reference to the D12 Lean classification."
+    },
+    {
+      "number": 15,
+      "before": "fixed branches after their decisions agree with the original family.\n",
+      "after": "fixed branches after their decisions agree with the original family.\nThe D12 classification and its rays are proved in\nSection~\\ref{sec:d12-lean}.\n",
+      "reason": "Cross-reference to the D12 Lean proof."
     }
   ],
   "scope": "D12 proof-scope prose and one new D12 subsection inside the D12 section. Numbered statements, displayed formulae, domains and claim identifiers unchanged."

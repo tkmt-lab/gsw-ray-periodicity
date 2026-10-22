@@ -6,8 +6,8 @@
   },
   "target": {
     "path": "paper-lines-v6.3-en.tex",
-    "sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
-    "bytes": 73043
+    "sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
+    "bytes": 73526
   },
   "kind": "Section coverage and declared editorial changes, not a proof of semantic equivalence",
   "all_numbered_v3_subsections_covered": true,

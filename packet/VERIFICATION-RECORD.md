@@ -4,7 +4,7 @@
 
 Source pin: e2c2b460d1708f78739aa8d18064814f98aab317 (proof); research merge 38b386fc606b1a1417f7593bac7f48b6062cc16c (proof and coordinator Comparator log). Prior challenge/specification pin: 6785c4a809bab0507b96d23a7e38bf7ca4bba7a2; the challenge and Claude7D12Spec.lean are byte-identical at both pins. Packaging statically compared 22 copied definitions plus PathExists and both exact theorem signatures (challenge vs solution). All 86 closure fingerprints agree; 82 files are new (81 proof and one specification), 4 inherited. The separate challenge has two intentional sorry placeholders, is outside dependencies and was not used as proof. Current totals 495 Lean files: 489 proof/specification sources and six inert challenges. All 412 predecessor Lean source bytes are preserved.
 
-`thm:d12-classification`: `lean-result-received` (ClaudeChallengeD12.classification). `cor:catalog` adds ClaudeChallengeD12.main. Both are the targets of the coordinator's paranoid Comparator run with six kernels (Lean paranoid, lean4lean, nanoda, con-leche, con-ron, Lean default), all accepting the same supplied proof: 1637.79 seconds, 2,954,018,816 maximum-RSS bytes (inherited measurements, not current execution; sandbox disabled, no OS process isolation). This is not six independent derivations. Standard-three-axiom results (propext, Classical.choice, Quot.sound) for both targets and for the intermediate d12_no_path and path_gm are worker-reported. Chronology: the worker's own Comparator attempt stopped at its 3 GB guard during export (kept as comparator-worker-stopped.txt.original.log); the coordinator then ran it to completion. The worker rebuilt all D12 modules one at a time (d12-rebuild.log.original.log). The release preparation of the public repository ran its CI-equivalent build check and axiom query once on the same sources (27 standard-axiom lines); that output is outside the packet and is not a receipt here.
+`thm:d12-classification`: `lean-result-received` (ClaudeChallengeD12.classification). `cor:catalog` adds ClaudeChallengeD12.main. Both are the targets of the coordinator's paranoid Comparator run with six kernels (Lean paranoid, lean4lean, nanoda, con-leche, con-ron, Lean default), all accepting the same supplied proof: 1637.79 seconds, 2,954,018,816 maximum-RSS bytes (inherited measurements, not current execution; sandbox disabled, no OS process isolation). This is not six independent derivations. The claims.json receipts of both D12 declarations point to this raw coordinator Comparator output. Standard-three-axiom results (propext, Classical.choice, Quot.sound) for both targets and for the intermediate d12_no_path and path_gm are worker-reported. Chronology: the worker's own Comparator attempt stopped at its 3 GB guard during export (kept as comparator-worker-stopped.txt.original.log); the coordinator then ran it to completion. The worker rebuilt all D12 modules one at a time (d12-rebuild.log.original.log). The release preparation of the public repository ran its CI-equivalent build check and axiom query once on the same sources (27 standard-axiom lines); that output is outside the packet and is not a receipt here.
 
 Independence: the Lean proof was written after its author read the route-A report and the article 6.2 D12 section; it searched strip decompositions with its own Python model and did not use the route-A executor or route-B certificates. It is therefore not an independent third derivation. Its correctness rests on the kernel check, not on the routes; the routes remain additional evidence. The article says this in one sentence.
 
@@ -12,7 +12,7 @@ Statement correspondence: one independent AI statement reader returned FAITHFUL 
 
 CI/query layout: D12 helper tactics (d12om, d12peq, d12peq2, d12glue_tac) do not collide with the O2/D14 peq; D12 is queried in the O2-side Axioms.lean. See CI-AXIOM-SPLIT.md.
 
-Article 6.3 edits: thirteen passages of article 6.2 changed (lines-v6.3-edit-map.json); one new subsection (12.1, a formal proof) inside the D12 section. Numbered statements, displayed formulae, domains and claim identifiers are unchanged. The 6.2 passages are archived at the end of this record.
+Article 6.3 edits: 15 passages of article 6.2 changed (lines-v6.3-edit-map.json), including one new subsection (12.1, a formal proof) inside the D12 section and two cross-references. The article 6.3 text was revised once before release after an independent AI referee report (verdict MINOR): catalogue identification outside the Lean statement made explicit in Section 12, the kernel check named in Section 12.1, the limitations sentence qualified, and the cross-references added. Numbered statements, displayed formulae, domains and claim identifiers are unchanged. The 6.2 passages are archived at the end of this record.
 
 
 ## Historical D12 addition, article 6.2 / packet 1.9.0 (no-Lean statement superseded by 1.10.0)
@@ -1550,7 +1550,7 @@ Prose graph iff and Lean predicate-ray arithmetic.
 
 ## Article6.2 to6.3 scope-edit archive
 
-The following thirteen predecessor passages are retained for editorial traceability; the replacement text is recorded in lines-v6.3-edit-map.json. These are old passages, not current D12 proof assertions.
+The following 15 predecessor passages are retained for editorial traceability; the replacement text is recorded in lines-v6.3-edit-map.json. These are old passages, not current D12 proof assertions.
 
 ### D12 scope edit 1
 
@@ -1641,4 +1641,16 @@ consequence conditional on the classification.
 This arithmetic alternative
 and the general ray-theorem application are separate from a
 family-specific Lean formalization of D12.
+```
+
+### D12 scope edit 14
+
+```tex
+construction at $s=58$ gives a 3,260-vertex positive witness.
+```
+
+### D12 scope edit 15
+
+```tex
+fixed branches after their decisions agree with the original family.
 ```

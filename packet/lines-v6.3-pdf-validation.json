@@ -1,10 +1,10 @@
 {
   "status": "PASS",
   "source_path": "paper-lines-v6.3-en.tex",
-  "source_sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
+  "source_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
   "pdf_path": "paper-lines-v6.3-en.pdf",
-  "pdf_sha256": "3e30d7d04ae86de42f1eb2f8c7ba0c48eae7af567dd0ac2c7782eb92601cba46",
-  "pdf_bytes": 186658,
+  "pdf_sha256": "efd7de24d7b334d038de85f73173aca1c49dec10cfad6731786f4763d8426dea",
+  "pdf_bytes": 187231,
   "pages": 19,
   "tex_engine": "Tectonic 0.17.0 cached only",
   "overfull_boxes": false,
@@ -49,39 +49,39 @@
     },
     {
       "page": 10,
-      "sha256": "35bde1d082be2194d6e60659ab446d9a188fa1269162521a10261ad5159e915f"
+      "sha256": "70a30a10077d399c0906fac3eaa76d2b7361a6363f8270f8336b968a9ade85a5"
     },
     {
       "page": 11,
-      "sha256": "dab4b46f4557b7cce7743cf4804f22a7af4e9d1afa7761ca4f261146b2d2c6bd"
+      "sha256": "e0af1a2fb15b8f59b9f85f4f1ecfec7e9ed250b80b0a4bdb551c63eb1c6d3a96"
     },
     {
       "page": 12,
-      "sha256": "ab7cea4836772b02c2d7e9032d31d35e6ae9b7689f0f94d3b45b610b7c1ee201"
+      "sha256": "8458bafe33ec0b41f744656a2f95feb2f5c98d4dc43649d429ca2cb2cd6294ff"
     },
     {
       "page": 13,
-      "sha256": "5da8e7bdb78aae8e283706b764dd801dce1f069039f1c4b566adf9f8432dbe0b"
+      "sha256": "a81c0e75f6b7ab77e04c06d0181f3af2027a14fab11cb3193af331ed5adf3ff1"
     },
     {
       "page": 14,
-      "sha256": "6e2c07b7685443fdedcc43fea103edf669002bf14a7e32865d4106d34a314c56"
+      "sha256": "69d703ecad3d71d0ceeb56106a426a4c50afda6967f2bbcdf0e901b3fbb35347"
     },
     {
       "page": 15,
-      "sha256": "021e46d85f61106099c7cfdba9daebcaa8bce3c099208e17cc8cffc4b8ea3375"
+      "sha256": "c4dc5c2dca31608cad94a3271669d5e69e250036e5501f5fb55dda59358419a3"
     },
     {
       "page": 16,
-      "sha256": "6185d6f95ec736ac1968c054a5316186016ceb2691ba9c9be23a5913c77a7e82"
+      "sha256": "f62c5d1a484e68da2f83b7679b997be93defcb8c835a7adaeb0302e6ddff8fd2"
     },
     {
       "page": 17,
-      "sha256": "790b95c50ee800f90abd167c995944da66ec77c9ab218b791fbd884f9a8beeec"
+      "sha256": "07457dffa21dc851b8cdbe8269575edcefb918399be543d136c456edc06756cd"
     },
     {
       "page": 18,
-      "sha256": "e3b3627ae8b7f4c36123e76e0d49798b25ddad726b30f3bb7b16a6a9b095fd93"
+      "sha256": "58b656ab06157d4abaed3fd38c7503059e8b0c1c17e8f1b651338fc8ca295667"
     },
     {
       "page": 19,
@@ -92,7 +92,7 @@
     "predecessor": "paper-lines-v6.2-en.tex",
     "target": "paper-lines-v6.3-en.tex",
     "predecessor_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
-    "target_sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
+    "target_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
     "edits": "See lines-v6.3-edit-map.json",
     "prior_numbered_blocks_and_all_math_byte_identical": true,
     "existing_claim_ids_unchanged": 30,
@@ -102,8 +102,8 @@
     "reviewer": "release-preparation AI agent",
     "all_pages_viewed": true,
     "independent_review": false,
-    "method": "19 rendered pages at 80 dpi (pdftoppm), each viewed individually.",
-    "observed": "No clipping, overlapping tables, missing glyphs or broken references. The scope table (page 2) and family table (page 7) carry the D12 rows legibly; the new Section 12.1 (pages 15-16) and the edited Section 12.4 (page 17) read correctly. Nine underfull-box notes in the narrow scope-table cells (seven in 6.2); no overfull boxes."
+    "method": "19 rendered pages at 80 dpi (pdftoppm), each viewed individually; after the referee revision the changed pages 10-18 were rendered and viewed again (pages 1-9 and 19 render identically).",
+    "observed": "No clipping, overlapping tables, missing glyphs or broken references. The scope table (page 2) and family table (page 7) carry the D12 rows legibly; the new Section 12.1 (pages 15-16) and the edited Section 12.4 (page 17) and the new cross-references (page 10) read correctly. Nine underfull-box notes in the narrow scope-table cells (seven in 6.2); no overfull boxes."
   },
   "uploaded": false,
   "revision_publication_authorized": false

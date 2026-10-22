@@ -3,8 +3,8 @@
   "version": "1.10.0",
   "paper": {
     "path": "paper-lines-v6.3-en.tex",
-    "sha256": "5fb85e72a8191b71dc1e2e42628eebd32eed6559a7b8cf101736771fd2102230",
-    "bytes": 73043
+    "sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
+    "bytes": 73526
   },
   "source_commit": "dbf1957c781a42c702fff08bae93d8c004305c7a",
   "status_semantics": "The status lean-result-received means exact source and a fixed reported kernel acceptance were received, not newly elaborated. Arithmetic predicates, graph sufficiency, conditional kernels and general prose theorems have distinct scopes. depends_on is expository, not a Lean proof-term dependency graph.",
@@ -3220,9 +3220,9 @@
           ],
           "verification_kind": "coordinator-reported-kernel-output",
           "receipt": {
-            "path": "evidence/d12/d12-proof-report.md.original.log",
-            "sha256": "1053b4825d0332e8af1461131c2df1e5c746733c826000284f3049ab36463c23",
-            "bytes": 11550
+            "path": "evidence/d12/comparator-paranoid.txt.original.log",
+            "sha256": "64a9ee99e45b1148c1131decaea68a749a01cb8d0243127fcb9d430225efc85b",
+            "bytes": 101281
           },
           "fresh_lean_run": false,
           "source_closure": [
@@ -8287,7 +8287,6 @@
       "status_scope": "Positive integers r,s. Lean graph iff on the explicit quotient model (ClaudeChallengeD12.classification), with the coordinator six-kernel paranoid Comparator receipt shared with ClaudeChallengeD12.main. The two earlier prose/computer-assisted routes are retained as additional proofs. The Lean proof was written after reading the route-A report and the article section, so it is not an independent derivation.",
       "depends_on": [
         "def:literal",
-        "prop:forced",
         "prop:family-decompositions"
       ],
       "remaining_obligations": [
@@ -8297,6 +8296,7 @@
         "The new coordinator summary gives 18/19 submitted source hashes identical; only the documented monitoring helper differs. Historical T0250 has three source differences attributed by RouteB to summary-output argument handling, directly unconfirmed because the old bytes are unavailable. Own replay remained stopped at the unchanged memory guard.",
         "Within literature searched only; priority not established.",
         "IPR subclass and zero parameters outside this claim.",
+        "Routes A/B use the forced-continuation rule (prop:forced) with external cyclic edge-connectivity; the Lean proof uses neither and proves the two-common-neighbour property on the model.",
         "No human proof review.",
         "Lean statement concerns the explicit quotient model: Graver catalogue correspondence and the Definition 1(a) source wording retain the statement-reader caveats.",
         "Lean proof not independent of routes A/B: written after reading the route-A report and the article section."
@@ -8318,9 +8318,9 @@
           ],
           "verification_kind": "coordinator-reported-kernel-output",
           "receipt": {
-            "path": "evidence/d12/d12-proof-report.md.original.log",
-            "sha256": "1053b4825d0332e8af1461131c2df1e5c746733c826000284f3049ab36463c23",
-            "bytes": 11550
+            "path": "evidence/d12/comparator-paranoid.txt.original.log",
+            "sha256": "64a9ee99e45b1148c1131decaea68a749a01cb8d0243127fcb9d430225efc85b",
+            "bytes": 101281
           },
           "fresh_lean_run": false,
           "source_closure": [

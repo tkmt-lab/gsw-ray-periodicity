@@ -37,7 +37,7 @@ def check_d12(root):
     assert c['human_review'] is False and c['paper_label']==c['id']
     assert claims['scope']['new_D12_classification_included'] is True
     assert c['statement_plain']=='For all positive r,s, D12(r,s) has a literal path iff r|(s-1) or r|(s+1) or |r-3s|=1. Equivalently r=1; r=2 and s odd; or r>=3 with that criterion.'
-    assert len(c['remaining_obligations'])==9 and 'No human proof review.' in c['remaining_obligations']
+    assert len(c['remaining_obligations'])==10 and 'No human proof review.' in c['remaining_obligations']
     ledger=json.loads((root/'d12/derivatives.json').read_text())
     assert ledger['status']=='PUBLIC_DERIVATIVES' and not ledger['originals_included']
     from publication_privacy import matches

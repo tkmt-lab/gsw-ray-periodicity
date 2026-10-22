@@ -14,7 +14,7 @@
   "displayed_math_blocks_byte_identical": true,
   "numbered_statement_blocks_byte_identical": 3,
   "claim_ids_unchanged": 30,
-  "changed_passages": 13,
+  "changed_passages": 15,
   "new_lean_runs": 0,
   "publication_operations": 0,
   "scope": "D12 proof basis (Lean) and one new D12 subsection; formulae and domains unchanged."

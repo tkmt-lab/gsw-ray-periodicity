@@ -68,7 +68,7 @@ def check_d12_received(root):
         for row in rows:
             assert row['source_commit']==m['source_commit'] and not row['fresh_lean_run']
             assert row['verification_kind']=='coordinator-reported-kernel-output' and row['axioms']==['propext','Classical.choice','Quot.sound']
-            assert row['source_closure']==m['sources'] and row['receipt_scope']=='paranoid-comparator-two-targets'
+            assert row['source_closure']==m['sources'] and row['receipt_scope']=='paranoid-comparator-two-targets' and row['receipt']==m['raw_comparator']
             text=fp(row['source']).decode();fp(row['receipt']);name=row['declaration'].rsplit('.',1)[1]
             assert signature(text,name)==row['type_signature']==signature(challenge,name)
     def definition(text,name):
@@ -88,3 +88,5 @@ def check_d12_received(root):
     edits=check_v63(root)
     return dict(received_D12_declarations=2,comparator_targets=DECLS,source_closure=86,added_sources=82,
         article_6_3_edits=edits,lean_derivation_independent=False,new_lean_runs=0,scope=__doc__)
+
+if __name__=='__main__':print(json.dumps(dict(status='PASS',**check_d12_received(Path(__file__).resolve().parent)),sort_keys=True))
