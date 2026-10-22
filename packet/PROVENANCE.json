@@ -134,8 +134,8 @@
     },
     {
       "path": "VERIFICATION-RECORD.md",
-      "sha256": "a537d29ec2a265b0973175c53f7c3174154abdc6c2d5fc78949647eb8f78668a",
-      "bytes": 91731
+      "sha256": "39200c9ebe53927fa6d58820f09392f15644fa38c62ae2d29a841e402014e2a6",
+      "bytes": 92324
     },
     {
       "path": "c1-manifest.json",
@@ -224,7 +224,7 @@
     },
     {
       "path": "claims.json",
-      "sha256": "2d2d1cf60cd78c19b5dca7e7b24f785c0ceeb9a47fb5a22d1c5f8aca9cb58a58",
+      "sha256": "68cfaf1e746585de7111ccff897cabce425e4af06e0b977e6bdd6d0d09701aa5",
       "bytes": 365922
     },
     {
@@ -654,7 +654,7 @@
     },
     {
       "path": "editorial-audit.json",
-      "sha256": "e7609f8cf6ed1a2acf64cde6232528a96cabbe7599d7b63915f119fde6747a7d",
+      "sha256": "f777b7ab7169a252469b16aea5dd32f7062ce9e21f331a9dc13d9419e8bbca06",
       "bytes": 556
     },
     {
@@ -4054,13 +4054,13 @@
     },
     {
       "path": "lines-v6.3-edit-map.json",
-      "sha256": "5c68414646c068f60a248496d09f03616fab9fc7267a7d58f49674fa1be05609",
-      "bytes": 10143
+      "sha256": "4af7680e4a24b62131e7895ba51e3143d4828b1dc861babd3b57b30a9bbccb0c",
+      "bytes": 11455
     },
     {
       "path": "lines-v6.3-pdf-validation.json",
-      "sha256": "2639887b53576a2b83308ffe2b448507847ac0e4ddb1b0af5d4ea07ce87e53c1",
-      "bytes": 3919
+      "sha256": "931dbd436d000acf8fa0efa7a84ced2ad5a78c68750228707a2c7169382e9326",
+      "bytes": 4047
     },
     {
       "path": "next82.original.log",
@@ -4254,13 +4254,13 @@
     },
     {
       "path": "paper-lines-v6.3-en.pdf",
-      "sha256": "efd7de24d7b334d038de85f73173aca1c49dec10cfad6731786f4763d8426dea",
-      "bytes": 187231
+      "sha256": "48fceda7345d7acea9fca9a27a83d5290f20bd628db7cb158181eec6bf28a6cb",
+      "bytes": 188748
     },
     {
       "path": "paper-lines-v6.3-en.tex",
-      "sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
-      "bytes": 73526
+      "sha256": "2229b9c5ce461bb0443bbc60bbfc8b732d76559f4e5461a74014b6a823b60c46",
+      "bytes": 74286
     },
     {
       "path": "pdf-validation.json",
@@ -4329,7 +4329,7 @@
     },
     {
       "path": "v3-correspondence.json",
-      "sha256": "98b85c75bae28f39123bfc24011b3e93190374e43ca7873f1781c085423db5ec",
+      "sha256": "5fc85aeea70de0ca9b8fd29b826911027943767ca22fee8a0a914959db3e7732",
       "bytes": 8658
     },
     {

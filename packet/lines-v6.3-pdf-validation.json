@@ -1,10 +1,10 @@
 {
   "status": "PASS",
   "source_path": "paper-lines-v6.3-en.tex",
-  "source_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
+  "source_sha256": "2229b9c5ce461bb0443bbc60bbfc8b732d76559f4e5461a74014b6a823b60c46",
   "pdf_path": "paper-lines-v6.3-en.pdf",
-  "pdf_sha256": "efd7de24d7b334d038de85f73173aca1c49dec10cfad6731786f4763d8426dea",
-  "pdf_bytes": 187231,
+  "pdf_sha256": "48fceda7345d7acea9fca9a27a83d5290f20bd628db7cb158181eec6bf28a6cb",
+  "pdf_bytes": 188748,
   "pages": 19,
   "tex_engine": "Tectonic 0.17.0 cached only",
   "overfull_boxes": false,
@@ -13,7 +13,7 @@
   "page_render_hashes": [
     {
       "page": 1,
-      "sha256": "7000ff1295915e5ebf6522c1fbb2c5f19001234a7800b7fc3fd794ade16558d5"
+      "sha256": "e7008ec2ae6fe4d1f518f69c58b916965cddf0389241e919c7c63f9ce49b19fe"
     },
     {
       "page": 2,
@@ -85,14 +85,14 @@
     },
     {
       "page": 19,
-      "sha256": "06ba8a773064ffbf643b4cb5a18d6dfc5f415042ccd5c34d5622b0613d67b4ee"
+      "sha256": "69057150d774d6e946614c5c087540f50a9172308e44e6d3e63fce4f94c6503d"
     }
   ],
   "mathematical_comparison": {
     "predecessor": "paper-lines-v6.2-en.tex",
     "target": "paper-lines-v6.3-en.tex",
     "predecessor_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
-    "target_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
+    "target_sha256": "2229b9c5ce461bb0443bbc60bbfc8b732d76559f4e5461a74014b6a823b60c46",
     "edits": "See lines-v6.3-edit-map.json",
     "prior_numbered_blocks_and_all_math_byte_identical": true,
     "existing_claim_ids_unchanged": 30,
@@ -102,7 +102,7 @@
     "reviewer": "release-preparation AI agent",
     "all_pages_viewed": true,
     "independent_review": false,
-    "method": "19 rendered pages at 80 dpi (pdftoppm), each viewed individually; after the referee revision the changed pages 10-18 were rendered and viewed again (pages 1-9 and 19 render identically).",
+    "method": "19 rendered pages at 80 dpi (pdftoppm), each viewed individually; after the referee revision the changed pages 10-18 were rendered and viewed again (pages 1-9 and 19 render identically); after the related-work addition the changed pages 1 and 19 were rendered and viewed again (all other pages render identically).",
     "observed": "No clipping, overlapping tables, missing glyphs or broken references. The scope table (page 2) and family table (page 7) carry the D12 rows legibly; the new Section 12.1 (pages 15-16) and the edited Section 12.4 (page 17) and the new cross-references (page 10) read correctly. Nine underfull-box notes in the narrow scope-table cells (seven in 6.2); no overfull boxes."
   },
   "uploaded": false,

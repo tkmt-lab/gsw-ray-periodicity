@@ -12,7 +12,7 @@ Statement correspondence: one independent AI statement reader returned FAITHFUL 
 
 CI/query layout: D12 helper tactics (d12om, d12peq, d12peq2, d12glue_tac) do not collide with the O2/D14 peq; D12 is queried in the O2-side Axioms.lean. See CI-AXIOM-SPLIT.md.
 
-Article 6.3 edits: 15 passages of article 6.2 changed (lines-v6.3-edit-map.json), including one new subsection (12.1, a formal proof) inside the D12 section and two cross-references. The article 6.3 text was revised once before release after an independent AI referee report (verdict MINOR): catalogue identification outside the Lean statement made explicit in Section 12, the kernel check named in Section 12.1, the limitations sentence qualified, and the cross-references added. Numbered statements, displayed formulae, domains and claim identifiers are unchanged. The 6.2 passages are archived at the end of this record.
+Article 6.3 edits: 17 passages of article 6.2 changed (lines-v6.3-edit-map.json), including one new subsection (12.1, a formal proof) inside the D12 section and two cross-references. The article 6.3 text was revised once before release after an independent AI referee report (verdict MINOR): catalogue identification outside the Lean statement made explicit in Section 12, the kernel check named in Section 12.1, the limitations sentence qualified, and the cross-references added. Before release, one related-work sentence and bibliography entry were also added to the Introduction, crediting I. Dorofeev's public verification package (Zenodo doi:10.5281/zenodo.22143505, v1.0.1, 2026-08-28) of certificates for reported counterexamples to the BBS cut-partition and character conjectures; source: the literature team's related-work survey. No AI-use or priority claim is made about it. Numbered statements, displayed formulae, domains and claim identifiers are unchanged. The 6.2 passages are archived at the end of this record.
 
 
 ## Historical D12 addition, article 6.2 / packet 1.9.0 (no-Lean statement superseded by 1.10.0)
@@ -1550,7 +1550,7 @@ Prose graph iff and Lean predicate-ray arithmetic.
 
 ## Article6.2 to6.3 scope-edit archive
 
-The following 15 predecessor passages are retained for editorial traceability; the replacement text is recorded in lines-v6.3-edit-map.json. These are old passages, not current D12 proof assertions.
+The following 17 predecessor passages are retained for editorial traceability; the replacement text is recorded in lines-v6.3-edit-map.json. These are old passages, not current D12 proof assertions.
 
 ### D12 scope edit 1
 
@@ -1653,4 +1653,16 @@ construction at $s=58$ gives a 3,260-vertex positive witness.
 
 ```tex
 fixed branches after their decisions agree with the original family.
+```
+
+### D12 scope edit 16
+
+```tex
+existing logical and fixed-boundary periodicity theorems.
+```
+
+### D12 scope edit 17
+
+```tex
+Report 9607, May 1996; printed pp.~11--12 (PDF pp.~14--15).
 ```

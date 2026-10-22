@@ -2,7 +2,7 @@
   "predecessor": "paper-lines-v6.2-en.tex",
   "target": "paper-lines-v6.3-en.tex",
   "predecessor_sha256": "a5180b44aa4716204e431e49e26bd7e6af1de561c861852dc64a0a4b096cc8e3",
-  "target_sha256": "11996bda7bddb2d838af7c2cd542897a7c7019913695d4cc8600c57c7b12c7ac",
+  "target_sha256": "2229b9c5ce461bb0443bbc60bbfc8b732d76559f4e5461a74014b6a823b60c46",
   "edits": [
     {
       "number": 1,
@@ -93,6 +93,18 @@
       "before": "fixed branches after their decisions agree with the original family.\n",
       "after": "fixed branches after their decisions agree with the original family.\nThe D12 classification and its rays are proved in\nSection~\\ref{sec:d12-lean}.\n",
       "reason": "Cross-reference to the D12 Lean proof."
+    },
+    {
+      "number": 16,
+      "before": "existing logical and fixed-boundary periodicity theorems.\n",
+      "after": "existing logical and fixed-boundary periodicity theorems.\nDorofeev~\\cite{Dorofeev} has released a verification package with\nexact-arithmetic certificates for reported counterexamples to the\ncut-partition and character conjectures in the open-problems paper of\nBille, Buchstaber and Spodarev~\\cite{BBS}.\nThese finite counterexamples concern different statements from the\nuniform geometric reduction studied here. The path in his $C_{32}$\nexample has interior degree-five vertices, which\nDefinition~\\ref{def:literal} also allows.\n",
+      "reason": "Related work: credit a directly related public verification package."
+    },
+    {
+      "number": 17,
+      "before": "Report 9607, May 1996; printed pp.~11--12 (PDF pp.~14--15).\n",
+      "after": "Report 9607, May 1996; printed pp.~11--12 (PDF pp.~14--15).\n\\bibitem{Dorofeev} I. Dorofeev, \\emph{Verification package for Certified\nCounterexamples to Three Conjectures on Dual Fullerene Graphs}, version 1.0.1,\nZenodo, 28 August 2026, doi:10.5281/zenodo.22143505;\n{\\urlstyle{rm}\\url{https://github.com/qft98romanov-hash/fullerene-counterexamples}}.\n",
+      "reason": "Bibliography entry for the related package."
     }
   ],
   "scope": "D12 proof-scope prose and one new D12 subsection inside the D12 section. Numbered statements, displayed formulae, domains and claim identifiers unchanged."
