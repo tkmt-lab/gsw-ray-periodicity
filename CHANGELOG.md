@@ -2,6 +2,7 @@
 
 Documentation and metadata correction release. Release date: 2026-11-09.
 
+- Make the CI axiom gate fail when either Lean command fails, matching the README procedure.
 - Document Lean installation, CI's 4096-to-12288 MiB per-file memory change, parallelism limits, a small check and the full axiom gate.
 - Correct current citation links to article 6.3 and distinguish packet 1.10.1; retain the previous guidance in CITING-HISTORY.md.
 - Correct the proof-route summary: A1/A2/B2 use classifications and affine-ray arithmetic; D1 uses the prose decomposition and Theorem 1a.
