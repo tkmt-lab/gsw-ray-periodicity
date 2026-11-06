@@ -1,6 +1,6 @@
-Current local candidate1.10.0 / article6.3; publication is separate under the author's decision.
+Release 1.10.1 / article 6.3 — released 2026-11-09. The mathematical and proof scopes are unchanged from packet 1.10.0.
 
-## Current D12 proof scope (article 6.3 / packet 1.10.0)
+## Current D12 proof scope (article 6.3 / packet 1.10.1)
 
 Classification: `ClaudeChallengeD12.classification` proves, for natural r,s>=1, that the D12 quotient graph has a literal path iff r divides s-1 or s+1, or |r-3s|=1 (divisibility and absolute value in the integers). `ClaudeChallengeD12.main` proves actual-path eventual periodicity for every positive natural start and nonnegative natural slope. The ray result comes from the classification and Lean ray arithmetic; it uses neither Theorem 1a nor its prose bridge. No external theorem is used: the two-common-neighbour property is proved on the model. Both declarations depend only on propext, Classical.choice and Quot.sound, and both are the targets of the coordinator's six-kernel paranoid Comparator run (Lean paranoid, lean4lean, nanoda, con-leche, con-ron, Lean default all accept the same supplied proof; this is not six independent derivations).
 
@@ -19,9 +19,9 @@ Both listed E10 declarations, and only those listed E10 targets, share the coord
 
 The following earlier edition notes describe historical checkpoints; the current scope and counts are stated above.
 
-Historical checkpoint1.8.0 / article6.1; publication is separate under the author's decision.
+Historical checkpoint 1.8.0 / article 6.1.
 
-Historical candidate 1.7.0 / article 6.0: publication is performed separately by the coordinator under the author's decision. The authorization records below are inherited historical records; no upload is performed by this preparation.
+Historical checkpoint 1.7.0 / article 6.0. The authorization records below concern that earlier edition.
 
 # Read this packet first
 
@@ -46,7 +46,7 @@ Privacy edition: see [REDACTION-POLICY.md](REDACTION-POLICY.md), [REDACTIONS.md]
 
 The owner's Theorem 1a version-2 statement-meaning check is recorded in [OWNER-STATEMENT-CHECK.md](OWNER-STATEMENT-CHECK.md) and [owner-statement-confirmation.json](owner-statement-confirmation.json). This does not promote proof review, prose bridge review, K3 or novelty.
 
-Release authorization is recorded in [publication-authorization.json](publication-authorization.json). The owner authorized publication; repository/homepage publication is performed separately by the coordinator. This preparation does not perform an upload.
+The earlier release authorization is preserved in [publication-authorization.json](publication-authorization.json). Current release metadata is in release-metadata.json; the correction release was authorized by the author on 2026-11-06.
 
 K3 now has received graph necessity/classification and all-positive-ray periodicity, including parameter-one boundaries, without the general prose bridge. The general theorem retains its prose bridge. Read K3-STATEMENT-CHECK.md and k3-manifest.json. The preceding K3 edition's 193 Lean files comprised 192 proof sources and one inert benchmark; no current check executes Lean. All old owner confirmations are historical facts; no K3 owner procedure is used.
 
@@ -60,4 +60,4 @@ Article 6.0 presents mathematics and current proof scope. Read [VERIFICATION-REC
 
 ## Historical D12 addition, article 6.2 / packet 1.9.0 (its no-Lean statement is superseded by packet 1.10.0)
 
-Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.
+Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. The inherited authorization record concerns an earlier release checkpoint; the current release metadata is in release-metadata.json. No Lean, kernel, graph census or upload was run to prepare this revision.

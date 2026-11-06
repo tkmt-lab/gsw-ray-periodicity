@@ -1,6 +1,6 @@
 # Historical citation guidance (through packet 1.10.0)
 
-Superseded by CITING.md for the current candidate.
+Superseded by CITING.md for release 1.10.1 (2026-11-09). The earlier guidance below is preserved verbatim as a historical record; its release-state wording does not describe this edition.
 
 Current local candidate1.10.0 / article6.3; publication is separate under the author's decision.
 

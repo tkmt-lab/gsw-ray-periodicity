@@ -1,12 +1,12 @@
-# Verification packet 1.10.1 — planned release 2026-11-09
+# Verification packet 1.10.1 — released 2026-11-09
 
-Unpublished correction candidate; article 6.3 and the mathematical claims are unchanged. Start with the [article PDF](paper-lines-v6.3-en.pdf), [current citation guidance](CITING.md), [change log](CHANGELOG.md) and [verification record](VERIFICATION-RECORD.md). The four Python checks in AGENTS.md check stored records; the repository README gives the Lean prerequisites and CI procedure. The referenced B2 certificates and replay scripts are not included.
+Documentation and metadata correction release; article 6.3 and the mathematical claims are unchanged. Start with the [article PDF](paper-lines-v6.3-en.pdf), [current citation guidance](CITING.md), [change log](CHANGELOG.md) and [verification record](VERIFICATION-RECORD.md). The four Python checks in AGENTS.md check stored records; the repository README gives the Lean prerequisites and CI procedure. The referenced B2 certificates and replay scripts are not included.
 
 ## Inherited packet documentation (through 1.10.0)
 
 The checkpoint dates, version counts and execution statements below describe earlier editions.
 
-Current local candidate1.10.0 / article6.3; publication is separate under the author's decision.
+Historical checkpoint 1.10.0 / article 6.3; its proof scope is retained in release 1.10.1.
 
 ## Current D12 proof scope (article 6.3 / packet 1.10.0)
 
@@ -27,9 +27,9 @@ Both listed E10 declarations, and only those listed E10 targets, share the coord
 
 The following earlier edition notes describe historical checkpoints; the current scope and counts are stated above.
 
-Historical checkpoint1.8.0 / article6.1; publication is separate under the author's decision.
+Historical checkpoint 1.8.0 / article 6.1.
 
-Historical candidate 1.7.0 / article 6.0: publication is performed separately by the coordinator under the author's decision. The authorization records below are inherited historical records; no upload is performed by this preparation.
+Historical checkpoint 1.7.0 / article 6.0. The authorization records below concern that earlier edition.
 
 # Convex lattice-face rays: English manuscript and received evidence
 
@@ -39,7 +39,7 @@ The [English paper v6.0](paper-lines-v6.0-en.pdf) and [TeX source](paper-lines-v
 
 Theorem 1a now has a Lean proof on the coordinator-written version-2 specification, with the previously recorded research-team build and axiom check; no new Lean run was performed for edition 1.7.0. The geometry-to-specification lemma is prose and the owner statement-meaning confirmation is recorded separately. Human review of the prose lemma remains outstanding. The independent R004 prose derivation is retained. No independent research-team Lean derivation is claimed. K3 now has the full graph classification and positive-boundary ray theorem without the general prose bridge, with exact received sources and kernel records in k3-manifest.json. The fixed-oblique extension remains a proof sketch with four unresolved obligations. C2/K4/O1 occur only as extension prospects. All human proof-review flags remain false.
 
-The sources are a fixed closure, not the entire current research repository. Toolchain and dependencies are pinned; dependencies and compiled objects are not bundled. The new received theorem closure was built and its three entry declarations were queried for axioms; no new proof, graph classification or scientific experiment was authored by the research team. No new D12 classification is included. The author is Tatsuhiko Takimoto, Independent researcher. The author has approved the AI disclosure and licenses: text/figures/data CC BY 4.0 and code/Lean Apache-2.0, with third-party terms retained. See LICENSING.md. GitHub Issues is the contact route; REPOSITORY-URL.txt is the canonical URL location. GitHub then Zenodo is the release sequence; this preparation performs no upload.
+The sources are a fixed closure, not the entire current research repository. Toolchain and dependencies are pinned; dependencies and compiled objects are not bundled. The new received theorem closure was built and its three entry declarations were queried for axioms; no new proof, graph classification or scientific experiment was authored by the research team. No new D12 classification is included. The author is Tatsuhiko Takimoto, Independent researcher. The author has approved the AI disclosure and licenses: text/figures/data CC BY 4.0 and code/Lean Apache-2.0, with third-party terms retained. See LICENSING.md. GitHub Issues is the contact route; REPOSITORY-URL.txt is the canonical URL location. The packet is distributed through GitHub and Zenodo.
 
 P006-L10 records the heptagon correction and clarified two-example-ray wording. P006-L11 records the new theorem receipt. All 167 inherited Lean sources/receipts are byte-identical; 25 received K3 proof-dependency files and a separate inert benchmark are added, with all human proof-review flags still false. The owner has authorized release.
 
@@ -47,7 +47,7 @@ Privacy edition: see [REDACTION-POLICY.md](REDACTION-POLICY.md), [REDACTIONS.md]
 
 The owner's Theorem 1a version-2 statement-meaning check is recorded in [OWNER-STATEMENT-CHECK.md](OWNER-STATEMENT-CHECK.md) and [owner-statement-confirmation.json](owner-statement-confirmation.json). This does not promote proof review, prose bridge review, K3 or novelty.
 
-Release authorization is recorded in [publication-authorization.json](publication-authorization.json). The owner authorized publication; repository/homepage publication is performed separately by the coordinator. This preparation does not perform an upload.
+The earlier release authorization is preserved in [publication-authorization.json](publication-authorization.json). Current release metadata is in release-metadata.json; the correction release was authorized by the author on 2026-11-06.
 
 See [K3 statement correspondence](K3-STATEMENT-CHECK.md). Owner statement-meaning checks are no longer a verification procedure; prior confirmations are historical facts. No K3 owner-confirmation field is added. The current research team runs no Lean or external kernel; the coordinator build/axiom/Comparator records are received, not rerun.
 
@@ -65,4 +65,4 @@ Article 6.0 presents mathematics and current proof scope. Read [VERIFICATION-REC
 
 ## Historical D12 addition, article 6.2 / packet 1.9.0 (its no-Lean statement is superseded by packet 1.10.0)
 
-Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.
+Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. The inherited authorization record concerns an earlier release checkpoint; the current release metadata is in release-metadata.json. No Lean, kernel, graph census or upload was run to prepare this revision.

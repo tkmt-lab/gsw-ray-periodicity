@@ -1,8 +1,7 @@
 # Eventual periodicity of linear generalized Stone–Wales paths in affine fullerene families with convex lattice-face decompositions
 
-**Packet v1.10.1 — planned release 2026-11-09; article v6.3 unchanged.**
-This correction is a release candidate, awaiting the author's decision. The coordinator will replace the planned date with the actual publication date.
-DOI [10.5281/zenodo.23491204](https://doi.org/10.5281/zenodo.23491204) identifies all versions, not this unpublished candidate.
+**Packet v1.10.1 — released 2026-11-09; article v6.3 unchanged.**
+DOI [10.5281/zenodo.23491204](https://doi.org/10.5281/zenodo.23491204) identifies all versions; specify packet 1.10.1 when citing this release.
 
 **Tatsuhiko Takimoto** (independent researcher)
 

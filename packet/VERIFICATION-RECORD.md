@@ -1,4 +1,6 @@
-# Article6.3 / packet1.10.0 verification record
+# Article 6.3 / packet 1.10.1 verification record
+
+Release 1.10.1 (2026-11-09) retains the proof and verification scope recorded below for packet 1.10.0 and earlier editions. This correction changes release documentation and metadata only.
 
 ## D12 Lean reception and current verification boundary
 
@@ -17,7 +19,7 @@ Article 6.3 edits: 17 passages of article 6.2 changed (lines-v6.3-edit-map.json)
 
 ## Historical D12 addition, article 6.2 / packet 1.9.0 (no-Lean statement superseded by 1.10.0)
 
-Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. This is a local candidate; publication of this revision requires a separate author/coordinator decision. The inherited authorization record concerns the earlier release checkpoint and is not a new approval of D12. No Lean, kernel, graph census or upload was run to prepare this revision.
+Positive integer r,s: a literal path exists iff r divides s-1 or s+1, or abs(r-3s)=1. See d12/README.md and the two full proof routes in d12/proof-notes.tex. This classification has two separately derived universal prose/computer-assisted proof routes and NO Lean proof. D12 ray periodicity separately follows from Theorem1a with its prose model correspondence, or conditionally from the arithmetic classification. Earlier 30 claim statuses, 34 Lean declaration references and all412 Lean sources remain unchanged. The inherited authorization record concerns an earlier release checkpoint; the current release metadata is in release-metadata.json. No Lean, kernel, graph census or upload was run to prepare this revision.
 
 `thm:d12-classification`: `two-separately-derived-universal-proof-routes-received`; no Lean and no human proof review. See d12/VERIFICATION-RECORD.md for the full unchanged draft-v2 limitations, including failed strict blind outcome isolation. The authoring agent checked stored rational certificate arithmetic and packaging, not a third independent proof.
 
@@ -38,7 +40,7 @@ CI/query layout: O2 and D14 collide on peq / tacticPeq; keep O2-side Axioms.lean
 All30 claim IDs and status values persist. Only cor:catalog and prop:closed acquire E10 declaration/evidence/scope records; the other28 claim payloads are unchanged apart from the shared correction-log fingerprint. The current total is34 Lean declaration references across15 claims. The two E10 additions do not change the historical scope of any earlier kernel receipt. The historical sections and100-item editorial archive below describe the preceding checkpoint except where this section explicitly updates E10.
 
 
-This supplement accompanies article 6.1 and local packet candidate 1.8.0.
+This historical supplement accompanied article 6.1 and packet 1.8.0.
 It records who supplied arguments, how declarations and finite evidence
 were checked, historical corrections and the limits of those checks.
 The article gives the mathematics and one present-scope table. The

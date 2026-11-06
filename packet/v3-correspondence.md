@@ -1,4 +1,4 @@
-Current local candidate1.8.0 / article6.1; publication is separate under the author's decision.
+Historical correspondence record through packet 1.8.0 / article 6.1, retained in release 1.10.1 (2026-11-09).
 
 # Japanese v3 to English v6.0 correspondence
 

@@ -1,16 +1,15 @@
 {
   "packet_version": "1.10.1",
   "paper_version": "6.3",
-  "source_commit": "8eea5994bfebdcca4865528bd7524af4064f9c16",
-  "parent_inventory_sha256": "5fba65bd9c706c9008644971c9007bf328fc0e0062567b8dd33edb7f14b4d636",
-  "scope": "Documentation and metadata correction candidate, planned 2026-11-09. Mathematical claims, article and Lean sources unchanged; no new Lean execution. B2 replay inputs remain absent.",
-  "uploaded": false,
-  "publication_on_hold": true,
+  "source_commit": "e02370485260c85b5a4342e64e3b7c2991818943",
+  "parent_inventory_sha256": "f18bcdeca733f3811d2bfa41cdcdc03ee2f6d7936418b0eaa3ed1736d7c881ce",
+  "scope": "Documentation and metadata correction release 1.10.1, released 2026-11-09. Mathematical claims, article and Lean sources unchanged. Stored proof and execution records are inherited; B2 replay inputs remain absent.",
+  "publication_on_hold": false,
   "files": [
     {
       "path": "AGENTS.md",
-      "sha256": "357a771ff0fd620d9a49b629532d7b1e3501ad37b1c903793f7188e830631701",
-      "bytes": 11350
+      "sha256": "9a1806c99c3ab4f008aeccf8aa5e00fb0fbc0ca9966fb09cf9aa846bdad3090d",
+      "bytes": 11091
     },
     {
       "path": "Apache-2.0.txt",
@@ -29,8 +28,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "bda1021ad8cfc45aa347229f32711cd2fdd64fb92a866f553d9680d9f24f169b",
-      "bytes": 9452
+      "sha256": "42570c7eb4e710c709799fe56da0ad0f449575c1d4b9ace55984a7fdd4234f9f",
+      "bytes": 9333
     },
     {
       "path": "CI-AXIOM-SPLIT.md",
@@ -39,13 +38,13 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "e59c2ff42550d93be2d81d3bea5c16d3683344e2143f2ac67a0be998ffd1c468",
-      "bytes": 1694
+      "sha256": "a98bab029285edd756071b8d250a6b62a3641fdc9a86818d78b395ac6e931488",
+      "bytes": 1573
     },
     {
       "path": "CITING.md",
-      "sha256": "9d916ced497ce929b60b7438d7bf2c337fd4da03e800b4636ebfe102767662de",
-      "bytes": 1153
+      "sha256": "1cfde73445d3d179a687bbf02abbb1f2df707f4c09f65ff552e3c99dae8a92c9",
+      "bytes": 999
     },
     {
       "path": "D14-STATEMENT-CHECK.md",
@@ -54,8 +53,8 @@
     },
     {
       "path": "FORMALIZATION.md",
-      "sha256": "5510f5d4a65bc498f49d918aaf89e88992dc8f48704db5fdb9c26a3dc110512a",
-      "bytes": 13209
+      "sha256": "04322af14040c161a2f4994a516af0412a467e924dda0571911efe57d232bcde",
+      "bytes": 13153
     },
     {
       "path": "K3-STATEMENT-CHECK.md",
@@ -64,8 +63,8 @@
     },
     {
       "path": "LICENSING.md",
-      "sha256": "6084263d6042a0b98cbae95605e0690aed46965072569147c5daa05077b95a0c",
-      "bytes": 1451
+      "sha256": "7d9951aaaa18db4d1d7d1d1167f387cb642b15ba45fae7e70bc6c6be391e12c8",
+      "bytes": 1406
     },
     {
       "path": "NOTICE",
@@ -89,8 +88,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "92b841bd232064918da7c3d31dae317d723067b2fa2ee405f6e0c1b326e5c6d0",
-      "bytes": 13625
+      "sha256": "8497d87e2fde516d4b39fca8f97da44b56e712717ffed34243889a34b8745192",
+      "bytes": 13313
     },
     {
       "path": "REDACTION-POLICY.md",
@@ -129,13 +128,13 @@
     },
     {
       "path": "SCOPE.md",
-      "sha256": "7009dab9d2059ee2e658c14d5d0d4b38c16ad60019907d9f436f9c3bc2a162b2",
-      "bytes": 9433
+      "sha256": "574ba0b437e0dc4244ba29cab0c574b48fb045e34cc59dfd2ed18a51f7b7f555",
+      "bytes": 9377
     },
     {
       "path": "VERIFICATION-RECORD.md",
-      "sha256": "39200c9ebe53927fa6d58820f09392f15644fa38c62ae2d29a841e402014e2a6",
-      "bytes": 92324
+      "sha256": "4ae751bf2e95a6431be47114fe2493625a6abbf39e44b048abd852642cba58c6",
+      "bytes": 92430
     },
     {
       "path": "c1-manifest.json",
@@ -204,13 +203,13 @@
     },
     {
       "path": "check_publication.py",
-      "sha256": "f693880f38adf5fc28396ce5de8b6f028a44e11dcbe352fa6d20a710ecda8872",
-      "bytes": 5127
+      "sha256": "b785c4dc086dc7ec0bdf764a43bcdb19849a3c384e32144b25fd788f3d220fd1",
+      "bytes": 5220
     },
     {
       "path": "check_publication_audit.py",
-      "sha256": "c95087acc9af664e9a4c8fc65b132581c85c27571c99e203e10dea316da720bb",
-      "bytes": 6224
+      "sha256": "43f652aae7b0513d436817b8c952ecd9663e5d13d8234e7f6094a8c2f20410ba",
+      "bytes": 6556
     },
     {
       "path": "check_sources.py",
@@ -4289,8 +4288,8 @@
     },
     {
       "path": "release-metadata.json",
-      "sha256": "e854d4a13858c6cac260f05677ee074c8bcc94c4eabbf0440280d0a101a5adf5",
-      "bytes": 564
+      "sha256": "c590864b98a97a1a0396e78c457859427726ca47c267089633617dcfff025081",
+      "bytes": 625
     },
     {
       "path": "report-next28-2026-10-19.md.original.log",
@@ -4334,13 +4333,13 @@
     },
     {
       "path": "v3-correspondence.md",
-      "sha256": "529acbbaab662a4b1b7a62c11bba95382c64e57294de37cb2ae8fbd5601e9dfe",
-      "bytes": 7185
+      "sha256": "e948c4bfb63dc84e3098bbdd48e9dad03217d5c85acbf2b953ec6265e7bc90b3",
+      "bytes": 7199
     },
     {
       "path": "CITING-HISTORY.md",
-      "sha256": "9634539e547ad7196d4c45d10f15ef78be9f466dff51f8ca7fab933f4eaaab81",
-      "bytes": 6798
+      "sha256": "289bc06fdafd51cdf45d3978d299a15a0a0549fe9a1ddc0f045253e91cfe8034",
+      "bytes": 6935
     }
   ],
   "new_lean_proofs_by_research_team": 0,
@@ -4356,12 +4355,7 @@
     "sha256": "9f186f7f3b240d03028b42e7a7706547b793bbb19830197fb28dd3afdef169b8",
     "bytes": 1824
   },
-  "publication_status": "candidate-awaiting-author-decision",
-  "publication_authorization": {
-    "path": "publication-authorization.json",
-    "sha256": "138ffae4d08dde965d504ddd1c12249104e4d5830e48b0d5aee478cfb86bac23",
-    "bytes": 842
-  },
+  "publication_status": "released",
   "new_received_K3_proof_declarations": 3,
   "received_K3_source_commit": "a77b2581d3a903ebb8668fc32c6ed087a1b1e8ec",
   "new_received_C1_proof_declarations": 2,
@@ -4376,8 +4370,19 @@
   "new_received_E10_comparator_declarations": 2,
   "D12_classification_included": true,
   "D12_lean_proof": true,
-  "revision_publication_authorized": false,
+  "revision_publication_authorized": true,
   "received_D12_source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
   "new_received_D12_comparator_declarations": 2,
-  "planned_release_date": "2026-11-09"
+  "upload_performed_by_research_team": false,
+  "release_date": "2026-11-09",
+  "historical_publication_authorization": {
+    "path": "publication-authorization.json",
+    "sha256": "138ffae4d08dde965d504ddd1c12249104e4d5830e48b0d5aee478cfb86bac23",
+    "bytes": 842
+  },
+  "revision_authorization": {
+    "authorized_by": "author",
+    "authorized_on": "2026-11-06",
+    "scope": "Correction release 1.10.1 on 2026-11-09; mathematical claims and correction content unchanged."
+  }
 }

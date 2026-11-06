@@ -13,9 +13,15 @@ def check_publication_audit(root):
     metadata=load('release-metadata.json');a3=metadata['paper_version']=='8.1';version='1.0.4' if a3 else '1.10.1'
     assert metadata['packet_version']==version
     provenance=load('PROVENANCE.json');authorization=load('publication-authorization.json')
-    assert provenance['publication_on_hold'] is True,'candidate must await author decision'
-    assert provenance['publication_status']=='candidate-awaiting-author-decision' and not provenance['uploaded']
-    # The authorization below is an unchanged historical receipt, not approval of this candidate.
+    assert provenance['publication_on_hold'] is False
+    assert provenance['publication_status']==metadata['release_status']=='released'
+    assert provenance['release_date']==metadata['release_date']=='2026-11-09'
+    assert not provenance['upload_performed_by_research_team']
+    assert provenance['revision_publication_authorized'] is True
+    assert provenance['revision_authorization']['authorized_by']=='author'
+    assert provenance['revision_authorization']['authorized_on']=='2026-11-06'
+    fp(provenance['historical_publication_authorization'])
+    # The authorization below is an unchanged receipt for an earlier release.
     assert authorization['status']=='owner-authorized-release' and authorization['authorized'] is True
     assert authorization['authorized_on']=='2026-10-20' and authorization['recorded_by']=='coordinator'
     assert authorization['decision_source_commit']=='38c95fa05863df44ee1e048344ae9944684fa76d'
@@ -81,6 +87,6 @@ def check_publication_audit(root):
     check_d12_received(root)
     from check_o2_received import check_o2
     check_o2(root)
-    return dict(current_publication_state='owner-authorized-release',publication_performed_here=False,
+    return dict(current_publication_state=metadata['release_status'],publication_performed_here=False,
                 privacy_derivatives_distinguished=True,inherited_lean_source_bytes_preserved=True,
                 new_lean_runs=0,historical_build_receipts_inherited=True,specification_vs_prose_scope_explicit=not a3)

@@ -1,6 +1,6 @@
-# 1.10.1 / article 6.3 — planned release 2026-11-09
+# 1.10.1 / article 6.3 — released 2026-11-09
 
-Unpublished correction candidate, awaiting the author's decision. The coordinator will replace the planned date in README, CITATION.cff, .zenodo.json and this changelog on publication.
+Documentation and metadata correction release. Release date: 2026-11-09.
 
 - Document Lean installation, CI's 4096-to-12288 MiB per-file memory change, parallelism limits, a small check and the full axiom gate.
 - Correct current citation links to article 6.3 and distinguish packet 1.10.1; retain the previous guidance in CITING-HISTORY.md.

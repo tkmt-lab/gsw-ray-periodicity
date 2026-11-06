@@ -10,9 +10,11 @@
   "text_figures_data_license": "CC-BY-4.0",
   "code_lean_license": "Apache-2.0",
   "AI_statement_owner_approved": true,
-  "uploaded": false,
   "doi": null,
   "pdf_validation_file": "lines-v6.3-pdf-validation.json",
-  "planned_release_date": "2026-11-09",
-  "release_status": "candidate-awaiting-author-decision"
+  "release_status": "released",
+  "release_date": "2026-11-09",
+  "upload_performed_by_research_team": false,
+  "doi_scope": "version",
+  "concept_doi": "10.5281/zenodo.23491204"
 }

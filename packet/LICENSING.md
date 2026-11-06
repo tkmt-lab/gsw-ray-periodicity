@@ -8,4 +8,4 @@ Exact third-party bibliographic records, quotations, license texts and inert his
 
 The official texts are from [Creative Commons](https://creativecommons.org/licenses/by/4.0/legalcode.txt) and [Apache](https://www.apache.org/licenses/LICENSE-2.0.txt). A source file's historical header is preserved; no proof file is edited for this release.
 
-Contact is through GitHub Issues of the public repository. Its URL has a canonical location, [REPOSITORY-URL.txt](REPOSITORY-URL.txt), with its approved value recorded. No contact email is supplied. Preparation is complete before uploading; a GitHub publication and then a Zenodo DOI are the intended release sequence. This packet has no fabricated DOI or publication date.
+Contact is through GitHub Issues of the public repository. Its URL has a canonical location, [REPOSITORY-URL.txt](REPOSITORY-URL.txt), with its approved value recorded. No contact email is supplied. Packet 1.10.1 was released on 2026-11-09. See [CITING.md](CITING.md) for the article and packet versions and the all-version DOI.
