@@ -1,6 +1,6 @@
 {
   "cff-version": "1.2.0",
-  "message": "Cite the article for mathematical claims or this packet for the artifacts. See CITING.md and LICENSING.md.",
+  "message": "Correction candidate; planned release 2026-11-09, awaiting the author’s decision. The coordinator will update date-released on publication. Cite article 6.3 for mathematics and packet 1.10.1 for artifacts. See CITING.md in the packet.",
   "type": "software",
   "title": "Eventual periodicity of linear generalized Stone-Wales paths in affine fullerene families with convex lattice-face decompositions: manuscript and verification artifacts",
   "authors": [
@@ -10,7 +10,7 @@
       "affiliation": "Independent researcher"
     }
   ],
-  "version": "1.10.0",
+  "version": "1.10.1",
   "license": "Apache-2.0",
   "preferred-citation": {
     "type": "article",
@@ -41,5 +41,6 @@
       "license": "CC-BY-4.0",
       "repository-code": "https://github.com/tkmt-lab/a3-gsw-classification"
     }
-  ]
+  ],
+  "date-released": "2026-11-09"
 }

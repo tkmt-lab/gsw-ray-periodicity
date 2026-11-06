@@ -10,11 +10,12 @@ def check_publication_audit(root):
         raw=(root/relative).read_bytes();assert len(raw)==r['bytes'] and hashlib.sha256(raw).hexdigest()==r['sha256'],('audit fingerprint',str(relative));return raw
     from publication_privacy import check_scanner_source
     check_scanner_source(root)
-    metadata=load('release-metadata.json');a3=metadata['paper_version']=='8.1';version='1.0.4' if a3 else '1.10.0'
+    metadata=load('release-metadata.json');a3=metadata['paper_version']=='8.1';version='1.0.4' if a3 else '1.10.1'
     assert metadata['packet_version']==version
     provenance=load('PROVENANCE.json');authorization=load('publication-authorization.json')
-    assert provenance['publication_on_hold'] is False,'publication hold restored'
-    assert provenance['publication_status']=='owner-authorized-release' and not provenance['uploaded']
+    assert provenance['publication_on_hold'] is True,'candidate must await author decision'
+    assert provenance['publication_status']=='candidate-awaiting-author-decision' and not provenance['uploaded']
+    # The authorization below is an unchanged historical receipt, not approval of this candidate.
     assert authorization['status']=='owner-authorized-release' and authorization['authorized'] is True
     assert authorization['authorized_on']=='2026-10-20' and authorization['recorded_by']=='coordinator'
     assert authorization['decision_source_commit']=='38c95fa05863df44ee1e048344ae9944684fa76d'

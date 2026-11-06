@@ -1,11 +1,11 @@
 {
-  "packet_version": "1.10.0",
+  "packet_version": "1.10.1",
   "paper_version": "6.3",
-  "source_commit": "38b386fc606b1a1417f7593bac7f48b6062cc16c",
-  "parent_inventory_sha256": "0328059635ba5c9d84a010a7b8693cf55ee21bd1905b5404e5f7bb09929d25eb",
-  "scope": "Receive the pinned D12 Lean classification (r,s>=1) and all positive-natural ray records; article 6.3. No Lean, kernels or scientific run in packaging; no formal catalogue correspondence, owner procedure, human peer review, novelty promotion or publication.",
+  "source_commit": "8eea5994bfebdcca4865528bd7524af4064f9c16",
+  "parent_inventory_sha256": "5fba65bd9c706c9008644971c9007bf328fc0e0062567b8dd33edb7f14b4d636",
+  "scope": "Documentation and metadata correction candidate, planned 2026-11-09. Mathematical claims, article and Lean sources unchanged; no new Lean execution. B2 replay inputs remain absent.",
   "uploaded": false,
-  "publication_on_hold": false,
+  "publication_on_hold": true,
   "files": [
     {
       "path": "AGENTS.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "63a509158997c80d70e5baa939fb5c87cd63b4c48b69388496c754c891ecdf00",
-      "bytes": 8341
+      "sha256": "bda1021ad8cfc45aa347229f32711cd2fdd64fb92a866f553d9680d9f24f169b",
+      "bytes": 9452
     },
     {
       "path": "CI-AXIOM-SPLIT.md",
@@ -39,13 +39,13 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "5934ae5f6214d3f31bf9d34d8aec84d3bb6abaed81ec77eed1f6b4cfbdc4ad36",
-      "bytes": 1531
+      "sha256": "e59c2ff42550d93be2d81d3bea5c16d3683344e2143f2ac67a0be998ffd1c468",
+      "bytes": 1694
     },
     {
       "path": "CITING.md",
-      "sha256": "bc90c400a793b51419ae6e84a5bb43b28e035940a0eff1378b3347aea1218f02",
-      "bytes": 6690
+      "sha256": "9d916ced497ce929b60b7438d7bf2c337fd4da03e800b4636ebfe102767662de",
+      "bytes": 1153
     },
     {
       "path": "D14-STATEMENT-CHECK.md",
@@ -89,8 +89,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "f7acdaa59156097e3e3b71b4c5d9dbae71453d5026668e2a2cae5b54aac6ebc5",
-      "bytes": 12958
+      "sha256": "92b841bd232064918da7c3d31dae317d723067b2fa2ee405f6e0c1b326e5c6d0",
+      "bytes": 13625
     },
     {
       "path": "REDACTION-POLICY.md",
@@ -204,13 +204,13 @@
     },
     {
       "path": "check_publication.py",
-      "sha256": "5a2b378db5d8b8ff77aa7ec8091f641b2859e90f997b9f83b769d7d5553b0b2b",
-      "bytes": 4880
+      "sha256": "f693880f38adf5fc28396ce5de8b6f028a44e11dcbe352fa6d20a710ecda8872",
+      "bytes": 5127
     },
     {
       "path": "check_publication_audit.py",
-      "sha256": "3d68aa3d6c00107e9e443870bdd9eb095b93dd157c9a2da508f0551e2361c14d",
-      "bytes": 6106
+      "sha256": "c95087acc9af664e9a4c8fc65b132581c85c27571c99e203e10dea316da720bb",
+      "bytes": 6224
     },
     {
       "path": "check_sources.py",
@@ -224,12 +224,12 @@
     },
     {
       "path": "claims.json",
-      "sha256": "68cfaf1e746585de7111ccff897cabce425e4af06e0b977e6bdd6d0d09701aa5",
-      "bytes": 365922
+      "sha256": "8b0c45cb11ce64d69704a8641aa58188789f3a9de585d64925b3c04b228325ff",
+      "bytes": 366090
     },
     {
       "path": "claims.schema.json",
-      "sha256": "8580bdf852b0ed90048192af0bee8594940c2a90864fa7f2c0d4b7156a223c93",
+      "sha256": "1cad79a17024046ab18f53bdfdb2827b5d30092c555b0a07ec07e82ea24a9da2",
       "bytes": 10712
     },
     {
@@ -4289,8 +4289,8 @@
     },
     {
       "path": "release-metadata.json",
-      "sha256": "a37e76269791573a5579b40c30882068600c05e71e94156c9cf905db6abfd0d4",
-      "bytes": 466
+      "sha256": "e854d4a13858c6cac260f05677ee074c8bcc94c4eabbf0440280d0a101a5adf5",
+      "bytes": 564
     },
     {
       "path": "report-next28-2026-10-19.md.original.log",
@@ -4336,6 +4336,11 @@
       "path": "v3-correspondence.md",
       "sha256": "529acbbaab662a4b1b7a62c11bba95382c64e57294de37cb2ae8fbd5601e9dfe",
       "bytes": 7185
+    },
+    {
+      "path": "CITING-HISTORY.md",
+      "sha256": "9634539e547ad7196d4c45d10f15ef78be9f466dff51f8ca7fab933f4eaaab81",
+      "bytes": 6798
     }
   ],
   "new_lean_proofs_by_research_team": 0,
@@ -4351,7 +4356,7 @@
     "sha256": "9f186f7f3b240d03028b42e7a7706547b793bbb19830197fb28dd3afdef169b8",
     "bytes": 1824
   },
-  "publication_status": "owner-authorized-release",
+  "publication_status": "candidate-awaiting-author-decision",
   "publication_authorization": {
     "path": "publication-authorization.json",
     "sha256": "138ffae4d08dde965d504ddd1c12249104e4d5830e48b0d5aee478cfb86bac23",
@@ -4373,5 +4378,6 @@
   "D12_lean_proof": true,
   "revision_publication_authorized": false,
   "received_D12_source_commit": "e2c2b460d1708f78739aa8d18064814f98aab317",
-  "new_received_D12_comparator_declarations": 2
+  "new_received_D12_comparator_declarations": 2,
+  "planned_release_date": "2026-11-09"
 }

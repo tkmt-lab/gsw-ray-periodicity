@@ -1,5 +1,5 @@
 {
-  "packet_version": "1.10.0",
+  "packet_version": "1.10.1",
   "paper_version": "6.3",
   "author": "Tatsuhiko Takimoto",
   "affiliation": "Independent researcher",
@@ -12,5 +12,7 @@
   "AI_statement_owner_approved": true,
   "uploaded": false,
   "doi": null,
-  "pdf_validation_file": "lines-v6.3-pdf-validation.json"
+  "pdf_validation_file": "lines-v6.3-pdf-validation.json",
+  "planned_release_date": "2026-11-09",
+  "release_status": "candidate-awaiting-author-decision"
 }

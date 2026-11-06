@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent
 
 def check_publication():
  a=json.loads((ROOT/'release-metadata.json').read_text());cff=json.loads((ROOT/'CITATION.cff').read_text())
- assert a['packet_version']=='1.10.0' and a['author']=='Tatsuhiko Takimoto' and a['affiliation']=='Independent researcher'
+ assert a['packet_version']=='1.10.1' and a['author']=='Tatsuhiko Takimoto' and a['affiliation']=='Independent researcher'
  assert a['organization'] is None and a['email'] is None and a['AI_statement_owner_approved'] is True
  assert a['contact']=='GitHub Issues' and a['contact_url_file']=='REPOSITORY-URL.txt'
  assert a['text_figures_data_license']=='CC-BY-4.0' and a['code_lean_license']=='Apache-2.0'
@@ -17,7 +17,7 @@ def check_publication():
  current=[*ROOT.glob('*.md'),*ROOT.glob('*.txt'),ROOT/'CITATION.cff']
  assert not any(token in p.read_text() for p in current),'unresolved repository URL placeholder'
  person={'family-names':'Takimoto','given-names':'Tatsuhiko','affiliation':'Independent researcher'}
- assert cff['cff-version']=='1.2.0' and cff['type']=='software' and cff['version']=='1.10.0'
+ assert cff['cff-version']=='1.2.0' and cff['type']=='software' and cff['version']=='1.10.1'
  assert cff['authors']==[person] and cff['license']=='Apache-2.0'
  article=cff['preferred-citation'];assert article['type']=='article' and article['version']==a['paper_version']
  assert article['authors']==[person] and article['license']=='CC-BY-4.0'
@@ -27,7 +27,11 @@ def check_publication():
  assert set(article)<=set(schema['definitions']['reference']['properties'])
  assert set(person)<=set(schema['definitions']['person']['properties'])
  assert cff['license'] in schema['definitions']['license-enum']['enum'] and article['license'] in schema['definitions']['license-enum']['enum']
- assert not {'email','doi','date-released'}&set(cff)
+ assert not {'email','doi'}&set(cff)
+ assert cff['date-released']==a['planned_release_date']
+ assert re.fullmatch(r'\d{4}-\d{2}-\d{2}', a['planned_release_date'])
+ assert a['release_status']=='candidate-awaiting-author-decision'
+ assert 'planned release '+a['planned_release_date'] in cff['message']
  for r in json.loads((ROOT/'license-sources.json').read_text()):
   p=ROOT/r['path'];raw=p.read_bytes();assert len(raw)==r['bytes'] and hashlib.sha256(raw).hexdigest()==r['sha256']
  claims=json.loads((ROOT/'claims.json').read_text());tex=(ROOT/claims['paper']['path']).read_text()
@@ -62,5 +66,5 @@ def check_publication():
  privacy = check_privacy(ROOT)
  from check_owner_statement import check_owner_statement
  check_owner_statement(ROOT)
- return dict(**privacy,public_metadata=True,packet_version='1.10.0',repository_url=expected,uploaded=False,full_cff_schema_validation=False,scope='exact field/enum contract, not a general CFF schema engine')
+ return dict(**privacy,public_metadata=True,packet_version='1.10.1',repository_url=expected,uploaded=False,full_cff_schema_validation=False,scope='exact field/enum contract, not a general CFF schema engine')
 if __name__=='__main__':print(json.dumps(dict(status='PASS',**check_publication())))

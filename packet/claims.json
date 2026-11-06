@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "version": "1.10.0",
+  "version": "1.10.1",
   "paper": {
     "path": "paper-lines-v6.3-en.tex",
     "sha256": "2229b9c5ce461bb0443bbc60bbfc8b732d76559f4e5461a74014b6a823b60c46",
@@ -6852,7 +6852,7 @@
       "id": "ex:e10-formal",
       "paper_label": "ex:e10-formal",
       "kind": "arithmetic-example",
-      "statement_plain": "For every natural t, E10Pos(200+5t,17+2t,23+t) iff t=3,10,17 or 34; graph interpretation still uses the prose classification.",
+      "statement_plain": "For every natural t, E10Pos(200+5t,17+2t,23+t) iff t=3,10,17 or 34. This declaration proves the arithmetic predicate; its graph interpretation follows by combining it with the separately received Lean classification ClaudeChallengeE10.classification, since p>=200, r>=17 and s>=23 on this ray.",
       "status": "lean-result-received",
       "status_scope": "Exact received declaration types and receipt scope only; no new Lean execution, specification semantics or human proof review.",
       "depends_on": [],

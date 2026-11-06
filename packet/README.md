@@ -1,3 +1,11 @@
+# Verification packet 1.10.1 — planned release 2026-11-09
+
+Unpublished correction candidate; article 6.3 and the mathematical claims are unchanged. Start with the [article PDF](paper-lines-v6.3-en.pdf), [current citation guidance](CITING.md), [change log](CHANGELOG.md) and [verification record](VERIFICATION-RECORD.md). The four Python checks in AGENTS.md check stored records; the repository README gives the Lean prerequisites and CI procedure. The referenced B2 certificates and replay scripts are not included.
+
+## Inherited packet documentation (through 1.10.0)
+
+The checkpoint dates, version counts and execution statements below describe earlier editions.
+
 Current local candidate1.10.0 / article6.3; publication is separate under the author's decision.
 
 ## Current D12 proof scope (article 6.3 / packet 1.10.0)
